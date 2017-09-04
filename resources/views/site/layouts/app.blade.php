@@ -46,7 +46,7 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                            @if(Auth::user()->role->name == 'Admin')
+                            @if(Auth::user()->role->name == 'admin')
                                 <li><a href="{{ url('/admin') }}">Админка</a></li>
                             @else
                             @endif
