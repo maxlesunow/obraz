@@ -12,5 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('site.welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+
+
+Route::group(['middleware' => 'role:admin', 'prefix' => 'admin'], function () {
+
+    Route::get('/', 'AdminController@index');
 });
