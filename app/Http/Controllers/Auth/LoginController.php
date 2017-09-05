@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -46,5 +47,18 @@ class LoginController extends Controller
     {
         return view('site.auth.login');
     }
+
+    protected function credentials(Request $request)
+    {
+        $credentials = $request->only($this->username(), 'password');
+
+        $credentials['is_verification'] = 1;
+
+        return $credentials;
+    }
+
+
+
+
 
 }

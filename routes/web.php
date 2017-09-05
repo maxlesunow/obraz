@@ -17,6 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/verification/{id}', 'VerificationController@index')->name('verification');
+
+Route::post('/verification/{id}', 'VerificationController@update')->name('verification');
+
 Route::get('/home', 'HomeController@index');
 
 

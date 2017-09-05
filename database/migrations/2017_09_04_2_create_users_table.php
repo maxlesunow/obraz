@@ -21,11 +21,12 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('email')->nullable();
             $table->string('phone')->unique();
+            $table->boolean('is_verification')->default(false);
             $table->rememberToken();
             $table->timestamps();
 
-            // $table->integer('verification_id')->unsigned()->index();
-            // $table->foreign('verification_id')->references('id')->on('verifications')->onDelete('cascade');
+            $table->integer('verification_id')->unsigned()->index();
+            $table->foreign('verification_id')->references('id')->on('verifications')->onDelete('cascade');
             
             $table->integer('role_id')->unsigned()->index();
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');

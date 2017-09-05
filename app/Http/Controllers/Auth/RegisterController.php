@@ -3,9 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Verification;
+use App\Role;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Auth\Events\Registered;
+use Carbon\Carbon;
 
 class RegisterController extends Controller
 {
@@ -27,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -42,6 +47,23 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         return view('site.auth.register');
+    }
+
+    //Регистрация
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        return $this->registered($request, $user)
+                        ?: redirect($this->redirectPath());
+    }
+
+    //Отправка кода и письма после регистрации
+    protected function registered(Request $request, $user)
+    {
+        return view('site.auth.verification', compact('user'));
     }
 
     /**
@@ -66,14 +88,40 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        
+        $user = new User([
             'first_name' => 'first_name',
             'last_name' => 'last_name',
             'middle_name' => 'middle_name',
             'phone' => $data['phone'],
             'email' => 'email',
-            'role_id' => 1,
+            'is_verification' => false,
             'password' => bcrypt($data['password']),
         ]);
+
+        //Роль - пользователь
+        $user->role()->associate(Role::firstOrCreate(['name' => 'user']));
+        //Создаем верификацию
+        $user->verification()->associate($this->createVerification());
+
+        $user->save();
+
+        return $user;
+    }
+
+    protected function createVerification(){
+        return Verification::create([
+            'code' => $this->generateCode(),
+            'wrong_pass' => 0,
+            "date_expire" => Carbon::now()->addMinute(5),
+        ]);
+    }
+
+    protected function generateCode(){
+        $code ='';
+        for ($i = 0; $i < 4; $i++) {
+            $code .= rand(0, 9);
+        }
+        return $code;
     }
 }

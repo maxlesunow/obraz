@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'middle_name', 'phone', 'email', 'role_id', 'password',
+        'first_name', 'last_name', 'middle_name', 'phone', 'email', 'role_id', 'password', 'is_verification',
     ];
 
     /**
@@ -32,14 +32,18 @@ class User extends Authenticatable
         return $this->belongsTo('App\Role');
     }
     
-    public function verificate(){
+    public function verification(){
         
-        return $this->belongsTo('App\Verificate');
+        return $this->belongsTo('App\Verification');
     }
 
     public function hasRole()
     {
       return $this->role;
+    }
+
+    public function is_verificate(){
+        return $this->role()->success;
     }
 
 }
