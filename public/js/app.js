@@ -42065,153 +42065,49 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            registerData: {
-                first_name: '',
-                last_name: '',
-                middle_name: '',
-                email: '',
-                phone: '',
-                password: '',
-                password_confirmation: ''
-            },
-            hasErrors: {
-                first_name: '',
-                last_name: '',
-                middle_name: '',
-                email: '',
-                phone: false,
-                password: false
-            },
-            errorMessage: {
-                first_name: null,
-                last_name: null,
-                middle_name: null,
-                email: null,
-                phone: null,
-                password: null
-                //passwordMatch:null
-            } };
+            inputs: [{ data: '', hasErrors: '', errorMessage: null, type: "text", name: "Фамилия", attr: "last_name" }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Имя", attr: "first_name" }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Отчество", attr: "middle_name" }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "E-mail", attr: "email" }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Телефон", attr: "phone" }, { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Пароль", attr: "password" }, { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Подтверждение пароля", attr: "password_confirmation" }]
+            //passwordMatch:null
+        };
     },
 
     methods: {
-        registerPost: function registerPost() {
+        getFormData: function getFormData() {
+            return _.reduce(this.inputs, function (store, input, i) {
+                store[input.attr] = input.data;
+                return store;
+            }, {});
+        },
+        clearErrors: function clearErrors() {
             var _this = this;
-            var vm = this.hasErrors;
-            var _vm = this.errorMessage;
-            axios.post('register', _this.registerData).then(function (response) {
-                console.log(response);
-            }).catch(function (error) {
-                var errors = error.response;
-                if (errors.statusText === 'Unprocessable Entity') {
-                    if (errors.data) {
 
-                        if (errors.data.errors.first_name) {
-                            vm.first_name = true;
-                            _vm.first_name = _.isArray(errors.data.errors.first_name) ? errors.data.errors.first_name[0] : errors.data.errors.first_name;
-                        }
+            _.each(this.inputs, function (value, i) {
+                _this.inputs[i].hasErrors = '';
+                _this.inputs[i].errorMessage = null;
+            });
+        },
+        registerPost: function registerPost() {
+            var _this2 = this;
 
-                        if (errors.data.errors.last_name) {
-                            vm.last_name = true;
-                            _vm.last_name = _.isArray(errors.data.errors.last_name) ? errors.data.errors.last_name[0] : errors.data.errors.last_name;
+            this.clearErrors();
+            axios.post('register', this.getFormData()).then(function (response) {
+                // console.log(response);
+            }).catch(function (data) {
+                if (data.response.statusText === 'Unprocessable Entity') {
+                    var err = data.response && data.response.data && data.response.data.errors;
+                    err && _.each(_this2.inputs, function (value, i) {
+                        _this2.inputs[i].errorMessage = _.isArray(err[value.attr]) ? err[value.attr][0] : err[value.attr];
+                        if (_this2.inputs[i].errorMessage) {
+                            _this2.inputs[i].hasErrors = true;
                         }
-
-                        if (errors.data.errors.middle_name) {
-                            vm.middle_name = true;
-                            _vm.middle_name = _.isArray(errors.data.errors.middle_name) ? errors.data.errors.middle_name[0] : errors.data.errors.middle_name;
-                        }
-                        if (errors.data.errors.phone) {
-                            vm.email = true;
-                            _vm.email = _.isArray(errors.data.errors.email) ? errors.data.errors.email[0] : errors.data.errors.email;
-                        }
-
-                        if (errors.data.errors.phone) {
-                            vm.phone = true;
-                            _vm.phone = _.isArray(errors.data.errors.phone) ? errors.data.errors.phone[0] : errors.data.errors.phone;
-                        }
-
-                        if (errors.data.errors.password) {
-                            vm.password = true;
-                            _vm.password = _.isArray(errors.data.errors.password) ? errors.data.errors.password[0] : errors.data.errors.password;
-                        }
-                    }
+                    });
                 }
             });
         }
     }
-    /*
-        computed:{
-            passwordValidate(){
-                var vm = this.registerData;
-                var _this = this
-                return vm.password_confirmation !== vm.password  ? _this.passwordMatch = 'The password confirmation does not match.'  : _this.passwordMatch = null
-            }
-        }
-    */
 });
 
 /***/ }),
@@ -42223,14 +42119,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticStyle: {
       "display": "inline-block"
     }
-  }, [_c('button', {
-    staticClass: "btn btn-primary",
-    attrs: {
-      "type": "button",
-      "data-toggle": "modal",
-      "data-target": "#registerModal"
-    }
-  }, [_vm._v("\n        Зарегистрироваться\n    ")]), _vm._v(" "), _c('div', {
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
     staticClass: "modal fade",
     attrs: {
       "id": "registerModal",
@@ -42252,266 +42141,71 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('div', {
     staticClass: "modal-body"
-  }, [_c('div', {
-    staticClass: "form-group",
-    class: {
-      'has-error': _vm.hasErrors.first_name
-    }
-  }, [_c('label', {
-    staticClass: "col-md-4 control-label",
-    attrs: {
-      "for": "first_name"
-    }
-  }, [_vm._v("Фамилия")]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.registerData.first_name),
-      expression: "registerData.first_name"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "id": "first_name",
-      "type": "text",
-      "name": "first_name",
-      "required": "",
-      "autofocus": ""
-    },
-    domProps: {
-      "value": (_vm.registerData.first_name)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.registerData.first_name = $event.target.value
+  }, [_vm._l((_vm.inputs), function(input) {
+    return [_c('div', {
+      staticClass: "form-group",
+      class: {
+        'has-error': input.hasErrors
       }
-    }
-  }), _vm._v(" "), (_vm.hasErrors.first_name) ? _c('span', {
-    staticClass: "help-block"
-  }, [_c('strong', [_vm._v(_vm._s(_vm.errorMessage.first_name))])]) : _vm._e()])]), _vm._v(" "), _c('div', {
-    staticClass: "form-group",
-    class: {
-      'has-error': _vm.hasErrors.last_name
-    }
-  }, [_c('label', {
-    staticClass: "col-md-4 control-label",
-    attrs: {
-      "for": "last_name"
-    }
-  }, [_vm._v("Имя")]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.registerData.last_name),
-      expression: "registerData.last_name"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "id": "last_name",
-      "type": "text",
-      "name": "last_name",
-      "required": "",
-      "autofocus": ""
-    },
-    domProps: {
-      "value": (_vm.registerData.last_name)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.registerData.last_name = $event.target.value
+    }, [_c('label', {
+      staticClass: "col-md-4 control-label",
+      attrs: {
+        "for": input.attr
       }
-    }
-  }), _vm._v(" "), (_vm.hasErrors.last_name) ? _c('span', {
-    staticClass: "help-block"
-  }, [_c('strong', [_vm._v(_vm._s(_vm.errorMessage.last_name))])]) : _vm._e()])]), _vm._v(" "), _c('div', {
-    staticClass: "form-group",
-    class: {
-      'has-error': _vm.hasErrors.middle_name
-    }
-  }, [_c('label', {
-    staticClass: "col-md-4 control-label",
-    attrs: {
-      "for": "middle_name"
-    }
-  }, [_vm._v("Отчество")]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.registerData.middle_name),
-      expression: "registerData.middle_name"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "id": "middle_name",
-      "type": "text",
-      "name": "middle_name",
-      "required": "",
-      "autofocus": ""
-    },
-    domProps: {
-      "value": (_vm.registerData.middle_name)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.registerData.middle_name = $event.target.value
+    }, [_vm._v(_vm._s(input.name))]), _vm._v(" "), _c('div', {
+      staticClass: "col-md-6"
+    }, [(input.type === 'text') ? _c('input', {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: (input.data),
+        expression: "input.data"
+      }],
+      staticClass: "form-control",
+      attrs: {
+        "type": "text",
+        "id": input.attr,
+        "name": input.attr,
+        "required": "",
+        "autofocus": ""
+      },
+      domProps: {
+        "value": (input.data)
+      },
+      on: {
+        "input": function($event) {
+          if ($event.target.composing) { return; }
+          input.data = $event.target.value
+        }
       }
-    }
-  }), _vm._v(" "), (_vm.hasErrors.middle_name) ? _c('span', {
-    staticClass: "help-block"
-  }, [_c('strong', [_vm._v(_vm._s(_vm.errorMessage.middle_name))])]) : _vm._e()])]), _vm._v(" "), _c('div', {
-    staticClass: "form-group",
-    class: {
-      'has-error': _vm.hasErrors.email
-    }
-  }, [_c('label', {
-    staticClass: "col-md-4 control-label",
-    attrs: {
-      "for": "email"
-    }
-  }, [_vm._v("E-mail")]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.registerData.email),
-      expression: "registerData.email"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "id": "email",
-      "type": "email",
-      "name": "email",
-      "required": "",
-      "autofocus": ""
-    },
-    domProps: {
-      "value": (_vm.registerData.email)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.registerData.email = $event.target.value
+    }) : _vm._e(), _vm._v(" "), (input.type === 'password') ? _c('input', {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: (input.data),
+        expression: "input.data"
+      }],
+      staticClass: "form-control",
+      attrs: {
+        "type": "password",
+        "id": input.attr,
+        "name": input.attr,
+        "required": "",
+        "autofocus": ""
+      },
+      domProps: {
+        "value": (input.data)
+      },
+      on: {
+        "input": function($event) {
+          if ($event.target.composing) { return; }
+          input.data = $event.target.value
+        }
       }
-    }
-  }), _vm._v(" "), (_vm.hasErrors.email) ? _c('span', {
-    staticClass: "help-block"
-  }, [_c('strong', [_vm._v(_vm._s(_vm.errorMessage.email))])]) : _vm._e()])]), _vm._v(" "), _c('div', {
-    staticClass: "form-group",
-    class: {
-      'has-error': _vm.hasErrors.phone
-    }
-  }, [_c('label', {
-    staticClass: "col-md-4 control-label",
-    attrs: {
-      "for": "phone"
-    }
-  }, [_vm._v("Телефон")]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.registerData.phone),
-      expression: "registerData.phone"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "id": "phone",
-      "type": "text",
-      "name": "phone",
-      "required": "",
-      "autofocus": ""
-    },
-    domProps: {
-      "value": (_vm.registerData.phone)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.registerData.phone = $event.target.value
-      }
-    }
-  }), _vm._v(" "), (_vm.hasErrors.phone) ? _c('span', {
-    staticClass: "help-block"
-  }, [_c('strong', [_vm._v(_vm._s(_vm.errorMessage.phone))])]) : _vm._e()])]), _vm._v(" "), _c('div', {
-    staticClass: "form-group",
-    class: {
-      'has-error': _vm.hasErrors.password
-    }
-  }, [_c('label', {
-    staticClass: "col-md-4 control-label",
-    attrs: {
-      "for": "password"
-    }
-  }, [_vm._v("Пароль")]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.registerData.password),
-      expression: "registerData.password"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "id": "password",
-      "type": "password",
-      "name": "password",
-      "required": ""
-    },
-    domProps: {
-      "value": (_vm.registerData.password)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.registerData.password = $event.target.value
-      }
-    }
-  }), _vm._v(" "), (_vm.hasErrors.password) ? _c('span', {
-    staticClass: "help-block"
-  }, [_c('strong', [_vm._v(_vm._s(_vm.errorMessage.password))])]) : _vm._e()])]), _vm._v(" "), _c('div', {
-    staticClass: "form-group"
-  }, [_c('label', {
-    staticClass: "col-md-4 control-label",
-    attrs: {
-      "for": "password-confirm"
-    }
-  }, [_vm._v("Повторите пароль")]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.registerData.password_confirmation),
-      expression: "registerData.password_confirmation"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "id": "password-confirm",
-      "type": "password",
-      "name": "password_confirmation",
-      "required": ""
-    },
-    domProps: {
-      "value": (_vm.registerData.password_confirmation)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.registerData.password_confirmation = $event.target.value
-      }
-    }
-  })])])]), _vm._v(" "), _c('div', {
+    }) : _vm._e(), _vm._v(" "), (input.hasErrors) ? _c('span', {
+      staticClass: "help-block"
+    }, [_c('strong', [_vm._v(_vm._s(input.errorMessage))])]) : _vm._e()])])]
+  })], 2), _vm._v(" "), _c('div', {
     staticClass: "modal-footer"
   }, [_c('button', {
     staticClass: "btn btn-primary",
@@ -42532,7 +42226,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "data-dismiss": "modal"
     }
   }, [_vm._v("Close")])])])])])])])
-},staticRenderFns: []}
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('li', [_c('a', {
+    attrs: {
+      "href": "#",
+      "data-toggle": "modal",
+      "data-target": "#registerModal"
+    }
+  }, [_vm._v("Зарегистрироваться")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -42636,56 +42338,49 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            loginDetails: {
-                phone: '',
-                password: '',
-                remember: true
-            },
-            errorsPhone: false,
-            errorsPassword: false,
-            emailError: null,
-            passwordError: null
+            inputs: [{ data: '', hasErrors: '', errorMessage: null, type: "text", name: "Телефон", attr: "phone" }, { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Пароль", attr: "password" }],
+            remember: true
         };
     },
 
     methods: {
+        getFormData: function getFormData() {
+            return _.reduce(this.inputs, function (store, input, i) {
+                store[input.attr] = input.data;
+                return store;
+            }, {});
+        },
+        clearErrors: function clearErrors() {
+            var _this = this;
+
+            _.each(this.inputs, function (value, i) {
+                _this.inputs[i].hasErrors = '';
+                _this.inputs[i].errorMessage = null;
+            });
+        },
         loginPost: function loginPost() {
-            var vm = this;
-            axios.post('/login', vm.loginDetails).then(function (response) {
-                console.log(response);
-            }).catch(function (error) {
-                var errors = error.response;
-                if (errors.statusText === 'Unprocessable Entity') {
-                    if (errors.data) {
-                        console.log(errors.data);
-                        if (errors.data.errors.phone) {
-                            console.log(errors.data.phone);
-                            vm.errorsPhone = true;
-                            vm.phoneError = _.isArray(errors.data.errors.phone) ? errors.data.errors.phone[0] : errors.data.errors.phone;
+            var _this2 = this;
+
+            this.clearErrors();
+            axios.post('login', this.getFormData()).then(function (response) {
+                // console.log(response);
+            }).catch(function (data) {
+                if (data.response.statusText === 'Unprocessable Entity') {
+                    var err = data.response && data.response.data && data.response.data.errors;
+                    err && _.each(_this2.inputs, function (value, i) {
+                        _this2.inputs[i].errorMessage = _.isArray(err[value.attr]) ? err[value.attr][0] : err[value.attr];
+                        if (_this2.inputs[i].errorMessage) {
+                            _this2.inputs[i].hasErrors = true;
                         }
-                        if (errors.data.password) {
-                            vm.errorsPassword = true;
-                            vm.passwordError = _.isArray(errors.data.password) ? errors.data.password[0] : errors.data.password;
-                        }
-                    }
+                    });
                 }
             });
         }
-    },
-    mounted: function mounted() {}
+    }
 });
 
 /***/ }),
@@ -42697,14 +42392,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticStyle: {
       "display": "inline-block"
     }
-  }, [_c('button', {
-    staticClass: "btn btn-primary",
-    attrs: {
-      "type": "button",
-      "data-toggle": "modal",
-      "data-target": "#loginModal"
-    }
-  }, [_vm._v("\n        Войти\n    ")]), _vm._v(" "), _c('div', {
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
     staticClass: "modal fade",
     attrs: {
       "id": "loginModal",
@@ -42726,82 +42414,71 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('div', {
     staticClass: "modal-body"
-  }, [_c('div', {
-    staticClass: "form-group",
-    class: {
-      'has-error': _vm.errorsPhone
-    }
-  }, [_c('label', {
-    staticClass: "col-md-4 control-label",
-    attrs: {
-      "for": "phone"
-    }
-  }, [_vm._v("Телефон")]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.loginDetails.phone),
-      expression: "loginDetails.phone"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "id": "phone",
-      "type": "phone",
-      "name": "phone",
-      "required": "",
-      "autofocus": ""
-    },
-    domProps: {
-      "value": (_vm.loginDetails.phone)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.loginDetails.phone = $event.target.value
+  }, [_vm._l((_vm.inputs), function(input) {
+    return [_c('div', {
+      staticClass: "form-group",
+      class: {
+        'has-error': input.hasErrors
       }
-    }
-  }), _vm._v(" "), (_vm.errorsPhone) ? _c('span', {
-    staticClass: "help-block"
-  }, [_c('strong', [_vm._v(_vm._s(_vm.phoneError))])]) : _vm._e()])]), _vm._v(" "), _c('div', {
-    staticClass: "form-group",
-    class: {
-      'has-error': _vm.errorsPassword
-    }
-  }, [_c('label', {
-    staticClass: "col-md-4 control-label",
-    attrs: {
-      "for": "password"
-    }
-  }, [_vm._v("Пароль")]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.loginDetails.password),
-      expression: "loginDetails.password"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      "id": "password",
-      "type": "password",
-      "name": "password",
-      "required": ""
-    },
-    domProps: {
-      "value": (_vm.loginDetails.password)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.loginDetails.password = $event.target.value
+    }, [_c('label', {
+      staticClass: "col-md-4 control-label",
+      attrs: {
+        "for": input.attr
       }
-    }
-  }), _vm._v(" "), (_vm.errorsPassword) ? _c('span', {
-    staticClass: "help-block"
-  }, [_c('strong', [_vm._v(_vm._s(_vm.passwordError))])]) : _vm._e()])]), _vm._v(" "), _c('div', {
+    }, [_vm._v(_vm._s(input.name))]), _vm._v(" "), _c('div', {
+      staticClass: "col-md-6"
+    }, [(input.type === 'text') ? _c('input', {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: (input.data),
+        expression: "input.data"
+      }],
+      staticClass: "form-control",
+      attrs: {
+        "type": "text",
+        "id": input.attr,
+        "name": input.attr,
+        "required": "",
+        "autofocus": ""
+      },
+      domProps: {
+        "value": (input.data)
+      },
+      on: {
+        "input": function($event) {
+          if ($event.target.composing) { return; }
+          input.data = $event.target.value
+        }
+      }
+    }) : _vm._e(), _vm._v(" "), (input.type === 'password') ? _c('input', {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: (input.data),
+        expression: "input.data"
+      }],
+      staticClass: "form-control",
+      attrs: {
+        "type": "password",
+        "id": input.attr,
+        "name": input.attr,
+        "required": "",
+        "autofocus": ""
+      },
+      domProps: {
+        "value": (input.data)
+      },
+      on: {
+        "input": function($event) {
+          if ($event.target.composing) { return; }
+          input.data = $event.target.value
+        }
+      }
+    }) : _vm._e(), _vm._v(" "), (input.hasErrors) ? _c('span', {
+      staticClass: "help-block"
+    }, [_c('strong', [_vm._v(_vm._s(input.errorMessage))])]) : _vm._e()])])]
+  }), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-4"
@@ -42811,35 +42488,35 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.loginDetails.remember),
-      expression: "loginDetails.remember"
+      value: (_vm.remember),
+      expression: "remember"
     }],
     attrs: {
       "type": "checkbox",
       "name": "remember"
     },
     domProps: {
-      "checked": Array.isArray(_vm.loginDetails.remember) ? _vm._i(_vm.loginDetails.remember, null) > -1 : (_vm.loginDetails.remember)
+      "checked": Array.isArray(_vm.remember) ? _vm._i(_vm.remember, null) > -1 : (_vm.remember)
     },
     on: {
       "__c": function($event) {
-        var $$a = _vm.loginDetails.remember,
+        var $$a = _vm.remember,
           $$el = $event.target,
           $$c = $$el.checked ? (true) : (false);
         if (Array.isArray($$a)) {
           var $$v = null,
             $$i = _vm._i($$a, $$v);
           if ($$el.checked) {
-            $$i < 0 && (_vm.loginDetails.remember = $$a.concat($$v))
+            $$i < 0 && (_vm.remember = $$a.concat($$v))
           } else {
-            $$i > -1 && (_vm.loginDetails.remember = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+            $$i > -1 && (_vm.remember = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
           }
         } else {
-          _vm.loginDetails.remember = $$c
+          _vm.remember = $$c
         }
       }
     }
-  }), _vm._v(" Запомнить меня\n                                    ")])])]), _vm._v(" "), _vm._m(0)])]), _vm._v(" "), _c('div', {
+  }), _vm._v(" Запомнить меня\n                                    ")])])]), _vm._v(" "), _vm._m(1)])], 2), _vm._v(" "), _c('div', {
     staticClass: "modal-footer"
   }, [_c('button', {
     staticClass: "btn btn-primary",
@@ -42861,6 +42538,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("Close")])])])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('li', [_c('a', {
+    attrs: {
+      "href": "#",
+      "data-toggle": "modal",
+      "data-target": "#loginModal"
+    }
+  }, [_vm._v("Войти")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "col-md-4"
   }, [_c('a', {
