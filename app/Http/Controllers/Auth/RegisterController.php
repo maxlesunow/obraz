@@ -113,7 +113,7 @@ class RegisterController extends Controller
         ]);
 
         //Роль - пользователь
-        $user->role()->associate(Role::firstOrCreate(['name' => 'user']));
+        $user->role()->associate(Role::firstOrCreate(['name' => 'user', 'name_ru' => 'Пользователь']));
         //Создаем верификацию
         $user->verification()->associate($this->createVerification());
 
