@@ -25,7 +25,7 @@
 
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary" @click.prevent="registerPost()">Register</button>
+                            <button type="submit" class="btn btn-primary" @click.prevent="registerPost()" :disabled="!isSmsValid">Register</button>
                             <button type="button" class="btn btn-default" id="btnclose" data-dismiss="modal">Close</button>
                         </div>
                     </form>
@@ -47,8 +47,8 @@ export default {
                 { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Телефон", attr: "phone" },
                 { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Пароль", attr: "password" },
                 { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Подтверждение пароля", attr: "password_confirmation" }
-            ]
-            //passwordMatch:null
+            ],
+            isSmsValid: false
         }
     },
     methods: {

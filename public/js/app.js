@@ -42069,8 +42069,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            inputs: [{ data: '', hasErrors: '', errorMessage: null, type: "text", name: "Фамилия", attr: "last_name" }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Имя", attr: "first_name" }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Отчество", attr: "middle_name" }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "E-mail", attr: "email" }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Телефон", attr: "phone" }, { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Пароль", attr: "password" }, { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Подтверждение пароля", attr: "password_confirmation" }]
-            //passwordMatch:null
+            inputs: [{ data: '', hasErrors: '', errorMessage: null, type: "text", name: "Фамилия", attr: "last_name" }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Имя", attr: "first_name" }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Отчество", attr: "middle_name" }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "E-mail", attr: "email" }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Телефон", attr: "phone" }, { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Пароль", attr: "password" }, { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Подтверждение пароля", attr: "password_confirmation" }],
+            isSmsValid: false
         };
     },
 
@@ -42210,7 +42210,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('button', {
     staticClass: "btn btn-primary",
     attrs: {
-      "type": "submit"
+      "type": "submit",
+      "disabled": !_vm.isSmsValid
     },
     on: {
       "click": function($event) {
