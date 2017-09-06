@@ -11,9 +11,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
 
     <style>
         .modal-backdrop {
@@ -63,7 +60,5 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 </body>
 </html>
