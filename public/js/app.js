@@ -42232,7 +42232,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "#",
       "data-toggle": "modal",
-      "data-target": "#registerModal"
+      "data-target": "#registerModal",
+      "data-backdrop": "static",
+      "data-keyboard": "false"
     }
   }, [_vm._v("Зарегистрироваться")])])
 }]}
