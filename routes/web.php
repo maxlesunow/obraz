@@ -28,4 +28,7 @@ Route::get('/home', 'HomeController@index');
 Route::group(['middleware' => 'role:admin', 'prefix' => 'admin'], function () {
 
     Route::get('/', 'AdminController@index');
+
+    Route::resource('/user', 'UserController');
+    Route::get('/user/admins', 'UserController@indexAdmin');
 });

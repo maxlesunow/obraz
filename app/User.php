@@ -27,23 +27,29 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function full_name(){
+
+        return join(' ', array($this->last_name, $this->first_name, $this->middle_name));
+    }
+
+    public function is_verificate(){
+
+        return $this->role()->success;
+    }
+
     public function role(){
-        
+
         return $this->belongsTo('App\Role');
     }
-    
+
     public function verification(){
-        
+
         return $this->belongsTo('App\Verification');
     }
 
     public function hasRole()
     {
       return $this->role;
-    }
-
-    public function is_verificate(){
-        return $this->role()->success;
     }
 
 }
