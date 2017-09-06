@@ -74,10 +74,23 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        $attributeNames = array(
+            'first_name' => 'Фамилия',
+            'cat' => 'Category',
+        );
+
+        $validator = Validator::make($data, [
+            'first_name' => 'required|string|min:2|max:255',
+            'last_name' => 'required|string|min:2|max:255',
+            'email' => 'string|max:255|email',
             'phone' => 'required|string|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
+
+        $validator->setAttributeNames($attributeNames);
+
+        return $validator;
+
     }
 
     /**
@@ -90,11 +103,11 @@ class RegisterController extends Controller
     {
         
         $user = new User([
-            'first_name' => 'first_name',
-            'last_name' => 'last_name',
-            'middle_name' => 'middle_name',
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'middle_name' => $data['middle_name'],
             'phone' => $data['phone'],
-            'email' => 'email',
+            'email' => $data['email'],
             'is_verification' => false,
             'password' => bcrypt($data['password']),
         ]);
