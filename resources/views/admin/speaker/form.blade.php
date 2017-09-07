@@ -1,18 +1,18 @@
-@include('admin.partials.form.checkbox',  ['id' => 'is_verification', 'name' => 'Подтверждение:'])
-
 @include('admin.partials.form.input', ['id' => 'last_name', 'name' => 'Фамилия:'])
 
 @include('admin.partials.form.input', ['id' => 'first_name', 'name' => 'Имя:'])
 
 @include('admin.partials.form.input', ['id' => 'middle_name', 'name' => 'Отчество:'])
 
-@include('admin.partials.form.input', ['id' => 'phone', 'name' => 'Телефон:'])
+@include('admin.partials.form.textarea', ['id' => 'description', 'name' => 'Описание:'])
 
-@include('admin.partials.form.input', ['id' => 'email', 'name' => 'E-mail:'])
+@include('admin.partials.form.input', ['id' => 'meta_title', 'name' => 'Title:'])
 
-@include('admin.partials.form.input', ['id' => 'created_at', 'name' => 'Дата регистрации:'])
+@include('admin.partials.form.input', ['id' => 'meta_description', 'name' => 'Description:'])
 
-@include('admin.partials.form.select', ['id' => 'created_at', 'name' => 'Тип пользователя:', 'value' => $role, 'values' => $roles])
+@include('admin.partials.form.input', ['id' => 'meta_keywords', 'name' => 'Keywords:'])
+
+@include('admin.partials.form.input', ['id' => 'meta_url', 'name' => 'URL:'])
 
 @include('admin.partials.form.submit')
 

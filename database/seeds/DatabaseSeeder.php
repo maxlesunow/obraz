@@ -49,5 +49,8 @@ class DatabaseSeeder extends Seeder
 
         //        Пользователи
         $this->call(UserSeeder::class);
+
+        //        Докладчики
+        $this->call(SpeakerSeeder::class);
     }
 }

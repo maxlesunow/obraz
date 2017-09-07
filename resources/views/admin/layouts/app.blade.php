@@ -31,13 +31,13 @@
                             {{--<div class="alert alert-error">{{ Session::get('error_message') }}</div>--}}
                     {{--@endif--}}
 
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                        @foreach( $errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                        </div>
-                    @endif
+                    {{--@if ($errors->any())--}}
+                        {{--<div class="alert alert-danger">--}}
+                        {{--@foreach( $errors->all() as $error)--}}
+                            {{--<li>{{ $error }}</li>--}}
+                        {{--@endforeach--}}
+                        {{--</div>--}}
+                    {{--@endif--}}
                 @yield('content')
             </div>
             @include('admin.layouts.footer')

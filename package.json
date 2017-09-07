@@ -21,6 +21,7 @@
     "dependencies": {
         "bootstrap": "^3.3.7",
         "select2": "^4.0.3",
-        "switchery": "0.0.2"
+        "switchery": "0.0.2",
+        "uniform": "^0.5.1"
     }
 }

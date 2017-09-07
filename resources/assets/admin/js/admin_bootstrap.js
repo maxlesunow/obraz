@@ -14,6 +14,7 @@ try {
 
     require('bootstrap');
     require('select2');
+    // window.uniform = require('../../../../node_modules/uniform/dist/uniform-0.5.1.js');
 } catch (e) {}
 
 /**

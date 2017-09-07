@@ -31,4 +31,6 @@ Route::group(['middleware' => 'role:admin', 'prefix' => 'admin'], function () {
 
     Route::resource('/user', 'UserController');
     Route::get('/user/admins', 'UserController@indexAdmin');
+
+    Route::resource('/speaker', 'SpeakerController');
 });
