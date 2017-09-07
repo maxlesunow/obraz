@@ -13,6 +13,7 @@ try {
     window.Switchery = require('switchery');
 
     require('bootstrap');
+    require('select2');
 } catch (e) {}
 
 /**
