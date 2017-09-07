@@ -1,20 +1,21 @@
 <div class="form-group">
-    {!! Form::label('is_verification', 'Подтверждение телефона:', ['class' => 'control-label col-lg-2']) !!}
+    {!! Form::label('is_verification', 'Подтверждение:', ['class' => 'control-label col-lg-2']) !!}
     <div class="col-lg-10">
         {!! Form::checkbox('is_verification', null, null, ['class' => 'form-control js-switch switcher']) !!}
     </div>
 </div>
+
 <div class="form-group">
-    {!! Form::label('first_name', 'Фамилия:', ['class' => 'control-label col-lg-2']) !!}
+    {!! Form::label('last_name', 'Фамилия:', ['class' => 'control-label col-lg-2']) !!}
     <div class="col-lg-10">
-        {!! Form::text('first_name', null, ['class' => 'form-control']) !!}
+        {!! Form::text('last_name', null, ['class' => 'form-control']) !!}
     </div>
 </div>
 
 <div class="form-group">
-    {!! Form::label('last_name', 'Имя:', ['class' => 'control-label col-lg-2']) !!}
+    {!! Form::label('first_name', 'Имя:', ['class' => 'control-label col-lg-2']) !!}
     <div class="col-lg-10">
-        {!! Form::text('last_name', null, ['class' => 'form-control']) !!}
+        {!! Form::text('first_name', null, ['class' => 'form-control']) !!}
     </div>
 </div>
 
@@ -47,9 +48,9 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('roles', 'Тип пользователя:', ['class' => 'control-label col-lg-2']) !!}
+    {!! Form::label('role', 'Тип пользователя:', ['class' => 'control-label col-lg-2']) !!}
     <div class="col-lg-10">
-        {!! Form::select('roles[]', $roles, null, ['class' => 'form-control']) !!}
+        {!! Form::select('role', $roles, $role, ['class' => 'form-control']) !!}
     </div>
 </div>
 

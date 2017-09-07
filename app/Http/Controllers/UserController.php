@@ -15,15 +15,23 @@ class UserController extends Controller
 
     public function show()
     {
-
-        $users = User::where('role_id', 1)->paginate(10);
-        return view('admin.user.indexAdmin', compact('users'));
+        $role_id = Role::where('name', '=', 'user')->firstOrFail()->id;
+        $users = User::where('role_id', '=', $role_id)->paginate(10);
+        return view('admin.user.index', compact('users'));
     }
 
+    public function index()
+    {
+        $role_id = Role::where('name', '=', 'user')->firstOrFail()->id;
+        $users = User::where('role_id', '=', $role_id)->paginate(10);
+        return view('admin.user.index', compact('users'));
+    }
 
     public function indexAdmin()
     {
-        $users = User::paginate(10);
+
+        $role_id = Role::where('name', '=', 'admin')->firstOrFail()->id;
+        $users = User::where('role_id', '=', $role_id)->paginate(10);
         return view('admin.user.indexAdmin', compact('users'));
     }
 
@@ -45,8 +53,7 @@ class UserController extends Controller
         $user->role()->associate(Role::findOrFail($request->input('role')));
         $user->save();
 
-
         \Session::flash('success_message', 'Пользователь "' . $user->full_name(). '" успешно обновлен');
-        return redirect('user/'.$id.'/edit');
+        return redirect('admin/user/'.$id.'/edit');
     }
 }
