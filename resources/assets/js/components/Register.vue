@@ -9,7 +9,7 @@
                         <div class="modal-body">
 
                             <template v-for="input in inputs">
-                                <div class="form-group" :class="{'has-error': input.hasErrors }">
+                                <div v-if="input.show" class="form-group" :class="{'has-error': input.hasErrors }">
                                     <label :for="input.attr" class="col-md-4 control-label">{{input.name}}</label>
 
                                     <div class="col-md-6">
@@ -22,6 +22,25 @@
                                     </div>
                                 </div>
                             </template>
+
+                            <div class="panel panel-success clearfix" v-if="!isSmsValid">
+                                <div class="panel-body">
+                                    <button class="btn btn-success" @click.prevent="sendSms()" v-if="!isSmsSend">Отправить СМС</button>
+
+                                    <div class="form-group" v-if="isSmsSend">
+                                        <label for="sms" class="col-md-4 control-label">Подтверждение СМС</label>
+
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" name="sms" v-model="enteredSms" required autofocus>
+                                            
+                                            <span v-if="smsError" class="help-block">
+                                                <strong>{{smsErrorMessage}}</strong>
+                                            </span>
+                                        </div>
+                                        <button class="btn btn-success" @click.prevent="verifySms()">Подтвердить</button>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                         <div class="modal-footer">
@@ -36,32 +55,34 @@
 </template>
 
 <script>
+import formDataMixin from './../mixins/formData'
+
 export default {
+    mixins: [formDataMixin],
     data() {
         return {
             inputs: [
-                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Фамилия", attr: "last_name" },
-                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Имя", attr: "first_name" },
-                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Отчество", attr: "middle_name" },
-                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "E-mail", attr: "email" },
-                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Телефон", attr: "phone" },
-                { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Пароль", attr: "password" },
-                { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Подтверждение пароля", attr: "password_confirmation" }
+                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Фамилия", attr: "last_name", show: true },
+                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Имя", attr: "first_name", show: true },
+                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Отчество", attr: "middle_name", show: true },
+                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "E-mail", attr: "email", show: true },
+                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Телефон", attr: "phone", show: true },
+                { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Пароль", attr: "password", show: false },
+                { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Подтверждение пароля", attr: "password_confirmation", show: false }
             ],
-            isSmsValid: false
+            isSmsValid: false,
+            isSmsSend: false,
+            enteredSms: ''
         }
     },
     methods: {
-        getFormData() {
-            return _.reduce(this.inputs, (store, input, i) => { 
-                store[input.attr] = input.data
-                return store 
-            }, {})
+        sendSms() {
+            this.isSmsSend = true;
         },
-        clearErrors() {
-            _.each(this.inputs, (value, i) => {
-                this.inputs[i].hasErrors = ''
-                this.inputs[i].errorMessage = null
+        verifySms() {
+            this.isSmsValid = true;
+            _.each(this.inputs, (val, i) => {
+                val.show = !val.show
             })
         },
         registerPost() {
@@ -73,10 +94,7 @@ export default {
                 .catch((data) => {
                     if (data.response.statusText === 'Unprocessable Entity') {
                         var err = data.response && data.response.data && data.response.data.errors
-                        err && _.each(this.inputs, (value, i) => {
-                                this.inputs[i].errorMessage = _.isArray(err[value.attr]) ? err[value.attr][0] : err[value.attr]
-                                if (this.inputs[i].errorMessage) { this.inputs[i].hasErrors = true }
-                            })      
+                        this.setErrors(err)   
                     }
                 })
         }
