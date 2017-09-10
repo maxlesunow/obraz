@@ -1,4 +1,4 @@
-@guest
+{{--  @guest
 
     <register></register>
     <login></login>
@@ -20,4 +20,5 @@
         {{ csrf_field() }}
         </form>
     </li>
-@endguest
+@endguest  --}}
+<auth></auth>

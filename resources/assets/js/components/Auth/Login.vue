@@ -5,8 +5,8 @@
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="favoritesModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <form class="form-horizontal" role="form">
-                        <div class="modal-body">
+                    <div class="modal-body">
+                        <form class="form-horizontal" role="form">
 
                             <template v-for="input in inputs">
                                 <div class="form-group" :class="{'has-error': input.hasErrors }">
@@ -35,12 +35,14 @@
                                     <a class="btn btn-link" href="">Забыли пароль?</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" @click.prevent="loginPost" class="btn btn-primary">Войти</button>
-                            <button type="button" class="btn btn-default" id="btnclose" data-dismiss="modal">Close</button>
-                        </div>
-                    </form>
+                        </form>
+
+                        <sms v-if="smsSend"></sms>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" @click.prevent="loginPost" class="btn btn-primary">Войти</button>
+                        <button type="button" class="btn btn-default" id="btnclose" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -50,7 +52,10 @@
 <script>
 import formDataMixin from './../mixins/formData'
 
+import Sms from './Sms.vue'
+
 export default {
+    components: { Sms },
     mixins: [formDataMixin],
     data() {
         return {
@@ -58,11 +63,14 @@ export default {
                 { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Телефон", attr: "phone" },
                 { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Пароль", attr: "password" }
             ],
-            remember: true
+            remember: true,
+            smsSend: false
         }
     },
     methods: {
         loginPost() {
+            this.smsSend = true;
+
             this.clearErrors()
             axios.post('login', this.getFormData())
                 .then((response) => {
