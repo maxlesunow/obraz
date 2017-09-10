@@ -24,7 +24,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'is_verification', 'role', 'verification', 'verification_id'
     ];
 
     public function full_name(){
@@ -46,10 +46,4 @@ class User extends Authenticatable
 
         return $this->belongsTo('App\Verification');
     }
-
-    public function hasRole()
-    {
-      return $this->role;
-    }
-
 }
