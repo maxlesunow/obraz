@@ -7,6 +7,7 @@ use App\Verification;
 use App\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Auth\Events\Registered;
@@ -63,7 +64,7 @@ class RegisterController extends Controller
     //Отправка кода и письма после регистрации
     protected function registered(Request $request, $user)
     {
-        return view('site.auth.verification', compact('user'));
+        return Response::json($user);
     }
 
     /**
