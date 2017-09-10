@@ -51,6 +51,7 @@
 import formDataMixin from './../mixins/formData'
 
 export default {
+    mixins: [formDataMixin],
     data() {
         return {
             inputs: [

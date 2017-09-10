@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 33);
+/******/ 	return __webpack_require__(__webpack_require__.s = 34);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -39406,14 +39406,49 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 /* 33 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-__webpack_require__(34);
-module.exports = __webpack_require__(49);
+module.exports = {
+    methods: {
+        getFormData: function getFormData() {
+            return _.reduce(this.inputs, function (store, input, i) {
+                store[input.attr] = input.data;
+                return store;
+            }, {});
+        },
+        clearErrors: function clearErrors() {
+            var _this = this;
 
+            _.each(this.inputs, function (value, i) {
+                _this.inputs[i].hasErrors = '';
+                _this.inputs[i].errorMessage = null;
+            });
+        },
+        setErrors: function setErrors(err) {
+            var _this2 = this;
+
+            if (!err) return;
+
+            _.each(this.inputs, function (value, i) {
+                _this2.inputs[i].errorMessage = _.isArray(err[value.attr]) ? err[value.attr][0] : err[value.attr];
+                if (_this2.inputs[i].errorMessage) {
+                    _this2.inputs[i].hasErrors = true;
+                }
+            });
+        }
+    }
+};
 
 /***/ }),
 /* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(35);
+module.exports = __webpack_require__(47);
+
+
+/***/ }),
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -39423,7 +39458,7 @@ module.exports = __webpack_require__(49);
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(35);
+__webpack_require__(36);
 
 window.Vue = __webpack_require__(31);
 
@@ -39433,18 +39468,18 @@ window.Vue = __webpack_require__(31);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', __webpack_require__(37));
+Vue.component('example', __webpack_require__(38));
 
-Vue.component('register', __webpack_require__(40));
+Vue.component('register', __webpack_require__(41));
 
-Vue.component('login', __webpack_require__(46));
+Vue.component('login', __webpack_require__(44));
 
 var app = new Vue({
   el: '#app'
 });
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -39459,7 +39494,7 @@ window._ = __webpack_require__(10);
 try {
   window.$ = window.jQuery = __webpack_require__(8);
 
-  __webpack_require__(36);
+  __webpack_require__(37);
 } catch (e) {}
 
 /**
@@ -39502,7 +39537,7 @@ if (token) {
 // });
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports) {
 
 /*!
@@ -41885,15 +41920,15 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(32)(
   /* script */
-  __webpack_require__(38),
-  /* template */
   __webpack_require__(39),
+  /* template */
+  __webpack_require__(40),
   /* styles */
   null,
   /* scopeId */
@@ -41925,7 +41960,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -41954,7 +41989,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -41983,15 +42018,15 @@ if (false) {
 }
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(32)(
   /* script */
-  __webpack_require__(41),
+  __webpack_require__(42),
   /* template */
-  __webpack_require__(45),
+  __webpack_require__(43),
   /* styles */
   null,
   /* scopeId */
@@ -42023,12 +42058,12 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_formData__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_formData__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_formData___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__mixins_formData__);
 //
 //
@@ -42127,44 +42162,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 42 */,
-/* 43 */,
-/* 44 */
-/***/ (function(module, exports) {
-
-module.exports = {
-    methods: {
-        getFormData: function getFormData() {
-            return _.reduce(this.inputs, function (store, input, i) {
-                store[input.attr] = input.data;
-                return store;
-            }, {});
-        },
-        clearErrors: function clearErrors() {
-            var _this = this;
-
-            _.each(this.inputs, function (value, i) {
-                _this.inputs[i].hasErrors = '';
-                _this.inputs[i].errorMessage = null;
-            });
-        },
-        setErrors: function setErrors(err) {
-            var _this2 = this;
-
-            if (!err) return;
-
-            _.each(this.inputs, function (value, i) {
-                _this2.inputs[i].errorMessage = _.isArray(err[value.attr]) ? err[value.attr][0] : err[value.attr];
-                if (_this2.inputs[i].errorMessage) {
-                    _this2.inputs[i].hasErrors = true;
-                }
-            });
-        }
-    }
-};
-
-/***/ }),
-/* 45 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -42354,15 +42352,15 @@ if (false) {
 }
 
 /***/ }),
-/* 46 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(32)(
   /* script */
-  __webpack_require__(47),
+  __webpack_require__(45),
   /* template */
-  __webpack_require__(48),
+  __webpack_require__(46),
   /* styles */
   null,
   /* scopeId */
@@ -42394,12 +42392,12 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 47 */
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_formData__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_formData__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_formData___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__mixins_formData__);
 //
 //
@@ -42454,6 +42452,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_formData___default.a],
     data: function data() {
         return {
             inputs: [{ data: '', hasErrors: '', errorMessage: null, type: "text", name: "Телефон", attr: "phone" }, { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Пароль", attr: "password" }],
@@ -42479,7 +42478,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 48 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -42659,7 +42658,7 @@ if (false) {
 }
 
 /***/ }),
-/* 49 */
+/* 47 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
