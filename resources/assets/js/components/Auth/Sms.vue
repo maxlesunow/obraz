@@ -4,12 +4,11 @@
             <form class="form-horizontal" role="form">
 
                 <template v-for="input in inputs">
-                    <div v-if="input.show" class="form-group" :class="{'has-error': input.hasErrors }">
+                    <div class="form-group" :class="{'has-error': input.hasErrors }">
                         <label :for="input.attr" class="col-md-4 control-label">{{input.name}}</label>
 
                         <div class="col-md-6">
-                            <input v-if="input.type === 'text'" type="text" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" required autofocus>
-                            <input v-if="input.type === 'password'" type="password" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" required autofocus>
+                            <input type="text" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" required autofocus>
                             
                             <span v-if="input.hasErrors" class="help-block">
                                 <strong>{{input.errorMessage}}</strong>
