@@ -57,13 +57,13 @@ class RegisterController extends Controller
         event(new Registered($user = $this->create($request->all())));
 
         return $this->registered($request, $user)
-                        ?: redirect($this->redirectPath());
+                        ?: response()->json($user, 200);
     }
 
     //Отправка кода и письма после регистрации
     protected function registered(Request $request, $user)
     {
-        return Response::json($user);
+//        return Response::json($user);
     }
 
     /**

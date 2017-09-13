@@ -15,6 +15,19 @@
                     @endif
 
                     You are logged in!
+
+                        @if(Auth::user())
+                            <br>
+                        {{ Auth::user()->full_name() }}
+
+                            <li><a href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                       document.getElementById('logout-form').submit();">
+                                    <i class="icon-switch2"></i> Выйти</a></li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                            @endif
                 </div>
             </div>
         </div>
