@@ -10,13 +10,9 @@ use Illuminate\Support\MessageBag;
 
 class VerificationController extends Controller
 {
-    public function index($id){
-
-        $user = User::findOrFail($id);
-        return view('site.auth.verification', compact('user'));
-    }
-
     public function update($id, Request $request){
+
+//        dd($request);
 
         $user = User::findOrFail($id);
 
@@ -31,7 +27,7 @@ class VerificationController extends Controller
             // add your error messages:
             $errors->add('code', 'Слишком много попыток. Попробуйте позже');
 
-            return response(view('site.auth.verification', compact('user', 'errors')), 400);
+            return response()->json($errors, 422);
 
         }
         elseif($user->verification->code != $request->input('code')) {
@@ -40,7 +36,8 @@ class VerificationController extends Controller
 
             // add your error messages:
             $errors->add('code', 'СМС код не верный');
-            return view('site.auth.verification', compact('user', 'errors'));
+
+            return response()->json($errors, 422);
         }
         elseif ($user->verification->date_expire < Carbon::now()){
 
@@ -49,7 +46,8 @@ class VerificationController extends Controller
             // add your error messages:
             $errors->add('code', 'Срок действия кода истек');
 
-            return view('site.auth.verification', compact('user', 'errors'));
+            return response()->json($errors, 422);
+
         }
         else{
 
@@ -60,7 +58,5 @@ class VerificationController extends Controller
 
             return redirect('/home');
         }
-
-        return view('site.auth.verification', compact('user'));
     }
 }
