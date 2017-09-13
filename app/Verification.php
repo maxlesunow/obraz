@@ -15,7 +15,7 @@ class Verification extends Model
     }
 
     protected $fillable = [
-        'code', 'wrong_pass', 'date_expire',
+        'code', 'wrong_pass', 'date_expire'
     ];
 
     protected function generateCode(){
@@ -25,4 +25,12 @@ class Verification extends Model
         }
         return $code;
     }
+
+
+    public function reGenerateCode(){
+        $this->code = $this->generateCode();
+        $this->wrong_pass = 0;
+        $this->date_expire = Carbon::now()->addMinute(5);
+    }
+
 }
