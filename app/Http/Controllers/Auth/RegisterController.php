@@ -32,7 +32,6 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -52,6 +51,7 @@ class RegisterController extends Controller
     //Регистрация
     public function register(Request $request)
     {
+        dd($request);
         $this->validator($request->all())->validate();
 
         event(new Registered($user = $this->create($request->all())));
