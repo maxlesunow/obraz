@@ -15,7 +15,7 @@
                                     <div class="col-md-6">
                                         <input v-if="input.type === 'text'" type="text" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" :disabled="input.disabled" required autofocus>
                                         <input v-if="input.type === 'password'" type="password" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" :disabled="input.disabled" required autofocus>
-                                        <input v-if="input.type === 'phone'" type="text" v-input-mask data-inputmask-mask="+7 (999) 999 99 99" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" :disabled="input.disabled" required autofocus>
+                                        <input v-if="input.type === 'phone'" type="text" v-input-mask data-inputmask-mask="+9 (999) 999 99 99" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" :disabled="input.disabled" required autofocus>
                                         
                                         <span v-if="input.hasErrors" class="help-block">
                                             <strong>{{input.errorMessage}}</strong>

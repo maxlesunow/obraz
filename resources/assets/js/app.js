@@ -18,7 +18,7 @@ window.Inputmask = require('inputmask');
 
 Vue.directive('input-mask', {
 	bind: function(el) {
-		new Inputmask().mask(el);
+		new Inputmask({ autoUnmask: true }).mask(el);
 	},
 });
 
