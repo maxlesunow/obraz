@@ -10,6 +10,7 @@
 
                             <div class="col-md-6">
                                 <input type="text" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" required autofocus>
+                                <input type="code" :id="input.attr" class="form-control" v-input-mask data-inputmask-mask="9999" :name="input.attr" v-model="input.data" required autofocus>
                                 
                                 <span v-if="input.hasErrors" class="help-block">
                                     <strong>{{input.errorMessage}}</strong>
@@ -38,7 +39,7 @@ export default {
     props: ['smsSend', 'smsVerify', 'user'],
     data: () => ({
         inputs: [
-            { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Код", attr: "code" },
+            { data: '', hasErrors: '', errorMessage: null, type: "code", name: "Код", attr: "code" },
         ]
     }),
     methods: {
