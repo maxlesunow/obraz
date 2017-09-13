@@ -11,7 +11,6 @@ use Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Auth\Events\Registered;
-use Carbon\Carbon;
 
 class RegisterController extends Controller
 {
@@ -115,27 +114,13 @@ class RegisterController extends Controller
 
         //Роль - пользователь
         $user->role()->associate(Role::firstOrCreate(['name' => 'user', 'name_ru' => 'Пользователь']));
+
         //Создаем верификацию
-        $user->verification()->associate($this->createVerification());
+        $user->verification()->associate(Verification::create());
 
         $user->save();
 
         return $user;
     }
 
-    protected function createVerification(){
-        return Verification::create([
-            'code' => $this->generateCode(),
-            'wrong_pass' => 0,
-            "date_expire" => Carbon::now()->addMinute(5),
-        ]);
-    }
-
-    protected function generateCode(){
-        $code ='';
-        for ($i = 0; $i < 4; $i++) {
-            $code .= rand(0, 9);
-        }
-        return $code;
-    }
 }
