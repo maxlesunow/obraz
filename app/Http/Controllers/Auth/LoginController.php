@@ -21,12 +21,6 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -57,6 +51,15 @@ class LoginController extends Controller
         return $credentials;
     }
 
+
+    protected function sendLoginResponse(Request $request)
+    {
+        $request->session()->regenerate();
+
+        $this->clearLoginAttempts($request);
+
+        return response()->json($this->guard()->user(), 200);
+    }
 
 
 

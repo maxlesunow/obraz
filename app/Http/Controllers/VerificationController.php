@@ -16,6 +16,15 @@ class VerificationController extends Controller
 
         $user = User::findOrFail($id);
 
+        if($user->is_verification){
+            $errors = new MessageBag();
+
+            // add your error messages:
+            $errors->add('code', 'Номер телефона уже подтвержден!');
+
+            return response()->json($errors, 422);
+        }
+
         //Добавляем попытку к верифицации
         $user->verification->wrong_pass++;
         $user->verification->save();
@@ -56,7 +65,29 @@ class VerificationController extends Controller
 
             Auth::guard()->login($user);
 
-            return redirect('/home');
+            return response()->json($user, 200);
         }
+    }
+
+    public function sendVerificationCode($id, Request $request)
+    {
+        $user = User::findOrFail($id);
+
+        if($user->is_verification){
+            $errors = new MessageBag();
+
+            // add your error messages:
+            $errors->add('code', 'Номер телефона уже подтвержден!');
+
+            return response()->json($errors, 422);
+        }
+
+        $verification = $user->verification;
+        $verification->reGenerateCode();
+        $verification->save();
+
+        //Добавить отправку кода
+
+        return response()->json($user, 200);
     }
 }

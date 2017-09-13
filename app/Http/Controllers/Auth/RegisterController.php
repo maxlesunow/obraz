@@ -51,7 +51,6 @@ class RegisterController extends Controller
     //Регистрация
     public function register(Request $request)
     {
-        // dd($request);
         $this->validator($request->all())->validate();
 
         event(new Registered($user = $this->create($request->all())));
@@ -74,20 +73,14 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        $attributeNames = array(
-            'first_name' => 'Фамилия',
-            'cat' => 'Category',
-        );
 
         $validator = Validator::make($data, [
             'first_name' => 'required|string|min:2|max:255',
             'last_name' => 'required|string|min:2|max:255',
             'email' => 'string|max:255|email',
-            'phone' => 'required|string|max:255|unique:users',
+            'phone' => 'required|regex:/(7)[0-9]{10}/|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
-
-        $validator->setAttributeNames($attributeNames);
 
         return $validator;
 
