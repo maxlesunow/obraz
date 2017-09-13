@@ -8,6 +8,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+window.Inputmask = require('inputmask');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15,11 +16,15 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.directive('input-mask', {
+	bind: function(el) {
+		new Inputmask().mask(el);
+	},
+});
+
 Vue.component('example', require('./components/Example.vue'));
 
-Vue.component('register', require('./components/Register.vue'));
-
-Vue.component('login', require('./components/Login.vue'));
+Vue.component('auth', require('./components/Auth/Auth.vue'));
 
 const app = new Vue({
     el: '#app'
