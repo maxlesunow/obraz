@@ -1,13 +1,13 @@
 <template>
-    <div>
+    <div v-show="loaded">
         <template v-if="!isLogined">
-            <register @login="setLogin"></register>
-            <login @login="setLogin"></login>
+            <register @login="initialLogin"></register>
+            <login @login="initialLogin"></login>
         </template>
         <template v-else>
             <ul>
                 <li style="display: inline-block;"><a href="#">Личный кабинет</a></li>
-                <li style="display: inline-block;"><a href="#">Выйти</a></li>
+                <li style="display: inline-block;"><a href="#" @click.prevent="logout">Выйти</a></li>
             </ul>
         </template>
     </div>
@@ -17,16 +17,44 @@
 import Login from './Login.vue'
 import Register from './Register.vue'
 
+
 export default {
-  components: { Login, Register },
-  data: () => ({
-      isLogined: false
-  }),
-  methods: {
-      setLogin() {
-          this.isLogined = true
-      }
-  }
+    components: { Login, Register },
+    data: () => ({
+        loaded: false,
+        isLogined: false,
+        user: null
+    }),
+    methods: {
+        whoami(callback) {
+            axios.get('whoami')
+                .then((response) => {
+                    callback(response)
+                })
+                .catch(() => {
+                    callback()
+                })
+        },
+        logout() {
+            axios.post("logout")
+                .then((response) => {
+                    this.user = null
+                    this.isLogined = false
+                }) 
+        },
+        initialLogin() {
+            this.whoami((response) => {
+                this.loaded = true
+                this.user = response.data                
+                if (this.user) {
+                    this.isLogined = true
+                }
+            })
+        }
+    },
+    created () {
+        this.initialLogin()
+    }
 }
 </script>
 
