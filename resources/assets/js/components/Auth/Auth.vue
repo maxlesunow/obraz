@@ -18,15 +18,26 @@ import Login from './Login.vue'
 import Register from './Register.vue'
 
 export default {
-  components: { Login, Register },
-  data: () => ({
-      isLogined: false
-  }),
-  methods: {
-      setLogin() {
-          this.isLogined = true
-      }
-  }
+    components: { Login, Register },
+    data: () => ({
+        isLogined: false
+    }),
+    methods: {
+        setLogin() {
+            this.isLogined = true
+        }
+    },
+    created () {
+        axios.post('register', this.getFormData())
+            .then((response) => {
+                this.addedUser = response.data
+                this.smsSend = true
+
+                _.each(this.inputs, function(el, i) {
+                    el.disabled = true
+                })
+            })
+    }
 }
 </script>
 
