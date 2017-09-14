@@ -2,7 +2,7 @@
     <div style="display: inline-block;">
         <li><a href="#" data-toggle="modal" data-target="#loginModal">Войти</a></li>
 
-        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="favoritesModalLabel">
+        <div ref="vuemodal" class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="favoritesModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -42,7 +42,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="submit" @click.prevent="loginPost" class="btn btn-primary">Войти</button>
-                        <button type="button" class="btn btn-default" id="btnclose" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default" id="btnclose" data-dismiss="modal">Закрыть</button>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,8 @@ export default {
             this.clearErrors()
             axios.post('login', this.getFormData())
                 .then((response) => {
-                    // console.log(response);
+                    $(this.$refs.vuemodal).modal('hide');
+                    this.$emit("login")
                 })
                 .catch((data) => {
                     if (data.response.statusText === 'Unprocessable Entity') {

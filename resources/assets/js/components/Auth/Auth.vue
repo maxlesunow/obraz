@@ -6,8 +6,9 @@
         </template>
         <template v-else>
             <ul>
-                <li style="display: inline-block;"><a href="#">Личный кабинет</a></li>
-                <li style="display: inline-block;"><a href="#" @click.prevent="logout">Выйти</a></li>
+                <li v-if="isAdmin"><a href="#">Админка</a></li>
+                <li><a href="#">Личный кабинет</a></li>
+                <li><a href="#" @click.prevent="logout">Выйти</a></li>
             </ul>
         </template>
     </div>
@@ -23,6 +24,7 @@ export default {
     data: () => ({
         loaded: false,
         isLogined: false,
+        isAdmin: false,
         user: null
     }),
     methods: {
@@ -40,6 +42,7 @@ export default {
                 .then((response) => {
                     this.user = null
                     this.isLogined = false
+                    this.isAdmin = false
                 }) 
         },
         initialLogin() {
@@ -48,6 +51,9 @@ export default {
                 this.user = response.data                
                 if (this.user) {
                     this.isLogined = true
+                    if (this.user.role.name === "admin") {
+                        this.isAdmin = true
+                    }
                 }
             })
         }
@@ -58,6 +64,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+    ul li {
+        display: inline-block;
+    }
 </style>
