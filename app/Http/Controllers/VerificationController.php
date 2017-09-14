@@ -91,7 +91,7 @@ class VerificationController extends Controller
             $errors = new MessageBag();
 
             // add your error messages:
-            $errors->add('code', "Повторная отправка кода возможна через $diff секунд");
+            $errors->add('code', "Повторная отправка кода возможна через $diff сек");
 
             return response()->json($errors, 422);
 
