@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="panel panel-success clearfix" v-if="smsSend && !smsVerify">
+        <div class="panel panel-success clearfix" v-if="smsSend && !smsVerifyOrigin">
             <div class="panel-body">
                 <form class="form-horizontal" role="form">
 
@@ -24,7 +24,7 @@
                 </form>
             </div>
         </div>
-        <div v-if="smsVerify">
+        <div v-if="smsVerifyOrigin">
             <span>Смс успешно подтверждена</span>
         </div>
     </div>
@@ -40,7 +40,8 @@ export default {
     data: () => ({
         inputs: [
             { data: '', hasErrors: '', errorMessage: null, type: "code", name: "Код", attr: "code" },
-        ]
+        ],
+        smsVerifyOrigin: this.smsVerify
     }),
     methods: {
         resendSms() {
@@ -60,8 +61,8 @@ export default {
             this.clearErrors()
             axios.post(`verification/${this.user.id}`, this.getFormData())
                 .then((response) => {
-                    this.smsVerify = true
-                    this.$emit("update:smsVerify", this.smsVerify) // @see https://vuejs.org/v2/guide/components.html#sync-Modifier
+                    this.smsVerifyOrigin = true
+                    this.$emit("update:smsVerify", this.smsVerifyOrigin) // @see https://vuejs.org/v2/guide/components.html#sync-Modifier
                 })
                 .catch((data) => {
                     if (data.response.statusText === 'Unprocessable Entity') {
