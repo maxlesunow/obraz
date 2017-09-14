@@ -44,12 +44,20 @@ export default {
     }),
     methods: {
         resendSms() {
+            this.clearErrors()
             axios.post(`verification/send/${this.user.id}`)
                 .then((response) => {
                     // 
                 })
+                .catch((data) => {
+                    if (data.response.statusText === 'Unprocessable Entity') {
+                        var err = data.response && data.response.data
+                        this.setErrors(err)   
+                    }
+                })
         },
         verifySms() {
+            this.clearErrors()
             axios.post(`verification/${this.user.id}`, this.getFormData())
                 .then((response) => {
                     this.smsVerify = true

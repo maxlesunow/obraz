@@ -38,7 +38,7 @@
                             </div>
                         </form>
 
-                        <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" :user="addedUser"></sms>
+                        <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" :user="user"></sms>
 
                         <div v-if="smsSend">
                             <span>Ваша учетная запить не активирована. Для продолжения подтвердите телефон.</span>
@@ -84,8 +84,6 @@ export default {
             this.$emit("login")
         },
         loginPost() {
-            this.smsSend = true;
-
             this.clearErrors()
             axios.post('login', this.getFormData())
                 .then((response) => {
