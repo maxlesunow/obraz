@@ -38,11 +38,18 @@
                             </div>
                         </form>
 
-                        <sms v-if="smsSend"></sms>
+                        <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" :user="addedUser"></sms>
+
+                        <div v-if="smsSend">
+                            <span>Ваша учетная запить не активирована. Для продолжения подтвердите телефон.</span>
+                        </div>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer" v-if="!smsSend">
                         <button type="submit" @click.prevent="loginPost" class="btn btn-primary">Войти</button>
                         <button type="button" class="btn btn-default" id="btnclose" data-dismiss="modal">Закрыть</button>
+                    </div>
+                    <div class="modal-footer" v-if="smsVerify">
+                        <button type="button" class="btn btn-primary" @click.prevent="finishLogin">Войти</button>
                     </div>
                 </div>
             </div>
@@ -65,18 +72,29 @@ export default {
                 { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Пароль", attr: "password" }
             ],
             // remember: true,
-            smsSend: false
+            smsSend: false,
+            smsVerify: false,
+
+            user: null
         }
     },
     methods: {
+        finishLogin() {
+            $(this.$refs.vuemodal).modal('hide');
+            this.$emit("login")
+        },
         loginPost() {
             this.smsSend = true;
 
             this.clearErrors()
             axios.post('login', this.getFormData())
                 .then((response) => {
-                    $(this.$refs.vuemodal).modal('hide');
-                    this.$emit("login")
+                    this.user = response.data
+                    if (this.user.is_verification) {
+                        this.finishLogin()
+                    } else {
+                        this.smsSend = true
+                    }
                 })
                 .catch((data) => {
                     if (data.response.statusText === 'Unprocessable Entity') {
