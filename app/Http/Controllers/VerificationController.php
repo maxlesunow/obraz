@@ -83,6 +83,19 @@ class VerificationController extends Controller
         }
 
         $verification = $user->verification;
+
+        if(Carbon::now()->diffInSeconds($verification->updated_at) < 60 ){
+
+            $diff = 60 - Carbon::now()->diffInSeconds($verification->updated_at);
+
+            $errors = new MessageBag();
+
+            // add your error messages:
+            $errors->add('code', "Повторная отправка кода возможна через $diff секунд");
+
+            return response()->json($errors, 422);
+
+        }
         $verification->reGenerateCode();
         $verification->save();
 
