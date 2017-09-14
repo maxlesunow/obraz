@@ -61,7 +61,14 @@ class LoginController extends Controller
         return response()->json($this->guard()->user(), 200);
     }
 
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
 
+        $request->session()->invalidate();
+
+        return response()->json("OK", 200);
+    }
 
 
 }
