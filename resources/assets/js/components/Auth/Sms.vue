@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="panel panel-success clearfix" v-if="smsSend">
+        <div class="panel panel-success clearfix" v-if="smsSend && !smsVerify">
             <div class="panel-body">
                 <form class="form-horizontal" role="form">
 
@@ -19,8 +19,8 @@
                         </div>
                     </template>
 
-                    <button class="btn btn-success" @click.prevent="verifySms()">Подтвердить</button>
-                    <button class="btn btn-primary" @click.prevent="resendSms()">Отправить еще раз</button>
+                    <button class="btn btn-success" @click.prevent="verifySms">Подтвердить</button>
+                    <button class="btn btn-primary" @click.prevent="resendSms">Отправить еще раз</button>
                 </form>
             </div>
         </div>
@@ -44,12 +44,16 @@ export default {
     }),
     methods: {
         resendSms() {
-            // todo
+            axios.post(`verification/send/${this.user.id}`)
+                .then((response) => {
+                    // 
+                })
         },
         verifySms() {
             axios.post(`verification/${this.user.id}`, this.getFormData())
                 .then((response) => {
                     this.smsVerify = true
+                    this.$emit("update:smsVerify", this.smsVerify) // @see https://vuejs.org/v2/guide/components.html#sync-Modifier
                 })
                 .catch((data) => {
                     if (data.response.statusText === 'Unprocessable Entity') {

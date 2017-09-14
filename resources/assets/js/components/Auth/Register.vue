@@ -2,7 +2,7 @@
     <div style="display: inline-block;">
         <li><a href="#" data-toggle="modal" data-target="#registerModal" data-backdrop="static" data-keyboard="false">Зарегистрироваться</a></li>
         
-        <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="favoritesModalLabel">
+        <div ref="vuemodal" class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="favoritesModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -26,15 +26,15 @@
 
                         </form>
 
-                        <sms :sms-send="smsSend" :sms-verify="smsVerify" :user="addedUser"></sms>
+                        <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" :user="addedUser"></sms>
 
                     </div>
                     <div class="modal-footer" v-if="!smsSend">
-                        <button type="submit" class="btn btn-primary" @click.prevent="registerPost()">Регистрация</button>
+                        <button type="submit" class="btn btn-primary" @click.prevent="registerPost">Регистрация</button>
                         <button type="button" class="btn btn-default" id="btnclose" data-dismiss="modal">Закрыть</button>
                     </div>
                     <div class="modal-footer" v-if="smsVerify">
-                        <button type="button" class="btn btn-default" id="btnclose" data-dismiss="modal">Завершить регистрацию</button>
+                        <button type="button" class="btn btn-default" @click.prevent="finishRegister">Завершить регистрацию</button>
                     </div>
                 </div>
             </div>
@@ -85,6 +85,10 @@ export default {
                         this.setErrors(err)   
                     }
                 })
+        },
+        finishRegister() {
+            $(this.$refs.vuemodal).modal('hide');
+            this.$emit("login")
         }
     }
 }
