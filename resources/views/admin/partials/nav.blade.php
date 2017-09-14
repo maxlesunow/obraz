@@ -27,7 +27,7 @@
     </div>
 
     <ul class="nav navbar-nav navbar-right">
-        {{--<p class="navbar-text"><span class="label label-success">SMS: {{ $sms_balance }} Р - {{ $sms_limit }} шт</span></p>--}}
+        <p class="navbar-text"><span class="label label-success">SMS: {{ $sms_balance }} Р - {{ $sms_limit }} шт</span></p>
         {{--<p class="navbar-text"><span class="label label-info">Email: {{ $sms_balance }} Р - {{ $sms_limit }} шт</span></p>--}}
 
 

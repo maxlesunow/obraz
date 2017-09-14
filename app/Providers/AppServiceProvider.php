@@ -14,7 +14,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Schema::defaultStringLength(191);
+//        Schema::defaultStringLength(191);
+        view()->composer('admin.partials.nav', function ($view){
+            $SmsService = new \App\SmsService();
+            $sms_balance = $SmsService->getBalance();
+            $sms_limit = $SmsService->getLimit();
+
+            $view->with(compact('sms_balance', 'sms_limit'));
+        });
     }
 
     /**
