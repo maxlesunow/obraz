@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/whoami', 'WhoamiController@whoami');
 
+Route::get('/emailtest', 'MailController@sendVerificationCode');
+
 Route::post('/verification/{id}', 'VerificationController@update');
 Route::post('/verification/send/{id}', 'VerificationController@sendVerificationCode');
 
