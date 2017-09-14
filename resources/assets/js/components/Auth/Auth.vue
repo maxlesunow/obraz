@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-show="loaded">
         <template v-if="!isLogined">
             <register @login="setLogin"></register>
             <login @login="setLogin"></login>
@@ -20,22 +20,21 @@ import Register from './Register.vue'
 export default {
     components: { Login, Register },
     data: () => ({
-        isLogined: false
+        isLogined: false,
+        loaded: false,
+        user: null
     }),
-    methods: {
-        setLogin() {
-            this.isLogined = true
-        }
-    },
-    created () {
-        axios.post('register', this.getFormData())
+    beforeCreate () {
+        axios.get('whoami')
             .then((response) => {
-                this.addedUser = response.data
-                this.smsSend = true
-
-                _.each(this.inputs, function(el, i) {
-                    el.disabled = true
-                })
+                this.loaded = true
+                this.user = response.data
+                if (this.user) {
+                    this.isLogined = true
+                }
+            })
+            .catch((response) => {
+                this.loaded = true
             })
     }
 }
