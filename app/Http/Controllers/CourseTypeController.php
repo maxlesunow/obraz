@@ -40,4 +40,19 @@ class CourseTypeController extends Controller
         \Session::flash('success_message', 'Тип курса "' . $course_type->name . '" успешно обновлен');
         return redirect('admin/course/type/'.$id.'/edit');
     }
+
+    public function create()
+    {
+
+        return view('admin.course_type.create', compact('speaker'));
+    }
+
+    public function store(CourseTypeRequest $request)
+    {
+        $course_type = new CourseType($request->all());
+        $course_type->save();
+
+        \Session::flash('success_message', 'Тип курса "' . $course_type->name. '" успешно добавлен');
+        return redirect('admin/course/type');
+    }
 }
