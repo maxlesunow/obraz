@@ -52,5 +52,14 @@ class DatabaseSeeder extends Seeder
 
         //        Докладчики
         $this->call(SpeakerSeeder::class);
+
+        //        Группы курсов
+        $this->call(CourseGroupSeeder::class);
+
+        //        Типы курсов
+        $this->call(CourseTypeSeeder::class);
+
+        //        Курсы
+        $this->call(CourseSeeder::class);
     }
 }
