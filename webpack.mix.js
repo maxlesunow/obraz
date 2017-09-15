@@ -13,17 +13,17 @@ let mix = require('laravel-mix');
 
 mix
     //Site
-    .js('resources/assets/js/app.js', 'public/js')
-    .sass('resources/assets/sass/app.scss', 'public/css')
+    .js('resources/assets/js/site/app.js', 'public/js/app.js')
+    .sass('resources/assets/sass/site/app.scss', 'public/css/app.css')
 
     //AdminPanel
-    .js('resources/assets/admin/js/admin.js', 'public/js')
+    .js('resources/assets/js/admin/app.js', 'public/js/admin.js')
 
     .styles([
-        'resources/assets/admin/css/bootstrap.css',
-        'resources/assets/admin/css/core.css',
-        'resources/assets/admin/css/components.css',
-        'resources/assets/admin/css/icons/icomoon/styles.css'
+        'resources/assets/styles/admin/bootstrap.css',
+        'resources/assets/styles/admin/core.css',
+        'resources/assets/styles/admin/components.css',
+        'resources/assets/styles/admin/icons/icomoon/styles.css'
     ], 'public/css/admin.css')
 
-    .copyDirectory('resources/assets/admin/fonts', 'public/css/fonts');
+    .copyDirectory('resources/assets/fonts/admin', 'public/css/fonts');
