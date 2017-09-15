@@ -19,8 +19,8 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="{{ action ('UserController@indexAdmin') }}"><i class="icon-user-tie position-left"></i> Администраторы</a></li>
-                    {{--<li><a href="{{ action ('SiteController@index') }}"><i class="icon-iphone position-left"></i> Группы курсов</a></li>--}}
-                    {{--<li><a href="{{ action ('SiteController@index') }}"><i class="icon-envelop2 position-left"></i> Типы курсов</a></li>--}}
+                    <li><a href="{{ action ('CourseGroupController@index') }}"><i class="icon-make-group position-left"></i> Группы курсов</a></li>
+                    <li><a href="{{ action ('CourseTypeController@index') }}"><i class="icon-grid5 position-left"></i> Типы курсов</a></li>
                 </ul>
             </li>
         </ul>

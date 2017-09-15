@@ -3,7 +3,7 @@
 @section('content')
     <div class="panel panel-flat">
         <div class="panel-heading">
-            <h4 class="panel-title">Список администраторов<a class="heading-elements-toggle"><i class="icon-more"></i></a>
+            <h4 class="panel-title">Список типов курсов<a class="heading-elements-toggle"><i class="icon-more"></i></a>
             </h4>
         </div>
 
@@ -17,7 +17,7 @@
                     </label>
                 </div>
                 <div class="dt-buttons">
-                    {{--<a class="btn bg-green" tabindex="0" href="{{ action ('UserController@create') }}">--}}
+                    <a class="btn bg-green" tabindex="0" href="{{ action ('CourseTypeController@create') }}">
                         <span><i class="icon-add position-left"></i> Добавить</span>
                     </a>
                     <a class="btn bg-grey" tabindex="0" aria-controls="DataTables_Table_1" href="#">
@@ -34,13 +34,13 @@
                                     <input type="checkbox" class="styled" id="checked_all">
                                 </div>
                             </th>
-                            <th>ФИО</th>
-                            <th>Телефон</th>
+                            <th>Название</th>
+                            <th>Количество курсов</th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        @foreach($users as $user)
+                        @foreach($course_types as $course_type)
                             <tr role="row" class="odd">
                                 <td>
                                     <div class="checker border-primary text-primary">
@@ -48,9 +48,9 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <a href="{{ action ('UserController@edit', $user->id) }}">{{$user->full_name()}}</a>
+                                    <a href="{{ action ('CourseTypeController@edit', $course_type->id) }}">{{$course_type->name}}</a>
                                 </td>
-                                <td>{{$user->phone}}</td>
+                                {{--<td>{{$course_type->phone}}</td>--}}
                             </tr>
                         @endforeach
                         </tbody>
@@ -58,9 +58,9 @@
                 </div>
                 <div class="datatable-footer">
                     <div class="dataTables_info" id="DataTables_Table_1_info" role="status" aria-live="polite">
-                        Всего: {{ $users->total() }}</div>
+                        Всего: {{ $course_types->total() }}</div>
                     <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_1_paginate">
-                        {{ $users->links() }}
+                        {{ $course_types->links() }}
                     </div>
                 </div>
             </div>
