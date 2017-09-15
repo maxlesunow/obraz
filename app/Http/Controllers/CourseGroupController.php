@@ -12,12 +12,6 @@ class CourseGroupController extends Controller
 {
     //
 
-    public function show()
-    {
-        $course_groups = CourseGroup::paginate(10);
-        return view('admin.course_group.index', compact('course_groups'));
-    }
-
     public function index()
     {
         $course_groups = CourseGroup::paginate(10);

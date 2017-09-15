@@ -4,7 +4,7 @@
 
         <ul class="nav navbar-nav">
             <li><a href="{{ action ('AdminController@index') }}"><i class="icon-address-book position-left"></i> Заявки</a></li>
-            <li><a href="{{ action ('AdminController@index') }}"><i class="icon-stack2 position-left"></i> Курсы</a></li>
+            <li><a href="{{ action ('CourseController@index') }}"><i class="icon-stack2 position-left"></i> Курсы</a></li>
             <li><a href="{{ action ('UserController@index') }}"><i class="icon-users4 position-left"></i> Пользователи</a></li>
             <li><a href="{{ action ('AdminController@index') }}"><i class="icon-credit-card position-left"></i> Оплаты</a></li>
             <li><a href="{{ action ('SpeakerController@index') }}"><i class="icon-profile position-left"></i> Докладчики</a></li>

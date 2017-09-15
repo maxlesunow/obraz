@@ -33,10 +33,15 @@ Route::group(['middleware' => 'role:admin', 'prefix' => 'admin'], function () {
     Route::get('/', 'AdminController@index');
 
     Route::resource('/user', 'UserController');
+
     Route::get('/user/admins', 'UserController@indexAdmin');
 
     Route::resource('/speaker', 'SpeakerController');
 
+    Route::resource('/course', 'CourseController');
+
     Route::resource('/course/group', 'CourseGroupController');
+
     Route::resource('/course/type', 'CourseTypeController');
+
 });
