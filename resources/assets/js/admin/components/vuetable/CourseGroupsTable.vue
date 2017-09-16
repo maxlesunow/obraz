@@ -9,7 +9,7 @@
                 
                 <template slot="row-link" scope="props">
                     <div>
-                        <a :href="'groups/' + props.rowData.id +'/edit'">{{props.rowData.name}}</a>
+                        <a :href="'group/' + props.rowData.id +'/edit'">{{props.rowData.name}}</a>
                     </div>
                 </template>
 

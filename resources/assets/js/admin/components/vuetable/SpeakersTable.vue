@@ -7,6 +7,12 @@
             <vuetable ref="vuetable" api-url="/api/speakers" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" 
                     :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData">
                 
+                <template slot="row-link" scope="props">
+                    <div>
+                        <a :href="'speaker/' + props.rowData.id +'/edit'">{{props.rowData.first_name}}</a>
+                    </div>
+                </template>
+
                 <template slot="custom-actions" scope="props">
                     <div class="custom-actions">
                         <button class="ui basic button" @click="onAction('view-item', props.rowData, props.rowIndex)"><i class="icon-split"></i></button>
@@ -44,7 +50,7 @@ export default {
                 dataClass: 'text-center',
             },
             {
-                name: 'first_name',
+                name: '__slot:row-link',
                 title: 'Имя',
                 sortField: 'first_name',
             },
