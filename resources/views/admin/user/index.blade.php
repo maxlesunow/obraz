@@ -5,7 +5,7 @@
         <div class="panel-heading">
             <h4 class="panel-title">Список пользователей<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
         </div>
-        <my-vuetable></my-vuetable>
+        <users-table></users-table>
     </div>
 @endsection
 

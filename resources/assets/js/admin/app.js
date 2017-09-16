@@ -15,7 +15,12 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('my-vuetable', require('./components/MyVuetable.vue'));
+Vue.component('users-table', require('./components/vuetable/users/VueTable.vue'));
+Vue.component('admins-table', require('./components/vuetable/admins/VueTable.vue'));
+Vue.component('speakers-table', require('./components/vuetable/speakers/VueTable.vue'));
+Vue.component('course-types-table', require('./components/vuetable/courseTypes/VueTable.vue'));
+Vue.component('course-groups-table', require('./components/vuetable/courseGroups/VueTable.vue'));
+Vue.component('courses-table', require('./components/vuetable/courses/VueTable.vue'));
 
 const app = new Vue({
     el: '#app'
