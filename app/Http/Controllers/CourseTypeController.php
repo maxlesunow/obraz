@@ -12,15 +12,10 @@ class CourseTypeController extends Controller
 {
     //
 
-    public function show()
-    {
-        $course_types = CourseType::paginate(10);
-        return view('admin.course_type.index', compact('course_types'));
-    }
-
     public function index()
     {
         $course_types = CourseType::paginate(10);
+
         return view('admin.course_type.index', compact('course_types'));
     }
 

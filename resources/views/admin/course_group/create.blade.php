@@ -8,7 +8,7 @@
 
         <div class="panel-body">
             {!! Form::open(['method' => 'POST', 'action' => 'CourseGroupController@store', 'class' => 'form-horizontal']) !!}
-            @include('admin.course_type.form')
+            @include('admin.course_group.form')
             {!! Form::close() !!}
         </div>
     </div>

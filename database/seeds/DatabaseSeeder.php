@@ -40,6 +40,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('123456'),
             'remember_token' => str_random(10),
             'role_id' => 1,
+            'is_verification' => true,
             'verification_id' => 1,
         ]);
 
