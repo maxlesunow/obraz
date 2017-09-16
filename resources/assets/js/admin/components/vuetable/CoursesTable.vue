@@ -4,13 +4,22 @@
             <filter-bar @filter:set="filterSet" @filter:reset="filterReset"></filter-bar>
         </div>
         <div class="datatable-scroll-wrap">
-            <vuetable ref="vuetable" api-url="/api/course/groups"
-                    :fields="fields" pagination-path="" :css="css.table" 
-                    :append-params="moreParams" 
-                    :sort-order="sortOrder" :multi-sort="true" 
-                    detail-row-component="my-detail-row" 
-                    @vuetable:cell-clicked="onCellClicked" 
-                    @vuetable:pagination-data="onPaginationData">
+            <vuetable ref="vuetable" api-url="/api/courses" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" 
+                    :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData">
+
+                <template slot="row-link" scope="props">
+                    <div>
+                        <a :href="'course/' + props.rowData.id +'/edit'">{{props.rowData.name}}</a>
+                    </div>
+                </template> 
+               
+                <template slot="custom-actions" scope="props">
+                    <div class="custom-actions">
+                        <button class="ui basic button" @click="onAction('view-item', props.rowData, props.rowIndex)"><i class="icon-split"></i></button>
+                        <button class="ui basic button" @click="onAction('edit-item', props.rowData, props.rowIndex)"> <i class="icon-pencil"></i></button>
+                    </div>
+                </template>
+            
             </vuetable>
         </div>
         <div class="datatable-footer">
@@ -27,15 +36,8 @@ import Vuetable from 'vuetable-2/src/components/Vuetable'
 import VuetablePagination from 'vuetable-2/src/components/VuetablePagination'
 import VuetablePaginationInfo from 'vuetable-2/src/components/VuetablePaginationInfo'
 
-import CustomActions from './CustomActions'
-import DetailRow from './DetailRow'
-
-import FilterBar  from './../FilterBar'
-import vuetablemixins  from './../vuetablemixins'
-
-Vue.component('custom-actions', CustomActions)
-Vue.component('my-detail-row', DetailRow)
-// Vue.component('filter-bar', FilterBar)
+import FilterBar  from './FilterBar'
+import vuetablemixins  from './vuetablemixins'
 
 export default {
     mixins: [ vuetablemixins ],
@@ -48,7 +50,7 @@ export default {
                 dataClass: 'text-center',
             },
             {
-                name: 'name',
+                name: '__slot:row-link',
                 title: 'Название',
                 sortField: 'name',
             },
@@ -61,7 +63,7 @@ export default {
             //     sortField: 'phone',
             // },
             {
-                name: '__component:custom-actions',
+                name: '__slot:custom-actions',
                 title: 'Actions',
                 titleClass: 'text-center',
                 dataClass: 'text-center'
@@ -73,6 +75,9 @@ export default {
         moreParams: {}
     }),
     methods: {
+        onAction() {
+
+        }
         //
     }
 }
