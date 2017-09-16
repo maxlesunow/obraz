@@ -50,14 +50,14 @@ export default {
                 dataClass: 'text-center',
             },
             {
-                name: 'full_name',
-                title: 'ФИО',
+                name: 'first_name',
+                title: 'Имя',
                 sortField: 'first_name',
             },
-            {
-                name: 'email',
-                sortField: 'email'
-            },
+            // {
+            //     name: 'email',
+            //     sortField: 'email'
+            // },
             {
                 name: 'phone',
                 sortField: 'phone',
@@ -70,7 +70,7 @@ export default {
             }
         ],
         sortOrder: [
-            { field: 'email', sortField: 'email', direction: 'asc' }
+            { field: 'first_name', sortField: 'first_name', direction: 'asc' }
         ],
         moreParams: {}
     }),
