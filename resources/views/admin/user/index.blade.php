@@ -3,6 +3,16 @@
 @section('content')
     <div class="panel panel-flat">
         <div class="panel-heading">
+            <h4 class="panel-title">Список 2<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
+        </div>
+        <my-vuetable></my-vuetable>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="panel panel-flat">
+        <div class="panel-heading">
             <h4 class="panel-title">Список пользователей<a class="heading-elements-toggle"><i class="icon-more"></i></a>
             </h4>
         </div>
@@ -13,7 +23,7 @@
                     <label>
                         <span>Поиск:</span>
                         <input type="search" class="" placeholder="Введите для поиска..."
-                               aria-controls="DataTables_Table_1">
+                            aria-controls="DataTables_Table_1">
                     </label>
                 </div>
                 <div class="dt-buttons">
@@ -24,55 +34,51 @@
                         <span><i class="icon-trash position-left"></i> Удалить</span>
                     </a>
                 </div>
-                <div class="datatable-scroll-wrap">
-                    <table class="table datatable-button-init-custom dataTable no-footer" id="DataTables_Table_1"
-                           role="grid" aria-describedby="DataTables_Table_1_info">
-                        <thead>
-                        <tr role="row">
-                            <th>
+            </div>
+            <div class="datatable-scroll-wrap">
+                <table class="table datatable-button-init-custom dataTable no-footer" id="DataTables_Table_1"
+                        role="grid" aria-describedby="DataTables_Table_1_info">
+                    <thead>
+                    <tr role="row">
+                        <th>
+                            <div class="checker border-primary text-primary">
+                                <input type="checkbox" class="styled" id="checked_all">
+                            </div>
+                        </th>
+                        <th>ФИО</th>
+                        <th>Телефон</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    @foreach($users as $user)
+                        <tr role="row" class="odd">
+                            <td>
                                 <div class="checker border-primary text-primary">
-                                    <input type="checkbox" class="styled" id="checked_all">
+                                    <input type="checkbox" class="styled check_item">
                                 </div>
-                            </th>
-                            <th>ФИО</th>
-                            <th>Телефон</th>
+                            </td>
+                            <td>
+                                <a href="{{ action ('UserController@edit', $user->id) }}">{{$user->full_name()}}</a>
+                            </td>
+                            <td>{{$user->phone}}</td>
                         </tr>
-                        </thead>
-                        <tbody>
-
-                        @foreach($users as $user)
-                            <tr role="row" class="odd">
-                                <td>
-                                    <div class="checker border-primary text-primary">
-                                        <input type="checkbox" class="styled check_item">
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="{{ action ('UserController@edit', $user->id) }}">{{$user->full_name()}}</a>
-                                </td>
-                                <td>{{$user->phone}}</td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                </div>
-                <div class="datatable-footer">
-                    <div class="dataTables_info" id="DataTables_Table_1_info" role="status" aria-live="polite">
-                        Всего: {{ $users->total() }}</div>
-                    <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_1_paginate">
-                        {{ $users->links() }}
-                    </div>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+            <div class="datatable-footer">
+                <div class="dataTables_info" id="DataTables_Table_1_info" role="status" aria-live="polite">
+                    Всего: {{ $users->total() }}</div>
+                <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_1_paginate">
+                    {{ $users->links() }}
                 </div>
             </div>
         </div>
+    </div>
+    
 
-        <div class="panel panel-flat">
-            <div class="panel-heading">
-                <h4 class="panel-title">Список 2<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
-            </div>
-            <my-vuetable></my-vuetable>
-        </div>
-    </div>@endsection
+@endsection
 
 @section('scripts')
     <script>

@@ -26,13 +26,8 @@
 <script>
 export default {
     props: {
-        rowData: {
-            type: Object,
-            required: true
-        },
-        rowIndex: {
-            type: Number
-        }
+        rowData: { type: Object, required: true },
+        rowIndex: { type: Number }
     },
     methods: {
         onClick(event) {

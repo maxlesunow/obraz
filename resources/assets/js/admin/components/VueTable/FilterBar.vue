@@ -13,24 +13,22 @@
 
 <script>
 export default {
-    data() {
-        return {
-            filterText: ''
-        }
-    },
+    data: () => ({
+        filterText: ''
+    }),
     methods: {
         doFilter() {
-            this.$emit('filter-set', this.filterText)
+            this.$emit('filter:set', this.filterText)
         },
         resetFilter() {
             this.filterText = ''
-            this.$emit('filter-reset')
+            this.$emit('filter:reset')
         }
     }
 }
 </script>
 <style>
-.filter-bar {
-    padding: 10px;
-}
+    .filter-bar {
+        padding: 10px;
+    }
 </style>
