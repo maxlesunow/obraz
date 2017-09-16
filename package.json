@@ -21,8 +21,8 @@
     "dependencies": {
         "bootstrap": "^3.3.7",
         "inputmask": "^3.3.8",
+        "jquery.uniform": "^4.2.0",
         "select2": "^4.0.3",
-        "switchery": "0.0.2",
-        "uniform": "^0.5.1"
+        "switchery": "0.0.2"
     }
 }

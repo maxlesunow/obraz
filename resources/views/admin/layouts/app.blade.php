@@ -14,6 +14,7 @@
 
 </head>
     <body>
+        <div id="app">
             <!-- Main navbar -->
             @include('admin.partials.nav')
             <!-- /main navbar -->
@@ -41,7 +42,8 @@
                 @yield('content')
             </div>
             @include('admin.layouts.footer')
-
+        </div>
+        
         <!-- Scripts -->
         <script src="{{ asset('js/admin.js') }}"></script>
         @yield('scripts')
