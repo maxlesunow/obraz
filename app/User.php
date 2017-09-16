@@ -30,11 +30,6 @@ class User extends Authenticatable
         'password', 'remember_token', 'verification', 'verification_id', 'role_id'
     ];
 
-    public function full_name(){
-
-        return join(' ', array($this->last_name, $this->first_name, $this->middle_name));
-    }
-
     public function role(){
 
         return $this->belongsTo('App\Role');

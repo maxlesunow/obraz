@@ -5,7 +5,7 @@
         <div class="col-md-6">
             <div class="panel panel-flat">
                 <div class="panel-heading">
-                    <h4 class="panel-title">Пользователь:  {{$user->full_name()}}<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
+                    <h4 class="panel-title">Пользователь:  {{$user->full_name}}<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
                 </div>
 
                 <div class="panel-body">

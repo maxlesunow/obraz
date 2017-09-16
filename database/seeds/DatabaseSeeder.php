@@ -62,5 +62,14 @@ class DatabaseSeeder extends Seeder
 
         //        Курсы
         $this->call(CourseSeeder::class);
+
+        //        Курсы - Докладчики
+        for ($i = 1; $i <= 100; $i++) {
+            DB::table('course_speaker')->insert([
+                'speaker_id' => rand(1,100),
+                'course_id' => $i
+            ]);
+        }
+
     }
 }
