@@ -50,4 +50,40 @@ class CourseTypeController extends Controller
         \Session::flash('success_message', 'Тип курса "' . $course_type->name. '" успешно добавлен');
         return redirect('admin/course/type');
     }
+
+    public function getCourseTypes(Request $request)
+    {
+
+        $query = CourseType::query();
+
+        //Сортировка
+        if (request()->has('sort')) {
+            // Мультисортировка
+            $sorts = explode(',', request()->sort);
+            foreach ($sorts as $sort) {
+                list($sortCol, $sortDir) = explode('|', $sort);
+                $query = $query->orderBy($sortCol, $sortDir);
+            }
+        } else {
+            $query = $query->orderBy('id', 'asc');
+        }
+
+        //Фильтрация
+        if ($request->exists('filter')) {
+            $query->where(function($q) use($request) {
+                $value = "%{$request->filter}%";
+                $q->where('name', 'like', $value);
+            });
+        }
+        //Пагинация
+        $perPage = request()->has('per_page') ? (int) request()->per_page : null;
+        $pagination = $query->paginate($perPage);
+        $pagination->appends([
+            'sort' => request()->sort,
+            'filter' => request()->filter,
+            'per_page' => request()->per_page
+        ]);
+
+        return response()->json($pagination);
+    }
 }

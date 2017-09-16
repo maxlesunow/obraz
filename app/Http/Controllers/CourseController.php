@@ -54,7 +54,7 @@ class CourseController extends Controller
     public function getCourses(Request $request)
     {
 
-        $query = Course->newQuery();
+        $query = Course::query();
 
         //Сортировка
         if (request()->has('sort')) {
@@ -65,15 +65,16 @@ class CourseController extends Controller
                 $query = $query->orderBy($sortCol, $sortDir);
             }
         } else {
-//            $query = $query->orderBy('id', 'asc');
+            $query = $query->orderBy('id', 'asc');
         }
 
         //Фильтрация
         if ($request->exists('filter')) {
             $query->where(function($q) use($request) {
                 $value = "%{$request->filter}%";
-                $q->where('name', 'like', $value)
-                    ->orWhere('cost', 'like', $value);
+                $q->where('first_name', 'like', $value)
+                    ->orWhere('last_name', 'like', $value)
+                    ->orWhere('middle_name', 'like', $value);
             });
         }
         //Пагинация
