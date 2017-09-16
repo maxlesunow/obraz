@@ -4,7 +4,7 @@
             <filter-bar @filter:set="filterSet" @filter:reset="filterReset"></filter-bar>
         </div>
         <div class="datatable-scroll-wrap">
-            <vuetable ref="vuetable" api-url="http://vuetable.ratiw.net/api/users" 
+            <vuetable ref="vuetable" api-url="/api/users"
                     :fields="fields" pagination-path="" :css="css.table" 
                     :append-params="moreParams" 
                     :sort-order="sortOrder" :multi-sort="true" 

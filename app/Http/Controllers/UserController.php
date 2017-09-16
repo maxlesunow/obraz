@@ -22,9 +22,8 @@ class UserController extends Controller
 
     public function index()
     {
-        $role_id = Role::where('name', '=', 'user')->firstOrFail()->id;
-        $users = User::where('role_id', '=', $role_id)->paginate(10);
-        return view('admin.user.index', compact('users'));
+
+        return view('admin.user.index');
     }
 
     public function indexAdmin()
@@ -56,5 +55,45 @@ class UserController extends Controller
 
         \Session::flash('success_message', 'Пользователь "' . $user->full_name(). '" успешно обновлен');
         return redirect('admin/user/'.$id.'/edit');
+    }
+
+
+    public function getUsers(Request $request)
+    {
+        $role_id = Role::where('name', '=', 'user')->firstOrFail()->id;
+
+        $query = User::where('role_id', '=', $role_id);
+
+        //Сортировка
+        if (request()->has('sort')) {
+            // Мультисортировка
+            $sorts = explode(',', request()->sort);
+            foreach ($sorts as $sort) {
+                list($sortCol, $sortDir) = explode('|', $sort);
+                $query = $query->orderBy($sortCol, $sortDir);
+            }
+        } else {
+            $query = $query->orderBy('id', 'asc');
+        }
+
+        //Фильтрация
+        if ($request->exists('filter')) {
+            $query->where(function($q) use($request) {
+                $value = "%{$request->filter}%";
+                $q->where('first_name', 'like', $value)
+                    ->orWhere('phone', 'like', $value)
+                    ->orWhere('email', 'like', $value);
+            });
+        }
+        //Пагинация
+        $perPage = request()->has('per_page') ? (int) request()->per_page : null;
+        $pagination = $query->paginate($perPage);
+        $pagination->appends([
+            'sort' => request()->sort,
+            'filter' => request()->filter,
+            'per_page' => request()->per_page
+        ]);
+
+        return response()->json($pagination);
     }
 }

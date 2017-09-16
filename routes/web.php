@@ -45,3 +45,9 @@ Route::group(['middleware' => 'role:admin', 'prefix' => 'admin'], function () {
     Route::resource('/course/type', 'CourseTypeController');
 
 });
+
+Route::group(['middleware' => 'role:admin', 'prefix' => 'api'], function () {
+
+    Route::get('/users', 'UserController@getUsers');
+
+});
