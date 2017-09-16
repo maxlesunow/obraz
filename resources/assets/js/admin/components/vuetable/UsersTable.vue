@@ -4,13 +4,16 @@
             <filter-bar @filter:set="filterSet" @filter:reset="filterReset"></filter-bar>
         </div>
         <div class="datatable-scroll-wrap">
-            <vuetable ref="vuetable" api-url="/api/course/types"
-                    :fields="fields" pagination-path="" :css="css.table" 
-                    :append-params="moreParams" 
-                    :sort-order="sortOrder" :multi-sort="true" 
-                    detail-row-component="my-detail-row" 
-                    @vuetable:cell-clicked="onCellClicked" 
-                    @vuetable:pagination-data="onPaginationData">
+            <vuetable ref="vuetable" api-url="/api/users" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" 
+                    :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData">
+                
+                <template slot="custom-actions" scope="props">
+                    <div class="custom-actions">
+                        <button class="ui basic button" @click="onAction('view-item', props.rowData, props.rowIndex)"><i class="icon-split"></i></button>
+                        <button class="ui basic button" @click="onAction('edit-item', props.rowData, props.rowIndex)"> <i class="icon-pencil"></i></button>
+                    </div>
+                </template>
+            
             </vuetable>
         </div>
         <div class="datatable-footer">
@@ -27,15 +30,8 @@ import Vuetable from 'vuetable-2/src/components/Vuetable'
 import VuetablePagination from 'vuetable-2/src/components/VuetablePagination'
 import VuetablePaginationInfo from 'vuetable-2/src/components/VuetablePaginationInfo'
 
-import CustomActions from './CustomActions'
-import DetailRow from './DetailRow'
-
-import FilterBar  from './../FilterBar'
-import vuetablemixins  from './../vuetablemixins'
-
-Vue.component('custom-actions', CustomActions)
-Vue.component('my-detail-row', DetailRow)
-// Vue.component('filter-bar', FilterBar)
+import FilterBar  from './FilterBar'
+import vuetablemixins  from './vuetablemixins'
 
 export default {
     mixins: [ vuetablemixins ],
@@ -48,31 +44,34 @@ export default {
                 dataClass: 'text-center',
             },
             {
-                name: 'name',
-                title: 'Название',
-                sortField: 'name',
+                name: 'full_name',
+                title: 'ФИО',
+                sortField: 'first_name',
             },
-            // {
-            //     name: 'email',
-            //     sortField: 'email'
-            // },
-            // {
-            //     name: 'phone',
-            //     sortField: 'phone',
-            // },
             {
-                name: '__component:custom-actions',
+                name: 'email',
+                sortField: 'email'
+            },
+            {
+                name: 'phone',
+                sortField: 'phone',
+            },
+            {
+                name: '__slot:custom-actions',
                 title: 'Actions',
                 titleClass: 'text-center',
                 dataClass: 'text-center'
             }
         ],
         sortOrder: [
-            { field: 'name', sortField: 'name', direction: 'asc' }
+            { field: 'email', sortField: 'email', direction: 'asc' }
         ],
         moreParams: {}
     }),
     methods: {
+        onAction (action, data, index) {
+            console.log('slot) action: ' + action, data.name, index)
+        }
         //
     }
 }
