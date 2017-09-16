@@ -19,19 +19,6 @@ module.exports = {
                     last: 'icon-last',
                 },
             },
-            // pagination: {
-            //     wrapperClass: 'pagination dataTables_paginate',
-            //     activeClass: 'active',
-            //     disabledClass: 'disabled',
-            //     pageClass: 'page',
-            //     linkClass: 'link',
-            //     icons: {
-            //         first: '',
-            //         prev: '',
-            //         next: '',
-            //         last: '',
-            //     },
-            // },
             icons: {
                 first: 'icon-step-backward',
                 prev: 'icon-chevron-left',
