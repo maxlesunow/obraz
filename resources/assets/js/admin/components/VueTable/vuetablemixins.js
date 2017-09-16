@@ -26,6 +26,9 @@ module.exports = {
                 last: 'icon-step-forward',
             },
         },
+        template: {
+            paginationInfo: 'Показано с {from} по {to} из {total} элементов'
+        },
         moreParams: {}
     }),
     methods: {

@@ -14,10 +14,8 @@
             </vuetable>
         </div>
         <div class="datatable-footer">
-            <vuetable-pagination-info ref="paginationInfo" class="pagination-info dataTables_info"></vuetable-pagination-info>
-            <vuetable-pagination ref="pagination" :css="css.pagination" 
-                    @vuetable-pagination:change-page="onChangePage">
-            </vuetable-pagination>
+            <vuetable-pagination-info ref="paginationInfo" class="pagination-info dataTables_info" :info-template="template.paginationInfo"></vuetable-pagination-info>
+            <vuetable-pagination ref="pagination" :css="css.pagination" @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
         </div>
     </div>
 </template>
@@ -50,18 +48,18 @@ export default {
                 dataClass: 'text-center',
             },
             {
-                name: 'full_name',
-                title: 'ФИО',
-                sortField: 'first_name',
+                name: 'name',
+                title: 'Название',
+                sortField: 'name',
             },
-            {
-                name: 'email',
-                sortField: 'email'
-            },
-            {
-                name: 'phone',
-                sortField: 'phone',
-            },
+            // {
+            //     name: 'email',
+            //     sortField: 'email'
+            // },
+            // {
+            //     name: 'phone',
+            //     sortField: 'phone',
+            // },
             {
                 name: '__component:custom-actions',
                 title: 'Actions',
@@ -70,7 +68,7 @@ export default {
             }
         ],
         sortOrder: [
-            { field: 'email', sortField: 'email', direction: 'asc' }
+            { field: 'name', sortField: 'name', direction: 'asc' }
         ],
         moreParams: {}
     }),

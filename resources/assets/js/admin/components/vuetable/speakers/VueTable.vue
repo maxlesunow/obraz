@@ -14,10 +14,8 @@
             </vuetable>
         </div>
         <div class="datatable-footer">
-            <vuetable-pagination-info ref="paginationInfo" class="pagination-info dataTables_info"></vuetable-pagination-info>
-            <vuetable-pagination ref="pagination" :css="css.pagination" 
-                    @vuetable-pagination:change-page="onChangePage">
-            </vuetable-pagination>
+            <vuetable-pagination-info ref="paginationInfo" class="pagination-info dataTables_info" :info-template="template.paginationInfo"></vuetable-pagination-info>
+            <vuetable-pagination ref="pagination" :css="css.pagination" @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
         </div>
     </div>
 </template>
