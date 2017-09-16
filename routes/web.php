@@ -50,4 +50,14 @@ Route::group(['middleware' => 'role:admin', 'prefix' => 'api'], function () {
 
     Route::get('/users', 'UserController@getUsers');
 
+    Route::get('/admins', 'UserController@getAdmins');
+
+    Route::get('/speakers', 'SpeakerController@getSpeakers');
+
+    Route::get('/course/types', 'CourseTypeController@getCourseTypes');
+
+    Route::get('/course/groups', 'CourseGroupController@getCourseGroups');
+
+    Route::get('/courses', 'CourseController@getCourses');
+
 });

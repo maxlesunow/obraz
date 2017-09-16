@@ -58,9 +58,9 @@ class UserController extends Controller
     }
 
 
-    public function getUsers(Request $request)
+    public function getUsers(Request $request, $type='user')
     {
-        $role_id = Role::where('name', '=', 'user')->firstOrFail()->id;
+        $role_id = Role::where('name', '=', $type)->firstOrFail()->id;
 
         $query = User::where('role_id', '=', $role_id);
 
@@ -81,6 +81,8 @@ class UserController extends Controller
             $query->where(function($q) use($request) {
                 $value = "%{$request->filter}%";
                 $q->where('first_name', 'like', $value)
+                    ->orWhere('last_name', 'like', $value)
+                    ->orWhere('middle_name', 'like', $value)
                     ->orWhere('phone', 'like', $value)
                     ->orWhere('email', 'like', $value);
             });
@@ -95,5 +97,10 @@ class UserController extends Controller
         ]);
 
         return response()->json($pagination);
+    }
+
+    public function getAdmins(Request $request)
+    {
+        return $this->getUsers($request, $type='admin');
     }
 }
