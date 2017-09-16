@@ -61,8 +61,10 @@ class SpeakerController extends Controller
             // Мультисортировка
             $sorts = explode(',', request()->sort);
             foreach ($sorts as $sort) {
-                list($sortCol, $sortDir) = explode('|', $sort);
-                $query = $query->orderBy($sortCol, $sortDir);
+                if($sort){
+                    list($sortCol, $sortDir) = explode('|', $sort);
+                    $query = $query->orderBy($sortCol, $sortDir);
+                }
             }
         } else {
             $query = $query->orderBy('id', 'asc');
