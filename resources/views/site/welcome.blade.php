@@ -17,7 +17,7 @@
                         You are logged in!
                             @if(Auth::user())
                                 <br>
-                                {{ Auth::user()->full_name() }}
+                                {{ Auth::user()->full_name }}
 
                                 <li><a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

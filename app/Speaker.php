@@ -17,7 +17,9 @@ class Speaker extends Model
         'meta_url',
     ];
 
-    public function full_name(){
+    protected $appends = ['full_name'];
+
+    public function getFullNameAttribute(){
 
         return join(' ', array($this->last_name, $this->first_name, $this->middle_name));
     }

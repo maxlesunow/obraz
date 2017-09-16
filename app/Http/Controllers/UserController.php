@@ -50,7 +50,7 @@ class UserController extends Controller
         $user->role()->associate(Role::findOrFail($request->input('role')));
         $user->save();
 
-        \Session::flash('success_message', 'Пользователь "' . $user->full_name(). '" успешно обновлен');
+        \Session::flash('success_message', 'Пользователь "' . $user->full_name. '" успешно обновлен');
         return redirect('admin/user/'.$id.'/edit');
     }
 

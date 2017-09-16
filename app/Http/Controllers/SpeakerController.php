@@ -31,7 +31,7 @@ class SpeakerController extends Controller
 
         $speaker->update($request->all());
 
-        \Session::flash('success_message', 'Докладчик "' . $speaker->full_name(). '" успешно обновлен');
+        \Session::flash('success_message', 'Докладчик "' . $speaker->full_name. '" успешно обновлен');
         return redirect('admin/speaker/'.$id.'/edit');
     }
 
@@ -47,7 +47,7 @@ class SpeakerController extends Controller
         $speaker->save();
 
 
-        \Session::flash('success_message', 'Докладчик "' . $speaker->full_name(). '" успешно добавлен');
+        \Session::flash('success_message', 'Докладчик "' . $speaker->full_name. '" успешно добавлен');
         return redirect('admin/speaker');
     }
 
