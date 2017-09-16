@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CourseRequest;
 
 use App\Course;
+use App\CourseType;
+use App\CourseGroup;
+use App\Speaker;
 
 class CourseController extends Controller
 {
@@ -22,7 +25,16 @@ class CourseController extends Controller
     public function edit($id)
     {
         $course = Course::findOrFail($id);
-        return view('admin.course.edit', compact('course'));
+
+        $course_types = CourseType::pluck('name', 'id');
+        $course_type = $course->course_type()->pluck('id');
+
+        $course_groups = CourseGroup::pluck('name', 'id');
+        $course_group = $course->course_group()->pluck('id');
+
+        $speakers = Speaker::pluck('first_name', 'id');
+
+        return view('admin.course.edit', compact('course', 'speakers', 'course_type', 'course_group', 'course_types', 'course_groups'));
     }
 
     public function update($id, CourseRequest $request)
