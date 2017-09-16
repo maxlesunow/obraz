@@ -5,7 +5,9 @@
         <div class="panel-heading">
             <h4 class="panel-title">Список пользователей<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
         </div>
-        <users-table></users-table>
+        <div class="panel-body">
+            <users-table></users-table>
+        </div>
     </div>
 @endsection
 

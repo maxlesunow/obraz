@@ -5,7 +5,9 @@
         <div class="panel-heading">
             <h4 class="panel-title">Список докладчиков<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
         </div>
-        <speakers-table></speakers-table>
+        <div class="panel-body">
+            <speakers-table></speakers-table>
+        </div>
     </div>
 @endsection
 

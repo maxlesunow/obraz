@@ -5,7 +5,9 @@
         <div class="panel-heading">
             <h4 class="panel-title">Список групп курсов<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
         </div>
-        <course-groups-table></course-groups-table>
+        <div class="panel-body">
+            <course-groups-table></course-groups-table>
+        </div>
     </div>
 @endsection
 

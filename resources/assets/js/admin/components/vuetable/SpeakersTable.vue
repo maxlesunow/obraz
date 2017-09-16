@@ -1,7 +1,16 @@
 <template>
     <div class="dataTables_wrapper no-footer">
         <div class="datatable-heading">
-            <filter-bar @filter:set="filterSet" @filter:reset="filterReset"></filter-bar>
+            <filter-bar class="dataTables_filter" @filter:set="filterSet" @filter:reset="filterReset"></filter-bar>
+
+            <div class="dt-buttons">
+                <button class="btn btn-primary">
+                    <span><i class="icon-add position-left"></i> Добавить</span>
+                </button>
+                <button class="btn btn-danger">
+                    <span><i class="icon-trash position-left"></i> Удалить</span>
+                </button>
+            </div>
         </div>
         <div class="datatable-scroll-wrap">
             <vuetable ref="vuetable" api-url="/api/speakers" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" 
