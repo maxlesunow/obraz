@@ -65,6 +65,13 @@
                 </div>
             </div>
         </div>
+
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h4 class="panel-title">Список 2<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
+            </div>
+            <my-vuetable></my-vuetable>
+        </div>
     </div>@endsection
 
 @section('scripts')
