@@ -32,9 +32,10 @@ Route::group(['middleware' => 'role:admin', 'prefix' => 'admin'], function () {
 
     Route::get('/', 'AdminController@index');
 
+    Route::get('/user/admins', 'UserController@indexAdmin');
+
     Route::resource('/user', 'UserController');
 
-    Route::get('/user/admins', 'UserController@indexAdmin');
 
     Route::resource('/speaker', 'SpeakerController');
 

@@ -29,9 +29,6 @@ class UserController extends Controller
     public function indexAdmin()
     {
 
-        $role_id = Role::where('name', '=', 'admin')->firstOrFail()->id;
-        $users = User::where('role_id', '=', $role_id)->paginate(10);
-
         return view('admin.user.indexAdmin', compact('users'));
     }
 
