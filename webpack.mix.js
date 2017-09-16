@@ -14,7 +14,7 @@ let mix = require('laravel-mix');
 mix
     //Site
     .js('resources/assets/js/site/app.js', 'public/js/app.js')
-    .sass('resources/assets/sass/site/app.scss', 'public/css/app.css')
+    .sass('resources/assets/styles/site/app.scss', 'public/css/app.css')
 
     //AdminPanel
     .js('resources/assets/js/admin/app.js', 'public/js/admin.js')
