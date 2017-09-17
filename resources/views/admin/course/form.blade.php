@@ -4,7 +4,7 @@
 
 @include('admin.partials.form.select', ['id' => 'course_group', 'name' => 'Группа:', 'value' => $course_group, 'values' => $course_groups])
 
-@include('admin.partials.form.multiselect', ['id' => 'course_group', 'name' => 'Докладичики:', 'value' => null, 'values' => $speakers])
+@include('admin.partials.form.multiselect', ['id' => 'speakers', 'name' => 'Докладичики:', 'value' => $course_speakers, 'values' => $speakers])
 
 @include('admin.partials.form.input', ['id' => 'address', 'name' => 'Адрес:'])
 

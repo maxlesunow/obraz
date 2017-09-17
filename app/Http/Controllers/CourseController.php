@@ -32,9 +32,10 @@ class CourseController extends Controller
         $course_groups = CourseGroup::pluck('name', 'id');
         $course_group = $course->course_group()->pluck('id');
 
-        $speakers = Speaker::pluck('first_name', 'id');
+        $speakers = Speaker::get()->pluck('full_name', 'id');
+        $course_speakers = $course->speakers()->pluck('id');
 
-        return view('admin.course.edit', compact('course', 'speakers', 'course_type', 'course_group', 'course_types', 'course_groups'));
+        return view('admin.course.edit', compact('course', 'speakers', 'course_type', 'course_group', 'course_types', 'course_groups', 'course_speakers'));
     }
 
     public function update($id, CourseRequest $request)
@@ -43,15 +44,30 @@ class CourseController extends Controller
 
         $course->update($request->all());
 
+        $course->course_type()->associate(CourseType::findOrFail($request->input('course_type')));
+        $course->course_group()->associate(CourseGroup::findOrFail($request->input('course_group')));
+        $course->save();
 
-        \Session::flash('success_message', 'Курса "' . $course->name . '" успешно обновлен');
+        $course->speakers()->sync($request->input('speakers'));
+
+
+        \Session::flash('success_message', 'Курс "' . $course->name . '" успешно обновлен');
         return redirect('admin/course/'.$id.'/edit');
     }
 
     public function create()
     {
 
-        return view('admin.course.create', compact('speaker'));
+        $course_types = CourseType::pluck('name', 'id');
+        $course_type = null;
+
+        $course_groups = CourseGroup::pluck('name', 'id');
+        $course_group = null;
+
+        $speakers = Speaker::get()->pluck('full_name', 'id');
+        $course_speakers = null;
+
+        return view('admin.course.create', compact('course', 'speakers', 'course_type', 'course_group', 'course_types', 'course_groups', 'course_speakers'));
     }
 
     public function store(CourseRequest $request)
@@ -86,9 +102,9 @@ class CourseController extends Controller
         if ($request->exists('filter')) {
             $query->where(function($q) use($request) {
                 $value = "%{$request->filter}%";
-                $q->where('first_name', 'like', $value)
-                    ->orWhere('last_name', 'like', $value)
-                    ->orWhere('middle_name', 'like', $value);
+                $q->where('first_name', 'ilike', $value)
+                    ->orWhere('last_name', 'ilike', $value)
+                    ->orWhere('middle_name', 'ilike', $value);
             });
         }
         //Пагинация

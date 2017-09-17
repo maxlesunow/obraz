@@ -79,11 +79,11 @@ class UserController extends Controller
         if ($request->exists('filter')) {
             $query->where(function($q) use($request) {
                 $value = "%{$request->filter}%";
-                $q->where('first_name', 'like', $value)
-                    ->orWhere('last_name', 'like', $value)
-                    ->orWhere('middle_name', 'like', $value)
-                    ->orWhere('phone', 'like', $value)
-                    ->orWhere('email', 'like', $value);
+                $q->where('first_name', 'ilike', $value)
+                    ->orWhere('last_name', 'ilike', $value)
+                    ->orWhere('middle_name', 'ilike', $value)
+                    ->orWhere('phone', 'ilike', $value)
+                    ->orWhere('email', 'ilike', $value);
             });
         }
         //Пагинация

@@ -74,8 +74,8 @@ class SpeakerController extends Controller
         if ($request->exists('filter')) {
             $query->where(function($q) use($request) {
                 $value = "%{$request->filter}%";
-                $q->where('name', 'like', $value)
-                    ->orWhere('cost', 'like', $value);
+                $q->where('name', 'ilike', $value)
+                    ->orWhere('cost', 'ilike', $value);
             });
         }
         //Пагинация
