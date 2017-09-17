@@ -71,5 +71,13 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
+        //        Типы оплаты
+        $this->call(PaymentTypeSeeder::class);
+
+        //        Заявки
+        $this->call(ReservationSeeder::class);
+
+        //        Оплаты
+        $this->call(PaymentSeeder::class);
     }
 }
