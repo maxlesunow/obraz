@@ -21,6 +21,8 @@ class Course extends Model
         'meta_url',
     ];
 
+    protected $with = ['course_type', 'course_group'];
+
     public function course_type(){
 
         return $this->belongsTo('App\CourseType');
