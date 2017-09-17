@@ -6,7 +6,7 @@
             <h4 class="panel-title">Список оплат<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
         </div>
         <div class="panel-body"></div>
-        <course-types-table></course-types-table>
+        <payments-table></payments-types-table>
     </div>
 @endsection
 

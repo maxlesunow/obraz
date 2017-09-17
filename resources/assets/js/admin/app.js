@@ -21,6 +21,7 @@ Vue.component('speakers-table', require('./components/vuetable/SpeakersTable.vue
 Vue.component('course-types-table', require('./components/vuetable/CourseTypesTable.vue'));
 Vue.component('course-groups-table', require('./components/vuetable/CourseGroupsTable.vue'));
 Vue.component('courses-table', require('./components/vuetable/CoursesTable.vue'));
+Vue.component('payments-table', require('./components/vuetable/PaymentsTable.vue'));
 Vue.component('payment-types-table', require('./components/vuetable/PaymentTypesTable.vue'));
 
 const app = new Vue({
