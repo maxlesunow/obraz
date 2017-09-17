@@ -1,6 +1,6 @@
 <template>
     <div class="dataTables_wrapper no-footer">
-        <div class="datatable-heading">
+        <div class="datatable-header">
             <filter-bar class="dataTables_filter" @filter:set="filterSet" @filter:reset="filterReset"></filter-bar>
 
             <div class="dataTables_length">

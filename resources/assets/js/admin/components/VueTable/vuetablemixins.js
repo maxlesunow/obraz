@@ -19,12 +19,12 @@ module.exports = {
                     last: 'icon-last',
                 },
             },
-            icons: {
-                first: 'icon-step-backward',
-                prev: 'icon-chevron-left',
-                next: 'icon-chevron-right',
-                last: 'icon-step-forward',
-            },
+            // icons: {
+            //     first: 'icon-step-backward',
+            //     prev: 'icon-chevron-left',
+            //     next: 'icon-chevron-right',
+            //     last: 'icon-step-forward',
+            // },
         },
         template: {
             paginationInfo: 'Показано с {from} по {to} из {total} элементов'
