@@ -59,10 +59,14 @@ class LoginController extends Controller
         $username = $request->get($this->username());
         $user = User::where($this->username(), $username)->first();
 
-        if ($user->is_verification == false) {
+        if($user){
 
-            return response()->json($user);
+            if ($user->is_verification == false) {
+
+                return response()->json($user);
+            }
         }
+
 
         // If the login attempt was unsuccessful we will increment the number of attempts
         // to login and redirect the user back to the login form. Of course, when this
@@ -70,6 +74,14 @@ class LoginController extends Controller
         $this->incrementLoginAttempts($request);
 
         return $this->sendFailedLoginResponse($request);
+    }
+
+    protected function validateLogin(Request $request)
+    {
+        $this->validate($request, [
+            $this->username() => 'required|regex:/(7)[0-9]{10}/',
+            'password' => 'required|string',
+        ]);
     }
 
     protected function credentials(Request $request)

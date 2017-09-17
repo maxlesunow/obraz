@@ -27,7 +27,7 @@ class UserRequest extends FormRequest
             'first_name' => 'required|string|min:2|max:255',
             'last_name' => 'required|string|min:2|max:255',
             'email' => 'string|max:255|email',
-            'phone' => 'required|unique:users|regex:/(7)[0-9]{10}/'
+            'phone' => 'required|regex:/(7)[0-9]{10}/'
             //
         ];
     }
