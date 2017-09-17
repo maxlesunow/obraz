@@ -12,6 +12,12 @@
                 </button>
             </div>
         </div>
+        <div class="row">
+            {{select2}}
+            <select2 class="col-xs-4" :local-data="select2Data" v-model="select2" @input="onInput">
+                <!-- <option value="0">Докладчик</option> -->
+            </select2>
+        </div>
         <div class="datatable-scroll-wrap">
             <vuetable ref="vuetable" api-url="/api/course/groups" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" 
                     :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData">
@@ -48,10 +54,14 @@ import VuetablePaginationInfo from 'vuetable-2/src/components/VuetablePagination
 import FilterBar  from './FilterBar'
 import vuetablemixins  from './vuetablemixins'
 
+import Select2 from './../Select2'
+
 export default {
     mixins: [ vuetablemixins ],
-    components: { FilterBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
+    components: { Select2, FilterBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
     data: () => ({
+        select2Data: [{id: 1, text: "1213"}, {id: 2, text: "2232"}],
+        select2: "0",
         fields: [
             {
                 name: '__checkbox',
@@ -84,6 +94,9 @@ export default {
         moreParams: {}
     }),
     methods: {
+        onInput(value) {
+            console.log(value)
+        },
         onAction() {
 
         }
