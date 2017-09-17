@@ -106,8 +106,13 @@ class ReservationController extends Controller
                   ->orWhere('users.last_name', 'ilike', $value)
                   ->orWhere('users.middle_name', 'ilike', $value)
                   ->orWhere('users.phone', 'ilike', $value)
-                  ->orWhere('courses.cost', 'ilike', $value)
                   ->orWhere('payment_types.name', 'ilike', $value);
+
+                if (is_numeric($request->filter))
+                {
+                    $q->orWhere('courses.cost', $value)
+                        ->orWhere('reservations.id', $value);
+                }
             });
         }
         //Пагинация
