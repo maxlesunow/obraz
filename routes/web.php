@@ -72,4 +72,6 @@ Route::group(['middleware' => 'role:admin', 'prefix' => 'api'], function () {
     Route::get('/payment/types', 'PaymentTypeController@getPaymentTypes');
 
     Route::get('/payments', 'PaymentController@getPayments');
+
+    Route::get('/reservations', 'ReservationController@getReservations');
 });
