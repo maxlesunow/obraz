@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
             'last_name' => 'Админ',
             'middle_name' => 'Админович',
             'email' => 'admin@admin.admin',
-            'phone' => '1234567890',
+            'phone' => '71234567890',
             'password' => bcrypt('123456'),
             'remember_token' => str_random(10),
             'role_id' => 1,
@@ -71,5 +71,13 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
+        //        Типы оплаты
+        $this->call(PaymentTypeSeeder::class);
+
+        //        Заявки
+        $this->call(ReservationSeeder::class);
+
+        //        Оплаты
+        $this->call(PaymentSeeder::class);
     }
 }

@@ -12,7 +12,7 @@
 
 @include('admin.partials.form.input', ['id' => 'created_at', 'name' => 'Дата регистрации:'])
 
-@include('admin.partials.form.select', ['id' => 'created_at', 'name' => 'Тип пользователя:', 'value' => $role, 'values' => $roles])
+@include('admin.partials.form.select', ['id' => 'role', 'name' => 'Тип пользователя:', 'value' => $role, 'values' => $roles])
 
 @include('admin.partials.form.submit')
 
