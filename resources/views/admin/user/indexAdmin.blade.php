@@ -5,9 +5,8 @@
         <div class="panel-heading">
             <h4 class="panel-title">Список администраторов<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
         </div>
-        <div class="panel-body">
-            <admins-table></admins-table>
-        </div>
+        <div class="panel-body"></div>
+        <admins-table></admins-table>
     </div>
 @endsection
 
