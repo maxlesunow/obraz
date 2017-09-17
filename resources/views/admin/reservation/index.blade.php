@@ -6,7 +6,7 @@
             <h4 class="panel-title">Список заявок<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
         </div>
         <div class="panel-body"></div>
-        <payment-types-table></payment-types-table>
+        <reservations-table></reservations-table>
     </div>
 @endsection
 
