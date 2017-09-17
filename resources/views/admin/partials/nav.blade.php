@@ -3,16 +3,13 @@
         {{--<a class="navbar-brand" href="/dashboard"><img src="/images/logo_light.png" alt=""></a>--}}
 
         <ul class="nav navbar-nav">
-            <li><a href="{{ action ('AdminController@index') }}"><i class="icon-address-book position-left"></i> Заявки</a></li>
+            <li><a href="{{ action ('ReservationController@index') }}"><i class="icon-address-book position-left"></i> Заявки</a></li>
             <li><a href="{{ action ('CourseController@index') }}"><i class="icon-stack2 position-left"></i> Курсы</a></li>
             <li><a href="{{ action ('UserController@index') }}"><i class="icon-users4 position-left"></i> Пользователи</a></li>
-            <li><a href="{{ action ('AdminController@index') }}"><i class="icon-credit-card position-left"></i> Оплаты</a></li>
+            <li><a href="{{ action ('PaymentController@index') }}"><i class="icon-credit-card position-left"></i> Оплаты</a></li>
             <li><a href="{{ action ('SpeakerController@index') }}"><i class="icon-profile position-left"></i> Докладчики</a></li>
             <li><a href="{{ action ('AdminController@index') }}"><i class="icon-info22 position-left"></i> Страницы</a></li>
             <li><a href="{{ action ('AdminController@index') }}"><i class="icon-question3 position-left"></i> Отзывы</a></li>
-            {{--<li><a href="{{ action ('EmailNewsletterController@index') }}"><i class=" icon-envelop2 position-left"></i> E-mail рассылка</a></li>--}}
-            {{--<li><a href="{{ action ('SubscriberController@index') }}"><i class="icon-users position-left"></i> Подписчики</a></li>--}}
-            {{--<li><a href="{{ action ('MailingListController@index') }}"><i class="icon-address-book position-left"></i> Списки рассылки</a></li>--}}
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="icon-wrench2 position-left"></i> Параметры <span class="caret"></span>
@@ -21,6 +18,7 @@
                     <li><a href="{{ action ('UserController@indexAdmin') }}"><i class="icon-user-tie position-left"></i> Администраторы</a></li>
                     <li><a href="{{ action ('CourseGroupController@index') }}"><i class="icon-make-group position-left"></i> Группы курсов</a></li>
                     <li><a href="{{ action ('CourseTypeController@index') }}"><i class="icon-grid5 position-left"></i> Типы курсов</a></li>
+                    <li><a href="{{ action ('PaymentTypeController@index') }}"><i class="icon-wallet position-left"></i> Типы оплаты</a></li>
                 </ul>
             </li>
         </ul>

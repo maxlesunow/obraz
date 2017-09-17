@@ -45,6 +45,12 @@ Route::group(['middleware' => 'role:admin', 'prefix' => 'admin'], function () {
 
     Route::resource('/course', 'CourseController');
 
+    Route::resource('/payment/type', 'PaymentTypeController');
+
+    Route::resource('/payment', 'PaymentController');
+
+    Route::resource('/reservation', 'ReservationController');
+
 
 
 });
