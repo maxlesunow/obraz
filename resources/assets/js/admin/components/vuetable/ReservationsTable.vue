@@ -101,12 +101,12 @@ export default {
             {
                 name: 'payment_status',
                 title: 'Оплата',
-                sortField: 'reversations.payment_status',
+                sortField: 'reservations.payment_status',
             },
             {
                 name: 'status',
                 title: 'Статус',
-                sortField: 'reversations.status',
+                sortField: 'reservations.status',
             },
             // {
             //     name: '__slot:custom-actions',
@@ -116,7 +116,7 @@ export default {
             // }
         ],
         sortOrder: [
-            { field: 'reversation.id', sortField: 'reversations.id', direction: 'asc' }
+            { field: 'id', sortField: 'reservations.id', direction: 'asc' }
         ],
         moreParams: {}
     }),
