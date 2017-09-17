@@ -116,7 +116,7 @@ export default {
             // }
         ],
         sortOrder: [
-            { field: 'id', sortField: 'id', direction: 'asc' }
+            { field: 'reversation.id', sortField: 'reversations.id', direction: 'asc' }
         ],
         moreParams: {}
     }),
