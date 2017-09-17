@@ -4,9 +4,9 @@
             <filter-bar class="dataTables_filter" @filter:set="filterSet" @filter:reset="filterReset"></filter-bar>
 
             <div class="dataTables_length">
-                <button class="btn btn-primary">
+                <a href="admins/create"><button class="btn btn-primary">
                     <span><i class="icon-add position-left"></i> Добавить</span>
-                </button>
+                </button></a>
                 <button class="btn btn-danger">
                     <span><i class="icon-trash position-left"></i> Удалить</span>
                 </button>
@@ -24,7 +24,7 @@
 
                 <template slot="custom-actions" scope="props">
                     <div>
-                        <button class="ui basic button" @click="onAction('view-item', props.rowData, props.rowIndex)"><i class="icon-split"></i></button>
+                        <a href="site"><button class="ui basic button" ><i class="icon-split"></i></button></a>
                         <button class="ui basic button" @click="onAction('edit-item', props.rowData, props.rowIndex)"> <i class="icon-pencil"></i></button>
                     </div>
                 </template>
