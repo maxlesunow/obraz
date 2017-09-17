@@ -1,8 +1,8 @@
 <template>
     <div>
-        <button @click.prevent="resetFilter" class="btn"><i class="icon-reset"></i></button>
+        <!-- <button @click.prevent="resetFilter" class="btn"><i class="icon-reset"></i></button> -->
         <label>
-            <input @input.prevent="searchInput" type="search" class="" placeholder="Введи для фильтра.." aria-controls="DataTables_Table_0">
+            <input @input.prevent="searchInput" v-model="filterText" type="search" class="" placeholder="Введи для фильтра.." aria-controls="DataTables_Table_0">
         </label>
     </div>
 </template>
