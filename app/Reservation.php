@@ -12,6 +12,8 @@ class Reservation extends Model
 
     protected $appends = ['name'];
 
+    protected $with = ['course', 'user', 'payment_type'];
+
     public function course(){
 
         return $this->belongsTo('App\Course');
