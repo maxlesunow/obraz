@@ -90,7 +90,15 @@ class ReservationController extends Controller
             foreach ($sorts as $sort) {
                 if($sort){
                     list($sortCol, $sortDir) = explode('|', $sort);
-                    $query = $query->orderBy($sortCol, $sortDir);
+
+                    if($sortCol != 'users.full_name'){
+                        $query = $query->orderBy($sortCol, $sortDir);
+                    }
+                    else{
+                        $query = $query->orderBy('users.last_name', $sortDir);
+                        $query = $query->orderBy('users.first_name', $sortDir);
+                        $query = $query->orderBy('users.middle_name', $sortDir);
+                    }
                 }
             }
         } else {
@@ -110,8 +118,8 @@ class ReservationController extends Controller
 
                 if (is_numeric($request->filter))
                 {
-                    $q->orWhere('courses.cost', $request->filter)
-                        ->orWhere('reservations.id', $request->filter);
+                    $q->orWhere('reservations.id', intval($request->filter));
+                    $q->orWhere('reservations.cost', $request->filter);
                 }
             });
         }
