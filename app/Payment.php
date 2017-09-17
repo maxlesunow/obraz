@@ -10,4 +10,8 @@ class Payment extends Model
         'number_document', 'total'
     ];
 
+    public function reservation(){
+
+        return $this->belongsTo('App\Reservation');
+    }
 }

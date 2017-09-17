@@ -10,6 +10,8 @@ class Reservation extends Model
         'cost', 'status', 'payment_status'
     ];
 
+    protected $appends = ['name'];
+
     public function course(){
 
         return $this->belongsTo('App\Course');
@@ -23,5 +25,10 @@ class Reservation extends Model
     public function payment_type(){
 
         return $this->belongsTo('App\PaymentType');
+    }
+
+    public function getNameAttribute(){
+
+        return '№'. $this->id . ' - ' . $this->cost .' руб';
     }
 }

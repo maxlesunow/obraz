@@ -73,7 +73,13 @@ class CourseController extends Controller
     public function store(CourseRequest $request)
     {
         $course = new Course($request->all());
+
+        $course->course_type()->associate(CourseType::findOrFail($request->input('course_type')));
+        $course->course_group()->associate(CourseGroup::findOrFail($request->input('course_group')));
         $course->save();
+
+        $course->speakers()->sync($request->input('speakers'));
+
 
         \Session::flash('success_message', 'Курс "' . $course->name. '" успешно добавлен');
         return redirect('admin/course');

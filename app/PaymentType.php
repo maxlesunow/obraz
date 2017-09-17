@@ -10,9 +10,4 @@ class PaymentType extends Model
         'name', 'type_code', 'is_online'
     ];
 
-    public function reservation(){
-
-        return $this->belongsTo('App\Reservation');
-    }
-
 }
