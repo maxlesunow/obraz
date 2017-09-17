@@ -110,8 +110,8 @@ class ReservationController extends Controller
 
                 if (is_numeric($request->filter))
                 {
-                    $q->orWhere('courses.cost', $value)
-                        ->orWhere('reservations.id', $value);
+                    $q->orWhere('courses.cost', $request->filter)
+                        ->orWhere('reservations.id', $request->filter);
                 }
             });
         }
