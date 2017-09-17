@@ -59,6 +59,11 @@ export default {
                 dataClass: 'text-center',
             },
             {
+                name: 'id',
+                title: '№',
+                sortField: 'reservations.id'
+            },
+            {
                 name: '__slot:row-link',
                 title: 'Курс',
                 sortField: 'courses.name',
