@@ -69,4 +69,6 @@ Route::group(['middleware' => 'role:admin', 'prefix' => 'api'], function () {
 
     Route::get('/courses', 'CourseController@getCourses');
 
+    Route::get('/payment/types', 'PaymentTypeController@getPaymentTypes');
+
 });
