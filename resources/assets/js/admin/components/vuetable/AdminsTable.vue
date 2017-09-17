@@ -3,7 +3,7 @@
         <div class="datatable-heading">
             <filter-bar class="dataTables_filter" @filter:set="filterSet" @filter:reset="filterReset"></filter-bar>
 
-            <div class="dt-buttons">
+            <div class="dataTables_length">
                 <button class="btn btn-primary">
                     <span><i class="icon-add position-left"></i> Добавить</span>
                 </button>

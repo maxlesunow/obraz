@@ -1,34 +1,32 @@
 <template>
-    <div class="filter-bar">
-        <form class="form-inline">
-            <div class="form-group">
-                <label>Search for:</label>
-                <input type="text" v-model="filterText" class="form-control" @keyup.enter="doFilter" placeholder="name, nickname, or email">
-                <button class="btn btn-primary" @click.prevent="doFilter">Go</button>
-                <button class="btn" @click.prevent="resetFilter">Reset</button>
-            </div>
-        </form>
+    <div>
+        <button @click.prevent="resetFilter" class="btn"><i class="icon-reset"></i></button>
+        <label>
+            <input @input.prevent="searchInput" type="search" class="" placeholder="Введи для фильтра.." aria-controls="DataTables_Table_0">
+        </label>
     </div>
 </template>
 
 <script>
+import _ from 'lodash'
+
 export default {
     data: () => ({
         filterText: ''
     }),
     methods: {
-        doFilter() {
-            this.$emit('filter:set', this.filterText)
-        },
         resetFilter() {
             this.filterText = ''
             this.$emit('filter:reset')
-        }
+        },
+        searchInput: _.debounce(function() {
+            this.$emit('filter:set', this.filterText)
+        }, 300)
     }
 }
 </script>
 <style>
-    .filter-bar {
+    /* .filter-bar {
         padding: 10px;
-    }
+    } */
 </style>
