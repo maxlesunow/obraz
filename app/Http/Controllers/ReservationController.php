@@ -79,6 +79,10 @@ class ReservationController extends Controller
 
         $query = Reservation::query();
 
+        $query->join('courses', 'reservations.course_id', '=', 'courses.id');
+        $query->join('users', 'reservations.user_id', '=', 'users.id');
+        $query->join('payment_types', 'reservations.payment_type_id', '=', 'payment_types.id');
+
         //Сортировка
         if (request()->has('sort')) {
             // Мультисортировка
@@ -90,14 +94,20 @@ class ReservationController extends Controller
                 }
             }
         } else {
-            $query = $query->orderBy('id', 'asc');
+            $query = $query->orderBy('reservations.id', 'asc');
         }
 
         //Фильтрация
         if ($request->exists('filter')) {
             $query->where(function($q) use($request) {
                 $value = "%{$request->filter}%";
-                $q->where('id', 'ilike', $value);
+                $q->where('courses.name', 'ilike', $value)
+                  ->orWhere('users.first_name', 'ilike', $value)
+                  ->orWhere('users.last_name', 'ilike', $value)
+                  ->orWhere('users.middle_name', 'ilike', $value)
+                  ->orWhere('users.phone', 'ilike', $value)
+                  ->orWhere('courses.cost', 'ilike', $value)
+                  ->orWhere('payment_types.name', 'ilike', $value);
             });
         }
         //Пагинация
