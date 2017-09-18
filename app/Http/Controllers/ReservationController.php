@@ -109,10 +109,10 @@ class ReservationController extends Controller
             $query = $query->orderBy('reservations.id', 'asc');
         }
 
-        //Фильтрация
-        if ($request->exists('filter')) {
+        //Поиск
+        if ($request->exists('search')) {
             $query->where(function($q) use($request) {
-                $value = "%{$request->filter}%";
+                $value = "%{$request->search}%";
                 $q->where('courses.name', 'ilike', $value)
                   ->orWhere('users.first_name', 'ilike', $value)
                   ->orWhere('users.last_name', 'ilike', $value)
@@ -121,15 +121,34 @@ class ReservationController extends Controller
                   ->orWhere('payment_types.name', 'ilike', $value);
 
 
-                if (is_numeric($request->filter))
+                if (is_numeric($request->search))
                 {
-                    if(intval($request->filter)){
-                        $q->orWhere('reservations.id', intval($request->filter));
+                    if(intval($request->search)){
+                        $q->orWhere('reservations.id', intval($request->search));
                     }
-                    $q->orWhere('reservations.cost', $request->filter);
+                    $q->orWhere('reservations.cost', $request->search);
                 }
             });
         }
+
+        //Фильтр
+        if ($request->exists('filter')) {
+
+            $filters = explode(',', request()->filter);
+            foreach ($filters as $filter) {
+                if($filter){
+                    list($filterBy, $filterValue) = explode('|', $filter);
+                    if($filterBy == 'reservations.status' or $filterBy == 'reservations.payment_status'){
+                        $query->where($filterBy, '=', $filterValue);
+                    }
+                    else{
+                        $query->where($filterBy, $filterValue);
+                    }
+                }
+            }
+        }
+
+
         //Пагинация
         $perPage = request()->has('per_page') ? (int) request()->per_page : null;
         $pagination = $query->paginate($perPage);
