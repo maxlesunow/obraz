@@ -59,6 +59,9 @@ module.exports = {
             $(this.$el).find('input[type="checkbox"]').uniform({
                 radioClass: 'choice'
             });
+        },
+        onRowClick(dataItem) {
+            window.location.replace(this.nameUrl + '/' + dataItem.id +'/edit')
         }
     }
 }

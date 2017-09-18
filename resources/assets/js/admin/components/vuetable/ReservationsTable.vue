@@ -6,7 +6,7 @@
             <show-bar class="dataTables_length" @show:set="showSet"></show-bar>
 
             <div class="dt-buttons">
-                <a href="reservation/create"><button class="btn btn-primary">
+                <a :href="nameUrl + '/create'"><button class="btn btn-primary">
                     <span><i class="icon-add position-left"></i> Добавить</span>
                 </button></a>
                 <button class="btn btn-danger">
@@ -15,21 +15,15 @@
             </div>
         </div>
         <div class="datatable-scroll-wrap">
-            <vuetable ref="vuetable" api-url="/api/reservations" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage" 
-                    :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData" @vuetable:loaded="loadedTable">
+            <vuetable ref="vuetable" :api-url="'/api/' + nameUrl + 's'" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage" 
+                    :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData" @vuetable:loaded="loadedTable"
+                    @vuetable:row-clicked="onRowClick">
                 
                 <template slot="row-link" scope="props">
                     <div>
-                        <a :href="'reservation/' + props.rowData.id +'/edit'">{{props.rowData.course.name}}</a>
+                        <a :href="nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.course.name}}</a>
                     </div>
                 </template>
-
-                <!-- <template slot="custom-actions" scope="props">
-                    <div class="custom-actions">
-                        <a href="site"><button class="ui basic button" ><i class="icon-split"></i></button></a>
-                        <button class="ui basic button" @click="onAction('edit-item', props.rowData, props.rowIndex)"> <i class="icon-pencil"></i></button>
-                    </div>
-                </template> -->
             
             </vuetable>
         </div>
@@ -55,6 +49,7 @@ export default {
     mixins: [ vuetablemixins ],
     components: { FilterBar, ShowBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
     data: () => ({
+        nameUrl: 'reservation',
         fields: [
             {
                 name: '__checkbox',
@@ -85,11 +80,13 @@ export default {
                 name: 'created_at',
                 title: 'Дата заявки',
                 sortField: 'created_at',
+                callback: 'formatDate'
             },
             {
                 name: 'course.time_start',
                 title: 'Дата курса',
                 sortField: 'courses.time_start',
+                callback: 'formatDate'
             },
             {
                 name: 'course.course_type.name',
@@ -100,6 +97,7 @@ export default {
                 name: 'cost',
                 title: 'Стоимость',
                 sortField: 'reservations.cost',
+                callback: 'formatMoney'
             },
             {
                 name: 'payment_type.name',
@@ -110,18 +108,14 @@ export default {
                 name: 'payment_status',
                 title: 'Оплата',
                 sortField: 'reservations.payment_status',
+                callback: 'paymentLabel'
             },
             {
                 name: 'status',
                 title: 'Статус',
                 sortField: 'reservations.status',
-            },
-            // {
-            //     name: '__slot:custom-actions',
-            //     title: 'Actions',
-            //     titleClass: 'text-center',
-            //     dataClass: 'text-center'
-            // }
+                callback: 'statusLabel'
+            }
         ],
         sortOrder: [
             { field: 'id', sortField: 'reservations.id', direction: 'asc' }
@@ -130,10 +124,24 @@ export default {
         perPage: 20
     }),
     methods: {
-        onAction() {
-
+        paymentLabel (value) {
+            return value
+                ? '<span class="label label-success">Оплачено</span>'
+                : '<span class="label label-danger">Не оплачено</span>'
+        },
+        statusLabel (value) {
+            return value
+                ? '<span class="label label-info">Подтверждено</span>'
+                : '<span class="label label-default">Не подтверждено</span>'
+        },
+        formatMoney (value) {
+            return accounting.formatMoney(value, "₽", 2, ".", ",")
+        },
+        formatDate (value, fmt = 'YYYY-MM-DD') {
+            return (value == null)
+                ? ''
+                : moment(value, 'YYYY-MM-DD').format(fmt)
         }
-        //
     }
 }
 </script>
