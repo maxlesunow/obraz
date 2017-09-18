@@ -61,7 +61,7 @@ module.exports = {
             });
         },
         onRowClick(dataItem) {
-            window.location.replace(this.nameUrl + '/' + dataItem.id +'/edit')
+            window.location.href = this.nameUrl + '/' + dataItem.id +'/edit'
         }
     }
 }
