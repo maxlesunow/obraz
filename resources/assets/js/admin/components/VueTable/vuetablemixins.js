@@ -28,6 +28,9 @@ module.exports = {
         perPage: 20
     }),
     methods: {
+        updateTable() {
+            Vue.nextTick(() => this.$refs.vuetable.refresh())
+        },
         onPaginationData(paginationData) {
             this.$refs.pagination.setPaginationData(paginationData)
             this.$refs.paginationInfo.setPaginationData(paginationData)
@@ -42,15 +45,20 @@ module.exports = {
             this.moreParams = {
                 search: filterText
             }
-            Vue.nextTick(() => this.$refs.vuetable.refresh())
+            this.updateTable()
         },
         filterReset() {
             this.moreParams = {}
-            Vue.nextTick(() => this.$refs.vuetable.refresh())
+            this.updateTable()
         },
         showSet(value) {
             this.perPage = value
-            Vue.nextTick(() => this.$refs.vuetable.refresh())
+            this.updateTable()
+        },
+        loadedTable() {
+            $(this.$el).find('input[type="checkbox"]').uniform({
+                radioClass: 'choice'
+            });
         }
     }
 }

@@ -16,7 +16,7 @@
         </div>
         <div class="datatable-scroll-wrap">
             <vuetable ref="vuetable" api-url="/api/speakers" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage"
-                    :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData">
+                    :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData"  @vuetable:loaded="loadedTable">
                 
                 <template slot="row-link" scope="props">
                     <div>
