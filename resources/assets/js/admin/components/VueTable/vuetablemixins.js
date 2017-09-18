@@ -3,8 +3,9 @@ module.exports = {
         css: {
             table: {
                 tableClass: 'table datatable-button-init-custom dataTable no-footer',
-                ascendingIcon: 'icon-chevron-up',
-                descendingIcon: 'icon-chevron-down'
+                ascendingIcon: ' icon-sort-amount-asc',
+                descendingIcon: ' icon-sort-amount-desc',
+                sortableIcon: 'icon-sort'
             },
             pagination: {
                 wrapperClass: 'pagination dataTables_paginate',

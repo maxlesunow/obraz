@@ -41,9 +41,9 @@
 <script>
 import accounting from 'accounting'
 import moment from 'moment'
-import Vuetable from 'vuetable-2/src/components/Vuetable'
-import VuetablePagination from 'vuetable-2/src/components/VuetablePagination'
-import VuetablePaginationInfo from 'vuetable-2/src/components/VuetablePaginationInfo'
+import Vuetable from './../../plugins/vuetable-2-develop/Vuetable'
+import VuetablePagination from './../../plugins/vuetable-2-develop/VuetablePagination'
+import VuetablePaginationInfo from './../../plugins/vuetable-2-develop/VuetablePaginationInfo'
 
 import FilterBar  from './FilterBar'
 import vuetablemixins  from './vuetablemixins'
