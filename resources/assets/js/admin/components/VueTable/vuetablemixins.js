@@ -20,17 +20,12 @@ module.exports = {
                     last: 'icon-last',
                 },
             },
-            // icons: {
-            //     first: 'icon-step-backward',
-            //     prev: 'icon-chevron-left',
-            //     next: 'icon-chevron-right',
-            //     last: 'icon-step-forward',
-            // },
         },
         template: {
             paginationInfo: 'Показано с {from} по {to} из {total} элементов'
         },
-        moreParams: {}
+        moreParams: {},
+        perPage: 10
     }),
     methods: {
         onPaginationData(paginationData) {
@@ -51,6 +46,10 @@ module.exports = {
         },
         filterReset() {
             this.moreParams = {}
+            Vue.nextTick(() => this.$refs.vuetable.refresh())
+        },
+        showSet(value) {
+            this.perPage = value
             Vue.nextTick(() => this.$refs.vuetable.refresh())
         }
     }

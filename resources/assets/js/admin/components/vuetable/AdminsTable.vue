@@ -3,6 +3,8 @@
         <div class="datatable-header">
             <filter-bar class="dataTables_filter" @filter:set="filterSet" @filter:reset="filterReset"></filter-bar>
 
+            <show-bar class="dataTables_length" @show:set="showSet"></show-bar>
+
             <div class="dataTables_length">
                 <a href="admins/create"><button class="btn btn-primary">
                     <span><i class="icon-add position-left"></i> Добавить</span>
@@ -11,9 +13,10 @@
                     <span><i class="icon-trash position-left"></i> Удалить</span>
                 </button>
             </div>
+
         </div>
         <div class="datatable-scroll-wrap">
-            <vuetable ref="vuetable" api-url="/api/admins" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" 
+            <vuetable ref="vuetable" api-url="/api/admins" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage"
                     :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData">
                 
                 <template slot="row-link" scope="props">
@@ -46,11 +49,12 @@ import VuetablePagination from './../../plugins/vuetable-2-develop/VuetablePagin
 import VuetablePaginationInfo from './../../plugins/vuetable-2-develop/VuetablePaginationInfo'
 
 import FilterBar  from './FilterBar'
+import ShowBar  from './ShowBar'
 import vuetablemixins  from './vuetablemixins'
 
 export default {
     mixins: [ vuetablemixins ],
-    components: { FilterBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
+    components: { FilterBar, ShowBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
     data: () => ({
         fields: [
             {
