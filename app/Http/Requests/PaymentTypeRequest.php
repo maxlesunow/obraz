@@ -25,7 +25,6 @@ class PaymentTypeRequest extends FormRequest
     {
         return [
             'name' => 'required|string|min:2|max:255',
-            'is_online' => 'boolean',
             'type_code' => 'string|max:255|nullable',
         ];
     }

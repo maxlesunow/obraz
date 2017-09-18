@@ -43,6 +43,7 @@ class ReservationController extends Controller
 
         $reservation->update($request->all());
 
+
         $reservation->payment_type()->associate(PaymentType::findOrFail($request->input('payment_type')));
         $reservation->save();
 
@@ -122,7 +123,7 @@ class ReservationController extends Controller
 
                 if (is_numeric($request->filter))
                 {
-                    if(is_integer($request->filter)){
+                    if(intval($request->filter)){
                         $q->orWhere('reservations.id', intval($request->filter));
                     }
                     $q->orWhere('reservations.cost', $request->filter);

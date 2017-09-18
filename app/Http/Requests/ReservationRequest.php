@@ -25,8 +25,6 @@ class ReservationRequest extends FormRequest
     {
         return [
             'cost' => 'required|numeric',
-            'status' => 'required|boolean',
-            'payment_status' => 'required|boolean',
         ];
     }
 }
