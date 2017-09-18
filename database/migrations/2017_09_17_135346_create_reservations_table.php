@@ -15,7 +15,7 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('cost');
+            $table->float('cost');
             $table->boolean('status')->default(false);
             $table->boolean('payment_status')->default(false);
 
