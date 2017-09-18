@@ -94,9 +94,9 @@ export default {
                 // sortField: 'courses.course_types.name',
             },
             {
-                name: 'course.cost',
+                name: 'cost',
                 title: 'Стоимость',
-                sortField: 'courses.cost',
+                sortField: 'reservations.cost',
             },
             {
                 name: 'payment_type.name',
