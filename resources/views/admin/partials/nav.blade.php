@@ -9,7 +9,7 @@
             <li><a href="{{ action ('PaymentController@index') }}"><i class="icon-credit-card position-left"></i> Оплаты</a></li>
             <li><a href="{{ action ('SpeakerController@index') }}"><i class="icon-profile position-left"></i> Докладчики</a></li>
             <li><a href="{{ action ('AdminController@index') }}"><i class="icon-info22 position-left"></i> Страницы</a></li>
-            <li><a href="{{ action ('AdminController@index') }}"><i class="icon-question3 position-left"></i> Отзывы</a></li>
+            <li><a href="{{ action ('ReviewController@index') }}"><i class="icon-question3 position-left"></i> Отзывы</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="icon-wrench2 position-left"></i> Параметры <span class="caret"></span>

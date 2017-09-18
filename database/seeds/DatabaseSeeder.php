@@ -79,5 +79,8 @@ class DatabaseSeeder extends Seeder
 
         //        Оплаты
         $this->call(PaymentSeeder::class);
+
+        //        Отзывы
+        $this->call(ReviewSeeder::class);
     }
 }

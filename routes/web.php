@@ -51,6 +51,8 @@ Route::group(['middleware' => 'role:admin', 'prefix' => 'admin'], function () {
 
     Route::resource('/reservation', 'ReservationController');
 
+    Route::resource('/review', 'ReviewController');
+
 
 
 });
@@ -74,4 +76,6 @@ Route::group(['middleware' => 'role:admin', 'prefix' => 'api'], function () {
     Route::get('/payments', 'PaymentController@getPayments');
 
     Route::get('/reservations', 'ReservationController@getReservations');
+
+    Route::get('/reviews', 'ReviewController@getReviews');
 });

@@ -39,12 +39,16 @@ class ReservationController extends Controller
 
     public function update($id, ReservationRequest $request)
     {
+        $request->merge([ 'status' => $request->has('status') ? true : false ]);
+        $request->merge([ 'payment_status' => $request->has('payment_status') ? true : false ]);
+
         $reservation = Reservation::findOrFail($id);
 
         $reservation->update($request->all());
 
-
         $reservation->payment_type()->associate(PaymentType::findOrFail($request->input('payment_type')));
+        $reservation->user()->associate(User::findOrFail($request->input('user')));
+        $reservation->course()->associate(Course::findOrFail($request->input('course')));
         $reservation->save();
 
 
@@ -68,7 +72,15 @@ class ReservationController extends Controller
 
     public function store(ReservationRequest $request)
     {
+        $request->merge([ 'status' => $request->has('status') ? true : false ]);
+        $request->merge([ 'payment_status' => $request->has('payment_status') ? true : false ]);
+
         $reservation = new Reservation($request->all());
+
+        $reservation->payment_type()->associate(PaymentType::findOrFail($request->input('payment_type')));
+        $reservation->user()->associate(User::findOrFail($request->input('user')));
+        $reservation->course()->associate(Course::findOrFail($request->input('course')));
+
         $reservation->save();
 
         \Session::flash('success_message', 'Заявка "' . $reservation->name. '" успешно добавлена');
