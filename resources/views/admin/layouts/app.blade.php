@@ -3,7 +3,7 @@
 <head>
     @include('admin.layouts.meta')
 
-    @yield('title')
+    <title>@yield('title') | Панель администратора</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">

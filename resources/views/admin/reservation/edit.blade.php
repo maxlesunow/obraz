@@ -1,5 +1,7 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Заявка:  '.$reservation->name)
+
 @section('content')
     <div class="row">
         <div class="col-md-12">

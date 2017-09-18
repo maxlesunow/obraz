@@ -1,5 +1,7 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Группа курса:  '.$course_group->name)
+
 @section('content')
     <div class="row">
         <div class="col-md-6">

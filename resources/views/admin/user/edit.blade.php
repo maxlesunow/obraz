@@ -1,5 +1,7 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Пользователь:  '.$user->full_name)
+
 @section('content')
     <div class="row">
         <div class="col-md-6">

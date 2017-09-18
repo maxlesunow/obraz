@@ -1,5 +1,7 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Оплата:  '.$payment->number_document)
+
 @section('content')
     <div class="row">
         <div class="col-md-12">

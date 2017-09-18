@@ -1,5 +1,7 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Список типов курсов')
+
 @section('content')
     <div class="panel panel-flat">
         <div class="panel-heading">

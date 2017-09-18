@@ -4,7 +4,7 @@
             <filter-bar class="dataTables_filter" @filter:set="filterSet" @filter:reset="filterReset"></filter-bar>
 
             <div class="dt-buttons">
-                <a href="speaker/create"><button class="btn btn-primary">
+                <a href="payment/create"><button class="btn btn-primary">
                     <span><i class="icon-add position-left"></i> Добавить</span>
                 </button></a>
                 <button class="btn btn-danger">
