@@ -85,7 +85,7 @@ export default {
             { field: 'name', sortField: 'name', direction: 'asc' }
         ],
         moreParams: {},
-        perPage: 10
+        perPage: 20
     }),
     methods: {
         onAction() {

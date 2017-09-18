@@ -2,10 +2,10 @@
     <div>
         <label>
             <span>По:</span>
-            <select name="select" @change="changeItem" v-model="selected" class="form-control" style="width: 65px;">
-                <option value="10">10</option>
+            <select name="select" @change="changeItem" v-model="selected" class="form-control" style="width: 70px;">
                 <option value="20">20</option>
-                <option value="30">30</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
             </select>
         </label>
     </div>
@@ -14,7 +14,7 @@
 <script>
 export default {
     data: () => ({
-        selected: 10
+        selected: 20
     }),
     methods: {
         changeItem() {

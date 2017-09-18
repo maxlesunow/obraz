@@ -25,7 +25,7 @@ module.exports = {
             paginationInfo: 'Показано с {from} по {to} из {total} элементов'
         },
         moreParams: {},
-        perPage: 10
+        perPage: 20
     }),
     methods: {
         onPaginationData(paginationData) {
@@ -40,7 +40,7 @@ module.exports = {
         },
         filterSet(filterText) {
             this.moreParams = {
-                filter: filterText
+                search: filterText
             }
             Vue.nextTick(() => this.$refs.vuetable.refresh())
         },

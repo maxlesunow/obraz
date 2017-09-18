@@ -127,7 +127,7 @@ export default {
             { field: 'id', sortField: 'reservations.id', direction: 'asc' }
         ],
         moreParams: {},
-        perPage: 10
+        perPage: 20
     }),
     methods: {
         onAction() {

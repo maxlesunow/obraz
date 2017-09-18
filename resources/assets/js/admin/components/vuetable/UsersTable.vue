@@ -85,7 +85,7 @@ export default {
             { field: 'email', sortField: 'email', direction: 'asc' }
         ],
         moreParams: {},
-        perPage: 10
+        perPage: 20
     }),
     methods: {
         onAction (action, data, index) {

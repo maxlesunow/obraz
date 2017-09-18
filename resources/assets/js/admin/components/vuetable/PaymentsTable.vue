@@ -85,7 +85,7 @@ export default {
             { field: 'number_document', sortField: 'number_document', direction: 'asc' }
         ],
         moreParams: {},
-        perPage: 10
+        perPage: 20
     }),
     methods: {
         onAction() {
