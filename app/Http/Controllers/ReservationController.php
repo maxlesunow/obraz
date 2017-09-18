@@ -77,11 +77,13 @@ class ReservationController extends Controller
     public function getReservations(Request $request)
     {
 
-        $query = Reservation::query();
+        $query = Reservation::query()->select('reservations.*');
 
         $query->join('courses', 'reservations.course_id', '=', 'courses.id');
         $query->join('users', 'reservations.user_id', '=', 'users.id');
         $query->join('payment_types', 'reservations.payment_type_id', '=', 'payment_types.id');
+
+
 
         //Сортировка
         if (request()->has('sort')) {
@@ -91,6 +93,7 @@ class ReservationController extends Controller
                 if($sort){
                     list($sortCol, $sortDir) = explode('|', $sort);
 
+                    //Костыль для поиска по полному имени
                     if($sortCol != 'users.full_name'){
                         $query = $query->orderBy($sortCol, $sortDir);
                     }
@@ -116,9 +119,12 @@ class ReservationController extends Controller
                   ->orWhere('users.phone', 'ilike', $value)
                   ->orWhere('payment_types.name', 'ilike', $value);
 
+
                 if (is_numeric($request->filter))
                 {
-                    $q->orWhere('reservations.id', intval($request->filter));
+                    if(is_integer($request->filter)){
+                        $q->orWhere('reservations.id', intval($request->filter));
+                    }
                     $q->orWhere('reservations.cost', $request->filter);
                 }
             });
