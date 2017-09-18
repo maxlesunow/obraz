@@ -8,6 +8,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+
     @yield('css')
 
     @yield('js')

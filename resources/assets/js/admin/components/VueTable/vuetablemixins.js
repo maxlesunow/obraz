@@ -2,7 +2,7 @@ module.exports = {
     data: () => ({
         css: {
             table: {
-                tableClass: 'table datatable-button-init-custom dataTable no-footer',
+                tableClass: 'table datatable-basic dataTable no-footer',
                 ascendingIcon: ' icon-sort-amount-asc',
                 descendingIcon: ' icon-sort-amount-desc',
                 sortableIcon: 'icon-sort'
