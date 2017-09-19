@@ -2,7 +2,7 @@ module.exports = {
     data: () => ({
         css: {
             table: {
-                tableClass: 'table datatable-basic dataTable no-footer',
+                tableClass: 'table table-hover datatable-basic dataTable no-footer',
                 ascendingIcon: ' icon-sort-amount-asc',
                 descendingIcon: ' icon-sort-amount-desc',
                 sortableIcon: 'icon-sort'
@@ -57,7 +57,7 @@ module.exports = {
             this.updateTable()
         },
         formatFilterPhp(filterFiled = {}) {
-            var normalFilterField = JSON.parse(JSON.stringify(filterFiled))
+            var normalFilterField = JSON.parse(JSON.stringify(filterFiled)) // normalize object (remove functions and _proto)
             var entries = Object.entries(normalFilterField)
             var filters = entries.map((el) => el.join('|') )
 
@@ -66,7 +66,7 @@ module.exports = {
         select2Set(value, name) {
             var destName = this.filters[name].field;
             this.filterField[destName] = value
-            if (value === '') {
+            if (value === '' || value === '-1') {
                 delete this.filterField[destName]
             }
             this.moreParams.filters = this.formatFilterPhp(this.filterField)

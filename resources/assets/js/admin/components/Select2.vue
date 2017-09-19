@@ -15,34 +15,45 @@ export default {
             $(this.$el).val(value)
         }
     },
+    methods: {
+        getAjax() {
+            if (this.options.ajax) {
+                return {
+                    url: this.options.ajax.url,
+                    type: this.options.ajax.urlType || 'GET',
+                    dataType: 'json',
+                    delay: 250,
+                    data: (params) => ({ search: params.term }),
+                    processResults: (data) => ({ results: data.data.map((el) => ({ id: el.id, text: el[this.options.ajax.text] })) })
+                }
+            } else {
+                return undefined
+            }
+        },
+        getData() {
+            if (this.options.data) {
+                return this.options.data
+            } else {
+                return undefined
+            }
+        }
+    },
     created () {
         this.options = this.filters[this.selectName]
     },
     mounted () {
         var vm = this;
-        $(this.$el)
-            .val(this.value)
+        $(vm.$el)
+            .val(vm.value)
             .select2({
                 placeholder: vm.options.placeholder,
                 allowClear: true,
-                ajax: {
-                    url: vm.options.url,
-                    // type: "POST",
-                    dataType: 'json',
-                    delay: 250,
-                    data: function (params) {
-                        return {
-                            search: params.term
-                        };
-                    },
-                    processResults: function (data) {
-                        return {
-                            results: data.data.map((el) => ({ id: el.id, text: el[vm.options.text] }))
-                        };
-                    }
-                }
+                minimumResultsForSearch: vm.getData() ? -1 : undefined, // hide search bar
+                ajax: vm.getAjax(),
+                data: vm.getData()
             })
             .on('change', function () {
+                // this in select2 ctx, not vuejs
                 vm.$emit('select2:set', this.value, vm.selectName)
             })
     },

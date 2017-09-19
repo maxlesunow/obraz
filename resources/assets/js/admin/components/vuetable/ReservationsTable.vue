@@ -20,16 +20,8 @@
                 <select2 :filters="filters" select-name="paymentType" @select2:set="select2Set"></select2>
                 <select2 :filters="filters" select-name="courseType" @select2:set="select2Set"></select2>
                 
-                <select class="form-control" style="width: 170px; display: inline-block;" @change.prevent="select2Set($event.target.value, 'paymentStatus')">
-                    <option value="">Статус оплаты</option>
-                    <option value="true">Оплачено</option>
-                    <option value="false">Не оплачено</option>
-                </select>
-                <select class="form-control" style="width: 170px; display: inline-block;" @change.prevent="select2Set($event.target.value, 'reservationStatus')">
-                    <option value="">Статус заявки</option>
-                    <option value="true">Подтверждено</option>
-                    <option value="false">Не подтверждено</option>
-                </select>
+                <select2 :filters="filters" select-name="paymentStatus" @select2:set="select2Set"></select2>
+                <select2 :filters="filters" select-name="reservationStatus" @select2:set="select2Set"></select2>
             </div>
         </div>
 
@@ -73,34 +65,42 @@ export default {
         nameUrl: 'reservation',
         filters: {
             user: {
-                url: '/api/users',
-                text: 'full_name',
+                ajax: { url: '/api/users', text: 'full_name' },
                 field: 'users.id',
                 placeholder: 'Пользователь'
             },
             course: {
-                url: '/api/courses',
-                text: 'name',
+                ajax: { url: '/api/courses', text: 'name' },
                 field: 'courses.id',
                 placeholder: 'Курс'
             },
             paymentType: {
-                url: '/api/payment/types',
-                text: 'name',
+                ajax: { url: '/api/payment/types', text: 'name' },
                 field: 'payment_types.id',
                 placeholder: 'Тип оплаты'
             },
             courseType: {
-                url: '/api/course/types',
-                text: 'name',
+                ajax: { url: '/api/course/types', text: 'name' },
                 field: 'courses.course_type_id',
                 placeholder: 'Тип курса'
             },
             paymentStatus: {
-                field: 'reservations.payment_status'
+                data: [{ id: "-1" }, { id: "true", text: "Оплачено" }, { id: "false", text: "Не оплачено" }],
+                field: 'reservations.payment_status',
+                placeholder: { // @see https://github.com/select2/select2/issues/3553#issuecomment-240259253
+                    id: "-1",
+                    text: "Статус оплаты",
+                    selected:'selected'
+                }
             },
             reservationStatus: {
-                field: 'reservations.status'
+                data: [{ id: "-1" }, { id: "true", text: "Подтверждено" }, { id: "false", text: "Не подтверждено" }],
+                field: 'reservations.status',
+                placeholder: {
+                    id: "-1",
+                    text: "Статус заявки",
+                    selected:'selected'
+                }
             }
         },
         fields: [
