@@ -17,7 +17,7 @@
         <div class="datatable-scroll-wrap">
             <vuetable ref="vuetable" :api-url="'/api/' + nameUrl + 's'" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage" 
                     :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData" @vuetable:loaded="loadedTable"
-                    @vuetable:row-dblclicked="onRowClick">
+                    @vuetable:row-dblclicked="onRowClick" :noDataTemplate="template.noData">
 
                 <template slot="row-link" scope="props">
                     <div>
@@ -28,7 +28,7 @@
             </vuetable>
         </div>
         <div class="datatable-footer">
-            <vuetable-pagination-info ref="paginationInfo" class="pagination-info dataTables_info" :info-template="template.paginationInfo"></vuetable-pagination-info>
+            <vuetable-pagination-info ref="paginationInfo" class="pagination-info dataTables_info" :info-template="template.paginationInfo" :noDataTemplate="template.noDataPaginate"></vuetable-pagination-info>
             <vuetable-pagination ref="pagination" :css="css.pagination" @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
         </div>
     </div>
@@ -87,14 +87,14 @@ export default {
                 callback: 'formatDate'
             },
             {
-                name: 'sk',
-                title: 'Количество курсов',
-                sortField: 'users.email'
+                name: 'reservations_count',
+                title: 'Количество заявок',
+                // sortField: 'users.reservations_count'
             },
             {
-                name: 'dd',
+                name: 'reviews_count',
                 title: 'Количество отзывов',
-                sortField: 'users.email'
+                // sortField: 'users.reviews_count'
             },
         ],
         sortOrder: [

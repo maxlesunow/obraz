@@ -22,7 +22,9 @@ module.exports = {
             },
         },
         template: {
-            paginationInfo: 'Показано с {from} по {to} из {total} элементов'
+            paginationInfo: 'Показано с {from} по {to} из {total} элементов',
+            noData: 'Нет доступных данных',
+            noDataPaginate: 'Нет данных'
         },
         moreParams: {},
         filterField: {},
