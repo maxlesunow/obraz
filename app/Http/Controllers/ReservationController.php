@@ -144,9 +144,9 @@ class ReservationController extends Controller
         }
 
         //Фильтр
-        if ($request->exists('filter')) {
+        if ($request->exists('filters')) {
 
-            $filters = explode(',', request()->filter);
+            $filters = explode(',', request()->filters);
             foreach ($filters as $filter) {
                 if($filter){
                     list($filterBy, $filterValue) = explode('|', $filter);
