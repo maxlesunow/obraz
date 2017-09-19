@@ -88,7 +88,10 @@ class CourseController extends Controller
     public function getCourses(Request $request)
     {
 
-        $query = Course::query();
+        $query = Course::query()->select('courses.*');
+
+        $query->join('course_types', 'courses.course_type_id', '=', 'course_types.id');
+        $query->join('course_groups', 'courses.course_group_id', '=', 'course_groups.id');
 
         //Сортировка
         if (request()->has('sort')) {
@@ -101,20 +104,47 @@ class CourseController extends Controller
                 }
             }
         } else {
-            $query = $query->orderBy('id', 'asc');
+            $query = $query->orderBy('courses.id', 'asc');
         }
 
-        //Фильтрация
-        if ($request->exists('filter')) {
+        //Поиск
+        if ($request->exists('search')) {
             $query->where(function($q) use($request) {
-                $value = "%{$request->filter}%";
-                $q->where('first_name', 'ilike', $value)
-                    ->orWhere('last_name', 'ilike', $value)
-                    ->orWhere('middle_name', 'ilike', $value);
+                $value = "%{$request->search}%";
+                $q->where('courses.name', 'ilike', $value)
+                    ->orWhere('course_types.name', 'ilike', $value)
+                    ->orWhere('course_groups.name', 'ilike', $value);
+
+                if (is_numeric($request->search))
+                    {
+                        $q->orWhere('courses.cost', $request->search);
+                    }
             });
+
         }
+
+        //Фильтр
+        if ($request->exists('filters')) {
+
+            $filters = explode(',', request()->filters);
+            foreach ($filters as $filter) {
+                if($filter){
+                    list($filterBy, $filterValue) = explode('|', $filter);
+                    if($filterBy == 'speakers.id'){
+                        $query->whereHas('speakers', function($q) use($filterValue){
+                            $q->where('id', $filterValue);
+                        });
+                    }
+                    else{
+                        $query->where($filterBy, $filterValue);
+                    }
+                }
+            }
+        }
+
         //Пагинация
         $perPage = request()->has('per_page') ? (int) request()->per_page : null;
+
         $pagination = $query->paginate($perPage);
         $pagination->appends([
             'sort' => request()->sort,
