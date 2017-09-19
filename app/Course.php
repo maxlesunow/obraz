@@ -21,7 +21,9 @@ class Course extends Model
         'meta_url',
     ];
 
-    protected $with = ['course_type', 'course_group'];
+    protected $appends = ['speakers_count'];
+
+    protected $with = ['course_type', 'course_group', 'speakers'];
 
     public function course_type(){
 
@@ -36,6 +38,11 @@ class Course extends Model
     public function speakers(){
 
         return $this->belongsToMany('App\Speaker');
+    }
+
+    public function getSpeakersCountAttribute(){
+
+        return $this->speakers()->count();
     }
 
 
