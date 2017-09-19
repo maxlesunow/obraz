@@ -73,12 +73,16 @@ module.exports = {
             this.updateTable()
         },
         loadedTable() {
+            this.$refs.vuetable.selectedTo = [] // uncheck selected row
             $(this.$el).find('input[type="checkbox"]').uniform({
                 radioClass: 'choice'
             });
         },
         onRowClick(dataItem) {
             window.location.href = this.nameUrl + '/' + dataItem.id +'/edit'
+        },
+        removeCheckedRows() {
+            console.log(this.$refs.vuetable.selectedTo)            
         }
     }
 }
