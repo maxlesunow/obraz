@@ -18,7 +18,7 @@ class User extends Authenticatable
         'first_name', 'last_name', 'middle_name', 'phone', 'email', 'password', 'is_verification',
     ];
 
-    protected $appends = ['full_name'];
+    protected $appends = ['full_name', 'reviews_count', 'reservations_count'];
     protected $with = ['role'];
 
     /**
@@ -45,9 +45,24 @@ class User extends Authenticatable
         return $this->hasMany('App\Reservation');
     }
 
+    public function reviews(){
+
+        return $this->hasMany('App\Review');
+    }
+
     public function getFullNameAttribute(){
 
         return join(' ', array($this->last_name, $this->first_name, $this->middle_name));
+    }
+
+    public function getReservationsCountAttribute(){
+
+        return $this->reservations()->count();
+    }
+
+    public function getReviewsCountAttribute(){
+
+        return $this->reviews()->count();
     }
 
 }
