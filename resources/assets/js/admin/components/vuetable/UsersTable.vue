@@ -6,28 +6,22 @@
             <show-bar class="dataTables_length" @show:set="showSet"></show-bar>
 
             <div class="dt-buttons">
-                <a href="user/create"><button class="btn btn-primary">
+                <!-- <a :href="nameUrl + '/create'"><button class="btn btn-primary">
                     <span><i class="icon-add position-left"></i> Добавить</span>
-                </button></a>
-                <button class="btn btn-danger">
+                </button></a> -->
+                <button class="btn btn-danger" @click="removeCheckedRows">
                     <span><i class="icon-trash position-left"></i> Удалить</span>
                 </button>
             </div>
         </div>
         <div class="datatable-scroll-wrap">
-            <vuetable ref="vuetable" api-url="/api/users" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage"
-                    :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData"  @vuetable:loaded="loadedTable">
-                
+            <vuetable ref="vuetable" :api-url="'/api/' + nameUrl + 's'" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage" 
+                    :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData" @vuetable:loaded="loadedTable"
+                    @vuetable:row-dblclicked="onRowClick">
+
                 <template slot="row-link" scope="props">
                     <div>
-                        <a :href="'user/' + props.rowData.id +'/edit'">{{props.rowData.full_name}}</a>
-                    </div>
-                </template>
-                
-                <template slot="custom-actions" scope="props">
-                    <div class="custom-actions">
-                        <a href="site"><button class="ui basic button" ><i class="icon-split"></i></button></a>
-                        <button class="ui basic button" @click="onAction('edit-item', props.rowData, props.rowIndex)"> <i class="icon-pencil"></i></button>
+                         <a :href="nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.full_name}}</a>
                     </div>
                 </template>
             
@@ -43,6 +37,10 @@
 <script>
 import accounting from 'accounting'
 import moment from 'moment'
+
+var PNF = require('google-libphonenumber').PhoneNumberFormat;
+var phoneUtil = require('google-libphonenumber').PhoneNumberUtil.getInstance();
+
 import Vuetable from './../../plugins/vuetable-2-develop/Vuetable'
 import VuetablePagination from './../../plugins/vuetable-2-develop/VuetablePagination'
 import VuetablePaginationInfo from './../../plugins/vuetable-2-develop/VuetablePaginationInfo'
@@ -55,6 +53,7 @@ export default {
     mixins: [ vuetablemixins ],
     components: { FilterBar, ShowBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
     data: () => ({
+        nameUrl: 'user',
         fields: [
             {
                 name: '__checkbox',
@@ -62,36 +61,72 @@ export default {
                 dataClass: 'text-center',
             },
             {
-                name: '__slot:row-link',
-                title: 'ФИО',
-                sortField: 'first_name',
+                name: 'id',
+                title: '№',
+                sortField: 'users.id'
             },
             {
-                name: 'email',
-                sortField: 'email'
+                name: '__slot:row-link',
+                title: 'ФИО',
+                sortField: 'users.first_name',
             },
             {
                 name: 'phone',
-                sortField: 'phone',
+                title: 'Телефон',
+                sortField: 'users.phone',
+                callback: 'formatPhone'
             },
             {
-                name: '__slot:custom-actions',
-                title: 'Actions',
-                titleClass: 'text-center',
-                dataClass: 'text-center'
-            }
+                name: 'email',
+                title: 'Почта',
+                sortField: 'users.email'
+            },
+            {
+                name: 'created_at',
+                title: 'Дата регистрации',
+                sortField: 'users.created_at',
+                callback: 'formatDate'
+            },
+            {
+                name: 'sk',
+                title: 'Количество курсов',
+                sortField: 'users.email'
+            },
+            {
+                name: 'dd',
+                title: 'Количество отзывов',
+                sortField: 'users.email'
+            },
         ],
         sortOrder: [
-            { field: 'email', sortField: 'email', direction: 'asc' }
+            { field: 'id', sortField: 'users.id', direction: 'asc' }
         ],
         moreParams: {},
         perPage: 20
     }),
     methods: {
-        onAction (action, data, index) {
-            console.log('slot) action: ' + action, data.name, index)
+        formatMoney (value) {
+            try {
+                return accounting.formatMoney(value, "₽", 2, ".", ",")
+            } catch (e) {
+                return value
+            }
+        },
+        formatDate (value, fmt = 'DD-MM-YYYY') {
+            try {
+                return moment(value, 'YYYY-MM-DD').format(fmt)
+            } catch (e) {
+                return value
+            }
+        },
+        formatPhone (value) {
+            try {
+                var phoneNumber = phoneUtil.parse(value, 'RU')
+                return phoneUtil.format(phoneNumber, PNF.INTERNATIONAL)
+            } catch (e) {
+                return value
+            }
         }
-        //
     }
 }
 </script>
