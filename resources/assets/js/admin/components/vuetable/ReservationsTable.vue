@@ -36,7 +36,7 @@
         <div class="datatable-scroll-wrap">
             <vuetable ref="vuetable" :api-url="'/api/' + nameUrl + 's'" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage" 
                     :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData" @vuetable:loaded="loadedTable"
-                    @vuetable:row-clicked="onRowClick">
+                    @vuetable:row-dblclicked="onRowClick">
                 
                 <template slot="row-link" scope="props">
                     <div>
@@ -190,7 +190,7 @@ export default {
         formatMoney (value) {
             return accounting.formatMoney(value, "₽", 2, ".", ",")
         },
-        formatDate (value, fmt = 'YYYY-MM-DD') {
+        formatDate (value, fmt = 'DD-MM-YYYY') {
             return (value == null)
                 ? ''
                 : moment(value, 'YYYY-MM-DD').format(fmt)
