@@ -25,6 +25,7 @@
         "accounting": "^0.4.1",
         "babel-runtime": "^6.26.0",
         "bootstrap": "^3.3.7",
+        "google-libphonenumber": "^3.0.4",
         "inputmask": "^3.3.8",
         "jquery.uniform": "^4.2.0",
         "moment": "^2.18.1",

@@ -48,6 +48,10 @@
 <script>
 import accounting from 'accounting'
 import moment from 'moment'
+
+var PNF = require('google-libphonenumber').PhoneNumberFormat;
+var phoneUtil = require('google-libphonenumber').PhoneNumberUtil.getInstance();
+
 import Vuetable from './../../plugins/vuetable-2-develop/Vuetable'
 import VuetablePagination from './../../plugins/vuetable-2-develop/VuetablePagination'
 import VuetablePaginationInfo from './../../plugins/vuetable-2-develop/VuetablePaginationInfo'
@@ -128,6 +132,7 @@ export default {
                 name: 'user.phone',
                 title: 'Телефон',
                 sortField: 'users.phone',
+                callback: 'formatPhone'
             },
             {
                 name: 'created_at',
@@ -135,12 +140,12 @@ export default {
                 sortField: 'created_at',
                 callback: 'formatDate'
             },
-            {
-                name: 'course.time_start',
-                title: 'Дата курса',
-                sortField: 'courses.time_start',
-                callback: 'formatDate'
-            },
+            // {
+            //     name: 'course.time_start',
+            //     title: 'Дата курса',
+            //     sortField: 'courses.time_start',
+            //     callback: 'formatDate'
+            // },
             {
                 name: 'course.course_type.name',
                 title: 'Тип курса',
@@ -191,9 +196,21 @@ export default {
             return accounting.formatMoney(value, "₽", 2, ".", ",")
         },
         formatDate (value, fmt = 'DD-MM-YYYY') {
-            return (value == null)
+            return (!value)
                 ? ''
                 : moment(value, 'YYYY-MM-DD').format(fmt)
+        },
+        formatPhone (value) {
+            try {
+                if (!value) {
+                    return ''
+                } else {
+                    var phoneNumber = phoneUtil.parse(value, 'RU')
+                    return phoneUtil.format(phoneNumber, PNF.INTERNATIONAL)
+                }
+            } catch (e) {
+                return value
+            }
         }
     }
 }
