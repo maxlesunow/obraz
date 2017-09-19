@@ -89,9 +89,8 @@ export default {
                 dataClass: 'text-center',
             },
             {
-                name: 'id',
-                title: '№',
-                sortField: 'courses.id'
+                name: '__sequence',
+                title: '№'
             },
             {
                 name: '__slot:row-link',

@@ -61,9 +61,8 @@ export default {
                 dataClass: 'text-center',
             },
             {
-                name: 'id',
-                title: '№',
-                sortField: 'users.id'
+                name: '__sequence',
+                title: '№'
             },
             {
                 name: '__slot:row-link',

@@ -62,6 +62,10 @@ export default {
                 dataClass: 'text-center',
             },
             {
+                name: '__sequence',
+                title: '№'
+            },
+            {
                 name: '__slot:row-link',
                 title: 'Имя',
                 sortField: 'first_name',
