@@ -59,7 +59,10 @@ class UserController extends Controller
     {
         $role_id = Role::where('name', '=', $type)->firstOrFail()->id;
 
-        $query = User::where('role_id', '=', $role_id);
+
+        $query = User::query()->select('users.*');
+
+        $query->where('role_id', '=', $role_id);
 
         //Сортировка
         if (request()->has('sort')) {
@@ -72,22 +75,43 @@ class UserController extends Controller
                 }
             }
         } else {
-            $query = $query->orderBy('id', 'asc');
+            $query = $query->orderBy('users.id', 'asc');
         }
 
-        //Фильтрация
-        if ($request->exists('filter')) {
+        //Поиск
+        if ($request->exists('search')) {
             $query->where(function($q) use($request) {
-                $value = "%{$request->filter}%";
-                $q->where('first_name', 'ilike', $value)
-                    ->orWhere('last_name', 'ilike', $value)
-                    ->orWhere('middle_name', 'ilike', $value)
-                    ->orWhere('phone', 'ilike', $value)
-                    ->orWhere('email', 'ilike', $value);
+                $value = "%{$request->search}%";
+                $q->where('users.first_name', 'ilike', $value)
+                    ->orWhere('users.last_name', 'ilike', $value)
+                    ->orWhere('users.middle_name', 'ilike', $value)
+                    ->orWhere('users.phone', 'ilike', $value)
+                    ->orWhere('users.email', 'ilike', $value);
             });
         }
+
+        //Фильтр
+        if ($request->exists('filters')) {
+
+            $filters = explode(',', request()->filters);
+            foreach ($filters as $filter) {
+                if($filter){
+                    list($filterBy, $filterValue) = explode('|', $filter);
+                    if($filterBy == 'reservations.course_id'){
+                        $query->whereHas('reservations', function($q) use($filterValue){
+                            $q->where('course_id', $filterValue);
+                        });
+                    }
+                    else{
+                        $query->where($filterBy, $filterValue);
+                    }
+                }
+            }
+        }
+
         //Пагинация
         $perPage = request()->has('per_page') ? (int) request()->per_page : null;
+
         $pagination = $query->paginate($perPage);
         $pagination->appends([
             'sort' => request()->sort,
