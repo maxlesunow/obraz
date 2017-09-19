@@ -13,13 +13,15 @@
                     <span><i class="icon-trash position-left"></i> Удалить</span>
                 </button>
             </div>
+
+            <div class="col-xs-12" style="margin-bottom: 15px;">
+                <select2 :local-data="select2Data" v-model="select2" @input="onInput">
+                    <option value="">Докладчик</option>
+                </select2>
+            </div>
         </div>
-        <div class="row">
-            {{select2}}
-            <select2 class="col-xs-4" :local-data="select2Data" v-model="select2" @input="onInput">
-                <!-- <option value="0">Докладчик</option> -->
-            </select2>
-        </div>
+
+
         <div class="datatable-scroll-wrap">
             <vuetable ref="vuetable" api-url="/api/course/groups" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage"
                     :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData"  @vuetable:loaded="loadedTable">
@@ -63,8 +65,7 @@ export default {
     mixins: [ vuetablemixins ],
     components: { Select2, FilterBar, ShowBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
     data: () => ({
-        select2Data: [{id: 1, text: "1213"}, {id: 2, text: "2232"}],
-        select2: "0",
+        select2: "",
         fields: [
             {
                 name: '__checkbox',

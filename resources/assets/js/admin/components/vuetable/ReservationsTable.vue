@@ -13,7 +13,26 @@
                     <span><i class="icon-trash position-left"></i> Удалить</span>
                 </button>
             </div>
+
+            <div class="col-xs-12" style="margin-bottom: 15px;">
+                <select2 :filters="filters" select-name="user" @select2:set="select2Set"></select2>
+                <select2 :filters="filters" select-name="course" @select2:set="select2Set"></select2>
+                <select2 :filters="filters" select-name="paymentType" @select2:set="select2Set"></select2>
+                <select2 :filters="filters" select-name="courseType" @select2:set="select2Set"></select2>
+                
+                <select class="form-control" style="width: 170px; display: inline-block;" @change.prevent="select2Set($event.target.value, 'paymentStatus')">
+                    <option value="">Статус оплаты</option>
+                    <option value="true">Оплачено</option>
+                    <option value="false">Не оплачено</option>
+                </select>
+                <select class="form-control" style="width: 170px; display: inline-block;" @change.prevent="select2Set($event.target.value, 'reservationStatus')">
+                    <option value="">Статус заявки</option>
+                    <option value="true">Подтверждено</option>
+                    <option value="false">Не подтверждено</option>
+                </select>
+            </div>
         </div>
+
         <div class="datatable-scroll-wrap">
             <vuetable ref="vuetable" :api-url="'/api/' + nameUrl + 's'" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage" 
                     :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData" @vuetable:loaded="loadedTable"
@@ -45,11 +64,45 @@ import FilterBar  from './FilterBar'
 import ShowBar  from './ShowBar'
 import vuetablemixins  from './vuetablemixins'
 
+import Select2 from './../Select2'
+
 export default {
     mixins: [ vuetablemixins ],
-    components: { FilterBar, ShowBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
+    components: { Select2, FilterBar, ShowBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
     data: () => ({
         nameUrl: 'reservation',
+        filters: {
+            user: {
+                url: '/api/users',
+                text: 'full_name',
+                field: 'user.full_name',
+                placeholder: 'Пользователь'
+            },
+            course: {
+                url: '/api/courses',
+                text: 'name',
+                field: 'course.name',
+                placeholder: 'Курс'
+            },
+            paymentType: {
+                url: '/api/payment/types',
+                text: 'name',
+                field: 'payment_type.name',
+                placeholder: 'Тип оплаты'
+            },
+            courseType: {
+                url: '/api/course/types',
+                text: 'name',
+                field: 'course.course_type.name',
+                placeholder: 'Тип курса'
+            },
+            paymentStatus: {
+                field: 'reservation.payment_status'
+            },
+            reservationStatus: {
+                field: 'reservation.status'
+            }
+        },
         fields: [
             {
                 name: '__checkbox',

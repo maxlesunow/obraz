@@ -25,6 +25,7 @@ module.exports = {
             paginationInfo: 'Показано с {from} по {to} из {total} элементов'
         },
         moreParams: {},
+        filterField: {},
         perPage: 20
     }),
     methods: {
@@ -53,6 +54,22 @@ module.exports = {
         },
         showSet(value) {
             this.perPage = value
+            this.updateTable()
+        },
+        formatFilterPhp(filterFiled = {}) {
+            var normalFilterField = JSON.parse(JSON.stringify(filterFiled))
+            var entries = Object.entries(normalFilterField)
+            var filters = entries.map((el) => el.join('|') )
+
+            return filters.join(',')
+        },
+        select2Set(value, name) {
+            var destName = this.filters[name].field;
+            this.filterField[destName] = value
+            if (value === '') {
+                delete this.filterField[destName]
+            }
+            this.moreParams.filters = this.formatFilterPhp(this.filterField)
             this.updateTable()
         },
         loadedTable() {
