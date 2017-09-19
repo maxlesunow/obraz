@@ -20,23 +20,15 @@
                 <select2 :filters="filters" select-name="paymentType" @select2:set="select2Set"></select2>
                 <select2 :filters="filters" select-name="courseType" @select2:set="select2Set"></select2>
                 
-                <select class="form-control" style="width: 170px; display: inline-block;" @change.prevent="select2Set($event.target.value, 'paymentStatus')">
-                    <option value="">Статус оплаты</option>
-                    <option value="true">Оплачено</option>
-                    <option value="false">Не оплачено</option>
-                </select>
-                <select class="form-control" style="width: 170px; display: inline-block;" @change.prevent="select2Set($event.target.value, 'reservationStatus')">
-                    <option value="">Статус заявки</option>
-                    <option value="true">Подтверждено</option>
-                    <option value="false">Не подтверждено</option>
-                </select>
+                <select2 :filters="filters" select-name="paymentStatus" @select2:set="select2Set"></select2>
+                <select2 :filters="filters" select-name="reservationStatus" @select2:set="select2Set"></select2>
             </div>
         </div>
 
         <div class="datatable-scroll-wrap">
             <vuetable ref="vuetable" :api-url="'/api/' + nameUrl + 's'" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage" 
                     :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData" @vuetable:loaded="loadedTable"
-                    @vuetable:row-clicked="onRowClick">
+                    @vuetable:row-dblclicked="onRowClick">
                 
                 <template slot="row-link" scope="props">
                     <div>
@@ -56,6 +48,10 @@
 <script>
 import accounting from 'accounting'
 import moment from 'moment'
+
+var PNF = require('google-libphonenumber').PhoneNumberFormat;
+var phoneUtil = require('google-libphonenumber').PhoneNumberUtil.getInstance();
+
 import Vuetable from './../../plugins/vuetable-2-develop/Vuetable'
 import VuetablePagination from './../../plugins/vuetable-2-develop/VuetablePagination'
 import VuetablePaginationInfo from './../../plugins/vuetable-2-develop/VuetablePaginationInfo'
@@ -73,34 +69,42 @@ export default {
         nameUrl: 'reservation',
         filters: {
             user: {
-                url: '/api/users',
-                text: 'full_name',
+                ajax: { url: '/api/users', text: 'full_name' },
                 field: 'users.id',
                 placeholder: 'Пользователь'
             },
             course: {
-                url: '/api/courses',
-                text: 'name',
+                ajax: { url: '/api/courses', text: 'name' },
                 field: 'courses.id',
                 placeholder: 'Курс'
             },
             paymentType: {
-                url: '/api/payment/types',
-                text: 'name',
+                ajax: { url: '/api/payment/types', text: 'name' },
                 field: 'payment_types.id',
                 placeholder: 'Тип оплаты'
             },
             courseType: {
-                url: '/api/course/types',
-                text: 'name',
+                ajax: { url: '/api/course/types', text: 'name' },
                 field: 'courses.course_type_id',
                 placeholder: 'Тип курса'
             },
             paymentStatus: {
-                field: 'reservations.payment_status'
+                data: [{ id: "-1" }, { id: "true", text: "Оплачено" }, { id: "false", text: "Не оплачено" }],
+                field: 'reservations.payment_status',
+                placeholder: { // @see https://github.com/select2/select2/issues/3553#issuecomment-240259253
+                    id: "-1",
+                    text: "Статус оплаты",
+                    selected:'selected'
+                }
             },
             reservationStatus: {
-                field: 'reservations.status'
+                data: [{ id: "-1" }, { id: "true", text: "Подтверждено" }, { id: "false", text: "Не подтверждено" }],
+                field: 'reservations.status',
+                placeholder: {
+                    id: "-1",
+                    text: "Статус заявки",
+                    selected:'selected'
+                }
             }
         },
         fields: [
@@ -128,6 +132,7 @@ export default {
                 name: 'user.phone',
                 title: 'Телефон',
                 sortField: 'users.phone',
+                callback: 'formatPhone'
             },
             {
                 name: 'created_at',
@@ -135,12 +140,12 @@ export default {
                 sortField: 'created_at',
                 callback: 'formatDate'
             },
-            {
-                name: 'course.time_start',
-                title: 'Дата курса',
-                sortField: 'courses.time_start',
-                callback: 'formatDate'
-            },
+            // {
+            //     name: 'course.time_start',
+            //     title: 'Дата курса',
+            //     sortField: 'courses.time_start',
+            //     callback: 'formatDate'
+            // },
             {
                 name: 'course.course_type.name',
                 title: 'Тип курса',
@@ -188,12 +193,26 @@ export default {
                 : '<span class="label label-default">Не подтверждено</span>'
         },
         formatMoney (value) {
-            return accounting.formatMoney(value, "₽", 2, ".", ",")
+            try {
+                return accounting.formatMoney(value, "₽", 2, ".", ",")
+            } catch (e) {
+                return value
+            }
         },
-        formatDate (value, fmt = 'YYYY-MM-DD') {
-            return (value == null)
-                ? ''
-                : moment(value, 'YYYY-MM-DD').format(fmt)
+        formatDate (value, fmt = 'DD-MM-YYYY') {
+            try {
+                return moment(value, 'YYYY-MM-DD').format(fmt)
+            } catch (e) {
+                return value
+            }
+        },
+        formatPhone (value) {
+            try {
+                var phoneNumber = phoneUtil.parse(value, 'RU')
+                return phoneUtil.format(phoneNumber, PNF.INTERNATIONAL)
+            } catch (e) {
+                return value
+            }
         }
     }
 }
