@@ -138,7 +138,7 @@ export default {
             }
         ],
         sortOrder: [
-            { field: 'name', sortField: 'name', direction: 'asc' }
+            { field: 'name', sortField: 'courses.name', direction: 'asc' }
         ],
         moreParams: {},
         perPage: 20
