@@ -75,32 +75,32 @@ export default {
             user: {
                 url: '/api/users',
                 text: 'full_name',
-                field: 'user.full_name',
+                field: 'users.id',
                 placeholder: 'Пользователь'
             },
             course: {
                 url: '/api/courses',
                 text: 'name',
-                field: 'course.name',
+                field: 'courses.id',
                 placeholder: 'Курс'
             },
             paymentType: {
                 url: '/api/payment/types',
                 text: 'name',
-                field: 'payment_type.name',
+                field: 'payment_types.id',
                 placeholder: 'Тип оплаты'
             },
             courseType: {
                 url: '/api/course/types',
                 text: 'name',
-                field: 'course.course_type.name',
+                field: 'courses.course_type_id',
                 placeholder: 'Тип курса'
             },
             paymentStatus: {
-                field: 'reservation.payment_status'
+                field: 'reservations.payment_status'
             },
             reservationStatus: {
-                field: 'reservation.status'
+                field: 'reservations.status'
             }
         },
         fields: [
