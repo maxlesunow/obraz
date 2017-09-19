@@ -40,6 +40,11 @@ class User extends Authenticatable
         return $this->belongsTo('App\Verification');
     }
 
+    public function reservations(){
+
+        return $this->hasMany('App\Reservation');
+    }
+
     public function getFullNameAttribute(){
 
         return join(' ', array($this->last_name, $this->first_name, $this->middle_name));
