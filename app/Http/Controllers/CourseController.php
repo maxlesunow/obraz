@@ -131,8 +131,8 @@ class CourseController extends Controller
                 if($filter){
                     list($filterBy, $filterValue) = explode('|', $filter);
                     if($filterBy == 'speakers.id'){
-                        $query->whereHas('speakers', function($q) use($request){
-                            $q->where('id', 13);
+                        $query->whereHas('speakers', function($q) use($filterValue){
+                            $q->where('id', $filterValue);
                         });
                     }
                     else{

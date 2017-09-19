@@ -21,7 +21,7 @@ class Course extends Model
         'meta_url',
     ];
 
-    protected $appends = ['speakers_count'];
+    protected $appends = ['reservations_count'];
 
     protected $with = ['course_type', 'course_group', 'speakers'];
 
@@ -40,9 +40,15 @@ class Course extends Model
         return $this->belongsToMany('App\Speaker');
     }
 
-    public function getSpeakersCountAttribute(){
+    public function reservations(){
 
-        return $this->speakers()->count();
+        return $this->hasMany('App\Reservation');
+    }
+
+
+    public function getReservationsCountAttribute(){
+
+        return $this->reservations()->where('status', true)->count();
     }
 
 
