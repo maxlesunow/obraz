@@ -193,21 +193,23 @@ export default {
                 : '<span class="label label-default">Не подтверждено</span>'
         },
         formatMoney (value) {
-            return accounting.formatMoney(value, "₽", 2, ".", ",")
+            try {
+                return accounting.formatMoney(value, "₽", 2, ".", ",")
+            } catch (e) {
+                return value
+            }
         },
         formatDate (value, fmt = 'DD-MM-YYYY') {
-            return (!value)
-                ? ''
-                : moment(value, 'YYYY-MM-DD').format(fmt)
+            try {
+                return moment(value, 'YYYY-MM-DD').format(fmt)
+            } catch (e) {
+                return value
+            }
         },
         formatPhone (value) {
             try {
-                if (!value) {
-                    return ''
-                } else {
-                    var phoneNumber = phoneUtil.parse(value, 'RU')
-                    return phoneUtil.format(phoneNumber, PNF.INTERNATIONAL)
-                }
+                var phoneNumber = phoneUtil.parse(value, 'RU')
+                return phoneUtil.format(phoneNumber, PNF.INTERNATIONAL)
             } catch (e) {
                 return value
             }
