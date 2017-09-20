@@ -42,9 +42,6 @@
 </template>
 
 <script>
-import accounting from 'accounting'
-import moment from 'moment'
-
 import Vuetable from './../../plugins/vuetable-2-develop/Vuetable'
 import VuetablePagination from './../../plugins/vuetable-2-develop/VuetablePagination'
 import VuetablePaginationInfo from './../../plugins/vuetable-2-develop/VuetablePaginationInfo'
@@ -143,20 +140,6 @@ export default {
         perPage: 20
     }),
     methods: {
-        formatMoney (value) {
-            try {
-                return accounting.formatMoney(value, "₽", 2, ".", ",")
-            } catch (e) {
-                return value
-            }
-        },
-        formatDate (value, fmt = 'DD-MM-YYYY') {
-            try {
-                return moment(value, 'YYYY-MM-DD').format(fmt)
-            } catch (e) {
-                return value
-            }
-        },
         formatSpeakers (value) {
             try {
                 var names = value.map((el) => '<span>' + el.full_name + '</span>')

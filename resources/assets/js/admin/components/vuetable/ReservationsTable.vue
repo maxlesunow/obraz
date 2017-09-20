@@ -9,7 +9,7 @@
                 <a :href="nameUrl + '/create'"><button class="btn btn-primary">
                     <span><i class="icon-add position-left"></i> Добавить</span>
                 </button></a>
-                <button class="btn btn-danger" @click="removeCheckedRows">
+                <button class="btn btn-danger" @click="removeCheckedRows(removeOptions)">
                     <span><i class="icon-trash position-left"></i> Удалить</span>
                 </button>
             </div>
@@ -61,6 +61,9 @@ export default {
     components: { Select2, FilterBar, ShowBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
     data: () => ({
         nameUrl: 'reservation',
+        removeOptions: {
+            url: 'api/reservations'
+        },
         filters: {
             user: {
                 ajax: { url: '/api/users', text: 'full_name' },
