@@ -86,11 +86,12 @@ module.exports = {
         onRowClick(dataItem) {
             window.location.href = this.nameUrl + '/' + dataItem.id +'/edit'
         },
-        removeCheckedRows() {
-            // var swal = require('sweetalert')
+        removeCheckedRows(options) {
+            var vm = this;
             var swal = require('./../../plugins/sweet_alert.min')
+
+            var ids = this.$refs.vuetable.selectedTo.join(',')
             
-            console.log('11', this.$refs.vuetable.selectedTo)
             swal({
                 title: "Are you sure?",
                 text: "You will not be able to recover this imaginary file!",
@@ -103,12 +104,23 @@ module.exports = {
                 closeOnCancel: false
             }, function(isConfirm) {
                 if (isConfirm) {
-                    swal({
-                        title: "Deleted!",
-                        text: "Your imaginary file has been deleted.",
-                        confirmButtonColor: "#66BB6A",
-                        type: "success"
-                    });
+                    vm.$http.delete(options.url + '/' + ids)
+                        .then(function (result) {
+                            swal({
+                                title: "Deleted!",
+                                text: "Your imaginary file has been deleted.",
+                                confirmButtonColor: "#66BB6A",
+                                type: "success"
+                            });
+                        })
+                        .catch(function(result) {
+                            swal({
+                                title: "Not Deleted!",
+                                text: "Problems....",
+                                confirmButtonColor: "#66BB6A",
+                                type: "error"
+                            });
+                        })
                 }
                 else {
                     swal({
