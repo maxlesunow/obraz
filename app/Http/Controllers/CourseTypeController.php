@@ -93,6 +93,16 @@ class CourseTypeController extends Controller
 
         $course_types = CourseType::find(explode(',', $ids));
 
+        if(count($course_types) == 0) {
+
+            $errors = new MessageBag();
+
+            // add your error messages:
+            $errors->add('error', 'Типы курсов не найдены. Возможно вы удалили их ранее');
+
+            return response()->json($errors, 422);
+        }
+
         CourseType::destroy(explode(',', $ids));
 
         return  response()->json($course_types);

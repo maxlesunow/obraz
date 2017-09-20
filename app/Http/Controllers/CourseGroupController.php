@@ -93,6 +93,16 @@ class CourseGroupController extends Controller
 
         $course_groups = CourseGroup::find(explode(',', $ids));
 
+        if(count($course_groups) == 0) {
+
+            $errors = new MessageBag();
+
+            // add your error messages:
+            $errors->add('error', 'Группы курсов не найдены. Возможно вы удалили их ранее');
+
+            return response()->json($errors, 422);
+        }
+
         CourseGroup::destroy(explode(',', $ids));
 
         return  response()->json($course_groups);

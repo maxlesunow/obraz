@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests\ReservationRequest;
+use Illuminate\Support\MessageBag;
 
 use App\Reservation;
 use App\PaymentType;
@@ -176,6 +177,16 @@ class ReservationController extends Controller
     public function destroy($ids){
 
         $reservations = Reservation::find(explode(',', $ids));
+
+        if(count($reservations) == 0) {
+
+            $errors = new MessageBag();
+
+            // add your error messages:
+            $errors->add('error', 'Заявки не найдены. Возможно вы удалили их ранее');
+
+            return response()->json($errors, 422);
+        }
 
         Reservation::destroy(explode(',', $ids));
 
