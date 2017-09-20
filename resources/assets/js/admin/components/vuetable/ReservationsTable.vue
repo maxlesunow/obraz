@@ -62,7 +62,7 @@ export default {
     data: () => ({
         nameUrl: 'reservation',
         removeOptions: {
-            url: 'api/reservations'
+            url: '/api/reservations'
         },
         filters: {
             user: {
