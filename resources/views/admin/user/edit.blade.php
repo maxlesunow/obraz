@@ -23,24 +23,14 @@
                 <div class="panel-heading">
                     <h4 class="panel-title">Курсы пользователя<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
                 </div>
-                <div class="panel-body">
-                    Здесь пока пусто
-                    {{--{!! Form::model($subscriber, ['method' => 'PATCH', 'action' => ['SubscriberController@update', $subscriber->id], 'class' => 'form-horizontal']) !!}--}}
-                    {{--@include('subscriber.form')--}}
-                    {{--{!! Form::close() !!}--}}
-                </div>
+                <courses-table-user></courses-table-user>
             </div>
 
             <div class="panel panel-flat">
                 <div class="panel-heading">
                     <h4 class="panel-title">Отзывы пользователя<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
                 </div>
-                <div class="panel-body">
-                    Здесь пока пусто
-                    {{--{!! Form::model($subscriber, ['method' => 'PATCH', 'action' => ['SubscriberController@update', $subscriber->id], 'class' => 'form-horizontal']) !!}--}}
-                    {{--@include('subscriber.form')--}}
-                    {{--{!! Form::close() !!}--}}
-                </div>
+                <reviews-table-user></reviews-table-user>
             </div>
         </div>
     </div>

@@ -15,17 +15,16 @@
             </div>
 
         </div>
-
         <div class="datatable-scroll-wrap">
             <vuetable ref="vuetable" :api-url="'/api/' + nameUrl + 's'" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage" 
                     :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData" @vuetable:loaded="loadedTable"
                     @vuetable:checkbox-toggled-all="updateCheckboxes" @vuetable:row-dblclicked="onRowClick" :noDataTemplate="template.noData">
-                 
+
                 <template slot="row-link" scope="props">
                     <div>
-                        <a :href="nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.full_name}}</a>
+                         <a :href="nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.name}}</a>
                     </div>
-                </template>
+                </template> 
             
             </vuetable>
         </div>
@@ -51,79 +50,87 @@ export default {
     mixins: [ vuetablemixins ],
     components: { Select2, FilterBar, ShowBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
     data: () => ({
-        nameUrl: 'reservation',
+        nameUrl: 'course',
         // removeOptions: {
-        //     url: '/api/reservations',
-        //     // text: ''
+        //     url: '/api/courses',
+        //     text: 'Ваши действия так же удалят все заявки курса!'
         // },
         filters: {},
         fields: [
             {
-                name: 'id',
+                name: '__sequence',
                 title: '№',
-                sortField: 'reservations.id',
                 titleClass: 'text-center',
                 dataClass: 'text-center',
             },
             {
                 name: '__slot:row-link',
-                title: 'Пользователь',
-                sortField: 'users.full_name',
+                title: 'Название',
+                sortField: 'courses.name',
                 titleClass: 'text-center',
                 dataClass: 'text-center',
             },
-            {
-                name: 'user.phone',
-                title: 'Телефон',
-                sortField: 'users.phone',
-                callback: 'formatPhone',
-                titleClass: 'text-center',
-                dataClass: 'text-center',
-            },
-            {
-                name: 'payment_type.name',
-                title: 'Способ оплаты',
-                sortField: 'payment_types.name',
-                titleClass: 'text-center',
-                dataClass: 'text-center',
-            },
-            {
-                name: 'payment_status',
-                title: 'Оплата',
-                sortField: 'reservations.payment_status',
-                callback: 'paymentLabel',
-                titleClass: 'text-center',
-                dataClass: 'text-center',
-            },
-            {
-                name: 'status',
-                title: 'Статус',
-                sortField: 'reservations.status',
-                callback: 'statusLabel',
-                titleClass: 'text-center',
-                dataClass: 'text-center',
-            }
+            // {
+            //     name: 'speakers',
+            //     title: 'Лектор',
+            //     // sortField: 'email'
+            //     callback: 'formatSpeakers',
+            //     titleClass: 'text-center',
+            //     dataClass: 'text-center',
+            // },
+            // {
+            //     name: 'time_start',
+            //     title: 'Дата курса',
+            //     sortField: 'courses.time_start',
+            //     callback: 'formatDate',
+            //     titleClass: 'text-center',
+            //     dataClass: 'text-center',
+            // },
+            // {
+            //     name: 'address',
+            //     title: 'Адрес',
+            //     sortField: 'courses.address',
+            //     titleClass: 'text-center',
+            //     // dataClass: 'text-center',
+            // },
+            // {
+            //     name: 'course_type.name',
+            //     title: 'Тип курса',
+            //     sortField: 'course_types.name',
+            //     titleClass: 'text-center',
+            //     dataClass: 'text-center',
+            // },
+            // {
+            //     name: 'course_group.name',
+            //     title: 'Группа',
+            //     sortField: 'course_groups.name',
+            //     titleClass: 'text-center',
+            //     dataClass: 'text-center',
+            // },
+            // {
+            //     name: 'cost',
+            //     title: 'Стоимость',
+            //     sortField: 'courses.cost',
+            //     callback: 'formatMoney',
+            //     titleClass: 'text-center',
+            //     dataClass: 'text-center',
+            // },
+            // {
+            //     name: 'reservations_count',
+            //     title: 'Количество учавстников',
+            //     // sortField: 'courses.address',
+            //     titleClass: 'text-center',
+            //     dataClass: 'text-center',
+            // }
         ],
         sortOrder: [
-            { field: 'id', sortField: 'reservations.id', direction: 'asc' }
+            { field: 'name', sortField: 'courses.name', direction: 'asc' }
         ],
         moreParams: {},
         perPage: 20
     }),
     methods: {
-        paymentLabel (value) {
-            return value
-                ? '<span class="label label-success">Оплачено</span>'
-                : '<span class="label label-danger">Не оплачено</span>'
-        },
-        statusLabel (value) {
-            return value
-                ? '<span class="label label-info">Подтверждено</span>'
-                : '<span class="label label-default">Не подтверждено</span>'
-        }
-    },
-    mounted() {
-        console.log(window.filterName, window.filterValue)
+        //
     }
 }
 </script>

@@ -23,12 +23,7 @@
                 <div class="panel-heading">
                     <h4 class="panel-title">Курсы докладчика<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
                 </div>
-                <div class="panel-body">
-                    Здесь пока пусто
-                    {{--{!! Form::model($subscriber, ['method' => 'PATCH', 'action' => ['SubscriberController@update', $subscriber->id], 'class' => 'form-horizontal']) !!}--}}
-                    {{--@include('subscriber.form')--}}
-                    {{--{!! Form::close() !!}--}}
-                </div>
+                <courses-table-speaker></courses-table-speaker>
             </div>
 
         </div>
