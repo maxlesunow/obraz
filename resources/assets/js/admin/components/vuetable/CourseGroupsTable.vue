@@ -49,8 +49,6 @@
 </template>
 
 <script>
-import accounting from 'accounting'
-import moment from 'moment'
 import Vuetable from './../../plugins/vuetable-2-develop/Vuetable'
 import VuetablePagination from './../../plugins/vuetable-2-develop/VuetablePagination'
 import VuetablePaginationInfo from './../../plugins/vuetable-2-develop/VuetablePaginationInfo'
