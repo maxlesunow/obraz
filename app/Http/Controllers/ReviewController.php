@@ -103,4 +103,23 @@ class ReviewController extends Controller
         return response()->json($pagination);
     }
 
+    public function destroy($ids){
+
+        $reviews = Review::find(explode(',', $ids));
+
+        if(count($reviews) == 0) {
+
+            $errors = new MessageBag();
+
+            // add your error messages:
+            $errors->add('error', 'Курсы не найдены. Возможно вы удалили их ранее');
+
+            return response()->json($errors, 422);
+        }
+
+        Review::destroy(explode(',', $ids));
+
+        return  response()->json($reviews);
+    }
+
 }

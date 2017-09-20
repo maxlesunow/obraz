@@ -100,4 +100,23 @@ class PaymentController extends Controller
 
         return response()->json($pagination);
     }
+
+    public function destroy($ids){
+
+        $payments = Payment::find(explode(',', $ids));
+
+        if(count($payments) == 0) {
+
+            $errors = new MessageBag();
+
+            // add your error messages:
+            $errors->add('error', 'Курсы не найдены. Возможно вы удалили их ранее');
+
+            return response()->json($errors, 422);
+        }
+
+        Payment::destroy(explode(',', $ids));
+
+        return  response()->json($payments);
+    }
 }

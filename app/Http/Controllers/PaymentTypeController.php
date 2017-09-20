@@ -87,4 +87,23 @@ class PaymentTypeController extends Controller
 
         return response()->json($pagination);
     }
+
+    public function destroy($ids){
+
+        $payment_types = PaymentType::find(explode(',', $ids));
+
+        if(count($payment_types) == 0) {
+
+            $errors = new MessageBag();
+
+            // add your error messages:
+            $errors->add('error', 'Курсы не найдены. Возможно вы удалили их ранее');
+
+            return response()->json($errors, 422);
+        }
+
+        PaymentType::destroy(explode(',', $ids));
+
+        return  response()->json($payment_types);
+    }
 }
