@@ -76,6 +76,9 @@ module.exports = {
         },
         loadedTable() {
             this.$refs.vuetable.selectedTo = [] // uncheck selected row
+            this.updateCheckboxes()
+        },
+        updateCheckboxes() {
             $(this.$el).find('input[type="checkbox"]').uniform({
                 radioClass: 'choice'
             });
@@ -84,7 +87,66 @@ module.exports = {
             window.location.href = this.nameUrl + '/' + dataItem.id +'/edit'
         },
         removeCheckedRows() {
-            console.log(this.$refs.vuetable.selectedTo)            
+            // var swal = require('sweetalert')
+            var swal = require('./../../plugins/sweet_alert.min')
+            
+            console.log('11', this.$refs.vuetable.selectedTo)
+            swal({
+                title: "Are you sure?",
+                text: "You will not be able to recover this imaginary file!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#EF5350",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel pls!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }, function(isConfirm) {
+                if (isConfirm) {
+                    swal({
+                        title: "Deleted!",
+                        text: "Your imaginary file has been deleted.",
+                        confirmButtonColor: "#66BB6A",
+                        type: "success"
+                    });
+                }
+                else {
+                    swal({
+                        title: "Cancelled",
+                        text: "Your imaginary file is safe :)",
+                        confirmButtonColor: "#2196F3",
+                        type: "error"
+                    });
+                }
+            });            
+        },
+        // vuetable callbacks
+        
+        formatMoney (value) {
+            var accounting = require('accounting')
+            try {
+                return accounting.formatMoney(value, "₽", 2, ".", ",")
+            } catch (e) {
+                return value
+            }
+        },
+        formatDate (value, fmt = 'DD-MM-YYYY') {
+            var moment = require('moment')
+            try {
+                return moment(value, 'YYYY-MM-DD').format(fmt)
+            } catch (e) {
+                return value
+            }
+        },
+        formatPhone (value) {
+            var PNF = require('google-libphonenumber').PhoneNumberFormat;
+            var phoneUtil = require('google-libphonenumber').PhoneNumberUtil.getInstance();
+            try {
+                var phoneNumber = phoneUtil.parse(value, 'RU')
+                return phoneUtil.format(phoneNumber, PNF.INTERNATIONAL)
+            } catch (e) {
+                return value
+            }
         }
     }
 }

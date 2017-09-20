@@ -28,8 +28,8 @@
         <div class="datatable-scroll-wrap">
             <vuetable ref="vuetable" :api-url="'/api/' + nameUrl + 's'" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage" 
                     :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData" @vuetable:loaded="loadedTable"
-                    @vuetable:row-dblclicked="onRowClick" :noDataTemplate="template.noData">
-                
+                    @vuetable:checkbox-toggled-all="updateCheckboxes" @vuetable:row-dblclicked="onRowClick" :noDataTemplate="template.noData">
+                 
                 <template slot="row-link" scope="props">
                     <div>
                         <a :href="nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.course.name}}</a>
@@ -46,12 +46,6 @@
 </template>
 
 <script>
-import accounting from 'accounting'
-import moment from 'moment'
-
-var PNF = require('google-libphonenumber').PhoneNumberFormat;
-var phoneUtil = require('google-libphonenumber').PhoneNumberUtil.getInstance();
-
 import Vuetable from './../../plugins/vuetable-2-develop/Vuetable'
 import VuetablePagination from './../../plugins/vuetable-2-develop/VuetablePagination'
 import VuetablePaginationInfo from './../../plugins/vuetable-2-develop/VuetablePaginationInfo'
@@ -191,28 +185,6 @@ export default {
             return value
                 ? '<span class="label label-info">Подтверждено</span>'
                 : '<span class="label label-default">Не подтверждено</span>'
-        },
-        formatMoney (value) {
-            try {
-                return accounting.formatMoney(value, "₽", 2, ".", ",")
-            } catch (e) {
-                return value
-            }
-        },
-        formatDate (value, fmt = 'DD-MM-YYYY') {
-            try {
-                return moment(value, 'YYYY-MM-DD').format(fmt)
-            } catch (e) {
-                return value
-            }
-        },
-        formatPhone (value) {
-            try {
-                var phoneNumber = phoneUtil.parse(value, 'RU')
-                return phoneUtil.format(phoneNumber, PNF.INTERNATIONAL)
-            } catch (e) {
-                return value
-            }
         }
     }
 }
