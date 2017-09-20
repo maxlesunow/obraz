@@ -8,25 +8,11 @@
             <h4 class="panel-title">Список отзывов<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
         </div>
         {{-- <div class="panel-body"></div> --}}
-        <course-types-table></course-types-table>
+        <review-table></review-table>
     </div>
 @endsection
 
 @section('scripts')
     <script>
-        $(".styled").uniform({
-            radioClass: 'choice'
-        });
-
-        $('#checked_all').change(function(){
-            if(document.getElementById("checked_all").checked){
-                $('.check_item').parent().addClass('checked')
-                $('.check_item').prop("checked", $(this).prop("checked"))
-            }
-            else {
-                $('.check_item').parent().removeClass('checked')
-                $('.check_item').prop("checked", $(this).prop("checked"))
-            }
-        })
     </script>
 @endsection
