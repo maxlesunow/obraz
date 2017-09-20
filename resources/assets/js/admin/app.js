@@ -20,11 +20,13 @@ Vue.component('admins-table', require('./components/vuetable/AdminsTable.vue'));
 Vue.component('speakers-table', require('./components/vuetable/SpeakersTable.vue'));
 Vue.component('course-types-table', require('./components/vuetable/CourseTypesTable.vue'));
 Vue.component('course-groups-table', require('./components/vuetable/CourseGroupsTable.vue'));
-Vue.component('courses-table', require('./components/vuetable/CoursesTable.vue'));
 Vue.component('payments-table', require('./components/vuetable/PaymentsTable.vue'));
 Vue.component('payment-types-table', require('./components/vuetable/PaymentTypesTable.vue'));
 Vue.component('reservations-table', require('./components/vuetable/ReservationsTable.vue'));
 Vue.component('review-table', require('./components/vuetable/ReviewTable.vue'));
+
+Vue.component('courses-table', require('./components/vuetable/CoursesTable.vue'));
+Vue.component('reservations-table-course', require('./components/vuetable/ReservationsTableCourse.vue'));
 
 const app = new Vue({
     el: '#app'
