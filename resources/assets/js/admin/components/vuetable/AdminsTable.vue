@@ -6,12 +6,12 @@
             <show-bar class="dataTables_length" @show:set="showSet"></show-bar>
 
             <div class="dataTables_length">
-                <a :href="nameUrl + '/create'"><button class="btn btn-primary">
+                <!-- <a :href="nameUrl + '/create'"><button class="btn btn-primary">
                     <span><i class="icon-add position-left"></i> Добавить</span>
                 </button></a>
                 <button class="btn btn-danger" @click="removeCheckedRows(removeOptions)">
                     <span><i class="icon-trash position-left"></i> Удалить</span>
-                </button>
+                </button> -->
             </div>
 
         </div>
@@ -54,37 +54,40 @@ export default {
             // text: ''
         },
         fields: [
+            // {
+            //     name: '__checkbox',
+            //     titleClass: 'text-center',
+            //     dataClass: 'text-center',
+            // },
             {
-                name: '__checkbox',
+                name: '__sequence',
+                title: '№',
                 titleClass: 'text-center',
                 dataClass: 'text-center',
             },
             {
-                name: '__sequence',
-                title: '№'
-            },
-            {
                 name: '__slot:row-link',
                 title: 'ФИО',
-                sortField: 'full_name',
+                sortField: 'users.full_name',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'email',
-                sortField: 'email'
+                sortField: 'users.email',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'phone',
-                sortField: 'phone',
-            },
-            {
-                name: '__slot:custom-actions',
-                title: 'Actions',
+                sortField: 'users.phone',
+                callback: 'formatPhone',
                 titleClass: 'text-center',
-                dataClass: 'text-center'
+                dataClass: 'text-center',
             }
         ],
         sortOrder: [
-            { field: 'email', sortField: 'email', direction: 'asc' }
+            { field: 'id', sortField: 'users.id', direction: 'asc' }
         ],
         moreParams: {}
     }),

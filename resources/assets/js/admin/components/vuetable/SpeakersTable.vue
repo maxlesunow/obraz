@@ -6,7 +6,7 @@
             <show-bar class="dataTables_length" @show:set="showSet"></show-bar>
 
             <div class="dt-buttons">
-                <a href="speaker/create"><button class="btn btn-primary">
+                <a :href="nameUrl + '/create'"><button class="btn btn-primary">
                     <span><i class="icon-add position-left"></i> Добавить</span>
                 </button></a>
                 <button class="btn btn-danger" @click="removeCheckedRows(removeOptions)">
@@ -15,12 +15,13 @@
             </div>
         </div>
         <div class="datatable-scroll-wrap">
-            <vuetable ref="vuetable" api-url="/api/speakers" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage"
-                    :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData"  @vuetable:loaded="loadedTable">
-                
+            <vuetable ref="vuetable" :api-url="'/api/' + nameUrl + 's'" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage" 
+                    :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData" @vuetable:loaded="loadedTable"
+                    @vuetable:checkbox-toggled-all="updateCheckboxes" @vuetable:row-dblclicked="onRowClick" :noDataTemplate="template.noData">
+ 
                 <template slot="row-link" scope="props">
                     <div>
-                        <a :href="'speaker/' + props.rowData.id +'/edit'">{{props.rowData.first_name}}</a>
+                        <a :href="'speaker/' + props.rowData.id +'/edit'">{{props.rowData.full_name}}</a>
                     </div>
                 </template>
             
@@ -46,6 +47,7 @@ export default {
     mixins: [ vuetablemixins ],
     components: { FilterBar, ShowBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
     data: () => ({
+        nameUrl: 'speaker',
         removeOptions: {
             url: '/api/speakers',
             // text: ''
@@ -58,24 +60,27 @@ export default {
             },
             {
                 name: '__sequence',
-                title: '№'
+                title: '№',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: '__slot:row-link',
                 title: 'Имя',
-                sortField: 'first_name',
+                sortField: 'speakers.full_name',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
-            // {
-            //     name: 'email',
-            //     sortField: 'email'
-            // },
             {
                 name: 'phone',
+                title: 'Количество курсов',
                 sortField: 'phone',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             }
         ],
         sortOrder: [
-            { field: 'first_name', sortField: 'first_name', direction: 'asc' }
+            { field: 'full_name', sortField: 'speakers.full_name', direction: 'asc' }
         ],
         moreParams: {},
         perPage: 20

@@ -60,39 +60,53 @@ export default {
             },
             {
                 name: '__sequence',
-                title: '№'
+                title: '№',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: '__slot:row-link',
                 title: 'ФИО',
                 sortField: 'users.first_name',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'phone',
                 title: 'Телефон',
                 sortField: 'users.phone',
-                callback: 'formatPhone'
+                callback: 'formatPhone',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'email',
                 title: 'Почта',
-                sortField: 'users.email'
+                sortField: 'users.email',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'created_at',
                 title: 'Дата регистрации',
                 sortField: 'users.created_at',
-                callback: 'formatDate'
+                callback: 'formatDate',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'reservations_count',
                 title: 'Количество заявок',
-                // sortField: 'users.reservations_count'
+                // sortField: 'users.reservations_count',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'reviews_count',
                 title: 'Количество отзывов',
-                // sortField: 'users.reviews_count'
+                // sortField: 'users.reviews_count',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
         ],
         sortOrder: [

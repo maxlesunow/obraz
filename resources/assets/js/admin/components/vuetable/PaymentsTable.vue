@@ -60,27 +60,53 @@ export default {
             },
             {
                 name: '__sequence',
-                title: '№'
+                title: '№',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: '__slot:row-link',
-                title: 'Название',
+                title: 'Номер пратежа',
                 sortField: 'number_document',
-            },
-            // {
-            //     name: 'email',
-            //     sortField: 'email'
-            // },
-            // {
-            //     name: 'phone',
-            //     sortField: 'phone',
-            // },
-            {
-                name: '__slot:custom-actions',
-                title: 'Actions',
                 titleClass: 'text-center',
-                dataClass: 'text-center'
-            }
+                dataClass: 'text-center',
+            },
+            {
+                name: 'full_name',
+                title: 'ФИО плательщика',
+                sortField: 'full_name',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
+            },
+            {
+                name: 'created_at',
+                title: 'Дата платежа',
+                sortField: 'payments.created_at',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
+            },
+            {
+                name: 'course',
+                title: 'Курс',
+                sortField: 'course',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
+            },
+            {
+                name: 'type',
+                title: 'Способ оплаты',
+                sortField: 'type',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
+            },
+            {
+                name: 'total',
+                title: 'Сумма',
+                sortField: 'payments.total',
+                callback: 'formatMoney',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
+            },
         ],
         sortOrder: [
             { field: 'number_document', sortField: 'number_document', direction: 'asc' }

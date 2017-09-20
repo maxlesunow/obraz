@@ -15,19 +15,13 @@
             </div>
         </div>
         <div class="datatable-scroll-wrap">
-            <vuetable ref="vuetable" api-url="/api/payment/types" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage" 
-                    :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData"  @vuetable:loaded="loadedTable">
-                
+           <vuetable ref="vuetable" api-url="/api/payment/types" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage" 
+                    :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData" @vuetable:loaded="loadedTable"
+                    @vuetable:checkbox-toggled-all="updateCheckboxes" @vuetable:row-dblclicked="onRowClick" :noDataTemplate="template.noData">    
+ 
                 <template slot="row-link" scope="props">
                     <div>
                         <a :href="'type/' + props.rowData.id +'/edit'">{{props.rowData.name}}</a>
-                    </div>
-                </template>
-
-                <template slot="custom-actions" scope="props">
-                    <div class="custom-actions">
-                        <a href="site"><button class="ui basic button" ><i class="icon-split"></i></button></a>
-                        <button class="ui basic button" @click="onAction('edit-item', props.rowData, props.rowIndex)"> <i class="icon-pencil"></i></button>
                     </div>
                 </template>
             
@@ -65,26 +59,23 @@ export default {
             },
             {
                 name: '__sequence',
-                title: '№'
+                title: '№',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: '__slot:row-link',
                 title: 'Название',
-                sortField: 'name',
-            },
-            // {
-            //     name: 'email',
-            //     sortField: 'email'
-            // },
-            // {
-            //     name: 'phone',
-            //     sortField: 'phone',
-            // },
-            {
-                name: '__slot:custom-actions',
-                title: 'Actions',
+                sortField: 'course_group.name',
                 titleClass: 'text-center',
-                dataClass: 'text-center'
+                dataClass: 'text-center',
+            },
+            {
+                name: 'created_at',
+                title: 'Дата создания',
+                sortField: 'course_group.created_at',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             }
         ],
         sortOrder: [

@@ -59,7 +59,7 @@ export default {
         nameUrl: 'course',
         removeOptions: {
             url: '/api/courses',
-            // text: ''
+            text: 'Ваши действия так же удалят все заявки курса!'
         },
         filters: {
             course: {
@@ -91,50 +91,68 @@ export default {
             },
             {
                 name: '__sequence',
-                title: '№'
+                title: '№',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: '__slot:row-link',
                 title: 'Название',
                 sortField: 'courses.name',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'speakers',
                 title: 'Лектор',
                 // sortField: 'email'
-                callback: 'formatSpeakers'
+                callback: 'formatSpeakers',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'time_start',
                 title: 'Дата курса',
                 sortField: 'courses.time_start',
-                callback: 'formatDate'
+                callback: 'formatDate',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'address',
                 title: 'Адрес',
-                sortField: 'courses.address'
+                sortField: 'courses.address',
+                titleClass: 'text-center',
+                // dataClass: 'text-center',
             },
             {
                 name: 'course_type.name',
                 title: 'Тип курса',
-                sortField: 'course_types.name'
+                sortField: 'course_types.name',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'course_group.name',
                 title: 'Группа',
-                sortField: 'course_groups.name'
+                sortField: 'course_groups.name',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'cost',
                 title: 'Стоимость',
                 sortField: 'courses.cost',
-                callback: 'formatMoney'
+                callback: 'formatMoney',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'reservations_count',
                 title: 'Количество учавстников',
-                // sortField: 'courses.address'
+                // sortField: 'courses.address',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             }
         ],
         sortOrder: [

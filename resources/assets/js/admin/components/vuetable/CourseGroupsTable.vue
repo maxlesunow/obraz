@@ -63,26 +63,23 @@ export default {
             },
             {
                 name: '__sequence',
-                title: '№'
+                title: '№',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: '__slot:row-link',
                 title: 'Название',
-                sortField: 'name',
-            },
-            // {
-            //     name: 'email',
-            //     sortField: 'email'
-            // },
-            // {
-            //     name: 'phone',
-            //     sortField: 'phone',
-            // },
-            {
-                name: '__slot:custom-actions',
-                title: 'Actions',
+                sortField: 'course_group.name',
                 titleClass: 'text-center',
-                dataClass: 'text-center'
+                dataClass: 'text-center',
+            },
+            {
+                name: 'created_at',
+                title: 'Дата создания',
+                sortField: 'course_group.created_at',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             }
         ],
         sortOrder: [

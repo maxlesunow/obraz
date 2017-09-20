@@ -74,7 +74,7 @@ Route::group(['middleware' => 'role:admin', 'prefix' => 'api'], function () {
 
     Route::get('/courses', 'CourseController@getCourses');
 
-    Route::delete('/course/{ids}', 'CourseController@destroy');
+    Route::delete('/courses/{ids}', 'CourseController@destroy');
 
     Route::get('/payment/types', 'PaymentTypeController@getPaymentTypes');
 

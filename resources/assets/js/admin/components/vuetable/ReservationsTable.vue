@@ -108,35 +108,45 @@ export default {
         fields: [
             {
                 name: '__checkbox',
-                titleClass: 'text-center styled',
-                dataClass: 'text-center styled',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'id',
                 title: '№',
-                sortField: 'reservations.id'
+                sortField: 'reservations.id',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: '__slot:row-link',
                 title: 'Курс',
                 sortField: 'courses.name',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'user.full_name',
                 title: 'Пользователь',
-                sortField: 'users.full_name'
+                sortField: 'users.full_name',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'user.phone',
                 title: 'Телефон',
                 sortField: 'users.phone',
-                callback: 'formatPhone'
+                callback: 'formatPhone',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'created_at',
                 title: 'Дата заявки',
                 sortField: 'created_at',
-                callback: 'formatDate'
+                callback: 'formatDate',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             // {
             //     name: 'course.time_start',
@@ -148,29 +158,39 @@ export default {
                 name: 'course.course_type.name',
                 title: 'Тип курса',
                 // sortField: 'courses.course_types.name',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'cost',
                 title: 'Стоимость',
                 sortField: 'reservations.cost',
-                callback: 'formatMoney'
+                callback: 'formatMoney',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'payment_type.name',
                 title: 'Способ оплаты',
                 sortField: 'payment_types.name',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'payment_status',
                 title: 'Оплата',
                 sortField: 'reservations.payment_status',
-                callback: 'paymentLabel'
+                callback: 'paymentLabel',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             },
             {
                 name: 'status',
                 title: 'Статус',
                 sortField: 'reservations.status',
-                callback: 'statusLabel'
+                callback: 'statusLabel',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
             }
         ],
         sortOrder: [
