@@ -88,4 +88,13 @@ class CourseTypeController extends Controller
 
         return response()->json($pagination);
     }
+
+    public function destroy($ids){
+
+        $course_types = CourseType::find(explode(',', $ids));
+
+        CourseType::destroy(explode(',', $ids));
+
+        return  response()->json($course_types);
+    }
 }
