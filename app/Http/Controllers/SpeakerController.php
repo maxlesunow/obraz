@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\SpeakerRequest;
 
 use App\Speaker;
+use App\Course;
 
 
 class SpeakerController extends Controller
@@ -107,7 +108,7 @@ class SpeakerController extends Controller
         foreach ($speakers as $speaker) {
 
             //Получить курсы докладчика
-            $courses = $speaker->courses();
+            $courses = $speaker->courses()->get();
 
             foreach ($courses as $course) {
 

@@ -4,8 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 class Speaker extends Model
 {
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
+
     protected $fillable = [
         'first_name',
         'last_name',
@@ -22,5 +28,10 @@ class Speaker extends Model
     public function getFullNameAttribute(){
 
         return join(' ', array($this->last_name, $this->first_name, $this->middle_name));
+    }
+
+    public function courses(){
+
+        return $this->belongsToMany('App\Course');
     }
 }

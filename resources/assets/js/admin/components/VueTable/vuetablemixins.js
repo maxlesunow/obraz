@@ -111,6 +111,7 @@ module.exports = {
                     axios.delete(options.url + '/' + ids)
                         .then(function (result) {
                             vm.updateTable()
+                            vm.loadedTable()
                             swal({
                                 title: "Удалено!", confirmButtonColor: "#66BB6A", type: "success",
                                 text: "Данные успешно удалены.",
