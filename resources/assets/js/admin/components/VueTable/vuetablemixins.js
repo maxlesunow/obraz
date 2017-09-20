@@ -87,10 +87,13 @@ module.exports = {
             window.location.href = this.nameUrl + '/' + dataItem.id +'/edit'
         },
         removeCheckedRows(options) {
-            var vm = this;
             var swal = require('./../../plugins/sweet_alert.min')
 
             var ids = this.$refs.vuetable.selectedTo.join(',')
+
+            if (ids === '') {
+                return
+            }
             
             swal({
                 title: "Are you sure?",
@@ -104,7 +107,7 @@ module.exports = {
                 closeOnCancel: false
             }, function(isConfirm) {
                 if (isConfirm) {
-                    vm.$http.delete(options.url + '/' + ids)
+                    axios.delete(options.url + '/' + ids)
                         .then(function (result) {
                             swal({
                                 title: "Deleted!",
