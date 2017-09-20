@@ -87,6 +87,7 @@ module.exports = {
             window.location.href = this.nameUrl + '/' + dataItem.id +'/edit'
         },
         removeCheckedRows(options) {
+            var vm = this;
             var swal = require('./../../plugins/sweet_alert.min')
 
             var ids = this.$refs.vuetable.selectedTo.join(',')
@@ -109,28 +110,23 @@ module.exports = {
                 if (isConfirm) {
                     axios.delete(options.url + '/' + ids)
                         .then(function (result) {
+                            vm.updateTable()
                             swal({
-                                title: "Удалено!",
+                                title: "Удалено!", confirmButtonColor: "#66BB6A", type: "success",
                                 text: "Данные успешно удалены.",
-                                confirmButtonColor: "#66BB6A",
-                                type: "success"
                             });
                         })
-                        .catch(function(result) {
+                        .catch(function(error) {
                             swal({
-                                title: "Не удалось удалить!",
-                                text: result.data && result.data.error && result.data.error[0] || "Ошибка не известна....",
-                                confirmButtonColor: "#66BB6A",
-                                type: "error"
+                                title: "Не удалось удалить!", confirmButtonColor: "#66BB6A", type: "error",
+                                text: error.response.data && error.response.data.error && error.response.data.error[0] || "Ошибка не известна....",
                             });
                         })
                 }
                 else {
                     swal({
-                        title: "Отменено",
+                        title: "Отменено", confirmButtonColor: "#2196F3", type: "error",
                         text: "Ваши данные в сохранности :)",
-                        confirmButtonColor: "#2196F3",
-                        type: "error"
                     });
                 }
             });            
