@@ -9,7 +9,7 @@
                 <a href="speaker/create"><button class="btn btn-primary">
                     <span><i class="icon-add position-left"></i> Добавить</span>
                 </button></a>
-                <button class="btn btn-danger">
+                <button class="btn btn-danger" @click="removeCheckedRows(removeOptions)">
                     <span><i class="icon-trash position-left"></i> Удалить</span>
                 </button>
             </div>
@@ -21,13 +21,6 @@
                 <template slot="row-link" scope="props">
                     <div>
                         <a :href="'speaker/' + props.rowData.id +'/edit'">{{props.rowData.first_name}}</a>
-                    </div>
-                </template>
-
-                <template slot="custom-actions" scope="props">
-                    <div class="custom-actions">
-                        <a href="site"><button class="ui basic button" ><i class="icon-split"></i></button></a>
-                        <button class="ui basic button" @click="onAction('edit-item', props.rowData, props.rowIndex)"> <i class="icon-pencil"></i></button>
                     </div>
                 </template>
             
@@ -53,6 +46,10 @@ export default {
     mixins: [ vuetablemixins ],
     components: { FilterBar, ShowBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
     data: () => ({
+        removeOptions: {
+            url: '/api/speakers',
+            // text: ''
+        },
         fields: [
             {
                 name: '__checkbox',
@@ -75,12 +72,6 @@ export default {
             {
                 name: 'phone',
                 sortField: 'phone',
-            },
-            {
-                name: '__slot:custom-actions',
-                title: 'Actions',
-                titleClass: 'text-center',
-                dataClass: 'text-center'
             }
         ],
         sortOrder: [
@@ -90,9 +81,6 @@ export default {
         perPage: 20
     }),
     methods: {
-        onAction() {
-
-        }
         //
     }
 }

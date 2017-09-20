@@ -98,7 +98,7 @@ module.exports = {
             
             swal({
                 title: "Вы уверены?",
-                text: "Ваши действия удалят данные!",
+                text: options.text || "Ваши действия удалят данные!",
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#EF5350",
