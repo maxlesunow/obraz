@@ -89,5 +89,38 @@ class SpeakerController extends Controller
 
         return response()->json($pagination);
     }
+
+    public function destroy($ids){
+
+        $speakers = Speaker::find(explode(',', $ids));
+
+        if(count($speakers) == 0) {
+
+            $errors = new MessageBag();
+
+            // add your error messages:
+            $errors->add('error', 'Курсы не найдены. Возможно вы удалили их ранее');
+
+            return response()->json($errors, 422);
+        }
+
+        foreach ($speakers as $speaker) {
+
+            //Получить курсы докладчика
+            $courses = $speaker->courses();
+
+            foreach ($courses as $course) {
+
+                //Если докладчик в курсе один - удалить курс
+                if(count($course->speakers()) == 1){
+                    Course::destroy($course->id);
+                }
+            }
+        }
+
+        Speaker::destroy(explode(',', $ids));
+
+        return  response()->json($speakers);
+    }
     
 }
