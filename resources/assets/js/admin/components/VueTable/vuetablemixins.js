@@ -96,13 +96,13 @@ module.exports = {
             }
             
             swal({
-                title: "Are you sure?",
-                text: "You will not be able to recover this imaginary file!",
+                title: "Вы уверены?",
+                text: "Ваши действия удалят данные!",
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#EF5350",
-                confirmButtonText: "Yes, delete it!",
-                cancelButtonText: "No, cancel pls!",
+                confirmButtonText: "Да, удалить!",
+                cancelButtonText: "Нет, не удалять!",
                 closeOnConfirm: false,
                 closeOnCancel: false
             }, function(isConfirm) {
@@ -110,16 +110,16 @@ module.exports = {
                     axios.delete(options.url + '/' + ids)
                         .then(function (result) {
                             swal({
-                                title: "Deleted!",
-                                text: "Your imaginary file has been deleted.",
+                                title: "Удалено!",
+                                text: "Данные успешно удалены.",
                                 confirmButtonColor: "#66BB6A",
                                 type: "success"
                             });
                         })
                         .catch(function(result) {
                             swal({
-                                title: "Not Deleted!",
-                                text: "Problems....",
+                                title: "Не удалось удалить!",
+                                text: result.data && result.data.error && result.data.error[0] || "Ошибка не известна....",
                                 confirmButtonColor: "#66BB6A",
                                 type: "error"
                             });
@@ -127,8 +127,8 @@ module.exports = {
                 }
                 else {
                     swal({
-                        title: "Cancelled",
-                        text: "Your imaginary file is safe :)",
+                        title: "Отменено",
+                        text: "Ваши данные в сохранности :)",
                         confirmButtonColor: "#2196F3",
                         type: "error"
                     });
