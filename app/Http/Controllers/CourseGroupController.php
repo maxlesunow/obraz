@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CourseType;
 use Illuminate\Http\Request;
 
 use App\Http\Requests\CourseGroupRequest;
@@ -86,5 +87,14 @@ class CourseGroupController extends Controller
         ]);
 
         return response()->json($pagination);
+    }
+
+    public function destroy($ids){
+
+        $course_groups = CourseGroup::find(explode(',', $ids));
+
+        CourseGroup::destroy(explode(',', $ids));
+
+        return  response()->json($course_groups);
     }
 }

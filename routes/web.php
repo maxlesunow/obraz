@@ -62,15 +62,23 @@ Route::group(['middleware' => 'role:admin', 'prefix' => 'api'], function () {
 
     Route::get('/course/types', 'CourseTypeController@getCourseTypes');
 
+    Route::delete('/course/types/{ids}', 'CourseTypeController@destroy');
+
     Route::get('/course/groups', 'CourseGroupController@getCourseGroups');
 
+    Route::delete('/course/groups/{ids}', 'CourseGroupController@destroy');
+
     Route::get('/courses', 'CourseController@getCourses');
+
+    Route::delete('/course/{ids}', 'CourseController@destroy');
 
     Route::get('/payment/types', 'PaymentTypeController@getPaymentTypes');
 
     Route::get('/payments', 'PaymentController@getPayments');
 
     Route::get('/reservations', 'ReservationController@getReservations');
+
+    Route::get('/reservations/delete/{ids}', 'ReservationController@destroy');
 
     Route::get('/reviews', 'ReviewController@getReviews');
 });

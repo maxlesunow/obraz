@@ -11,7 +11,7 @@ class Reservation extends Model
     use SoftDeletes;
     use SoftCascadeTrait;
 
-    protected $softCascade = ['user'];
+    protected $softCascade = ['payments'];
 
     protected $dates = ['deleted_at'];
 
@@ -36,6 +36,11 @@ class Reservation extends Model
     public function payment_type(){
 
         return $this->belongsTo('App\PaymentType');
+    }
+
+    public function payments(){
+
+        return $this->hasMany('App\Payment');
     }
 
     public function getNameAttribute(){
