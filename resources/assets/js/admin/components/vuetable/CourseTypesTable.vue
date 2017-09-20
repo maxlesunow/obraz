@@ -9,7 +9,7 @@
                 <a href="type/create"><button class="btn btn-primary">
                     <span><i class="icon-add position-left"></i> Добавить</span>
                 </button></a>
-                <button class="btn btn-danger">
+                <button class="btn btn-danger" @click="removeCheckedRows(removeOptions)">
                     <span><i class="icon-trash position-left"></i> Удалить</span>
                 </button>
             </div>
@@ -53,6 +53,10 @@ export default {
     mixins: [ vuetablemixins ],
     components: { FilterBar, ShowBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
     data: () => ({
+        removeOptions: {
+            url: '/api/course/types',
+            // text: ''
+        },
         fields: [
             {
                 name: '__checkbox',

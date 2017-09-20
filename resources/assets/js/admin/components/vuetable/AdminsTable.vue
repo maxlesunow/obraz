@@ -6,29 +6,23 @@
             <show-bar class="dataTables_length" @show:set="showSet"></show-bar>
 
             <div class="dataTables_length">
-                <a href="admins/create"><button class="btn btn-primary">
+                <a :href="nameUrl + '/create'"><button class="btn btn-primary">
                     <span><i class="icon-add position-left"></i> Добавить</span>
                 </button></a>
-                <button class="btn btn-danger">
+                <button class="btn btn-danger" @click="removeCheckedRows(removeOptions)">
                     <span><i class="icon-trash position-left"></i> Удалить</span>
                 </button>
             </div>
 
         </div>
         <div class="datatable-scroll-wrap">
-            <vuetable ref="vuetable" api-url="/api/admins" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage"
-                    :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData"  @vuetable:loaded="loadedTable">
-                
+            <vuetable ref="vuetable" :api-url="'/api/' + nameUrl + 's'" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage" 
+                    :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData" @vuetable:loaded="loadedTable"
+                    @vuetable:checkbox-toggled-all="updateCheckboxes" @vuetable:row-dblclicked="onRowClick" :noDataTemplate="template.noData">
+
                 <template slot="row-link" scope="props">
                     <div>
-                        <a :href="'admins/' + props.rowData.id +'/edit'">{{props.rowData.full_name}}</a>
-                    </div>
-                </template>
-
-                <template slot="custom-actions" scope="props">
-                    <div>
-                        <a href="site"><button class="ui basic button" ><i class="icon-split"></i></button></a>
-                        <button class="ui basic button" @click="onAction('edit-item', props.rowData, props.rowIndex)"> <i class="icon-pencil"></i></button>
+                        <a :href="nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.full_name}}</a>
                     </div>
                 </template>
             
@@ -54,6 +48,11 @@ export default {
     mixins: [ vuetablemixins ],
     components: { FilterBar, ShowBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
     data: () => ({
+        nameUrl: 'admin',
+        removeOptions: {
+            url: '/api/admins',
+            // text: ''
+        },
         fields: [
             {
                 name: '__checkbox',
@@ -90,9 +89,6 @@ export default {
         moreParams: {}
     }),
     methods: {
-        onAction() {
-
-        }
         //
     }
 }

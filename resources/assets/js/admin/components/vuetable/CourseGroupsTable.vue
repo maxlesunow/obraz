@@ -9,36 +9,24 @@
                 <a href="group/create"><button class="btn btn-primary">
                     <span><i class="icon-add position-left"></i> Добавить</span>
                 </button></a>
-                <button class="btn btn-danger">
+                <button class="btn btn-danger" @click="removeCheckedRows(removeOptions)">
                     <span><i class="icon-trash position-left"></i> Удалить</span>
                 </button>
             </div>
 
-            <div class="col-xs-12" style="margin-bottom: 15px;">
-                <select2 :local-data="select2Data" v-model="select2" @input="onInput">
-                    <option value="">Докладчик</option>
-                </select2>
-            </div>
         </div>
 
-
         <div class="datatable-scroll-wrap">
-            <vuetable ref="vuetable" api-url="/api/course/groups" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage"
-                    :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData"  @vuetable:loaded="loadedTable">
-                
+            <vuetable ref="vuetable" api-url="/api/course/groups" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage" 
+                    :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData" @vuetable:loaded="loadedTable"
+                    @vuetable:checkbox-toggled-all="updateCheckboxes" @vuetable:row-dblclicked="onRowClick" :noDataTemplate="template.noData">    
+
                 <template slot="row-link" scope="props">
                     <div>
                         <a :href="'group/' + props.rowData.id +'/edit'">{{props.rowData.name}}</a>
                     </div>
                 </template>
 
-                <template slot="custom-actions" scope="props">
-                    <div class="custom-actions">
-                        <a href="site"><button class="ui basic button" ><i class="icon-split"></i></button></a>
-                        <button class="ui basic button" @click="onAction('edit-item', props.rowData, props.rowIndex)"> <i class="icon-pencil"></i></button>
-                    </div>
-                </template>
-            
             </vuetable>
         </div>
         <div class="datatable-footer">
@@ -63,7 +51,10 @@ export default {
     mixins: [ vuetablemixins ],
     components: { Select2, FilterBar, ShowBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
     data: () => ({
-        select2: "",
+        removeOptions: {
+            url: '/api/course/groups',
+            // text: ''
+        },
         fields: [
             {
                 name: '__checkbox',
@@ -101,12 +92,6 @@ export default {
         perPage: 20
     }),
     methods: {
-        onInput(value) {
-            console.log(value)
-        },
-        onAction() {
-
-        }
         //
     }
 }
