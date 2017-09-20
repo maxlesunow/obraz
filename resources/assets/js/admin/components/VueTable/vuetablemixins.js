@@ -119,7 +119,7 @@ module.exports = {
                         .catch(function(result) {
                             swal({
                                 title: "Не удалось удалить!",
-                                text: "Problems....",
+                                text: result.data && result.data.error && result.data.error[0] || "Ошибка не известна....",
                                 confirmButtonColor: "#66BB6A",
                                 type: "error"
                             });
