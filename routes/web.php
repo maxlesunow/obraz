@@ -34,26 +34,23 @@ Route::group(['middleware' => 'role:admin', 'prefix' => 'admin'], function () {
 
     Route::get('/user/admins', 'UserController@indexAdmin');
 
-    Route::resource('/user', 'UserController');
+    Route::resource('/user', 'UserController', ['only' => ['index', 'edit', 'store', 'create', 'update']]);
 
+    Route::resource('/speaker', 'SpeakerController', ['only' => ['index', 'edit', 'store', 'create', 'update']]);
 
-    Route::resource('/speaker', 'SpeakerController');
+    Route::resource('/course/group', 'CourseGroupController', ['only' => ['index', 'edit', 'store', 'create', 'update']]);
 
-    Route::resource('/course/group', 'CourseGroupController');
+    Route::resource('/course/type', 'CourseTypeController', ['only' => ['index', 'edit', 'store', 'create', 'update']]);
 
-    Route::resource('/course/type', 'CourseTypeController');
+    Route::resource('/course', 'CourseController', ['only' => ['index', 'edit', 'store', 'create', 'update']]);
 
-    Route::resource('/course', 'CourseController');
+    Route::resource('/payment/type', 'PaymentTypeController', ['only' => ['index', 'edit', 'store', 'create', 'update']]);
 
-    Route::resource('/payment/type', 'PaymentTypeController');
+    Route::resource('/payment', 'PaymentController', ['only' => ['index', 'edit', 'store', 'create', 'update']]);
 
-    Route::resource('/payment', 'PaymentController');
+    Route::resource('/reservation', 'ReservationController', ['only' => ['index', 'edit', 'store', 'create', 'update']]);
 
-    Route::resource('/reservation', 'ReservationController');
-
-    Route::resource('/review', 'ReviewController');
-
-
+    Route::resource('/review', 'ReviewController', ['only' => ['index', 'edit', 'store', 'create', 'update']]);
 
 });
 
