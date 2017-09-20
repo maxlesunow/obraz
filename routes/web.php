@@ -78,7 +78,7 @@ Route::group(['middleware' => 'role:admin', 'prefix' => 'api'], function () {
 
     Route::get('/reservations', 'ReservationController@getReservations');
 
-    Route::get('/reservations/delete/{ids}', 'ReservationController@destroy');
+    Route::delete('/reservations/{ids}', 'ReservationController@destroy');
 
     Route::get('/reviews', 'ReviewController@getReviews');
 });
