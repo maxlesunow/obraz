@@ -17,7 +17,7 @@
         <div class="datatable-scroll-wrap">
             <vuetable ref="vuetable" :api-url="'/api/' + nameUrl + 's'" :fields="fields" pagination-path="" :css="css.table" :append-params="moreParams" :per-page="perPage" 
                     :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData" @vuetable:loaded="loadedTable"
-                    @vuetable:row-dblclicked="onRowClick" :noDataTemplate="template.noData">
+                    @vuetable:checkbox-toggled-all="updateCheckboxes" @vuetable:row-dblclicked="onRowClick" :noDataTemplate="template.noData">
 
                 <template slot="row-link" scope="props">
                     <div>
