@@ -4,12 +4,16 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use \Askedio\SoftCascade\Traits\SoftCascadeTrait;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
     use Notifiable;
     use SoftDeletes;
+    use SoftCascadeTrait;
+
+    protected $softCascade = ['verification', 'reservations', 'reviews'];
 
     protected $dates = ['deleted_at'];
 

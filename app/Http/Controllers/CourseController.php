@@ -154,4 +154,23 @@ class CourseController extends Controller
 
         return response()->json($pagination);
     }
+
+    public function destroy($ids){
+
+        $courses = Course::find(explode(',', $ids));
+
+        if(count($courses) == 0) {
+
+            $errors = new MessageBag();
+
+            // add your error messages:
+            $errors->add('error', 'Курсы не найдены. Возможно вы удалили их ранее');
+
+            return response()->json($errors, 422);
+        }
+
+        Course::destroy(explode(',', $ids));
+
+        return  response()->json($courses);
+    }
 }
