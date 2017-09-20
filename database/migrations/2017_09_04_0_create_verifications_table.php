@@ -18,7 +18,10 @@ class CreateVerificationsTable extends Migration
             $table->string('code');
             $table->integer('wrong_pass');
             $table->dateTime('date_expire');
+
             $table->timestamps();
+
+            $table->softDeletes();
         });
     }
 

@@ -25,6 +25,8 @@ class CreateSpeakersTable extends Migration
             $table->string('meta_url')->nullable();
 
             $table->timestamps();
+
+            $table->softDeletes();
         });
     }
 

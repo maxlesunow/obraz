@@ -19,6 +19,8 @@ class CreateReservationsTable extends Migration
             $table->boolean('status')->default(false);
             $table->boolean('payment_status')->default(false);
 
+            $table->softDeletes();
+
             $table->timestamps();
 
             $table->integer('course_id')->unsigned()->index();

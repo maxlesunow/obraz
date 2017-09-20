@@ -17,7 +17,10 @@ class CreatePaymentsTable extends Migration
             $table->increments('id');
             $table->string('number_document');
             $table->integer('total');
+
             $table->timestamps();
+
+            $table->softDeletes();
 
             $table->integer('reservation_id')->unsigned()->index();
             $table->foreign('reservation_id')->references('id')->on('reservations')->onDelete('cascade');

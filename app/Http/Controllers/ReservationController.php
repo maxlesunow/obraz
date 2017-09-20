@@ -172,4 +172,13 @@ class ReservationController extends Controller
 
         return response()->json($pagination);
     }
+
+    public function destroy($ids){
+
+        $reservations = Reservation::find(explode(',', $ids));
+
+        Reservation::destroy(explode(',', $ids));
+
+        return  response()->json($reservations);
+    }
 }

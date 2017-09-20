@@ -26,8 +26,6 @@ Route::post('/verification/send/{id}', 'VerificationController@sendVerificationC
 
 Route::get('/home', 'HomeController@index');
 
-
-
 Route::group(['middleware' => 'role:admin', 'prefix' => 'admin'], function () {
 
     Route::get('/', 'AdminController@index');

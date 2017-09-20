@@ -18,7 +18,10 @@ class CreatePaymentTypesTable extends Migration
             $table->string('name');
             $table->boolean('is_online')->default(false);
             $table->string('type_code')->nullable();
+
             $table->timestamps();
+
+            $table->softDeletes();
         });
     }
 

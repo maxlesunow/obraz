@@ -18,7 +18,10 @@ class CreateReviewsTable extends Migration
             $table->boolean('status')->default(false);
             $table->integer('rating');
             $table->text('text');
+
             $table->timestamps();
+
+            $table->softDeletes();
 
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

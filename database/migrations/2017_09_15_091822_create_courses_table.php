@@ -26,7 +26,10 @@ class CreateCoursesTable extends Migration
             $table->string('meta_description')->nullable();
             $table->string('meta_keywords')->nullable();
             $table->string('meta_url')->nullable();
+
             $table->timestamps();
+
+            $table->softDeletes();
 
             $table->integer('course_group_id')->unsigned()->index();
             $table->foreign('course_group_id')->references('id')->on('course_groups')->onDelete('cascade');
