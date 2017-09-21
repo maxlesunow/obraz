@@ -7,8 +7,11 @@
 
 require('./bootstrap');
 
+require('./plugins/functions')
+
 window.Vue = require('vue');
 window.Inputmask = require('inputmask');
+window.Modernizr = require('Modernizr');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
