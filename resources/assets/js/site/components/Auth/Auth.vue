@@ -5,11 +5,9 @@
             <login @login="initialLogin"></login>
         </template>
         <template v-else>
-            <ul>
                 <li v-if="isAdmin"><a href="/admin">Админка</a></li>
                 <li><a href="#">Личный кабинет</a></li>
                 <li><a href="#" @click.prevent="logout">Выйти</a></li>
-            </ul>
         </template>
     </div>
 </template>
