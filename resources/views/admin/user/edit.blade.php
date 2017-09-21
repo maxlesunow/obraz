@@ -23,14 +23,14 @@
                 <div class="panel-heading">
                     <h4 class="panel-title">Курсы пользователя<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
                 </div>
-                <courses-table-user></courses-table-user>
+                <reservations-table-user user-id="{{$user->id}}"></reservations-table-user>
             </div>
 
             <div class="panel panel-flat">
                 <div class="panel-heading">
                     <h4 class="panel-title">Отзывы пользователя<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
                 </div>
-                <reviews-table-user></reviews-table-user>
+                <reviews-table-user user-id="{{$user->id}}"></reviews-table-user>
             </div>
         </div>
     </div>

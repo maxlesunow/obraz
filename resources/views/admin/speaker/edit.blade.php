@@ -23,7 +23,7 @@
                 <div class="panel-heading">
                     <h4 class="panel-title">Курсы докладчика<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
                 </div>
-                <courses-table-speaker></courses-table-speaker>
+                <courses-table-speaker speaker-id="{{$speaker->id}}"></courses-table-speaker>
             </div>
 
         </div>

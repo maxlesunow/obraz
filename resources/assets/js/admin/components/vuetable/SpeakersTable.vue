@@ -72,9 +72,9 @@ export default {
                 dataClass: 'text-center',
             },
             {
-                name: 'phone',
+                name: 'courses_count',
                 title: 'Количество курсов',
-                sortField: 'phone',
+                sortField: 'speakers.courses_count',
                 titleClass: 'text-center',
                 dataClass: 'text-center',
             }

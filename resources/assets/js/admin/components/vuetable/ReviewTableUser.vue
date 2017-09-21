@@ -49,6 +49,7 @@ import Select2 from './../Select2'
 export default {
     mixins: [ vuetablemixins ],
     components: { Select2, FilterBar, ShowBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
+    props: ['userId'],
     data: () => ({
         nameUrl: 'review',
         // removeOptions: {
@@ -111,6 +112,10 @@ export default {
                 ? '<span class="label label-info">Подтверждено</span>'
                 : '<span class="label label-default">Не подтверждено</span>'
         }
+    },
+    created() {
+        this.additionalFilter = { 'reviews.user_id': this.userId }
+        this.moreParams.filters = this.formatFilterPhp(this.additionalFilter)
     }
 }
 </script>

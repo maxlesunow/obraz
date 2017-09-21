@@ -22,7 +22,7 @@
 
                 <template slot="row-link" scope="props">
                     <div>
-                         <a :href="nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.name}}</a>
+                         <a :href="'course' + '/' + props.rowData.course.id +'/edit'">{{props.rowData.course.name}}</a>
                     </div>
                 </template> 
             
@@ -49,8 +49,9 @@ import Select2 from './../Select2'
 export default {
     mixins: [ vuetablemixins ],
     components: { Select2, FilterBar, ShowBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
+    props: ['userId'],
     data: () => ({
-        nameUrl: 'course',
+        nameUrl: 'reservation',
         // removeOptions: {
         //     url: '/api/courses',
         //     text: 'Ваши действия так же удалят все заявки курса!'
@@ -79,7 +80,7 @@ export default {
             //     dataClass: 'text-center',
             // },
             {
-                name: 'time_start',
+                name: 'course.time_start',
                 title: 'Дата курса',
                 sortField: 'courses.time_start',
                 callback: 'formatDate',
@@ -101,9 +102,9 @@ export default {
             //     dataClass: 'text-center',
             // },
             {
-                name: 'course_group.name',
+                name: 'course.course_group.name',
                 title: 'Группа',
-                sortField: 'course_groups.name',
+                // sortField: 'course_groups.name',
                 titleClass: 'text-center',
                 dataClass: 'text-center',
             },
@@ -116,9 +117,9 @@ export default {
                 dataClass: 'text-center',
             },
             {
-                name: 'reservations_count',
-                title: 'Количество учавстников',
-                // sortField: 'courses.address',
+                name: 'course.reservations_count',
+                title: 'Количество участников',
+                sortField: 'courses.reservations_count',
                 titleClass: 'text-center',
                 dataClass: 'text-center',
             }
@@ -131,6 +132,10 @@ export default {
     }),
     methods: {
         //
+    },
+    created() {
+        this.additionalFilter = { 'reservations.user_id': this.userId }
+        this.moreParams.filters = this.formatFilterPhp(this.additionalFilter)
     }
 }
 </script>

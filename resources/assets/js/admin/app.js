@@ -27,7 +27,7 @@ Vue.component('courses-table', require('./components/vuetable/CoursesTable.vue')
 Vue.component('reservations-table-course', require('./components/vuetable/ReservationsTableCourse.vue'));
 
 Vue.component('users-table', require('./components/vuetable/UsersTable.vue'));
-Vue.component('courses-table-user', require('./components/vuetable/CoursesTableUser.vue'));
+Vue.component('reservations-table-user', require('./components/vuetable/ReservationsTableUser.vue'));
 Vue.component('reviews-table-user', require('./components/vuetable/ReviewTableUser.vue'));
 
 Vue.component('speakers-table', require('./components/vuetable/SpeakersTable.vue'));

@@ -49,6 +49,7 @@ import Select2 from './../Select2'
 export default {
     mixins: [ vuetablemixins ],
     components: { Select2, FilterBar, ShowBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
+    props: ['speakerId'],
     data: () => ({
         nameUrl: 'course',
         // removeOptions: {
@@ -131,6 +132,10 @@ export default {
     }),
     methods: {
         //
+    },
+    created() {
+        this.additionalFilter = { 'speakers.id': this.speakerId }
+        this.moreParams.filters = this.formatFilterPhp(this.additionalFilter)
     }
 }
 </script>
