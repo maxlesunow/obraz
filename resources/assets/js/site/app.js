@@ -13,6 +13,10 @@ window.Vue = require('vue');
 window.Inputmask = require('inputmask');
 window.Modernizr = require('Modernizr');
 
+require('chosen-js');
+require('magnific-popup');
+require('malihu-custom-scrollbar-plugin');
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
