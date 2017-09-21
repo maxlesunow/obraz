@@ -23,7 +23,7 @@
                 <div class="panel-heading">
                     <h4 class="panel-title">Список участников<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
                 </div>
-                <reservations-table-course course_id="{{$course->id}}"></reservations-table-course>
+                <reservations-table-course course-id="{{$course->id}}"></reservations-table-course>
             </div>
 
         </div>

@@ -23,7 +23,7 @@
                  
                 <template slot="row-link" scope="props">
                     <div>
-                        <a :href="nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.full_name}}</a>
+                        <a :href="nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.user.full_name}}</a>
                     </div>
                 </template>
             
@@ -51,7 +51,7 @@ import Select2 from './../Select2'
 export default {
     mixins: [ vuetablemixins ],
     components: { Select2, FilterBar, ShowBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
-    props: ['course_id'],
+    props: ['courseId'],
     data: () => ({
         nameUrl: 'reservation',
         // removeOptions: {
@@ -124,8 +124,9 @@ export default {
                 : '<span class="label label-default">Не подтверждено</span>'
         }
     },
-    mounted() {
-        console.log(this.$props)
+    created() {
+        this.additionalFilter = { 'reservations.course_id': this.courseId }
+        this.moreParams.filters = this.formatFilterPhp(this.additionalFilter)
     }
 }
 </script>

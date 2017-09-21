@@ -71,7 +71,8 @@ module.exports = {
             if (value === '' || value === '-1') {
                 delete this.filterField[destName]
             }
-            this.moreParams.filters = this.formatFilterPhp(this.filterField)
+            var filters = [this.formatFilterPhp(this.additionalFilter), this.formatFilterPhp(this.filterField)].join(',')
+            this.moreParams.filters = filters
             this.updateTable()
         },
         loadedTable() {
