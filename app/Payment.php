@@ -11,6 +11,8 @@ class Payment extends Model
 
     protected $dates = ['deleted_at'];
 
+    protected $with = ['reservation'];
+
     protected $fillable = [
         'number_document', 'total'
     ];

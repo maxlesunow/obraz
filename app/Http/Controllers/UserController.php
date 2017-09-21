@@ -71,7 +71,16 @@ class UserController extends Controller
             foreach ($sorts as $sort) {
                 if($sort){
                     list($sortCol, $sortDir) = explode('|', $sort);
-                    $query = $query->orderBy($sortCol, $sortDir);
+
+                    //Костыль для сортировки по полному имени
+                    if($sortCol != 'users.full_name'){
+                        $query = $query->orderBy($sortCol, $sortDir);
+                    }
+                    else{
+                        $query = $query->orderBy('users.last_name', $sortDir);
+                        $query = $query->orderBy('users.first_name', $sortDir);
+                        $query = $query->orderBy('users.middle_name', $sortDir);
+                    }
                 }
             }
         } else {

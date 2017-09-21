@@ -107,7 +107,7 @@ class ReservationController extends Controller
                 if($sort){
                     list($sortCol, $sortDir) = explode('|', $sort);
 
-                    //Костыль для поиска по полному имени
+                    //Костыль для сортировки по полному имени
                     if($sortCol != 'users.full_name'){
                         $query = $query->orderBy($sortCol, $sortDir);
                     }

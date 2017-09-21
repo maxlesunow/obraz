@@ -15,6 +15,8 @@ class Review extends Model
         'status', 'rating', 'text'
     ];
 
+    protected $with=['user'];
+
     public function user(){
 
         return $this->belongsTo('App\User');

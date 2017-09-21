@@ -64,7 +64,16 @@ class SpeakerController extends Controller
             foreach ($sorts as $sort) {
                 if($sort){
                     list($sortCol, $sortDir) = explode('|', $sort);
-                    $query = $query->orderBy($sortCol, $sortDir);
+
+                    //Костыль для сортировки по полному имени
+                    if($sortCol != 'speakers.full_name'){
+                        $query = $query->orderBy($sortCol, $sortDir);
+                    }
+                    else{
+                        $query = $query->orderBy('speakers.last_name', $sortDir);
+                        $query = $query->orderBy('speakers.first_name', $sortDir);
+                        $query = $query->orderBy('speakers.middle_name', $sortDir);
+                    }
                 }
             }
         } else {

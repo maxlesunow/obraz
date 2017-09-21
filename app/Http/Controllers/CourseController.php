@@ -135,6 +135,11 @@ class CourseController extends Controller
                             $q->where('id', $filterValue);
                         });
                     }
+                    elseif ($filterBy == 'reservations.user_id'){
+                        $query->whereHas('reservations', function($q) use($filterValue){
+                            $q->where('user_id', $filterValue);
+                        });
+                    }
                     else{
                         $query->where($filterBy, $filterValue);
                     }

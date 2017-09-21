@@ -67,7 +67,7 @@ class ReviewController extends Controller
     public function getReviews(Request $request)
     {
 
-        $query = Review::query();
+        $query = Review::query()->select('reviews.*');
 
         //Сортировка
         if (request()->has('sort')) {
@@ -80,19 +80,33 @@ class ReviewController extends Controller
                 }
             }
         } else {
-            $query = $query->orderBy('id', 'asc');
+            $query = $query->orderBy('reviews.id', 'asc');
         }
 
-        //Фильтрация
-        if ($request->exists('filter')) {
+        //Поиск
+        if ($request->exists('search')) {
             $query->where(function($q) use($request) {
-                $value = "%{$request->filter}%";
-                $q->where('name', 'ilike', $value)
-                    ->orWhere('cost', 'ilike', $value);
+                $value = "%{$request->search}%";
+                $q->where('reviews.text', 'ilike', $value);
             });
+
         }
+
+        //Фильтр
+        if ($request->exists('filters')) {
+
+            $filters = explode(',', request()->filters);
+            foreach ($filters as $filter) {
+                if($filter){
+                    list($filterBy, $filterValue) = explode('|', $filter);
+                        $query->where($filterBy, $filterValue);
+                }
+            }
+        }
+
         //Пагинация
         $perPage = request()->has('per_page') ? (int) request()->per_page : null;
+
         $pagination = $query->paginate($perPage);
         $pagination->appends([
             'sort' => request()->sort,

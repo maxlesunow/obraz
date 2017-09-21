@@ -23,15 +23,20 @@ class Speaker extends Model
         'meta_url',
     ];
 
-    protected $appends = ['full_name'];
+    protected $appends = ['full_name', 'courses_count'];
+
+    public function courses(){
+
+        return $this->belongsToMany('App\Course');
+    }
 
     public function getFullNameAttribute(){
 
         return join(' ', array($this->last_name, $this->first_name, $this->middle_name));
     }
 
-    public function courses(){
+    public function getCoursesCountAttribute(){
 
-        return $this->belongsToMany('App\Course');
+        return $this->courses()->count();
     }
 }
