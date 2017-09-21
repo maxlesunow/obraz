@@ -37,6 +37,7 @@
 </template>
 
 <script>
+
 import Vuetable from './../../plugins/vuetable-2-develop/Vuetable'
 import VuetablePagination from './../../plugins/vuetable-2-develop/VuetablePagination'
 import VuetablePaginationInfo from './../../plugins/vuetable-2-develop/VuetablePaginationInfo'
@@ -50,6 +51,7 @@ import Select2 from './../Select2'
 export default {
     mixins: [ vuetablemixins ],
     components: { Select2, FilterBar, ShowBar, Vuetable, VuetablePagination, VuetablePaginationInfo },
+    props: ['course_id'],
     data: () => ({
         nameUrl: 'reservation',
         // removeOptions: {
@@ -123,7 +125,7 @@ export default {
         }
     },
     mounted() {
-        console.log(window.filterName, window.filterValue)
+        console.log(this.$props)
     }
 }
 </script>
