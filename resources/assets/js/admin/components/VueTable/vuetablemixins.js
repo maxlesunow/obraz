@@ -45,9 +45,7 @@ module.exports = {
             this.$refs.vuetable.toggleDetailRow(data.id)
         },
         filterSet(filterText) {
-            this.moreParams = {
-                search: filterText
-            }
+            this.moreParams.search = filterText
             this.updateTable()
         },
         filterReset() {

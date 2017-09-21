@@ -110,7 +110,7 @@ export default {
             },
         ],
         sortOrder: [
-            { field: 'id', sortField: 'users.id', direction: 'asc' }
+            { field: 'id', sortField: 'users.full_name', direction: 'asc' }
         ],
         moreParams: {},
         perPage: 20

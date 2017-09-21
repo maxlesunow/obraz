@@ -32,7 +32,7 @@
                  
                 <template slot="row-link" scope="props">
                     <div>
-                        <a :href="nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.course.name}}</a>
+                        <a :href="nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.name}}</a>
                     </div>
                 </template>
             
@@ -111,15 +111,22 @@ export default {
                 titleClass: 'text-center',
                 dataClass: 'text-center',
             },
+            // {
+            //     name: 'id',
+            //     title: '№',
+            //     sortField: 'reservations.id',
+            //     titleClass: 'text-center',
+            //     dataClass: 'text-center',
+            // },
             {
-                name: 'id',
-                title: '№',
+                name: '__slot:row-link',
+                title: 'Название',
                 sortField: 'reservations.id',
                 titleClass: 'text-center',
                 dataClass: 'text-center',
             },
             {
-                name: '__slot:row-link',
+                name: 'course.name',
                 title: 'Курс',
                 sortField: 'courses.name',
                 titleClass: 'text-center',
@@ -143,7 +150,7 @@ export default {
             {
                 name: 'created_at',
                 title: 'Дата заявки',
-                sortField: 'created_at',
+                sortField: 'reservations.created_at',
                 callback: 'formatDate',
                 titleClass: 'text-center',
                 dataClass: 'text-center',

@@ -149,7 +149,7 @@ export default {
             },
             {
                 name: 'reservations_count',
-                title: 'Количество учавстников',
+                title: 'Количество участников',
                 // sortField: 'courses.address',
                 titleClass: 'text-center',
                 dataClass: 'text-center',
