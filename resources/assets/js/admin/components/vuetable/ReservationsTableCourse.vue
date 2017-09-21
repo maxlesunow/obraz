@@ -21,9 +21,15 @@
                     :sort-order="sortOrder" :multi-sort="true" @vuetable:cell-clicked="onCellClicked" @vuetable:pagination-data="onPaginationData" @vuetable:loaded="loadedTable"
                     @vuetable:checkbox-toggled-all="updateCheckboxes" @vuetable:row-dblclicked="onRowClick" :noDataTemplate="template.noData">
                  
+                <template slot="row-link-name" scope="props">
+                    <div>
+                        <a :href="nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.name}}</a>
+                    </div>
+                </template>
+
                 <template slot="row-link" scope="props">
                     <div>
-                        <a :href="nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.user.full_name}}</a>
+                        <a :href="'user' + '/' + props.rowData.user.id +'/edit'">{{props.rowData.user.full_name}}</a>
                     </div>
                 </template>
             
@@ -68,20 +74,27 @@ export default {
                 dataClass: 'text-center',
             },
             {
+                name: '__slot:row-link-name',
+                title: 'Заявка',
+                sortField: 'reservation.name',
+                titleClass: 'text-center',
+                dataClass: 'text-center',
+            },
+            {
                 name: '__slot:row-link',
                 title: 'Пользователь',
                 sortField: 'users.full_name',
                 titleClass: 'text-center',
                 dataClass: 'text-center',
             },
-            {
-                name: 'user.phone',
-                title: 'Телефон',
-                sortField: 'users.phone',
-                callback: 'formatPhone',
-                titleClass: 'text-center',
-                dataClass: 'text-center',
-            },
+            // {
+            //     name: 'user.phone',
+            //     title: 'Телефон',
+            //     sortField: 'users.phone',
+            //     callback: 'formatPhone',
+            //     titleClass: 'text-center',
+            //     dataClass: 'text-center',
+            // },
             {
                 name: 'payment_type.name',
                 title: 'Способ оплаты',
