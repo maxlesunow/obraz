@@ -1,3 +1,4 @@
+
 @include('admin.partials.form.input', ['id' => 'last_name', 'name' => 'Фамилия:'])
 
 @include('admin.partials.form.input', ['id' => 'first_name', 'name' => 'Имя:'])

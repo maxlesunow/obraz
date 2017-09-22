@@ -14,7 +14,8 @@ try {
 
     require('bootstrap');
     require('select2');
-    require('jquery.uniform')
+    require('jquery.uniform');
+    require('summernote');
 } catch (e) {}
 
 /**

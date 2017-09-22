@@ -10,3 +10,13 @@
         @endif
     </div>
 </div>
+
+@section('scripts')
+    <script>
+
+        $('textarea').summernote({
+            lang: "ru-RU"
+        });
+
+    </script>
+@endsection

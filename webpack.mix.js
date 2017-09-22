@@ -33,6 +33,8 @@ mix
         'resources/assets/styles/admin/core.css',
         'resources/assets/styles/admin/components.css',
         'resources/assets/styles/admin/colors.css',
+        'node_modules/summernote/dist/summernote.css',
     ], 'public/css/admin.css')
 
-    .copyDirectory('resources/assets/fonts/admin', 'public/css/fonts');
+    .copyDirectory('resources/assets/fonts/admin', 'public/css/fonts')
+    .copyDirectory('node_modules/summernote/dist/font', 'public/css/font');
