@@ -8,11 +8,13 @@ window._ = require('lodash');
  */
 
 try {
-    window.$ = window.jQuery = require('jquery');
+    global.$ = global.jQuery = require('jquery');
 
     require('bootstrap');
 
     require('owl.carousel');
+
+    // require('./plugins/functions')
 } catch (e) {}
 
 /**
