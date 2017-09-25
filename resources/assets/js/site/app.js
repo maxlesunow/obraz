@@ -7,15 +7,11 @@
 
 require('./bootstrap');
 
-require('./plugins/functions')
 
 window.Vue = require('vue');
 window.Inputmask = require('inputmask');
-window.Modernizr = require('Modernizr');
 
-require('chosen-js');
-require('magnific-popup');
-require('malihu-custom-scrollbar-plugin');
+// require('magnific-popup');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
