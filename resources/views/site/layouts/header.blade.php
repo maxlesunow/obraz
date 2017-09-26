@@ -4,10 +4,14 @@
     </div>
 </div>
 <div id="header-ontop" class="is-sticky"></div>
+
 <!-- Header -->
-<header id="header" class="header style1">
+<header id="" class="header style1">
+
     <div class="top-header">
+
         <div class="container">
+
             <div class="inner">
                 <div class="main-menu-wapper">
                     <div class="row">
@@ -33,8 +37,8 @@
                                         <li><a href="blogpost.html">Одна новость</a></li>
                                     </ul>
                                 </li>
-                                <auth></auth>
                             </ul>
+                            <auth></auth>
                         </div>
                         {{--<div class="col-sm-4">--}}
                             {{--<span class="mobile-navigation"><i class="fa fa-bars"></i></span>--}}
