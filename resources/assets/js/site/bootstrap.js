@@ -13,7 +13,7 @@ try {
     
     require('./plugins/bootstrap.min');
 
-    require('./plugins/owl.carousel.min')
+    require('./plugins/owl.carousel.min');
     // require('chosen-js');
     require('./plugins/chosen.jquery.min')
     
@@ -29,10 +29,10 @@ try {
     // require('malihu-custom-scrollbar-plugin');/
     
     require('./plugins/jquery.parallax-1.1.3');
-    require('./plugins/jquery.magnific-popup.min')($);
+    // require('./plugins/jquery.magnific-popup.min');
     require('./plugins/masonry');
     
-    require('./plugins/functions')
+    // require('./plugins/functions')($)
 } catch (e) {}
 
 /**

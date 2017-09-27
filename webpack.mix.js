@@ -16,10 +16,15 @@ mix
     .js('resources/assets/js/site/app.js', 'public/js/app.js')
     .sass('resources/assets/styles/site/app.scss', 'public/css/app.css')
     .styles([
-        'resources/assets/styles/site/style.css',
         'resources/assets/styles/site/bootstrap.min.css',
         'resources/assets/styles/site/font-awesome.min.css',
+        'resources/assets/styles/site/owl.carousel.css',
+        'resources/assets/styles/site/chosen.css',
+        'resources/assets/styles/site/lightbox.min.css',
         'resources/assets/styles/site/pe-icon-7-stroke.css',
+        'resources/assets/styles/site/jquery.mCustomScrollbar.css',
+        'resources/assets/styles/site/magnific-popup.css',
+        'resources/assets/styles/site/style.css',
     ], 'public/css/app.css')
     .copyDirectory('resources/assets/fonts/site', 'public/fonts')
     .copyDirectory('resources/assets/images/site', 'public/images')
