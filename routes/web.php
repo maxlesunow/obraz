@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('site.welcome');
-});
 
 Auth::routes();
 
@@ -24,8 +21,7 @@ Route::get('/emailtest', 'MailController@sendVerificationCode');
 Route::post('/verification/{id}', 'VerificationController@update');
 Route::post('/verification/send/{id}', 'VerificationController@sendVerificationCode');
 
-Route::get('/home', 'HomeController@index');
-
+Route::get('/', 'HomeController@index');
 
 Route::group(['prefix' => 'payment'], function () {
 
@@ -36,6 +32,8 @@ Route::group(['prefix' => 'payment'], function () {
     Route::get('/check', 'YandexKassaController@check');
 
     Route::get('/aviso', 'YandexKassaController@aviso');
+
+    Route::get('/form', 'YandexKassaController@form');
 
 });
 

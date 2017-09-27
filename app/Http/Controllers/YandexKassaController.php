@@ -18,6 +18,12 @@ class YandexKassaController extends Controller
         return view('site.payment.error');
     }
 
+    public function form()
+    {
+
+        return view('site.payment.form');
+    }
+
     public function aviso()
     {
 
