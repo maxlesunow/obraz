@@ -26,6 +26,19 @@ Route::post('/verification/send/{id}', 'VerificationController@sendVerificationC
 
 Route::get('/home', 'HomeController@index');
 
+
+Route::group(['prefix' => 'payment'], function () {
+
+    Route::get('/success', 'YandexKassaController@success');
+
+    Route::get('/error', 'YandexKassaController@error');
+
+    Route::get('/check', 'YandexKassaController@check');
+
+    Route::get('/aviso', 'YandexKassaController@aviso');
+
+});
+
 Route::group(['middleware' => 'role:admin', 'prefix' => 'admin'], function () {
 
     Route::get('/', 'AdminController@index');

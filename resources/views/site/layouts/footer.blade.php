@@ -60,3 +60,4 @@
         </div>
     </div>
 </footer>
+<a href="#" class="scroll_top" title="Scroll to Top" style="display: block;"><i class="fa fa-arrow-up"></i></a>

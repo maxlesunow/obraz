@@ -14,7 +14,7 @@
         @yield('js')
 
     </head>
-    <body>
+    <body class="home">
         <div id="app">
             @include('site.layouts.header')
             <div class="container">
