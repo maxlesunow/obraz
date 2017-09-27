@@ -29,7 +29,7 @@ try {
     // require('malihu-custom-scrollbar-plugin');/
     
     require('./plugins/jquery.parallax-1.1.3');
-    require('./plugins/jquery.magnific-popup.min');
+    require('./plugins/jquery.magnific-popup.min')($);
     require('./plugins/masonry');
     
     require('./plugins/functions')
