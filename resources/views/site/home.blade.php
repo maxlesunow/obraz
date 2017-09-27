@@ -6,7 +6,7 @@
     <title>Boutique - eCommerce</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     {{--<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">--}}
     {{--<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">--}}
     {{--<link rel="stylesheet" type="text/css" href="css/chosen.css">--}}
@@ -418,7 +418,7 @@
     {{--<script type="text/javascript" src="js/functions.js"></script>--}}
 </div>
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ mix('js/app.js') }}"></script>
 
 {{--  <script src="{{ asset('js/functions.js') }}"></script>  --}}
 
