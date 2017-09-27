@@ -6,7 +6,7 @@
 <div id="header-ontop" class="is-sticky"></div>
 
 <!-- Header -->
-<header id="" class="header style1">
+<header id="header" class="header style1">
 
     <div class="top-header">
 
