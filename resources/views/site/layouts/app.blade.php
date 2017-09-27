@@ -3,7 +3,7 @@
     <head>
 
         <title>@yield('title') | Образ</title>
-
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 

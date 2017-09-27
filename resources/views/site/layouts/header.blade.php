@@ -38,7 +38,7 @@
                                     </ul>
                                 </li>
                             </ul>
-                            <auth></auth>
+                            {{--  <auth></auth>  --}}
                         </div>
                         {{--<div class="col-sm-4">--}}
                             {{--<span class="mobile-navigation"><i class="fa fa-bars"></i></span>--}}
