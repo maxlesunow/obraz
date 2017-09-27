@@ -21,7 +21,17 @@ Route::get('/emailtest', 'MailController@sendVerificationCode');
 Route::post('/verification/{id}', 'VerificationController@update');
 Route::post('/verification/send/{id}', 'VerificationController@sendVerificationCode');
 
-Route::get('/', 'HomeController@index');
+
+Route::get('/', 'Site\PageController@home');
+
+Route::get('/about', 'Site\PageController@about');
+
+Route::get('/schedule', 'Site\PageController@schedule');
+
+Route::get('/reviews', 'Site\PageController@reviews');
+
+Route::get('/contact', 'Site\PageController@contact');
+
 
 Route::group(['prefix' => 'payment'], function () {
 

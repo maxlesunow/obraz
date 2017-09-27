@@ -14,30 +14,19 @@
                         <div class="col-sm-8">
                             <ul class="boutique-nav main-menu clone-main-menu">
                                 <li class="active menu-item-has-children item-megamenu">
-                                    <a href="index1.html">Главная</a>
-                                </li>
-
-                                <li class="menu-item-has-children">
-                                    <a href="#">О компании</a>
+                                    <a href="{{ action ('Site\PageController@home') }}">Главная</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="#">Курсы</a>
+                                    <a href="{{ action ('Site\PageController@about') }}">О компании</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="#">Вебинары</a>
+                                    <a href="{{ action ('Site\PageController@schedule') }}">Расписание курсов</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="#">Магазин</a>
+                                    <a href="{{ action ('Site\PageController@reviews') }}">Отзывы</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="#">Отзывы</a>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="blogs.html">Новости</a>
-                                    <!-- <ul class="sub-menu">
-                                        <li><a href="blogs.html">Список новостей</a></li>
-                                        <li><a href="blogpost.html">Одна новость</a></li>
-                                    </ul> -->
+                                    <a href="{{ action ('Site\PageController@contact') }}">Конакты</a>
                                 </li>
                                 <auth></auth>
                             </ul>
