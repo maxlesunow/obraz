@@ -59,6 +59,13 @@ class Course extends Model
         return $this->reservations()->where('status', true)->count();
     }
 
+    public function getSlugAttribute()
+    {
+        return str_slug($this->name);
+    }
 
-
+    public function getUrlAttribute()
+    {
+        return action('Site\CourseController@show', [$this->id, $this->slug]);
+    }
 }

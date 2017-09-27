@@ -32,6 +32,8 @@ Route::get('/reviews', 'Site\PageController@reviews');
 
 Route::get('/contact', 'Site\PageController@contact');
 
+Route::get('/course/{id}/{slug?}', 'Site\CourseController@show');
+
 
 Route::group(['prefix' => 'payment'], function () {
 
