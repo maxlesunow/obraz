@@ -40,15 +40,18 @@ class Speaker extends Model
         return $this->courses()->count();
     }
 
+
+    // =========    SEO PARAMS    =========
+
     public function getSlugAttribute()
     {
         if($this->meta_url){
 
-            return str_slug($this->full_name);
+            return str_slug($this->meta_url);
         }
         else{
 
-            return str_slug($this->name);
+            return str_slug($this->full_name);
         }
     }
 
@@ -56,4 +59,42 @@ class Speaker extends Model
     {
         return action('Site\SpeakerController@show', [$this->id, $this->slug]);
     }
+
+    public function getSeoTitleAttribute()
+    {
+        if($this->meta_title){
+
+            return $this->meta_title;
+        }
+        else{
+
+            return $this->full_name;
+        }
+    }
+
+    public function getSeoDescriptionAttribute()
+    {
+        if($this->meta_description){
+
+            return $this->meta_description;
+        }
+        else{
+
+            return 'Докладчик '.$this->full_name;
+        }
+    }
+
+    public function getSeoKeywordsAttribute()
+    {
+        if($this->meta_description){
+
+            return $this->meta_description;
+        }
+        else{
+
+            return 'Докладчик, Спикер, '.join(', ', array($this->last_name, $this->first_name, $this->middle_name));
+        }
+    }
+
+
 }

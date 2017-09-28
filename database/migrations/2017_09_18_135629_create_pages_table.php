@@ -18,7 +18,7 @@ class CreatePagesTable extends Migration
             $table->string('type');
             $table->string('title');
             $table->text('text');
-            $table->json('json')->nullable();
+            $table->json('options')->nullable();
             $table->string('meta_title')->nullable();
             $table->string('meta_description')->nullable();
             $table->string('meta_keywords')->nullable();

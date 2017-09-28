@@ -1,5 +1,10 @@
 @extends('site.layouts.app')
 
+
+@section('title', $page->seo_title)
+@section('description', $page->seo_description)
+@section('keywords', $page->seo_keywords)
+
 @section('content')
     <div class="margin-top-30 section-lasttest-blog">
         <div class="section-title text-center"><h3>О нас</h3></div>

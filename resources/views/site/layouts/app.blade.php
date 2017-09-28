@@ -4,7 +4,11 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
-        <title>@yield('title') | Образ</title>
+
+        <title>@yield('title', 'Консалтинговое пространство образ - Курсы, Семинары, Лекции')</title>
+        <meta name="description" content="@yield('description', 'Сегодня в рамках консалтингового пространства «ОБРАЗ» активно стартуют проекты в индустрии красоты, косметологии, лингвистики, клинической психологии, но это только начало.')"/>
+        <meta name="keywords" content="@yield('keywords', 'Курсы, Семинары, Лекции, Консалтинг, Стоматология')"/>
+
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Styles -->
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
