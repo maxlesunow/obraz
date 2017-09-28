@@ -15,7 +15,7 @@
                                     <div class="col-md-6">
                                         <input v-if="input.type === 'text'" type="text" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" required autofocus>
                                         <input v-if="input.type === 'password'" type="password" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" required autofocus>
-                                        <input v-if="input.type === 'phone'" type="text" v-input-mask data-inputmask-mask="+9 (999) 999 99 99" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" required autofocus>
+                                        <input v-if="input.type === 'phone'" type="text" v-input-mask mask="+9 (999) 999 99 99" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" required autofocus>
 
                                         <span v-if="input.hasErrors" class="help-block">
                                             <strong>{{input.errorMessage}}</strong>
@@ -87,6 +87,7 @@ export default {
             this.clearErrors()
             axios.post('login', this.getFormData())
                 .then((response) => {
+                    console.log("secc", response)
                     this.user = response.data
                     if (this.user.is_verification) {
                         this.finishLogin()
@@ -95,6 +96,7 @@ export default {
                     }
                 })
                 .catch((data) => {
+                    console.log("err", data)
                     if (data.response.statusText === 'Unprocessable Entity') {
                         var err = data.response && data.response.data && data.response.data.errors
                         this.setErrors(err)    

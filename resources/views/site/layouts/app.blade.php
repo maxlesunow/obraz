@@ -19,9 +19,9 @@
 
         {{--fix modal--}}
         <style>
-            /* .modal-backdrop {
-                z-index: 0;
-            } */
+            .modal-backdrop {
+                z-index: 99;
+            }
         </style>
 
     </head>
@@ -37,6 +37,7 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}"></script>
         <script src="{{ asset('js/functions.js') }}"></script>
+        <!-- <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script> -->
 
         @yield('scripts')
     </body>
