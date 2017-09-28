@@ -28,7 +28,7 @@
                                 <li class="menu-item-has-children">
                                     <a href="{{ action ('Site\PageController@contact') }}">Конакты</a>
                                 </li>
-                                <auth></auth>
+                                <!-- <auth></auth> -->
                             </ul>
                         </div>
                         <div class="col-sm-4">
@@ -41,17 +41,18 @@
                                 <div class="box-settings">
                                     <span class="icon pe-7s-config"></span>
                                     <div class="settings-wrapper">
-                                        <!--  <div class="setting-content">
-                                                <div class="setting-option">
-                                                    <ul>
-                                                        <li><a href="#"><i class="icon-heart icons"></i><span>Wishlist</span></a></li>
-                                                        <li><a href="#"><i class="icon-user icons"></i><span> MyAccount</span></a></li>
-                                                        <li><a href="#"><i class="icon-note icons"></i><span>Checkout</span></a></li>
-                                                        <li><a href="#"><i class="icon-handbag icons"></i><span>Compare</span></a></li>
-                                                        <li><a href="#"><i class="icon-lock-open icons"></i><span>Login / Register</span></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div> -->
+                                         <div class="setting-content">
+                                            <div class="setting-option">
+                                                <ul>
+                                                    <auth></auth>
+                                                    <!-- <li><a href="#"><i class="icon-heart icons"></i><span>Wishlist</span></a></li>
+                                                    <li><a href="#"><i class="icon-user icons"></i><span> MyAccount</span></a></li>
+                                                    <li><a href="#"><i class="icon-note icons"></i><span>Checkout</span></a></li>
+                                                    <li><a href="#"><i class="icon-handbag icons"></i><span>Compare</span></a></li>
+                                                    <li><a href="#"><i class="icon-lock-open icons"></i><span>Login / Register</span></a></li> -->
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

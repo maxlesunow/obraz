@@ -53293,7 +53293,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "\nul li[data-v-661f62b6] {\n    display: inline-block;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* ul li {\n    display: inline-block;\n} */\n", ""]);
 
 // exports
 
@@ -53766,11 +53766,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticStyle: {
-      "display": "inline-block"
-    }
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
+  return _c('div', [_vm._m(0), _vm._v(" "), _c('div', {
     ref: "vuemodal",
     staticClass: "modal fade",
     attrs: {
@@ -53937,7 +53933,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "data-toggle": "modal",
       "data-target": "#loginModal"
     }
-  }, [_vm._v("Войти")])])
+  }, [_c('span', [_vm._v("Войти")])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "form-group"
@@ -54101,11 +54097,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticStyle: {
-      "display": "inline-block"
-    }
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
+  return _c('div', [_vm._m(0), _vm._v(" "), _c('div', {
     ref: "vuemodal",
     staticClass: "modal fade",
     attrs: {
@@ -54277,7 +54269,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "data-backdrop": "static",
       "data-keyboard": "false"
     }
-  }, [_vm._v("Зарегистрироваться")])])
+  }, [_c('span', [_vm._v("Зарегистрироваться")])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -54307,11 +54299,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "login": _vm.initialLogin
     }
-  })] : [(_vm.isAdmin) ? _c('li', [_c('a', {
-    attrs: {
-      "href": "/admin"
-    }
-  }, [_vm._v("Админка")])]) : _vm._e(), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('li', [_c('a', {
+  })] : [(_vm.isAdmin) ? _c('li', [_vm._m(0)]) : _vm._e(), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('li', [_c('a', {
     attrs: {
       "href": "#"
     },
@@ -54321,13 +54309,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.logout($event)
       }
     }
-  }, [_vm._v("Выйти")])])]], 2)
+  }, [_c('span', [_vm._v("Выйти")])])])]], 2)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('a', {
+    attrs: {
+      "href": "/admin"
+    }
+  }, [_c('span', [_vm._v("Админка")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('li', [_c('a', {
     attrs: {
       "href": "#"
     }
-  }, [_vm._v("Личный кабинет")])])
+  }, [_c('span', [_vm._v("Личный кабинет")])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

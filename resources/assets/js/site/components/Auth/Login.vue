@@ -1,6 +1,6 @@
 <template>
-    <div style="display: inline-block;">
-        <li><a href="#" data-toggle="modal" data-target="#loginModal">Войти</a></li>
+    <div>
+        <li><a href="#" data-toggle="modal" data-target="#loginModal"><span>Войти</span></a></li>
 
         <div ref="vuemodal" class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="favoritesModalLabel">
             <div class="modal-dialog" role="document">

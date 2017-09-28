@@ -1,6 +1,6 @@
 <template>
-    <div style="display: inline-block;">
-        <li><a href="#" data-toggle="modal" data-target="#registerModal" data-backdrop="static" data-keyboard="false">Зарегистрироваться</a></li>
+    <div>
+        <li><a href="#" data-toggle="modal" data-target="#registerModal" data-backdrop="static" data-keyboard="false"><span>Зарегистрироваться</span></a></li>
         
         <div ref="vuemodal" class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="favoritesModalLabel">
             <div class="modal-dialog" role="document">

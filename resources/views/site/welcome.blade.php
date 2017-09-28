@@ -23,7 +23,7 @@
                 <p>ЗАПИШИСЬ НА "САМЫЙ ЛУЧШИЙ КУРС" ПРЯМО СЕЙЧАС И ПОЛУЧИ СКИДКУ 20% | КОЛИЧЕСТВО УЧАСТНИКОВ ОГРАНИЧЕНО</p>
             </div>
         </div>
-        <div class="margin-top-50">
+        <!-- <div class="margin-top-50">
             <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <div class="row">
@@ -61,7 +61,7 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="margin-top-30 section-lasttest-blog">
             <div class="section-title text-center"><h3>ТЕКСТ НА ГЛАВНОЙ</h3></div>
             <div class="blog-short-desc">
