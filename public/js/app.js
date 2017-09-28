@@ -41639,7 +41639,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Sms.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Sms.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Sms.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -53133,7 +53133,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\site\\components\\Example.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\site\\components\\Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -53235,7 +53235,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Auth.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Auth.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Auth.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -53390,7 +53390,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Login.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Login.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Login.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -53975,7 +53975,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Register.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Register.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Register.vue: functional components are not supported with templates, they should use render functions.")}
 

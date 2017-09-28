@@ -17,6 +17,13 @@
 
         @yield('js')
 
+        {{--fix modal--}}
+        <style>
+            .modal-backdrop {
+                z-index: 0;
+            }
+        </style>
+
     </head>
     <body class="home">
         <div id="app">
