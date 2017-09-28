@@ -39,4 +39,21 @@ class Speaker extends Model
 
         return $this->courses()->count();
     }
+
+    public function getSlugAttribute()
+    {
+        if($this->meta_url){
+
+            return str_slug($this->full_name);
+        }
+        else{
+
+            return str_slug($this->name);
+        }
+    }
+
+    public function getUrlAttribute()
+    {
+        return action('Site\SpeakerController@show', [$this->id, $this->slug]);
+    }
 }

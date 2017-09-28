@@ -61,7 +61,14 @@ class Course extends Model
 
     public function getSlugAttribute()
     {
-        return str_slug($this->name);
+        if($this->meta_url){
+
+            return str_slug($this->meta_url);
+        }
+        else{
+
+            return str_slug($this->name);
+        }
     }
 
     public function getUrlAttribute()

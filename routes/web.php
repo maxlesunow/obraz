@@ -34,6 +34,8 @@ Route::get('/contact', 'Site\PageController@contact');
 
 Route::get('/course/{id}/{slug?}', 'Site\CourseController@show');
 
+Route::get('/speaker/{id}/{slug?}', 'Site\SpeakerController@show');
+
 
 Route::group(['prefix' => 'payment'], function () {
 
