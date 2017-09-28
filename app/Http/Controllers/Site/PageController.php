@@ -15,6 +15,7 @@ class PageController extends Controller
      */
     public function home()
     {
+        $page
         return view('site.home');
     }
 
