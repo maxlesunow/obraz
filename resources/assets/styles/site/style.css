@@ -379,6 +379,9 @@ Last change: 01/15/2016
       visibility: inherit;
   }
   
+  .owl-carousel.nav-style1 {
+    z-index: -1;
+  }
   
   .owl-carousel.nav-style1 .owl-next, 
   .owl-carousel.nav-style1 .owl-prev {
