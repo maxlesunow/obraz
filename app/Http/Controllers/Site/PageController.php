@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Page;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,23 +16,26 @@ class PageController extends Controller
      */
     public function home()
     {
-        $page
-        return view('site.home');
+        $page = Page::where('type', 'home')->first();
+        return view('site.home', compact('page'));
     }
 
     public function about()
     {
-        return view('site.about');
+        $page = Page::where('type', 'about')->first();
+        return view('site.about', compact('page'));
     }
 
     public function schedule()
     {
-        return view('site.schedule');
+        $page = Page::where('type', 'schedule')->first();
+        return view('site.schedule', compact('page'));
     }
 
     public function contact()
     {
-        return view('site.contact');
+        $page = Page::where('type', 'contact')->first();
+        return view('site.contact', compact('page'));
     }
 
 }

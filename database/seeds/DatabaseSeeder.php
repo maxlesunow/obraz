@@ -82,5 +82,8 @@ class DatabaseSeeder extends Seeder
 
         //        Отзывы
         $this->call(ReviewSeeder::class);
+
+        //        Страницы
+        $this->call(PageSeeder::class);
     }
 }
