@@ -14,20 +14,12 @@ let mix = require('laravel-mix');
 mix
     //Site
     .js('resources/assets/js/site/app.js', 'public/js/app.js')
-    .sass('resources/assets/styles/site/app.scss', 'public/css/app.css')
     .styles([
-        'resources/assets/styles/site/bootstrap.min.css',
-        'resources/assets/styles/site/font-awesome.min.css',
-        'resources/assets/styles/site/owl.carousel.css',
-        'resources/assets/styles/site/chosen.css',
-        'resources/assets/styles/site/lightbox.min.css',
-        'resources/assets/styles/site/pe-icon-7-stroke.css',
-        'resources/assets/styles/site/jquery.mCustomScrollbar.css',
-        'resources/assets/styles/site/magnific-popup.css',
         'resources/assets/styles/site/style.css',
     ], 'public/css/app.css')
     .copyDirectory('resources/assets/fonts/site', 'public/fonts')
-    .copyDirectory('resources/assets/images/site', 'public/images')
+    .copy('resources/assets/js/site/core.min.js', 'public/js/core.min.js')
+    .copy('resources/assets/js/site/script.js', 'public/js/script.js')
 
     //AdminPanel
     .js('resources/assets/js/admin/app.js', 'public/js/admin.js')

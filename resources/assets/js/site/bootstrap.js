@@ -8,30 +8,7 @@ window._ = require('lodash');
  */
 
 try {
-    window.$ = window.jQuery = require('./plugins/jquery-2.1.4.min');
-    
-    require('./plugins/bootstrap.min');
-
-    require('./plugins/owl.carousel.min');
-    // require('chosen-js');
-    require('./plugins/chosen.jquery.min')
-    
-    window.Modernizr = require('Modernizr');
-    
-    require('./plugins/jquery-ui.min');
-    require('./plugins/lightbox.min');
-    require('./plugins/masonry.pkgd.min');
-    require('./plugins/imagesloaded.pkgd.min');
-    require('./plugins/isotope.pkgd.min');
-    
-    require('./plugins/jquery.mCustomScrollbar.concat.min')($);
-    // require('malihu-custom-scrollbar-plugin');/
-    
-    require('./plugins/jquery.parallax-1.1.3');
-    // require('./plugins/jquery.magnific-popup.min');
-    require('./plugins/masonry');
-    
-    // require('./plugins/functions')($)
+    // require('./core.min');
 } catch (e) {}
 
 /**

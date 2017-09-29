@@ -9,21 +9,12 @@ require('./bootstrap');
 
 
 window.Vue = require('vue');
-window.Inputmask = require('inputmask');
-
-// require('magnific-popup');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-Vue.directive('input-mask', {
-	bind: function(el) {
-		new Inputmask({ autoUnmask: true }).mask(el);
-	},
-});
 
 Vue.component('example', require('./components/Example.vue'));
 
