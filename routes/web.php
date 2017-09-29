@@ -75,6 +75,8 @@ Route::group(['middleware' => 'role:admin', 'prefix' => 'admin'], function () {
 
     Route::resource('/review', 'ReviewController', ['only' => ['index', 'edit', 'store', 'create', 'update']]);
 
+    Route::resource('/page', 'PageController', ['only' => ['index', 'edit', 'update']]);
+
 });
 
 Route::group(['middleware' => 'role:admin', 'prefix' => 'api'], function () {
@@ -116,4 +118,6 @@ Route::group(['middleware' => 'role:admin', 'prefix' => 'api'], function () {
     Route::get('/reviews', 'ReviewController@getReviews');
 
     Route::delete('/reviews/{ids}', 'ReviewController@destroy');
+
+    Route::get('/pages', 'PageController@getPages');
 });
