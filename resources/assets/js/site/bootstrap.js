@@ -9,7 +9,6 @@ window._ = require('lodash');
 
 try {
     window.$ = window.jQuery = require('./plugins/jquery-2.1.4.min');
-    global.$ = global.jQuery = window.$
     
     require('./plugins/bootstrap.min');
 

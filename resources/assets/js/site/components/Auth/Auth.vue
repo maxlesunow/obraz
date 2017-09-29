@@ -5,9 +5,9 @@
             <login @login="initialLogin"></login>
         </template>
         <template v-else>
-                <li v-if="isAdmin"><a href="/admin">Админка</a></li>
-                <li><a href="#">Личный кабинет</a></li>
-                <li><a href="#" @click.prevent="logout">Выйти</a></li>
+                <li v-if="isAdmin"><a href="/admin"><span>Админка</span></a></li>
+                <li><a href="#"><span>Личный кабинет</span></a></li>
+                <li><a href="#" @click.prevent="logout"><span>Выйти</span></a></li>
         </template>
     </div>
 </template>
@@ -63,7 +63,7 @@ export default {
 </script>
 
 <style scoped>
-    ul li {
+    /* ul li {
         display: inline-block;
-    }
+    } */
 </style>

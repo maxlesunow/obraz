@@ -1,6 +1,6 @@
 <template>
-    <div style="display: inline-block;">
-        <li><a href="#" data-toggle="modal" data-target="#registerModal" data-backdrop="static" data-keyboard="false">Зарегистрироваться</a></li>
+    <div>
+        <li><a href="#" data-toggle="modal" data-target="#registerModal" data-backdrop="static" data-keyboard="false"><span>Зарегистрироваться</span></a></li>
         
         <div ref="vuemodal" class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="favoritesModalLabel">
             <div class="modal-dialog" role="document">
@@ -15,7 +15,7 @@
                                     <div class="col-md-6">
                                         <input v-if="input.type === 'text'" type="text" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" :disabled="input.disabled" required autofocus>
                                         <input v-if="input.type === 'password'" type="password" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" :disabled="input.disabled" required autofocus>
-                                        <input v-if="input.type === 'phone'" type="text" v-input-mask data-inputmask-mask="+9 (999) 999 99 99" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" :disabled="input.disabled" required autofocus>
+                                        <input v-if="input.type === 'phone'" type="text" v-input-mask mask="+9 (999) 999 99 99" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" :disabled="input.disabled" required autofocus>
                                         
                                         <span v-if="input.hasErrors" class="help-block">
                                             <strong>{{input.errorMessage}}</strong>
