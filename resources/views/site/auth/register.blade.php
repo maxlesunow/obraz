@@ -24,7 +24,7 @@
                 <ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
                     <li>Вход</li>
                     <li>Регистрация</li>
-                    <li>Восстановление</li>
+                    <!-- <li>Восстановление</li> -->
                 </ul>
                 <div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
                     <div>
@@ -41,15 +41,13 @@
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <!-- <div>
                         <div class="range range-xs-center section-34">
                             <div class="cell-xs-8 cell-sm-6 cell-md-4">
-                                <!-- RD Mailform-->
                                 <form class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
                                     <div class="form-group">
                                         <label class="form-label form-label-outside" for="form-register-username">Name:</label>
                                         <input class="form-control bg-white" id="form-register-username" type="text" name="name" data-constraints="@Required">
-                                        <!-- <span class="form-validation">The text field is required.</span> -->
                                     </div>
                                     <div class="form-group offset-top-24">
                                         <label class="form-label form-label-outside" for="form-register-password">Password:</label>
@@ -61,7 +59,7 @@
                                 </form>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

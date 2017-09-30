@@ -33270,12 +33270,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group offset-top-24"
   }, [_c('div', {
     staticClass: "col-md-4"
-  }, [_c('a', {
-    staticClass: "btn btn-link",
-    attrs: {
-      "href": ""
-    }
-  }, [_vm._v("Забыли пароль?")])])])
+  })])
 }]}
 module.exports.render._withStripped = true
 if (false) {
