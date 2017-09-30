@@ -53,6 +53,8 @@
                                 <li><a href="{{ action ('Site\PageController@reviews') }}"><span>Отзывы</span></a></li>
 
                                 <li><a href="{{ action ('Site\PageController@contact') }}"><span>Конакты</span></a></li>
+
+                                <li><a href="{{ action ('Auth\RegisterController@showRegistrationForm') }}"><span>Войти</span></a></li>
                                 <auth></auth>
                             </ul>
                         </div>
