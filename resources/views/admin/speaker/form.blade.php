@@ -5,7 +5,11 @@
 
 @include('admin.partials.form.input', ['id' => 'middle_name', 'name' => 'Отчество:'])
 
+@include('admin.partials.form.input', ['id' => 'position', 'name' => 'Должность:'])
+
 @include('admin.partials.form.textarea', ['id' => 'description', 'name' => 'Описание:'])
+
+@include('admin.partials.form.checkbox', ['id' => 'show_home', 'name' => 'Показывать на главной:'])
 
 @include('admin.partials.form.input', ['id' => 'meta_title', 'name' => 'Title:'])
 

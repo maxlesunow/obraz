@@ -18,7 +18,10 @@ class CreateSpeakersTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('middle_name')->nullable();
+            $table->string('image')->nullable();
+            $table->string('position')->nullable();
             $table->text('description')->nullable();
+            $table->boolean('show_home')->nullable();
             $table->string('meta_title')->nullable();
             $table->string('meta_description')->nullable();
             $table->string('meta_keywords')->nullable();

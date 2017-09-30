@@ -17,6 +17,8 @@ class Speaker extends Model
         'last_name',
         'middle_name',
         'description',
+        'position',
+        'show_home',
         'meta_title',
         'meta_description',
         'meta_keywords',

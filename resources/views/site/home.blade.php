@@ -53,20 +53,23 @@
         </section>
     </section>
 
+
     <section class="section parallax-container" data-parallax-img="images/bg-03-1920x1425.jpg">
         <div class="parallax-content">
-            <div class="section-85 section-lg-124 shell">
+            <div class="section-50 section-lg-70 shell">
                 <div class="range range-xs-center">
                     <div class="cell-lg-10">
                         <h1 class="text-bold">Ближайшие события</h1>
                         <p>Здесь не все события, 5 ближайших  текст текст текст</p>
                         <div class="offset-top-50 offset-md-top-90 event">
                             <ul class="tabs nav nav-pills nav-justified nav-custom text-center" id="tabs-2" role="tablist">
-                                <li class="active" role="presentation"><a href="#tab1" role="tab"><span>21 / 07 / 2016</span></a></li>
-                                <li role="presentation"><a href="#tab2" role="tab"><span>22 / 07 / 2016</span></a></li>
-                                <li role="presentation"><a href="#tab3" role="tab"><span>23 / 07 / 2016</span></a></li>
-                                <li role="presentation"><a href="#tab3" role="tab"><span>24 / 07 / 2016</span></a></li>
-                                <li role="presentation"><a href="#tab3" role="tab"><span>25 / 07 / 2016</span></a></li>
+                                @foreach($courses as $course)
+                                    @if($loop->first)
+                                        <li class="active" role="presentation"><a href="#tab1" role="tab"><span><?=strftime("%d %B %Y, %H:%M", strtotime("12/28/2002"));?></span></a></li>
+                                    @else
+                                        <li role="presentation"><a href="#tab2" role="tab"><span>{{Carbon\Carbon::parse($course->time_start)->formatLocalized('%d %B %Y') }}</span></a></li>
+                                    @endif
+                                @endforeach
                             </ul>
                             <div class="tab-content tab-conten-vert offset-top-50 text-md-left">
                                 <div class="tab-pane fade active in post-event-type-3" id="tab1" role="tabpanel">
@@ -83,87 +86,6 @@
                                                 <div class="responsive-tabs responsive-tabs-boxed" data-type="accordion">
                                                     <ul class="resp-tabs-list tabs-group-default" data-group="tabs-group-default">
                                                         <li>Event registration & breakfast</li>
-                                                    </ul>
-                                                    <div class="resp-tabs-container tabs-group-default" data-group="tabs-group-default">
-                                                        <div class="small">
-                                                            After completing the registration form at one of Intense
-                                                            Terminals, where visitors should state their personal
-                                                            information and contacts, they will be invited to the breakfast
-                                                            devoted to the opening of our event. If you register first,
-                                                            you’ll receive additional bonuses, so hurry up!
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="range post-event-item">
-                                        <div class="cell-md-4 text-md-right">
-                                            <div class="post-event-inset">
-                                                <h2 class="post-event-time">5:40 PM</h2>
-                                                <p class="post-event-author">JULY MAO</p>
-                                            </div>
-                                        </div>
-                                        <div class="cell-md-8 offset-top-20 offset-md-top-0">
-                                            <div class="post-event-info">
-                                                <!-- Boxed Accordion-->
-                                                <div class="responsive-tabs responsive-tabs-boxed" data-type="accordion">
-                                                    <ul class="resp-tabs-list tabs-group-default" data-group="tabs-group-default">
-                                                        <li>New technologies in web design</li>
-                                                    </ul>
-                                                    <div class="resp-tabs-container tabs-group-default" data-group="tabs-group-default">
-                                                        <div class="small">
-                                                            After completing the registration form at one of Intense
-                                                            Terminals, where visitors should state their personal
-                                                            information and contacts, they will be invited to the breakfast
-                                                            devoted to the opening of our event. If you register first,
-                                                            you’ll receive additional bonuses, so hurry up!
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="range post-event-item">
-                                        <div class="cell-md-4 text-md-right">
-                                            <div class="post-event-inset">
-                                                <h2 class="post-event-time">7:00 PM</h2>
-                                                <p class="post-event-author">JOHN DOE</p>
-                                            </div>
-                                        </div>
-                                        <div class="cell-md-8 offset-top-20 offset-md-top-0">
-                                            <div class="post-event-info">
-                                                <!-- Boxed Accordion-->
-                                                <div class="responsive-tabs responsive-tabs-boxed" data-type="accordion">
-                                                    <ul class="resp-tabs-list tabs-group-default" data-group="tabs-group-default">
-                                                        <li>Promoting your app using SEO</li>
-                                                    </ul>
-                                                    <div class="resp-tabs-container tabs-group-default" data-group="tabs-group-default">
-                                                        <div class="small">
-                                                            After completing the registration form at one of Intense
-                                                            Terminals, where visitors should state their personal
-                                                            information and contacts, they will be invited to the breakfast
-                                                            devoted to the opening of our event. If you register first,
-                                                            you’ll receive additional bonuses, so hurry up!
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="range post-event-item">
-                                        <div class="cell-md-4 text-md-right">
-                                            <div class="post-event-inset">
-                                                <h2 class="post-event-time">7:40 PM</h2>
-                                                <p class="post-event-author">BERNARD SHOW</p>
-                                            </div>
-                                        </div>
-                                        <div class="cell-md-8 offset-top-20 offset-md-top-0">
-                                            <div class="post-event-info">
-                                                <!-- Boxed Accordion-->
-                                                <div class="responsive-tabs responsive-tabs-boxed" data-type="accordion">
-                                                    <ul class="resp-tabs-list tabs-group-default" data-group="tabs-group-default">
-                                                        <li>Web project management</li>
                                                     </ul>
                                                     <div class="resp-tabs-container tabs-group-default" data-group="tabs-group-default">
                                                         <div class="small">
@@ -636,38 +558,16 @@
             <div class="range range-xs-center offset-top-66">
                 <div class="cell-sm-8 cell-lg-12">
                     <div class="range">
-                        <div class="cell-sm-6 cell-lg-3"><img class="img-circle img-responsive center-block" src="images/user-john-doe-140x140.jpg" width="140" height="140" alt="">
-                            <div class="offset-top-24">
-                                <h5 class="text-bold"><a href="team-member.html">Виталий Иванов</a></h5>
-                            </div>
-                            <p class="offset-top-4 small text-bold text-malibu">Врач педиатр, Белгород</p>
-                            <hr class="divider">
+                        @foreach($speakers as $speaker)
+                            <div class="cell-sm-6 cell-lg-3"><img class="img-circle img-responsive center-block" src="{{$speaker->image}}" width="140" height="140" alt="">
+                                <div class="offset-top-24">
+                                    <h5 class="text-bold"><a href="{{$speaker->url}}">{{$speaker->first_name}} {{$speaker->last_name}}</a></h5>
+                                </div>
+                                <p class="offset-top-4 small text-bold text-malibu">{{$speaker->position}}</p>
+                                <hr class="divider">
 
-                        </div>
-                        <div class="cell-sm-6 cell-lg-3 offset-top-66 offset-sm-top-0"><img class="img-circle img-responsive center-block" src="images/user-july-mao-140x140.jpg" width="140" height="140" alt="">
-                            <div class="offset-top-24">
-                                <h5 class="text-bold"><a href="team-member.html">Ангелина Петрова</a></h5>
                             </div>
-                            <p class="offset-top-4 small text-bold text-malibu">Врач стоматолог, Белгород</p>
-                            <hr class="divider">
-
-                        </div>
-                        <div class="cell-sm-6 cell-lg-3 offset-top-66 offset-lg-top-0"><img class="img-circle img-responsive center-block" src="images/user-bernard-show-140x140.jpg" width="140" height="140" alt="">
-                            <div class="offset-top-24">
-                                <h5 class="text-bold"><a href="team-member.html">Виктор Королев</a></h5>
-                            </div>
-                            <p class="offset-top-4 small text-bold text-malibu">Еще должность, Курск</p>
-                            <hr class="divider">
-
-                        </div>
-                        <div class="cell-sm-6 cell-lg-3 offset-top-66 offset-lg-top-0"><img class="img-circle img-responsive center-block" src="images/user-ronald-oswald-140x140.jpg" width="140" height="140" alt="">
-                            <div class="offset-top-24">
-                                <h5 class="text-bold"><a href="team-member.html">Иван Иванов</a></h5>
-                            </div>
-                            <p class="offset-top-4 small text-bold text-malibu">Тоже должность, Москва</p>
-                            <hr class="divider">
-
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

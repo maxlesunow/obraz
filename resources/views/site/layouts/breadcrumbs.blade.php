@@ -1,7 +1,7 @@
 <section class="bg-blue-gray section-triangle section-triangle-bottom context-dark">
-    <div class="shell section-10 section-sm-10">
+    <div class="shell section-20 section-sm-20">
         <div class="range range-lg-middle">
-            <div class="cell-lg-2 veil reveal-sm-block cell-lg-push-2"><span class="mdi {{$icon}} icon icon-white"></span></div>
+            <div class="cell-lg-2 veil reveal-sm-block cell-lg-push-2"><span class="mdi {{$icon}} icon-xs icon-white"></span></div>
             <div class="cell-lg-5 veil reveal-lg-block cell-lg-push-1 text-lg-left">
                 <h4><span class="big">{{$title}}</span></h4>
             </div>
