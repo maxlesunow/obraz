@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 167);
+/******/ 	return __webpack_require__(__webpack_require__.s = 168);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -573,7 +573,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(45)
+var listToStyles = __webpack_require__(46)
 
 /*
 type StyleObject = {
@@ -1189,7 +1189,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 */
 
 !function(factory) {
-     true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(47), __webpack_require__(48) ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+     true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(48), __webpack_require__(49) ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : "object" == typeof exports ? module.exports = factory(require("../global/window"), require("../global/document")) : window.dependencyLib = factory(window, document);
@@ -1330,7 +1330,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 */
 
 !function(factory) {
-     true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(19), __webpack_require__(47), __webpack_require__(48) ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+     true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(19), __webpack_require__(48), __webpack_require__(49) ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : "object" == typeof exports ? module.exports = factory(require("./dependencyLibs/inputmask.dependencyLib"), require("./global/window"), require("./global/document")) : window.Inputmask = factory(window.dependencyLib || jQuery, window, document);
@@ -31284,6 +31284,24 @@ module.exports = {
 
 /***/ }),
 /* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(176);
+__webpack_require__(177);
+__webpack_require__(178);
+__webpack_require__(179);
+
+// require("./dist/inputmask/phone-codes/phone-be");
+// require("./dist/inputmask/phone-codes/phone-nl");
+// require("./dist/inputmask/phone-codes/phone-ru");
+// require("./dist/inputmask/phone-codes/phone-uk");
+// require("./dist/inputmask/phone-codes/phone");
+
+module.exports = __webpack_require__(20);
+
+
+/***/ }),
+/* 46 */
 /***/ (function(module, exports) {
 
 /**
@@ -31316,8 +31334,8 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 46 */,
-/* 47 */
+/* 47 */,
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -31334,7 +31352,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : "object" == typeof exports && (module.exports = window);
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -31351,7 +31369,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : "object" == typeof exports && (module.exports = document);
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -31371,7 +31389,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Sms.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Sms.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Sms.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -31395,7 +31413,6 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 50 */,
 /* 51 */,
 /* 52 */,
 /* 53 */,
@@ -31512,14 +31529,15 @@ module.exports = Component.exports
 /* 164 */,
 /* 165 */,
 /* 166 */,
-/* 167 */
+/* 167 */,
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(168);
+module.exports = __webpack_require__(169);
 
 
 /***/ }),
-/* 168 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -31529,7 +31547,7 @@ module.exports = __webpack_require__(168);
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(169);
+__webpack_require__(170);
 
 window.Vue = __webpack_require__(43);
 
@@ -31539,10 +31557,10 @@ window.Vue = __webpack_require__(43);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', __webpack_require__(170));
+Vue.component('example', __webpack_require__(171));
 
 // Vue.component('auth', require('./components/Auth/Auth.vue'));
-Vue.component('login', __webpack_require__(173));
+Vue.component('login', __webpack_require__(174));
 Vue.component('register', __webpack_require__(185));
 
 var app = new Vue({
@@ -31550,7 +31568,7 @@ var app = new Vue({
 });
 
 /***/ }),
-/* 169 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -31606,15 +31624,15 @@ if (token) {
 // });
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(171),
-  /* template */
   __webpack_require__(172),
+  /* template */
+  __webpack_require__(173),
   /* styles */
   null,
   /* scopeId */
@@ -31622,7 +31640,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\site\\components\\Example.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\site\\components\\Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -31646,7 +31664,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31675,7 +31693,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -31704,13 +31722,13 @@ if (false) {
 }
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(174),
+  __webpack_require__(175),
   /* template */
   __webpack_require__(184),
   /* styles */
@@ -31720,7 +31738,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Login.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Login.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Login.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -31744,17 +31762,18 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_formData__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_formData___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__mixins_formData__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inputmask__ = __webpack_require__(175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inputmask__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inputmask___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_inputmask__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Sms_vue__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Sms_vue__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Sms_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Sms_vue__);
+//
 //
 //
 //
@@ -31863,24 +31882,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     }
 });
-
-/***/ }),
-/* 175 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(176);
-__webpack_require__(177);
-__webpack_require__(178);
-__webpack_require__(179);
-
-// require("./dist/inputmask/phone-codes/phone-be");
-// require("./dist/inputmask/phone-codes/phone-nl");
-// require("./dist/inputmask/phone-codes/phone-ru");
-// require("./dist/inputmask/phone-codes/phone-uk");
-// require("./dist/inputmask/phone-codes/phone");
-
-module.exports = __webpack_require__(20);
-
 
 /***/ }),
 /* 176 */
@@ -32944,7 +32945,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -32957,6 +32958,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_formData__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_formData___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__mixins_formData__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inputmask__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inputmask___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_inputmask__);
 var _this = this;
 
 //
@@ -32994,10 +32997,23 @@ var _this = this;
 
 
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "sms",
     mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_formData___default.a],
     props: ['smsSend', 'smsVerify', 'user'],
+    directives: {
+        'code-mask': {
+            bind: function bind(el) {
+                new __WEBPACK_IMPORTED_MODULE_1_inputmask___default.a({
+                    mask: "9999"
+                    // autoUnmask: true,
+                    // onUnMask: (maskedValue, unmaskedValue) => "7" + unmaskedValue   
+                }).mask(el);
+            }
+        }
+    },
     data: function data() {
         return {
             inputs: [{ data: '', hasErrors: '', errorMessage: null, type: "code", name: "Код", attr: "code" }],
@@ -33088,8 +33104,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }) : _vm._e(), _vm._v(" "), (input.type === 'code') ? _c('input', {
       directives: [{
-        name: "input-mask",
-        rawName: "v-input-mask"
+        name: "code-mask",
+        rawName: "v-code-mask"
       }, {
         name: "model",
         rawName: "v-model",
@@ -33100,7 +33116,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "type": "code",
         "id": input.attr,
-        "data-inputmask-mask": "9999",
         "name": input.attr,
         "required": "",
         "autofocus": ""
@@ -33241,8 +33256,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }) : _vm._e(), _vm._v(" "), (input.hasErrors) ? _c('span', {
-      staticClass: "help-block"
-    }, [_c('strong', [_vm._v(_vm._s(input.errorMessage))])]) : _vm._e()])]
+      staticClass: "form-validation"
+    }, [_vm._v(_vm._s(input.errorMessage))]) : _vm._e()])]
   }), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
     staticClass: "offset-top-24"
   }, [_c('button', {
@@ -33297,7 +33312,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Register.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Register.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Register.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -33328,8 +33343,10 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_formData__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_formData___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__mixins_formData__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Sms_vue__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Sms_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Sms_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inputmask__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inputmask___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_inputmask__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Sms_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Sms_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Sms_vue__);
 //
 //
 //
@@ -33362,26 +33379,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+
 
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    components: { Sms: __WEBPACK_IMPORTED_MODULE_1__Sms_vue___default.a },
+    components: { Sms: __WEBPACK_IMPORTED_MODULE_2__Sms_vue___default.a },
     mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_formData___default.a],
+    directives: {
+        'phone-mask': {
+            bind: function bind(el) {
+                new __WEBPACK_IMPORTED_MODULE_1_inputmask___default.a({
+                    mask: "+7 (###) ### ## ##",
+                    autoUnmask: true,
+                    onUnMask: function onUnMask(maskedValue, unmaskedValue) {
+                        return "7" + unmaskedValue;
+                    }
+                }).mask(el);
+            }
+        }
+    },
     data: function data() {
         return {
             inputs: [{ data: '', hasErrors: '', errorMessage: null, type: "text", name: "Фамилия", attr: "last_name", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Имя", attr: "first_name", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Отчество", attr: "middle_name", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "E-mail", attr: "email", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "phone", name: "Телефон", attr: "phone", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Пароль", attr: "password", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Подтверждение пароля", attr: "password_confirmation", disabled: false }],
@@ -33423,50 +33443,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_vm._m(0), _vm._v(" "), _c('div', {
-    ref: "vuemodal",
-    staticClass: "modal fade",
+  return _c('div', [_c('form', {
+    staticClass: "rd-mailform text-left",
     attrs: {
-      "id": "registerModal",
-      "tabindex": "-1",
-      "role": "dialog",
-      "aria-labelledby": "favoritesModalLabel"
-    }
-  }, [_c('div', {
-    staticClass: "modal-dialog",
-    attrs: {
-      "role": "document"
-    }
-  }, [_c('div', {
-    staticClass: "modal-content"
-  }, [_c('div', {
-    staticClass: "modal-body"
-  }, [_c('form', {
-    staticClass: "form-horizontal",
-    attrs: {
+      "data-form-output": "form-output-global",
       "role": "form"
     }
-  }, [_vm._l((_vm.inputs), function(input) {
+  }, [_vm._l((_vm.inputs), function(input, index) {
     return [_c('div', {
       staticClass: "form-group",
       class: {
-        'has-error': input.hasErrors
+        'has-error': input.hasErrors, 'offset-top-24': index !== 0
       }
     }, [_c('label', {
-      staticClass: "col-md-4 control-label",
+      staticClass: "form-label form-label-outside",
       attrs: {
         "for": input.attr
       }
-    }, [_vm._v(_vm._s(input.name))]), _vm._v(" "), _c('div', {
-      staticClass: "col-md-6"
-    }, [(input.type === 'text') ? _c('input', {
+    }, [_vm._v(_vm._s(input.name))]), _vm._v(" "), (input.type === 'text') ? _c('input', {
       directives: [{
         name: "model",
         rawName: "v-model",
         value: (input.data),
         expression: "input.data"
       }],
-      staticClass: "form-control",
+      staticClass: "form-control bg-white",
       attrs: {
         "type": "text",
         "id": input.attr,
@@ -33491,7 +33492,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         value: (input.data),
         expression: "input.data"
       }],
-      staticClass: "form-control",
+      staticClass: "form-control bg-white",
       attrs: {
         "type": "password",
         "id": input.attr,
@@ -33511,18 +33512,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }) : _vm._e(), _vm._v(" "), (input.type === 'phone') ? _c('input', {
       directives: [{
-        name: "input-mask",
-        rawName: "v-input-mask"
+        name: "phone-mask",
+        rawName: "v-phone-mask"
       }, {
         name: "model",
         rawName: "v-model",
         value: (input.data),
         expression: "input.data"
       }],
-      staticClass: "form-control",
+      staticClass: "form-control bg-white",
       attrs: {
         "type": "text",
-        "mask": "+9 (999) 999 99 99",
         "id": input.attr,
         "name": input.attr,
         "disabled": input.disabled,
@@ -33539,8 +33539,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }) : _vm._e(), _vm._v(" "), (input.hasErrors) ? _c('span', {
-      staticClass: "help-block"
-    }, [_c('strong', [_vm._v(_vm._s(input.errorMessage))])]) : _vm._e()])])]
+      staticClass: "form-validation"
+    }, [_vm._v(_vm._s(input.errorMessage))]) : _vm._e()])]
   })], 2), _vm._v(" "), _c('sms', {
     attrs: {
       "sms-send": _vm.smsSend,
@@ -33552,51 +33552,28 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.smsVerify = $event
       }
     }
-  })], 1), _vm._v(" "), (!_vm.smsSend) ? _c('div', {
-    staticClass: "modal-footer"
+  }), _vm._v(" "), (!_vm.smsSend) ? _c('div', {
+    staticClass: "offset-top-24"
   }, [_c('button', {
     staticClass: "btn btn-primary",
-    attrs: {
-      "type": "submit"
-    },
     on: {
       "click": function($event) {
         $event.preventDefault();
         _vm.registerPost($event)
       }
     }
-  }, [_vm._v("Регистрация")]), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-default",
-    attrs: {
-      "type": "button",
-      "id": "btnclose",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Закрыть")])]) : _vm._e(), _vm._v(" "), (_vm.smsVerify) ? _c('div', {
-    staticClass: "modal-footer"
+  }, [_vm._v("Регистрация")])]) : _vm._e(), _vm._v(" "), (_vm.smsVerify) ? _c('div', {
+    staticClass: "offset-top-24"
   }, [_c('button', {
     staticClass: "btn btn-default",
-    attrs: {
-      "type": "button"
-    },
     on: {
       "click": function($event) {
         $event.preventDefault();
         _vm.finishRegister($event)
       }
     }
-  }, [_vm._v("Завершить регистрацию")])]) : _vm._e()])])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('li', [_c('a', {
-    attrs: {
-      "href": "#",
-      "data-toggle": "modal",
-      "data-target": "#registerModal",
-      "data-backdrop": "static",
-      "data-keyboard": "false"
-    }
-  }, [_c('span', [_vm._v("Зарегистрироваться")])])])
-}]}
+  }, [_vm._v("Завершить регистрацию")])]) : _vm._e()], 1)
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
