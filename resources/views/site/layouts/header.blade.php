@@ -8,13 +8,13 @@
                     <!-- RD Navbar Toggle-->
                     <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
                     <!--Navbar Brand-->
-                    <div class="rd-navbar-brand"><a href="index.html"><img style='margin-top: -5px;margin-left: -15px;' width='138' height='31' src='images/intense/logo-dark.png' alt=''/></a></div>
+                    <div class="rd-navbar-brand"><a href="index.html"><img style='margin-top: -5px;margin-left: -15px;' height='46' src='images/logos/logo-small.png' alt=''/></a></div>
                 </div>
                 <div class="rd-navbar-menu-wrap">
                     <div class="rd-navbar-nav-wrap">
                         <div class="rd-navbar-mobile-scroll">
                             <!--Navbar Brand Mobile-->
-                            <div class="rd-navbar-mobile-brand"><a href="index.html"><img style='margin-top: -5px;margin-left: -15px;' width='138' height='31' src='images/intense/logo-dark.png' alt=''/></a></div>
+                            <div class="rd-navbar-mobile-brand"><a href="index.html"><img style='margin-top: -5px;margin-left: -15px;' height='46' src='images/logos/logo-small.png' alt=''/></a></div>
                             <div class="form-search-wrap">
                                 <!-- RD Search Form-->
                                 <form class="form-search rd-search" action="search-results.html" method="GET">
