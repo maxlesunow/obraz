@@ -43,7 +43,7 @@
                                     <li><a href="{{ action ('Auth\RegisterController@showRegistrationForm') }}"><span>Войти</span></a></li>
                                 @else
                                     @if(Auth::user()->role->name == 'admin')
-                                        <li><a href="{{ action ('AdminController@index') }}"><span>Админпанель</span></a></li>
+                                        <li><a target="_blank" href="{{ action ('AdminController@index') }}"><span>Админпанель</span></a></li>
                                         <li>
                                             <a href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
