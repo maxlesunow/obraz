@@ -33,7 +33,7 @@
         <main id="app" class="page text-center">
             @include('site.layouts.header')
 
-            @include('site.layouts.breadcrumbs')
+            @yield('breadcrumbs')
 
             <main class="page-content">
                 @yield('content')

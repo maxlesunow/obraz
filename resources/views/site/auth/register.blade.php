@@ -2,8 +2,16 @@
 
 @section('title', 'Регистрация')
 
-{{--@section('breadcrumbs', [])--}}
+@section('breadcrumbs')
+    @include('site.layouts.breadcrumbs', [
+        'title' => 'Войти',
+        'icon' => 'mdi-account-multiple-outline',
+        'breadcrumbs' => array(
+            array('url' => '/', 'title' => 'Главная'),
+            array('title' => 'Авторизация | Регистрация'),
+        )])
+@endsection
 
 @section('content')
-    <register></register>
+    <auth></auth>
 @endsection
