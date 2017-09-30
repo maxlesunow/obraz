@@ -33455,11 +33455,27 @@ module.exports = function listToStyles (parentId, list) {
       media: media,
       sourceMap: sourceMap
     }
+<<<<<<< HEAD
+  }), _vm._v(" "), (_vm.smsSend) ? _c('div', [_c('span', [_vm._v("Ваша учетная запить не активирована. Для продолжения подтвердите телефон.")])]) : _vm._e()], 1)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "form-group offset-top-24"
+  }, [_c('div', {
+    staticClass: "col-md-4"
+  })])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-162c3fbc", module.exports)
+=======
     if (!newStyles[id]) {
       styles.push(newStyles[id] = { id: id, parts: [part] })
     } else {
       newStyles[id].parts.push(part)
     }
+>>>>>>> 3005d9dedfd9fa5c7f02d03284accf89070a7ea5
   }
   return styles
 }
