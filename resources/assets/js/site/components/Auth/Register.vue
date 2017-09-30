@@ -1,43 +1,31 @@
 <template>
     <div>
-        <li><a href="#" data-toggle="modal" data-target="#registerModal" data-backdrop="static" data-keyboard="false"><span>Зарегистрироваться</span></a></li>
-        
-        <div ref="vuemodal" class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="favoritesModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <form class="form-horizontal" role="form">
+        <form class="rd-mailform text-left" data-form-output="form-output-global"  role="form">
 
-                            <template v-for="input in inputs">
-                                <div class="form-group" :class="{'has-error': input.hasErrors }">
-                                    <label :for="input.attr" class="col-md-4 control-label">{{input.name}}</label>
+            <template v-for="(input, index) in inputs">
+                <div class="form-group" :class="{'has-error': input.hasErrors, 'offset-top-24': index !== 0  }">
+                    <label :for="input.attr" class="form-label form-label-outside">{{input.name}}</label>
 
-                                    <div class="col-md-6">
-                                        <input v-if="input.type === 'text'" type="text" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" :disabled="input.disabled" required autofocus>
-                                        <input v-if="input.type === 'password'" type="password" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" :disabled="input.disabled" required autofocus>
-                                        <input v-if="input.type === 'phone'" type="text" v-input-mask mask="+9 (999) 999 99 99" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" :disabled="input.disabled" required autofocus>
-                                        
-                                        <span v-if="input.hasErrors" class="help-block">
-                                            <strong>{{input.errorMessage}}</strong>
-                                        </span>
-                                    </div>
-                                </div>
-                            </template>
-
-                        </form>
-
-                        <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" :user="addedUser"></sms>
-
-                    </div>
-                    <div class="modal-footer" v-if="!smsSend">
-                        <button type="submit" class="btn btn-primary" @click.prevent="registerPost">Регистрация</button>
-                        <button type="button" class="btn btn-default" id="btnclose" data-dismiss="modal">Закрыть</button>
-                    </div>
-                    <div class="modal-footer" v-if="smsVerify">
-                        <button type="button" class="btn btn-default" @click.prevent="finishRegister">Завершить регистрацию</button>
-                    </div>
+                    <input v-if="input.type === 'text'" type="text" :id="input.attr" class="form-control bg-white" :name="input.attr" v-model="input.data" :disabled="input.disabled" required autofocus>
+                    <input v-if="input.type === 'password'" type="password" :id="input.attr" class="form-control bg-white" :name="input.attr" v-model="input.data" :disabled="input.disabled" required autofocus>
+                    <input v-if="input.type === 'phone'" type="text" v-phone-mask :id="input.attr" class="form-control bg-white" :name="input.attr" v-model="input.data" :disabled="input.disabled" required autofocus>
+                    
+                    <!-- <span v-if="input.hasErrors" class="help-block">
+                        {{input.errorMessage}}
+                    </span> -->
+                    <span v-if="input.hasErrors" class="form-validation">{{input.errorMessage}}</span>
                 </div>
-            </div>
+            </template>
+
+        </form>
+
+        <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" :user="addedUser"></sms>
+
+        <div class="offset-top-24" v-if="!smsSend">
+            <button class="btn btn-primary" @click.prevent="registerPost">Регистрация</button>
+        </div>
+        <div class="offset-top-24" v-if="smsVerify">
+            <button class="btn btn-default" @click.prevent="finishRegister">Завершить регистрацию</button>
         </div>
     </div>
 </template>
@@ -45,11 +33,24 @@
 <script>
 import formDataMixin from './../mixins/formData'
 
+import Inputmask from 'inputmask'
+
 import Sms from './Sms.vue'
 
 export default {
     components: { Sms },
     mixins: [formDataMixin],
+    directives: { 
+        'phone-mask': {
+            bind: function(el) {
+                new Inputmask({ 
+                    mask: "+7 (###) ### ## ##", 
+                    autoUnmask: true,
+                    onUnMask: (maskedValue, unmaskedValue) => "7" + unmaskedValue   
+                }).mask(el);
+            } 
+        }
+    },
     data() {
         return {
             inputs: [

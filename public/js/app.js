@@ -32945,7 +32945,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -32958,6 +32958,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_formData__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_formData___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__mixins_formData__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inputmask__ = __webpack_require__(175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inputmask___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_inputmask__);
 var _this = this;
 
 //
@@ -32995,10 +32997,23 @@ var _this = this;
 
 
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "sms",
     mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_formData___default.a],
     props: ['smsSend', 'smsVerify', 'user'],
+    directives: {
+        'code-mask': {
+            bind: function bind(el) {
+                new __WEBPACK_IMPORTED_MODULE_1_inputmask___default.a({
+                    mask: "9999"
+                    // autoUnmask: true,
+                    // onUnMask: (maskedValue, unmaskedValue) => "7" + unmaskedValue   
+                }).mask(el);
+            }
+        }
+    },
     data: function data() {
         return {
             inputs: [{ data: '', hasErrors: '', errorMessage: null, type: "code", name: "Код", attr: "code" }],
@@ -33089,8 +33104,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }) : _vm._e(), _vm._v(" "), (input.type === 'code') ? _c('input', {
       directives: [{
-        name: "input-mask",
-        rawName: "v-input-mask"
+        name: "code-mask",
+        rawName: "v-code-mask"
       }, {
         name: "model",
         rawName: "v-model",
@@ -33101,7 +33116,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "type": "code",
         "id": input.attr,
-        "data-inputmask-mask": "9999",
         "name": input.attr,
         "required": "",
         "autofocus": ""
@@ -33329,8 +33343,10 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_formData__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_formData___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__mixins_formData__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Sms_vue__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Sms_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Sms_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inputmask__ = __webpack_require__(175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_inputmask___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_inputmask__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Sms_vue__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Sms_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Sms_vue__);
 //
 //
 //
@@ -33363,26 +33379,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+
 
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    components: { Sms: __WEBPACK_IMPORTED_MODULE_1__Sms_vue___default.a },
+    components: { Sms: __WEBPACK_IMPORTED_MODULE_2__Sms_vue___default.a },
     mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_formData___default.a],
+    directives: {
+        'phone-mask': {
+            bind: function bind(el) {
+                new __WEBPACK_IMPORTED_MODULE_1_inputmask___default.a({
+                    mask: "+7 (###) ### ## ##",
+                    autoUnmask: true,
+                    onUnMask: function onUnMask(maskedValue, unmaskedValue) {
+                        return "7" + unmaskedValue;
+                    }
+                }).mask(el);
+            }
+        }
+    },
     data: function data() {
         return {
             inputs: [{ data: '', hasErrors: '', errorMessage: null, type: "text", name: "Фамилия", attr: "last_name", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Имя", attr: "first_name", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Отчество", attr: "middle_name", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "E-mail", attr: "email", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "phone", name: "Телефон", attr: "phone", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Пароль", attr: "password", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Подтверждение пароля", attr: "password_confirmation", disabled: false }],
@@ -33424,50 +33443,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_vm._m(0), _vm._v(" "), _c('div', {
-    ref: "vuemodal",
-    staticClass: "modal fade",
+  return _c('div', [_c('form', {
+    staticClass: "rd-mailform text-left",
     attrs: {
-      "id": "registerModal",
-      "tabindex": "-1",
-      "role": "dialog",
-      "aria-labelledby": "favoritesModalLabel"
-    }
-  }, [_c('div', {
-    staticClass: "modal-dialog",
-    attrs: {
-      "role": "document"
-    }
-  }, [_c('div', {
-    staticClass: "modal-content"
-  }, [_c('div', {
-    staticClass: "modal-body"
-  }, [_c('form', {
-    staticClass: "form-horizontal",
-    attrs: {
+      "data-form-output": "form-output-global",
       "role": "form"
     }
-  }, [_vm._l((_vm.inputs), function(input) {
+  }, [_vm._l((_vm.inputs), function(input, index) {
     return [_c('div', {
       staticClass: "form-group",
       class: {
-        'has-error': input.hasErrors
+        'has-error': input.hasErrors, 'offset-top-24': index !== 0
       }
     }, [_c('label', {
-      staticClass: "col-md-4 control-label",
+      staticClass: "form-label form-label-outside",
       attrs: {
         "for": input.attr
       }
-    }, [_vm._v(_vm._s(input.name))]), _vm._v(" "), _c('div', {
-      staticClass: "col-md-6"
-    }, [(input.type === 'text') ? _c('input', {
+    }, [_vm._v(_vm._s(input.name))]), _vm._v(" "), (input.type === 'text') ? _c('input', {
       directives: [{
         name: "model",
         rawName: "v-model",
         value: (input.data),
         expression: "input.data"
       }],
-      staticClass: "form-control",
+      staticClass: "form-control bg-white",
       attrs: {
         "type": "text",
         "id": input.attr,
@@ -33492,7 +33492,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         value: (input.data),
         expression: "input.data"
       }],
-      staticClass: "form-control",
+      staticClass: "form-control bg-white",
       attrs: {
         "type": "password",
         "id": input.attr,
@@ -33512,18 +33512,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }) : _vm._e(), _vm._v(" "), (input.type === 'phone') ? _c('input', {
       directives: [{
-        name: "input-mask",
-        rawName: "v-input-mask"
+        name: "phone-mask",
+        rawName: "v-phone-mask"
       }, {
         name: "model",
         rawName: "v-model",
         value: (input.data),
         expression: "input.data"
       }],
-      staticClass: "form-control",
+      staticClass: "form-control bg-white",
       attrs: {
         "type": "text",
-        "mask": "+9 (999) 999 99 99",
         "id": input.attr,
         "name": input.attr,
         "disabled": input.disabled,
@@ -33540,8 +33539,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }) : _vm._e(), _vm._v(" "), (input.hasErrors) ? _c('span', {
-      staticClass: "help-block"
-    }, [_c('strong', [_vm._v(_vm._s(input.errorMessage))])]) : _vm._e()])])]
+      staticClass: "form-validation"
+    }, [_vm._v(_vm._s(input.errorMessage))]) : _vm._e()])]
   })], 2), _vm._v(" "), _c('sms', {
     attrs: {
       "sms-send": _vm.smsSend,
@@ -33553,51 +33552,28 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.smsVerify = $event
       }
     }
-  })], 1), _vm._v(" "), (!_vm.smsSend) ? _c('div', {
-    staticClass: "modal-footer"
+  }), _vm._v(" "), (!_vm.smsSend) ? _c('div', {
+    staticClass: "offset-top-24"
   }, [_c('button', {
     staticClass: "btn btn-primary",
-    attrs: {
-      "type": "submit"
-    },
     on: {
       "click": function($event) {
         $event.preventDefault();
         _vm.registerPost($event)
       }
     }
-  }, [_vm._v("Регистрация")]), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-default",
-    attrs: {
-      "type": "button",
-      "id": "btnclose",
-      "data-dismiss": "modal"
-    }
-  }, [_vm._v("Закрыть")])]) : _vm._e(), _vm._v(" "), (_vm.smsVerify) ? _c('div', {
-    staticClass: "modal-footer"
+  }, [_vm._v("Регистрация")])]) : _vm._e(), _vm._v(" "), (_vm.smsVerify) ? _c('div', {
+    staticClass: "offset-top-24"
   }, [_c('button', {
     staticClass: "btn btn-default",
-    attrs: {
-      "type": "button"
-    },
     on: {
       "click": function($event) {
         $event.preventDefault();
         _vm.finishRegister($event)
       }
     }
-  }, [_vm._v("Завершить регистрацию")])]) : _vm._e()])])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('li', [_c('a', {
-    attrs: {
-      "href": "#",
-      "data-toggle": "modal",
-      "data-target": "#registerModal",
-      "data-backdrop": "static",
-      "data-keyboard": "false"
-    }
-  }, [_c('span', [_vm._v("Зарегистрироваться")])])])
-}]}
+  }, [_vm._v("Завершить регистрацию")])]) : _vm._e()], 1)
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
