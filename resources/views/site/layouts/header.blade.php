@@ -28,22 +28,7 @@
                             <!-- RD Navbar Nav-->
                             <ul class="rd-navbar-nav">
                                 <li><a href="{{ action ('Site\PageController@home') }}"><span>Главная</span></a>
-                                    {{--<ul class="rd-navbar-dropdown">--}}
-                                        {{--<li><a href="#"><span class="text-middle">Child Themes</span></a>--}}
-                                            {{--<ul class="rd-navbar-dropdown">--}}
-                                                {{--<li><a href="intense-photographer-portfolio"><span class="text-middle">Photographer</span></a>--}}
-                                                {{--</li>--}}
-                                            {{--</ul>--}}
-                                        {{--</li>--}}
-                                        {{--<li><a href="#"><span class="text-middle">Home Types</span></a>--}}
-                                            {{--<ul class="rd-navbar-dropdown">--}}
-                                                {{--<li><a href="index.html"><span class="text-middle">Default</span></a>--}}
-                                                {{--</li>--}}
-                                                {{--<li><a href="index-one-page.html"><span class="text-middle">One Page</span></a>--}}
-                                                {{--</li>--}}
-                                            {{--</ul>--}}
-                                        {{--</li>--}}
-                                    {{--</ul>--}}
+
                                 </li>
 
                                 <li><a href="{{ action ('Site\PageController@about') }}"><span>О компании</span></a></li>
@@ -54,11 +39,50 @@
 
                                 <li><a href="{{ action ('Site\PageController@contact') }}"><span>Конакты</span></a></li>
 
-                                <li><a href="{{ action ('Auth\RegisterController@showRegistrationForm') }}"><span>Войти</span></a></li>
-                                <auth></auth>
+                                @guest
+                                    <li><a href="{{ action ('Auth\RegisterController@showRegistrationForm') }}"><span>Войти</span></a></li>
+                                @else
+                                    @if(Auth::user()->role->name == 'Admin')
+                                        <li><a href="{{ action ('AdminController@index') }}"><span>Админпанель</span></a></li>
+                                        <li>
+                                            <a href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                                Выйти
+                                            </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
+                                        </li>
+                                    @else
+                                        <li><a href="#"><span>Личный кабинет</span></a>
+                                            <ul class="rd-navbar-dropdown">
+                                                <li><a href="#"><span class="text-middle">Мои данные</span></a></li>
+                                                <li><a href="#"><span class="text-middle">Мои курсы</span></a></li>
+                                                <li><a href="#"><span class="text-middle">Мои оплаты</span></a></li>
+                                                <li>
+                                                    <a href="{{ route('logout') }}"
+                                                       onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                                        Выйти
+                                                    </a>
+
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                        {{ csrf_field() }}
+                                                    </form>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    @endif
+
+                                        @endguest
+
+
                             </ul>
                         </div>
                     </div>
+
                     <!--RD Navbar Search-->
                     <div class="rd-navbar-search"><a class="rd-navbar-search-toggle mdi" data-rd-navbar-toggle=".rd-navbar-inner,.rd-navbar-search" href="#"><span></span></a>
                         <form class="rd-navbar-search-form search-form-icon-right rd-search" action="search-results.html" method="GET">
@@ -68,31 +92,6 @@
                             </div>
                         </form>
                     </div>
-                    <!--RD Navbar shop-->
-                    {{--<div class="rd-navbar-cart-wrap"><a class="rd-navbar-cart mdi" href="#" data-rd-navbar-toggle=".rd-navbar-cart-dropdown"><span></span></a>--}}
-                        {{--<div class="rd-navbar-cart-dropdown">--}}
-                            {{--<ul class="rd-navbar-list-products">--}}
-                                {{--<li>--}}
-                                    {{--<div class="rd-navbar-product-image"><img src="images/shop/product-01-60x60.png" alt=""/></div>--}}
-                                    {{--<div class="rd-navbar-product-caption">--}}
-                                        {{--<h6 class="rd-navbar-product-title"><a href="shop-single-product-left-sidebar.html">Fashion model new</a></h6>--}}
-                                        {{--<p class="rd-navbar-product-price">$129.99</p>--}}
-                                    {{--</div><a class="mdi mdi-window-close rd-navbar-product-remove" href="#"></a>--}}
-                                {{--</li>--}}
-                                {{--<li>--}}
-                                    {{--<div class="rd-navbar-product-image"><img src="images/shop/product-01-60x60-3.png" alt=""/></div>--}}
-                                    {{--<div class="rd-navbar-product-caption">--}}
-                                        {{--<h6 class="rd-navbar-product-title"><a href="shop-single-product-left-sidebar.html">Fashion model new 2</a></h6>--}}
-                                        {{--<p class="rd-navbar-product-price">$69.99</p>--}}
-                                    {{--</div><a class="mdi mdi-window-close rd-navbar-product-remove" href="#"></a>--}}
-                                {{--</li>--}}
-                            {{--</ul>--}}
-                            {{--<div class="rd-navbar-cart-total">--}}
-                                {{--<h6 class="rd-navbar-cart-total-title">Cart subtotal</h6><span class="rd-navbar-cart-total-price">$199.98</span>--}}
-                            {{--</div>--}}
-                            {{--<div class="text-center"><a class="btn btn-rect btn-sm btn-primary btn-icon btn-icon-left" href="shop-cart.html"><span class="icon mdi mdi-lock"></span>Go to checkout</a></div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
                 </div>
             </div>
         </nav>
