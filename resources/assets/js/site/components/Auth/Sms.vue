@@ -10,7 +10,7 @@
 
                             <div class="col-md-6">
                                 <input v-if="input.type === 'text'" type="text" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" required autofocus>
-                                <input v-if="input.type === 'code'" type="code" :id="input.attr" class="form-control" v-input-mask data-inputmask-mask="9999" :name="input.attr" v-model="input.data" required autofocus>
+                                <input v-if="input.type === 'code'" type="code" :id="input.attr" class="form-control" v-code-mask :name="input.attr" v-model="input.data" required autofocus>
                                 
                                 <span v-if="input.hasErrors" class="help-block">
                                     <strong>{{input.errorMessage}}</strong>
@@ -33,10 +33,23 @@
 <script>
 import formDataMixin from './../mixins/formData'
 
+import Inputmask from 'inputmask'
+
 export default {
     name: "sms",
     mixins: [formDataMixin],
     props: ['smsSend', 'smsVerify', 'user'],
+    directives: { 
+        'code-mask': {
+            bind: function(el) {
+                new Inputmask({ 
+                    mask: "9999", 
+                    // autoUnmask: true,
+                    // onUnMask: (maskedValue, unmaskedValue) => "7" + unmaskedValue   
+                }).mask(el);
+            } 
+        }
+    },
     data: () => ({
         inputs: [
             { data: '', hasErrors: '', errorMessage: null, type: "code", name: "Код", attr: "code" },

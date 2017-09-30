@@ -22,7 +22,7 @@
             <!-- Responsive-tabs-->
             <div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
                 <ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
-                    <li>Вход</li>
+                    <li>Авторизация</li>
                     <li>Регистрация</li>
                     <!-- <li>Восстановление</li> -->
                 </ul>
@@ -37,7 +37,7 @@
                     <div>
                         <div class="range range-xs-center section-34">
                             <div class="cell-xs-8 cell-sm-6 cell-md-4">
-                                <!-- <register></register> -->
+                                <register></register>
                             </div>
                         </div>
                     </div>

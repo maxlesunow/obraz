@@ -10,9 +10,10 @@
                     <input v-if="input.type === 'password'" type="password" :id="input.attr" class="form-control bg-white" :name="input.attr" v-model="input.data" required autofocus>
                     <input v-if="input.type === 'phone'" type="text" v-phone-mask :id="input.attr" class="form-control bg-white" :name="input.attr" v-model="input.data" required autofocus>
 
-                    <span v-if="input.hasErrors" class="help-block">
-                        <strong>{{input.errorMessage}}</strong>
-                    </span>
+                    <!-- <span v-if="input.hasErrors" class="help-block">
+                        {{input.errorMessage}}
+                    </span> -->
+                    <span v-if="input.hasErrors" class="form-validation">{{input.errorMessage}}</span>
                 </div>
             </template>
 
