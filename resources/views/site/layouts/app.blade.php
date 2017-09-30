@@ -29,20 +29,24 @@
         </style>
 
     </head>
-    <body class="home">
-        <main id="app" class="page text-center">
+    <body>
+        <!-- Page-->
+        <div id="app" class="page text-center">
+            <!-- Page Header-->
             @include('site.layouts.header')
-
+            <!-- Classic Breadcrumbs-->
             @yield('breadcrumbs')
-
+            <!-- Page Contents-->
             <main class="page-content">
                 @yield('content')
             </main>
+            <!-- Page Footer-->
+            <!-- Default footer-->
             @include('site.layouts.footer')
         </div>
 
         <!-- Scripts -->
-{{--        <script src="{{ mix('js/app.js') }}"></script>--}}
+        <!-- <script src="{{ mix('js/app.js') }}"></script> -->
         <script src="{{ asset('js/core.min.js') }}"></script>
         <script src="{{ asset('js/script.js') }}"></script>
         <!-- <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script> -->
