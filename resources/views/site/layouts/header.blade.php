@@ -35,6 +35,8 @@
 
                                 <li><a href="{{ action ('Site\PageController@schedule') }}"><span>Расписание курсов</span></a></li>
 
+                                <li><a href="{{ action ('Site\SpeakerController@showSpeakers') }}"><span>Докладчики</span></a></li>
+
                                 <li><a href="{{ action ('Site\PageController@reviews') }}"><span>Отзывы</span></a></li>
 
                                 <li><a href="{{ action ('Site\PageController@contact') }}"><span>Конакты</span></a></li>

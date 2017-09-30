@@ -547,6 +547,9 @@
                 </div>
             </div>
         </div>
+        <section class="section-66">
+            <a class="btn btn-primary" href="/schedule">Посмотреть все события</a>
+        </section>
     </section>
 
     <!-- section our team-->
@@ -572,6 +575,9 @@
                 </div>
             </div>
         </div>
+        <section class="section-33">
+            <a class="btn btn-primary" href="/speakers">Посмотреть всех докладчиков</a>
+        </section>
     </section>
     <!-- What Clients say-->
     <section class="context-dark bg-gray-darkest">

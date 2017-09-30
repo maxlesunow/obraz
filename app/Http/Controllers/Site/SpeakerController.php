@@ -18,4 +18,11 @@ class SpeakerController extends Controller
 
         return view('site.speaker', compact('speaker'));
     }
+
+    public function showSpeakers()
+    {
+        $speakers = Speaker::paginate(20);
+
+        return view('site.speakers', compact('speakers'));
+    }
 }
