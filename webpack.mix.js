@@ -16,8 +16,10 @@ mix
     .js('resources/assets/js/site/app.js', 'public/js/app.js')
     .styles([
         'resources/assets/styles/site/style.css',
+        'resources/assets/styles/site/custom.css',
     ], 'public/css/app.css')
     .copyDirectory('resources/assets/fonts/site', 'public/fonts')
+    .copyDirectory('resources/assets/images/site', 'public/images')
     .copy('resources/assets/js/site/core.min.js', 'public/js/core.min.js')
     .copy('resources/assets/js/site/script.js', 'public/js/script.js')
 
