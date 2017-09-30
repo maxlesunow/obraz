@@ -1,4 +1,4 @@
-<section class="breadcrumb-classic">
+<section class="bg-blue-gray section-triangle section-triangle-bottom context-dark">
     <div class="shell section-10 section-sm-10">
         <div class="range range-lg-middle">
             <div class="cell-lg-2 veil reveal-sm-block cell-lg-push-2"><span class="mdi {{$icon}} icon icon-white"></span></div>
@@ -22,8 +22,8 @@
     <svg class="svg-triangle-bottom" xmlns="https://www.w3.org/2000/svg" version="1.1">
         <defs>
             <lineargradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:rgb(142,76,177);stop-opacity:1;"></stop>
-                <stop offset="100%" style="stop-color:rgb(142,76,177);stop-opacity:1;"></stop>
+                <stop offset="0%" style="stop-color:rgb(109,146,204);stop-opacity:1;"></stop>
+                <stop offset="100%" style="stop-color:rgb(109,146,204);stop-opacity:1;"></stop>
             </lineargradient>
         </defs>
         <polyline points="0,0 60,0 29,29" fill="url(#grad1)"></polyline>
