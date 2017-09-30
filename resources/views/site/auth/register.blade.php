@@ -14,11 +14,11 @@
 
 @section('content')
 <!--Section Login Register-->
-<section class="section-98 section-sm-110 section-bottom-66">
+<section class="section-50 section-sm-30 section-bottom-30">
     <div class="shell">
-        <h2 class="text-bold">Sign In</h2>
+        <h2 class="text-bold">Войти на сайт</h2>
         <hr class="divider bg-mantis">
-        <div class="offset-sm-top-66">
+        <div class="offset-sm-top-20">
             <!-- Responsive-tabs-->
             <div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
                 <ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
@@ -28,14 +28,14 @@
                 </ul>
                 <div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
                     <div>
-                        <div class="range range-xs-center section-34">
+                        <div class="range range-xs-center section-15">
                             <div class="cell-xs-8 cell-sm-6 cell-md-4">
                                 <login></login>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <div class="range range-xs-center section-34">
+                        <div class="range range-xs-center section-15">
                             <div class="cell-xs-8 cell-sm-6 cell-md-4">
                                 <register></register>
                             </div>

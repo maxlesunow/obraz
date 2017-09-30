@@ -3,7 +3,7 @@
         <form class="rd-mailform text-left" data-form-output="form-output-global"  role="form">
 
             <template v-for="(input, index) in inputs">
-                <div class="form-group" :class="{'has-error': input.hasErrors, 'offset-top-24': index !== 0  }">
+                <div class="form-group" :class="{'has-error': input.hasErrors, 'offset-top-12': index !== 0  }">
                     <label :for="input.attr" class="form-label form-label-outside">{{input.name}}</label>
 
                     <input v-if="input.type === 'text'" type="text" :id="input.attr" class="form-control bg-white" :name="input.attr" v-model="input.data" :disabled="input.disabled" required autofocus>

@@ -96,4 +96,7 @@
             </div>
         </nav>
     </div>
+
+    @yield('slider')
+
 </header>
