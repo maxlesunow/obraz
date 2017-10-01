@@ -25,7 +25,16 @@
         </div>
       </div>
       <div class="cell-md-3 cell-lg-3 cell-md-push-1 offset-top-66 offset-md-top-0">
-        @include('site.schedule.aside')
+        <!-- Section Blog Modern-->
+        <aside class="text-left">
+            <div class="range">
+              <div class="cell-sm-6 cell-md-12 offset-sm-top-41 offset-md-top-0">
+                <calendar-schedule></calendar-schedule>
+              </div>
+              <div class="cell-sm-6 cell-md-12 offset-top-41">
+                <newest-schedule></newest-schedule>
+              </div>
+        </aside>
       </div>
     </div>
   </div>
