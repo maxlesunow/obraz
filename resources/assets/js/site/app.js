@@ -21,6 +21,8 @@ Vue.component('example', require('./components/Example.vue'));
 Vue.component('login', require('./components/Auth/Login.vue'));
 Vue.component('register', require('./components/Auth/Register.vue'));
 
+Vue.component('main-schedule', require('./components/schedule/MainSchedule.vue'));
+
 const app = new Vue({
     el: '#app'
 });
