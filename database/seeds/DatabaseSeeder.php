@@ -54,8 +54,8 @@ class DatabaseSeeder extends Seeder
         //        Докладчики
         $this->call(SpeakerSeeder::class);
 
-        //Показываем 5 первых на главной
-            DB::table('speakers')->where('id', '<', 6)
+        //Показываем 8 первых на главной
+            DB::table('speakers')->where('id', '<', 9)
                 ->update(['show_home' => true]);
 
         //        Группы курсов

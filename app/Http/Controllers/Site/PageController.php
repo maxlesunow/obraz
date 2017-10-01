@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Site;
 
 use App\Course;
 use App\Page;
+use App\Review;
 use App\Speaker;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -18,10 +19,11 @@ class PageController extends Controller
      */
     public function home()
     {
-        $courses = Course::paginate(5);
+        $courses = Course::where('id', '<', 9)->paginate(8);
+        $reviews = Review::where('id', '<', 9)->paginate(8);
         $speakers = Speaker::where('show_home', true)->get();
         $page = Page::where('type', 'home')->first();
-        return view('site.home', compact('page', 'courses', 'speakers'));
+        return view('site.home', compact('page', 'courses', 'speakers', 'reviews'));
     }
 
     public function about()
