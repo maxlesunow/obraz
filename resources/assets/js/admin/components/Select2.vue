@@ -46,6 +46,8 @@ export default {
         $(vm.$el)
             .val(vm.value)
             .select2({
+                debug: true,
+                multiple: vm.options.multiple || false,
                 placeholder: vm.options.placeholder,
                 allowClear: true,
                 minimumResultsForSearch: vm.getData() ? -1 : undefined, // hide search bar
@@ -54,7 +56,7 @@ export default {
             })
             .on('change', function () {
                 // this in select2 ctx, not vuejs
-                vm.$emit('select2:set', this.value, vm.selectName)
+                vm.$emit('select2:set', _.join(_.map($(vm.$el).select2('data'), 'id'), ','), vm.selectName)
             })
     },
     destroyed: function() {

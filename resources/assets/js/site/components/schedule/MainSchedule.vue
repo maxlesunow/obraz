@@ -1,6 +1,24 @@
 <template>
     <div>
-        <select2 multiple :filters="filters" select-name="courseType" @select2:set="select2Set"></select2>
+        <div>
+            <div class="range range-sm-center">
+              <div class="cell-sm-12 text-left">
+                <div class="form-group">
+                    <select2 :filters="filters" select-name="courseType" @select2:set="select2Set"></select2>
+                </div>
+              </div>
+              <div class="cell-sm-12 cell-md-6 text-left">
+                <div class="form-group">
+                  <input class="form-control offset-top-24" id="rd-mailform-date" type="text" placeholder="Дата начала" name="date" data-time-picker="date">
+                </div>
+              </div>
+              <div class="cell-sm-12 cell-md-6 text-left">
+                <div class="form-group">
+                  <input class="form-control offset-top-24" id="rd-mailform-date" type="text" placeholder="Дата конца" name="date" data-time-picker="date">
+                </div>
+              </div>
+            </div>
+        </div>
         <section>
             <div class="post-modern-timeline-date text-sm-right">
                 <time datetime="2016-01-01">24 Feb</time>
@@ -69,9 +87,10 @@ export default {
         filterField: {},
         filters: {
             courseType: {
-                ajax: { url: '/api/course/types', text: 'name' },
-                field: 'courses.course_type_id',
-                placeholder: 'Тип курса'
+                // ajax: { url: '/api/course/types', text: 'name' },
+                multiple: true,
+                data: [{ id: "true", text: "Оплачено" }, { id: "false", text: "Не оплачено" }],
+                field: 'reservations.payment_status',
             }
         },
     }),
@@ -90,9 +109,16 @@ export default {
                 delete this.filterField[destName]
             }
             var filters = [this.formatFilterPhp(this.additionalFilter), this.formatFilterPhp(this.filterField)].join(',')
-            this.moreParams.filters = filters
-            this.updateTable()
+            console.log('set', filters)
+            // this.moreParams.filters = filters
+            // this.updateTable()
         },
+    },
+    created() {
+        axios.get('/api/course/types')
+            .then((data) => {
+                this.filters.courseType.data = data.data.map((el) => ({ id: el.id, text: el[this.options.ajax.text] }))
+            })
     }
 }
 </script>

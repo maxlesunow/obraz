@@ -2042,6 +2042,12 @@ $document.ready(function () {
 				options['format'] = 'HH:mm';
 			}
 
+			options['lang'] = 'ru';
+			options['cancelText'] = 'Отмена';
+			options['okText'] = 'ОК';
+
+			options['weekStart'] = 1;
+
 			options["time"] = ($dateTimePicker.attr("data-time-picker") != "date");
 			options["date"] = ($dateTimePicker.attr("data-time-picker") != "time");
 			options["shortTime"] = true;
