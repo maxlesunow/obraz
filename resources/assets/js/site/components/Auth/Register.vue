@@ -22,10 +22,10 @@
         <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" :user="addedUser"></sms>
 
         <div class="offset-top-24" v-if="!smsSend">
-            <button class="btn btn-primary" @click.prevent="registerPost">Регистрация</button>
+            <button class="btn btn-primary btn-block" @click.prevent="registerPost">Регистрация</button>
         </div>
         <div class="offset-top-24" v-if="smsVerify">
-            <button class="btn btn-default" @click.prevent="finishRegister">Завершить регистрацию</button>
+            <button class="btn btn-default btn-block" @click.prevent="finishRegister">Завершить регистрацию</button>
         </div>
     </div>
 </template>
@@ -88,8 +88,9 @@ export default {
                 })
         },
         finishRegister() {
-            $(this.$refs.vuemodal).modal('hide');
-            this.$emit("login")
+            // $(this.$refs.vuemodal).modal('hide');
+            // this.$emit("login")
+            window.location.href = '/'
         }
     }
 }

@@ -6,9 +6,9 @@
                 <div class="form-group" :class="{'has-error': input.hasErrors, 'offset-top-24': index !== 0 }">
                     <label :for="input.attr" class="form-label form-label-outside">{{input.name}}</label>
 
-                    <input v-if="input.type === 'text'" type="text" :id="input.attr" class="form-control bg-white" :name="input.attr" v-model="input.data" required autofocus>
-                    <input v-if="input.type === 'password'" type="password" :id="input.attr" class="form-control bg-white" :name="input.attr" v-model="input.data" required autofocus>
-                    <input v-if="input.type === 'phone'" type="text" v-phone-mask :id="input.attr" class="form-control bg-white" :name="input.attr" v-model="input.data" required autofocus>
+                    <input v-if="input.type === 'text'" type="text" :id="input.attr" class="form-control bg-white" :name="input.attr" v-model="input.data" :disabled="input.disabled"  required autofocus>
+                    <input v-if="input.type === 'password'" type="password" :id="input.attr" class="form-control bg-white" :name="input.attr" v-model="input.data" :disabled="input.disabled"  required autofocus>
+                    <input v-if="input.type === 'phone'" type="text" v-phone-mask :id="input.attr" class="form-control bg-white" :name="input.attr" v-model="input.data" :disabled="input.disabled"  required autofocus>
 
                     <!-- <span v-if="input.hasErrors" class="help-block">
                         {{input.errorMessage}}
@@ -31,15 +31,15 @@
             </div>
 
             <div class="offset-top-24">
-                <button class="btn btn-primary btn-block" @click.prevent="loginPost">Войти</button>
+                <button class="btn btn-primary btn-block" v-if="!smsSend" @click.prevent="loginPost">Войти</button>
+                <button class="btn btn-primary btn-block" v-if="smsVerify" @click.prevent="finishLogin">Завершить регистрация</button>
             </div>
         </form>
 
         <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" :user="user"></sms>
 
-        <div v-if="smsSend">
-            
-            <span>Ваша учетная запить не активирована. Для продолжения подтвердите телефон.</span>
+        <div class="text-center" v-if="smsSend && !smsVerify">
+            <p class="text-danger">Для активации учетной записи введите код, отправленный Вам в СМС сообщении.</p>
         </div>
 
     </div>
@@ -69,8 +69,8 @@ export default {
     data() {
         return {
             inputs: [
-                { data: '', hasErrors: '', errorMessage: null, type: "phone", name: "Телефон", attr: "phone" },
-                { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Пароль", attr: "password" }
+                { data: '', hasErrors: '', errorMessage: null, type: "phone", name: "Телефон", attr: "phone", disabled: false },
+                { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Пароль", attr: "password", disabled: false }
             ],
             // remember: true,
             smsSend: false,
@@ -95,6 +95,10 @@ export default {
                         this.finishLogin()
                     } else {
                         this.smsSend = true
+
+                        _.each(this.inputs, function(el, i) {
+                            el.disabled = true
+                        })
                     }
                 })
                 .catch((data) => {
