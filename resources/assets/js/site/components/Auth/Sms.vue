@@ -1,31 +1,30 @@
 <template>
-    <div>
-        <div class="panel panel-success clearfix" v-if="smsSend && !smsVerifyOrigin">
+    <div class="offset-top-24">
+        <div class="panel panel-primary clearfix" v-if="smsSend && !smsVerifyOrigin">
             <div class="panel-body">
-                <form class="form-horizontal" role="form">
+                <form class="rd-mailform text-left" data-form-output="form-output-global" role="form">
 
                     <template v-for="input in inputs">
                         <div class="form-group" :class="{'has-error': input.hasErrors }">
-                            <label :for="input.attr" class="col-md-4 control-label">{{input.name}}</label>
+                            <label :for="input.attr" class="form-label form-label-outside">{{input.name}}</label>
 
-                            <div class="col-md-6">
-                                <input v-if="input.type === 'text'" type="text" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" required autofocus>
-                                <input v-if="input.type === 'code'" type="code" :id="input.attr" class="form-control" v-code-mask :name="input.attr" v-model="input.data" required autofocus>
-                                
-                                <span v-if="input.hasErrors" class="help-block">
-                                    <strong>{{input.errorMessage}}</strong>
-                                </span>
-                            </div>
+                            <input v-if="input.type === 'text'" type="text" :id="input.attr" class="form-control" :name="input.attr" v-model="input.data" required autofocus>
+                            <input v-if="input.type === 'code'" type="code" :id="input.attr" class="form-control" v-code-mask :name="input.attr" v-model="input.data" required autofocus>
+                            
+                            <!-- <span v-if="input.hasErrors" class="help-block">
+                                <strong>{{input.errorMessage}}</strong>
+                            </span> -->
+                            <span v-if="input.hasErrors" class="form-validation">{{input.errorMessage}}</span>
                         </div>
                     </template>
 
-                    <button class="btn btn-success" @click.prevent="verifySms">Подтвердить</button>
-                    <button class="btn btn-primary" @click.prevent="resendSms">Отправить еще раз</button>
+                    <span class="offset-top-24" @click.prevent="resendSms"><a href><ins>Отправить еще раз</ins></a></span>
+                    <button class="btn btn-default btn-block offset-top-24" @click.prevent="verifySms">Подтвердить</button>
                 </form>
             </div>
         </div>
-        <div v-if="smsVerifyOrigin">
-            <span>Смс успешно подтверждена</span>
+        <div clas="text-center" v-if="smsVerifyOrigin">
+            <p class="text-danger">Аккаунт подтвержден</p>
         </div>
     </div>
 </template>
@@ -43,8 +42,8 @@ export default {
         'code-mask': {
             bind: function(el) {
                 new Inputmask({ 
-                    mask: "9999", 
-                    // autoUnmask: true,
+                    mask: "# # # #", 
+                    autoUnmask: true,
                     // onUnMask: (maskedValue, unmaskedValue) => "7" + unmaskedValue   
                 }).mask(el);
             } 
