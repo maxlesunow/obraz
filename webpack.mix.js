@@ -22,6 +22,7 @@ mix
     .copyDirectory('resources/assets/fonts/site', 'public/fonts')
     .copyDirectory('resources/assets/images/site', 'public/images')
     .copy('resources/assets/js/site/script.js', 'public/js/script.js')
+    .copy('resources/assets/js/site/core.min.js', 'public/js/core.min.js')
 
     //AdminPanel
     .js('resources/assets/js/admin/app.js', 'public/js/admin.js')

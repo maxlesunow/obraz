@@ -5264,7 +5264,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\Vuetable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\Vuetable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Vuetable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5304,7 +5304,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePagination.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePagination.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] VuetablePagination.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5344,7 +5344,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationInfo.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationInfo.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] VuetablePaginationInfo.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5388,7 +5388,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\FilterBar.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\FilterBar.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] FilterBar.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5432,7 +5432,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ShowBar.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ShowBar.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ShowBar.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5654,7 +5654,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\Select2.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\Select2.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Select2.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -87403,7 +87403,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\AdminsTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\AdminsTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] AdminsTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -88846,7 +88846,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationMixin.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationMixin.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -89068,7 +89068,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationInfoMixin.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationInfoMixin.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -90507,7 +90507,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CourseTypesTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CourseTypesTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CourseTypesTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -90797,7 +90797,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CourseGroupsTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CourseGroupsTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CourseGroupsTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -91230,7 +91230,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\PaymentsTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\PaymentsTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] PaymentsTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -91536,7 +91536,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\PaymentTypesTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\PaymentTypesTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] PaymentTypesTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -91828,7 +91828,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReservationsTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -92295,7 +92295,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReviewTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReviewTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReviewTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -92610,7 +92610,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CoursesTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CoursesTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CoursesTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -93019,7 +93019,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTableCourse.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTableCourse.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReservationsTableCourse.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -93348,7 +93348,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\UsersTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\UsersTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] UsersTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -93655,7 +93655,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTableUser.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTableUser.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReservationsTableUser.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -93976,7 +93976,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReviewTableUser.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReviewTableUser.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReviewTableUser.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -94279,7 +94279,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\SpeakersTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\SpeakersTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] SpeakersTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -94570,7 +94570,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CoursesTableSpeaker.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CoursesTableSpeaker.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CoursesTableSpeaker.vue: functional components are not supported with templates, they should use render functions.")}
 
