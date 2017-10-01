@@ -33792,7 +33792,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -33915,6 +33915,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     multiple: true,
                     data: [],
                     field: 'courses.course_group_id'
+                },
+                startDate: {
+                    field: 'data_start'
+                },
+                endDate: {
+                    field: 'data_stop'
                 }
             }
         };
@@ -33941,6 +33947,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             console.log('set', filters);
             // this.moreParams.filters = filters
             // this.updateTable()
+        },
+        setDate: function setDate() {
+            console.log(arguments);
         }
     },
     beforeCreate: function beforeCreate() {
@@ -33950,12 +33959,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             _this.filters.courseGroup.data = _.map(data.data, function (key, el) {
                 return { id: el, text: key };
             });
-            console.log("1111", _this.filters.courseGroup.data);
         });
         axios.get('/api/site/course/types').then(function (data) {
             _this.filters.courseType.data = _.map(data.data, function (key, el) {
                 return { id: el, text: key };
             });
+        });
+    },
+    mounted: function mounted() {
+        var vm = this;
+        $(vm.$el).find('#date-start').on('change', function (e, date) {
+            vm.select2Set(new Date(date).toISOString(), 'startDate');
+        });
+        $(vm.$el).find('#date-stop').on('change', function (e, date) {
+            vm.select2Set(new Date(date).toISOString(), 'endDate');
         });
     }
 });
@@ -34006,7 +34023,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Старт")]), _vm._v(" "), _c('input', {
     staticClass: "form-control",
     attrs: {
-      "id": "rd-mailform-date",
+      "id": "date-start",
       "type": "text",
       "name": "date",
       "data-time-picker": "date"
@@ -34022,7 +34039,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Стоп")]), _vm._v(" "), _c('input', {
     staticClass: "form-control",
     attrs: {
-      "id": "rd-mailform-date",
+      "id": "date-stop",
       "type": "text",
       "name": "date",
       "data-time-picker": "date"

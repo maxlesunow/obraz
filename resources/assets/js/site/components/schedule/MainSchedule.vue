@@ -17,13 +17,13 @@
               <div class="cell-sm-12 cell-md-6 text-left">
                 <div class="form-group">
                     <label class="form-label-outside">Старт</label>
-                  <input class="form-control" id="rd-mailform-date" type="text" name="date" data-time-picker="date">
+                    <input class="form-control" id="date-start" type="text" name="date" data-time-picker="date">
                 </div>
               </div>
               <div class="cell-sm-12 cell-md-6 text-left">
                 <div class="form-group">
                     <label class="form-label-outside">Стоп</label>
-                  <input class="form-control" id="rd-mailform-date" type="text" name="date" data-time-picker="date">
+                    <input class="form-control" id="date-stop" type="text" name="date" data-time-picker="date">
                 </div>
               </div>
             </div>
@@ -107,6 +107,12 @@ export default {
                 multiple: true,
                 data: [],
                 field: 'courses.course_group_id',
+            },
+            startDate: {
+                field: 'data_start'
+            },
+            endDate: {
+                field: 'data_stop'
             }
         },
     }),
@@ -129,17 +135,28 @@ export default {
             // this.moreParams.filters = filters
             // this.updateTable()
         },
+        setDate() {
+            console.log(arguments)
+        }
     },
     beforeCreate() {
         axios.get('/api/site/course/groups')
             .then((data) => {
                 this.filters.courseGroup.data = _.map(data.data, (key, el) => ({id: el, text: key}))
-                console.log("1111", this.filters.courseGroup.data)
             })
         axios.get('/api/site/course/types')
             .then((data) => {
                 this.filters.courseType.data =  _.map(data.data, (key, el) => ({id: el, text: key}))
             })
+    },
+    mounted() {
+        var vm = this;
+        $(vm.$el).find('#date-start').on('change', function(e, date) {
+            vm.select2Set(new Date(date).toISOString(), 'startDate')
+        });
+        $(vm.$el).find('#date-stop').on('change', function(e, date) {
+            vm.select2Set(new Date(date).toISOString(), 'endDate')
+        });
     }
 }
 </script>
