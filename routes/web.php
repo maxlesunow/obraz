@@ -38,6 +38,16 @@ Route::get('/speaker/{id}/{slug?}', 'Site\SpeakerController@show');
 
 Route::get('/speakers', 'Site\SpeakerController@showSpeakers');
 
+Route::group(['prefix' => 'api/site'], function () {
+
+    Route::get('/course/groups', 'Site\CourseController@getGroups');
+
+    Route::get('/course/types', 'Site\CourseController@getTypes');
+
+    Route::get('/courses', 'Site\CourseController@getCourses');
+
+});
+
 
 Route::group(['prefix' => 'payment'], function () {
 

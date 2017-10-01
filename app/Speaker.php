@@ -25,7 +25,7 @@ class Speaker extends Model
         'meta_url',
     ];
 
-    protected $appends = ['full_name', 'courses_count'];
+    protected $appends = ['full_name', 'courses_count', 'url'];
 
     public function courses(){
 

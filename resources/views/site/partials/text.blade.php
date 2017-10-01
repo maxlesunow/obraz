@@ -5,7 +5,7 @@
         @endisset
 
         @isset($description)
-            <p>{{$description}}</p>
+            <p>{!!$description!!}</p>
         @endisset
     </div>
 </section>
