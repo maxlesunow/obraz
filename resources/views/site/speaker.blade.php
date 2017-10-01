@@ -16,7 +16,7 @@
 @endsection
 
 @section('content')
-       <section class="section-50 section-sm-50">
+       <section class="section-top-50 section-sm-50">
               <div class="shell">
                      <div class="range range-xs-center">
                             <div class="cell-xs-10 cell-sm-5 cell-lg-4 text-md-left">
@@ -46,16 +46,11 @@
               </div>
        </section>
 
-       <section class="section-20 section-sm-20">
-              <div class="shell">
-                     <h1>Ближайшие курсы докладчика</h1>
-                     <hr class="divider bg-mantis">
-                     <div class="range range-xs-center offset-lg-top-66">
-                            @foreach($speaker->courses as $course)
-                                   {{$course->name}}
-                            @endforeach
 
-                     </div>
-              </div>
-       </section>
+       @include('site.partials.courses',
+           [
+               'name'=> 'Ближайшие события докладчика',
+               'courses' => $speaker->courses
+           ])
+
 @endsection

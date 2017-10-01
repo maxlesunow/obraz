@@ -1,4 +1,4 @@
-<section  class="section parallax-container" data-parallax-img="images/bg-03-1920x1425.jpg">
+<section  class="section parallax-container" data-parallax-img="/images/bg-03-1920x1425.jpg">
     <div class="parallax-content">
         <div class="shell offset-top-66">
 

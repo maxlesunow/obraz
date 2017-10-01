@@ -1,5 +1,5 @@
 <section class="context-dark bg-gray-darkest">
-    <div class="parallax-container" data-parallax-img="images/background-03-1920x900.jpg">
+    <div class="parallax-container" data-parallax-img="/images/background-03-1920x900.jpg">
         <div class="parallax-content">
             <div class="shell section-66 section-sm-66">
                 @isset($name)
