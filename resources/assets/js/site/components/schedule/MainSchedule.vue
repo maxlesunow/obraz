@@ -2,24 +2,33 @@
     <div>
         <div>
             <div class="range range-sm-center">
-              <div class="cell-sm-12 text-left">
-                <div class="form-group">
+              <div class="cell-sm-12 cell-md-6 text-left">
+                <div class="form-group offset-top-12">
+                    <label class="form-label-outside">Типы курсов</label>
                     <select2 :filters="filters" select-name="courseType" @select2:set="select2Set"></select2>
                 </div>
               </div>
               <div class="cell-sm-12 cell-md-6 text-left">
-                <div class="form-group">
-                  <input class="form-control offset-top-24" id="rd-mailform-date" type="text" placeholder="Дата начала" name="date" data-time-picker="date">
+                <div class="form-group offset-top-12">
+                    <label class="form-label-outside">Группы курсов</label>
+                    <select2 :filters="filters" select-name="courseGroup" @select2:set="select2Set"></select2>
                 </div>
               </div>
               <div class="cell-sm-12 cell-md-6 text-left">
                 <div class="form-group">
-                  <input class="form-control offset-top-24" id="rd-mailform-date" type="text" placeholder="Дата конца" name="date" data-time-picker="date">
+                    <label class="form-label-outside">Старт</label>
+                  <input class="form-control" id="rd-mailform-date" type="text" name="date" data-time-picker="date">
+                </div>
+              </div>
+              <div class="cell-sm-12 cell-md-6 text-left">
+                <div class="form-group">
+                    <label class="form-label-outside">Стоп</label>
+                  <input class="form-control" id="rd-mailform-date" type="text" name="date" data-time-picker="date">
                 </div>
               </div>
             </div>
         </div>
-        <section>
+        <section class="offset-top-30">
             <div class="post-modern-timeline-date text-sm-right">
                 <time datetime="2016-01-01">24 Feb</time>
             </div>
@@ -89,8 +98,15 @@ export default {
             courseType: {
                 // ajax: { url: '/api/course/types', text: 'name' },
                 multiple: true,
-                data: [{ id: "true", text: "Оплачено" }, { id: "false", text: "Не оплачено" }],
-                field: 'reservations.payment_status',
+                data: [],
+                field: 'courses.course_type_id',
+                // placeholder: 'sdlfkjs'
+            },
+            courseGroup: {
+                // ajax: { url: '/api/course/types', text: 'name' },
+                multiple: true,
+                data: [],
+                field: 'courses.course_group_id',
             }
         },
     }),
