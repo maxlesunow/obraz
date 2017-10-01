@@ -13,6 +13,12 @@ export default {
     watch: {
         value: function(value) {
             $(this.$el).val(value)
+        },
+        filters: {
+            handler: function (val, oldVal) {
+                this.update()
+            },
+            deep: true
         }
     },
     methods: {
@@ -36,28 +42,31 @@ export default {
             } else {
                 return undefined
             }
+        },
+        update() {
+            var vm = this;
+            $(vm.$el)
+                .val(vm.value)
+                .select2({
+                    debug: true,
+                    multiple: vm.options.multiple || false,
+                    placeholder: vm.options.placeholder,
+                    allowClear: true,
+                    minimumResultsForSearch: vm.getData() ? -1 : undefined, // hide search bar
+                    ajax: vm.getAjax(),
+                    data: vm.getData()
+                })
+                .on('change', function () {
+                    // this in select2 ctx, not vuejs
+                    vm.$emit('select2:set', _.join(_.map($(vm.$el).select2('data'), 'id'), ','), vm.selectName)
+                })
         }
     },
     created () {
         this.options = this.filters[this.selectName]
     },
     mounted () {
-        var vm = this;
-        $(vm.$el)
-            .val(vm.value)
-            .select2({
-                debug: true,
-                multiple: vm.options.multiple || false,
-                placeholder: vm.options.placeholder,
-                allowClear: true,
-                minimumResultsForSearch: vm.getData() ? -1 : undefined, // hide search bar
-                ajax: vm.getAjax(),
-                data: vm.getData()
-            })
-            .on('change', function () {
-                // this in select2 ctx, not vuejs
-                vm.$emit('select2:set', _.join(_.map($(vm.$el).select2('data'), 'id'), ','), vm.selectName)
-            })
+        this.update()
     },
     destroyed: function() {
         $(this.$el).off().select2('destroy')

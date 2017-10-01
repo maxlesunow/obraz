@@ -130,10 +130,15 @@ export default {
             // this.updateTable()
         },
     },
-    created() {
-        axios.get('/api/course/types')
+    beforeCreate() {
+        axios.get('/api/site/course/groups')
             .then((data) => {
-                this.filters.courseType.data = data.data.map((el) => ({ id: el.id, text: el[this.options.ajax.text] }))
+                this.filters.courseGroup.data = _.map(data.data, (key, el) => ({id: el, text: key}))
+                console.log("1111", this.filters.courseGroup.data)
+            })
+        axios.get('/api/site/course/types')
+            .then((data) => {
+                this.filters.courseType.data =  _.map(data.data, (key, el) => ({id: el, text: key}))
             })
     }
 }
