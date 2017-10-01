@@ -162,18 +162,15 @@
           }));
       r.append(d);
 
-      console.log("\n\n==========================")
+      var mod = function (a, b) {
+          return ((a % b) + b) % b
+      }
       
       var currDate = this.$element.data("currentDate"), 
         daysInMonth = new Date(currDate.getFullYear(),currDate.getMonth() + 1,0).getDate(), 
         daysInPrevMonth = new Date(currDate.getFullYear(),currDate.getMonth(),0).getDate(), 
-        startWeekDay = new Date(currDate.getFullYear(),currDate.getMonth(),1).getDay(), 
+        startWeekDay = mod(new Date(currDate.getFullYear(),currDate.getMonth(),1).getDay() - 1, 7), 
         u = 1;
-
-      console.log('currDate', currDate)
-      console.log('daysInMonth', daysInMonth)
-      console.log('daysInPrevMonth', daysInPrevMonth)
-      console.log('startWeekDay', startWeekDay)
 
       for (o = 0; 7 > o; o++) {
           d = e("<tr/>");
@@ -186,27 +183,19 @@
                   dayInTable = e("<div/>", { "class": options.classes.table_date}), 
                   today = new Date;
 
-              console.log('\n-------------')
-              console.log('o', o, 'p', p)
-              console.log('y', y)
-              console.log('today', today)
-
-              console.log('0 == p && y > daysInMonth + startWeekDay', 0 == p && y > daysInMonth + startWeekDay)
+              // если строка недели не содержит дни из текущего месяца
               if (today.setHours(0), today.setMinutes(0), today.setSeconds(0), today.setMilliseconds(0), 0 == p && y > daysInMonth + startWeekDay)
                   break;
               if (1 > y - startWeekDay) {
-                  console.log('1 > y - startWeekDay')
-                  console.log('daysInPrevMonth + (y - startWeekDay)', daysInPrevMonth + (y - startWeekDay))
+                  // если заполняются дни из предыдущего месяца
                   dayInTable.text(daysInPrevMonth + (y - startWeekDay)).addClass(options.classes.table_prev), 
                   iterDate = new Date(currDate.getFullYear(),currDate.getMonth() - 1,daysInPrevMonth + (y - startWeekDay))
               } else if (daysInMonth + startWeekDay >= y) { 
-                  console.log('daysInMonth + startWeekDay >= y')
-                  console.log('y - startWeekDay', y - startWeekDay)
+                  // если заполняются дни из текущего месяца
                   dayInTable.text(y - startWeekDay), 
                   iterDate = new Date(currDate.getFullYear(),currDate.getMonth(),y - startWeekDay) 
               } else {
-                  console.log('else if')
-                  console.log('u', u)
+                  // если заполяются дни из следующего месяца
                   dayInTable.text(u).addClass(options.classes.table_next), 
                   iterDate = new Date(currDate.getFullYear(),currDate.getMonth() + 1,u++)
               }
