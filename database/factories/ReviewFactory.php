@@ -18,7 +18,7 @@ $factory->define(App\Review::class, function () {
     return [
         'status' => $faker->randomElement($array = array (true,false)),
         'rating' => rand(1, 5),
-        'text' => $faker->sentence($nbWords = 10, $variableNbWords = true) ,
+        'text' => $faker->sentence($nbWords = 40, $variableNbWords = true) ,
         'user_id' => rand(1, 100)
     ];
 });
