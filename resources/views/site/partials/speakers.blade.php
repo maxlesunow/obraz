@@ -11,7 +11,7 @@
         <hr class="divider divider-md bg-mantis">
         <div class="range range-xs-center ">
             <div class="cell-sm-8 cell-lg-12">
-                <div class="range">
+                <div class="range range-xs-center">
                     @foreach($speakers as $speaker)
                         <div class="section-bottom-66 cell-sm-6 cell-lg-3"><img class="img-circle img-responsive center-block" src="{{$speaker->image}}" width="140" height="140" alt="">
                             <div class="offset-top-24">
