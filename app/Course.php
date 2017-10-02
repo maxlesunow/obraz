@@ -29,7 +29,7 @@ class Course extends Model
         'meta_url',
     ];
 
-    protected $appends = ['reservations_count'];
+    protected $appends = ['reservations_count', 'url'];
 
     protected $with = ['course_type', 'course_group', 'speakers'];
 
