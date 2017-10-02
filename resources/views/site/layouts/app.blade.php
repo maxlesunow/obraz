@@ -44,9 +44,9 @@
         </div>
 
         <!-- Scripts -->
-        <script src="{{ asset('js/core.min.js') }}"></script>
+        <script src="{{ mix('js/core.min.js') }}"></script>
         <script src="{{ mix('js/app.js') }}"></script>
-        <script src="{{ asset('js/script.js') }}"></script>
+        <!-- <script src="{{ mix('js/script.js') }}"></script> -->
         @yield('scripts')
     </body>
 </html>

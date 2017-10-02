@@ -28,3 +28,5 @@ Vue.component('newest-schedule', require('./components/schedule/NewestSchedule.v
 const app = new Vue({
     el: '#app'
 });
+
+require('./script')
