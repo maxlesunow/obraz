@@ -73348,7 +73348,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         fixEvents: function fixEvents() {
             var events = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
 
-            console.log('###', events);
             var MAX_SPEAKERS = 3;
             var fixedTimeStart = _.map(events, function (el) {
                 el.time_start && (el.time_start = moment(el.time_start).locale('ru').format("YYYY-MM-DD"));
@@ -73365,6 +73364,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.events = _this.fixEvents(res.data.data);
                 _this.currentPage = res.data.current_page;
                 _this.lastPage = res.data.last_page;
+
+                $('#ui-to-top').click();
             }).catch(function (res) {
                 _this.events = [];
                 _this.currentPage = '';

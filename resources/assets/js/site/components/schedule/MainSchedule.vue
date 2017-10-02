@@ -150,7 +150,6 @@ export default {
             this.loadEvents()
         },
         fixEvents(events = []) {
-            console.log('###', events)
             var MAX_SPEAKERS = 3
             var fixedTimeStart = _.map(events, (el) => {
                 el.time_start && (el.time_start = moment(el.time_start).locale('ru').format("YYYY-MM-DD") )
@@ -167,6 +166,7 @@ export default {
                     this.currentPage = res.data.current_page
                     this.lastPage = res.data.last_page
 
+                    $('#ui-to-top').click()
                 })
                 .catch((res) => {
                     this.events = []
