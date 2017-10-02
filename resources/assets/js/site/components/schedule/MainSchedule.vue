@@ -24,6 +24,7 @@
               </div>
             </div>
         </div>
+
         <section class="offset-top-30">
             <div class="post-modern-timeline-date text-sm-right">
                 <time datetime="2016-01-01">24 Feb</time>
@@ -61,19 +62,16 @@
                 </section>
             </article>
         </section>
+
         <footer class="offset-top-66">
             <div class="post-modern-timeline-right">
-                <!-- Bootstrap Pager-->
                 <nav>
                     <ul class="pager">
-                        <li class="previous">
-                            <a href="#">
-                                <span class="icon-left mdi mdi-arrow-left" aria-hidden="true"></span>Older</a>
+                        <li class="previous" v-if="!isFirstPage()" @click.prevent="prevPage">
+                            <a href><span class="icon-left mdi mdi-arrow-left" aria-hidden="true">Назад</span></a>
                         </li>
-                        <li class="next">
-                            <a href="#">Newer
-                                <span class="icon-right mdi mdi-arrow-right" aria-hidden="true"></span>
-                            </a>
+                        <li class="next" v-if="!isLastPage()" @click.prevent="nextPage">
+                            <a href><span class="icon-right mdi mdi-arrow-right" aria-hidden="true">Далее</span></a>
                         </li>
                     </ul>
                 </nav>
@@ -93,15 +91,11 @@ export default {
         filters: {
             courseType: {
                 ajax: { url: '/api/site/course/types', text: 'name' },
-                // multiple: true,
-                // data: [],
                 field: 'courses.course_type_id',
                 placeholder: 'Выбирите тип курса'
             },
             courseGroup: {
                 ajax: { url: '/api/site/course/groups', text: 'name' },
-                // multiple: true,
-                // data: [],
                 field: 'courses.course_group_id',
                 placeholder: 'Выбирите группу курса'
             },
@@ -112,7 +106,9 @@ export default {
                 field: 'data_stop'
             }
         },
-        
+        events: [],
+        currentPage: '',
+        lastPage: ''
     }),
     methods: {
         formatFilterPhp(filterFiled = {}) {
@@ -136,9 +132,37 @@ export default {
         setDate() {
             console.log(arguments)
         },
+        isFirstPage() {
+            return this.currentPage === 1 
+        },
+        isLastPage() {
+            return this.currentPage === this.lastPage
+        },
+        prevPage() {
+            this.currentPage--
+            this.loadEvents()
+        },
+        nextPage() {
+            this.currentPage++
+            this.loadEvents()
+        },
+        loadEvents() {
+            axios.get('/api/site/courses', { params: { page: this.currentPage }})
+                .then((res) => {
+                    this.events = res.data.data
+                    this.currentPage = res.data.current_page
+                    this.lastPage = res.data.last_page
+                })
+                .catch((res) => {
+                    this.events = []
+                    this.currentPage = ''
+                    this.lastPage = ''
+                })
+        }
         
     },
-    beforeCreate() {
+    created() {
+        this.loadEvents()
         // axios.get('/api/site/course/groups')
         //     .then((data) => {
         //         this.filters.courseGroup.data = _.map(data.data, (key, el) => ({id: el, text: key}))

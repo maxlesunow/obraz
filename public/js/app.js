@@ -73270,8 +73270,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -73284,15 +73282,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             filters: {
                 courseType: {
                     ajax: { url: '/api/site/course/types', text: 'name' },
-                    // multiple: true,
-                    // data: [],
                     field: 'courses.course_type_id',
                     placeholder: 'Выбирите тип курса'
                 },
                 courseGroup: {
                     ajax: { url: '/api/site/course/groups', text: 'name' },
-                    // multiple: true,
-                    // data: [],
                     field: 'courses.course_group_id',
                     placeholder: 'Выбирите группу курса'
                 },
@@ -73302,8 +73296,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 endDate: {
                     field: 'data_stop'
                 }
-            }
-
+            },
+            events: [],
+            currentPage: '',
+            lastPage: ''
         };
     },
     methods: {
@@ -73331,9 +73327,37 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         setDate: function setDate() {
             console.log(arguments);
+        },
+        isFirstPage: function isFirstPage() {
+            return this.currentPage === 1;
+        },
+        isLastPage: function isLastPage() {
+            return this.currentPage === this.lastPage;
+        },
+        prevPage: function prevPage() {
+            this.currentPage--;
+            this.loadEvents();
+        },
+        nextPage: function nextPage() {
+            this.currentPage++;
+            this.loadEvents();
+        },
+        loadEvents: function loadEvents() {
+            var _this = this;
+
+            axios.get('/api/site/courses', { params: { page: this.currentPage } }).then(function (res) {
+                _this.events = res.data.data;
+                _this.currentPage = res.data.current_page;
+                _this.lastPage = res.data.last_page;
+            }).catch(function (res) {
+                _this.events = [];
+                _this.currentPage = '';
+                _this.lastPage = '';
+            });
         }
     },
-    beforeCreate: function beforeCreate() {
+    created: function created() {
+        this.loadEvents();
         // axios.get('/api/site/course/groups')
         //     .then((data) => {
         //         this.filters.courseGroup.data = _.map(data.data, (key, el) => ({id: el, text: key}))
@@ -73556,7 +73580,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "select2:set": _vm.select2Set
     }
-  })], 1)]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1)])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3)])
+  })], 1)]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1)])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('footer', {
+    staticClass: "offset-top-66"
+  }, [_c('div', {
+    staticClass: "post-modern-timeline-right"
+  }, [_c('nav', [_c('ul', {
+    staticClass: "pager"
+  }, [(!_vm.isFirstPage()) ? _c('li', {
+    staticClass: "previous",
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.prevPage($event)
+      }
+    }
+  }, [_vm._m(3)]) : _vm._e(), _vm._v(" "), (!_vm.isLastPage()) ? _c('li', {
+    staticClass: "next",
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.nextPage($event)
+      }
+    }
+  }, [_vm._m(4)]) : _vm._e()])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "cell-sm-12 cell-md-6 text-left"
@@ -73637,35 +73683,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "post-author-name text-middle"
   }, [_vm._v("Eugene Newman\n                    ")])])])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('footer', {
-    staticClass: "offset-top-66"
-  }, [_c('div', {
-    staticClass: "post-modern-timeline-right"
-  }, [_c('nav', [_c('ul', {
-    staticClass: "pager"
-  }, [_c('li', {
-    staticClass: "previous"
-  }, [_c('a', {
+  return _c('a', {
     attrs: {
-      "href": "#"
+      "href": ""
     }
   }, [_c('span', {
     staticClass: "icon-left mdi mdi-arrow-left",
     attrs: {
       "aria-hidden": "true"
     }
-  }), _vm._v("Older")])]), _vm._v(" "), _c('li', {
-    staticClass: "next"
-  }, [_c('a', {
+  }, [_vm._v("Назад")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('a', {
     attrs: {
-      "href": "#"
+      "href": ""
     }
-  }, [_vm._v("Newer\n                            "), _c('span', {
+  }, [_c('span', {
     staticClass: "icon-right mdi mdi-arrow-right",
     attrs: {
       "aria-hidden": "true"
     }
-  })])])])])])])
+  }, [_vm._v("Далее")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
