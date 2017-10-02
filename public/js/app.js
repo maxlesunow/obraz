@@ -73277,7 +73277,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     components: { VueMultiSelect: __WEBPACK_IMPORTED_MODULE_0__VueMultiSelect___default.a },
     data: function data() {
         return {
-            additionalFilter: {},
             filterField: {},
             filters: {
                 courseType: {
@@ -73298,8 +73297,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             },
             events: [],
-            currentPage: '',
-            lastPage: ''
+            lastPage: '',
+            options: { page: '' }
         };
     },
     methods: {
@@ -73320,10 +73319,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (value === '' || value === '-1') {
                 delete this.filterField[destName];
             }
-            var filters = [this.formatFilterPhp(this.additionalFilter), this.formatFilterPhp(this.filterField)].join(',');
-            console.log('set', filters);
-            // this.moreParams.filters = filters
-            // this.updateTable()
+            var filters = [this.formatFilterPhp(this.filterField)].join(',');
+
+            this.options.filters = filters;
+            this.loadEvents();
         },
         setDate: function setDate() {
             console.log(arguments);
@@ -73332,18 +73331,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return moment(date).locale('ru').format("DD MMM YY");
         },
         isFirstPage: function isFirstPage() {
-            return this.currentPage === 1;
+            return this.options.page === 1;
         },
         isLastPage: function isLastPage() {
-            return this.currentPage === this.lastPage;
+            return this.options.page === this.lastPage;
         },
         prevPage: function prevPage() {
-            this.currentPage--;
-            this.loadEvents();
+            this.options.page--;
+            this.loadEvents(function () {
+                return $('#ui-to-top').click();
+            });
         },
         nextPage: function nextPage() {
-            this.currentPage++;
-            this.loadEvents();
+            this.options.page++;
+            this.loadEvents(function () {
+                return $('#ui-to-top').click();
+            });
         },
         fixEvents: function fixEvents() {
             var events = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
@@ -73360,15 +73363,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         loadEvents: function loadEvents() {
             var _this = this;
 
-            axios.get('/api/site/courses', { params: { page: this.currentPage } }).then(function (res) {
-                _this.events = _this.fixEvents(res.data.data);
-                _this.currentPage = res.data.current_page;
-                _this.lastPage = res.data.last_page;
+            var cb = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : function () {};
 
-                $('#ui-to-top').click();
+            axios.get('/api/site/courses', { params: this.options }).then(function (res) {
+                _this.events = _this.fixEvents(res.data.data);
+                _this.options.page = res.data.current_page;
+                _this.lastPage = res.data.last_page;
+                cb();
             }).catch(function (res) {
                 _this.events = [];
-                _this.currentPage = '';
+                _this.options.page = '';
                 _this.lastPage = '';
             });
         }
@@ -73379,10 +73383,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var vm = this;
         $(vm.$el).find('#date-start').on('change', function (e, date) {
-            vm.select2Set(new Date(date).toISOString(), 'startDate');
+            vm.options.date_start = new Date(date).toISOString();
+            vm.options.page = 1;
+            vm.loadEvents();
         });
         $(vm.$el).find('#date-stop').on('change', function (e, date) {
-            vm.select2Set(new Date(date).toISOString(), 'endDate');
+            vm.options.date_stop = new Date(date).toISOString();
+            vm.options.page = 1;
+            vm.loadEvents();
         });
     }
 });
@@ -73510,6 +73518,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).catch(function (res) {
                 _this.options = [];
             });
+        },
+        changeMethod: function changeMethod(elements) {
+            this.$emit('select2:set', _.join(elements, ':'), this.selectName);
         }
     },
     mounted: function mounted() {
@@ -73531,6 +73542,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "placeholder": _vm.placeHold,
       "remote-method": _vm.remoteMethod,
       "loading": _vm.loading
+    },
+    on: {
+      "change": _vm.changeMethod
     },
     model: {
       value: (_vm.selectValue),

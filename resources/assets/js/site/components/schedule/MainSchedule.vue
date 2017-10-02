@@ -86,7 +86,6 @@ import VueMultiSelect from './VueMultiSelect'
 export default {
     components: { VueMultiSelect },
     data: () => ({
-        additionalFilter: {},
         filterField: {},
         filters: {
             courseType: {
@@ -107,8 +106,8 @@ export default {
             }
         },
         events: [],
-        currentPage: '',
-        lastPage: ''
+        lastPage: '',
+        options: { page: '' }
     }),
     methods: {
         formatFilterPhp(filterFiled = {}) {
@@ -124,10 +123,10 @@ export default {
             if (value === '' || value === '-1') {
                 delete this.filterField[destName]
             }
-            var filters = [this.formatFilterPhp(this.additionalFilter), this.formatFilterPhp(this.filterField)].join(',')
-            console.log('set', filters)
-            // this.moreParams.filters = filters
-            // this.updateTable()
+            var filters = [this.formatFilterPhp(this.filterField)].join(',')
+            
+            this.options.filters = filters
+            this.loadEvents()
         },
         setDate() {
             console.log(arguments)
@@ -136,18 +135,18 @@ export default {
             return moment(date).locale('ru').format("DD MMM YY")
         },
         isFirstPage() {
-            return this.currentPage === 1 
+            return this.options.page === 1 
         },
         isLastPage() {
-            return this.currentPage === this.lastPage
+            return this.options.page === this.lastPage
         },
         prevPage() {
-            this.currentPage--
-            this.loadEvents()
+            this.options.page--
+            this.loadEvents(() => $('#ui-to-top').click() )
         },
         nextPage() {
-            this.currentPage++
-            this.loadEvents()
+            this.options.page++
+            this.loadEvents(() => $('#ui-to-top').click() )
         },
         fixEvents(events = []) {
             var MAX_SPEAKERS = 3
@@ -159,18 +158,17 @@ export default {
 
             return _.groupBy(fixedTimeStart, 'time_start')
         },
-        loadEvents() {
-            axios.get('/api/site/courses', { params: { page: this.currentPage }})
+        loadEvents(cb = ()=>{}) {
+            axios.get('/api/site/courses', { params: this.options })
                 .then((res) => {
                     this.events = this.fixEvents(res.data.data)
-                    this.currentPage = res.data.current_page
+                    this.options.page = res.data.current_page
                     this.lastPage = res.data.last_page
-
-                    $('#ui-to-top').click()
+                    cb()
                 })
                 .catch((res) => {
                     this.events = []
-                    this.currentPage = ''
+                    this.options.page = ''
                     this.lastPage = ''
                 })
         }
@@ -182,10 +180,14 @@ export default {
     mounted() {
         var vm = this;
         $(vm.$el).find('#date-start').on('change', function(e, date) {
-            vm.select2Set(new Date(date).toISOString(), 'startDate')
+            vm.options.date_start = new Date(date).toISOString()
+            vm.options.page = 1
+            vm.loadEvents()
         });
         $(vm.$el).find('#date-stop').on('change', function(e, date) {
-            vm.select2Set(new Date(date).toISOString(), 'endDate')
+            vm.options.date_stop = new Date(date).toISOString()
+            vm.options.page = 1
+            vm.loadEvents()
         });
     }
 }

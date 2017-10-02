@@ -1,5 +1,5 @@
 <template>
-    <el-select v-model="selectValue" multiple filterable remote :placeholder="placeHold" :remote-method="remoteMethod" :loading="loading">
+    <el-select v-model="selectValue" multiple filterable remote :placeholder="placeHold" :remote-method="remoteMethod" :loading="loading" @change="changeMethod">
         <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
     </el-select>
 </template>
@@ -25,6 +25,9 @@ export default {
                 .catch((res) => {
                     this.options = []
                 })
+        },
+        changeMethod(elements) {
+            this.$emit('select2:set', _.join(elements, ':'), this.selectName)
         }
     },
     mounted() {
