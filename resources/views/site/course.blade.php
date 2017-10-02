@@ -18,54 +18,6 @@
 @endsection
 
 @section('content')
-       <!--Section Contact Info-->
-       {{--<section class="bg-lighter section-66">--}}
-              {{--<div class="shell-wide">--}}
-                     {{--<div class="range range-xs-center text-sm-left">--}}
-                            {{--<div class="cell-xs-10 cell-sm-8 cell-md-12">--}}
-                                   {{--<div class="range range-xs-center">--}}
-                                          {{--<div class="cell-xs-6 cell-md-3 cell-xl-2">--}}
-                                                 {{--<div class="unit unit-spacing-xs unit-sm unit-sm-horizontal">--}}
-                                                        {{--<div class="unit-left"><span class="icon icon-xs mdi mdi-phone text-primary" style="font-size: 26px;"></span></div>--}}
-                                                        {{--<div class="unit-body">--}}
-                                                               {{--<h6>Где?</h6>--}}
-                                                               {{--<div class="p">{{$course->address}}</div>--}}
-                                                        {{--</div>--}}
-                                                 {{--</div>--}}
-                                          {{--</div>--}}
-                                          {{--<div class="cell-xs-6 cell-md-3 cell-xl-2 offset-top-50 offset-xs-top-0">--}}
-                                                 {{--<div class="unit unit-spacing-xs unit-sm unit-sm-horizontal">--}}
-                                                        {{--<div class="unit-left"><span class="icon icon-xs mdi mdi-email-open text-primary" style="font-size: 26px;"></span></div>--}}
-                                                        {{--<div class="unit-body">--}}
-                                                               {{--<h6>Когда?</h6>--}}
-                                                               {{--<div class="p">{{ Carbon\Carbon::parse($course->time_start)->formatLocalized('%d %B %Y')}}</div>--}}
-                                                        {{--</div>--}}
-                                                 {{--</div>--}}
-                                          {{--</div>--}}
-                                          {{--<div class="cell-xs-6 cell-md-3 cell-xl-2 offset-top-50 offset-md-top-0">--}}
-                                                 {{--<div class="unit unit-spacing-xs unit-sm unit-sm-horizontal">--}}
-                                                        {{--<div class="unit-left"><span class="icon icon-xs mdi mdi-map text-primary" style="font-size: 26px;"></span></div>--}}
-                                                        {{--<div class="unit-body">--}}
-                                                               {{--<h6>Во сколько?</h6>--}}
-                                                               {{--<div class="p">Регистрация: {{ Carbon\Carbon::parse($course->time_start)->formatLocalized('%H:%M')}}</div>--}}
-                                                               {{--<div class="p">Начало: {{ Carbon\Carbon::parse($course->time_register)->formatLocalized('%H:%M')}}</div>--}}
-                                                        {{--</div>--}}
-                                                 {{--</div>--}}
-                                          {{--</div>--}}
-                                          {{--<div class="cell-xs-6 cell-md-3 cell-xl-2 offset-top-50 offset-md-top-0">--}}
-                                                 {{--<div class="unit unit-spacing-xs unit-sm unit-sm-horizontal">--}}
-                                                        {{--<div class="unit-left"><span class="icon icon-xs mdi mdi-timelapse text-primary" style="font-size: 26px;"></span></div>--}}
-                                                        {{--<div class="unit-body">--}}
-                                                               {{--<h6>Сколько стоит?</h6>--}}
-                                                               {{--<div class="p">{{$course->cost}} Руб</div>--}}
-                                                        {{--</div>--}}
-                                                 {{--</div>--}}
-                                          {{--</div>--}}
-                                   {{--</div>--}}
-                            {{--</div>--}}
-                     {{--</div>--}}
-              {{--</div>--}}
-       {{--</section>--}}
 
        <section class="bg-black-haze">
               <div class="section-top-66">
@@ -73,51 +25,87 @@
                             <h1>{{$course->name}}</h1>
                             <hr class="divider bg-mantis">
                             <div class="range range-xs-center range-md-left range-md-bottom">
-                                   <div class="cell-md-7 cell-lg-6 cell-lg-preffix-1  reveal-md-block">
+                                   <div class="cell-md-7 cell-lg-6 cell-lg-preffix-1 reveal-md-block course-options section-bottom-66">
 
-                                          <div class="offset-top-66 offset-lg-top-34">
-                                                 <!-- Icon Box Type 2-->
-                                                 <div class="unit unit-sm unit-sm-horizontal text-sm-left">
-                                                        <div class="unit-left"><span class="icon text-gray mdi mdi-newspaper"></span></div>
-                                                        <div class="unit-body">
-                                                               <h4 class="text-bold text-malibu offset-sm-top-14">Где будет проходить?</h4>
-                                                               <p>We know how important it is for you to maintain your schedule, that’s why we do everything to fit it. Our team works on your project in multiple threads.</p>
-                                                        </div>
-                                                 </div>
-                                          </div>
-                                          <div class="offset-top-66 offset-lg-top-34">
+                                          <div class="offset-top-14">
                                                  <!-- Icon Box Type 2-->
                                                  <div class="unit unit-sm unit-sm-horizontal text-sm-left">
                                                         <div class="unit-left"><span class="icon text-gray mdi mdi-headset"></span></div>
                                                         <div class="unit-body">
-                                                               <h4 class="text-bold text-malibu offset-sm-top-14">Во сколько начало?</h4>
-                                                               <p>Our support team is online 24/7, and is ready to help you with any design - related issue.</p>
+                                                               <h4 class="text-bold text-malibu">Тип курса</h4>
+                                                               <h6>{{$course->course_type->name}}</h6>
                                                         </div>
                                                  </div>
                                           </div>
-                                          <div class="offset-top-66 offset-lg-top-34">
+                                          <div class="offset-top-14">
                                                  <!-- Icon Box Type 2-->
                                                  <div class="unit unit-sm unit-sm-horizontal text-sm-left">
-                                                        <div class="unit-left"><span class="icon text-gray mdi mdi-headset"></span></div>
+                                                        <div class="unit-left"><span class="icon text-gray mdi mdi-tag-text-outline"></span></div>
                                                         <div class="unit-body">
-                                                               <h4 class="text-bold text-malibu offset-sm-top-14">Во сколько регистрация?</h4>
-                                                               <p>Our support team is online 24/7, and is ready to help you with any design - related issue.</p>
+                                                               <h4 class="text-bold text-malibu">Группа курса</h4>
+                                                               <h6>{{$course->course_group->name}}</h6>
                                                         </div>
                                                  </div>
                                           </div>
-                                          <div class="offset-top-66 offset-lg-top-34">
+                                          <div class="offset-top-14">
                                                  <!-- Icon Box Type 2-->
                                                  <div class="unit unit-sm unit-sm-horizontal text-sm-left">
-                                                        <div class="unit-left"><span class="icon text-gray mdi mdi-headset"></span></div>
+                                                        <div class="unit-left"><span class="icon text-gray mdi mdi-map-marker-radius"></span></div>
                                                         <div class="unit-body">
-                                                               <h4 class="text-bold text-malibu offset-sm-top-14">Сколько стоит?</h4>
-                                                               <p>Our support team is online 24/7, and is ready to help you with any design - related issue.</p>
+                                                               <h4 class="text-bold text-malibu">Где будет проходить?</h4>
+                                                               <h6>{{$course->address}}</h6>
                                                         </div>
                                                  </div>
                                           </div>
+                                          <div class="offset-top-14">
+                                                 <!-- Icon Box Type 2-->
+                                                 <div class="unit unit-sm unit-sm-horizontal text-sm-left">
+                                                        <div class="unit-left"><span class="icon text-gray mdi mdi-calendar-clock"></span></div>
+                                                        <div class="unit-body">
+                                                               <h4 class="text-bold text-malibu">Во сколько начало?</h4>
+                                                               <h6>{{ Carbon\Carbon::parse($course->time_start)->formatLocalized('%d %B %Y %H:%M')}}</h6>
+                                                               <h6>{{ Carbon\Carbon::parse($course->time_start)->formatLocalized('%A')}}</h6>
+                                                        </div>
+                                                 </div>
+                                          </div>
+                                          <div class="offset-top-14">
+                                                 <!-- Icon Box Type 2-->
+                                                 <div class="unit unit-sm unit-sm-horizontal text-sm-left">
+                                                        <div class="unit-left"><span class="icon text-gray mdi mdi-timetable"></span></div>
+                                                        <div class="unit-body">
+                                                               <h4 class="text-bold text-malibu">Во сколько регистрация?</h4>
+                                                               <h6>{{ Carbon\Carbon::parse($course->time_register)->formatLocalized('%d %B %Y %H:%M')}}</h6>
+                                                               <h6>{{ Carbon\Carbon::parse($course->time_register)->formatLocalized('%A')}}</h6>
+                                                        </div>
+                                                 </div>
+                                          </div>
+                                          <div class="offset-top-14">
+                                                 <!-- Icon Box Type 2-->
+                                                 <div class="unit unit-sm unit-sm-horizontal text-sm-left">
+                                                        <div class="unit-left"><span class="icon text-gray mdi mdi-account-multiple"></span></div>
+                                                        <div class="unit-body">
+                                                               <h4 class="text-bold text-malibu">Кто докладчики?</h4>
+                                                               @foreach($course->speakers as $speaker)
+                                                                      <h6><a href="{{ $speaker->url}}">{{ $speaker->full_name}}</a></h6>
+                                                               @endforeach
+                                                        </div>
+                                                 </div>
+                                          </div>
+                                          <div class="offset-top-14">
+                                                 <!-- Icon Box Type 2-->
+                                                 <div class="unit unit-sm unit-sm-horizontal text-sm-left">
+                                                        <div class="unit-left"><span class="icon text-gray mdi mdi-currency-rub"></span></div>
+                                                        <div class="unit-body">
+                                                               <h4 class="text-bold text-malibu">Сколько стоит?</h4>
+                                                               <div class="product-price h3">
+                                                                      <span class="product-price-new text-bold text-primary">{{$course->cost}} </span>
+                                                               </div>
+                                                        </div>
+                                                 </div>
+                                          </div>
+
 
                                    </div>
-
 
                                    <div class="cell-xs-10 cell-sm-8 cell-md-5 cell-lg-4">
                                           <div class="section-bottom-66 section-md-bottom-41">
