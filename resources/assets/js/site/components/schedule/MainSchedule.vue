@@ -11,7 +11,7 @@
               <div class="cell-sm-12 cell-md-6 text-left">
                 <div class="form-group offset-top-12">
                     <label class="form-label-outside">Группы курсов</label>
-                    <select2 :filters="filters" select-name="courseGroup" @select2:set="select2Set"></select2>
+                    <!-- <select2 :filters="filters" select-name="courseGroup" @select2:set="select2Set"></select2> -->
                 </div>
               </div>
               <div class="cell-sm-12 cell-md-6 text-left">

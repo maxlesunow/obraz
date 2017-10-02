@@ -1,5 +1,5 @@
 <template>
-    <select style="width: 170px;">
+    <select style="width: 170px;" ref='select'>
         <slot></slot>
     </select>
 </template>
@@ -12,11 +12,12 @@ export default {
     }),
     watch: {
         value: function(value) {
-            $(this.$el).val(value)
+            this.setValue()
         },
         filters: {
             handler: function (val, oldVal) {
-                this.update()
+                this.remove()
+                this.init()
             },
             deep: true
         }
@@ -43,23 +44,41 @@ export default {
                 return undefined
             }
         },
-        update() {
+        init() {
             var vm = this;
-            $(vm.$el)
-                .val(vm.value)
+            $(this.$refs.select)
                 .select2({
                     debug: true,
                     multiple: vm.options.multiple || false,
                     placeholder: vm.options.placeholder,
-                    allowClear: true,
+                    allowClear: vm.options.placeholder ? true : false,
                     minimumResultsForSearch: vm.getData() ? -1 : undefined, // hide search bar
                     ajax: vm.getAjax(),
                     data: vm.getData()
                 })
+                .show()
+        },
+        setValue() {
+            $(this.$refs.select)
+                .val(this.value)
+                .trigger('change', { ignore: true })
+        },
+        update() {
+            var vm = this;
+            this.init()
+
+            $(this.$refs.select)
                 .on('change', function () {
                     // this in select2 ctx, not vuejs
                     vm.$emit('select2:set', _.join(_.map($(vm.$el).select2('data'), 'id'), ','), vm.selectName)
                 })
+
+            Vue.nextTick(() => {
+                this.setValue()
+            });
+        },
+        remove() {
+            $(this.$refs.select).off().select2('destroy')
         }
     },
     created () {
@@ -69,7 +88,7 @@ export default {
         this.update()
     },
     destroyed: function() {
-        $(this.$el).off().select2('destroy')
+        this.remove()
     }
 }
 </script>
