@@ -31411,7 +31411,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -31438,11 +31438,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     watch: {
         value: function value(_value) {
-            $(this.$el).val(_value);
+            this.setValue();
         },
         filters: {
             handler: function handler(val, oldVal) {
-                this.update();
+                this.remove();
+                this.init();
             },
             deep: true
         }
@@ -31477,20 +31478,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 return undefined;
             }
         },
-        update: function update() {
+        init: function init() {
             var vm = this;
-            $(vm.$el).val(vm.value).select2({
+            $(this.$refs.select).select2({
                 debug: true,
                 multiple: vm.options.multiple || false,
                 placeholder: vm.options.placeholder,
-                allowClear: true,
+                allowClear: vm.options.placeholder ? true : false,
                 minimumResultsForSearch: vm.getData() ? -1 : undefined, // hide search bar
                 ajax: vm.getAjax(),
                 data: vm.getData()
-            }).on('change', function () {
+            }).show();
+        },
+        setValue: function setValue() {
+            $(this.$refs.select).val(this.value).trigger('change', { ignore: true });
+        },
+        update: function update() {
+            var _this2 = this;
+
+            var vm = this;
+            this.init();
+
+            $(this.$refs.select).on('change', function () {
                 // this in select2 ctx, not vuejs
                 vm.$emit('select2:set', _.join(_.map($(vm.$el).select2('data'), 'id'), ','), vm.selectName);
             });
+
+            Vue.nextTick(function () {
+                _this2.setValue();
+            });
+        },
+        remove: function remove() {
+            $(this.$refs.select).off().select2('destroy');
         }
     },
     created: function created() {
@@ -31501,7 +31520,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     destroyed: function destroyed() {
-        $(this.$el).off().select2('destroy');
+        this.remove();
     }
 });
 
@@ -31511,6 +31530,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('select', {
+    ref: "select",
     staticStyle: {
       "width": "170px"
     }
@@ -33998,22 +34018,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "select2:set": _vm.select2Set
     }
-  })], 1)]), _vm._v(" "), _c('div', {
+  })], 1)]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2)])]), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "cell-sm-12 cell-md-6 text-left"
   }, [_c('div', {
     staticClass: "form-group offset-top-12"
   }, [_c('label', {
     staticClass: "form-label-outside"
-  }, [_vm._v("Группы курсов")]), _vm._v(" "), _c('select2', {
-    attrs: {
-      "filters": _vm.filters,
-      "select-name": "courseGroup"
-    },
-    on: {
-      "select2:set": _vm.select2Set
-    }
-  })], 1)]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1)])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3)])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  }, [_vm._v("Группы курсов")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "cell-sm-12 cell-md-6 text-left"
   }, [_c('div', {

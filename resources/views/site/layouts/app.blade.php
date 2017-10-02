@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="wide wow-animation scrollTo smoothscroll" lang="{{ app()->getLocale() }}">
+<html class="wide wow-animation scrollTo smoothscroll" lang="en">
     <head>
 
         <meta name="format-detection" content="telephone=no">
