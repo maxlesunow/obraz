@@ -32,7 +32,7 @@
                 <calendar-schedule></calendar-schedule>
               </div>
               <div class="cell-sm-6 cell-md-12 offset-top-41">
-                <newest-schedule></newest-schedule>
+                @include('site.schedule.newest')
               </div>
         </aside>
       </div>

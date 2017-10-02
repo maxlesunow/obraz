@@ -1,5 +1,4 @@
-<template>
-    <div>
+<div>
         <h6 class="text-uppercase text-spacing-60">
             Recent Events</h6>
         <div class="text-subline"></div>
@@ -85,14 +84,3 @@
             </article>
         </div>
     </div>
-</template>
-
-<script>
-export default {
-
-}
-</script>
-
-<style>
-
-</style>

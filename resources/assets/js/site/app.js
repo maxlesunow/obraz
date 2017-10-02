@@ -1,5 +1,4 @@
 import { Select, Option } from 'element-ui'
-
 import 'element-ui/lib/theme-default/index.css'
 
 /**
@@ -29,10 +28,7 @@ Vue.component('register', require('./components/Auth/Register.vue'));
 
 Vue.component('main-schedule', require('./components/schedule/MainSchedule.vue'));
 Vue.component('calendar-schedule', require('./components/schedule/CalendarSchedule.vue'));
-Vue.component('newest-schedule', require('./components/schedule/NewestSchedule.vue'));
 
 const app = new Vue({
     el: '#app'
 });
-
-require('./script')
