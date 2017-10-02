@@ -73328,6 +73328,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         setDate: function setDate() {
             console.log(arguments);
         },
+        getDateGroup: function getDateGroup(date) {
+            return moment(date).locale('ru').format("DD MMM YY");
+        },
         isFirstPage: function isFirstPage() {
             return this.currentPage === 1;
         },
@@ -73342,11 +73345,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.currentPage++;
             this.loadEvents();
         },
+        fixEvents: function fixEvents() {
+            var events = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+
+            console.log('###', events);
+            var MAX_SPEAKERS = 3;
+            var fixedTimeStart = _.map(events, function (el) {
+                el.time_start && (el.time_start = moment(el.time_start).locale('ru').format("YYYY-MM-DD"));
+                el.speakers && (el.speakers = el.speakers.slice(0, MAX_SPEAKERS));
+                return el;
+            });
+
+            return _.groupBy(fixedTimeStart, 'time_start');
+        },
         loadEvents: function loadEvents() {
             var _this = this;
 
             axios.get('/api/site/courses', { params: { page: this.currentPage } }).then(function (res) {
-                _this.events = res.data.data;
+                _this.events = _this.fixEvents(res.data.data);
                 _this.currentPage = res.data.current_page;
                 _this.lastPage = res.data.last_page;
             }).catch(function (res) {
@@ -73358,17 +73374,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     created: function created() {
         this.loadEvents();
-        // axios.get('/api/site/course/groups')
-        //     .then((data) => {
-        //         this.filters.courseGroup.data = _.map(data.data, (key, el) => ({id: el, text: key}))
-        //     })
-        // axios.get('/api/site/course/types')
-        //     .then((data) => {
-        //         this.filters.courseType.data =  _.map(data.data, (key, el) => ({id: el, text: key}))
-        //     })
     },
     mounted: function mounted() {
-
         var vm = this;
         $(vm.$el).find('#date-start').on('change', function (e, date) {
             vm.select2Set(new Date(date).toISOString(), 'startDate');
@@ -73580,7 +73587,60 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "select2:set": _vm.select2Set
     }
-  })], 1)]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1)])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('footer', {
+  })], 1)]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1)])]), _vm._v(" "), _vm._l((_vm.events), function(group, key) {
+    return [_c('section', {
+      staticClass: "offset-top-30"
+    }, [_c('div', {
+      staticClass: "post-modern-timeline-date text-sm-right"
+    }, [_c('time', {
+      attrs: {
+        "datetime": key
+      }
+    }, [_vm._v(_vm._s(_vm.getDateGroup(key)))])]), _vm._v(" "), _vm._l((group), function(event, index) {
+      return [_c('article', {
+        staticClass: "post post-modern post-modern-timeline post-modern-timeline-right"
+      }, [_c('section', {
+        staticClass: "post-content text-left"
+      }, [_c('ul', {
+        staticClass: "list-inline"
+      }, [_c('li', [_c('span', {
+        staticClass: "label-custom label-lg-custom label-rounded-custom label-primary"
+      }, [_vm._v(_vm._s(event.course_type.name))]), _vm._v(" "), _c('span', {
+        staticClass: "label-custom label-lg-custom label-rounded-custom label-success"
+      }, [_vm._v(_vm._s(event.course_group.name))])])]), _vm._v(" "), _c('div', {
+        staticClass: "post-title"
+      }, [_c('h6', {
+        staticClass: "offset-top-24"
+      }, [_c('a', {
+        attrs: {
+          "href": event.url
+        }
+      }, [_vm._v(_vm._s(event.name))])])]), _vm._v(" "), _vm._m(2, true), _vm._v(" "), _c('div', {
+        staticClass: "post-author"
+      }, [_vm._l((event.speakers), function(speaker) {
+        return [_c('div', {
+          staticClass: "post-author-img"
+        }, [_c('a', {
+          attrs: {
+            "href": speaker.url
+          }
+        }, [_c('img', {
+          staticClass: "img-circle",
+          attrs: {
+            "width": "45",
+            "height": "45",
+            "src": "images/users/user-eugene-newman-60x60.jpg",
+            "alt": speaker.full_name
+          }
+        })])]), _vm._v(" "), _c('div', {
+          staticClass: "post-author-name text-middle",
+          staticStyle: {
+            "top": "20px"
+          }
+        }, [_vm._v(_vm._s(speaker.full_name))])]
+      })], 2)])])]
+    })], 2)]
+  }), _vm._v(" "), _c('footer', {
     staticClass: "offset-top-66"
   }, [_c('div', {
     staticClass: "post-modern-timeline-right"
@@ -73602,7 +73662,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.nextPage($event)
       }
     }
-  }, [_vm._m(4)]) : _vm._e()])])])])])
+  }, [_vm._m(4)]) : _vm._e()])])])])], 2)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "cell-sm-12 cell-md-6 text-left"
@@ -73634,54 +73694,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', {
-    staticClass: "offset-top-30"
-  }, [_c('div', {
-    staticClass: "post-modern-timeline-date text-sm-right"
-  }, [_c('time', {
-    attrs: {
-      "datetime": "2016-01-01"
-    }
-  }, [_vm._v("24 Feb")])]), _vm._v(" "), _c('article', {
-    staticClass: "post post-modern post-modern-timeline post-modern-timeline-right"
-  }, [_c('section', {
-    staticClass: "post-content text-left"
-  }, [_c('ul', {
-    staticClass: "list-inline"
-  }, [_c('li', [_c('div', {
-    staticClass: "post-tags group-xs"
-  }, [_c('a', {
-    staticClass: "label-custom label-lg-custom label-rounded-custom label-primary",
-    attrs: {
-      "href": "blog-classic-single-post.html"
-    }
-  }, [_vm._v("News")])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "icon icon-xxs text-dark mdi mdi-pen"
-  })])]), _vm._v(" "), _c('div', {
-    staticClass: "post-title"
-  }, [_c('h6', {
-    staticClass: "offset-top-24"
-  }, [_c('a', {
-    attrs: {
-      "href": "blog-classic-single-post.html"
-    }
-  }, [_vm._v("5 Steps to Blog’s Success")])])]), _vm._v(" "), _c('div', {
+  return _c('div', {
     staticClass: "post-body offset-top-20"
-  }, [_c('p', [_vm._v("Unfortunately people will not come to your blog just to see what you have published on it. To make sure that your blog becomes a successful one, you have to work on it to attract visitors interested in your content.")])]), _vm._v(" "), _c('div', {
-    staticClass: "post-author"
-  }, [_c('div', {
-    staticClass: "post-author-img"
-  }, [_c('img', {
-    staticClass: "img-circle",
-    attrs: {
-      "width": "45",
-      "height": "45",
-      "src": "images/users/user-eugene-newman-60x60.jpg",
-      "alt": "Eugene Newman"
-    }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "post-author-name text-middle"
-  }, [_vm._v("Eugene Newman\n                    ")])])])])])
+  }, [_c('p', [_vm._v("Краткое Описание")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('a', {
     attrs: {
