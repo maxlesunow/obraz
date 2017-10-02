@@ -1,3 +1,6 @@
+import { Select, Option } from 'element-ui'
+
+import 'element-ui/lib/theme-default/index.css'
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -8,6 +11,9 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+
+Vue.component(Select.name, Select)
+Vue.component(Option.name, Option)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

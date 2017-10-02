@@ -28,6 +28,7 @@
         "bootstrap": "^3.3.7",
         "chosen-js": "^1.8.2",
         "codemirror": "^5.30.0",
+        "element-ui": "^1.4.6",
         "google-libphonenumber": "^3.0.4",
         "inputmask": "^3.3.8",
         "jquery.uniform": "^4.2.0",

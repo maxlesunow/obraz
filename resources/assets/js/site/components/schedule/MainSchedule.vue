@@ -5,7 +5,10 @@
               <div class="cell-sm-12 cell-md-6 text-left">
                 <div class="form-group offset-top-12">
                     <label class="form-label-outside">Типы курсов</label>
-                    <select2 :filters="filters" select-name="courseType" @select2:set="select2Set"></select2>
+                    <!-- <select2 :filters="filters" select-name="courseType" @select2:set="select2Set"></select2> -->
+                    <el-select v-model="value9" multiple filterable remote placeholder="Please enter a keyword" :remote-method="remoteMethod" :loading="loading">
+                        <el-option v-for="item in options4" :key="item.value" :label="item.label" :value="item.value"></el-option>
+                    </el-select>
                 </div>
               </div>
               <div class="cell-sm-12 cell-md-6 text-left">
@@ -115,6 +118,27 @@ export default {
                 field: 'data_stop'
             }
         },
+        options4: [],
+        value9: [],
+        list: [],
+        loading: false,
+        states: ["Alabama", "Alaska", "Arizona",
+        "Arkansas", "California", "Colorado",
+        "Connecticut", "Delaware", "Florida",
+        "Georgia", "Hawaii", "Idaho", "Illinois",
+        "Indiana", "Iowa", "Kansas", "Kentucky",
+        "Louisiana", "Maine", "Maryland",
+        "Massachusetts", "Michigan", "Minnesota",
+        "Mississippi", "Missouri", "Montana",
+        "Nebraska", "Nevada", "New Hampshire",
+        "New Jersey", "New Mexico", "New York",
+        "North Carolina", "North Dakota", "Ohio",
+        "Oklahoma", "Oregon", "Pennsylvania",
+        "Rhode Island", "South Carolina",
+        "South Dakota", "Tennessee", "Texas",
+        "Utah", "Vermont", "Virginia",
+        "Washington", "West Virginia", "Wisconsin",
+        "Wyoming"]
     }),
     methods: {
         formatFilterPhp(filterFiled = {}) {
@@ -137,6 +161,21 @@ export default {
         },
         setDate() {
             console.log(arguments)
+        },
+        remoteMethod(query) {
+            if (query !== '') {
+            this.loading = true;
+            setTimeout(() => {
+                this.loading = false;
+                console.log(query)
+                this.options4 = this.list.filter(item => {
+                return item.label.toLowerCase()
+                    .indexOf(query.toLowerCase()) > -1;
+                });
+            }, 200);
+            } else {
+            this.options4 = [];
+            }
         }
     },
     beforeCreate() {
@@ -150,6 +189,9 @@ export default {
             })
     },
     mounted() {
+        this.list = this.states.map(item => {
+            return { value: item, label: item };
+        });
         var vm = this;
         $(vm.$el).find('#date-start').on('change', function(e, date) {
             vm.select2Set(new Date(date).toISOString(), 'startDate')
