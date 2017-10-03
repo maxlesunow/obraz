@@ -72,7 +72,7 @@ class CourseController extends Controller
             'courses.image'
         );
 
-        $query->orderBy('time_start', 'desc');
+        $query->orderBy('time_start', 'asc');
 
 
         //Фильтрация
@@ -121,6 +121,10 @@ class CourseController extends Controller
 
             $query->whereBetween('time_start', [Carbon::now(), Carbon::parse($request->date_stop)]);
         }
+        else{
+            $query->where('time_start', '>', Carbon::now());
+        }
+
 
         //Пагинация
         $perPage = request()->has('per_page') ? (int) request()->per_page : null;
