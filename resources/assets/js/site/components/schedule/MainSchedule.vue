@@ -71,7 +71,7 @@
                                 </ul>
                             </div>
                             <div class="post-author" style="width: 280px;">
-                                2 333.50 р
+                                {{formatMoney(123123)}}
                             </div>
                             <div>
                                 <a :href="event.url" class="btn btn-xs btn-block btn-primary offset-top-20">Записаться на курс онлайн</a>
@@ -100,6 +100,7 @@
 </template>
 
 <script>
+import accounting from 'accounting'
 import VueMultiSelect from './VueMultiSelect'
 
 export default {
@@ -146,6 +147,9 @@ export default {
             
             this.options.filter = filters
             this.loadEvents()
+        },
+        formatMoney (value) {
+            return accounting.formatMoney(value, "₽", 2, ".", ",")
         },
         setDate() {
             console.log(arguments)
