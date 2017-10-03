@@ -47,15 +47,18 @@
                             <div class="post-body offset-top-20">
                                 <p>Краткое Описание</p>
                             </div>
-                            <div class="post-author">
+                            <ul>
                                 <template v-for="speaker in event.speakers">
-                                    <div class="post-author-img">
+                                    <!-- <div class="post-author-img">
                                         <a :href="speaker.url">
                                             <img class="img-circle" width="45" height="45" src="images/users/user-eugene-newman-60x60.jpg" :alt="speaker.full_name">
                                         </a>
-                                    </div>
-                                    <div class="post-author-name text-middle" style="top: 20px">{{speaker.full_name}}</div>
+                                    </div> -->
+                                    <li v-bind:key="speaker.full_name">{{speaker.full_name}}</li>
                                 </template>
+                            </ul>
+                            <div class="post-author" style="width: 280px;">
+                                2 333.50 р
                             </div>
                         </section>
                     </article>

@@ -34777,7 +34777,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Sms.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Sms.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Sms.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -71400,7 +71400,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Login.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Login.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Login.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -73005,7 +73005,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Register.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\site\\components\\Auth\\Register.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Register.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -73297,7 +73297,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\site\\components\\schedule\\MainSchedule.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\site\\components\\schedule\\MainSchedule.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] MainSchedule.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -73368,6 +73368,9 @@ exports.push([module.i, "\n.datePicker {\n    cursor: pointer;\n    font-size: 1
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VueMultiSelect__ = __webpack_require__(259);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VueMultiSelect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__VueMultiSelect__);
+//
+//
+//
 //
 //
 //
@@ -73596,7 +73599,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\site\\components\\schedule\\VueMultiSelect.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\site\\components\\schedule\\VueMultiSelect.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] VueMultiSelect.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -73810,30 +73813,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         attrs: {
           "href": event.url
         }
-      }, [_vm._v(_vm._s(event.name))])])]), _vm._v(" "), _vm._m(2, true), _vm._v(" "), _c('div', {
-        staticClass: "post-author"
-      }, [_vm._l((event.speakers), function(speaker) {
-        return [_c('div', {
-          staticClass: "post-author-img"
-        }, [_c('a', {
-          attrs: {
-            "href": speaker.url
-          }
-        }, [_c('img', {
-          staticClass: "img-circle",
-          attrs: {
-            "width": "45",
-            "height": "45",
-            "src": "images/users/user-eugene-newman-60x60.jpg",
-            "alt": speaker.full_name
-          }
-        })])]), _vm._v(" "), _c('div', {
-          staticClass: "post-author-name text-middle",
-          staticStyle: {
-            "top": "20px"
-          }
+      }, [_vm._v(_vm._s(event.name))])])]), _vm._v(" "), _vm._m(2, true), _vm._v(" "), _c('ul', [_vm._l((event.speakers), function(speaker) {
+        return [_c('li', {
+          key: speaker.full_name
         }, [_vm._v(_vm._s(speaker.full_name))])]
-      })], 2)])])]
+      })], 2), _vm._v(" "), _c('div', {
+        staticClass: "post-author",
+        staticStyle: {
+          "width": "280px"
+        }
+      }, [_vm._v("\n                            2 333.50 р\n                        ")])])])]
     })], 2)]
   }), _vm._v(" "), _c('footer', {
     staticClass: "offset-top-66"
@@ -73944,7 +73933,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\site\\components\\schedule\\CalendarSchedule.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\site\\components\\schedule\\CalendarSchedule.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CalendarSchedule.vue: functional components are not supported with templates, they should use render functions.")}
 
