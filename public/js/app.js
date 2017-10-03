@@ -73321,7 +73321,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
             var filters = [this.formatFilterPhp(this.filterField)].join(',');
 
-            this.options.filters = filters;
+            this.options.filter = filters;
             this.loadEvents();
         },
         setDate: function setDate() {
