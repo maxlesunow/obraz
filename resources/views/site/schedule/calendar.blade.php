@@ -9,36 +9,23 @@
     <div class="rdc-events text-left">
         <a class="rdc-events_close"></a>
         <ul>
-            <li class="rdc-event" data-date="04/12/2016">
-                <div class="rdc-event-wrap">
-                    <article class="post widget-event">
-                        <div class="post-meta">
-                            <span class="icon icon-xxs text-picton-blue mdi mdi-clock"></span>
-                            <time class="text-dark" datetime="2016-01-01">8:00 AM</time>
-                        </div>
-                        <div class="post-title">
-                            <h6 class="text-regular">
-                                <a href="#">Pitae augue vitae matt</a>
-                            </h6>
-                        </div>
-                    </article>
-                </div>
-            </li>
-            <li class="rdc-event" data-date="04/13/2016">
-                <div class="rdc-event-wrap">
-                    <article class="post widget-event">
-                        <div class="post-meta">
-                            <span class="icon icon-xxs text-picton-blue mdi mdi-clock"></span>
-                            <time class="text-dark" datetime="2016-01-01">9:00 AM</time>
-                        </div>
-                        <div class="post-title">
-                            <h6 class="text-regular">
-                                <a href="#">Pitae augue vitae matt</a>
-                            </h6>
-                        </div>
-                    </article>
-                </div>
-            </li>
+            @foreach($calendar_courses as $course)
+                <li class="rdc-event" data-date="{{Carbon\Carbon::parse($course->time_start)->format('m/d/Y')}}">
+                    <div class="rdc-event-wrap">
+                        <article class="post widget-event">
+                            <div class="post-meta">
+                                <span class="icon icon-xxs text-picton-blue mdi mdi-clock"></span>
+                                <time class="text-dark" datetime="2016-01-01">{{Carbon\Carbon::parse($course->time_start)->format('H:i')}}</time>
+                            </div>
+                            <div class="post-title">
+                                <h6 class="text-regular">
+                                    <a href="{{$course->url}}">{{$course->name}}</a>
+                                </h6>
+                            </div>
+                        </article>
+                    </div>
+                </li>
+            @endforeach
         </ul>
     </div>
 </div>

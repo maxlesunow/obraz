@@ -12,7 +12,7 @@ class Review extends Model
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
-        'status', 'rating', 'text'
+        'status', 'rating', 'text', 'date', 'show_home'
     ];
 
     protected $with=['user'];

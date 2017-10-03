@@ -21,15 +21,8 @@
                      <div class="range range-xs-center">
                             <div class="cell-xs-10 cell-sm-5 cell-lg-4 text-md-left">
                                    <!-- Member Block Type 5-->
-                                   <div class="member-block-type-5 inset-md-right-30"><img class="img-responsive center-block" src="{{$speaker->image}}" width="437" height="437" alt="">
-                                          <div class="member-block-body text-center">
-                                                 <div class="offset-top-24 offset-md-top-41 text-center">
-                                                        <p><span class="icon icon-xxs text-middle mdi mdi-cellphone-android text-darker"></span> <span class="text-middle"><a class="text-dark" href="callto:#">1-800-1234-567</a></span>
-                                                        </p>
-                                                        <p><span class="icon icon-xxs text-middle mdi mdi-email-open text-darker"></span> <span class="text-middle"><a class="text-dark" href="mailto:#">johndoe@demolink.org</a></span>
-                                                        </p>
-                                                 </div>
-                                          </div>
+                                   <div class="member-block-type-5 inset-md-right-30">
+                                          <img class="img-responsive center-block" src="{{$speaker->image}}" width="437" height="437" alt="">
                                    </div>
                             </div>
                             <div class="cell-xs-10 text-sm-left cell-sm-7 cell-lg-8 offset-top-24 offset-sm-top-0">

@@ -19,7 +19,7 @@
                                         <div class="offset-top-41">
                                             <h3 class="font-accent">{{$review->user->full_name}}</h3>
                                         </div>
-                                        <p class="text-uppercase text-bold text-spacing-120 offset-top-10"><span class="small text-malibu">{{ Carbon\Carbon::parse($review->created_at)->formatLocalized('%d %B %Y')}}</span></p>
+                                        <p class="text-uppercase text-bold text-spacing-120 offset-top-10"><span class="small text-malibu">{{ Carbon\Carbon::parse($review->date)->formatLocalized('%d %B %Y')}}</span></p>
                                     </blockquote>
                                 </div>
                         @endforeach
