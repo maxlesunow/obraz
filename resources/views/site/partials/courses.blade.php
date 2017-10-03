@@ -19,7 +19,7 @@
                             <!-- Post media-->
                             <header class="post-media">
                                 <a href="{{$course->url}}">
-                                    <img src="/images/blog/post-07-270x310.jpg" width="270" height="310" alt=""/>
+                                    <img src="{{$course->image}}" width="270" height="310" alt=""/>
                                     <span class="icon fa fa-info-circle"></span>
                                 </a>
                             </header>

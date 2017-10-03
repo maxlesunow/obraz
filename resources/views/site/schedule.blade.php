@@ -16,7 +16,7 @@
 
 @section('content')
 <!-- Page Content-->
-<main class="page-content section-98 section-sm-top-110 section-sm-bottom-124">
+<main class="page-content section-66">
   <div class="shell">
     <div class="range range-sm-center range-lg-left">
       <div class="cell-sm-10 cell-md-8 cell-lg-7 cell-md-push-2">
