@@ -1,3 +1,8 @@
+/**
+ * Intense monter template plugins
+ */
+require('./plugins/rdCalendar.src')
+
 
 window._ = require('lodash');
 

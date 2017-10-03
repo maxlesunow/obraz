@@ -188,7 +188,7 @@
                   break;
               if (1 > y - startWeekDay) {
                   // если заполняются дни из предыдущего месяца
-                  dayInTable.text(daysInPrevMonth + (y - startWeekDay)).addClass(options.classes.table_prev), 
+                  dayInTable.text(daysInPrevMonth + (y - startWeekDay)).css('color', '#ccc').addClass(options.classes.table_prev), 
                   iterDate = new Date(currDate.getFullYear(),currDate.getMonth() - 1,daysInPrevMonth + (y - startWeekDay))
               } else if (daysInMonth + startWeekDay >= y) { 
                   // если заполняются дни из текущего месяца
@@ -196,7 +196,7 @@
                   iterDate = new Date(currDate.getFullYear(),currDate.getMonth(),y - startWeekDay) 
               } else {
                   // если заполяются дни из следующего месяца
-                  dayInTable.text(u).addClass(options.classes.table_next), 
+                  dayInTable.text(u).css('color', '#ccc').addClass(options.classes.table_next), 
                   iterDate = new Date(currDate.getFullYear(),currDate.getMonth() + 1,u++)
               }
               

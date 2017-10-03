@@ -33393,10 +33393,10 @@ module.exports = {
 /* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(242);
 __webpack_require__(243);
 __webpack_require__(244);
 __webpack_require__(245);
+__webpack_require__(246);
 
 // require("./dist/inputmask/phone-codes/phone-be");
 // require("./dist/inputmask/phone-codes/phone-nl");
@@ -34763,13 +34763,13 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(246)
+  __webpack_require__(247)
 }
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(248),
-  /* template */
   __webpack_require__(249),
+  /* template */
+  __webpack_require__(250),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -34959,11 +34959,11 @@ Vue.component(__WEBPACK_IMPORTED_MODULE_0_element_ui__["Option"].name, __WEBPACK
 // Vue.component('example', require('./components/Example.vue'));
 
 // Vue.component('auth', require('./components/Auth/Auth.vue'));
-Vue.component('login', __webpack_require__(240));
-Vue.component('register', __webpack_require__(251));
+Vue.component('login', __webpack_require__(241));
+Vue.component('register', __webpack_require__(252));
 
-Vue.component('main-schedule', __webpack_require__(254));
-Vue.component('calendar-schedule', __webpack_require__(264));
+Vue.component('main-schedule', __webpack_require__(255));
+Vue.component('calendar-schedule', __webpack_require__(265));
 
 var app = new Vue({
   el: '#app'
@@ -71149,6 +71149,10 @@ module.exports = "/fonts/vendor/element-ui/lib/theme-default/element-icons.ttf?b
 /* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
+/**
+ * Intense monter template plugins
+ */
+__webpack_require__(240);
 
 window._ = __webpack_require__(28);
 
@@ -71205,14 +71209,190 @@ if (token) {
 
 /***/ }),
 /* 240 */
+/***/ (function(module, exports) {
+
+/**
+ * @module       RD Calendar
+ * @author       Evgeniy Gusarov
+ * @see          https://ua.linkedin.com/pub/evgeniy-gusarov/8a/a40/54a
+ * @version      1.0.0
+ */
+!function (e, t, a, n) {
+    "use strict";
+
+    function rdCalendar(t, a) {
+        this.options = e.extend({}, rdCalendar.Defaults, a), this.$element = e(t);
+        var n = this.$element.find("." + this.options.classes.table).data("date");
+        this.$element.data("currentDate", n ? new Date(n) : new Date()), this.$element.data("todayDate", new Date()), this.evt = {}, this._handlers = {
+            "rdc.next": this.next,
+            "rdc.prev": this.prev,
+            "rdc.refresh": e.proxy(this.refresh, this)
+        }, this.initialize();
+    }
+    rdCalendar.Defaults = {
+        days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        classes: {
+            base: "rd-calendar",
+            next: "rdc-next",
+            prev: "rdc-prev",
+            year: "rdc-fullyear",
+            date: "rdc-date",
+            day: "rdc-day",
+            month: "rdc-month",
+            time: "rdc-time",
+            event: "rdc-event",
+            events: "rdc-events",
+            events_close: "rdc-events_close",
+            table: "rdc-table",
+            table_today: "rdc-table_today",
+            table_event: "rdc-table_event",
+            table_events: "rdc-table_events",
+            table_has_events: "rdc-table_has-events",
+            table_events_count: "rdc-table_events-count",
+            table_day: "rdc-table_day",
+            table_date: "rdc-table_date",
+            table_next: "rdc-table_next",
+            table_prev: "rdc-table_prev",
+            today_date: "rdc-today_date",
+            today_month: "rdc-today_month",
+            today_year: "rdc-today_fullyear",
+            today_day: "rdc-today_day"
+        }
+    }, rdCalendar.prototype.initialize = function () {
+        this.$element.trigger("rdc.initialize"), this.read(), this.create(), this.watch(), this.$element.trigger("rdc.initialized");
+    }, rdCalendar.prototype.create = function () {
+        var t = this;
+        t.$element.find("." + t.options.classes.today_date).each(function () {
+            e(this).text(t.getTodayDate());
+        }).end().find("." + t.options.classes.today_month).each(function () {
+            e(this).text(t.getTodayMonth());
+        }).end().find("." + t.options.classes.today_year).each(function () {
+            e(this).text(t.getTodayYear());
+        }).end().find("." + t.options.classes.today_day).each(function () {
+            e(this).text(t.getTodayDay());
+        }), t.refresh();
+    }, rdCalendar.prototype.watch = function () {
+        var t = this;
+        t.$element.on(t._handlers).find("." + t.options.classes.next).on("click", function () {
+            t.$element.trigger("rdc.next"), t.$element.trigger("rdc.refresh");
+        }).end().find("." + t.options.classes.prev).on("click", function () {
+            t.$element.trigger("rdc.prev"), t.$element.trigger("rdc.refresh");
+        }).end().find("." + t.options.classes.events_close).on("click", function () {
+            t.$element.removeClass("show-events"), t.$element.find("." + t.options.classes.event + ", ." + t.options.classes.table_event).removeClass("active");
+        }).end().delegate("." + t.options.classes.table_has_events, "click", function () {
+            t.$element.find("." + t.options.classes.table_has_eventsm + ", ." + t.options.classes.event).removeClass("active");
+            var a = e(this).find("." + t.options.classes.table_date).data("date");
+            for (var n in t.evt[a]) {
+                t.evt[a][n].addClass("active");
+            }e(this).addClass("active"), t.$element.addClass("show-events");
+        });
+    }, rdCalendar.prototype.read = function () {
+        var t = this.options,
+            a = this;
+        this.$element.find("." + t.classes.event).each(function () {
+            var t = e(this),
+                n = new Date(t.data("date")).valueOf();
+            n in a.evt || (a.evt[n] = []), a.evt[n].push(t);
+        });
+    }, rdCalendar.prototype.next = function () {
+        var t = e(this),
+            a = t.data("currentDate");
+        a = 11 == a.getMonth() ? new Date(a.getFullYear() + 1, 0, 1) : new Date(a.getFullYear(), a.getMonth() + 1, 1), t.data("currentDate", a);
+    }, rdCalendar.prototype.prev = function () {
+        var t = e(this),
+            a = t.data("currentDate");
+        a = 0 == a.getMonth() ? new Date(a.getFullYear() - 1, 11, 1) : new Date(a.getFullYear(), a.getMonth() - 1, 1), t.data("currentDate", a);
+    }, rdCalendar.prototype.getTodayYear = function () {
+        return this.$element.data("todayDate").getFullYear();
+    }, rdCalendar.prototype.getTodayDay = function () {
+        return this.options.days[this.$element.data("todayDate").getDay()];
+    }, rdCalendar.prototype.getTodayDate = function () {
+        return this.$element.data("todayDate").getDate();
+    }, rdCalendar.prototype.getTodayMonth = function () {
+        return this.options.months[this.$element.data("todayDate").getMonth()];
+    }, rdCalendar.prototype.getMonth = function () {
+        return this.options.months[this.$element.data("currentDate").getMonth()];
+    }, rdCalendar.prototype.getYear = function () {
+        return this.$element.data("currentDate").getFullYear();
+    }, rdCalendar.prototype.refresh = function () {
+        var t = this,
+            options = this.options,
+            s = this.$element.find("." + options.classes.table),
+            r = e("<table/>");
+        t.$element.find("." + t.options.classes.month).each(function () {
+            var l = e(this);
+            l.text(t.getMonth());
+        }).end().find("." + t.options.classes.year).each(function () {
+            var l = e(this);
+            l.text(t.getYear());
+        });
+        for (var d = e("<tr/>"), o = 0; o < options.days.length; o++) {
+            d.append(e("<th/>", {
+                "class": options.classes.table_day,
+                text: options.days[o]
+            }));
+        }r.append(d);
+
+        var mod = function mod(a, b) {
+            return (a % b + b) % b;
+        };
+
+        var currDate = this.$element.data("currentDate"),
+            daysInMonth = new Date(currDate.getFullYear(), currDate.getMonth() + 1, 0).getDate(),
+            daysInPrevMonth = new Date(currDate.getFullYear(), currDate.getMonth(), 0).getDate(),
+            startWeekDay = mod(new Date(currDate.getFullYear(), currDate.getMonth(), 1).getDay() - 1, 7),
+            u = 1;
+
+        for (o = 0; 7 > o; o++) {
+            d = e("<tr/>");
+            for (var p = 0; 7 > p; p++) {
+                var iterDate,
+                    y = 7 * o + p + 1,
+                    f = e("<td/>"),
+                    g = n,
+                    _ = n,
+                    dayInTable = e("<div/>", { "class": options.classes.table_date }),
+                    today = new Date();
+
+                // если строка недели не содержит дни из текущего месяца
+                if (today.setHours(0), today.setMinutes(0), today.setSeconds(0), today.setMilliseconds(0), 0 == p && y > daysInMonth + startWeekDay) break;
+                if (1 > y - startWeekDay) {
+                    // если заполняются дни из предыдущего месяца
+                    dayInTable.text(daysInPrevMonth + (y - startWeekDay)).css('color', '#ccc').addClass(options.classes.table_prev), iterDate = new Date(currDate.getFullYear(), currDate.getMonth() - 1, daysInPrevMonth + (y - startWeekDay));
+                } else if (daysInMonth + startWeekDay >= y) {
+                    // если заполняются дни из текущего месяца
+                    dayInTable.text(y - startWeekDay), iterDate = new Date(currDate.getFullYear(), currDate.getMonth(), y - startWeekDay);
+                } else {
+                    // если заполяются дни из следующего месяца
+                    dayInTable.text(u).css('color', '#ccc').addClass(options.classes.table_next), iterDate = new Date(currDate.getFullYear(), currDate.getMonth() + 1, u++);
+                }
+
+                iterDate.valueOf() == today.valueOf() && dayInTable.addClass(options.classes.table_today), iterDate.valueOf() in this.evt && (f.addClass(options.classes.table_has_events), g = e("<div/>", { "class": options.classes.table_events_count }).text(this.evt[iterDate.valueOf()].length), _ = e("<ul/>", { "class": options.classes.table_events }), e(this.evt[iterDate.valueOf()]).each(function () {
+                    _.append(e("<li/>", { "class": options.classes.table_event }).html(e(this).html()));
+                })), f.append(dayInTable.data("date", iterDate.valueOf())), g && f.append(g), _ && f.append(_), d.append(f);
+            }
+            "" != d.html() && r.append(d);
+        }
+        var D = s.find("table");
+        D.length ? D.replaceWith(r) : r.appendTo(s);
+    }, e.fn.rdCalendar = function (t) {
+        return this.each(function () {
+            e(this).data("rdCalendar") || e(this).data("rdCalendar", new rdCalendar(this, t));
+        });
+    }, e.fn.rdCalendar.Constructor = rdCalendar;
+}(window.jQuery, window, document);
+
+/***/ }),
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(241),
+  __webpack_require__(242),
   /* template */
-  __webpack_require__(250),
+  __webpack_require__(251),
   /* styles */
   null,
   /* scopeId */
@@ -71244,7 +71424,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 241 */
+/* 242 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -71370,7 +71550,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 242 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -71868,7 +72048,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 });
 
 /***/ }),
-/* 243 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -71973,7 +72153,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 });
 
 /***/ }),
-/* 244 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -72328,7 +72508,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 });
 
 /***/ }),
-/* 245 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -72397,13 +72577,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 });
 
 /***/ }),
-/* 246 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(247);
+var content = __webpack_require__(248);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -72423,7 +72603,7 @@ if(false) {
 }
 
 /***/ }),
-/* 247 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -72437,7 +72617,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 248 */
+/* 249 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72537,7 +72717,7 @@ var _this = this;
 });
 
 /***/ }),
-/* 249 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -72657,7 +72837,7 @@ if (false) {
 }
 
 /***/ }),
-/* 250 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -72809,15 +72989,15 @@ if (false) {
 }
 
 /***/ }),
-/* 251 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(252),
-  /* template */
   __webpack_require__(253),
+  /* template */
+  __webpack_require__(254),
   /* styles */
   null,
   /* scopeId */
@@ -72849,7 +73029,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 252 */
+/* 253 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72953,7 +73133,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 253 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -73097,19 +73277,19 @@ if (false) {
 }
 
 /***/ }),
-/* 254 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(255)
+  __webpack_require__(256)
 }
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(257),
+  __webpack_require__(258),
   /* template */
-  __webpack_require__(263),
+  __webpack_require__(264),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -73141,13 +73321,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 255 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(256);
+var content = __webpack_require__(257);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -73167,7 +73347,7 @@ if(false) {
 }
 
 /***/ }),
-/* 256 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -73181,12 +73361,12 @@ exports.push([module.i, "\n.datePicker {\n    cursor: pointer;\n    font-size: 1
 
 
 /***/ }),
-/* 257 */
+/* 258 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VueMultiSelect__ = __webpack_require__(258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VueMultiSelect__ = __webpack_require__(259);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VueMultiSelect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__VueMultiSelect__);
 //
 //
@@ -73396,19 +73576,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 258 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(259)
+  __webpack_require__(260)
 }
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(261),
-  /* template */
   __webpack_require__(262),
+  /* template */
+  __webpack_require__(263),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -73440,13 +73620,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 259 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(260);
+var content = __webpack_require__(261);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -73466,7 +73646,7 @@ if(false) {
 }
 
 /***/ }),
-/* 260 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -73480,7 +73660,7 @@ exports.push([module.i, "\n.el-select[data-v-5511c93d] {\n    width: 100%;\n}\n.
 
 
 /***/ }),
-/* 261 */
+/* 262 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73530,7 +73710,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 262 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -73572,7 +73752,7 @@ if (false) {
 }
 
 /***/ }),
-/* 263 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -73744,19 +73924,19 @@ if (false) {
 }
 
 /***/ }),
-/* 264 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(265)
+  __webpack_require__(266)
 }
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(267),
-  /* template */
   __webpack_require__(268),
+  /* template */
+  __webpack_require__(269),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -73788,13 +73968,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 265 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(266);
+var content = __webpack_require__(267);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -73814,7 +73994,7 @@ if(false) {
 }
 
 /***/ }),
-/* 266 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -73828,7 +74008,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 267 */
+/* 268 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73884,7 +74064,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 268 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
