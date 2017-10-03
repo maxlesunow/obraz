@@ -68,6 +68,7 @@ class CourseController extends Controller
             'courses.cost',
             'courses.time_register',
             'courses.time_start',
+            'courses.mini_description',
             'courses.description',
             'courses.image'
         );

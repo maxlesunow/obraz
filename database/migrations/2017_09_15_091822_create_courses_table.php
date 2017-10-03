@@ -20,8 +20,10 @@ class CreateCoursesTable extends Migration
             $table->float('cost')->nullable();
             $table->dateTime('time_register')->nullable();
             $table->dateTime('time_start')->nullable();
+            $table->text('mini_description')->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
+            $table->boolean('show_home')->default(false);
             $table->string('meta_title')->nullable();
             $table->string('meta_description')->nullable();
             $table->string('meta_keywords')->nullable();
