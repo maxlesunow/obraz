@@ -34,7 +34,7 @@
         <aside class="text-left">
             <div class="range">
               <div class="cell-sm-6 cell-md-12 offset-sm-top-41 offset-md-top-0">
-                <calendar-schedule></calendar-schedule>
+                @include('site.schedule.calendar')
               </div>
               <div class="cell-sm-6 cell-md-12 offset-top-41">
                 @include('site.schedule.newest')
