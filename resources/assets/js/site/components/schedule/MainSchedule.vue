@@ -35,8 +35,8 @@
                         <section class="post-content text-left">
                             <ul class="list-inline">
                                 <li>
-                                    <span class="label-custom label-lg-custom label-rounded-custom label-primary">{{event.course_type.name}}</span>
-                                    <span class="label-custom label-lg-custom label-rounded-custom label-success">{{event.course_group.name}}</span>
+                                    <span class="label-custom label-sm-custom label-rounded-custom label-primary">{{event.course_type.name}}</span>
+                                    <span class="label-custom label-sm-custom label-rounded-custom label-info">{{event.course_group.name}}</span>
                                 </li>
                             </ul>
                             <div class="post-title">
@@ -45,20 +45,36 @@
                                 </h6>
                             </div>
                             <div class="post-body offset-top-20">
-                                <p>Краткое Описание</p>
+                                <p>{{event.mini_description}}</p>
                             </div>
-                            <ul>
+                            <div class="post-meta offset-top-20">
                                 <template v-for="speaker in event.speakers">
                                     <!-- <div class="post-author-img">
                                         <a :href="speaker.url">
                                             <img class="img-circle" width="45" height="45" src="images/users/user-eugene-newman-60x60.jpg" :alt="speaker.full_name">
                                         </a>
                                     </div> -->
-                                    <li v-bind:key="speaker.full_name">{{speaker.full_name}}</li>
+                                    <div>
+                                        <span class="icon-xxs text-picton-blue mdi mdi-account-multiple"></span>
+                                        <span v-bind:key="speaker.full_name" class="text-dark">{{speaker.full_name}}</span>
+                                    </div>
                                 </template>
-                            </ul>
+                                <ul class="list-inline list-inline-sm">
+                                    <li>
+                                        <span class="icon-xxs text-picton-blue mdi mdi-map-marker-radius"></span>
+                                        <span class="text-dark">{{event.address}}</span>
+                                    </li>
+                                    <li>
+                                        <span class="icon-xxs text-picton-blue mdi mdi-clock"></span>
+                                        <time class="text-dark">{{getDateStart(event.time_stamp_start)}}</time>
+                                    </li>
+                                </ul>
+                            </div>
                             <div class="post-author" style="width: 280px;">
                                 2 333.50 р
+                            </div>
+                            <div>
+                                <a :href="event.url" class="btn btn-xs btn-block btn-primary offset-top-20">Записаться на курс онлайн</a>
                             </div>
                         </section>
                     </article>
@@ -71,10 +87,10 @@
                 <nav>
                     <ul class="pager">
                         <li class="previous" v-if="!isFirstPage()" @click.prevent="prevPage">
-                            <a href><span class="icon-left mdi mdi-arrow-left" aria-hidden="true">Назад</span></a>
+                            <a href><span class="icon-left mdi mdi-arrow-left" aria-hidden="true"></span>Назад</a>
                         </li>
                         <li class="next" v-if="!isLastPage()" @click.prevent="nextPage">
-                            <a href><span class="icon-right mdi mdi-arrow-right" aria-hidden="true">Далее</span></a>
+                            <a href><span class="icon-right mdi mdi-arrow-right" aria-hidden="true"></span>Далее</a>
                         </li>
                     </ul>
                 </nav>
@@ -135,7 +151,11 @@ export default {
             console.log(arguments)
         },
         getDateGroup(date) {
-            return moment(date).locale('ru').format("DD MMM YY")
+            return moment(date).locale('ru').format("DD MMMM YYYY")
+        },
+        getDateStart(date) {
+            console.log(date)
+            return moment(date).locale('ru').format("DD MMMM hh:mm")
         },
         isFirstPage() {
             return this.options.page === 1 
@@ -154,6 +174,7 @@ export default {
         fixEvents(events = []) {
             var MAX_SPEAKERS = 3
             var fixedTimeStart = _.map(events, (el) => {
+                el.time_stamp_start = el.time_start
                 el.time_start && (el.time_start = moment(el.time_start).locale('ru').format("YYYY-MM-DD") )
                 el.speakers && (el.speakers = el.speakers.slice(0, MAX_SPEAKERS) )
                 return el
