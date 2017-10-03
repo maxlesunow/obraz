@@ -125,7 +125,7 @@ export default {
             }
             var filters = [this.formatFilterPhp(this.filterField)].join(',')
             
-            this.options.filters = filters
+            this.options.filter = filters
             this.loadEvents()
         },
         setDate() {
