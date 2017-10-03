@@ -58,7 +58,7 @@
                                 </template>
                             </ul>
                             <div class="post-author" style="width: 280px;">
-                                2 333.50 р
+                                {{formatMoney(123123)}}
                             </div>
                         </section>
                     </article>
@@ -84,6 +84,7 @@
 </template>
 
 <script>
+import accounting from 'accounting'
 import VueMultiSelect from './VueMultiSelect'
 
 export default {
@@ -130,6 +131,9 @@ export default {
             
             this.options.filter = filters
             this.loadEvents()
+        },
+        formatMoney (value) {
+            return accounting.formatMoney(value, "₽", 2, ".", ",")
         },
         setDate() {
             console.log(arguments)
