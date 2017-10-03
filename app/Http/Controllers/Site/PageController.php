@@ -8,6 +8,7 @@ use App\Review;
 use App\Speaker;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class PageController extends Controller
 {
@@ -19,7 +20,7 @@ class PageController extends Controller
      */
     public function home()
     {
-        $courses = Course::where('id', '<', 9)->paginate(8);
+        $courses = Course::where('time_start', '>', Carbon::now())->orderBy('time_start', 'asc')->paginate(8);
         $reviews = Review::where('id', '<', 9)->paginate(8);
         $speakers = Speaker::where('show_home', true)->get();
         $page = Page::where('type', 'home')->first();
@@ -34,8 +35,9 @@ class PageController extends Controller
 
     public function schedule()
     {
+        $upcoming_courses = Course::where('time_start', '>', Carbon::now())->orderBy('time_start', 'asc')->paginate(4);
         $page = Page::where('type', 'schedule')->first();
-        return view('site.schedule', compact('page'));
+        return view('site.schedule', compact('page', 'upcoming_courses'));
     }
 
     public function contact()
