@@ -99,7 +99,7 @@
                                                                <div class="unit-body">
                                                                       <h4 class="text-bold text-malibu">Сколько стоит?</h4>
                                                                       <div class="product-price h3">
-                                                                             <span class="product-price-new text-bold text-primary">{{$course->cost}} </span>
+                                                                             <span class="product-price-new text-bold text-primary">{{number_format($course->cost, 2, '.', ' ')}} ₽</span>
                                                                       </div>
                                                                </div>
                                                         </div>
