@@ -22,7 +22,7 @@ $factory->define(App\Speaker::class, function () {
         'position' => 'Врач стоматолог',
         'image' => '/images/speakers/1.jpg',
         'show_home' => false,
-        'description' => $faker->randomHtml(2,3) ,
+        'description' => $faker->paragraph($nbSentences = 5, $variableNbSentences = true) ,
         'meta_title' => $faker->sentence($nbWords = 6, $variableNbWords = true) ,
         'meta_description' => $faker->sentence($nbWords = 6, $variableNbWords = true) ,
         'meta_keywords' => $faker->sentence($nbWords = 6, $variableNbWords = true) ,

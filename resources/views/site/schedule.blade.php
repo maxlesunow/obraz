@@ -6,11 +6,11 @@
 
 @section('breadcrumbs')
     @include('site.layouts.breadcrumbs', [
-        'title' => 'Расписание курсов',
+        'title' => $page->title,
         'icon' => 'mdi-calendar',
         'breadcrumbs' => array(
             array('url' => '/', 'title' => 'Главная'),
-            array('title' => 'Расписание курсов'),
+            array('title' => $page->title),
         )])
 @endsection
 
@@ -19,8 +19,13 @@
 <main class="page-content section-66">
   <div class="shell">
     <div class="range range-sm-center range-lg-left">
-      <div class="cell-sm-10 cell-md-8 cell-lg-7 cell-md-push-2">
+      <div class="cell-sm-10 cell-md-8 cell-lg-9 cell-md-push-2">
         <div class="inset-left-0 inset-md-left-20">
+          @isset($page->text)
+            <div class="text-justify section-bottom-20">
+              <p>{!!$page->text!!}</p>
+            </div>
+          @endisset
           <main-schedule></main-schedule>
         </div>
       </div>

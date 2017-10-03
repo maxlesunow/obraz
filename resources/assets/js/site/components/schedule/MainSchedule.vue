@@ -14,12 +14,12 @@
               </div>
               <div class="cell-sm-12 cell-md-6 text-left">
                 <div class="form-group offset-top-24">
-                    <input class="form-control datePicker" id="date-start" type="text" placeholder="Старт" name="date" data-time-picker="date">
+                    <input class="form-control datePicker" id="date-start" type="text" placeholder="Дата курса (от)" name="date" data-time-picker="date">
                 </div>
               </div>
               <div class="cell-sm-12 cell-md-6 text-left">
                 <div class="form-group offset-top-24">
-                    <input class="form-control datePicker" id="date-stop" type="text" placeholder="Стоп" name="date" data-time-picker="date">
+                    <input class="form-control datePicker" id="date-stop" type="text" placeholder="Дата курса (до)" name="date" data-time-picker="date">
                 </div>
               </div>
             </div>
@@ -71,7 +71,9 @@
                                 </ul>
                             </div>
                             <div class="post-author" style="width: 280px;">
-                                {{formatMoney(123123)}}
+                                <div class="product-price h">
+                                    <span class="product-price-new text-bold text-primary">{{formatMoney(event.cost)}} ₽</span>
+                                </div>
                             </div>
                             <div>
                                 <a :href="event.url" class="btn btn-xs btn-block btn-primary offset-top-20">Записаться на курс онлайн</a>
@@ -149,7 +151,7 @@ export default {
             this.loadEvents()
         },
         formatMoney (value) {
-            return accounting.formatMoney(value, "₽", 2, ".", ",")
+            return accounting.formatMoney(value, 2, ".", ",")
         },
         setDate() {
             console.log(arguments)

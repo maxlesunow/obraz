@@ -40,7 +40,7 @@
 
                                    <hr class="divider reveal-inline-block bg-mantis">
 
-                                   <div class="offset-top-24 offset-md-top-50">{!! $speaker->description !!}</div>
+                                   <div class="offset-top-24">{!! $speaker->description !!}</div>
                             </div>
                      </div>
               </div>

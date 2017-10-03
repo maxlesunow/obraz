@@ -5,7 +5,9 @@
         @endisset
 
         @isset($description)
-            <p>{!!$description!!}</p>
+            <div class="text-justify">
+                <p>{!!$description!!}</p>
+            </div>
         @endisset
     </div>
 </section>

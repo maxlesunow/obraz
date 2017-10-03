@@ -24,7 +24,7 @@ $factory->define(App\Course::class, function () {
         'cost' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 1000, $max = 100000),
         'time_register' => $time_register,
         'time_start' => $time_start,
-        'description' => $faker->randomHtml(2,3) ,
+        'description' => $faker->paragraph($nbSentences = 5, $variableNbSentences = true) ,
         'mini_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
         'image' => '/images/blog/post-07-270x310.jpg',
         'show_home' => $faker->randomElement($array = array (true,false)),
