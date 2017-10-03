@@ -20,7 +20,7 @@ class PageController extends Controller
      */
     public function home()
     {
-        $courses = Course::where('time_start', '>', Carbon::now())->orderBy('time_start', 'asc')->paginate(8);
+        $courses = Course::where('time_start', '>', Carbon::now())->where('show_home', true)->orderBy('time_start', 'asc')->paginate(8);
         $reviews = Review::where('id', '<', 9)->paginate(8);
         $speakers = Speaker::where('show_home', true)->get();
         $page = Page::where('type', 'home')->first();
