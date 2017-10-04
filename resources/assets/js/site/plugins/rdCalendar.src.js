@@ -85,7 +85,7 @@
           t.$element.removeClass("show-events"),
           t.$element.find("." + t.options.classes.event + ", ." + t.options.classes.table_event).removeClass("active")
       }).end().delegate("." + t.options.classes.table_has_events, "click", function() {
-          t.$element.find("." + t.options.classes.table_has_eventsm + ", ." + t.options.classes.event).removeClass("active");
+          t.$element.find("." + t.options.classes.table_has_events + ", ." + t.options.classes.event).removeClass("active");
           var a = e(this).find("." + t.options.classes.table_date).data("date");
           for (var n in t.evt[a])
               t.evt[a][n].addClass("active");
