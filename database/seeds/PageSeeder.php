@@ -21,7 +21,6 @@ class PageSeeder extends Seeder
             'meta_title' => 'meta_title',
             'meta_description' => 'meta_description',
             'meta_keywords' => 'meta_keywords',
-            'meta_url' => '',
         ]);
 
         DB::table('pages')->insert([
@@ -34,7 +33,6 @@ class PageSeeder extends Seeder
             'meta_title' => 'meta_title',
             'meta_description' => 'meta_description',
             'meta_keywords' => 'meta_keywords',
-            'meta_url' => '',
         ]);
 
         DB::table('pages')->insert([
@@ -46,7 +44,6 @@ class PageSeeder extends Seeder
             'meta_title' => 'meta_title',
             'meta_description' => 'meta_description',
             'meta_keywords' => 'meta_keywords',
-            'meta_url' => '',
         ]);
 
         DB::table('pages')->insert([
@@ -59,7 +56,6 @@ class PageSeeder extends Seeder
             'meta_title' => 'meta_title',
             'meta_description' => 'meta_description',
             'meta_keywords' => 'meta_keywords',
-            'meta_url' => '',
         ]);
 
         DB::table('pages')->insert([
@@ -71,7 +67,6 @@ class PageSeeder extends Seeder
             'meta_title' => 'meta_title',
             'meta_description' => 'meta_description',
             'meta_keywords' => 'meta_keywords',
-            'meta_url' => '',
         ]);
 
     }
