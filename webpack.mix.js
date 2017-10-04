@@ -38,3 +38,7 @@ mix
 
     .copyDirectory('resources/assets/fonts/admin', 'public/css/fonts')
     .copyDirectory('node_modules/summernote/dist/font', 'public/css/font');
+
+    if (mix.inProduction()) {
+        mix.version();
+    }
