@@ -37,5 +37,11 @@ class Verification extends Model
         $this->wrong_pass = 0;
         $this->date_expire = Carbon::now()->addMinute(5);
     }
+    
+    public function reGenerateCodeTest(){
+        $this->code = ''.9999;
+        $this->wrong_pass = 0;
+        $this->date_expire = Carbon::now()->addMinute(5);
+    }
 
 }

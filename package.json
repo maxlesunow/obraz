@@ -39,6 +39,7 @@
         "select2": "^4.0.3",
         "summernote": "^0.8.8",
         "switchery": "0.0.2",
+        "vue-star-rating": "^1.4.0",
         "vuetable-2": "^1.6.5"
     }
 }

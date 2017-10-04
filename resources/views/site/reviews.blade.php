@@ -68,26 +68,7 @@
                     @guest
                     <h6 class="offset-top-34 text-uppercase text-center text-bold">Оставлять отзывы могут только клиенты нашего сайта</h6>
                     @else
-                        <h6 class="offset-top-34 text-uppercase text-left text-bold">{{Auth::user()->first_name}} {{Auth::user()->middle_name}}, пользовались нашими услугами? Оставьте отзыв</h6>
-                        <form class="offset-top-10 text-left">
-                            <div class="form-group">
-                                <label class="form-label form-label-outside" for="box-comment-classic-comment-message">Оценка:</label>
-                                <div class="product-rating">
-                                    <span class="mdi mdi-star"></span>
-                                    <span class="mdi mdi-star"></span>
-                                    <span class="mdi mdi-star"></span>
-                                    <span class="mdi mdi-star-half"></span>
-                                    <span class="mdi mdi-star-outline"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label form-label-outside" for="box-comment-classic-comment-message">Сообщение:</label>
-                                <textarea class="form-control" id="box-comment-classic-comment-message" data-constraints="@Required"></textarea>
-                            </div>
-                            <div class="group-sm text-left offset-top-20">
-                                <button class="btn btn-md btn-primary" type="button">Оставить отзыв</button>
-                            </div>
-                        </form>
+                    <send-review first-name="{{Auth::user()->first_name}}" middle-name="{{Auth::user()->middle_name}}"></send-review>
                     @endguest
                 </section>
             </div>
