@@ -39,6 +39,8 @@ class PageController extends Controller
 
         $query = Page::query();
 
+        $query->select('id', 'type', 'title');
+
         //Сортировка
         if (request()->has('sort')) {
             // Мультисортировка
