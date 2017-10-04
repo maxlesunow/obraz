@@ -4632,6 +4632,88 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4941,88 +5023,6 @@ module.exports = {
 
 
 /***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5266,7 +5266,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\Vuetable.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\Vuetable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Vuetable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5306,7 +5306,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePagination.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePagination.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] VuetablePagination.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5346,7 +5346,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationInfo.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationInfo.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] VuetablePaginationInfo.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5390,7 +5390,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\FilterBar.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\FilterBar.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] FilterBar.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5434,7 +5434,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ShowBar.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ShowBar.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ShowBar.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -15731,8 +15731,7 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
 
 /***/ }),
-/* 14 */,
-/* 15 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -15752,7 +15751,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\Select2.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\Select2.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Select2.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -15776,13 +15775,14 @@ module.exports = Component.exports
 
 
 /***/ }),
+/* 15 */,
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(3);
 var normalizeHeaderName = __webpack_require__(44);
 
 var DEFAULT_CONTENT_TYPE = {
@@ -15929,7 +15929,7 @@ module.exports = function bind(fn, thisArg) {
 "use strict";
 
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(3);
 var settle = __webpack_require__(45);
 var buildURL = __webpack_require__(47);
 var parseHeaders = __webpack_require__(48);
@@ -33959,7 +33959,7 @@ module.exports = function (css) {
 "use strict";
 
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(3);
 var bind = __webpack_require__(20);
 var Axios = __webpack_require__(43);
 var defaults = __webpack_require__(16);
@@ -34046,7 +34046,7 @@ function isSlowBuffer (obj) {
 
 
 var defaults = __webpack_require__(16);
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(3);
 var InterceptorManager = __webpack_require__(52);
 var dispatchRequest = __webpack_require__(53);
 var isAbsoluteURL = __webpack_require__(55);
@@ -34138,7 +34138,7 @@ module.exports = Axios;
 "use strict";
 
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(3);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -34218,7 +34218,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 "use strict";
 
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(3);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -34293,7 +34293,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 "use strict";
 
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(3);
 
 /**
  * Parse headers into an object
@@ -34337,7 +34337,7 @@ module.exports = function parseHeaders(headers) {
 "use strict";
 
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(3);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -34455,7 +34455,7 @@ module.exports = btoa;
 "use strict";
 
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(3);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -34515,7 +34515,7 @@ module.exports = (
 "use strict";
 
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(3);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -34574,7 +34574,7 @@ module.exports = InterceptorManager;
 "use strict";
 
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(3);
 var transformData = __webpack_require__(54);
 var isCancel = __webpack_require__(23);
 var defaults = __webpack_require__(16);
@@ -34660,7 +34660,7 @@ module.exports = function dispatchRequest(config) {
 "use strict";
 
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(3);
 
 /**
  * Transform the data for a request or a response
@@ -71340,17 +71340,17 @@ Vue.component('payments-table', __webpack_require__(330));
 Vue.component('payment-types-table', __webpack_require__(335));
 Vue.component('reservations-table', __webpack_require__(340));
 Vue.component('review-table', __webpack_require__(345));
-Vue.component('page-table', __webpack_require__(385));
+Vue.component('page-table', __webpack_require__(350));
 
-Vue.component('courses-table', __webpack_require__(350));
-Vue.component('reservations-table-course', __webpack_require__(355));
+Vue.component('courses-table', __webpack_require__(355));
+Vue.component('reservations-table-course', __webpack_require__(360));
 
-Vue.component('users-table', __webpack_require__(360));
-Vue.component('reservations-table-user', __webpack_require__(365));
-Vue.component('reviews-table-user', __webpack_require__(370));
+Vue.component('users-table', __webpack_require__(365));
+Vue.component('reservations-table-user', __webpack_require__(370));
+Vue.component('reviews-table-user', __webpack_require__(375));
 
-Vue.component('speakers-table', __webpack_require__(375));
-Vue.component('courses-table-speaker', __webpack_require__(380));
+Vue.component('speakers-table', __webpack_require__(380));
+Vue.component('courses-table-speaker', __webpack_require__(385));
 
 var app = new Vue({
   el: '#app'
@@ -71684,7 +71684,7 @@ if(false) {
 /* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -87898,7 +87898,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\AdminsTable.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\AdminsTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] AdminsTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -87951,7 +87951,7 @@ if(false) {
 /* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -88103,7 +88103,7 @@ if(false) {
 /* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -89341,7 +89341,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationMixin.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationMixin.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -89563,7 +89563,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationInfoMixin.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationInfoMixin.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -89689,7 +89689,7 @@ if(false) {
 /* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -89807,7 +89807,7 @@ if(false) {
 /* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -90583,7 +90583,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CourseTypesTable.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CourseTypesTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CourseTypesTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -90636,7 +90636,7 @@ if(false) {
 /* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -90873,7 +90873,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CourseGroupsTable.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CourseGroupsTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CourseGroupsTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -90926,7 +90926,7 @@ if(false) {
 /* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -90954,7 +90954,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ShowBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__ShowBar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__vuetablemixins__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__Select2__);
 //
 //
@@ -91076,7 +91076,7 @@ if(false) {
 /* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -91337,7 +91337,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\PaymentsTable.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\PaymentsTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] PaymentsTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -91390,7 +91390,7 @@ if(false) {
 /* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -91643,7 +91643,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\PaymentTypesTable.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\PaymentTypesTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] PaymentTypesTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -91696,7 +91696,7 @@ if(false) {
 /* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -91935,7 +91935,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTable.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReservationsTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -91988,7 +91988,7 @@ if(false) {
 /* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -92016,7 +92016,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ShowBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__ShowBar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__vuetablemixins__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__Select2__);
 //
 //
@@ -92402,7 +92402,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReviewTable.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReviewTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReviewTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -92455,7 +92455,7 @@ if(false) {
 /* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -92483,7 +92483,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ShowBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__ShowBar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__vuetablemixins__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__Select2__);
 //
 //
@@ -92717,7 +92717,276 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CoursesTable.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\PagesTable.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] PagesTable.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-d98ff9be", Component.options)
+  } else {
+    hotAPI.reload("data-v-d98ff9be", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 351 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(352);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("85383306", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d98ff9be\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PagesTable.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d98ff9be\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PagesTable.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 352 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 353 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__plugins_vuetable_2_develop_Vuetable__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__plugins_vuetable_2_develop_Vuetable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__plugins_vuetable_2_develop_Vuetable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__plugins_vuetable_2_develop_VuetablePagination__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__plugins_vuetable_2_develop_VuetablePagination___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__plugins_vuetable_2_develop_VuetablePagination__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__plugins_vuetable_2_develop_VuetablePaginationInfo__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__plugins_vuetable_2_develop_VuetablePaginationInfo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__plugins_vuetable_2_develop_VuetablePaginationInfo__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__FilterBar__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__FilterBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__FilterBar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ShowBar__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ShowBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__ShowBar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__vuetablemixins__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__Select2__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mixins: [__WEBPACK_IMPORTED_MODULE_5__vuetablemixins___default.a],
+    components: { Select2: __WEBPACK_IMPORTED_MODULE_6__Select2___default.a, FilterBar: __WEBPACK_IMPORTED_MODULE_3__FilterBar___default.a, ShowBar: __WEBPACK_IMPORTED_MODULE_4__ShowBar___default.a, Vuetable: __WEBPACK_IMPORTED_MODULE_0__plugins_vuetable_2_develop_Vuetable___default.a, VuetablePagination: __WEBPACK_IMPORTED_MODULE_1__plugins_vuetable_2_develop_VuetablePagination___default.a, VuetablePaginationInfo: __WEBPACK_IMPORTED_MODULE_2__plugins_vuetable_2_develop_VuetablePaginationInfo___default.a },
+    data: function data() {
+        return {
+            nameUrl: 'page',
+            removeOptions: {
+                // url: '/api/reviews',
+                // text: 'Ваши действия так же удалят все заявки курса!'
+            },
+            filters: {},
+            fields: [
+            // {
+            //     name: '__checkbox',
+            //     titleClass: 'text-center',
+            //     dataClass: 'text-center',
+            // },
+            {
+                name: '__sequence',
+                title: '№',
+                titleClass: 'text-center',
+                dataClass: 'text-center'
+            }, {
+                name: '__slot:row-link',
+                title: 'Страница',
+                // sortField: 'title',
+                titleClass: 'text-center',
+                dataClass: 'text-center'
+            }],
+            sortOrder: [
+                // { field: 'name', sortField: 'name', direction: 'asc' }
+            ],
+            moreParams: {},
+            perPage: 20
+        };
+    },
+    methods: {
+        // reviewLabel (value) {
+        //     return value
+        //         ? '<span class="label label-info">Подтверждено</span>'
+        //         : '<span class="label label-default">Не подтверждено</span>'
+        // }
+    }
+});
+
+/***/ }),
+/* 354 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "dataTables_wrapper no-footer"
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "datatable-scroll-wrap"
+  }, [_c('vuetable', {
+    ref: "vuetable",
+    attrs: {
+      "api-url": '/api/' + _vm.nameUrl + 's',
+      "fields": _vm.fields,
+      "pagination-path": "",
+      "css": _vm.css.table,
+      "append-params": _vm.moreParams,
+      "per-page": _vm.perPage,
+      "sort-order": _vm.sortOrder,
+      "multi-sort": true,
+      "noDataTemplate": _vm.template.noData
+    },
+    on: {
+      "vuetable:cell-clicked": _vm.onCellClicked,
+      "vuetable:pagination-data": _vm.onPaginationData,
+      "vuetable:loaded": _vm.loadedTable,
+      "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
+      "vuetable:row-dblclicked": _vm.onRowClick
+    },
+    scopedSlots: _vm._u([{
+      key: "row-link",
+      fn: function(props) {
+        return [_c('div', [_c('a', {
+          attrs: {
+            "href": _vm.nameUrl + '/' + props.rowData.id + '/edit'
+          }
+        }, [_vm._v(_vm._s(props.rowData.title))])])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-footer"
+  }, [_c('vuetable-pagination-info', {
+    ref: "paginationInfo",
+    staticClass: "pagination-info dataTables_info",
+    attrs: {
+      "info-template": _vm.template.paginationInfo,
+      "noDataTemplate": _vm.template.noDataPaginate
+    }
+  }), _vm._v(" "), _c('vuetable-pagination', {
+    ref: "pagination",
+    attrs: {
+      "css": _vm.css.pagination
+    },
+    on: {
+      "vuetable-pagination:change-page": _vm.onChangePage
+    }
+  })], 1)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "datatable-header"
+  }, [_c('div', {
+    staticClass: "dt-buttons"
+  })])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-d98ff9be", module.exports)
+  }
+}
+
+/***/ }),
+/* 355 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(356)
+}
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(358),
+  /* template */
+  __webpack_require__(359),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CoursesTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CoursesTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -92741,13 +93010,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 351 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(352);
+var content = __webpack_require__(357);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -92767,10 +93036,10 @@ if(false) {
 }
 
 /***/ }),
-/* 352 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -92781,7 +93050,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 353 */
+/* 358 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -92798,7 +93067,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ShowBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__ShowBar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__vuetablemixins__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__Select2__);
 //
 //
@@ -92967,7 +93236,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 354 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -93106,19 +93375,19 @@ if (false) {
 }
 
 /***/ }),
-/* 355 */
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(356)
+  __webpack_require__(361)
 }
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(358),
+  __webpack_require__(363),
   /* template */
-  __webpack_require__(359),
+  __webpack_require__(364),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -93126,7 +93395,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTableCourse.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTableCourse.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReservationsTableCourse.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -93150,13 +93419,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 356 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(357);
+var content = __webpack_require__(362);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -93176,10 +93445,10 @@ if(false) {
 }
 
 /***/ }),
-/* 357 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -93190,7 +93459,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 358 */
+/* 363 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -93207,7 +93476,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ShowBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__ShowBar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__vuetablemixins__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__Select2__);
 //
 //
@@ -93345,7 +93614,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 359 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -93435,19 +93704,19 @@ if (false) {
 }
 
 /***/ }),
-/* 360 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(361)
+  __webpack_require__(366)
 }
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(363),
+  __webpack_require__(368),
   /* template */
-  __webpack_require__(364),
+  __webpack_require__(369),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -93455,7 +93724,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\UsersTable.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\UsersTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] UsersTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -93479,13 +93748,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 361 */
+/* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(362);
+var content = __webpack_require__(367);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -93505,10 +93774,10 @@ if(false) {
 }
 
 /***/ }),
-/* 362 */
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -93519,7 +93788,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 363 */
+/* 368 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -93650,7 +93919,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 364 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -93742,19 +94011,19 @@ if (false) {
 }
 
 /***/ }),
-/* 365 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(366)
+  __webpack_require__(371)
 }
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(368),
+  __webpack_require__(373),
   /* template */
-  __webpack_require__(369),
+  __webpack_require__(374),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -93762,7 +94031,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTableUser.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTableUser.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReservationsTableUser.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -93786,13 +94055,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 366 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(367);
+var content = __webpack_require__(372);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -93812,10 +94081,10 @@ if(false) {
 }
 
 /***/ }),
-/* 367 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -93826,7 +94095,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 368 */
+/* 373 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -93843,7 +94112,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ShowBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__ShowBar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__vuetablemixins__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__Select2__);
 //
 //
@@ -93982,7 +94251,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 369 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -94063,19 +94332,19 @@ if (false) {
 }
 
 /***/ }),
-/* 370 */
+/* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(371)
+  __webpack_require__(376)
 }
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(373),
+  __webpack_require__(378),
   /* template */
-  __webpack_require__(374),
+  __webpack_require__(379),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -94083,7 +94352,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReviewTableUser.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReviewTableUser.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReviewTableUser.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -94107,13 +94376,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 371 */
+/* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(372);
+var content = __webpack_require__(377);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -94133,10 +94402,10 @@ if(false) {
 }
 
 /***/ }),
-/* 372 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -94147,7 +94416,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 373 */
+/* 378 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -94164,7 +94433,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ShowBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__ShowBar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__vuetablemixins__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__Select2__);
 //
 //
@@ -94285,7 +94554,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 374 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -94366,19 +94635,19 @@ if (false) {
 }
 
 /***/ }),
-/* 375 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(376)
+  __webpack_require__(381)
 }
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(378),
+  __webpack_require__(383),
   /* template */
-  __webpack_require__(379),
+  __webpack_require__(384),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -94386,7 +94655,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\SpeakersTable.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\SpeakersTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] SpeakersTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -94410,13 +94679,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 376 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(377);
+var content = __webpack_require__(382);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -94436,10 +94705,10 @@ if(false) {
 }
 
 /***/ }),
-/* 377 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -94450,7 +94719,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 378 */
+/* 383 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -94555,7 +94824,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 379 */
+/* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -94657,19 +94926,19 @@ if (false) {
 }
 
 /***/ }),
-/* 380 */
+/* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(381)
+  __webpack_require__(386)
 }
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(383),
+  __webpack_require__(388),
   /* template */
-  __webpack_require__(384),
+  __webpack_require__(389),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -94677,7 +94946,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CoursesTableSpeaker.vue"
+Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CoursesTableSpeaker.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CoursesTableSpeaker.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -94701,13 +94970,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 381 */
+/* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(382);
+var content = __webpack_require__(387);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -94727,10 +94996,10 @@ if(false) {
 }
 
 /***/ }),
-/* 382 */
+/* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -94741,7 +95010,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 383 */
+/* 388 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -94758,7 +95027,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ShowBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__ShowBar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__vuetablemixins__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__Select2__);
 //
 //
@@ -94847,7 +95116,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 384 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -94924,275 +95193,6 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
      require("vue-hot-reload-api").rerender("data-v-758f2602", module.exports)
-  }
-}
-
-/***/ }),
-/* 385 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(386)
-}
-var Component = __webpack_require__(1)(
-  /* script */
-  __webpack_require__(388),
-  /* template */
-  __webpack_require__(389),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\PagesTable.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] PagesTable.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-d98ff9be", Component.options)
-  } else {
-    hotAPI.reload("data-v-d98ff9be", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 386 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(387);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(4)("85383306", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d98ff9be\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PagesTable.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d98ff9be\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PagesTable.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 387 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(3)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 388 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__plugins_vuetable_2_develop_Vuetable__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__plugins_vuetable_2_develop_Vuetable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__plugins_vuetable_2_develop_Vuetable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__plugins_vuetable_2_develop_VuetablePagination__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__plugins_vuetable_2_develop_VuetablePagination___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__plugins_vuetable_2_develop_VuetablePagination__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__plugins_vuetable_2_develop_VuetablePaginationInfo__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__plugins_vuetable_2_develop_VuetablePaginationInfo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__plugins_vuetable_2_develop_VuetablePaginationInfo__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__FilterBar__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__FilterBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__FilterBar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ShowBar__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ShowBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__ShowBar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__vuetablemixins__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__Select2__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-
-
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mixins: [__WEBPACK_IMPORTED_MODULE_5__vuetablemixins___default.a],
-    components: { Select2: __WEBPACK_IMPORTED_MODULE_6__Select2___default.a, FilterBar: __WEBPACK_IMPORTED_MODULE_3__FilterBar___default.a, ShowBar: __WEBPACK_IMPORTED_MODULE_4__ShowBar___default.a, Vuetable: __WEBPACK_IMPORTED_MODULE_0__plugins_vuetable_2_develop_Vuetable___default.a, VuetablePagination: __WEBPACK_IMPORTED_MODULE_1__plugins_vuetable_2_develop_VuetablePagination___default.a, VuetablePaginationInfo: __WEBPACK_IMPORTED_MODULE_2__plugins_vuetable_2_develop_VuetablePaginationInfo___default.a },
-    data: function data() {
-        return {
-            nameUrl: 'page',
-            removeOptions: {
-                // url: '/api/reviews',
-                // text: 'Ваши действия так же удалят все заявки курса!'
-            },
-            filters: {},
-            fields: [
-            // {
-            //     name: '__checkbox',
-            //     titleClass: 'text-center',
-            //     dataClass: 'text-center',
-            // },
-            {
-                name: '__sequence',
-                title: '№',
-                titleClass: 'text-center',
-                dataClass: 'text-center'
-            }, {
-                name: '__slot:row-link',
-                title: 'Страница',
-                // sortField: 'title',
-                titleClass: 'text-center',
-                dataClass: 'text-center'
-            }],
-            sortOrder: [
-                // { field: 'name', sortField: 'name', direction: 'asc' }
-            ],
-            moreParams: {},
-            perPage: 20
-        };
-    },
-    methods: {
-        // reviewLabel (value) {
-        //     return value
-        //         ? '<span class="label label-info">Подтверждено</span>'
-        //         : '<span class="label label-default">Не подтверждено</span>'
-        // }
-    }
-});
-
-/***/ }),
-/* 389 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "dataTables_wrapper no-footer"
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
-    staticClass: "datatable-scroll-wrap"
-  }, [_c('vuetable', {
-    ref: "vuetable",
-    attrs: {
-      "api-url": '/api/' + _vm.nameUrl + 's',
-      "fields": _vm.fields,
-      "pagination-path": "",
-      "css": _vm.css.table,
-      "append-params": _vm.moreParams,
-      "per-page": _vm.perPage,
-      "sort-order": _vm.sortOrder,
-      "multi-sort": true,
-      "noDataTemplate": _vm.template.noData
-    },
-    on: {
-      "vuetable:cell-clicked": _vm.onCellClicked,
-      "vuetable:pagination-data": _vm.onPaginationData,
-      "vuetable:loaded": _vm.loadedTable,
-      "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
-      "vuetable:row-dblclicked": _vm.onRowClick
-    },
-    scopedSlots: _vm._u([{
-      key: "row-link",
-      fn: function(props) {
-        return [_c('div', [_c('a', {
-          attrs: {
-            "href": _vm.nameUrl + '/' + props.rowData.id + '/edit'
-          }
-        }, [_vm._v(_vm._s(props.rowData.title))])])]
-      }
-    }])
-  })], 1), _vm._v(" "), _c('div', {
-    staticClass: "datatable-footer"
-  }, [_c('vuetable-pagination-info', {
-    ref: "paginationInfo",
-    staticClass: "pagination-info dataTables_info",
-    attrs: {
-      "info-template": _vm.template.paginationInfo,
-      "noDataTemplate": _vm.template.noDataPaginate
-    }
-  }), _vm._v(" "), _c('vuetable-pagination', {
-    ref: "pagination",
-    attrs: {
-      "css": _vm.css.pagination
-    },
-    on: {
-      "vuetable-pagination:change-page": _vm.onChangePage
-    }
-  })], 1)])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "datatable-header"
-  }, [_c('div', {
-    staticClass: "dt-buttons"
-  })])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-d98ff9be", module.exports)
   }
 }
 

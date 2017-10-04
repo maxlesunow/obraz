@@ -22,6 +22,12 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with(compact('sms_balance', 'sms_limit'));
         });
+
+        view()->composer('site.layouts.footer', function ($view){
+            $settings = \App\Setting::first();
+
+            $view->with(compact( 'settings'));
+        });
     }
 
     /**
