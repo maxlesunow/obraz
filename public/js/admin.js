@@ -5266,7 +5266,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\Vuetable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\Vuetable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Vuetable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5306,7 +5306,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePagination.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePagination.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] VuetablePagination.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5346,7 +5346,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationInfo.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationInfo.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] VuetablePaginationInfo.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5390,7 +5390,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\FilterBar.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\FilterBar.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] FilterBar.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5434,7 +5434,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ShowBar.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ShowBar.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ShowBar.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -15752,7 +15752,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\Select2.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\Select2.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Select2.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -71340,6 +71340,7 @@ Vue.component('payments-table', __webpack_require__(330));
 Vue.component('payment-types-table', __webpack_require__(335));
 Vue.component('reservations-table', __webpack_require__(340));
 Vue.component('review-table', __webpack_require__(345));
+Vue.component('page-table', __webpack_require__(385));
 
 Vue.component('courses-table', __webpack_require__(350));
 Vue.component('reservations-table-course', __webpack_require__(355));
@@ -87897,7 +87898,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\AdminsTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\AdminsTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] AdminsTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -89340,7 +89341,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationMixin.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationMixin.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -89562,7 +89563,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationInfoMixin.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationInfoMixin.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -90582,7 +90583,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CourseTypesTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CourseTypesTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CourseTypesTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -90872,7 +90873,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CourseGroupsTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CourseGroupsTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CourseGroupsTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -91336,7 +91337,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\PaymentsTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\PaymentsTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] PaymentsTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -91642,7 +91643,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\PaymentTypesTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\PaymentTypesTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] PaymentTypesTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -91934,7 +91935,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReservationsTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -92401,7 +92402,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReviewTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReviewTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReviewTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -92716,7 +92717,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CoursesTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CoursesTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CoursesTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -93125,7 +93126,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTableCourse.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTableCourse.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReservationsTableCourse.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -93454,7 +93455,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\UsersTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\UsersTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] UsersTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -93761,7 +93762,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTableUser.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTableUser.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReservationsTableUser.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -94082,7 +94083,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReviewTableUser.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReviewTableUser.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReviewTableUser.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -94385,7 +94386,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\SpeakersTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\SpeakersTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] SpeakersTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -94676,7 +94677,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OpenServer\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CoursesTableSpeaker.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CoursesTableSpeaker.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CoursesTableSpeaker.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -94923,6 +94924,275 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
      require("vue-hot-reload-api").rerender("data-v-758f2602", module.exports)
+  }
+}
+
+/***/ }),
+/* 385 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(386)
+}
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(388),
+  /* template */
+  __webpack_require__(389),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\PagesTable.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] PagesTable.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-d98ff9be", Component.options)
+  } else {
+    hotAPI.reload("data-v-d98ff9be", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 386 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(387);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("85383306", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d98ff9be\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PagesTable.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d98ff9be\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PagesTable.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 387 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 388 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__plugins_vuetable_2_develop_Vuetable__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__plugins_vuetable_2_develop_Vuetable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__plugins_vuetable_2_develop_Vuetable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__plugins_vuetable_2_develop_VuetablePagination__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__plugins_vuetable_2_develop_VuetablePagination___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__plugins_vuetable_2_develop_VuetablePagination__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__plugins_vuetable_2_develop_VuetablePaginationInfo__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__plugins_vuetable_2_develop_VuetablePaginationInfo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__plugins_vuetable_2_develop_VuetablePaginationInfo__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__FilterBar__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__FilterBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__FilterBar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ShowBar__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ShowBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__ShowBar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuetablemixins___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__vuetablemixins__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__Select2__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mixins: [__WEBPACK_IMPORTED_MODULE_5__vuetablemixins___default.a],
+    components: { Select2: __WEBPACK_IMPORTED_MODULE_6__Select2___default.a, FilterBar: __WEBPACK_IMPORTED_MODULE_3__FilterBar___default.a, ShowBar: __WEBPACK_IMPORTED_MODULE_4__ShowBar___default.a, Vuetable: __WEBPACK_IMPORTED_MODULE_0__plugins_vuetable_2_develop_Vuetable___default.a, VuetablePagination: __WEBPACK_IMPORTED_MODULE_1__plugins_vuetable_2_develop_VuetablePagination___default.a, VuetablePaginationInfo: __WEBPACK_IMPORTED_MODULE_2__plugins_vuetable_2_develop_VuetablePaginationInfo___default.a },
+    data: function data() {
+        return {
+            nameUrl: 'page',
+            removeOptions: {
+                // url: '/api/reviews',
+                // text: 'Ваши действия так же удалят все заявки курса!'
+            },
+            filters: {},
+            fields: [
+            // {
+            //     name: '__checkbox',
+            //     titleClass: 'text-center',
+            //     dataClass: 'text-center',
+            // },
+            {
+                name: '__sequence',
+                title: '№',
+                titleClass: 'text-center',
+                dataClass: 'text-center'
+            }, {
+                name: '__slot:row-link',
+                title: 'Страница',
+                // sortField: 'title',
+                titleClass: 'text-center',
+                dataClass: 'text-center'
+            }],
+            sortOrder: [
+                // { field: 'name', sortField: 'name', direction: 'asc' }
+            ],
+            moreParams: {},
+            perPage: 20
+        };
+    },
+    methods: {
+        // reviewLabel (value) {
+        //     return value
+        //         ? '<span class="label label-info">Подтверждено</span>'
+        //         : '<span class="label label-default">Не подтверждено</span>'
+        // }
+    }
+});
+
+/***/ }),
+/* 389 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "dataTables_wrapper no-footer"
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "datatable-scroll-wrap"
+  }, [_c('vuetable', {
+    ref: "vuetable",
+    attrs: {
+      "api-url": '/api/' + _vm.nameUrl + 's',
+      "fields": _vm.fields,
+      "pagination-path": "",
+      "css": _vm.css.table,
+      "append-params": _vm.moreParams,
+      "per-page": _vm.perPage,
+      "sort-order": _vm.sortOrder,
+      "multi-sort": true,
+      "noDataTemplate": _vm.template.noData
+    },
+    on: {
+      "vuetable:cell-clicked": _vm.onCellClicked,
+      "vuetable:pagination-data": _vm.onPaginationData,
+      "vuetable:loaded": _vm.loadedTable,
+      "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
+      "vuetable:row-dblclicked": _vm.onRowClick
+    },
+    scopedSlots: _vm._u([{
+      key: "row-link",
+      fn: function(props) {
+        return [_c('div', [_c('a', {
+          attrs: {
+            "href": _vm.nameUrl + '/' + props.rowData.id + '/edit'
+          }
+        }, [_vm._v(_vm._s(props.rowData.title))])])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-footer"
+  }, [_c('vuetable-pagination-info', {
+    ref: "paginationInfo",
+    staticClass: "pagination-info dataTables_info",
+    attrs: {
+      "info-template": _vm.template.paginationInfo,
+      "noDataTemplate": _vm.template.noDataPaginate
+    }
+  }), _vm._v(" "), _c('vuetable-pagination', {
+    ref: "pagination",
+    attrs: {
+      "css": _vm.css.pagination
+    },
+    on: {
+      "vuetable-pagination:change-page": _vm.onChangePage
+    }
+  })], 1)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "datatable-header"
+  }, [_c('div', {
+    staticClass: "dt-buttons"
+  })])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-d98ff9be", module.exports)
   }
 }
 

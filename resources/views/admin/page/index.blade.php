@@ -8,7 +8,7 @@
             <h4 class="panel-title">Список страниц<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
         </div>
         {{-- <div class="panel-body"></div> --}}
-        <pages-table></pages-table>
+        <page-table></page-table>
     </div>
 @endsection
 

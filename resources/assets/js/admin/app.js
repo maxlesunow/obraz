@@ -22,6 +22,7 @@ Vue.component('payments-table', require('./components/vuetable/PaymentsTable.vue
 Vue.component('payment-types-table', require('./components/vuetable/PaymentTypesTable.vue'));
 Vue.component('reservations-table', require('./components/vuetable/ReservationsTable.vue'));
 Vue.component('review-table', require('./components/vuetable/ReviewTable.vue'));
+Vue.component('page-table', require('./components/vuetable/PagesTable.vue'));
 
 Vue.component('courses-table', require('./components/vuetable/CoursesTable.vue'));
 Vue.component('reservations-table-course', require('./components/vuetable/ReservationsTableCourse.vue'));

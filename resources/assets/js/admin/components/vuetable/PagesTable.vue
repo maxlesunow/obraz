@@ -1,9 +1,9 @@
 <template>
     <div class="dataTables_wrapper no-footer">
         <div class="datatable-header">
-            <filter-bar class="dataTables_filter" @filter:set="filterSet" @filter:reset="filterReset"></filter-bar>
+            <!-- <filter-bar class="dataTables_filter" @filter:set="filterSet" @filter:reset="filterReset"></filter-bar> -->
 
-            <show-bar class="dataTables_length" @show:set="showSet"></show-bar>
+            <!-- <show-bar class="dataTables_length" @show:set="showSet"></show-bar> -->
 
             <div class="dt-buttons">
                 <!-- <a :href="nameUrl + '/create'"><button class="btn btn-primary">
@@ -22,7 +22,7 @@
 
                 <template slot="row-link" scope="props">
                     <div>
-                         <a :href="nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.name}}</a>
+                         <a :href="nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.title}}</a>
                     </div>
                 </template> 
             
@@ -70,8 +70,8 @@ export default {
             },
             {
                 name: '__slot:row-link',
-                title: 'Пользователь',
-                sortField: 'name',
+                title: 'Страница',
+                // sortField: 'title',
                 titleClass: 'text-center',
                 dataClass: 'text-center',
             },
