@@ -22,6 +22,7 @@ Route::post('/verification/{id}', 'VerificationController@update');
 Route::post('/verification/send/{id}', 'VerificationController@sendVerificationCode');
 
 
+// ========== Сайт ==========
 Route::get('/', 'Site\PageController@home');
 
 Route::get('/about', 'Site\PageController@about');
@@ -38,6 +39,8 @@ Route::get('/speaker/{id}/{slug?}', 'Site\SpeakerController@show');
 
 Route::get('/speakers', 'Site\SpeakerController@showSpeakers');
 
+
+// ========== API сайт ==========
 Route::group(['prefix' => 'api/site'], function () {
 
     Route::get('/course/groups', 'Site\CourseController@getGroups');
@@ -48,7 +51,7 @@ Route::group(['prefix' => 'api/site'], function () {
 
 });
 
-
+// ========== Онлайн оплата ==========
 Route::group(['prefix' => 'payment'], function () {
 
     Route::get('/success', 'YandexKassaController@success');
@@ -63,6 +66,7 @@ Route::group(['prefix' => 'payment'], function () {
 
 });
 
+// ========== Админка ==========
 Route::group(['middleware' => 'role:admin', 'prefix' => 'admin'], function () {
 
     Route::get('/', 'AdminController@index');
@@ -88,9 +92,9 @@ Route::group(['middleware' => 'role:admin', 'prefix' => 'admin'], function () {
     Route::resource('/review', 'ReviewController', ['only' => ['index', 'edit', 'store', 'create', 'update']]);
 
     Route::resource('/page', 'PageController', ['only' => ['index', 'edit', 'update']]);
-
 });
 
+// ========== API админка ==========
 Route::group(['middleware' => 'role:admin', 'prefix' => 'api'], function () {
 
     Route::get('/users', 'UserController@getUsers');
