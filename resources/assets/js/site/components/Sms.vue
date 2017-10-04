@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import formDataMixin from './../mixins/formData'
+import formDataMixin from './mixins/formData'
 
 import Inputmask from 'inputmask'
 

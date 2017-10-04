@@ -50,7 +50,7 @@ import formDataMixin from './../mixins/formData'
 
 import Inputmask from 'inputmask'
 
-import Sms from './Sms.vue'
+import Sms from './../Sms.vue'
 
 export default {
     components: { Sms },

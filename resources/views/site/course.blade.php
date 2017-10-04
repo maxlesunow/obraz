@@ -110,39 +110,7 @@
 
                                           <div class="cell-xs-10 cell-sm-8 cell-md-5 cell-lg-4">
                                                  <div class="section-bottom-66 section-md-bottom-41">
-                                                        <h3>Записаться онлайн</h3>
-                                                        <form class="well-lg bg-white shadow-drop-md text-left rd-mailform" data-form-output="form-output-global" data-form-type="order" method="post" action="bat/rd-mailform.php">
-                                                               <p>Заполните форму и получите билет на курс прямо сейчас!</p>
-                                                               <div class="form-group offset-top-30">
-                                                                      <label class="form-label form-label-sm" for="call-to-action-label-group-1">Фамилия:</label>
-                                                                      <input class="form-control input-sm form-control-impressed form-validation-inside" id="call-to-action-label-group-1" type="text" data-constraints="@Required"/>
-                                                               </div>
-                                                               <div class="form-group">
-                                                                      <label class="form-label form-label-sm" for="call-to-action-label-group-1">Имя:</label>
-                                                                      <input class="form-control input-sm form-control-impressed form-validation-inside" id="call-to-action-label-group-1" type="text" data-constraints="@Required"/>
-                                                               </div>
-                                                               <div class="form-group">
-                                                                      <label class="form-label form-label-sm" for="call-to-action-label-group-1">Отчество:</label>
-                                                                      <input class="form-control input-sm form-control-impressed form-validation-inside" id="call-to-action-label-group-1" type="text" data-constraints="@Required"/>
-                                                               </div>
-                                                               <div class="form-group">
-                                                                      <label class="form-label form-label-sm" for="call-to-action-label-group-2">E-Mail:</label>
-                                                                      <input class="form-control input-sm form-control-impressed form-validation-inside" id="call-to-action-label-group-2" type="text" data-constraints="@Required @Email"/>
-                                                               </div>
-                                                               <div class="form-group">
-                                                                      <label class="form-label form-label-sm" for="call-to-action-label-group-3">Телефон:</label>
-                                                                      <input class="form-control input-sm form-control-impressed form-validation-inside" id="call-to-action-label-group-3" type="text" data-constraints="@Required"/>
-                                                               </div>
-                                                               <div class="form-group">
-                                                                      <label class="form-label form-label-sm" for="call-to-action-label-group-3">Способ оплаты:</label>
-                                                                      <input class="form-control input-sm form-control-impressed form-validation-inside" id="call-to-action-label-group-3" type="text" data-constraints="@Required"/>
-                                                               </div>
-                                                               <div class="form-group">
-                                                                      <label class="form-label form-label-sm" for="call-to-action-label-group-3">Комментарий:</label>
-                                                                      <input class="form-control input-sm form-control-impressed form-validation-inside" id="call-to-action-label-group-3" type="text" data-constraints="@Required"/>
-                                                               </div>
-                                                               <button class="btn btn-block btn-primary offset-top-20" type="submit">Записаться на курс</button>
-                                                        </form>
+                                                        <reservation></reservation>
                                                  </div>
                                           </div>
                                    </div>
