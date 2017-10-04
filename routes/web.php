@@ -92,6 +92,10 @@ Route::group(['middleware' => 'role:admin', 'prefix' => 'admin'], function () {
     Route::resource('/review', 'ReviewController', ['only' => ['index', 'edit', 'store', 'create', 'update']]);
 
     Route::resource('/page', 'PageController', ['only' => ['index', 'edit', 'update']]);
+
+    Route::get('/settings', 'SettingController@edit');
+
+    Route::patch('/settings', 'SettingController@update');
 });
 
 // ========== API админка ==========

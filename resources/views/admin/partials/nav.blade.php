@@ -19,6 +19,7 @@
                     <li><a href="{{ action ('CourseGroupController@index') }}"><i class="icon-make-group position-left"></i> Группы курсов</a></li>
                     <li><a href="{{ action ('CourseTypeController@index') }}"><i class="icon-grid5 position-left"></i> Типы курсов</a></li>
                     <li><a href="{{ action ('PaymentTypeController@index') }}"><i class="icon-wallet position-left"></i> Типы оплаты</a></li>
+                    <li><a href="{{ action ('SettingController@edit') }}"><i class="icon-cogs position-left"></i> Настройки системы</a></li>
                 </ul>
             </li>
         </ul>

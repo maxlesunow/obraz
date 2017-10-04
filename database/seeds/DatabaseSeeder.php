@@ -89,5 +89,8 @@ class DatabaseSeeder extends Seeder
 
         //        Страницы
         $this->call(PageSeeder::class);
+
+        //        Настройки
+        $this->call(SettingSeeder::class);
     }
 }
