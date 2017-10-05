@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Http\Requests\ReviewRequest;
-use App\Review;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 
-class ReviewController extends Controller
+class ReservationController extends Controller
 {
     public function store(ReviewRequest $request)
     {

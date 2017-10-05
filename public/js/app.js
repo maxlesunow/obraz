@@ -74905,7 +74905,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("Оставить отзыв")])])])] : [_c('h6', {
     staticClass: "offset-top-34 text-uppercase text-left text-bold"
-  }, [_vm._v(_vm._s(_vm.firstName) + " " + _vm._s(_vm.middleName) + ", ваш голос принят. Дождитесь его проверки")])]], 2)
+  }, [_vm._v(_vm._s(_vm.firstName) + " " + _vm._s(_vm.middleName) + ", отзыв появится на странице после проверки. Спасибо")])]], 2)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
