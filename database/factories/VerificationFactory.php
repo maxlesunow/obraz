@@ -18,6 +18,6 @@ $factory->define(App\Verification::class, function () {
     return [
         'code' => $faker->numerify('####'),
         'wrong_pass' => rand(1,2),
-        'date_expire' => $faker->dateTime('now'),
+        'date_expire' => \Carbon\Carbon::now()->addDays(rand(1, 90)),
     ];
 });

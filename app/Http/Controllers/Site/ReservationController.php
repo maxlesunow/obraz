@@ -17,4 +17,9 @@ class ReservationController extends Controller
 
         return response()->json($review, 200);
     }
+
+    public function test()
+    {
+
+    }
 }

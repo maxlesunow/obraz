@@ -64,4 +64,12 @@ class User extends Authenticatable
         return $this->reviews()->count();
     }
 
+//    public function generatePassword(){
+//
+//        $password = str_random(6);
+//
+//        $this->password = bcrypt($password);
+//        return $password;
+//    }
+
 }

@@ -14,6 +14,9 @@
 
 Auth::routes();
 
+Route::get('/test', 'Site\ReservationController@test');
+
+
 Route::get('/whoami', 'WhoamiController@whoami');
 
 Route::get('/emailtest', 'MailController@sendVerificationCode');
