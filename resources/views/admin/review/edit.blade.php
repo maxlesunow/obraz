@@ -23,7 +23,7 @@
                 <div class="panel-heading">
                     <h4 class="panel-title">Отзывы пользователя<a class="heading-elements-toggle"><i class="icon-more"></i></a></h4>
                 </div>
-                <reviews-table-user></reviews-table-user>
+                <reviews-table-user user-id="{{$review->user_id}}"></reviews-table-user>
             </div>
 
         </div>

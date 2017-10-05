@@ -22,7 +22,7 @@
 
                 <template slot="row-link" scope="props">
                     <div>
-                         <a :href="nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.name}}</a>
+                         <a :href="nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.user.full_name}}</a>
                     </div>
                 </template> 
             
@@ -71,14 +71,14 @@ export default {
             {
                 name: '__slot:row-link',
                 title: 'Пользователь',
-                sortField: 'name',
+                sortField: 'users.full_name',
                 titleClass: 'text-center',
                 dataClass: 'text-center',
             },
             {
                 name: 'created_at',
                 title: 'Дата',
-                sortField: 'created_at',
+                sortField: 'reviews.created_at',
                 callback: 'formatDate',
                 titleClass: 'text-center',
                 dataClass: 'text-center',
@@ -86,14 +86,15 @@ export default {
             {
                 name: 'text',
                 title: 'Текст',
-                sortField: 'text',
+                sortField: 'reviews.text',
+                callback: 'truncateText',
                 titleClass: 'text-center',
                 dataClass: 'text-center',
             },
             {
                 name: 'status',
                 title: 'Статус',
-                sortField: 'status',
+                sortField: 'reviews.status',
                 callback: 'reviewLabel',
                 titleClass: 'text-center',
                 dataClass: 'text-center',

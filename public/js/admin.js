@@ -5254,25 +5254,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(302)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(304)
-/* template */
-var __vue_template__ = __webpack_require__(305)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-65b02e44"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(304),
+  /* template */
+  __webpack_require__(305),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-ef3ba11c",
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\Vuetable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\Vuetable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Vuetable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5283,9 +5277,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-65b02e44", Component.options)
+    hotAPI.createRecord("data-v-ef3ba11c", Component.options)
   } else {
-    hotAPI.reload("data-v-65b02e44", Component.options)
+    hotAPI.reload("data-v-ef3ba11c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -5300,25 +5294,19 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(306)
-/* template */
-var __vue_template__ = __webpack_require__(309)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(306),
+  /* template */
+  __webpack_require__(309),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePagination.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePagination.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] VuetablePagination.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5329,9 +5317,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-9abda404", Component.options)
+    hotAPI.createRecord("data-v-449e0dac", Component.options)
   } else {
-    hotAPI.reload("data-v-9abda404", Component.options)
+    hotAPI.reload("data-v-449e0dac", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -5346,25 +5334,19 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(310)
-/* template */
-var __vue_template__ = __webpack_require__(313)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(310),
+  /* template */
+  __webpack_require__(313),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationInfo.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationInfo.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] VuetablePaginationInfo.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5375,9 +5357,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-36d6cccc", Component.options)
+    hotAPI.createRecord("data-v-8a3fb50c", Component.options)
   } else {
-    hotAPI.reload("data-v-36d6cccc", Component.options)
+    hotAPI.reload("data-v-8a3fb50c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -5396,25 +5378,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(314)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(316)
-/* template */
-var __vue_template__ = __webpack_require__(317)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(316),
+  /* template */
+  __webpack_require__(317),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\components\\vuetable\\FilterBar.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\FilterBar.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] FilterBar.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5425,9 +5401,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7d7ef034", Component.options)
+    hotAPI.createRecord("data-v-4d1e8394", Component.options)
   } else {
-    hotAPI.reload("data-v-7d7ef034", Component.options)
+    hotAPI.reload("data-v-4d1e8394", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -5446,25 +5422,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(318)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(320)
-/* template */
-var __vue_template__ = __webpack_require__(321)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(320),
+  /* template */
+  __webpack_require__(321),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\components\\vuetable\\ShowBar.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ShowBar.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ShowBar.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -5475,9 +5445,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-931fbcfe", Component.options)
+    hotAPI.createRecord("data-v-31559ea2", Component.options)
   } else {
-    hotAPI.reload("data-v-931fbcfe", Component.options)
+    hotAPI.reload("data-v-31559ea2", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -5661,6 +5631,13 @@ module.exports = {
             } catch (e) {
                 return value;
             }
+        },
+        truncateText: function truncateText(value) {
+            try {
+                return _.truncate(value, { 'length': 100 });
+            } catch (e) {
+                return value;
+            }
         }
     }
 };
@@ -5671,7 +5648,7 @@ module.exports = {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {/*!
- * Vue.js v2.4.4
+ * Vue.js v2.4.2
  * (c) 2014-2017 Evan You
  * Released under the MIT License.
  */
@@ -5836,9 +5813,12 @@ var capitalize = cached(function (str) {
 /**
  * Hyphenate a camelCase string.
  */
-var hyphenateRE = /\B([A-Z])/g;
+var hyphenateRE = /([^-])([A-Z])/g;
 var hyphenate = cached(function (str) {
-  return str.replace(hyphenateRE, '-$1').toLowerCase()
+  return str
+    .replace(hyphenateRE, '$1-$2')
+    .replace(hyphenateRE, '$1-$2')
+    .toLowerCase()
 });
 
 /**
@@ -6257,7 +6237,7 @@ var isAndroid = UA && UA.indexOf('android') > 0;
 var isIOS = UA && /iphone|ipad|ipod|ios/.test(UA);
 var isChrome = UA && /chrome\/\d+/.test(UA) && !isEdge;
 
-// Firefox has a "watch" function on Object.prototype...
+// Firefix has a "watch" function on Object.prototype...
 var nativeWatch = ({}).watch;
 
 var supportsPassive = false;
@@ -6339,13 +6319,13 @@ var nextTick = (function () {
       // "force" the microtask queue to be flushed by adding an empty timer.
       if (isIOS) { setTimeout(noop); }
     };
-  } else if (!isIE && typeof MutationObserver !== 'undefined' && (
+  } else if (typeof MutationObserver !== 'undefined' && (
     isNative(MutationObserver) ||
     // PhantomJS and iOS 7.x
     MutationObserver.toString() === '[object MutationObserverConstructor]'
   )) {
     // use MutationObserver where native Promise is not available,
-    // e.g. PhantomJS, iOS7, Android 4.4
+    // e.g. PhantomJS IE11, iOS7, Android 4.4
     var counter = 1;
     var observer = new MutationObserver(nextTickHandler);
     var textNode = document.createTextNode(String(counter));
@@ -6645,9 +6625,9 @@ function defineReactive$$1 (
         dep.depend();
         if (childOb) {
           childOb.dep.depend();
-          if (Array.isArray(value)) {
-            dependArray(value);
-          }
+        }
+        if (Array.isArray(value)) {
+          dependArray(value);
         }
       }
       return value
@@ -6824,7 +6804,7 @@ function mergeDataOrFn (
         : childVal;
       var defaultData = typeof parentVal === 'function'
         ? parentVal.call(vm)
-        : parentVal;
+        : undefined;
       if (instanceData) {
         return mergeData(instanceData, defaultData)
       } else {
@@ -7227,12 +7207,7 @@ function assertType (value, type) {
   var valid;
   var expectedType = getType(type);
   if (simpleCheckRE.test(expectedType)) {
-    var t = typeof value;
-    valid = t === expectedType.toLowerCase();
-    // for primitive wrapper objects
-    if (!valid && t === 'object') {
-      valid = value instanceof type;
-    }
+    valid = typeof value === expectedType.toLowerCase();
   } else if (expectedType === 'Object') {
     valid = isPlainObject(value);
   } else if (expectedType === 'Array') {
@@ -7430,7 +7405,7 @@ function createTextVNode (val) {
 // used for static nodes and slot nodes because they may be reused across
 // multiple renders, cloning them avoids errors when DOM manipulations rely
 // on their elm reference.
-function cloneVNode (vnode, deep) {
+function cloneVNode (vnode) {
   var cloned = new VNode(
     vnode.tag,
     vnode.data,
@@ -7446,17 +7421,14 @@ function cloneVNode (vnode, deep) {
   cloned.key = vnode.key;
   cloned.isComment = vnode.isComment;
   cloned.isCloned = true;
-  if (deep && vnode.children) {
-    cloned.children = cloneVNodes(vnode.children);
-  }
   return cloned
 }
 
-function cloneVNodes (vnodes, deep) {
+function cloneVNodes (vnodes) {
   var len = vnodes.length;
   var res = new Array(len);
   for (var i = 0; i < len; i++) {
-    res[i] = cloneVNode(vnodes[i], deep);
+    res[i] = cloneVNode(vnodes[i]);
   }
   return res
 }
@@ -7470,10 +7442,8 @@ var normalizeEvent = cached(function (name) {
   name = once$$1 ? name.slice(1) : name;
   var capture = name.charAt(0) === '!';
   name = capture ? name.slice(1) : name;
-  var plain = !(passive || once$$1 || capture);
   return {
     name: name,
-    plain: plain,
     once: once$$1,
     capture: capture,
     passive: passive
@@ -7499,11 +7469,6 @@ function createFnInvoker (fns) {
   return invoker
 }
 
-// #6552
-function prioritizePlainEvents (a, b) {
-  return a.plain ? -1 : b.plain ? 1 : 0
-}
-
 function updateListeners (
   on,
   oldOn,
@@ -7512,13 +7477,10 @@ function updateListeners (
   vm
 ) {
   var name, cur, old, event;
-  var toAdd = [];
-  var hasModifier = false;
   for (name in on) {
     cur = on[name];
     old = oldOn[name];
     event = normalizeEvent(name);
-    if (!event.plain) { hasModifier = true; }
     if (isUndef(cur)) {
       "development" !== 'production' && warn(
         "Invalid handler for event \"" + (event.name) + "\": got " + String(cur),
@@ -7528,18 +7490,10 @@ function updateListeners (
       if (isUndef(cur.fns)) {
         cur = on[name] = createFnInvoker(cur);
       }
-      event.handler = cur;
-      toAdd.push(event);
+      add(event.name, cur, event.once, event.capture, event.passive);
     } else if (cur !== old) {
       old.fns = cur;
       on[name] = old;
-    }
-  }
-  if (toAdd.length) {
-    if (hasModifier) { toAdd.sort(prioritizePlainEvents); }
-    for (var i = 0; i < toAdd.length; i++) {
-      var event$1 = toAdd[i];
-      add(event$1.name, event$1.handler, event$1.once, event$1.capture, event$1.passive);
     }
   }
   for (name in oldOn) {
@@ -7856,17 +7810,11 @@ function resolveAsyncComponent (
 
 /*  */
 
-function isAsyncPlaceholder (node) {
-  return node.isComment && node.asyncFactory
-}
-
-/*  */
-
 function getFirstComponentChild (children) {
   if (Array.isArray(children)) {
     for (var i = 0; i < children.length; i++) {
       var c = children[i];
-      if (isDef(c) && (isDef(c.componentOptions) || isAsyncPlaceholder(c))) {
+      if (isDef(c) && isDef(c.componentOptions)) {
         return c
       }
     }
@@ -7953,8 +7901,8 @@ function eventsMixin (Vue) {
     }
     // array of events
     if (Array.isArray(event)) {
-      for (var i = 0, l = event.length; i < l; i++) {
-        this$1.$off(event[i], fn);
+      for (var i$1 = 0, l = event.length; i$1 < l; i$1++) {
+        this$1.$off(event[i$1], fn);
       }
       return vm
     }
@@ -7967,16 +7915,14 @@ function eventsMixin (Vue) {
       vm._events[event] = null;
       return vm
     }
-    if (fn) {
-      // specific handler
-      var cb;
-      var i$1 = cbs.length;
-      while (i$1--) {
-        cb = cbs[i$1];
-        if (cb === fn || cb.fn === fn) {
-          cbs.splice(i$1, 1);
-          break
-        }
+    // specific handler
+    var cb;
+    var i = cbs.length;
+    while (i--) {
+      cb = cbs[i];
+      if (cb === fn || cb.fn === fn) {
+        cbs.splice(i, 1);
+        break
       }
     }
     return vm
@@ -8028,15 +7974,10 @@ function resolveSlots (
   var defaultSlot = [];
   for (var i = 0, l = children.length; i < l; i++) {
     var child = children[i];
-    var data = child.data;
-    // remove slot attribute if the node is resolved as a Vue slot node
-    if (data && data.attrs && data.attrs.slot) {
-      delete data.attrs.slot;
-    }
     // named slots should only be respected if the vnode was rendered in the
     // same context.
     if ((child.context === context || child.functionalContext === context) &&
-      data && data.slot != null
+      child.data && child.data.slot != null
     ) {
       var name = child.data.slot;
       var slot = (slots[name] || (slots[name] = []));
@@ -8289,11 +8230,11 @@ function updateChildComponent (
   }
   vm.$options._renderChildren = renderChildren;
 
-  // update $attrs and $listeners hash
+  // update $attrs and $listensers hash
   // these are also reactive so they may trigger child update if the child
   // used them during render
-  vm.$attrs = (parentVnode.data && parentVnode.data.attrs) || emptyObject;
-  vm.$listeners = listeners || emptyObject;
+  vm.$attrs = parentVnode.data && parentVnode.data.attrs;
+  vm.$listeners = listeners;
 
   // update props
   if (propsData && vm.$options.props) {
@@ -8880,7 +8821,7 @@ function initData (vm) {
     if (true) {
       if (methods && hasOwn(methods, key)) {
         warn(
-          ("Method \"" + key + "\" has already been defined as a data property."),
+          ("method \"" + key + "\" has already been defined as a data property."),
           vm
         );
       }
@@ -8913,8 +8854,6 @@ var computedWatcherOptions = { lazy: true };
 function initComputed (vm, computed) {
   "development" !== 'production' && checkOptionType(vm, 'computed');
   var watchers = vm._computedWatchers = Object.create(null);
-  // computed properties are just getters during SSR
-  var isSSR = isServerRendering();
 
   for (var key in computed) {
     var userDef = computed[key];
@@ -8925,16 +8864,8 @@ function initComputed (vm, computed) {
         vm
       );
     }
-
-    if (!isSSR) {
-      // create internal watcher for the computed property.
-      watchers[key] = new Watcher(
-        vm,
-        getter || noop,
-        noop,
-        computedWatcherOptions
-      );
-    }
+    // create internal watcher for the computed property.
+    watchers[key] = new Watcher(vm, getter || noop, noop, computedWatcherOptions);
 
     // component-defined computed properties are already defined on the
     // component prototype. We only need to define computed properties defined
@@ -8951,20 +8882,13 @@ function initComputed (vm, computed) {
   }
 }
 
-function defineComputed (
-  target,
-  key,
-  userDef
-) {
-  var shouldCache = !isServerRendering();
+function defineComputed (target, key, userDef) {
   if (typeof userDef === 'function') {
-    sharedPropertyDefinition.get = shouldCache
-      ? createComputedGetter(key)
-      : userDef;
+    sharedPropertyDefinition.get = createComputedGetter(key);
     sharedPropertyDefinition.set = noop;
   } else {
     sharedPropertyDefinition.get = userDef.get
-      ? shouldCache && userDef.cache !== false
+      ? userDef.cache !== false
         ? createComputedGetter(key)
         : userDef.get
       : noop;
@@ -9003,28 +8927,22 @@ function initMethods (vm, methods) {
   "development" !== 'production' && checkOptionType(vm, 'methods');
   var props = vm.$options.props;
   for (var key in methods) {
+    vm[key] = methods[key] == null ? noop : bind(methods[key], vm);
     if (true) {
       if (methods[key] == null) {
         warn(
-          "Method \"" + key + "\" has an undefined value in the component definition. " +
+          "method \"" + key + "\" has an undefined value in the component definition. " +
           "Did you reference the function correctly?",
           vm
         );
       }
       if (props && hasOwn(props, key)) {
         warn(
-          ("Method \"" + key + "\" has already been defined as a prop."),
+          ("method \"" + key + "\" has already been defined as a prop."),
           vm
         );
       }
-      if ((key in vm) && isReserved(key)) {
-        warn(
-          "Method \"" + key + "\" conflicts with an existing Vue instance method. " +
-          "Avoid defining component methods that start with _ or $."
-        );
-      }
     }
-    vm[key] = methods[key] == null ? noop : bind(methods[key], vm);
   }
 }
 
@@ -9144,10 +9062,7 @@ function resolveInject (inject, vm) {
     // inject is :any because flow is not smart enough to figure out cached
     var result = Object.create(null);
     var keys = hasSymbol
-        ? Reflect.ownKeys(inject).filter(function (key) {
-          /* istanbul ignore next */
-          return Object.getOwnPropertyDescriptor(inject, key).enumerable
-        })
+        ? Reflect.ownKeys(inject)
         : Object.keys(inject);
 
     for (var i = 0; i < keys.length; i++) {
@@ -9182,7 +9097,7 @@ function createFunctionalComponent (
   var propOptions = Ctor.options.props;
   if (isDef(propOptions)) {
     for (var key in propOptions) {
-      props[key] = validateProp(key, propOptions, propsData || emptyObject);
+      props[key] = validateProp(key, propOptions, propsData || {});
     }
   } else {
     if (isDef(data.attrs)) { mergeProps(props, data.attrs); }
@@ -9197,7 +9112,7 @@ function createFunctionalComponent (
     props: props,
     children: children,
     parent: context,
-    listeners: data.on || emptyObject,
+    listeners: data.on || {},
     injections: resolveInject(Ctor.options.inject, context),
     slots: function () { return resolveSlots(children, context); }
   });
@@ -9521,7 +9436,7 @@ function _createElement (
   var vnode, ns;
   if (typeof tag === 'string') {
     var Ctor;
-    ns = (context.$vnode && context.$vnode.ns) || config.getTagNamespace(tag);
+    ns = config.getTagNamespace(tag);
     if (config.isReservedTag(tag)) {
       // platform built-in elements
       vnode = new VNode(
@@ -9817,18 +9732,17 @@ function initRender (vm) {
   // $attrs & $listeners are exposed for easier HOC creation.
   // they need to be reactive so that HOCs using them are always updated
   var parentData = parentVnode && parentVnode.data;
-
   /* istanbul ignore else */
   if (true) {
-    defineReactive$$1(vm, '$attrs', parentData && parentData.attrs || emptyObject, function () {
+    defineReactive$$1(vm, '$attrs', parentData && parentData.attrs, function () {
       !isUpdatingChildComponent && warn("$attrs is readonly.", vm);
     }, true);
-    defineReactive$$1(vm, '$listeners', vm.$options._parentListeners || emptyObject, function () {
+    defineReactive$$1(vm, '$listeners', vm.$options._parentListeners, function () {
       !isUpdatingChildComponent && warn("$listeners is readonly.", vm);
     }, true);
   } else {
-    defineReactive$$1(vm, '$attrs', parentData && parentData.attrs || emptyObject, null, true);
-    defineReactive$$1(vm, '$listeners', vm.$options._parentListeners || emptyObject, null, true);
+    defineReactive$$1(vm, '$attrs', parentData && parentData.attrs, null, true);
+    defineReactive$$1(vm, '$listeners', vm.$options._parentListeners, null, true);
   }
 }
 
@@ -9845,13 +9759,9 @@ function renderMixin (Vue) {
     var _parentVnode = ref._parentVnode;
 
     if (vm._isMounted) {
-      // if the parent didn't update, the slot nodes will be the ones from
-      // last render. They need to be cloned to ensure "freshness" for this render.
+      // clone slot nodes on re-renders
       for (var key in vm.$slots) {
-        var slot = vm.$slots[key];
-        if (slot._rendered) {
-          vm.$slots[key] = cloneVNodes(slot, true /* deep */);
-        }
+        vm.$slots[key] = cloneVNodes(vm.$slots[key]);
       }
     }
 
@@ -10396,7 +10306,7 @@ Object.defineProperty(Vue$3.prototype, '$ssrContext', {
   }
 });
 
-Vue$3.version = '2.4.4';
+Vue$3.version = '2.4.2';
 
 /*  */
 
@@ -10405,7 +10315,7 @@ Vue$3.version = '2.4.4';
 var isReservedAttr = makeMap('style,class');
 
 // attributes that should be using props for binding
-var acceptValue = makeMap('input,textarea,option,select,progress');
+var acceptValue = makeMap('input,textarea,option,select');
 var mustUseProp = function (tag, type, attr) {
   return (
     (attr === 'value' && acceptValue(tag)) && type !== 'button' ||
@@ -10594,8 +10504,6 @@ function isUnknownElement (tag) {
   }
 }
 
-var isTextInputType = makeMap('text,number,password,search,email,tel,url');
-
 /*  */
 
 /**
@@ -10742,6 +10650,8 @@ function registerRef (vnode, isRemoval) {
  *
  * modified by Evan You (@yyx990803)
  *
+
+/*
  * Not type-checking this because this file is perf-critical and the cost
  * of making flow understand it is not worth it.
  */
@@ -10767,12 +10677,14 @@ function sameVnode (a, b) {
   )
 }
 
+// Some browsers do not support dynamically changing type for <input>
+// so they need to be treated as different nodes
 function sameInputType (a, b) {
   if (a.tag !== 'input') { return true }
   var i;
   var typeA = isDef(i = a.data) && isDef(i = i.attrs) && i.type;
   var typeB = isDef(i = b.data) && isDef(i = i.attrs) && i.type;
-  return typeA === typeB || isTextInputType(typeA) && isTextInputType(typeB)
+  return typeA === typeB
 }
 
 function createKeyToOldIdx (children, beginIdx, endIdx) {
@@ -11104,11 +11016,10 @@ function createPatchFunction (backend) {
         newStartVnode = newCh[++newStartIdx];
       } else {
         if (isUndef(oldKeyToIdx)) { oldKeyToIdx = createKeyToOldIdx(oldCh, oldStartIdx, oldEndIdx); }
-        idxInOld = isDef(newStartVnode.key)
-          ? oldKeyToIdx[newStartVnode.key]
-          : findIdxInOld(newStartVnode, oldCh, oldStartIdx, oldEndIdx);
+        idxInOld = isDef(newStartVnode.key) ? oldKeyToIdx[newStartVnode.key] : null;
         if (isUndef(idxInOld)) { // New element
           createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm);
+          newStartVnode = newCh[++newStartIdx];
         } else {
           elmToMove = oldCh[idxInOld];
           /* istanbul ignore if */
@@ -11122,12 +11033,13 @@ function createPatchFunction (backend) {
             patchVnode(elmToMove, newStartVnode, insertedVnodeQueue);
             oldCh[idxInOld] = undefined;
             canMove && nodeOps.insertBefore(parentElm, elmToMove.elm, oldStartVnode.elm);
+            newStartVnode = newCh[++newStartIdx];
           } else {
             // same key but different element. treat as new element
             createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm);
+            newStartVnode = newCh[++newStartIdx];
           }
         }
-        newStartVnode = newCh[++newStartIdx];
       }
     }
     if (oldStartIdx > oldEndIdx) {
@@ -11135,13 +11047,6 @@ function createPatchFunction (backend) {
       addVnodes(parentElm, refElm, newCh, newStartIdx, newEndIdx, insertedVnodeQueue);
     } else if (newStartIdx > newEndIdx) {
       removeVnodes(parentElm, oldCh, oldStartIdx, oldEndIdx);
-    }
-  }
-
-  function findIdxInOld (node, oldCh, start, end) {
-    for (var i = start; i < end; i++) {
-      var c = oldCh[i];
-      if (isDef(c) && sameVnode(node, c)) { return i }
     }
   }
 
@@ -11252,46 +11157,27 @@ function createPatchFunction (backend) {
         if (!elm.hasChildNodes()) {
           createChildren(vnode, children, insertedVnodeQueue);
         } else {
-          // v-html and domProps: innerHTML
-          if (isDef(i = data) && isDef(i = i.domProps) && isDef(i = i.innerHTML)) {
-            if (i !== elm.innerHTML) {
-              /* istanbul ignore if */
-              if ("development" !== 'production' &&
-                typeof console !== 'undefined' &&
-                !bailed
-              ) {
-                bailed = true;
-                console.warn('Parent: ', elm);
-                console.warn('server innerHTML: ', i);
-                console.warn('client innerHTML: ', elm.innerHTML);
-              }
-              return false
+          var childrenMatch = true;
+          var childNode = elm.firstChild;
+          for (var i$1 = 0; i$1 < children.length; i$1++) {
+            if (!childNode || !hydrate(childNode, children[i$1], insertedVnodeQueue)) {
+              childrenMatch = false;
+              break
             }
-          } else {
-            // iterate and compare children lists
-            var childrenMatch = true;
-            var childNode = elm.firstChild;
-            for (var i$1 = 0; i$1 < children.length; i$1++) {
-              if (!childNode || !hydrate(childNode, children[i$1], insertedVnodeQueue)) {
-                childrenMatch = false;
-                break
-              }
-              childNode = childNode.nextSibling;
+            childNode = childNode.nextSibling;
+          }
+          // if childNode is not null, it means the actual childNodes list is
+          // longer than the virtual children list.
+          if (!childrenMatch || childNode) {
+            if ("development" !== 'production' &&
+              typeof console !== 'undefined' &&
+              !bailed
+            ) {
+              bailed = true;
+              console.warn('Parent: ', elm);
+              console.warn('Mismatching childNodes vs. VNodes: ', elm.childNodes, children);
             }
-            // if childNode is not null, it means the actual childNodes list is
-            // longer than the virtual children list.
-            if (!childrenMatch || childNode) {
-              /* istanbul ignore if */
-              if ("development" !== 'production' &&
-                typeof console !== 'undefined' &&
-                !bailed
-              ) {
-                bailed = true;
-                console.warn('Parent: ', elm);
-                console.warn('Mismatching childNodes vs. VNodes: ', elm.childNodes, children);
-              }
-              return false
-            }
+            return false
           }
         }
       }
@@ -11382,28 +11268,14 @@ function createPatchFunction (backend) {
           // component root element replaced.
           // update parent placeholder node element, recursively
           var ancestor = vnode.parent;
-          var patchable = isPatchable(vnode);
           while (ancestor) {
-            for (var i = 0; i < cbs.destroy.length; ++i) {
-              cbs.destroy[i](ancestor);
-            }
             ancestor.elm = vnode.elm;
-            if (patchable) {
-              for (var i$1 = 0; i$1 < cbs.create.length; ++i$1) {
-                cbs.create[i$1](emptyNode, ancestor);
-              }
-              // #6513
-              // invoke insert hooks that may have been merged by create hooks.
-              // e.g. for directives that uses the "inserted" hook.
-              var insert = ancestor.data.hook.insert;
-              if (insert.merged) {
-                // start at index 1 to avoid re-invoking component mounted hook
-                for (var i$2 = 1; i$2 < insert.fns.length; i$2++) {
-                  insert.fns[i$2]();
-                }
-              }
-            }
             ancestor = ancestor.parent;
+          }
+          if (isPatchable(vnode)) {
+            for (var i = 0; i < cbs.create.length; ++i) {
+              cbs.create[i](emptyNode, vnode.parent);
+            }
           }
         }
 
@@ -11587,12 +11459,7 @@ function setAttr (el, key, value) {
     if (isFalsyAttrValue(value)) {
       el.removeAttribute(key);
     } else {
-      // technically allowfullscreen is a boolean attribute for <iframe>,
-      // but Flash expects a value of "true" when used on <embed> tag
-      value = key === 'allowfullscreen' && el.tagName === 'EMBED'
-        ? 'true'
-        : key;
-      el.setAttribute(key, value);
+      el.setAttribute(key, key);
     }
   } else if (isEnumeratedAttr(key)) {
     el.setAttribute(key, isFalsyAttrValue(value) || value === 'false' ? 'false' : 'true');
@@ -12099,7 +11966,7 @@ function genCheckboxModel (
     'if(Array.isArray($$a)){' +
       "var $$v=" + (number ? '_n(' + valueBinding + ')' : valueBinding) + "," +
           '$$i=_i($$a,$$v);' +
-      "if($$el.checked){$$i<0&&(" + value + "=$$a.concat([$$v]))}" +
+      "if($$el.checked){$$i<0&&(" + value + "=$$a.concat($$v))}" +
       "else{$$i>-1&&(" + value + "=$$a.slice(0,$$i).concat($$a.slice($$i+1)))}" +
     "}else{" + (genAssignmentCode(value, '$$c')) + "}",
     null, true
@@ -12468,7 +12335,7 @@ function updateStyle (oldVnode, vnode) {
   var style = normalizeStyleBinding(vnode.data.style) || {};
 
   // store normalized style under a different key for next diff
-  // make sure to clone it if it's reactive, since the user likely wants
+  // make sure to clone it if it's reactive, since the user likley wants
   // to mutate it.
   vnode.data.normalizedStyle = isDef(style.__ob__)
     ? extend({}, style)
@@ -13073,6 +12940,8 @@ var patch = createPatchFunction({ nodeOps: nodeOps, modules: modules });
  * properties to Elements.
  */
 
+var isTextInputType = makeMap('text,number,password,search,email,tel,url');
+
 /* istanbul ignore if */
 if (isIE9) {
   // http://www.matts411.com/post/internet-explorer-9-oninput/
@@ -13087,7 +12956,14 @@ if (isIE9) {
 var model$1 = {
   inserted: function inserted (el, binding, vnode) {
     if (vnode.tag === 'select') {
-      setSelected(el, binding, vnode.context);
+      var cb = function () {
+        setSelected(el, binding, vnode.context);
+      };
+      cb();
+      /* istanbul ignore if */
+      if (isIE || isEdge) {
+        setTimeout(cb, 0);
+      }
       el._vOptions = [].map.call(el.options, getValue);
     } else if (vnode.tag === 'textarea' || isTextInputType(el.type)) {
       el._vModifiers = binding.modifiers;
@@ -13118,30 +12994,13 @@ var model$1 = {
       var prevOptions = el._vOptions;
       var curOptions = el._vOptions = [].map.call(el.options, getValue);
       if (curOptions.some(function (o, i) { return !looseEqual(o, prevOptions[i]); })) {
-        // trigger change event if
-        // no matching option found for at least one value
-        var needReset = el.multiple
-          ? binding.value.some(function (v) { return hasNoMatchingOption(v, curOptions); })
-          : binding.value !== binding.oldValue && hasNoMatchingOption(binding.value, curOptions);
-        if (needReset) {
-          trigger(el, 'change');
-        }
+        trigger(el, 'change');
       }
     }
   }
 };
 
 function setSelected (el, binding, vm) {
-  actuallySetSelected(el, binding, vm);
-  /* istanbul ignore if */
-  if (isIE || isEdge) {
-    setTimeout(function () {
-      actuallySetSelected(el, binding, vm);
-    }, 0);
-  }
-}
-
-function actuallySetSelected (el, binding, vm) {
   var value = binding.value;
   var isMultiple = el.multiple;
   if (isMultiple && !Array.isArray(value)) {
@@ -13172,10 +13031,6 @@ function actuallySetSelected (el, binding, vm) {
   if (!isMultiple) {
     el.selectedIndex = -1;
   }
-}
-
-function hasNoMatchingOption (value, options) {
-  return options.every(function (o) { return !looseEqual(o, value); })
 }
 
 function getValue (option) {
@@ -13338,6 +13193,10 @@ function hasParentTransition (vnode) {
 
 function isSameChild (child, oldChild) {
   return oldChild.key === child.key && oldChild.tag === child.tag
+}
+
+function isAsyncPlaceholder (node) {
+  return node.isComment && node.asyncFactory
 }
 
 var Transition = {
@@ -13907,14 +13766,29 @@ var he = {
  */
 
 // Regular Expressions for parsing tags and attributes
-var attribute = /^\s*([^\s"'<>\/=]+)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/;
+var singleAttrIdentifier = /([^\s"'<>/=]+)/;
+var singleAttrAssign = /(?:=)/;
+var singleAttrValues = [
+  // attr value double quotes
+  /"([^"]*)"+/.source,
+  // attr value, single quotes
+  /'([^']*)'+/.source,
+  // attr value, no quotes
+  /([^\s"'=<>`]+)/.source
+];
+var attribute = new RegExp(
+  '^\\s*' + singleAttrIdentifier.source +
+  '(?:\\s*(' + singleAttrAssign.source + ')' +
+  '\\s*(?:' + singleAttrValues.join('|') + '))?'
+);
+
 // could use https://www.w3.org/TR/1999/REC-xml-names-19990114/#NT-QName
 // but for Vue templates we can enforce a simple charset
 var ncname = '[a-zA-Z_][\\w\\-\\.]*';
-var qnameCapture = "((?:" + ncname + "\\:)?" + ncname + ")";
-var startTagOpen = new RegExp(("^<" + qnameCapture));
+var qnameCapture = '((?:' + ncname + '\\:)?' + ncname + ')';
+var startTagOpen = new RegExp('^<' + qnameCapture);
 var startTagClose = /^\s*(\/?)>/;
-var endTag = new RegExp(("^<\\/" + qnameCapture + "[^>]*>"));
+var endTag = new RegExp('^<\\/' + qnameCapture + '[^>]*>');
 var doctype = /^<!DOCTYPE [^>]+>/i;
 var comment = /^<!--/;
 var conditionalComment = /^<!\[/;
@@ -14614,8 +14488,6 @@ function processSlot (el) {
     var slotTarget = getBindingAttr(el, 'slot');
     if (slotTarget) {
       el.slotTarget = slotTarget === '""' ? '"default"' : slotTarget;
-      // preserve slot as an attribute for native shadow DOM compat
-      addAttr(el, 'slot', slotTarget);
     }
     if (el.tag === 'template') {
       el.slotScope = getAndRemoveAttr(el, 'scope');
@@ -15152,7 +15024,7 @@ function genOnce (el, state) {
       );
       return genElement(el, state)
     }
-    return ("_o(" + (genElement(el, state)) + "," + (state.onceId++) + "," + key + ")")
+    return ("_o(" + (genElement(el, state)) + "," + (state.onceId++) + (key ? ("," + key) : "") + ")")
   } else {
     return genStatic(el, state)
   }
@@ -15874,25 +15746,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(334)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(336)
-/* template */
-var __vue_template__ = __webpack_require__(337)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(336),
+  /* template */
+  __webpack_require__(337),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\components\\Select2.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\Select2.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Select2.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -15903,9 +15769,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-77335d98", Component.options)
+    hotAPI.createRecord("data-v-7bb0d646", Component.options)
   } else {
-    hotAPI.reload("data-v-77335d98", Component.options)
+    hotAPI.reload("data-v-7bb0d646", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -66602,7 +66468,8 @@ goog.DEPENDENCIES_ENABLED && (goog.dependencies_ = {loadFlags:{}, nameToPath:{},
     goog.basePath = goog.global.CLOSURE_BASE_PATH;
   } else {
     if (goog.inHtmlDocument_()) {
-      var a = goog.global.document, b = a.currentScript;
+      var a = goog.global.document;
+      var b = a.currentScript;
       a = b ? [b] : a.getElementsByTagName("SCRIPT");
       for (b = a.length - 1; 0 <= b; --b) {
         var c = a[b].src, d = c.lastIndexOf("?");
@@ -66721,16 +66588,15 @@ goog.DEPENDENCIES_ENABLED && (goog.dependencies_ = {loadFlags:{}, nameToPath:{},
   }
   var c = [], d = {}, e = goog.dependencies_;
   b(a);
-  for (a = 0; a < c.length; a++) {
-    var f = c[a];
-    goog.dependencies_.written[f] = !0;
+  for (var f = 0; f < c.length; f++) {
+    a = c[f], goog.dependencies_.written[a] = !0;
   }
   var g = goog.moduleLoaderState_;
   goog.moduleLoaderState_ = null;
-  for (a = 0; a < c.length; a++) {
-    if (f = c[a]) {
-      var h = e.loadFlags[f] || {}, k = goog.needsTranspile_(h.lang || "es3");
-      "goog" == h.module || k ? goog.importProcessedScript_(goog.basePath + f, "goog" == h.module, k) : goog.importScript_(goog.basePath + f);
+  for (f = 0; f < c.length; f++) {
+    if (a = c[f]) {
+      var h = e.loadFlags[a] || {}, k = goog.needsTranspile_(h.lang || "es3");
+      "goog" == h.module || k ? goog.importProcessedScript_(goog.basePath + a, "goog" == h.module, k) : goog.importScript_(goog.basePath + a);
     } else {
       throw goog.moduleLoaderState_ = g, Error("Undefined script input");
     }
@@ -69800,9 +69666,9 @@ i18n.phonenumbers.metadata.countryToMetadata = {AC:[, [, , "[46]\\d{4}|[01589]\\
 , , , "152450911", , , [9], [5, 6, 7]], [, , "(?:2(?:5[5679]|9[1-9])|33\\d|44\\d)\\d{6}", , , , "294911911", , , [9]], [, , "8(?:0[13]|20\\d)\\d{7}|800\\d{3,7}", , , , "8011234567"], [, , "(?:810|902)\\d{7}", , , , "9021234567", , , [10]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , "249\\d{6}", , , , "249123456", , , [9]], "BY", 375, "810", "8", , , "8?0?", , "8~10", , [[, "(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2-$3-$4", ["17[0-3589]|2[4-9]|[34]", "17(?:[02358]|1[0-2]|9[0189])|2[4-9]|[34]"], 
 "8 0$1"], [, "(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2-$3-$4", ["1(?:5[24]|6[235]|7[467])|2(?:1[246]|2[25]|3[26])", "1(?:5[24]|6(?:2|3[04-9]|5[0346-9])|7(?:[46]|7[37-9]))|2(?:1[246]|2[25]|3[26])"], "8 0$1"], [, "(\\d{4})(\\d{2})(\\d{3})", "$1 $2-$3", ["1(?:5[169]|6[3-5]|7[179])|2(?:1[35]|2[34]|3[3-5])", "1(?:5[169]|6(?:3[1-3]|4|5[125])|7(?:1[3-9]|7[0-24-6]|9[2-7]))|2(?:1[35]|2[34]|3[3-5])"], "8 0$1"], [, "([89]\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["8[01]|9"], "8 $1"], [, "(82\\d)(\\d{4})(\\d{4})", 
 "$1 $2 $3", ["82"], "8 $1"], [, "(800)(\\d{3})", "$1 $2", ["800"], "8 $1"], [, "(800)(\\d{2})(\\d{2,4})", "$1 $2 $3", ["800"], "8 $1"]], , [, , , , , , , , , [-1]], , , [, , "8(?:0[13]|10|20\\d)\\d{7}|800\\d{3,7}|902\\d{7}", , , , "82012345678"], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], BZ:[, [, , "[2-8]\\d{6}|0\\d{10}", , , , , , , [7, 11]], [, , "(?:2(?:[02]\\d|36)|[3-58][02]\\d|7(?:[02]\\d|32))\\d{4}", , , , "2221234", , , [7]], [, , "6[0-35-7]\\d{5}", , , , "6221234", , , [7]], 
-[, , "0800\\d{7}", , , , "08001234123", , , [11]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "BZ", 501, "00", , , , , , , , [[, "(\\d{3})(\\d{4})", "$1-$2", ["[2-8]"]], [, "(0)(800)(\\d{4})(\\d{3})", "$1-$2-$3-$4", ["0"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], CA:[, [, , "[2-9]\\d{9}|3\\d{6}", , , , , , , [7, 10]], [, , "(?:2(?:04|[23]6|[48]9|50)|3(?:06|43|65)|4(?:03|1[68]|3[178]|50)|5(?:06|1[49]|48|79|8[17])|6(?:0[04]|13|22|39|47)|7(?:0[59]|78|8[02])|8(?:[06]7|19|25|73)|90[25])[2-9]\\d{6}", 
+[, , "0800\\d{7}", , , , "08001234123", , , [11]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "BZ", 501, "00", , , , , , , , [[, "(\\d{3})(\\d{4})", "$1-$2", ["[2-8]"]], [, "(0)(800)(\\d{4})(\\d{3})", "$1-$2-$3-$4", ["0"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], CA:[, [, , "[2-9]\\d{9}|3\\d{6}", , , , , , , [7, 10]], [, , "(?:2(?:04|[23]6|[48]9|50)|3(?:06|43|65)|4(?:03|1[68]|3[178]|50)|5(?:06|1[49]|48|79|8[17])|6(?:0[04]|13|22|39|47)|7(?:0[59]|78|8[02])|8(?:[06]7|19|25|73)|90[25])[2-9]\\d{6}|310\\d{4}", 
 , , , "2042345678", , , [10], [7]], [, , "(?:2(?:04|[23]6|[48]9|50)|3(?:06|43|65)|4(?:03|1[68]|3[178]|50)|5(?:06|1[49]|48|79|8[17])|6(?:0[04]|13|22|39|47)|7(?:0[59]|78|8[02])|8(?:[06]7|19|25|73)|90[25])[2-9]\\d{6}", , , , "2042345678", , , [10], [7]], [, , "8(?:00|33|44|55|66|77|88)[2-9]\\d{6}|310\\d{4}", , , , "8002123456"], [, , "900[2-9]\\d{6}", , , , "9002123456", , , [10]], [, , , , , , , , , [-1]], [, , "5(?:00|22|33|44|66|77|88)[2-9]\\d{6}", , , , "5002345678", , , [10]], [, , , , , , , , 
-, [-1]], "CA", 1, "011", "1", , , "1", , , 1, , , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], CC:[, [, , "[1458]\\d{5,9}", , , , , , , [6, 7, 9, 10], [8]], [, , "89162\\d{4}", , , , "891621234", , , [9], [8]], [, , "14(?:5\\d|71)\\d{5}|4(?:[0-2]\\d|3[0-57-9]|4[47-9]|5[0-25-9]|6[6-9]|7[02-9]|8[147-9]|9[017-9])\\d{6}", , , , "412345678", , , [9]], [, , "180(?:0\\d{3}|2)\\d{3}", , , , "1800123456", , , [7, 10]], [, , "190[0126]\\d{6}", 
+, [-1]], "CA", 1, "011", "1", , , "1", , , , , , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], CC:[, [, , "[1458]\\d{5,9}", , , , , , , [6, 7, 9, 10], [8]], [, , "89162\\d{4}", , , , "891621234", , , [9], [8]], [, , "14(?:5\\d|71)\\d{5}|4(?:[0-2]\\d|3[0-57-9]|4[47-9]|5[0-25-9]|6[6-9]|7[02-9]|8[147-9]|9[017-9])\\d{6}", , , , "412345678", , , [9]], [, , "180(?:0\\d{3}|2)\\d{3}", , , , "1800123456", , , [7, 10]], [, , "190[0126]\\d{6}", 
 , , , "1900123456", , , [10]], [, , "13(?:00\\d{2})?\\d{4}", , , , "1300123456", , , [6, 10]], [, , "500\\d{6}", , , , "500123456", , , [9]], [, , "550\\d{6}", , , , "550123456", , , [9]], "CC", 61, "(?:14(?:1[14]|34|4[17]|[56]6|7[47]|88))?001[14-689]", "0", , , "0", , "0011", , , , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], CD:[, [, , "[2-6]\\d{6}|[18]\\d{6,8}|9\\d{8}", , , , , , , [7, 9]], [, , "1(?:2\\d{7}|\\d{6})|[2-6]\\d{6}", 
 , , , "1234567"], [, , "8(?:[0-2459]\\d{2}|8)\\d{5}|9[017-9]\\d{7}", , , , "991234567"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "CD", 243, "00", "0", , , "0", , , , [[, "(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["12"], "0$1"], [, "([89]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["8[0-2459]|9"], "0$1"], [, "(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["88"], "0$1"], [, "(\\d{2})(\\d{5})", "$1 $2", ["[1-6]"], "0$1"]], , 
 [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], CF:[, [, , "[278]\\d{7}", , , , , , , [8]], [, , "2[12]\\d{6}", , , , "21612345"], [, , "7[0257]\\d{6}", , , , "70012345"], [, , , , , , , , , [-1]], [, , "8776\\d{4}", , , , "87761234"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "CF", 236, "00", , , , , , , , [[, "(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4"]], , [, , , , , , , , , [-1]], , , [, 
@@ -69826,7 +69692,7 @@ i18n.phonenumbers.metadata.countryToMetadata = {AC:[, [, , "[46]\\d{4}|[01589]\\
 "0$1", "$CC $1", 1], [, "(\\d{4})(\\d{3})(\\d{4})", "$1 $2 $3", ["807", "8078"], "0$1", "$CC $1", 1], [, "(\\d{3})(\\d{4})(\\d{4})", "$1 $2 $3", ["1[3-578]"], , "$CC $1"], [, "(10800)(\\d{3})(\\d{4})", "$1 $2 $3", ["108", "1080", "10800"]], [, "(\\d{3})(\\d{7,8})", "$1 $2", ["950"]]], [, , , , , , , , , [-1]], , , [, , "(?:4|(?:10)?8)00\\d{7}|950\\d{7,8}", , , , "4001234567", , , [10, 11, 12]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], CO:[, [, , "(?:[13]\\d{0,3}|[24-8])\\d{7}", , 
 , , , , , [8, 10, 11], [7]], [, , "[124-8][2-9]\\d{6}", , , , "12345678", , , [8], [7]], [, , "3(?:0[0-5]|1\\d|2[0-3]|5[01])\\d{7}", , , , "3211234567", , , [10]], [, , "1800\\d{7}", , , , "18001234567", , , [11]], [, , "19(?:0[01]|4[78])\\d{7}", , , , "19001234567", , , [11]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "CO", 57, "00(?:4(?:[14]4|56)|[579])", "0", , , "0([3579]|4(?:44|56))?", , , , [[, "(\\d)(\\d{7})", "$1 $2", ["1(?:[2-7]|8[2-9]|9[0-3])|[24-8]", 
 "1(?:[2-7]|8[2-9]|9(?:09|[1-3]))|[24-8]"], "($1)", "0$CC $1"], [, "(\\d{3})(\\d{7})", "$1 $2", ["3"], , "0$CC $1"], [, "(1)(\\d{3})(\\d{7})", "$1-$2-$3", ["1(?:80|9[04])", "1(?:800|9(?:0[01]|4[78]))"], "0$1"]], [[, "(\\d)(\\d{7})", "$1 $2", ["1(?:[2-7]|8[2-9]|9[0-3])|[24-8]", "1(?:[2-7]|8[2-9]|9(?:09|[1-3]))|[24-8]"], "($1)", "0$CC $1"], [, "(\\d{3})(\\d{7})", "$1 $2", ["3"], , "0$CC $1"], [, "(1)(\\d{3})(\\d{7})", "$1 $2 $3", ["1(?:80|9[04])", "1(?:800|9(?:0[01]|4[78]))"]]], [, , , , , , , , , [-1]], 
-, , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], CR:[, [, , "[24-9]\\d{7,9}", , , , , , , [8, 10]], [, , "2(?:[024-7]\\d{2}|1(?:0[7-9]|[1-9]\\d))\\d{4}", , , , "22123456", , , [8]], [, , "5(?:0[01]|7[0-3])\\d{5}|6(?:[0-4]\\d{3}|500[01])\\d{3}|(?:7[0-3]|8[3-9])\\d{6}", , , , "83123456", , , [8]], [, , "800\\d{7}", , , , "8001234567", , , [10]], [, , "90[059]\\d{7}", , , , "9001234567", , , [10]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , "210[0-6]\\d{4}|4\\d{7}|5100\\d{4}", 
+, , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], CR:[, [, , "[24-9]\\d{7,9}", , , , , , , [8, 10]], [, , "2[0-24-7]\\d{6}", , , , "22123456", , , [8]], [, , "5(?:0[01]|7[0-3])\\d{5}|6(?:[0-4]\\d{3}|500[01])\\d{3}|(?:7[0-3]|8[3-9])\\d{6}", , , , "83123456", , , [8]], [, , "800\\d{7}", , , , "8001234567", , , [10]], [, , "90[059]\\d{7}", , , , "9001234567", , , [10]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , "210[0-6]\\d{4}|4\\d{7}|5100\\d{4}", 
 , , , "40001234", , , [8]], "CR", 506, "00", , , , "(19(?:0[012468]|1[09]|20|66|77|99))", , , , [[, "(\\d{4})(\\d{4})", "$1 $2", ["[24-7]|8[3-9]"], , "$CC $1"], [, "(\\d{3})(\\d{3})(\\d{4})", "$1-$2-$3", ["[89]0"], , "$CC $1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], CU:[, [, , "[2-57]\\d{5,7}", , , , , , , [6, 7, 8], [4, 5]], [, , "2[1-4]\\d{5,6}|3(?:1\\d{6}|[23]\\d{4,6})|4(?:[125]\\d{5,6}|[36]\\d{6}|[78]\\d{4,6})|7\\d{6,7}", 
 , , , "71234567", , , , [4, 5]], [, , "5\\d{7}", , , , "51234567", , , [8]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "CU", 53, "119", "0", , , "0", , , , [[, "(\\d)(\\d{6,7})", "$1 $2", ["7"], "(0$1)"], [, "(\\d{2})(\\d{4,6})", "$1 $2", ["[2-4]"], "(0$1)"], [, "(\\d)(\\d{7})", "$1 $2", ["5"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], 
 CV:[, [, , "[259]\\d{6}", , , , , , , [7]], [, , "2(?:2[1-7]|3[0-8]|4[12]|5[1256]|6\\d|7[1-3]|8[1-5])\\d{4}", , , , "2211234"], [, , "(?:9\\d|59)\\d{5}", , , , "9911234"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "CV", 238, "0", , , , , , , , [[, "(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], CW:[, [, 
@@ -69852,16 +69718,16 @@ DK:[, [, , "[2-9]\\d{7}", , , , , , , [8]], [, , "(?:[2-7]\\d|8[126-9]|9[1-36-9]
 "$1 $2 $3", ["9"], "0$1"], [, "(1800)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["1"], "$1"]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], EE:[, [, , "[3-9]\\d{6,7}|800\\d{6,7}", , , , , , , [7, 8, 10]], [, , "(?:3[23589]|4[3-8]|6\\d|7[1-9]|88)\\d{5}", , , , "3212345", , , [7]], [, , "(?:5\\d|8[1-5])\\d{6}|5(?:[02]\\d{2}|1(?:[0-8]\\d|95)|5[0-478]\\d|64[0-4]|65[1-589])\\d{3}", , , , "51234567", , , [7, 8]], [, , "800(?:0\\d{3}|1\\d|[2-9])\\d{3}", 
 , , , "80012345"], [, , "(?:40\\d{2}|900)\\d{4}", , , , "9001234", , , [7, 8]], [, , , , , , , , , [-1]], [, , "70[0-2]\\d{5}", , , , "70012345", , , [8]], [, , , , , , , , , [-1]], "EE", 372, "00", , , , , , , , [[, "([3-79]\\d{2})(\\d{4})", "$1 $2", ["[369]|4[3-8]|5(?:[0-2]|5[0-478]|6[45])|7[1-9]", "[369]|4[3-8]|5(?:[02]|1(?:[0-8]|95)|5[0-478]|6(?:4[0-4]|5[1-589]))|7[1-9]"]], [, "(70)(\\d{2})(\\d{4})", "$1 $2 $3", ["70"]], [, "(8000)(\\d{3})(\\d{3})", "$1 $2 $3", ["800", "8000"]], [, "([458]\\d{3})(\\d{3,4})", 
 "$1 $2", ["40|5|8(?:00|[1-5])", "40|5|8(?:00[1-9]|[1-5])"]]], , [, , , , , , , , , [-1]], , , [, , "800[2-9]\\d{3}", , , , "8002123", , , [7]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], EG:[, [, , "1\\d{4,9}|[2456]\\d{8}|3\\d{7}|[89]\\d{8,9}", , , , , , , [8, 9, 10], [7]], [, , "(?:1(?:3[23]\\d|5(?:[23]|9\\d))|2[2-4]\\d{2}|3\\d{2}|4(?:0[2-5]|[578][23]|64)\\d|5(?:0[2-7]|[57][23])\\d|6[24-689]3\\d|8(?:2[2-57]|4[26]|6[237]|8[2-4])\\d|9(?:2[27]|3[24]|52|6[2356]|7[2-4])\\d)\\d{5}", , , 
-, "234567890", , , [8, 9], [7]], [, , "1(?:0[0-269]|1[0-245]|2[0-278]|5\\d)\\d{7}", , , , "1001234567", , , [10]], [, , "800\\d{7}", , , , "8001234567", , , [10]], [, , "900\\d{7}", , , , "9001234567", , , [10]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "EG", 20, "00", "0", , , "0", , , , [[, "(\\d)(\\d{7,8})", "$1 $2", ["[23]"], "0$1"], [, "(\\d{2})(\\d{6,7})", "$1 $2", ["1(?:3|5[239])|[4-6]|[89][2-9]"], "0$1"], [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["1[0-25]|[89]00"], 
-"0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], EH:[, [, , "[5-9]\\d{8}", , , , , , , [9]], [, , "528[89]\\d{5}", , , , "528812345"], [, , "(?:6(?:[0-79]\\d|8[0-247-9])|7(?:[07][07]|6[12]))\\d{6}", , , , "650123456"], [, , "80\\d{7}", , , , "801234567"], [, , "89\\d{7}", , , , "891234567"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , "5924[01]\\d{4}", , , , "592401234"], "EH", 212, "00", "0", , , "0", , , , , 
-, [, , , , , , , , , [-1]], , "528[89]", [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], ER:[, [, , "[178]\\d{6}", , , , , , , [7], [6]], [, , "1(?:1[12568]|20|40|55|6[146])\\d{4}|8\\d{6}", , , , "8370362", , , , [6]], [, , "17[1-3]\\d{4}|7\\d{6}", , , , "7123456"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "ER", 291, "00", "0", , , "0", , , , [[, "(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", 
-, "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], ES:[, [, , "[5-9]\\d{8}", , , , , , , [9]], [, , "8(?:[1356]\\d|[28][0-8]|[47][1-9])\\d{6}|9(?:[135]\\d{7}|[28][0-8]\\d{6}|4[1-9]\\d{6}|6(?:[0-8]\\d{6}|9(?:0(?:[0-57-9]\\d{4}|6(?:0[0-8]|1[1-9]|[2-9]\\d)\\d{2})|[1-9]\\d{5}))|7(?:[124-9]\\d{2}|3(?:[0-8]\\d|9[1-9]))\\d{4})", , , , "810123456"], [, , "(?:6\\d{6}|7[1-48]\\d{5}|9(?:6906(?:09|10)|7390\\d{2}))\\d{2}", , , , "612345678"], 
-[, , "[89]00\\d{6}", , , , "800123456"], [, , "80[367]\\d{6}", , , , "803123456"], [, , "90[12]\\d{6}", , , , "901123456"], [, , "70\\d{7}", , , , "701234567"], [, , , , , , , , , [-1]], "ES", 34, "00", , , , , , , , [[, "([89]00)(\\d{3})(\\d{3})", "$1 $2 $3", ["[89]00"]], [, "([5-9]\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[568]|[79][0-8]"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , "51\\d{7}", , , , "511234567"], , , [, , , , , , , , , [-1]]], ET:[, [, , "[1-59]\\d{8}", 
-, , , , , , [9], [7]], [, , "(?:11(?:1(?:1[124]|2[2-57]|3[1-5]|5[5-8]|8[6-8])|2(?:13|3[6-8]|5[89]|7[05-9]|8[2-6])|3(?:2[01]|3[0-289]|4[1289]|7[1-4]|87)|4(?:1[69]|3[2-49]|4[0-3]|6[5-8])|5(?:1[578]|44|5[0-4])|6(?:18|2[69]|39|4[5-7]|5[1-5]|6[0-59]|8[015-8]))|2(?:2(?:11[1-9]|22[0-7]|33\\d|44[1467]|66[1-68])|5(?:11[124-6]|33[2-8]|44[1467]|55[14]|66[1-3679]|77[124-79]|880))|3(?:3(?:11[0-46-8]|22[0-6]|33[0134689]|44[04]|55[0-6]|66[01467])|4(?:44[0-8]|55[0-69]|66[0-3]|77[1-5]))|4(?:6(?:22[0-24-7]|33[1-5]|44[13-69]|55[14-689]|660|88[1-4])|7(?:11[1-9]|22[1-9]|33[13-7]|44[13-6]|55[1-689]))|5(?:7(?:227|55[05]|(?:66|77)[14-8])|8(?:11[149]|22[013-79]|33[0-68]|44[013-8]|550|66[1-5]|77\\d)))\\d{4}", 
-, , , "111112345", , , , [7]], [, , "9(?:[1-46-8]\\d|5[89])\\d{6}", , , , "911234567"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "ET", 251, "00", "0", , , "0", , , , [[, "([1-59]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", , "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], FI:[, [, , "[16]\\d{6,9}|2\\d{4,9}|[35]\\d{5,9}|4\\d{7,10}|7\\d{7,9}|8\\d{6,8}|9\\d{4,8}", 
-, , , , , , [5, 6, 7, 8, 9, 10, 11]], [, , "1[3-79][1-8]\\d{4,6}|[23568][1-8]\\d{5,7}|9[1-8]\\d{3,7}", , , , "131234567", , , [5, 6, 7, 8, 9]], [, , "4[0-8]\\d{6,8}|50\\d{4,8}", , , , "412345678", , , [6, 7, 8, 9, 10, 11]], [, , "800\\d{5,6}", , , , "800123456", , , [8, 9]], [, , "[67]00\\d{5,6}", , , , "600123456", , , [8, 9]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "FI", 358, "00|99(?:[02469]|5(?:11|33|5[59]|88|9[09]))", "0", , , "0", , "00", , [[, "(\\d{3})(\\d{3,7})", 
-"$1 $2", ["(?:[1-3]0|[6-8])0"], "0$1"], [, "(116\\d{3})", "$1", ["116"], "$1"], [, "(\\d{2})(\\d{3,9})", "$1 $2", ["1(?:0[1-9]|[3-9])|2(?:0[1-9]|9)|30[1-9]|4|50|7(?:[13]|5[03-9])"], "0$1"], [, "(75\\d{3})", "$1", ["75[12]"], "0$1"], [, "(\\d)(\\d{4})", "$1 $2", ["9[1-8]"], "0$1"], [, "(\\d)(\\d{5,9})", "$1 $2", ["[235689][1-8]"], "0$1"], [, "(39\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["39"], "0$1"]], [[, "(\\d{3})(\\d{3,7})", "$1 $2", ["(?:[1-3]0|[6-8])0"], "0$1"], [, "(116\\d{3})", "$1", ["116"], "$1"], 
-[, "(\\d{2})(\\d{3,9})", "$1 $2", ["1(?:0[1-9]|[3-9])|2(?:0[1-9]|9)|30[1-9]|4|50|7(?:[13]|5[03-9])"], "0$1"], [, "(\\d)(\\d{4})", "$1 $2", ["9[1-8]"], "0$1"], [, "(\\d)(\\d{5,9})", "$1 $2", ["[235689][1-8]"], "0$1"], [, "(39\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["39"], "0$1"]], [, , , , , , , , , [-1]], 1, , [, , "100\\d{4,6}|20(?:0\\d{4,6}|2[023]\\d{4,5}|9[89]\\d{1,6})|300\\d{3,7}|60(?:[12]\\d{5,6}|6\\d{7})|7(?:1\\d{7}|3\\d{8}|5[03-9]\\d{5,6})", , , , "1001234", , , [5, 6, 7, 8, 9, 10]], [, , "10(?:0\\d{4,6}|[1-46-9]\\d{5,7}|5\\d{4,7})|2(?:0(?:0\\d{4,6}|[1346-8]\\d{5,7}|2(?:[023]\\d{4,5}|[14-9]\\d{4,6})|5(?:\\d{3}|\\d{5,7})|9(?:[0-7]\\d{4,6}|[89]\\d{1,6}))|9\\d{5,8})|3(?:0(?:0\\d{3,7}|[1-57-9]\\d{5,7}|6(?:\\d{3}|\\d{5,7}))|44\\d{3}|93\\d{5,7})|60(?:[12]\\d{5,6}|6\\d{7})|7(?:1\\d{7}|3\\d{8}|5[03-9]\\d{5,6})", 
+, "234567890", , , [8, 9], [7]], [, , "1(?:0[0-269]|1[0-245]|2[0-278]|55)\\d{7}", , , , "1001234567", , , [10]], [, , "800\\d{7}", , , , "8001234567", , , [10]], [, , "900\\d{7}", , , , "9001234567", , , [10]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "EG", 20, "00", "0", , , "0", , , , [[, "(\\d)(\\d{7,8})", "$1 $2", ["[23]"], "0$1"], [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["1[0-2]|[89]00"], "0$1"], [, "(\\d{2})(\\d{6,7})", "$1 $2", ["1[35]|[4-6]|[89][2-9]"], 
+"0$1"], [, "(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["155"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], EH:[, [, , "[5-9]\\d{8}", , , , , , , [9]], [, , "528[89]\\d{5}", , , , "528812345"], [, , "(?:6(?:[0-79]\\d|8[0-247-9])|7(?:[07][07]|6[12]))\\d{6}", , , , "650123456"], [, , "80\\d{7}", , , , "801234567"], [, , "89\\d{7}", , , , "891234567"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , "5924[01]\\d{4}", 
+, , , "592401234"], "EH", 212, "00", "0", , , "0", , , , , , [, , , , , , , , , [-1]], , "528[89]", [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], ER:[, [, , "[178]\\d{6}", , , , , , , [7], [6]], [, , "1(?:1[12568]|20|40|55|6[146])\\d{4}|8\\d{6}", , , , "8370362", , , , [6]], [, , "17[1-3]\\d{4}|7\\d{6}", , , , "7123456"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "ER", 291, 
+"00", "0", , , "0", , , , [[, "(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", , "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], ES:[, [, , "[5-9]\\d{8}", , , , , , , [9]], [, , "8(?:[1356]\\d|[28][0-8]|[47][1-9])\\d{6}|9(?:[135]\\d{7}|[28][0-8]\\d{6}|4[1-9]\\d{6}|6(?:[0-8]\\d{6}|9(?:0(?:[0-57-9]\\d{4}|6(?:0[0-8]|1[1-9]|[2-9]\\d)\\d{2})|[1-9]\\d{5}))|7(?:[124-9]\\d{2}|3(?:[0-8]\\d|9[1-9]))\\d{4})", , , , "810123456"], [, , "(?:6\\d{6}|7[1-48]\\d{5}|9(?:6906(?:09|10)|7390\\d{2}))\\d{2}", 
+, , , "612345678"], [, , "[89]00\\d{6}", , , , "800123456"], [, , "80[367]\\d{6}", , , , "803123456"], [, , "90[12]\\d{6}", , , , "901123456"], [, , "70\\d{7}", , , , "701234567"], [, , , , , , , , , [-1]], "ES", 34, "00", , , , , , , , [[, "([89]00)(\\d{3})(\\d{3})", "$1 $2 $3", ["[89]00"]], [, "([5-9]\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[568]|[79][0-8]"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , "51\\d{7}", , , , "511234567"], , , [, , , , , , , , , [-1]]], 
+ET:[, [, , "[1-59]\\d{8}", , , , , , , [9], [7]], [, , "(?:11(?:1(?:1[124]|2[2-57]|3[1-5]|5[5-8]|8[6-8])|2(?:13|3[6-8]|5[89]|7[05-9]|8[2-6])|3(?:2[01]|3[0-289]|4[1289]|7[1-4]|87)|4(?:1[69]|3[2-49]|4[0-3]|6[5-8])|5(?:1[578]|44|5[0-4])|6(?:18|2[69]|39|4[5-7]|5[1-5]|6[0-59]|8[015-8]))|2(?:2(?:11[1-9]|22[0-7]|33\\d|44[1467]|66[1-68])|5(?:11[124-6]|33[2-8]|44[1467]|55[14]|66[1-3679]|77[124-79]|880))|3(?:3(?:11[0-46-8]|22[0-6]|33[0134689]|44[04]|55[0-6]|66[01467])|4(?:44[0-8]|55[0-69]|66[0-3]|77[1-5]))|4(?:6(?:22[0-24-7]|33[1-5]|44[13-69]|55[14-689]|660|88[1-4])|7(?:11[1-9]|22[1-9]|33[13-7]|44[13-6]|55[1-689]))|5(?:7(?:227|55[05]|(?:66|77)[14-8])|8(?:11[149]|22[013-79]|33[0-68]|44[013-8]|550|66[1-5]|77\\d)))\\d{4}", 
+, , , "111112345", , , , [7]], [, , "9(?:[1-46-8]\\d|5[89])\\d{6}", , , , "911234567"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "ET", 251, "00", "0", , , "0", , , , [[, "([1-59]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", , "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], FI:[, [, , "[16]\\d{6,9}|2\\d{4,9}|[35]\\d{5,9}|4\\d{7,10}|7\\d{7,9}|[89]\\d{6,8}", 
+, , , , , , [5, 6, 7, 8, 9, 10, 11]], [, , "1[3-79][1-8]\\d{4,6}|[235689][1-8]\\d{5,7}", , , , "131234567", , , [7, 8, 9]], [, , "4(?:[0-8]\\d{6,8}|9\\d{9})|50\\d{4,8}", , , , "412345678", , , [6, 7, 8, 9, 10, 11]], [, , "800\\d{5,6}", , , , "800123456", , , [8, 9]], [, , "[67]00\\d{5,6}", , , , "600123456", , , [8, 9]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "FI", 358, "00|99(?:[02469]|5(?:11|33|5[59]|88|9[09]))", "0", , , "0", , "00", , [[, "(\\d{3})(\\d{3,7})", 
+"$1 $2", ["(?:[1-3]0|[6-8])0"], "0$1"], [, "(116\\d{3})", "$1", ["116"], "$1"], [, "(\\d{2})(\\d{3,9})", "$1 $2", ["1(?:0[1-9]|[3-9])|2(?:0[1-9]|9)|30[1-9]|4|50|7(?:[13]|5[03-9])"], "0$1"], [, "(75\\d{3})", "$1", ["75[12]"], "0$1"], [, "(\\d)(\\d{5,9})", "$1 $2", ["[235689][1-8]"], "0$1"], [, "(39\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["39"], "0$1"]], [[, "(\\d{3})(\\d{3,7})", "$1 $2", ["(?:[1-3]0|[6-8])0"], "0$1"], [, "(116\\d{3})", "$1", ["116"], "$1"], [, "(\\d{2})(\\d{3,9})", "$1 $2", ["1(?:0[1-9]|[3-9])|2(?:0[1-9]|9)|30[1-9]|4|50|7(?:[13]|5[03-9])"], 
+"0$1"], [, "(\\d)(\\d{5,9})", "$1 $2", ["[235689][1-8]"], "0$1"], [, "(39\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["39"], "0$1"]], [, , , , , , , , , [-1]], 1, , [, , "100\\d{4,6}|20(?:0\\d{4,6}|2[023]\\d{4,5}|9[89]\\d{1,6})|300\\d{3,7}|60(?:[12]\\d{5,6}|6\\d{7})|7(?:1\\d{7}|3\\d{8}|5[03-9]\\d{5,6})", , , , "1001234", , , [5, 6, 7, 8, 9, 10]], [, , "10(?:0\\d{4,6}|[1-46-9]\\d{5,7}|5\\d{4,7})|2(?:0(?:0\\d{4,6}|[1346-8]\\d{5,7}|2(?:[023]\\d{4,5}|[14-9]\\d{4,6})|5(?:\\d{3}|\\d{5,7})|9(?:[0-7]\\d{4,6}|[89]\\d{1,6}))|9\\d{5,8})|3(?:0(?:0\\d{3,7}|[1-57-9]\\d{5,7}|6(?:\\d{3}|\\d{5,7}))|44\\d{3}|93\\d{5,7})|60(?:[12]\\d{5,6}|6\\d{7})|7(?:1\\d{7}|3\\d{8}|5[03-9]\\d{5,6})", 
 , , , "10112345", , , [5, 6, 7, 8, 9, 10]], , , [, , , , , , , , , [-1]]], FJ:[, [, , "[35-9]\\d{6}|0\\d{10}", , , , , , , [7, 11]], [, , "(?:3[0-5]|6[25-7]|8[58])\\d{5}", , , , "3212345", , , [7]], [, , "(?:5[018]|[79]\\d|8[034679])\\d{5}", , , , "7012345", , , [7]], [, , "0800\\d{7}", , , , "08001234567", , , [11]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "FJ", 679, "0(?:0|52)", , , , , , "00", , [[, "(\\d{3})(\\d{4})", "$1 $2", ["[35-9]"]], 
 [, "(\\d{4})(\\d{3})(\\d{4})", "$1 $2 $3", ["0"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], FK:[, [, , "[2-7]\\d{4}", , , , , , , [5]], [, , "[2-47]\\d{4}", , , , "31234"], [, , "[56]\\d{4}", , , , "51234"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "FK", 500, "00", , , , , , , , , , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], 
 [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], FM:[, [, , "[39]\\d{6}", , , , , , , [7]], [, , "3[2357]0[1-9]\\d{3}|9[2-6]\\d{5}", , , , "3201234"], [, , "3[2357]0[1-9]\\d{3}|9[2-7]\\d{5}", , , , "3501234"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "FM", 691, "00", , , , , , , , [[, "(\\d{3})(\\d{4})", "$1 $2"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , 
@@ -69895,7 +69761,7 @@ DK:[, [, , "[2-9]\\d{7}", , , , , , , [8]], [, , "(?:[2-7]\\d|8[126-9]|9[1-36-9]
 , , , , , [-1]]], GY:[, [, , "[2-46-9]\\d{6}", , , , , , , [7]], [, , "(?:2(?:1[6-9]|2[0-35-9]|3[1-4]|5[3-9]|6\\d|7[0-24-79])|3(?:2[25-9]|3\\d)|4(?:4[0-24]|5[56])|77[1-57])\\d{4}", , , , "2201234"], [, , "6\\d{6}", , , , "6091234"], [, , "(?:289|862)\\d{4}", , , , "2891234"], [, , "9008\\d{3}", , , , "9008123"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "GY", 592, "001", , , , , , , , [[, "(\\d{3})(\\d{4})", "$1 $2"]], , [, , , , , , , , , [-1]], , , [, , , , , 
 , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], HK:[, [, , "[235-7]\\d{7}|8\\d{7,8}|9\\d{4,10}", , , , , , , [5, 6, 7, 8, 9, 11]], [, , "(?:2(?:[13-8]\\d|2[013-9]|9[0-24-9])|3(?:[1569][0-24-9]|4[0-246-9]|7[0-24-69]|89)|58[01])\\d{5}", , , , "21234567", , , [8]], [, , "(?:5(?:[1-59][0-46-9]|6[0-4689]|7[0-469])|6(?:0[1-9]|[1459]\\d|[2368][0-57-9]|7[0-79])|9(?:0[1-9]|1[02-9]|[2358][0-8]|[467]\\d))\\d{5}", , , , "51234567", , , [8]], [, , "800\\d{6}", , , , "800123456", , , [9]], 
 [, , "900(?:[0-24-9]\\d{7}|3\\d{1,4})", , , , "90012345678", , , [5, 6, 7, 8, 11]], [, , , , , , , , , [-1]], [, , "8(?:1[1-4679]|2[0-367]|3[02-47])\\d{5}", , , , "81123456", , , [8]], [, , , , , , , , , [-1]], "HK", 852, "00(?:[126-9]|30|5[09])?", , , , , , "00", , [[, "(\\d{4})(\\d{4})", "$1 $2", ["[235-7]|[89](?:0[1-9]|[1-9])"]], [, "(800)(\\d{3})(\\d{3})", "$1 $2 $3", ["800"]], [, "(900)(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["900"]], [, "(900)(\\d{2,5})", "$1 $2", ["900"]]], , [, , "7(?:1[0-369]|[23][0-37-9]|47|5[1578]|6[0235]|7[278]|8[236-9]|9[025-9])\\d{5}", 
-, , , "71234567", , , [8]], , , [, , , , , , , , , [-1]], [, , "30(?:0[1-9]|[15-7]\\d|2[047]|89)\\d{4}", , , , "30161234", , , [8]], , , [, , , , , , , , , [-1]]], HN:[, [, , "[237-9]\\d{7}", , , , , , , [8]], [, , "2(?:2(?:0[019]|1[1-36]|[23]\\d|4[04-6]|5[57]|7[013689]|8[0146-9]|9[012])|4(?:07|2[3-59]|3[13-689]|4[0-68]|5[1-35])|5(?:16|4[03-5]|5\\d|6[4-6]|74)|6(?:[056]\\d|17|3[04]|4[0-378]|[78][0-8]|9[01])|7(?:6[46-9]|7[02-9]|8[034])|8(?:79|8[0-35789]|9[1-57-9]))\\d{4}", , , , "22123456"], [, , "[37-9]\\d{7}", 
+, , , "71234567", , , [8]], , , [, , , , , , , , , [-1]], [, , "30(?:0[1-9]|[15-7]\\d|2[047]|89)\\d{4}", , , , "30161234", , , [8]], , , [, , , , , , , , , [-1]]], HN:[, [, , "[237-9]\\d{7}", , , , , , , [8]], [, , "2(?:2(?:0[019]|1[1-36]|[23]\\d|4[04-6]|5[57]|7[01389]|8[0146-9]|9[012])|4(?:07|2[3-59]|3[13-689]|4[0-68]|5[1-35])|5(?:16|4[03-5]|5\\d|6[4-6]|74)|6(?:[056]\\d|17|3[04]|4[0-378]|[78][0-8]|9[01])|7(?:6[46-9]|7[02-9]|8[034])|8(?:79|8[0-35789]|9[1-57-9]))\\d{4}", , , , "22123456"], [, , "[37-9]\\d{7}", 
 , , , "91234567"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "HN", 504, "00", , , , , , , , [[, "(\\d{4})(\\d{4})", "$1-$2"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], HR:[, [, , "[1-7]\\d{5,8}|[89]\\d{6,8}", , , , , , , [6, 7, 8, 9]], [, , "1\\d{7}|(?:2[0-3]|3[1-5]|4[02-47-9]|5[1-3])\\d{6,7}", , , , "12345678", , , [8, 9], [6, 7]], [, , 
 "9(?:01\\d|[1259]\\d{2}|7(?:[0679]\\d|51)|8\\d{1,2})\\d{5}", , , , "921234567", , , [8, 9]], [, , "80[01]\\d{4,6}", , , , "800123456", , , [7, 8, 9]], [, , "6(?:[01]\\d{0,2}|[459]\\d{2})\\d{4}", , , , "611234", , , [6, 7, 8]], [, , , , , , , , , [-1]], [, , "7[45]\\d{6}", , , , "74123456", , , [8]], [, , , , , , , , , [-1]], "HR", 385, "00", "0", , , "0", , , , [[, "(1)(\\d{4})(\\d{3})", "$1 $2 $3", ["1"], "0$1"], [, "([2-5]\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[2-5]"], "0$1"], [, "(9\\d)(\\d{3})(\\d{3,4})", 
 "$1 $2 $3", ["9"], "0$1"], [, "(6[01])(\\d{2})(\\d{2,3})", "$1 $2 $3", ["6[01]"], "0$1"], [, "([67]\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[67]"], "0$1"], [, "(80[01])(\\d{2})(\\d{2,3})", "$1 $2 $3", ["8"], "0$1"], [, "(80[01])(\\d{3})(\\d{3})", "$1 $2 $3", ["8"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , "(?:62\\d?|72)\\d{6}", , , , "62123456", , , [8, 9]], , , [, , , , , , , , , [-1]]], HT:[, [, , "[2-489]\\d{7}", , , , , , , [8]], [, , "2(?:2\\d|5[1-5]|81|9[149])\\d{5}", 
@@ -69924,7 +69790,7 @@ DK:[, [, , "[2-9]\\d{7}", , , , , , , [8]], [, , "(?:[2-7]\\d|8[126-9]|9[1-36-9]
 8]], [, , "(?:(?:1[137]|2[13-68]|3[1458]|4[145]|5[1468]|6[16]|7[1467]|8[13467])(?:\\d{8}|(?:[16]|[289]\\d?)\\d{3}))|94(?:000|11[1-7]|2\\d{2}|440)\\d{5}", , , , "2123456789", , , , [4, 5, 8]], [, , "9(?:0[1-3]\\d{2}|[1-3]\\d{3}|9(?:0\\d{2}|44\\d|810|9(?:00|11|9[89])))\\d{5}", , , , "9123456789", , , [10]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , "(?:[2-6]0\\d|993)\\d{7}", , , , "9932123456", , , [10]], "IR", 98, "00", "0", , , "0", 
 , , , [[, "(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["[1-8]"], "0$1"], [, "(\\d{2})(\\d{4,5})", "$1 $2", ["[1-8]"], "0$1"], [, "(\\d{4,5})", "$1", ["96"], "0$1"], [, "(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["9"], "0$1"]], , [, , "943\\d{7}", , , , "9432123456", , , [10]], , , [, , "(?:9411[1-7]|94440)\\d{5}", , , , "9411110000", , , [10]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], IS:[, [, , "[4-9]\\d{6}|38\\d{7}", , , , , , , [7, 9]], [, , "(?:4(?:1[0-24-69]|2[0-7]|[37][0-8]|4[0-245]|5[0-68]|6\\d|8[0-36-8])|5(?:05|[156]\\d|2[02578]|3[0-79]|4[03-7]|7[0-2578]|8[0-35-9]|9[013-689])|87[23])\\d{4}", 
 , , , "4101234", , , [7]], [, , "38[589]\\d{6}|(?:6(?:1[1-8]|2[0-6]|3[027-9]|4[014679]|5[0159]|[67][0-69]|9\\d)|7(?:5[057]|[6-8]\\d)|8(?:2[0-59]|3[0-4]|[469]\\d|5[1-9]|88))\\d{4}", , , , "6111234"], [, , "800\\d{4}", , , , "8001234", , , [7]], [, , "90\\d{5}", , , , "9011234", , , [7]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , "49\\d{5}", , , , "4921234", , , [7]], "IS", 354, "1(?:0(?:01|10|20)|100)|00", , , , , , "00", , [[, "(\\d{3})(\\d{4})", "$1 $2", ["[4-9]"]], [, "(3\\d{2})(\\d{3})(\\d{3})", 
-"$1 $2 $3", ["3"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , "809\\d{4}", , , , "8091234", , , [7]], , , [, , "(?:6(?:2[78]|8\\d)|8(?:7[0189]|80)|95[48])\\d{4}", , , , "6271234", , , [7]]], IT:[, [, , "[01589]\\d{5,10}|3(?:[12457-9]\\d{8}|[36]\\d{7,9})", , , , , , , [6, 7, 8, 9, 10, 11]], [, , "0(?:[26]\\d{4,9}|(?:1(?:[0159]\\d|[27][1-5]|31|4[1-4]|6[1356]|8[2-57])|3(?:[0159]\\d|2[1-4]|3[12]|[48][1-6]|6[2-59]|7[1-7])|4(?:[0159]\\d|[23][1-9]|4[245]|6[1-5]|7[1-4]|81)|5(?:[0159]\\d|2[1-5]|3[2-6]|4[1-79]|6[4-6]|7[1-578]|8[3-8])|7(?:[0159]\\d|2[12]|3[1-7]|4[2346]|6[13569]|7[13-6]|8[1-59])|8(?:[0159]\\d|2[34578]|3[1-356]|[6-8][1-5])|9(?:[0159]\\d|[238][1-5]|4[12]|6[1-8]|7[1-6]))\\d{2,7})", 
+"$1 $2 $3", ["3"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , "809\\d{4}", , , , "8091234", , , [7]], , , [, , "(?:6(?:2[78]|49|8\\d)|8(?:7[0189]|80)|95[48])\\d{4}", , , , "6271234", , , [7]]], IT:[, [, , "[01589]\\d{5,10}|3(?:[12457-9]\\d{8}|[36]\\d{7,9})", , , , , , , [6, 7, 8, 9, 10, 11]], [, , "0(?:[26]\\d{4,9}|(?:1(?:[0159]\\d|[27][1-5]|31|4[1-4]|6[1356]|8[2-57])|3(?:[0159]\\d|2[1-4]|3[12]|[48][1-6]|6[2-59]|7[1-7])|4(?:[0159]\\d|[23][1-9]|4[245]|6[1-5]|7[1-4]|81)|5(?:[0159]\\d|2[1-5]|3[2-6]|4[1-79]|6[4-6]|7[1-578]|8[3-8])|7(?:[0159]\\d|2[12]|3[1-7]|4[2346]|6[13569]|7[13-6]|8[1-59])|8(?:[0159]\\d|2[34578]|3[1-356]|[6-8][1-5])|9(?:[0159]\\d|[238][1-5]|4[12]|6[1-8]|7[1-6]))\\d{2,7})", 
 , , , "0212345678"], [, , "3(?:[12457-9]\\d{8}|6\\d{7,8}|3\\d{7,9})", , , , "3123456789", , , [9, 10, 11]], [, , "80(?:0\\d{6}|3\\d{3})", , , , "800123456", , , [6, 9]], [, , "0878\\d{5}|1(?:44|6[346])\\d{6}|89(?:2\\d{3}|4(?:[0-4]\\d{2}|[5-9]\\d{4})|5(?:[0-4]\\d{2}|[5-9]\\d{6})|9\\d{6})", , , , "899123456", , , [6, 8, 9, 10]], [, , "84(?:[08]\\d{6}|[17]\\d{3})", , , , "848123456", , , [6, 9]], [, , "1(?:78\\d|99)\\d{6}", , , , "1781234567", , , [9, 10]], [, , "55\\d{8}", , , , "5512345678", , , [10]], 
 "IT", 39, "00", , , , , , , , [[, "(\\d{2})(\\d{3,4})(\\d{4})", "$1 $2 $3", ["0[26]|55"]], [, "(0[26])(\\d{4})(\\d{5})", "$1 $2 $3", ["0[26]"]], [, "(0[26])(\\d{4,6})", "$1 $2", ["0[26]"]], [, "(0\\d{2})(\\d{3,4})(\\d{4})", "$1 $2 $3", ["0[13-57-9][0159]"]], [, "(\\d{3})(\\d{3,6})", "$1 $2", ["0[13-57-9][0159]|8(?:03|4[17]|9[245])", "0[13-57-9][0159]|8(?:03|4[17]|9(?:2|[45][0-4]))"]], [, "(0\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["0[13-57-9][2-46-8]"]], [, "(0\\d{3})(\\d{2,6})", "$1 $2", ["0[13-57-9][2-46-8]"]], 
 [, "(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[13]|8(?:00|4[08]|9[59])", "[13]|8(?:00|4[08]|9(?:5[5-9]|9))"]], [, "(\\d{4})(\\d{4})", "$1 $2", ["894", "894[5-9]"]], [, "(\\d{3})(\\d{4})(\\d{4})", "$1 $2 $3", ["3"]]], , [, , , , , , , , , [-1]], 1, , [, , "848\\d{6}", , , , "848123456", , , [9]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], JE:[, [, , "[135789]\\d{6,9}", , , , , , , [10], [6]], [, , "1534[0-24-8]\\d{5}", , , , "1534456789", , , , [6]], [, , "7(?:509\\d|7(?:00[378]|97[7-9])|829\\d|937\\d)\\d{5}", 
@@ -69953,20 +69819,21 @@ DK:[, [, , "[2-9]\\d{7}", , , , , , , [8]], [, , "(?:[2-7]\\d|8[126-9]|9[1-36-9]
 , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], KH:[, [, , "[1-9]\\d{7,9}", , , , , , , [8, 9, 10], [6, 7]], [, , "(?:2[3-6]|3[2-6]|4[2-4]|[5-7][2-5])(?:[237-9]|4[56]|5\\d|6\\d?)\\d{5}|23(?:4[234]|8\\d{2})\\d{4}", , , , "23756789", , , [8, 9], [6, 7]], [, , "(?:1(?:[013-79]\\d|[28]\\d{1,2})|2[3-6]48|3(?:[18]\\d{2}|[2-6]48)|4[2-4]48|5[2-5]48|6(?:[016-9]\\d|[2-5]48)|7(?:[07-9]\\d|[16]\\d{2}|[2-5]48)|8(?:[013-79]\\d|8\\d{2})|9(?:6\\d{2}|7\\d{1,2}|[0-589]\\d))\\d{5}", 
 , , , "91234567", , , [8, 9]], [, , "1800(?:1\\d|2[019])\\d{4}", , , , "1800123456", , , [10]], [, , "1900(?:1\\d|2[09])\\d{4}", , , , "1900123456", , , [10]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "KH", 855, "00[14-9]", "0", , , "0", , , , [[, "(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["1\\d[1-9]|[2-9]"], "0$1"], [, "(1[89]00)(\\d{3})(\\d{3})", "$1 $2 $3", ["1[89]0"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , 
 [, , , , , , , , , [-1]]], KI:[, [, , "[2458]\\d{4}|3\\d{4,7}|[67]\\d{7}", , , , , , , [5, 8]], [, , "(?:[24]\\d|3[1-9]|50|8[0-5])\\d{3}|(?:65(?:02[12]|12[56]|22[89]|[3-5]00)|7(?:27\\d{2}|3100|5(?:02[12]|12[56]|22[89]|[34](?:00|81)|500)))\\d{3}", , , , "31234"], [, , "(?:6(?:200[01]|30[01]\\d)|7(?:200[01]|3(?:0[0-5]\\d|140)))\\d{3}", , , , "72001234", , , [8]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , "30(?:0[01]\\d{2}|12(?:11|20))\\d{2}", 
-, , , "30010000", , , [8]], "KI", 686, "00", , , , "0", , , , , , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], KM:[, [, , "[3478]\\d{6}", , , , , , , [7]], [, , "7[4-7]\\d{5}", , , , "7712345"], [, , "[34]\\d{6}", , , , "3212345"], [, , , , , , , , , [-1]], [, , "8\\d{6}", , , , "8001234"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "KM", 269, "00", , , , , , , , [[, "(\\d{3})(\\d{2})(\\d{2})", 
+, , , "30010000", , , [8]], "KI", 686, "00", , , , "0", , , , , , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], KM:[, [, , "[3478]\\d{6}", , , , , , , [7]], [, , "7[4-7]\\d{5}", , , , "7712345"], [, , "[34]\\d{6}", , , , "3212345"], [, , , , , , , , , [-1]], [, , "(?:39[01]|8\\d{2})\\d{4}", , , , "8001234"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "KM", 269, "00", , , , , , , , [[, "(\\d{3})(\\d{2})(\\d{2})", 
 "$1 $2 $3"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], KN:[, [, , "[589]\\d{9}", , , , , , , [10], [7]], [, , "869(?:2(?:29|36)|302|4(?:6[015-9]|70))\\d{4}", , , , "8692361234", , , , [7]], [, , "869(?:5(?:5[6-8]|6[5-7])|66\\d|76[02-7])\\d{4}", , , , "8697652917", , , , [7]], [, , "8(?:00|33|44|55|66|77|88)[2-9]\\d{6}", , , , "8002123456"], [, , "900[2-9]\\d{6}", , , , "9002123456"], [, , , , , , , , , [-1]], [, , "5(?:00|22|33|44|66|77|88)[2-9]\\d{6}", 
 , , , "5002345678"], [, , , , , , , , , [-1]], "KN", 1, "011", "1", , , "1", , , , , , [, , , , , , , , , [-1]], , "869", [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], KP:[, [, , "1\\d{9}|[28]\\d{7}", , , , , , , [8, 10], [6, 7]], [, , "2\\d{7}|85\\d{6}", , , , "21234567", , , [8], [6, 7]], [, , "19[123]\\d{7}", , , , "1921234567", , , [10]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , 
-, , [-1]], "KP", 850, "00|99", "0", , , "0", , , , [[, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "0$1"], [, "(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["2"], "0$1"], [, "(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["8"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , "2(?:[0-24-9]\\d{2}|3(?:[0-79]\\d|8[02-9]))\\d{4}", , , , "23821234", , , [8]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], KR:[, [, , "007\\d{9,11}|[1-7]\\d{4,9}|8\\d{8}", , , , , , , [5, 6, 8, 9, 10, 12, 13, 14], [3, 7]], [, 
-, "2[1-9]\\d{6,7}|(?:3[1-3]|[46][1-4]|5[1-5])(?:1\\d{2,3}|[1-9]\\d{6,7})", , , , "22123456", , , [5, 6, 8, 9, 10], [3, 7]], [, , "1[0-26-9]\\d{7,8}", , , , "1000000000", , , [9, 10]], [, , "(?:00798\\d{0,2}|80)\\d{7}", , , , "801234567", , , [9, 12, 13, 14]], [, , "60[2-9]\\d{6}", , , , "602345678", , , [9]], [, , , , , , , , , [-1]], [, , "50\\d{8}", , , , "5012345678", , , [10]], [, , "70\\d{8}", , , , "7012345678", , , [10]], "KR", 82, "00(?:[124-68]|3\\d{2}|7(?:[0-8]\\d|9[0-79]))", "0", , , "0(8[1-46-8]|85\\d{2})?", 
-, , , [[, "(\\d{2})(\\d{3,4})", "$1-$2", ["(?:3[1-3]|[46][1-4]|5[1-5])1"], "0$1", "0$CC-$1"], [, "(\\d{4})(\\d{4})", "$1-$2", ["1(?:5[246-9]|6[046-8]|8[03579])", "1(?:5(?:22|44|66|77|88|99)|6(?:[07]0|44|6[16]|88)|8(?:00|33|55|77|99))"], "$1", "0$CC-$1"], [, "(\\d{5})", "$1", ["1[016-9]1", "1[016-9]11", "1[016-9]114"], "0$1", "0$CC-$1"], [, "(\\d)(\\d{3,4})(\\d{4})", "$1-$2-$3", ["2[1-9]"], "0$1", "0$CC-$1"], [, "(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["60[2-9]|80"], "0$1", "0$CC-$1"], [, "(\\d{2})(\\d{3,4})(\\d{4})", 
-"$1-$2-$3", ["1[0-25-9]|(?:3[1-3]|[46][1-4]|5[1-5])[1-9]"], "0$1", "0$CC-$1"], [, "(\\d{2})(\\d{4})(\\d{4})", "$1-$2-$3", ["[57]0"], "0$1", "0$CC-$1"], [, "(\\d{5})(\\d{3,4})(\\d{4})", "$1 $2 $3", ["007", "0079", "00798"], "$1", "0$CC-$1"], [, "(\\d{5})(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3 $4", ["007", "0079", "00798"], "$1", "0$CC-$1"]], [[, "(\\d{2})(\\d{3,4})", "$1-$2", ["(?:3[1-3]|[46][1-4]|5[1-5])1"], "0$1", "0$CC-$1"], [, "(\\d{4})(\\d{4})", "$1-$2", ["1(?:5[246-9]|6[046-8]|8[03579])", "1(?:5(?:22|44|66|77|88|99)|6(?:[07]0|44|6[16]|88)|8(?:00|33|55|77|99))"], 
-"$1", "0$CC-$1"], [, "(\\d{5})", "$1", ["1[016-9]1", "1[016-9]11", "1[016-9]114"], "0$1", "0$CC-$1"], [, "(\\d)(\\d{3,4})(\\d{4})", "$1-$2-$3", ["2[1-9]"], "0$1", "0$CC-$1"], [, "(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["60[2-9]|80"], "0$1", "0$CC-$1"], [, "(\\d{2})(\\d{3,4})(\\d{4})", "$1-$2-$3", ["1[0-25-9]|(?:3[1-3]|[46][1-4]|5[1-5])[1-9]"], "0$1", "0$CC-$1"], [, "(\\d{2})(\\d{4})(\\d{4})", "$1-$2-$3", ["[57]0"], "0$1", "0$CC-$1"]], [, , "15\\d{7,8}", , , , "1523456789", , , [9, 10]], , , [, , 
-"00798\\d{7,9}", , , , "007981234567", , , [12, 13, 14]], [, , "1(?:[0179]114|5(?:22|44|66|77|88|99)\\d{4}|6(?:(?:00|44|6[16]|70|88)\\d{4}|114)|8(?:(?:00|33|55|77|99)\\d{4}|114))", , , , "15441234", , , [5, 8]], , , [, , , , , , , , , [-1]]], KW:[, [, , "[12569]\\d{6,7}", , , , , , , [7, 8]], [, , "(?:18\\d|2(?:[23]\\d{2}|4(?:[1-35-9]\\d|44)|5(?:0[034]|[2-46]\\d|5[1-3]|7[1-7])))\\d{4}", , , , "22345678"], [, , "(?:5(?:[05]\\d{2}|1[0-7]\\d|2(?:22|5[25])|6[56]\\d)|6(?:0[034679]\\d|222|5[015-9]\\d|6\\d{2}|7(?:0[013-9]|[67]\\d)|9(?:[069]\\d|3[039]))|9(?:0[09]\\d|22\\d|4[01479]\\d|55\\d|6[0679]\\d|7(?:02|[1-9]\\d)|8[057-9]\\d|9\\d{2}))\\d{4}", 
-, , , "50012345", , , [8]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "KW", 965, "00", , , , , , , , [[, "(\\d{4})(\\d{3,4})", "$1 $2", ["[16]|2(?:[0-35-9]|4[0-35-9])|52[25]|9[024-9]"]], [, "(\\d{3})(\\d{5})", "$1 $2", ["244|5(?:[015]|6[56])"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], KY:[, [, , "[3589]\\d{9}", , , , , , , [10], [7]], 
-[, , "345(?:2(?:22|44)|444|6(?:23|38|40)|7(?:4[35-79]|6[6-9]|77)|8(?:00|1[45]|25|[48]8)|9(?:14|4[035-9]))\\d{4}", , , , "3452221234", , , , [7]], [, , "345(?:32[1-9]|5(?:1[67]|2[5-79]|4[6-9]|50|76)|649|9(?:1[67]|2[2-9]|3[689]))\\d{4}", , , , "3453231234", , , , [7]], [, , "8(?:00|33|44|55|66|77|88)[2-9]\\d{6}", , , , "8002345678"], [, , "900[2-9]\\d{6}|345976\\d{4}", , , , "9002345678"], [, , , , , , , , , [-1]], [, , "5(?:00|22|33|44|66|77|88)[2-9]\\d{6}", , , , "5002345678"], [, , , , , , , , , 
-[-1]], "KY", 1, "011", "1", , , "1", , , , , , [, , "345849\\d{4}", , , , "3458491234"], , "345", [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], KZ:[, [, , "(?:33\\d|7\\d{2}|80[089])\\d{7}", , , , , , , [10]], [, , "33622\\d{5}|7(?:1(?:0(?:[23]\\d|4[0-3]|59|63)|1(?:[23]\\d|4[0-79]|59)|2(?:[23]\\d|59)|3(?:2\\d|3[0-79]|4[0-35-9]|59)|4(?:[24]\\d|3[013-9]|5[1-9])|5(?:2\\d|3[1-9]|4[0-7]|59)|6(?:[234]\\d|5[19]|61)|72\\d|8(?:[27]\\d|3[1-46-9]|4[0-5]))|2(?:1(?:[23]\\d|4[46-9]|5[3469])|2(?:2\\d|3[0679]|46|5[12679])|3(?:[234]\\d|5[139])|4(?:2\\d|3[1235-9]|59)|5(?:[23]\\d|4[01246-8]|59|61)|6(?:2\\d|3[1-9]|4[0-4]|59)|7(?:[2379]\\d|40|5[279])|8(?:[23]\\d|4[0-3]|59)|9(?:2\\d|3[124578]|59)))\\d{5}", 
-, , , "7123456789"], [, , "7(?:0[012578]|47|6[02-4]|7[15-8]|85)\\d{7}", , , , "7710009998"], [, , "800\\d{7}", , , , "8001234567"], [, , "809\\d{7}", , , , "8091234567"], [, , , , , , , , , [-1]], [, , "808\\d{7}", , , , "8081234567"], [, , "751\\d{7}", , , , "7511234567"], "KZ", 7, "810", "8", , , "8", , "8~10", , , , [, , , , , , , , , [-1]], , , [, , "751\\d{7}", , , , "7511234567"], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], LA:[, [, , "[2-8]\\d{7,9}", , , , , , , [8, 9, 10], [6]], 
-[, , "(?:2[13]|3(?:0\\d|[14])|[5-7][14]|41|8[1468])\\d{6}", , , , "21212862", , , [8, 9], [6]], [, , "20(?:2[2389]|5[24-689]|7[6-8]|9[125-9])\\d{6}", , , , "2023123456", , , [10]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "LA", 856, "00", "0", , , "0", , , , [[, "(20)(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["20"], "0$1"], [, "([2-8]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["2[13]|3[14]|[4-8]"], "0$1"], [, "(30)(\\d{2})(\\d{2})(\\d{3})", 
+, , [-1]], "KP", 850, "00|99", "0", , , "0", , , , [[, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "0$1"], [, "(\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["2"], "0$1"], [, "(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["8"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , "2(?:[0-24-9]\\d{2}|3(?:[0-79]\\d|8[02-9]))\\d{4}", , , , "23821234", , , [8]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], KR:[, [, , "007\\d{9,11}|[1-7]\\d{3,9}|8\\d{8}", , , , , , , [4, 5, 6, 8, 9, 10, 12, 13, 14], [3, 7]], 
+[, , "(?:2|3[1-3]|[46][1-4]|5[1-5])(?:1\\d{2,3}|[1-9]\\d{6,7})", , , , "22123456", , , [4, 5, 6, 8, 9, 10], [3, 7]], [, , "1[0-26-9]\\d{7,8}", , , , "1000000000", , , [9, 10]], [, , "(?:00798\\d{0,2}|80)\\d{7}", , , , "801234567", , , [9, 12, 13, 14]], [, , "60[2-9]\\d{6}", , , , "602345678", , , [9]], [, , , , , , , , , [-1]], [, , "50\\d{8}", , , , "5012345678", , , [10]], [, , "70\\d{8}", , , , "7012345678", , , [10]], "KR", 82, "00(?:[124-68]|3\\d{2}|7(?:[0-8]\\d|9[0-79]))", "0", , , "0(8[1-46-8]|85\\d{2})?", 
+, , , [[, "(\\d)(\\d{3,4})", "$1-$2", ["21"], "0$1", "0$CC-$1"], [, "(\\d{2})(\\d{3,4})", "$1-$2", ["(?:3[1-3]|[46][1-4]|5[1-5])1"], "0$1", "0$CC-$1"], [, "(\\d{4})(\\d{4})", "$1-$2", ["1(?:5[246-9]|6[046-8]|8[03579])", "1(?:5(?:22|44|66|77|88|99)|6(?:[07]0|44|6[16]|88)|8(?:00|33|55|77|99))"], "$1", "0$CC-$1"], [, "(\\d{5})", "$1", ["1[016-9]1", "1[016-9]11", "1[016-9]114"], "0$1", "0$CC-$1"], [, "(\\d)(\\d{3,4})(\\d{4})", "$1-$2-$3", ["2[1-9]"], "0$1", "0$CC-$1"], [, "(\\d{2})(\\d{3})(\\d{4})", 
+"$1-$2-$3", ["60[2-9]|80"], "0$1", "0$CC-$1"], [, "(\\d{2})(\\d{3,4})(\\d{4})", "$1-$2-$3", ["1[0-25-9]|(?:3[1-3]|[46][1-4]|5[1-5])[1-9]"], "0$1", "0$CC-$1"], [, "(\\d{2})(\\d{4})(\\d{4})", "$1-$2-$3", ["[57]0"], "0$1", "0$CC-$1"], [, "(\\d{5})(\\d{3,4})(\\d{4})", "$1 $2 $3", ["007", "0079", "00798"], "$1", "0$CC-$1"], [, "(\\d{5})(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3 $4", ["007", "0079", "00798"], "$1", "0$CC-$1"]], [[, "(\\d)(\\d{3,4})", "$1-$2", ["21"], "0$1", "0$CC-$1"], [, "(\\d{2})(\\d{3,4})", 
+"$1-$2", ["(?:3[1-3]|[46][1-4]|5[1-5])1"], "0$1", "0$CC-$1"], [, "(\\d{4})(\\d{4})", "$1-$2", ["1(?:5[246-9]|6[046-8]|8[03579])", "1(?:5(?:22|44|66|77|88|99)|6(?:[07]0|44|6[16]|88)|8(?:00|33|55|77|99))"], "$1", "0$CC-$1"], [, "(\\d{5})", "$1", ["1[016-9]1", "1[016-9]11", "1[016-9]114"], "0$1", "0$CC-$1"], [, "(\\d)(\\d{3,4})(\\d{4})", "$1-$2-$3", ["2[1-9]"], "0$1", "0$CC-$1"], [, "(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["60[2-9]|80"], "0$1", "0$CC-$1"], [, "(\\d{2})(\\d{3,4})(\\d{4})", "$1-$2-$3", 
+["1[0-25-9]|(?:3[1-3]|[46][1-4]|5[1-5])[1-9]"], "0$1", "0$CC-$1"], [, "(\\d{2})(\\d{4})(\\d{4})", "$1-$2-$3", ["[57]0"], "0$1", "0$CC-$1"]], [, , "15\\d{7,8}", , , , "1523456789", , , [9, 10]], , , [, , "00798\\d{7,9}", , , , "007981234567", , , [12, 13, 14]], [, , "1(?:[0179]114|5(?:22|44|66|77|88|99)\\d{4}|6(?:(?:00|44|6[16]|70|88)\\d{4}|114)|8(?:(?:00|33|55|77|99)\\d{4}|114))", , , , "15441234", , , [5, 8]], , , [, , , , , , , , , [-1]]], KW:[, [, , "[12569]\\d{6,7}", , , , , , , [7, 8]], [, , 
+"(?:18\\d|2(?:[23]\\d{2}|4(?:[1-35-9]\\d|44)|5(?:0[034]|[2-46]\\d|5[1-3]|7[1-7])))\\d{4}", , , , "22345678"], [, , "(?:5(?:[05]\\d{2}|1[0-7]\\d|2(?:22|5[25])|6[56]\\d)|6(?:0[034679]\\d|222|5[015-9]\\d|6\\d{2}|7(?:0[013-9]|[67]\\d)|9(?:[069]\\d|3[039]))|9(?:0[09]\\d|22\\d|4[01479]\\d|55\\d|6[0679]\\d|7(?:02|[1-9]\\d)|8[057-9]\\d|9\\d{2}))\\d{4}", , , , "50012345", , , [8]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], 
+"KW", 965, "00", , , , , , , , [[, "(\\d{4})(\\d{3,4})", "$1 $2", ["[16]|2(?:[0-35-9]|4[0-35-9])|52[25]|9[024-9]"]], [, "(\\d{3})(\\d{5})", "$1 $2", ["244|5(?:[015]|6[56])"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], KY:[, [, , "[3589]\\d{9}", , , , , , , [10], [7]], [, , "345(?:2(?:22|44)|444|6(?:23|38|40)|7(?:4[35-79]|6[6-9]|77)|8(?:00|1[45]|25|[48]8)|9(?:14|4[035-9]))\\d{4}", , , , "3452221234", , , , [7]], [, , "345(?:32[1-9]|5(?:1[67]|2[5-79]|4[6-9]|50|76)|649|9(?:1[67]|2[2-9]|3[689]))\\d{4}", 
+, , , "3453231234", , , , [7]], [, , "8(?:00|33|44|55|66|77|88)[2-9]\\d{6}", , , , "8002345678"], [, , "900[2-9]\\d{6}|345976\\d{4}", , , , "9002345678"], [, , , , , , , , , [-1]], [, , "5(?:00|22|33|44|66|77|88)[2-9]\\d{6}", , , , "5002345678"], [, , , , , , , , , [-1]], "KY", 1, "011", "1", , , "1", , , , , , [, , "345849\\d{4}", , , , "3458491234"], , "345", [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], KZ:[, [, , "(?:33\\d|7\\d{2}|80[089])\\d{7}", , , , , 
+, , [10]], [, , "33622\\d{5}|7(?:1(?:0(?:[23]\\d|4[0-3]|59|63)|1(?:[23]\\d|4[0-79]|59)|2(?:[23]\\d|59)|3(?:2\\d|3[0-79]|4[0-35-9]|59)|4(?:[24]\\d|3[013-9]|5[1-9])|5(?:2\\d|3[1-9]|4[0-7]|59)|6(?:[234]\\d|5[19]|61)|72\\d|8(?:[27]\\d|3[1-46-9]|4[0-5]))|2(?:1(?:[23]\\d|4[46-9]|5[3469])|2(?:2\\d|3[0679]|46|5[12679])|3(?:[234]\\d|5[139])|4(?:2\\d|3[1235-9]|59)|5(?:[23]\\d|4[01246-8]|59|61)|6(?:2\\d|3[1-9]|4[0-4]|59)|7(?:[2379]\\d|40|5[279])|8(?:[23]\\d|4[0-3]|59)|9(?:2\\d|3[124578]|59)))\\d{5}", , , , 
+"7123456789"], [, , "7(?:0[012578]|47|6[02-4]|7[15-8]|85)\\d{7}", , , , "7710009998"], [, , "800\\d{7}", , , , "8001234567"], [, , "809\\d{7}", , , , "8091234567"], [, , , , , , , , , [-1]], [, , "808\\d{7}", , , , "8081234567"], [, , "751\\d{7}", , , , "7511234567"], "KZ", 7, "810", "8", , , "8", , "8~10", , , , [, , , , , , , , , [-1]], , , [, , "751\\d{7}", , , , "7511234567"], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], LA:[, [, , "[2-8]\\d{7,9}", , , , , , , [8, 9, 10], [6]], [, 
+, "(?:2[13]|3(?:0\\d|[14])|[5-7][14]|41|8[1468])\\d{6}", , , , "21212862", , , [8, 9], [6]], [, , "20(?:2[2389]|5[24-689]|7[6-8]|9[125-9])\\d{6}", , , , "2023123456", , , [10]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "LA", 856, "00", "0", , , "0", , , , [[, "(20)(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["20"], "0$1"], [, "([2-8]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["2[13]|3[14]|[4-8]"], "0$1"], [, "(30)(\\d{2})(\\d{2})(\\d{3})", 
 "$1 $2 $3 $4", ["30"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], LB:[, [, , "[13-9]\\d{6,7}", , , , , , , [7, 8]], [, , "(?:[14-6]\\d{2}|7(?:[2-57]\\d|62|8[0-7]|9[04-9])|8[02-9]\\d|9\\d{2})\\d{4}", , , , "1123456", , , [7]], [, , "(?:3\\d|7(?:[01]\\d|6[013-9]|8[89]|9[1-3])|81\\d)\\d{5}", , , , "71123456"], [, , , , , , , , , [-1]], [, , "9[01]\\d{6}", , , , "90123456", , , [8]], [, , "80\\d{6}", , , , "80123456", , 
 , [8]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "LB", 961, "00", "0", , , "0", , , , [[, "(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[13-69]|7(?:[2-57]|62|8[0-7]|9[04-9])|8[02-9]"], "0$1"], [, "([7-9]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["7(?:[01]|6[013-9]|8[89]|9[1-3])|[89][01]"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], LC:[, [, , "[5789]\\d{9}", , , , , , , [10], [7]], [, , "758(?:4(?:30|5[0-9]|6[2-9]|8[0-2])|57[0-2]|638)\\d{4}", 
 , , , "7584305678", , , , [7]], [, , "758(?:28[4-7]|384|4(?:6[01]|8[4-9])|5(?:1[89]|20|84)|7(?:1[2-9]|2\\d|3[01]))\\d{4}", , , , "7582845678", , , , [7]], [, , "8(?:00|33|44|55|66|77|88)[2-9]\\d{6}", , , , "8002123456"], [, , "900[2-9]\\d{6}", , , , "9002123456"], [, , , , , , , , , [-1]], [, , "5(?:00|22|33|44|66|77|88)[2-9]\\d{6}", , , , "5002345678"], [, , , , , , , , , [-1]], "LC", 1, "011", "1", , , "1", , , , , , [, , , , , , , , , [-1]], , "758", [, , , , , , , , , [-1]], [, , , , , , , , 
@@ -69977,7 +69844,7 @@ DK:[, [, , "[2-9]\\d{7}", , , , , , , [8]], [, , "(?:[2-7]\\d|8[126-9]|9[1-36-9]
 "0$1"], [, "(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[23578]"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], LS:[, [, , "[2568]\\d{7}", , , , , , , [8]], [, , "2\\d{7}", , , , "22123456"], [, , "[56]\\d{7}", , , , "50123456"], [, , "800[256]\\d{4}", , , , "80021234"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "LS", 266, "00", , , , , , , , [[, "(\\d{4})(\\d{4})", 
 "$1 $2"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], LT:[, [, , "[3-9]\\d{7}", , , , , , , [8]], [, , "(?:3[1478]|4[124-6]|52)\\d{6}", , , , "31234567"], [, , "6\\d{7}", , , , "61234567"], [, , "800\\d{5}", , , , "80012345"], [, , "9(?:0[0239]|10)\\d{5}", , , , "90012345"], [, , "808\\d{5}", , , , "80812345"], [, , "700\\d{5}", , , , "70012345"], [, , , , , , , , , [-1]], "LT", 370, "00", "8", , , "[08]", , , , [[, "([34]\\d)(\\d{6})", 
 "$1 $2", ["37|4(?:1|5[45]|6[2-4])"], "(8-$1)", , 1], [, "([3-6]\\d{2})(\\d{5})", "$1 $2", ["3[148]|4(?:[24]|6[09])|528|6"], "(8-$1)", , 1], [, "([7-9]\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["[7-9]"], "8 $1", , 1], [, "(5)(2\\d{2})(\\d{4})", "$1 $2 $3", ["52[0-79]"], "(8-$1)", , 1]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , "70[67]\\d{5}", , , , "70712345"], , , [, , , , , , , , , [-1]]], LU:[, [, , "[24-9]\\d{3,10}|3(?:[0-46-9]\\d{2,9}|5[013-9]\\d{1,8})", , , , , , , [4, 5, 6, 
-7, 8, 9, 10, 11]], [, , "(?:2[2-9]\\d{2,9}|(?:[3457]\\d{2}|8(?:0[2-9]|[13-9]\\d)|9(?:0[89]|[2-579]\\d))\\d{1,8})", , , , "27123456"], [, , "6[25-79][18]\\d{6}", , , , "628123456", , , [9]], [, , "800\\d{5}", , , , "80012345", , , [8]], [, , "90[015]\\d{5}", , , , "90012345", , , [8]], [, , "801\\d{5}", , , , "80112345", , , [8]], [, , , , , , , , , [-1]], [, , "20(?:1\\d{5}|[2-689]\\d{1,7})", , , , "20201234", , , [4, 5, 6, 7, 8, 9, 10]], "LU", 352, "00", , , , "(15(?:0[06]|1[12]|35|4[04]|55|6[26]|77|88|99)\\d)", 
+7, 8, 9, 10, 11]], [, , "(?:2[2-9]\\d{2,9}|(?:[3457]\\d{2}|8(?:0[2-9]|[13-9]\\d)|9(?:0[89]|[2-579]\\d))\\d{1,8})", , , , "27123456"], [, , "6[25-79][18]\\d{6}", , , , "628123456", , , [9]], [, , "800\\d{5}", , , , "80012345", , , [8]], [, , "90[015]\\d{5}", , , , "90012345", , , [8]], [, , "801\\d{5}", , , , "80112345", , , [8]], [, , "70\\d{6}", , , , "70123456", , , [8]], [, , "20(?:1\\d{5}|[2-689]\\d{1,7})", , , , "20201234", , , [4, 5, 6, 7, 8, 9, 10]], "LU", 352, "00", , , , "(15(?:0[06]|1[12]|35|4[04]|55|6[26]|77|88|99)\\d)", 
 , , , [[, "(\\d{2})(\\d{3})", "$1 $2", ["[2-5]|7[1-9]|[89](?:0[2-9]|[1-9])"], , "$CC $1"], [, "(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3", ["[2-5]|7[1-9]|[89](?:0[2-9]|[1-9])"], , "$CC $1"], [, "(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["20"], , "$CC $1"], [, "(\\d{2})(\\d{2})(\\d{2})(\\d{1,2})", "$1 $2 $3 $4", ["2(?:[0367]|4[3-8])"], , "$CC $1"], [, "(\\d{2})(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3 $4", ["20"], , "$CC $1"], [, "(\\d{2})(\\d{2})(\\d{2})(\\d{2})(\\d{1,2})", "$1 $2 $3 $4 $5", ["2(?:[0367]|4[3-8])"], 
 , "$CC $1"], [, "(\\d{2})(\\d{2})(\\d{2})(\\d{1,4})", "$1 $2 $3 $4", ["2(?:[12589]|4[12])|[3-5]|7[1-9]|8(?:0[2-9]|[1-9])|9(?:0[2-46-9]|[1-9])"], , "$CC $1"], [, "(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["70|80[01]|90[015]"], , "$CC $1"], [, "(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["6"], , "$CC $1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], LV:[, [, , "[2689]\\d{7}", , , , , , , [8]], [, , "6\\d{7}", , , , "63123456"], [, , 
 "2\\d{7}", , , , "21234567"], [, , "80\\d{6}", , , , "80123456"], [, , "90\\d{6}", , , , "90123456"], [, , "81\\d{6}", , , , "81123456"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "LV", 371, "00", , , , , , , , [[, "([2689]\\d)(\\d{3})(\\d{3})", "$1 $2 $3"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], LY:[, [, , "[25679]\\d{8}", , , , , , , [9], [7]], [, , "(?:2[1345]|5[1347]|6[123479]|71)\\d{7}", , , , "212345678", 
@@ -70008,9 +69875,9 @@ DK:[, [, , "[2-9]\\d{7}", , , , , , , [8]], [, , "(?:[2-7]\\d|8[126-9]|9[1-36-9]
 , , , "21001234"], [, , "(?:7(?:210|[79]\\d{2})|9(?:2(?:1[01]|31)|69[67]|8(?:1[1-3]|89|97)|9\\d{2}))\\d{4}", , , , "96961234"], [, , "800[3467]\\d{4}", , , , "80071234"], [, , "5(?:0(?:0(?:37|43)|6\\d{2}|70\\d|9[0168]\\d)|[12]\\d0[1-5])\\d{3}", , , , "50037123"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , "3550\\d{4}", , , , "35501234"], "MT", 356, "00", , , , , , , , [[, "(\\d{4})(\\d{4})", "$1 $2"]], , [, , "7117\\d{4}", , , , "71171234"], , , [, , , , , , , , , [-1]], [, , "501\\d{5}", 
 , , , "50112345"], , , [, , , , , , , , , [-1]]], MU:[, [, , "[2-9]\\d{6,7}", , , , , , , [7, 8]], [, , "(?:2(?:[03478]\\d|1[0-7]|6[1-69])|4(?:[013568]\\d|2[4-7])|5(?:44\\d|471)|6\\d{2}|8(?:14|3[129]))\\d{4}", , , , "2012345"], [, , "5(?:2[59]\\d|4(?:2[1-389]|4\\d|7[1-9]|9\\d)|7\\d{2}|8(?:[0-25689]\\d|4[3479]|7[15-8])|9[0-8]\\d)\\d{4}", , , , "52512345", , , [8]], [, , "80[012]\\d{4}", , , , "8001234", , , [7]], [, , "30\\d{5}", , , , "3012345", , , [7]], [, , , , , , , , , [-1]], [, , , , , , , 
 , , [-1]], [, , "3(?:20|9\\d)\\d{4}", , , , "3201234", , , [7]], "MU", 230, "0(?:0|[2-7]0|33)", , , , , , "020", , [[, "([2-46-9]\\d{2})(\\d{4})", "$1 $2", ["[2-46-9]"]], [, "(5\\d{3})(\\d{4})", "$1 $2", ["5"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], MV:[, [, , "[346-8]\\d{6,9}|9(?:00\\d{7}|\\d{6})", , , , , , , [7, 10]], [, , "(?:3(?:0[0-3]|3[0-59])|6(?:[57][02468]|6[024568]|8[024689]|90))\\d{4}", , , , "6701234", , , [7]], 
-[, , "(?:46[46]|7[3-9]\\d|9[15-9]\\d)\\d{4}", , , , "7712345", , , [7]], [, , "800\\d{7}", , , , "8001234567", , , [10]], [, , "900\\d{7}", , , , "9001234567", , , [10]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "MV", 960, "0(?:0|19)", , , , , , "00", , [[, "(\\d{3})(\\d{4})", "$1-$2", ["[3467]|9(?:0[1-9]|[1-9])"]], [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[89]00"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , "4[05]0\\d{4}", , , , "4001234", 
-, , [7]], , , [, , , , , , , , , [-1]]], MW:[, [, , "(?:1(?:\\d{2})?|[2789]\\d{2})\\d{6}", , , , , , , [7, 9]], [, , "(?:1[2-9]|21\\d{2})\\d{5}", , , , "1234567"], [, , "(?:111|77\\d|88\\d|99\\d)\\d{6}", , , , "991234567", , , [9]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "MW", 265, "00", "0", , , "0", , , , [[, "(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["1"], "0$1"], [, "(2\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["2"], 
-"0$1"], [, "(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[17-9]"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], MX:[, [, , "[1-9]\\d{9,10}", , , , , , , [10, 11], [7, 8]], [, , "(?:33|55|81)\\d{8}|(?:2(?:0[01]|2[1-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-578]|9[467])|3(?:1[1-79]|[2458][1-9]|7[1-8]|9[1-5])|4(?:1[1-57-9]|[24-6][1-9]|[37][1-8]|8[1-35-9]|9[2-689])|5(?:88|9[1-79])|6(?:1[2-68]|[234][1-9]|5[1-3689]|6[12457-9]|7[1-7]|8[67]|9[4-8])|7(?:[13467][1-9]|2[1-8]|5[13-9]|8[1-69]|9[17])|8(?:2[13-689]|3[1-6]|4[124-6]|6[1246-9]|7[1-378]|9[12479])|9(?:1[346-9]|2[1-4]|3[2-46-8]|5[1348]|[69][1-9]|7[12]|8[1-8]))\\d{7}", 
+[, , "(?:46[46]|7[3-9]\\d|9[15-9]\\d)\\d{4}", , , , "7712345", , , [7]], [, , "800\\d{7}", , , , "8001234567", , , [10]], [, , "900\\d{7}", , , , "9001234567", , , [10]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "MV", 960, "0(?:0|19)", , , , , , "00", , [[, "(\\d{3})(\\d{4})", "$1-$2", ["[3467]|9(?:0[1-9]|[1-9])"]], [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[89]00"]]], , [, , "781\\d{4}", , , , "7812345", , , [7]], , , [, , , , , , , , , [-1]], [, , "4[05]0\\d{4}", 
+, , , "4001234", , , [7]], , , [, , , , , , , , , [-1]]], MW:[, [, , "(?:1(?:\\d{2})?|[2789]\\d{2})\\d{6}", , , , , , , [7, 9]], [, , "(?:1[2-9]|21\\d{2})\\d{5}", , , , "1234567"], [, , "(?:111|77\\d|88\\d|99\\d)\\d{6}", , , , "991234567", , , [9]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "MW", 265, "00", "0", , , "0", , , , [[, "(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["1"], "0$1"], [, "(2\\d{2})(\\d{3})(\\d{3})", 
+"$1 $2 $3", ["2"], "0$1"], [, "(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[17-9]"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], MX:[, [, , "[1-9]\\d{9,10}", , , , , , , [10, 11], [7, 8]], [, , "(?:33|55|81)\\d{8}|(?:2(?:0[01]|2[1-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-578]|9[467])|3(?:1[1-79]|[2458][1-9]|7[1-8]|9[1-5])|4(?:1[1-57-9]|[24-6][1-9]|[37][1-8]|8[1-35-9]|9[2-689])|5(?:88|9[1-79])|6(?:1[2-68]|[234][1-9]|5[1-3689]|6[12457-9]|7[1-7]|8[67]|9[4-8])|7(?:[13467][1-9]|2[1-8]|5[13-9]|8[1-69]|9[17])|8(?:2[13-689]|3[1-6]|4[124-6]|6[1246-9]|7[1-378]|9[12479])|9(?:1[346-9]|2[1-4]|3[2-46-8]|5[1348]|[69][1-9]|7[12]|8[1-8]))\\d{7}", 
 , , , "2221234567", , , [10], [7, 8]], [, , "1(?:(?:33|55|81)\\d{8}|(?:2(?:2[1-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-578]|9[467])|3(?:1[1-79]|[2458][1-9]|7[1-8]|9[1-5])|4(?:1[1-57-9]|[24-6][1-9]|[37][1-8]|8[1-35-9]|9[2-689])|5(?:88|9[1-79])|6(?:1[2-68]|[2-4][1-9]|5[1-3689]|6[12457-9]|7[1-7]|8[67]|9[4-8])|7(?:[13467][1-9]|2[1-8]|5[13-9]|8[1-69]|9[17])|8(?:2[13-689]|3[1-6]|4[124-6]|6[1246-9]|7[1-378]|9[12479])|9(?:1[346-9]|2[1-4]|3[2-46-8]|5[1348]|[69][1-9]|7[12]|8[1-8]))\\d{7})", , , , "12221234567", 
 , , [11]], [, , "8(?:00|88)\\d{7}", , , , "8001234567", , , [10]], [, , "900\\d{7}", , , , "9001234567", , , [10]], [, , "300\\d{7}", , , , "3001234567", , , [10]], [, , "500\\d{7}", , , , "5001234567", , , [10]], [, , , , , , , , , [-1]], "MX", 52, "0[09]", "01", , , "0[12]|04[45](\\d{10})", "1$1", , , [[, "([358]\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["33|55|81"], "01 $1", , 1], [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[2467]|3[0-2457-9]|5[089]|8[02-9]|9[0-35-9]"], "01 $1", , 1], [, "(1)([358]\\d)(\\d{4})(\\d{4})", 
 "044 $2 $3 $4", ["1(?:33|55|81)"], "$1", , 1], [, "(1)(\\d{3})(\\d{3})(\\d{4})", "044 $2 $3 $4", ["1(?:[2467]|3[0-2457-9]|5[089]|8[2-9]|9[1-35-9])"], "$1", , 1]], [[, "([358]\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["33|55|81"], "01 $1", , 1], [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[2467]|3[0-2457-9]|5[089]|8[02-9]|9[0-35-9]"], "01 $1", , 1], [, "(1)([358]\\d)(\\d{4})(\\d{4})", "$1 $2 $3 $4", ["1(?:33|55|81)"]], [, "(1)(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3 $4", ["1(?:[2467]|3[0-2457-9]|5[089]|8[2-9]|9[1-35-9])"]]], 
@@ -70038,8 +69905,8 @@ DK:[, [, , "[2-9]\\d{7}", , , , , , , [8]], [, , "(?:[2-7]\\d|8[126-9]|9[1-36-9]
 ["21"], "0$1"], [, "(\\d{2})(\\d{3})(\\d{3,5})", "$1 $2 $3", ["2(?:1[1-9]|[69]|7[0-35-9])|70|86"], "0$1"], [, "(2\\d)(\\d{3,4})(\\d{4})", "$1 $2 $3", ["2[028]"], "0$1"], [, "(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["90"], "0$1"], [, "(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["2(?:10|74)|5|[89]0"], "0$1"]], , [, , "[28]6\\d{6,7}", , , , "26123456", , , [8, 9]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], OM:[, [, , "(?:5|[279]\\d)\\d{6}|800\\d{5,6}", , , , 
 , , , [7, 8, 9]], [, , "2[2-6]\\d{6}", , , , "23123456", , , [8]], [, , "7[19]\\d{6}|9(?:0[1-9]|[1-9]\\d)\\d{5}", , , , "92123456", , , [8]], [, , "8007\\d{4,5}|500\\d{4}", , , , "80071234"], [, , "900\\d{5}", , , , "90012345", , , [8]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "OM", 968, "00", , , , , , , , [[, "(2\\d)(\\d{6})", "$1 $2", ["2"]], [, "([79]\\d{3})(\\d{4})", "$1 $2", ["[79]"]], [, "([58]00)(\\d{4,6})", "$1 $2", ["[58]"]]], , [, , , , , , , , , [-1]], 
 , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], PA:[, [, , "[1-9]\\d{6,7}", , , , , , , [7, 8]], [, , "(?:1(?:0[0-8]|1[49]|2[37]|3[0137]|4[147]|5[05]|6[58]|7[0167]|8[58]|9[139])|2(?:[0235679]\\d|1[0-7]|4[04-9]|8[028])|3(?:[09]\\d|1[014-7]|2[0-3]|3[03]|4[03-57]|55|6[068]|7[06-8]|8[06-9])|4(?:3[013-69]|4\\d|7[0-589])|5(?:[01]\\d|2[0-7]|[56]0|79)|7(?:0[09]|2[0-267]|3[06]|[469]0|5[06-9]|7[0-24-79]|8[7-9])|8(?:09|[34]\\d|5[0134]|8[02])|9(?:0[6-9]|1[016-8]|2[036-8]|3[3679]|40|5[0489]|6[06-9]|7[046-9]|8[36-8]|9[1-9]))\\d{4}", 
-, , , "2001234", , , [7]], [, , "(?:1[16]1|21[89]|8(?:1[01]|7[23]))\\d{4}|6(?:[024-9]\\d|1[0-5]|3[0-24-9])\\d{5}", , , , "61234567"], [, , "800\\d{4}", , , , "8001234", , , [7]], [, , "(?:8(?:55|60|7[78])|9(?:00|81))\\d{4}", , , , "8601234", , , [7]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "PA", 507, "00", , , , , , , , [[, "(\\d{3})(\\d{4})", "$1-$2", ["[1-57-9]"]], [, "(\\d{4})(\\d{4})", "$1-$2", ["6"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , 
-[-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], PE:[, [, , "[14-9]\\d{7,8}", , , , , , , [8, 9], [6, 7]], [, , "(?:1\\d|4[1-4]|5[1-46]|6[1-7]|7[2-46]|8[2-4])\\d{6}", , , , "11234567", , , [8], [6, 7]], [, , "9\\d{8}", , , , "912345678", , , [9]], [, , "800\\d{5}", , , , "80012345", , , [8]], [, , "805\\d{5}", , , , "80512345", , , [8]], [, , "801\\d{5}", , , , "80112345", , , [8]], [, , "80[24]\\d{5}", , , , "80212345", , , [8]], [, , , , , , , , , [-1]], "PE", 51, "19(?:1[124]|77|90)00", 
+, , , "2001234", , , [7]], [, , "(?:1[16]1|21[89]|8(?:1[01]|7[23]))\\d{4}|6(?:[024-9]\\d|1[0-5]|3[0-24-9])\\d{5}", , , , "60012345"], [, , "80[09]\\d{4}", , , , "8001234", , , [7]], [, , "(?:779|8(?:55|60|7[78])|9(?:00|81))\\d{4}", , , , "8601234", , , [7]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "PA", 507, "00", , , , , , , , [[, "(\\d{3})(\\d{4})", "$1-$2", ["[1-57-9]"]], [, "(\\d{4})(\\d{4})", "$1-$2", ["6"]]], , [, , , , , , , , , [-1]], , , [, , , , , , 
+, , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], PE:[, [, , "[14-9]\\d{7,8}", , , , , , , [8, 9], [6, 7]], [, , "(?:1\\d|4[1-4]|5[1-46]|6[1-7]|7[2-46]|8[2-4])\\d{6}", , , , "11234567", , , [8], [6, 7]], [, , "9\\d{8}", , , , "912345678", , , [9]], [, , "800\\d{5}", , , , "80012345", , , [8]], [, , "805\\d{5}", , , , "80512345", , , [8]], [, , "801\\d{5}", , , , "80112345", , , [8]], [, , "80[24]\\d{5}", , , , "80212345", , , [8]], [, , , , , , , , , [-1]], "PE", 51, "19(?:1[124]|77|90)00", 
 "0", " Anexo ", , "0", , , , [[, "(1)(\\d{7})", "$1 $2", ["1"], "(0$1)"], [, "([4-8]\\d)(\\d{6})", "$1 $2", ["[4-7]|8[2-4]"], "(0$1)"], [, "(\\d{3})(\\d{5})", "$1 $2", ["80"], "(0$1)"], [, "(9\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["9"], "$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], PF:[, [, , "4\\d{5,7}|8\\d{7}", , , , , , , [6, 8]], [, , "4(?:[09][45689]\\d|4)\\d{4}", , , , "40412345"], [, , "8[79]\\d{6}", , , , "87123456", 
 , , [8]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "PF", 689, "00", , , , , , , , [[, "(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["4[09]|8[79]"]], [, "(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3", ["44"]]], , [, , , , , , , , , [-1]], , , [, , "44\\d{4}", , , , "441234", , , [6]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], PG:[, [, , "[1-9]\\d{6,7}", , , , , , , [7, 8]], [, , "(?:3[0-2]\\d|4[257]\\d|5[34]\\d|64[1-9]|77(?:[0-24]\\d|30)|85[02-46-9]|9[78]\\d)\\d{4}", 
 , , , "3123456", , , [7]], [, , "7(?:[0-689]\\d|75)\\d{5}", , , , "70123456", , , [8]], [, , "180\\d{4}", , , , "1801234", , , [7]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , "2(?:0[0-47]|7[568])\\d{4}", , , , "2751234", , , [7]], "PG", 675, "140[1-3]|00", , , , , , "00", , [[, "(\\d{3})(\\d{4})", "$1 $2", ["[13-689]|27"]], [, "(\\d{4})(\\d{4})", "$1 $2", ["20|7"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, 
@@ -70117,16 +69984,16 @@ SG:[, [, , "[36]\\d{7}|[17-9]\\d{7,10}", , , , , , , [8, 10, 11]], [, , "6[1-9]\
 , , , "2123456789", , , [10]], [, , "5(?:(?:0[1-7]|22|[34]\\d|5[1-59]|9[246])\\d{2}|6161)\\d{5}", , , , "5012345678", , , [10]], [, , "800\\d{7}", , , , "8001234567", , , [10]], [, , "900\\d{7}", , , , "9001234567", , , [10]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "TR", 90, "00", "0", , , "0", , , , [[, "(\\d{3})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[23]|4(?:[0-35-9]|4[0-35-9])"], "(0$1)", , 1], [, "(\\d{3})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["5[02-69]"], 
 "0$1", , 1], [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["51|[89]"], "0$1", , 1], [, "(444)(\\d{1})(\\d{3})", "$1 $2 $3", ["444"]]], , [, , "512\\d{7}", , , , "5123456789", , , [10]], , , [, , "444\\d{4}", , , , "4441444", , , [7]], [, , "444\\d{4}|850\\d{7}", , , , "4441444"], , , [, , , , , , , , , [-1]]], TT:[, [, , "[589]\\d{9}", , , , , , , [10], [7]], [, , "868(?:2(?:01|[23]\\d)|6(?:0[79]|1[02-8]|2[1-9]|[3-69]\\d|7[0-79])|82[124])\\d{4}", , , , "8682211234", , , , [7]], [, , "868(?:2(?:6[6-9]|[789]\\d)|3(?:0[1-9]|1[02-9]|[2-9]\\d)|4[6-9]\\d|6(?:20|78|8\\d)|7(?:0[1-9]|1[02-9]|[2-9]\\d))\\d{4}", 
 , , , "8682911234", , , , [7]], [, , "8(?:00|33|44|55|66|77|88)[2-9]\\d{6}", , , , "8002345678"], [, , "900[2-9]\\d{6}", , , , "9002345678"], [, , , , , , , , , [-1]], [, , "5(?:00|22|33|44|66|77|88)[2-9]\\d{6}", , , , "5002345678"], [, , , , , , , , , [-1]], "TT", 1, "011", "1", , , "1", , , , , , [, , , , , , , , , [-1]], , "868", [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , "868619\\d{4}", , , , "8686191234", , , , [7]]], TV:[, [, , "[279]\\d{4,6}", , , , , , , [5, 6, 7]], [, , 
-"2[02-9]\\d{3}", , , , "20123", , , [5]], [, , "(?:70\\d|90)\\d{4}", , , , "901234", , , [6, 7]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "TV", 688, "00", , , , , , , , , , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], TW:[, [, , "2\\d{6,8}|[3-689]\\d{7,8}|7\\d{7,9}", , , , , , , [7, 8, 9, 10]], [, , "(?:2(?:[235-8]\\d{3}|4\\d{2,3})|3[2-9]\\d{2}|4(?:[239]\\d|[78])\\d{2}|5[2-8]\\d{2}|6[235-79]\\d{2}|7[1-9]\\d{2}|8(?:2(?:3\\d|66)|[7-9]\\d{2}))\\d{4}", 
-, , , "221234567", , , [8, 9]], [, , "9[0-8]\\d{7}", , , , "912345678", , , [9]], [, , "80[0-79]\\d{6}", , , , "800123456", , , [9]], [, , "20(?:2|[013-9]\\d{2})\\d{4}", , , , "203123456", , , [7, 9]], [, , , , , , , , , [-1]], [, , "99\\d{7}", , , , "990123456", , , [9]], [, , "70\\d{8}", , , , "7012345678", , , [10]], "TW", 886, "0(?:0[25679]|19)", "0", "#", , "0", , , , [[, "(20)(\\d)(\\d{4})", "$1 $2 $3", ["202"], "0$1"], [, "([258]0)(\\d{3})(\\d{4})", "$1 $2 $3", ["20[013-9]|50[0-46-9]|80[0-79]"], 
-"0$1"], [, "([2-8])(\\d{3,4})(\\d{4})", "$1 $2 $3", ["[25][2-8]|[346]|[78][1-9]"], "0$1"], [, "(9\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["9"], "0$1"], [, "(70)(\\d{4})(\\d{4})", "$1 $2 $3", ["70"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , "50[0-46-9]\\d{6}", , , , "500123456", , , [9]], , , [, , , , , , , , , [-1]]], TZ:[, [, , "\\d{9}", , , , , , , [7, 9]], [, , "2[2-8]\\d{7}", , , , "222345678"], [, , "(?:6[2-9]|7[13-9])\\d{7}", , , , "621234567", , , [9]], [, , "80[08]\\d{6}", 
-, , , "800123456", , , [9]], [, , "90\\d{7}", , , , "900123456", , , [9]], [, , "8(?:40|6[01])\\d{6}", , , , "840123456", , , [9]], [, , , , , , , , , [-1]], [, , "41\\d{7}", , , , "412345678", , , [9]], "TZ", 255, "00[056]", "0", , , "0", , , , [[, "([24]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[24]"], "0$1"], [, "([67]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[67]"], "0$1"], [, "([89]\\d{2})(\\d{2})(\\d{4})", "$1 $2 $3", ["[89]"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , "(?:8(?:[04]0|6[01])|90\\d)\\d{6}", 
-, , , "800123456", , , [9]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], UA:[, [, , "[3-9]\\d{8}", , , , , , , [9], [5, 6, 7]], [, , "(?:3[1-8]|4[13-8]|5[1-7]|6[12459])\\d{7}", , , , "311234567", , , , [5, 6, 7]], [, , "(?:39|50|6[36-8]|7[1-3]|9[1-9])\\d{7}", , , , "391234567"], [, , "800\\d{6}", , , , "800123456"], [, , "900[2-49]\\d{5}", , , , "900212345"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , "89[1-579]\\d{6}", , , , "891234567"], "UA", 380, "00", "0", , , "0", 
-, "0~0", , [[, "([3-9]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[38]9|4(?:[45][0-5]|87)|5(?:0|[67][37])|6[36-8]|7|9[1-9]", "[38]9|4(?:[45][0-5]|87)|5(?:0|6(?:3[14-7]|7)|7[37])|6[36-8]|7|9[1-9]"], "0$1"], [, "([3-689]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["(?:3[1-8]|4[136-8])2|5(?:[12457]2|6[24])|6(?:[12][29]|[49]2|5[24])|8[0-8]|90", "3(?:[1-46-8]2[013-9]|52)|4(?:[1378]2|62[013-9])|5(?:[12457]2|6[24])|6(?:[12][29]|[49]2|5[24])|8[0-8]|90"], "0$1"], [, "([3-6]\\d{3})(\\d{5})", "$1 $2", ["3(?:[1-46-8]|5[013-9])|4(?:[137][013-9]|[45][6-9]|6|8[4-6])|5(?:[1245][013-9]|3|6[0135689]|7[4-6])|6(?:[12][13-8]|[49][013-9]|5[0135-9])", 
-"3(?:[1-46-8](?:[013-9]|22)|5[013-9])|4(?:[137][013-9]|[45][6-9]|6(?:[013-9]|22)|8[4-6])|5(?:[1245][013-9]|3|6(?:[015689]|3[02389])|7[4-6])|6(?:[12][13-8]|[49][013-9]|5[0135-9])"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], UG:[, [, , "\\d{9}", , , , , , , [9], [5, 6, 7]], [, , "20(?:[0147]\\d{2}|2(?:40|[5-9]\\d)|3(?:0[0-4]|[2367]\\d)|5[0-4]\\d|6[0135-9]\\d|8[0-2]\\d)\\d{4}|[34]\\d{8}", , , , "312345678", , , , [5, 6, 
-7]], [, , "7(?:(?:0[0-7]|[15789]\\d|30|4[0-4])\\d|2(?:[03]\\d|60))\\d{5}", , , , "712345678"], [, , "800[123]\\d{5}", , , , "800123456"], [, , "90[123]\\d{6}", , , , "901123456"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "UG", 256, "00[057]", "0", , , "0", , , , [[, "(\\d{3})(\\d{6})", "$1 $2", ["20[0-8]|4(?:6[45]|[7-9])|[7-9]", "20(?:[013-8]|2[5-9])|4(?:6[45]|[7-9])|[7-9]"], "0$1"], [, "(\\d{2})(\\d{7})", "$1 $2", ["3|4(?:[1-5]|6[0-36-9])"], "0$1"], [, "(2024)(\\d{5})", 
-"$1 $2", ["202", "2024"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], US:[, [, , "[2-9]\\d{9}", , , , , , , [10], [7]], [, , "(?:2(?:0[1-35-9]|1[02-9]|2[03-589]|3[149]|4[08]|5[1-46]|6[0279]|7[026]|8[13])|3(?:0[1-57-9]|1[02-9]|2[0135]|3[0-24679]|4[67]|5[12]|6[014]|8[056])|4(?:0[124-9]|1[02-579]|2[3-5]|3[0245]|4[0235]|58|6[39]|7[0589]|8[04])|5(?:0[1-57-9]|1[0235-8]|20|3[0149]|4[01]|5[19]|6[1-47]|7[013-5]|8[056])|6(?:0[1-35-9]|1[024-9]|2[03689]|3[016]|4[16]|5[017]|6[0-279]|78|8[012])|7(?:0[1-46-8]|1[02-9]|2[0457]|3[1247]|4[037]|5[47]|6[02359]|7[02-59]|8[156])|8(?:0[1-68]|1[02-8]|28|3[0-258]|4[3578]|5[046-9]|6[02-5]|7[028])|9(?:0[1346-9]|1[02-9]|2[0589]|3[014678]|4[0179]|5[12469]|7[0-3589]|8[04-69]))[2-9]\\d{6}", 
-, , , "2015550123", , , , [7]], [, , "(?:2(?:0[1-35-9]|1[02-9]|2[03-589]|3[149]|4[08]|5[1-46]|6[0279]|7[026]|8[13])|3(?:0[1-57-9]|1[02-9]|2[0135]|3[0-24679]|4[67]|5[12]|6[014]|8[056])|4(?:0[124-9]|1[02-579]|2[3-5]|3[0245]|4[0235]|58|6[39]|7[0589]|8[04])|5(?:0[1-57-9]|1[0235-8]|20|3[0149]|4[01]|5[19]|6[1-47]|7[013-5]|8[056])|6(?:0[1-35-9]|1[024-9]|2[03689]|3[016]|4[16]|5[017]|6[0-279]|78|8[012])|7(?:0[1-46-8]|1[02-9]|2[0457]|3[1247]|4[037]|5[47]|6[02359]|7[02-59]|8[156])|8(?:0[1-68]|1[02-8]|28|3[0-258]|4[3578]|5[046-9]|6[02-5]|7[028])|9(?:0[1346-9]|1[02-9]|2[0589]|3[014678]|4[0179]|5[12469]|7[0-3589]|8[04-69]))[2-9]\\d{6}", 
+"2[02-9]\\d{3}", , , , "20123", , , [5]], [, , "(?:70\\d|90)\\d{4}", , , , "901234", , , [6, 7]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "TV", 688, "00", , , , , , , , , , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], TW:[, [, , "2\\d{6,8}|[3-689]\\d{7,8}|7\\d{7,9}", , , , , , , [7, 8, 9, 10]], [, , "2(?:[235-8]\\d{7}|4\\d{6,7})|[3-8]\\d{7,8}", 
+, , , "221234567", , , [8, 9]], [, , "9\\d{8}", , , , "912345678", , , [9]], [, , "800\\d{6}", , , , "800123456", , , [9]], [, , "20(?:2|[013-9]\\d{2})\\d{4}", , , , "203123456", , , [7, 9]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , "70\\d{8}", , , , "7012345678", , , [10]], "TW", 886, "0(?:0[25679]|19)", "0", "#", , "0", , , , [[, "(20)(\\d)(\\d{4})", "$1 $2 $3", ["202"], "0$1"], [, "(20)(\\d{3})(\\d{4})", "$1 $2 $3", ["20[013-9]"], "0$1"], [, "([2-8])(\\d{3,4})(\\d{4})", "$1 $2 $3", 
+["2[2-8]|[3-6]|[78][1-9]"], "0$1"], [, "([89]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["80|9"], "0$1"], [, "(70)(\\d{4})(\\d{4})", "$1 $2 $3", ["70"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], TZ:[, [, , "\\d{9}", , , , , , , [7, 9]], [, , "2[2-8]\\d{7}", , , , "222345678"], [, , "(?:6[2-9]|7[13-9])\\d{7}", , , , "621234567", , , [9]], [, , "80[08]\\d{6}", , , , "800123456", , , [9]], [, , "90\\d{7}", , , , "900123456", 
+, , [9]], [, , "8(?:40|6[01])\\d{6}", , , , "840123456", , , [9]], [, , , , , , , , , [-1]], [, , "41\\d{7}", , , , "412345678", , , [9]], "TZ", 255, "00[056]", "0", , , "0", , , , [[, "([24]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[24]"], "0$1"], [, "([67]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[67]"], "0$1"], [, "([89]\\d{2})(\\d{2})(\\d{4})", "$1 $2 $3", ["[89]"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , "(?:8(?:[04]0|6[01])|90\\d)\\d{6}", , , , "800123456", , , [9]], [, , , , , , , , , [-1]], 
+, , [, , , , , , , , , [-1]]], UA:[, [, , "[3-9]\\d{8}", , , , , , , [9], [5, 6, 7]], [, , "(?:3[1-8]|4[13-8]|5[1-7]|6[12459])\\d{7}", , , , "311234567", , , , [5, 6, 7]], [, , "(?:39|50|6[36-8]|7[1-3]|9[1-9])\\d{7}", , , , "391234567"], [, , "800\\d{6}", , , , "800123456"], [, , "900[2-49]\\d{5}", , , , "900212345"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , "89[1-579]\\d{6}", , , , "891234567"], "UA", 380, "00", "0", , , "0", , "0~0", , [[, "([3-9]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", 
+["[38]9|4(?:[45][0-5]|87)|5(?:0|[67][37])|6[36-8]|7|9[1-9]", "[38]9|4(?:[45][0-5]|87)|5(?:0|6(?:3[14-7]|7)|7[37])|6[36-8]|7|9[1-9]"], "0$1"], [, "([3-689]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["(?:3[1-8]|4[136-8])2|5(?:[12457]2|6[24])|6(?:[12][29]|[49]2|5[24])|8[0-8]|90", "3(?:[1-46-8]2[013-9]|52)|4(?:[1378]2|62[013-9])|5(?:[12457]2|6[24])|6(?:[12][29]|[49]2|5[24])|8[0-8]|90"], "0$1"], [, "([3-6]\\d{3})(\\d{5})", "$1 $2", ["3(?:[1-46-8]|5[013-9])|4(?:[137][013-9]|[45][6-9]|6|8[4-6])|5(?:[1245][013-9]|3|6[0135689]|7[4-6])|6(?:[12][13-8]|[49][013-9]|5[0135-9])", 
+"3(?:[1-46-8](?:[013-9]|22)|5[013-9])|4(?:[137][013-9]|[45][6-9]|6(?:[013-9]|22)|8[4-6])|5(?:[1245][013-9]|3|6(?:[015689]|3[02389])|7[4-6])|6(?:[12][13-8]|[49][013-9]|5[0135-9])"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], UG:[, [, , "\\d{9}", , , , , , , [9], [5, 6, 7]], [, , "20(?:[0147]\\d{2}|2(?:40|[5-9]\\d)|3(?:0[0-4]|[23]\\d)|5[0-4]\\d|6[035-9]\\d|8[0-2]\\d)\\d{4}|[34]\\d{8}", , , , "312345678", , , , [5, 6, 7]], 
+[, , "7(?:(?:0[0-7]|[15789]\\d|30|4[0-4])\\d|2(?:[03]\\d|60))\\d{5}", , , , "712345678"], [, , "800[123]\\d{5}", , , , "800123456"], [, , "90[123]\\d{6}", , , , "901123456"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "UG", 256, "00[057]", "0", , , "0", , , , [[, "(\\d{3})(\\d{6})", "$1 $2", ["20[0-8]|4(?:6[45]|[7-9])|[7-9]", "20(?:[013-8]|2[5-9])|4(?:6[45]|[7-9])|[7-9]"], "0$1"], [, "(\\d{2})(\\d{7})", "$1 $2", ["3|4(?:[1-5]|6[0-36-9])"], "0$1"], [, "(2024)(\\d{5})", 
+"$1 $2", ["202", "2024"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], US:[, [, , "[2-9]\\d{9}", , , , , , , [10], [7]], [, , "(?:2(?:0[1-35-9]|1[02-9]|2[04589]|3[149]|4[08]|5[1-46]|6[0279]|7[026]|8[13])|3(?:0[1-57-9]|1[02-9]|2[0135]|3[0-24679]|4[67]|5[12]|6[014]|8[056])|4(?:0[124-9]|1[02-579]|2[3-5]|3[0245]|4[0235]|58|6[39]|7[0589]|8[04])|5(?:0[1-57-9]|1[0235-8]|20|3[0149]|4[01]|5[19]|6[1-47]|7[013-5]|8[056])|6(?:0[1-35-9]|1[024-9]|2[03689]|3[016]|4[16]|5[017]|6[0-279]|78|8[012])|7(?:0[1-46-8]|1[02-9]|2[0457]|3[1247]|4[037]|5[47]|6[02359]|7[02-59]|8[156])|8(?:0[1-68]|1[02-8]|28|3[0-258]|4[3578]|5[046-9]|6[02-5]|7[028])|9(?:0[1346-9]|1[02-9]|2[0589]|3[014678]|4[0179]|5[12469]|7[0-3589]|8[04-69]))[2-9]\\d{6}", 
+, , , "2015550123", , , , [7]], [, , "(?:2(?:0[1-35-9]|1[02-9]|2[04589]|3[149]|4[08]|5[1-46]|6[0279]|7[026]|8[13])|3(?:0[1-57-9]|1[02-9]|2[0135]|3[0-24679]|4[67]|5[12]|6[014]|8[056])|4(?:0[124-9]|1[02-579]|2[3-5]|3[0245]|4[0235]|58|6[39]|7[0589]|8[04])|5(?:0[1-57-9]|1[0235-8]|20|3[0149]|4[01]|5[19]|6[1-47]|7[013-5]|8[056])|6(?:0[1-35-9]|1[024-9]|2[03689]|3[016]|4[16]|5[017]|6[0-279]|78|8[012])|7(?:0[1-46-8]|1[02-9]|2[0457]|3[1247]|4[037]|5[47]|6[02359]|7[02-59]|8[156])|8(?:0[1-68]|1[02-8]|28|3[0-258]|4[3578]|5[046-9]|6[02-5]|7[028])|9(?:0[1346-9]|1[02-9]|2[0589]|3[014678]|4[0179]|5[12469]|7[0-3589]|8[04-69]))[2-9]\\d{6}", 
 , , , "2015550123", , , , [7]], [, , "8(?:00|33|44|55|66|77|88)[2-9]\\d{6}", , , , "8002345678"], [, , "900[2-9]\\d{6}", , , , "9002345678"], [, , , , , , , , , [-1]], [, , "5(?:00|22|33|44|66|77|88)[2-9]\\d{6}", , , , "5002345678"], [, , , , , , , , , [-1]], "US", 1, "011", "1", , , "1", , , 1, [[, "(\\d{3})(\\d{4})", "$1-$2", , , , 1], [, "(\\d{3})(\\d{3})(\\d{4})", "($1) $2-$3", , , , 1]], [[, "(\\d{3})(\\d{3})(\\d{4})", "$1-$2-$3"]], [, , , , , , , , , [-1]], 1, , [, , , , , , , , , [-1]], [, 
 , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], UY:[, [, , "[2489]\\d{6,7}", , , , , , , [7, 8]], [, , "2\\d{7}|4[2-7]\\d{6}", , , , "21231234", , , [8], [7]], [, , "9[1-9]\\d{6}", , , , "94231234", , , [8]], [, , "80[05]\\d{4}", , , , "8001234", , , [7]], [, , "90[0-8]\\d{4}", , , , "9001234", , , [7]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "UY", 598, "0(?:1[3-9]\\d|0)", "0", " int. ", , "0", , "00", , [[, "(\\d{4})(\\d{4})", "$1 $2", ["[24]"]], [, "(\\d{2})(\\d{3})(\\d{3})", 
 "$1 $2 $3", ["9[1-9]"], "0$1"], [, "(\\d{3})(\\d{4})", "$1 $2", ["[89]0"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], UZ:[, [, , "[679]\\d{8}", , , , , , , [9], [7]], [, , "(?:6(?:1(?:22|3[124]|4[1-4]|5[123578]|64)|2(?:22|3[0-57-9]|41)|5(?:22|3[3-7]|5[024-8])|6\\d{2}|7(?:[23]\\d|7[69])|9(?:22|4[1-8]|6[135]))|7(?:0(?:5[4-9]|6[0146]|7[12456]|9[135-8])|1[12]\\d|2(?:22|3[1345789]|4[123579]|5[14])|3(?:2\\d|3[1578]|4[1-35-7]|5[1-57]|61)|4(?:2\\d|3[1-579]|7[1-79])|5(?:22|5[1-9]|6[1457])|6(?:22|3[12457]|4[13-8])|9(?:22|5[1-9])))\\d{5}", 
@@ -70138,18 +70005,19 @@ SG:[, [, , "[36]\\d{7}|[17-9]\\d{7,10}", , , , , , , [8, 10, 11]], [, , "6[1-9]\
 , , , "4121234567"], [, , "800\\d{7}", , , , "8001234567"], [, , "900\\d{7}", , , , "9001234567"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "VE", 58, "00", "0", , , "0", , , , [[, "(\\d{3})(\\d{7})", "$1-$2", , "0$1", "$CC $1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], VG:[, [, , "[2589]\\d{9}", , , , , , , [10], [7]], [, , "284(?:(?:229|4(?:22|9[45])|774|8(?:52|6[459]))\\d{4}|496[0-5]\\d{3})", 
 , , , "2842291234", , , , [7]], [, , "284(?:(?:3(?:0[0-3]|4[0-7]|68|9[34])|4(?:4[0-6]|68|99)|54[0-57])\\d{4}|496[6-9]\\d{3})", , , , "2843001234", , , , [7]], [, , "8(?:00|33|44|55|66|77|88)[2-9]\\d{6}", , , , "8002345678"], [, , "900[2-9]\\d{6}", , , , "9002345678"], [, , , , , , , , , [-1]], [, , "5(?:00|22|33|44|66|77|88)[2-9]\\d{6}", , , , "5002345678"], [, , , , , , , , , [-1]], "VG", 1, "011", "1", , , "1", , , , , , [, , , , , , , , , [-1]], , "284", [, , , , , , , , , [-1]], [, , , , , , 
 , , , [-1]], , , [, , , , , , , , , [-1]]], VI:[, [, , "[3589]\\d{9}", , , , , , , [10], [7]], [, , "340(?:2(?:01|2[0678]|44|77)|3(?:32|44)|4(?:22|7[34])|5(?:1[34]|55)|6(?:26|4[23]|77|9[023])|7(?:1[2-589]|27|7\\d)|884|998)\\d{4}", , , , "3406421234", , , , [7]], [, , "340(?:2(?:01|2[0678]|44|77)|3(?:32|44)|4(?:22|7[34])|5(?:1[34]|55)|6(?:26|4[23]|77|9[023])|7(?:1[2-589]|27|7\\d)|884|998)\\d{4}", , , , "3406421234", , , , [7]], [, , "8(?:00|33|44|55|66|77|88)[2-9]\\d{6}", , , , "8002345678"], [, , 
-"900[2-9]\\d{6}", , , , "9002345678"], [, , , , , , , , , [-1]], [, , "5(?:00|22|33|44|66|77|88)[2-9]\\d{6}", , , , "5002345678"], [, , , , , , , , , [-1]], "VI", 1, "011", "1", , , "1", , , 1, , , [, , , , , , , , , [-1]], , "340", [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], VN:[, [, , "1\\d{6,9}|2\\d{9}|6\\d{6,7}|7\\d{6}|8\\d{6,8}|9\\d{8}", , , , , , , [7, 8, 9, 10]], [, , "2(?:0[3-9]|1[0-689]|2[0-25-9]|3[2-9]|4[2-8]|5[124-9]|6[0-39]|7[0-7]|8[2-7]|9[0-4679])\\d{7}", 
-, , , "2101234567", , , [10]], [, , "(?:9\\d|1(?:2\\d|6[2-9]|8[68]|99))\\d{7}|8(?:6[89]|8\\d|9[89])\\d{6}", , , , "912345678", , , [9, 10]], [, , "1800\\d{4,6}", , , , "1800123456", , , [8, 9, 10]], [, , "1900\\d{4,6}", , , , "1900123456", , , [8, 9, 10]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "VN", 84, "00", "0", , , "0", , , , [[, "([17]99)(\\d{4})", "$1 $2", ["[17]99"], "0$1", , 1], [, "(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["2[48]"], "0$1", , 1], [, "(80)(\\d{5})", 
-"$1 $2", ["80"], "0$1", , 1], [, "(69\\d)(\\d{4,5})", "$1 $2", ["69"], "0$1", , 1], [, "(\\d{3})(\\d{4})(\\d{3})", "$1 $2 $3", ["2[0-35-79]"], "0$1", , 1], [, "([89]\\d)(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8(?:8|9[89])|9"], "0$1", , 1], [, "(1[2689]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["1(?:[26]|8[68]|99)"], "0$1", , 1], [, "(86[89])(\\d{3})(\\d{3})", "$1 $2 $3", ["86[89]"], "0$1", , 1], [, "(1[89]00)(\\d{4,6})", "$1 $2", ["1[89]0"], "$1", , 1]], , [, , , , , , , , , [-1]], , , [, , "[17]99\\d{4}|69\\d{5,6}", 
-, , , "1992000", , , [7, 8]], [, , "[17]99\\d{4}|69\\d{5,6}|80\\d{5}", , , , "1992000", , , [7, 8]], , , [, , , , , , , , , [-1]]], VU:[, [, , "[2-57-9]\\d{4,6}", , , , , , , [5, 7]], [, , "(?:2[02-9]\\d|3(?:[5-7]\\d|8[0-8])|48[4-9]|88\\d)\\d{2}", , , , "22123", , , [5]], [, , "(?:5(?:7[2-5]|[0-689]\\d)|7[013-7]\\d)\\d{4}", , , , "5912345", , , [7]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "VU", 678, "00", , 
-, , , , , , [[, "(\\d{3})(\\d{4})", "$1 $2", ["[579]"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , "3[03]\\d{3}|900\\d{4}", , , , "30123"], , , [, , , , , , , , , [-1]]], WF:[, [, , "[4-8]\\d{5}", , , , , , , [6]], [, , "(?:50|68|72)\\d{4}", , , , "501234"], [, , "(?:50|68|72|8[23])\\d{4}", , , , "501234"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "WF", 681, "00", , , , , , , , [[, "(\\d{2})(\\d{2})(\\d{2})", 
-"$1 $2 $3"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , "[48]0\\d{4}", , , , "401234"]], WS:[, [, , "[2-8]\\d{4,6}", , , , , , , [5, 6, 7]], [, , "(?:[2-5]\\d|6[1-9]|84\\d{2})\\d{3}", , , , "22123", , , [5, 7]], [, , "(?:60|7[25-7]\\d)\\d{4}", , , , "601234", , , [6, 7]], [, , "800\\d{3}", , , , "800123", , , [6]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "WS", 685, "0", , , , , , , , 
-[[, "(8\\d{2})(\\d{3,4})", "$1 $2", ["8"]], [, "(7\\d)(\\d{5})", "$1 $2", ["7"]], [, "(\\d{5})", "$1", ["[2-6]"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], YE:[, [, , "[1-7]\\d{6,8}", , , , , , , [7, 8, 9], [6]], [, , "(?:1(?:7\\d|[2-68])|2[2-68]|3[2358]|4[2-58]|5[2-6]|6[3-58]|7[24-68])\\d{5}", , , , "1234567", , , [7, 8], [6]], [, , "7[0137]\\d{7}", , , , "712345678", , , [9]], [, , , , , , , , , [-1]], [, , , , , , , , , 
-[-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "YE", 967, "00", "0", , , "0", , , , [[, "([1-7])(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[1-6]|7[24-68]"], "0$1"], [, "(7\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["7[0137]"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], YT:[, [, , "[268]\\d{8}", , , , , , , [9]], [, , "269(?:6[0-4]|50)\\d{4}", , , , "269601234"], [, , "639(?:0[0-79]|1[019]|[26]\\d|3[09]|[45]0|7[06]|9[04-79])\\d{4}", 
-, , , "639012345"], [, , "80\\d{7}", , , , "801234567"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "YT", 262, "00", "0", , , "0", , , , , , [, , , , , , , , , [-1]], , "269|63", [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], ZA:[, [, , "[1-79]\\d{8}|8\\d{4,8}", , , , , , , [5, 6, 7, 8, 9]], [, , "(?:1[0-8]|2[1-378]|3[1-69]|4\\d|5[1346-8])\\d{7}", , , , "101234567", , , [9]], [, , "(?:6\\d|7[0-46-9])\\d{7}|8(?:[1-4]\\d{1,5}|5\\d{5})\\d{2}", 
-, , , "711234567"], [, , "80\\d{7}", , , , "801234567", , , [9]], [, , "86[2-9]\\d{6}|9[0-2]\\d{7}", , , , "862345678", , , [9]], [, , "860\\d{6}", , , , "860123456", , , [9]], [, , , , , , , , , [-1]], [, , "87\\d{7}", , , , "871234567", , , [9]], "ZA", 27, "00", "0", , , "0", , , , [[, "(860)(\\d{3})(\\d{3})", "$1 $2 $3", ["860"], "0$1"], [, "(\\d{2})(\\d{3,4})", "$1 $2", ["8[1-4]"], "0$1"], [, "(\\d{2})(\\d{3})(\\d{2,3})", "$1 $2 $3", ["8[1-4]"], "0$1"], [, "(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", 
-["[1-79]|8(?:[0-57]|6[1-9])"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , "861\\d{6}", , , , "861123456", , , [9]], , , [, , , , , , , , , [-1]]], ZM:[, [, , "[289]\\d{8}", , , , , , , [9]], [, , "21[1-8]\\d{6}", , , , "211234567"], [, , "9(?:5[034589]|[67]\\d)\\d{6}", , , , "955123456"], [, , "800\\d{6}", , , , "800123456"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "ZM", 260, "00", "0", , , "0", , , , [[, 
-"([29]\\d)(\\d{7})", "$1 $2", ["[29]"], "0$1"], [, "(800)(\\d{3})(\\d{3})", "$1 $2 $3", ["8"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], ZW:[, [, , "2(?:[0-2457-9]\\d{3,8}|6(?:[14]\\d{7}|\\d{4}))|[13-79]\\d{4,9}|8[06]\\d{5,8}", , , , , , , [5, 6, 7, 8, 9, 10], [3, 4]], [, , "(?:2(?:0(?:4\\d|5\\d{2})|2[278]\\d|48\\d|7(?:[1-7]\\d|[089]\\d{2})|8(?:[2-57-9]|[146]\\d{2})|98)|3(?:08|17|3[78]|7(?:[19]|[56]\\d)|8[37]|98)|5[15][78]|6(?:28\\d{2}|37|6[78]|75\\d|98|8(?:7\\d|8)))\\d{3}|(?:2(?:1[39]|2[0157]|31|[56][14]|7[35]|84)|329)\\d{7}|(?:1(?:3\\d{2}|[4-8]|9\\d)|2(?:0\\d{2}|12|292|[569]\\d)|3(?:[26]|[013459]\\d)|5(?:0|1[2-4]|26|[37]2|5\\d{2}|[689]\\d)|6(?:[39]|[01246]\\d|[78]\\d{2}))\\d{3}|(?:29\\d|39|54)\\d{6}|(?:(?:25|54)83\\d|2582\\d{2}|65[2-8])\\d{2}|(?:4\\d{6,7}|9[2-9]\\d{4,5})", 
+"900[2-9]\\d{6}", , , , "9002345678"], [, , , , , , , , , [-1]], [, , "5(?:00|22|33|44|66|77|88)[2-9]\\d{6}", , , , "5002345678"], [, , , , , , , , , [-1]], "VI", 1, "011", "1", , , "1", , , 1, , , [, , , , , , , , , [-1]], , "340", [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], VN:[, [, , "[167]\\d{6,9}|[2-59]\\d{7,9}|8\\d{6,8}", , , , , , , [7, 8, 9, 10]], [, , "(?:2(?:0[3-9]|1[0-689]|2[0-25-9]|3[2-9]|4[2-8]|5[124-9]|6[0-39]|7[0-7]|8[2-7]|9[0-4679])|4\\d|5(?:0[01]|[5-9])|6(?:[0-46-8]|5[01])|7[0235])\\d{7}|8(?:[2-5]\\d|6[236]|7[13])\\d{6}", 
+, , , "2101234567", , , [9, 10]], [, , "(?:9\\d|1(?:2\\d|6[2-9]|8[68]|99))\\d{7}|8(?:6[89]|8\\d|9[89])\\d{6}", , , , "912345678", , , [9, 10]], [, , "1800\\d{4,6}", , , , "1800123456", , , [8, 9, 10]], [, , "1900\\d{4,6}", , , , "1900123456", , , [8, 9, 10]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "VN", 84, "00", "0", , , "0", , , , [[, "([17]99)(\\d{4})", "$1 $2", ["[17]99"], "0$1", , 1], [, "([48])(\\d{4})(\\d{4})", "$1 $2 $3", ["4|8(?:[2-5]|6[236]|7[13])"], 
+"0$1", , 1], [, "(\\d{2})(\\d{4})(\\d{3,4})", "$1 $2 $3", ["2[48]|5[5-9]|6[0-46-8]|7[0235]"], "0$1", , 1], [, "(80)(\\d{5})", "$1 $2", ["80"], "0$1", , 1], [, "(69\\d)(\\d{4,5})", "$1 $2", ["69"], "0$1", , 1], [, "(\\d{3})(\\d{4})(\\d{3})", "$1 $2 $3", ["2[0-35-79]|50|65"], "0$1", , 1], [, "([89]\\d)(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8(?:8|9[89])|9"], "0$1", , 1], [, "(1[2689]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["1(?:[26]|8[68]|99)"], "0$1", , 1], [, "(86[89])(\\d{3})(\\d{3})", "$1 $2 $3", 
+["86[89]"], "0$1", , 1], [, "(1[89]00)(\\d{4,6})", "$1 $2", ["1[89]0"], "$1", , 1]], , [, , , , , , , , , [-1]], , , [, , "[17]99\\d{4}|69\\d{5,6}", , , , "1992000", , , [7, 8]], [, , "[17]99\\d{4}|69\\d{5,6}|80\\d{5}", , , , "1992000", , , [7, 8]], , , [, , , , , , , , , [-1]]], VU:[, [, , "[2-57-9]\\d{4,6}", , , , , , , [5, 7]], [, , "(?:2[02-9]\\d|3(?:[5-7]\\d|8[0-8])|48[4-9]|88\\d)\\d{2}", , , , "22123", , , [5]], [, , "(?:5(?:7[2-5]|[0-689]\\d)|7[013-7]\\d)\\d{4}", , , , "5912345", , , [7]], 
+[, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "VU", 678, "00", , , , , , , , [[, "(\\d{3})(\\d{4})", "$1 $2", ["[579]"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , "3[03]\\d{3}|900\\d{4}", , , , "30123"], , , [, , , , , , , , , [-1]]], WF:[, [, , "[4-8]\\d{5}", , , , , , , [6]], [, , "(?:50|68|72)\\d{4}", , , , "501234"], [, , "(?:50|68|72|8[23])\\d{4}", , , , "501234"], [, , , , , , , , , [-1]], 
+[, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "WF", 681, "00", , , , , , , , [[, "(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , "[48]0\\d{4}", , , , "401234"]], WS:[, [, , "[2-8]\\d{4,6}", , , , , , , [5, 6, 7]], [, , "(?:[2-5]\\d|6[1-9]|84\\d{2})\\d{3}", , , , "22123", , , [5, 7]], [, , "(?:60|7[25-7]\\d)\\d{4}", , , , "601234", , , [6, 7]], [, , "800\\d{3}", 
+, , , "800123", , , [6]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "WS", 685, "0", , , , , , , , [[, "(8\\d{2})(\\d{3,4})", "$1 $2", ["8"]], [, "(7\\d)(\\d{5})", "$1 $2", ["7"]], [, "(\\d{5})", "$1", ["[2-6]"]]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], YE:[, [, , "[1-7]\\d{6,8}", , , , , , , [7, 8, 9], [6]], [, , "(?:1(?:7\\d|[2-68])|2[2-68]|3[2358]|4[2-58]|5[2-6]|6[3-58]|7[24-68])\\d{5}", 
+, , , "1234567", , , [7, 8], [6]], [, , "7[0137]\\d{7}", , , , "712345678", , , [9]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "YE", 967, "00", "0", , , "0", , , , [[, "([1-7])(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[1-6]|7[24-68]"], "0$1"], [, "(7\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["7[0137]"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], 
+YT:[, [, , "[268]\\d{8}", , , , , , , [9]], [, , "269(?:6[0-4]|50)\\d{4}", , , , "269601234"], [, , "639(?:0[0-79]|1[019]|[26]\\d|3[09]|[45]0|7[06]|9[04-79])\\d{4}", , , , "639012345"], [, , "80\\d{7}", , , , "801234567"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "YT", 262, "00", "0", , , "0", , , , , , [, , , , , , , , , [-1]], , "269|63", [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], ZA:[, [, , "[1-79]\\d{8}|8\\d{4,8}", 
+, , , , , , [5, 6, 7, 8, 9]], [, , "(?:1[0-8]|2[1-378]|3[1-69]|4\\d|5[1346-8])\\d{7}", , , , "101234567", , , [9]], [, , "(?:6\\d|7[0-46-9])\\d{7}|8(?:[1-4]\\d{1,5}|5\\d{5})\\d{2}", , , , "711234567"], [, , "80\\d{7}", , , , "801234567", , , [9]], [, , "86[2-9]\\d{6}|9[0-2]\\d{7}", , , , "862345678", , , [9]], [, , "860\\d{6}", , , , "860123456", , , [9]], [, , , , , , , , , [-1]], [, , "87\\d{7}", , , , "871234567", , , [9]], "ZA", 27, "00", "0", , , "0", , , , [[, "(860)(\\d{3})(\\d{3})", "$1 $2 $3", 
+["860"], "0$1"], [, "(\\d{2})(\\d{3,4})", "$1 $2", ["8[1-4]"], "0$1"], [, "(\\d{2})(\\d{3})(\\d{2,3})", "$1 $2 $3", ["8[1-4]"], "0$1"], [, "(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[1-79]|8(?:[0-57]|6[1-9])"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , "861\\d{6}", , , , "861123456", , , [9]], , , [, , , , , , , , , [-1]]], ZM:[, [, , "[289]\\d{8}", , , , , , , [9]], [, , "21[1-8]\\d{6}", , , , "211234567"], [, , "9(?:5[034589]|[67]\\d)\\d{6}", , , , "955123456"], [, 
+, "800\\d{6}", , , , "800123456"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "ZM", 260, "00", "0", , , "0", , , , [[, "([29]\\d)(\\d{7})", "$1 $2", ["[29]"], "0$1"], [, "(800)(\\d{3})(\\d{3})", "$1 $2 $3", ["8"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], ZW:[, [, , "2(?:[0-2457-9]\\d{3,8}|6(?:[14]\\d{7}|\\d{4}))|[13-79]\\d{4,9}|8[06]\\d{5,8}", , , , , , , 
+[5, 6, 7, 8, 9, 10], [3, 4]], [, , "(?:2(?:0(?:4\\d|5\\d{2})|2[278]\\d|48\\d|7(?:[1-7]\\d|[089]\\d{2})|8(?:[2-57-9]|[146]\\d{2})|98)|3(?:08|17|3[78]|7(?:[19]|[56]\\d)|8[37]|98)|5[15][78]|6(?:28\\d{2}|37|6[78]|75\\d|98|8(?:7\\d|8)))\\d{3}|(?:2(?:1[39]|2[0157]|31|[56][14]|7[35]|84)|329)\\d{7}|(?:1(?:3\\d{2}|[4-8]|9\\d)|2(?:0\\d{2}|12|292|[569]\\d)|3(?:[26]|[013459]\\d)|5(?:0|1[2-4]|26|[37]2|5\\d{2}|[689]\\d)|6(?:[39]|[01246]\\d|[78]\\d{2}))\\d{3}|(?:29\\d|39|54)\\d{6}|(?:(?:25|54)83\\d|2582\\d{2}|65[2-8])\\d{2}|(?:4\\d{6,7}|9[2-9]\\d{4,5})", 
 , , , "1312345", , , , [3, 4]], [, , "(?:7(?:1[2-8]|3[2-9]|7[1-9]|8[2-5])|8644)\\d{6}", , , , "712345678", , , [9, 10]], [, , "80(?:[01]\\d|20|8[0-8])\\d{3}", , , , "8001234", , , [7]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , "86(?:1[12]|30|55|77|8[368])\\d{6}", , , , "8686123456", , , [10]], "ZW", 263, "00", "0", , , "0", , , , [[, "([49])(\\d{3})(\\d{2,4})", "$1 $2 $3", ["4|9[2-9]"], "0$1"], [, "(7\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["7"], "0$1"], [, 
 "(86\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["86[24]"], "0$1"], [, "([2356]\\d{2})(\\d{3,5})", "$1 $2", ["2(?:0[45]|2[278]|[49]8|[78])|3(?:[09]8|17|3[78]|7[1569]|8[37])|5[15][78]|6(?:[29]8|37|[68][78]|75)"], "0$1"], [, "(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["2(?:1[39]|2[0157]|31|[56][14]|7[35]|84)|329"], "0$1"], [, "([1-356]\\d)(\\d{3,5})", "$1 $2", ["1[3-9]|2[02569]|3[0-69]|5[05689]|6"], "0$1"], [, "([235]\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[23]9|54"], "0$1"], [, "([25]\\d{3})(\\d{3,5})", "$1 $2", 
 ["(?:25|54)8", "258[23]|5483"], "0$1"], [, "(8\\d{3})(\\d{6})", "$1 $2", ["86"], "0$1"], [, "(80\\d)(\\d{4})", "$1 $2", ["80"], "0$1"]], , [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], , , [, , , , , , , , , [-1]]], 800:[, [, , "\\d{8}", , , , , , , [8]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , "\\d{8}", , , , "12345678"], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], [, , , , , , , , , [-1]], "001", 800, , , , , 
@@ -71518,14 +71386,14 @@ window._ = __webpack_require__(28);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(64);
+    window.$ = window.jQuery = __webpack_require__(64);
 
-  window.Switchery = __webpack_require__(278);
+    window.Switchery = __webpack_require__(278);
 
-  __webpack_require__(281);
-  __webpack_require__(294);
-  __webpack_require__(295);
-  __webpack_require__(296);
+    __webpack_require__(281);
+    __webpack_require__(294);
+    __webpack_require__(295);
+    __webpack_require__(296);
 } catch (e) {}
 
 /**
@@ -71547,9 +71415,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
-  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
-  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
 /**
@@ -74285,7 +74153,7 @@ __webpack_require__(293)
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var require;var require;/*!
- * Select2 4.0.4
+ * Select2 4.0.3
  * https://select2.github.io
  *
  * Released under the MIT license
@@ -74298,33 +74166,19 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-  } else if (typeof module === 'object' && module.exports) {
+  } else if (typeof exports === 'object') {
     // Node/CommonJS
-    module.exports = function (root, jQuery) {
-      if (jQuery === undefined) {
-        // require('jQuery') returns a factory that requires window to
-        // build a jQuery instance, we normalize how we use modules
-        // that require this pattern but the window provided is a noop
-        // if it's defined (how jquery works)
-        if (typeof window !== 'undefined') {
-          jQuery = require('jquery');
-        }
-        else {
-          jQuery = require('jquery')(root);
-        }
-      }
-      factory(jQuery);
-      return jQuery;
-    };
+    factory(require('jquery'));
   } else {
     // Browser globals
     factory(jQuery);
   }
-} (function (jQuery) {
+}(function (jQuery) {
   // This is needed so we can catch the AMD loader configuration and use it
   // The inner file should be wrapped (by `banner.start.js`) in a function that
   // returns the AMD loader references.
-  var S2 =(function () {
+  var S2 =
+(function () {
   // Restore the Select2 AMD loader so it can be used
   // Needed mostly in the language files, where the loader is not inserted
   if (jQuery && jQuery.fn && jQuery.fn.select2 && jQuery.fn.select2.amd) {
@@ -74333,11 +74187,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 var S2;(function () { if (!S2 || !S2.requirejs) {
 if (!S2) { S2 = {}; } else { require = S2; }
 /**
- * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
- * Released under MIT license, http://github.com/requirejs/almond/LICENSE
+ * @license almond 0.3.1 Copyright (c) 2011-2014, The Dojo Foundation All Rights Reserved.
+ * Available via the MIT or new BSD license.
+ * see: http://github.com/jrburke/almond for details
  */
 //Going sloppy to avoid 'use strict' string cost, but strict practices should
 //be followed.
+/*jslint sloppy: true */
 /*global setTimeout: false */
 
 var requirejs, require, define;
@@ -74365,58 +74221,60 @@ var requirejs, require, define;
      */
     function normalize(name, baseName) {
         var nameParts, nameSegment, mapValue, foundMap, lastIndex,
-            foundI, foundStarMap, starI, i, j, part, normalizedBaseParts,
+            foundI, foundStarMap, starI, i, j, part,
             baseParts = baseName && baseName.split("/"),
             map = config.map,
             starMap = (map && map['*']) || {};
 
         //Adjust any relative paths.
-        if (name) {
-            name = name.split('/');
-            lastIndex = name.length - 1;
+        if (name && name.charAt(0) === ".") {
+            //If have a base name, try to normalize against it,
+            //otherwise, assume it is a top-level require that will
+            //be relative to baseUrl in the end.
+            if (baseName) {
+                name = name.split('/');
+                lastIndex = name.length - 1;
 
-            // If wanting node ID compatibility, strip .js from end
-            // of IDs. Have to do this here, and not in nameToUrl
-            // because node allows either .js or non .js to map
-            // to same file.
-            if (config.nodeIdCompat && jsSuffixRegExp.test(name[lastIndex])) {
-                name[lastIndex] = name[lastIndex].replace(jsSuffixRegExp, '');
-            }
+                // Node .js allowance:
+                if (config.nodeIdCompat && jsSuffixRegExp.test(name[lastIndex])) {
+                    name[lastIndex] = name[lastIndex].replace(jsSuffixRegExp, '');
+                }
 
-            // Starts with a '.' so need the baseName
-            if (name[0].charAt(0) === '.' && baseParts) {
-                //Convert baseName to array, and lop off the last part,
-                //so that . matches that 'directory' and not name of the baseName's
-                //module. For instance, baseName of 'one/two/three', maps to
-                //'one/two/three.js', but we want the directory, 'one/two' for
-                //this normalization.
-                normalizedBaseParts = baseParts.slice(0, baseParts.length - 1);
-                name = normalizedBaseParts.concat(name);
-            }
+                //Lop off the last part of baseParts, so that . matches the
+                //"directory" and not name of the baseName's module. For instance,
+                //baseName of "one/two/three", maps to "one/two/three.js", but we
+                //want the directory, "one/two" for this normalization.
+                name = baseParts.slice(0, baseParts.length - 1).concat(name);
 
-            //start trimDots
-            for (i = 0; i < name.length; i++) {
-                part = name[i];
-                if (part === '.') {
-                    name.splice(i, 1);
-                    i -= 1;
-                } else if (part === '..') {
-                    // If at the start, or previous value is still ..,
-                    // keep them so that when converted to a path it may
-                    // still work when converted to a path, even though
-                    // as an ID it is less than ideal. In larger point
-                    // releases, may be better to just kick out an error.
-                    if (i === 0 || (i === 1 && name[2] === '..') || name[i - 1] === '..') {
-                        continue;
-                    } else if (i > 0) {
-                        name.splice(i - 1, 2);
-                        i -= 2;
+                //start trimDots
+                for (i = 0; i < name.length; i += 1) {
+                    part = name[i];
+                    if (part === ".") {
+                        name.splice(i, 1);
+                        i -= 1;
+                    } else if (part === "..") {
+                        if (i === 1 && (name[2] === '..' || name[0] === '..')) {
+                            //End of the line. Keep at least one non-dot
+                            //path segment at the front so it can be mapped
+                            //correctly to disk. Otherwise, there is likely
+                            //no path mapping for a path starting with '..'.
+                            //This can still fail, but catches the most reasonable
+                            //uses of ..
+                            break;
+                        } else if (i > 0) {
+                            name.splice(i - 1, 2);
+                            i -= 2;
+                        }
                     }
                 }
-            }
-            //end trimDots
+                //end trimDots
 
-            name = name.join('/');
+                name = name.join("/");
+            } else if (name.indexOf('./') === 0) {
+                // No baseName, so this is ID is resolved relative
+                // to baseUrl, pull off the leading dot.
+                name = name.substring(2);
+            }
         }
 
         //Apply map config if available.
@@ -74529,39 +74387,32 @@ var requirejs, require, define;
         return [prefix, name];
     }
 
-    //Creates a parts array for a relName where first part is plugin ID,
-    //second part is resource ID. Assumes relName has already been normalized.
-    function makeRelParts(relName) {
-        return relName ? splitPrefix(relName) : [];
-    }
-
     /**
      * Makes a name map, normalizing the name, and using a plugin
      * for normalization if necessary. Grabs a ref to plugin
      * too, as an optimization.
      */
-    makeMap = function (name, relParts) {
+    makeMap = function (name, relName) {
         var plugin,
             parts = splitPrefix(name),
-            prefix = parts[0],
-            relResourceName = relParts[1];
+            prefix = parts[0];
 
         name = parts[1];
 
         if (prefix) {
-            prefix = normalize(prefix, relResourceName);
+            prefix = normalize(prefix, relName);
             plugin = callDep(prefix);
         }
 
         //Normalize according
         if (prefix) {
             if (plugin && plugin.normalize) {
-                name = plugin.normalize(name, makeNormalize(relResourceName));
+                name = plugin.normalize(name, makeNormalize(relName));
             } else {
-                name = normalize(name, relResourceName);
+                name = normalize(name, relName);
             }
         } else {
-            name = normalize(name, relResourceName);
+            name = normalize(name, relName);
             parts = splitPrefix(name);
             prefix = parts[0];
             name = parts[1];
@@ -74608,14 +74459,13 @@ var requirejs, require, define;
     };
 
     main = function (name, deps, callback, relName) {
-        var cjsModule, depName, ret, map, i, relParts,
+        var cjsModule, depName, ret, map, i,
             args = [],
             callbackType = typeof callback,
             usingExports;
 
         //Use name if no relName
         relName = relName || name;
-        relParts = makeRelParts(relName);
 
         //Call the callback to define the module, if necessary.
         if (callbackType === 'undefined' || callbackType === 'function') {
@@ -74624,7 +74474,7 @@ var requirejs, require, define;
             //Default to [require, exports, module] if no deps
             deps = !deps.length && callback.length ? ['require', 'exports', 'module'] : deps;
             for (i = 0; i < deps.length; i += 1) {
-                map = makeMap(deps[i], relParts);
+                map = makeMap(deps[i], relName);
                 depName = map.f;
 
                 //Fast path CommonJS standard dependencies.
@@ -74680,7 +74530,7 @@ var requirejs, require, define;
             //deps arg is the module name, and second arg (if passed)
             //is just the relName.
             //Normalize module name, if it contains . or ..
-            return callDep(makeMap(deps, makeRelParts(callback)).f);
+            return callDep(makeMap(deps, callback).f);
         } else if (!deps.splice) {
             //deps is a config object, not an array.
             config = deps;
@@ -77498,7 +77348,7 @@ S2.define('select2/data/select',[
       }
     }
 
-    if (data.id !== undefined) {
+    if (data.id) {
       option.value = data.id;
     }
 
@@ -77857,10 +77707,7 @@ S2.define('select2/data/tags',[
           }, true)
         );
 
-        var optionText = (option.text || '').toUpperCase();
-        var paramsTerm = (params.term || '').toUpperCase();
-
-        var checkText = optionText === paramsTerm;
+        var checkText = option.text === params.term;
 
         if (checkText || checkChildren) {
           if (child) {
@@ -78251,7 +78098,7 @@ S2.define('select2/dropdown/search',[
     });
 
     container.on('focus', function () {
-      if (!container.isOpen()) {
+      if (container.isOpen()) {
         self.$search.focus();
       }
     });
@@ -88055,25 +87902,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(299)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(301)
-/* template */
-var __vue_template__ = __webpack_require__(324)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(301),
+  /* template */
+  __webpack_require__(324),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\components\\vuetable\\AdminsTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\AdminsTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] AdminsTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -88084,9 +87925,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-cc045d56", Component.options)
+    hotAPI.createRecord("data-v-b368ccfa", Component.options)
   } else {
-    hotAPI.reload("data-v-cc045d56", Component.options)
+    hotAPI.reload("data-v-b368ccfa", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -88107,13 +87948,13 @@ var content = __webpack_require__(300);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("5d0e4f1e", content, false);
+var update = __webpack_require__(4)("6cc2e490", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-cc045d56\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AdminsTable.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-cc045d56\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AdminsTable.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b368ccfa\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AdminsTable.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b368ccfa\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AdminsTable.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -88259,13 +88100,13 @@ var content = __webpack_require__(303);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("2bb15139", content, false);
+var update = __webpack_require__(4)("7201cb2b", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-65b02e44\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Vuetable.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-65b02e44\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Vuetable.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ef3ba11c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Vuetable.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ef3ba11c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Vuetable.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -88283,7 +88124,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\n[v-cloak][data-v-65b02e44] {\n  display: none;\n}\n.vuetable th.sortable[data-v-65b02e44]:hover {\n  color: #2185d0;\n  cursor: pointer;\n}\n.vuetable-actions[data-v-65b02e44] {\n  width: 15%;\n  padding: 12px 0px;\n  text-align: center;\n}\n.vuetable-pagination[data-v-65b02e44] {\n  background: #f9fafb !important;\n}\n.vuetable-pagination-info[data-v-65b02e44] {\n  margin-top: auto;\n  margin-bottom: auto;\n}\n.vuetable-empty-result[data-v-65b02e44] {\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n[v-cloak][data-v-ef3ba11c] {\n  display: none;\n}\n.vuetable th.sortable[data-v-ef3ba11c]:hover {\n  color: #2185d0;\n  cursor: pointer;\n}\n.vuetable-actions[data-v-ef3ba11c] {\n  width: 15%;\n  padding: 12px 0px;\n  text-align: center;\n}\n.vuetable-pagination[data-v-ef3ba11c] {\n  background: #f9fafb !important;\n}\n.vuetable-pagination-info[data-v-ef3ba11c] {\n  margin-top: auto;\n  margin-bottom: auto;\n}\n.vuetable-empty-result[data-v-ef3ba11c] {\n  text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -89261,395 +89102,185 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("table", { class: ["vuetable", _vm.css.tableClass] }, [
-    _c("thead", [
-      _c(
-        "tr",
-        [
-          _vm._l(_vm.tableFields, function(field) {
-            return [
-              field.visible
-                ? [
-                    _vm.isSpecialField(field.name)
-                      ? [
-                          _vm.extractName(field.name) == "__checkbox"
-                            ? _c(
-                                "th",
-                                {
-                                  class: [
-                                    "vuetable-th-checkbox-" + _vm.trackBy,
-                                    field.titleClass
-                                  ]
-                                },
-                                [
-                                  _c("input", {
-                                    attrs: { type: "checkbox" },
-                                    domProps: {
-                                      checked: _vm.checkCheckboxesState(
-                                        field.name
-                                      )
-                                    },
-                                    on: {
-                                      change: function($event) {
-                                        _vm.toggleAllCheckboxes(
-                                          field.name,
-                                          $event
-                                        )
-                                      }
-                                    }
-                                  })
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.extractName(field.name) == "__component"
-                            ? _c("th", {
-                                class: [
-                                  "vuetable-th-component-" + _vm.trackBy,
-                                  field.titleClass,
-                                  { sortable: _vm.isSortable(field) }
-                                ],
-                                domProps: {
-                                  innerHTML: _vm._s(_vm.renderTitle(field))
-                                },
-                                on: {
-                                  click: function($event) {
-                                    _vm.orderBy(field, $event)
-                                  }
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.extractName(field.name) == "__slot"
-                            ? _c("th", {
-                                class: [
-                                  "vuetable-th-slot-" +
-                                    _vm.extractArgs(field.name),
-                                  field.titleClass,
-                                  { sortable: _vm.isSortable(field) }
-                                ],
-                                domProps: {
-                                  innerHTML: _vm._s(_vm.renderTitle(field))
-                                },
-                                on: {
-                                  click: function($event) {
-                                    _vm.orderBy(field, $event)
-                                  }
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.extractName(field.name) == "__sequence"
-                            ? _c("th", {
-                                class: [
-                                  "vuetable-th-sequence",
-                                  field.titleClass || ""
-                                ],
-                                domProps: {
-                                  innerHTML: _vm._s(_vm.renderTitle(field))
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.notIn(_vm.extractName(field.name), [
-                            "__sequence",
-                            "__checkbox",
-                            "__component",
-                            "__slot"
-                          ])
-                            ? _c("th", {
-                                class: [
-                                  "vuetable-th-" + field.name,
-                                  field.titleClass || ""
-                                ],
-                                domProps: {
-                                  innerHTML: _vm._s(_vm.renderTitle(field))
-                                }
-                              })
-                            : _vm._e()
-                        ]
-                      : [
-                          _c("th", {
-                            class: [
-                              "vuetable-th-" + field.name,
-                              field.titleClass,
-                              { sortable: _vm.isSortable(field) }
-                            ],
-                            attrs: { id: "_" + field.name },
-                            domProps: {
-                              innerHTML: _vm._s(_vm.renderTitle(field))
-                            },
-                            on: {
-                              click: function($event) {
-                                _vm.orderBy(field, $event)
-                              }
-                            }
-                          })
-                        ]
-                  ]
-                : _vm._e()
-            ]
-          })
-        ],
-        2
-      )
-    ]),
-    _vm._v(" "),
-    _c(
-      "tbody",
-      { staticClass: "vuetable-body" },
-      [
-        _vm._l(_vm.tableData, function(item, index) {
-          return [
-            _c(
-              "tr",
-              {
-                class: _vm.onRowClass(item, index),
-                attrs: { "item-index": index, render: _vm.onRowChanged(item) },
-                on: {
-                  dblclick: function($event) {
-                    _vm.onRowDoubleClicked(item, $event)
-                  },
-                  click: function($event) {
-                    _vm.onRowClicked(item, $event)
-                  }
-                }
-              },
-              [
-                _vm._l(_vm.tableFields, function(field) {
-                  return [
-                    field.visible
-                      ? [
-                          _vm.isSpecialField(field.name)
-                            ? [
-                                _vm.extractName(field.name) == "__sequence"
-                                  ? _c("td", {
-                                      class: [
-                                        "vuetable-sequence",
-                                        field.dataClass
-                                      ],
-                                      domProps: {
-                                        innerHTML: _vm._s(
-                                          _vm.renderSequence(index)
-                                        )
-                                      }
-                                    })
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _vm.extractName(field.name) == "__handle"
-                                  ? _c("td", {
-                                      class: [
-                                        "vuetable-handle",
-                                        field.dataClass
-                                      ],
-                                      domProps: {
-                                        innerHTML: _vm._s(
-                                          _vm.renderIconTag([
-                                            "handle-icon",
-                                            _vm.css.handleIcon
-                                          ])
-                                        )
-                                      }
-                                    })
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _vm.extractName(field.name) == "__checkbox"
-                                  ? _c(
-                                      "td",
-                                      {
-                                        class: [
-                                          "vuetable-checkboxes",
-                                          field.dataClass
-                                        ]
-                                      },
-                                      [
-                                        _c("input", {
-                                          attrs: { type: "checkbox" },
-                                          domProps: {
-                                            checked: _vm.rowSelected(
-                                              item,
-                                              field.name
-                                            )
-                                          },
-                                          on: {
-                                            change: function($event) {
-                                              _vm.toggleCheckbox(
-                                                item,
-                                                field.name,
-                                                $event
-                                              )
-                                            }
-                                          }
-                                        })
-                                      ]
-                                    )
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _vm.extractName(field.name) === "__component"
-                                  ? _c(
-                                      "td",
-                                      {
-                                        class: [
-                                          "vuetable-component",
-                                          field.dataClass
-                                        ]
-                                      },
-                                      [
-                                        _c(_vm.extractArgs(field.name), {
-                                          tag: "component",
-                                          attrs: {
-                                            "row-data": item,
-                                            "row-index": index,
-                                            "row-field": field.sortField
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    )
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _vm.extractName(field.name) === "__slot"
-                                  ? _c(
-                                      "td",
-                                      {
-                                        class: [
-                                          "vuetable-slot",
-                                          field.dataClass
-                                        ]
-                                      },
-                                      [
-                                        _vm._t(
-                                          _vm.extractArgs(field.name),
-                                          null,
-                                          {
-                                            rowData: item,
-                                            rowIndex: index,
-                                            rowField: field.sortField
-                                          }
-                                        )
-                                      ],
-                                      2
-                                    )
-                                  : _vm._e()
-                              ]
-                            : [
-                                _c("td", {
-                                  class: field.dataClass,
-                                  domProps: {
-                                    innerHTML: _vm._s(
-                                      _vm.renderNormalField(field, item)
-                                    )
-                                  },
-                                  on: {
-                                    click: function($event) {
-                                      _vm.onCellClicked(item, field, $event)
-                                    },
-                                    dblclick: function($event) {
-                                      _vm.onCellDoubleClicked(
-                                        item,
-                                        field,
-                                        $event
-                                      )
-                                    }
-                                  }
-                                })
-                              ]
-                        ]
-                      : _vm._e()
-                  ]
-                })
-              ],
-              2
-            ),
-            _vm._v(" "),
-            _vm.useDetailRow
-              ? [
-                  _vm.isVisibleDetailRow(item[_vm.trackBy])
-                    ? _c(
-                        "tr",
-                        {
-                          class: [_vm.css.detailRowClass],
-                          on: {
-                            click: function($event) {
-                              _vm.onDetailRowClick(item, $event)
-                            }
-                          }
-                        },
-                        [
-                          _c(
-                            "transition",
-                            { attrs: { name: _vm.detailRowTransition } },
-                            [
-                              _c(
-                                "td",
-                                { attrs: { colspan: _vm.countVisibleFields } },
-                                [
-                                  _c(_vm.detailRowComponent, {
-                                    tag: "component",
-                                    attrs: {
-                                      "row-data": item,
-                                      "row-index": index
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ]
-                          )
-                        ],
-                        1
-                      )
-                    : _vm._e()
-                ]
-              : _vm._e()
-          ]
-        }),
-        _vm._v(" "),
-        _vm.displayEmptyDataRow
-          ? [
-              _c("tr", [
-                _c(
-                  "td",
-                  {
-                    staticClass: "vuetable-empty-result",
-                    attrs: { colspan: _vm.countVisibleFields }
-                  },
-                  [_vm._v(_vm._s(_vm.noDataTemplate))]
-                )
-              ])
-            ]
-          : _vm._e(),
-        _vm._v(" "),
-        _vm.lessThanMinRows
-          ? _vm._l(_vm.blankRows, function(i) {
-              return _c(
-                "tr",
-                { staticClass: "blank-row" },
-                [
-                  _vm._l(_vm.tableFields, function(field) {
-                    return [field.visible ? _c("td", [_vm._v(" ")]) : _vm._e()]
-                  })
-                ],
-                2
-              )
-            })
-          : _vm._e()
-      ],
-      2
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('table', {
+    class: ['vuetable', _vm.css.tableClass]
+  }, [_c('thead', [_c('tr', [_vm._l((_vm.tableFields), function(field) {
+    return [(field.visible) ? [(_vm.isSpecialField(field.name)) ? [(_vm.extractName(field.name) == '__checkbox') ? _c('th', {
+      class: ['vuetable-th-checkbox-' + _vm.trackBy, field.titleClass]
+    }, [_c('input', {
+      attrs: {
+        "type": "checkbox"
+      },
+      domProps: {
+        "checked": _vm.checkCheckboxesState(field.name)
+      },
+      on: {
+        "change": function($event) {
+          _vm.toggleAllCheckboxes(field.name, $event)
+        }
+      }
+    })]) : _vm._e(), _vm._v(" "), (_vm.extractName(field.name) == '__component') ? _c('th', {
+      class: ['vuetable-th-component-' + _vm.trackBy, field.titleClass, {
+        'sortable': _vm.isSortable(field)
+      }],
+      domProps: {
+        "innerHTML": _vm._s(_vm.renderTitle(field))
+      },
+      on: {
+        "click": function($event) {
+          _vm.orderBy(field, $event)
+        }
+      }
+    }) : _vm._e(), _vm._v(" "), (_vm.extractName(field.name) == '__slot') ? _c('th', {
+      class: ['vuetable-th-slot-' + _vm.extractArgs(field.name), field.titleClass, {
+        'sortable': _vm.isSortable(field)
+      }],
+      domProps: {
+        "innerHTML": _vm._s(_vm.renderTitle(field))
+      },
+      on: {
+        "click": function($event) {
+          _vm.orderBy(field, $event)
+        }
+      }
+    }) : _vm._e(), _vm._v(" "), (_vm.extractName(field.name) == '__sequence') ? _c('th', {
+      class: ['vuetable-th-sequence', field.titleClass || ''],
+      domProps: {
+        "innerHTML": _vm._s(_vm.renderTitle(field))
+      }
+    }) : _vm._e(), _vm._v(" "), (_vm.notIn(_vm.extractName(field.name), ['__sequence', '__checkbox', '__component', '__slot'])) ? _c('th', {
+      class: ['vuetable-th-' + field.name, field.titleClass || ''],
+      domProps: {
+        "innerHTML": _vm._s(_vm.renderTitle(field))
+      }
+    }) : _vm._e()] : [_c('th', {
+      class: ['vuetable-th-' + field.name, field.titleClass, {
+        'sortable': _vm.isSortable(field)
+      }],
+      attrs: {
+        "id": '_' + field.name
+      },
+      domProps: {
+        "innerHTML": _vm._s(_vm.renderTitle(field))
+      },
+      on: {
+        "click": function($event) {
+          _vm.orderBy(field, $event)
+        }
+      }
+    })]] : _vm._e()]
+  })], 2)]), _vm._v(" "), _c('tbody', {
+    staticClass: "vuetable-body"
+  }, [_vm._l((_vm.tableData), function(item, index) {
+    return [_c('tr', {
+      class: _vm.onRowClass(item, index),
+      attrs: {
+        "item-index": index,
+        "render": _vm.onRowChanged(item)
+      },
+      on: {
+        "dblclick": function($event) {
+          _vm.onRowDoubleClicked(item, $event)
+        },
+        "click": function($event) {
+          _vm.onRowClicked(item, $event)
+        }
+      }
+    }, [_vm._l((_vm.tableFields), function(field) {
+      return [(field.visible) ? [(_vm.isSpecialField(field.name)) ? [(_vm.extractName(field.name) == '__sequence') ? _c('td', {
+        class: ['vuetable-sequence', field.dataClass],
+        domProps: {
+          "innerHTML": _vm._s(_vm.renderSequence(index))
+        }
+      }) : _vm._e(), _vm._v(" "), (_vm.extractName(field.name) == '__handle') ? _c('td', {
+        class: ['vuetable-handle', field.dataClass],
+        domProps: {
+          "innerHTML": _vm._s(_vm.renderIconTag(['handle-icon', _vm.css.handleIcon]))
+        }
+      }) : _vm._e(), _vm._v(" "), (_vm.extractName(field.name) == '__checkbox') ? _c('td', {
+        class: ['vuetable-checkboxes', field.dataClass]
+      }, [_c('input', {
+        attrs: {
+          "type": "checkbox"
+        },
+        domProps: {
+          "checked": _vm.rowSelected(item, field.name)
+        },
+        on: {
+          "change": function($event) {
+            _vm.toggleCheckbox(item, field.name, $event)
+          }
+        }
+      })]) : _vm._e(), _vm._v(" "), (_vm.extractName(field.name) === '__component') ? _c('td', {
+        class: ['vuetable-component', field.dataClass]
+      }, [_c(_vm.extractArgs(field.name), {
+        tag: "component",
+        attrs: {
+          "row-data": item,
+          "row-index": index,
+          "row-field": field.sortField
+        }
+      })], 1) : _vm._e(), _vm._v(" "), (_vm.extractName(field.name) === '__slot') ? _c('td', {
+        class: ['vuetable-slot', field.dataClass]
+      }, [_vm._t(_vm.extractArgs(field.name), null, {
+        rowData: item,
+        rowIndex: index,
+        rowField: field.sortField
+      })], 2) : _vm._e()] : [_c('td', {
+        class: field.dataClass,
+        domProps: {
+          "innerHTML": _vm._s(_vm.renderNormalField(field, item))
+        },
+        on: {
+          "click": function($event) {
+            _vm.onCellClicked(item, field, $event)
+          },
+          "dblclick": function($event) {
+            _vm.onCellDoubleClicked(item, field, $event)
+          }
+        }
+      })]] : _vm._e()]
+    })], 2), _vm._v(" "), (_vm.useDetailRow) ? [(_vm.isVisibleDetailRow(item[_vm.trackBy])) ? _c('tr', {
+      class: [_vm.css.detailRowClass],
+      on: {
+        "click": function($event) {
+          _vm.onDetailRowClick(item, $event)
+        }
+      }
+    }, [_c('transition', {
+      attrs: {
+        "name": _vm.detailRowTransition
+      }
+    }, [_c('td', {
+      attrs: {
+        "colspan": _vm.countVisibleFields
+      }
+    }, [_c(_vm.detailRowComponent, {
+      tag: "component",
+      attrs: {
+        "row-data": item,
+        "row-index": index
+      }
+    })], 1)])], 1) : _vm._e()] : _vm._e()]
+  }), _vm._v(" "), (_vm.displayEmptyDataRow) ? [_c('tr', [_c('td', {
+    staticClass: "vuetable-empty-result",
+    attrs: {
+      "colspan": _vm.countVisibleFields
+    }
+  }, [_vm._v(_vm._s(_vm.noDataTemplate))])])] : _vm._e(), _vm._v(" "), (_vm.lessThanMinRows) ? _vm._l((_vm.blankRows), function(i) {
+    return _c('tr', {
+      staticClass: "blank-row"
+    }, [_vm._l((_vm.tableFields), function(field) {
+      return [(field.visible) ? _c('td', [_vm._v(" ")]) : _vm._e()]
+    })], 2)
+  }) : _vm._e()], 2)])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-65b02e44", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-ef3ba11c", module.exports)
   }
 }
 
@@ -89714,25 +89345,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(308)
-/* template */
-var __vue_template__ = null
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(308),
+  /* template */
+  null,
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationMixin.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationMixin.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -89742,9 +89367,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-c1f22a5a", Component.options)
+    hotAPI.createRecord("data-v-c7aeb036", Component.options)
   } else {
-    hotAPI.reload("data-v-c1f22a5a", Component.options)
+    hotAPI.reload("data-v-c7aeb036", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -89843,150 +89468,76 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm.tablePagination && _vm.tablePagination.last_page > 1
-    ? _c(
-        "div",
-        { class: _vm.css.wrapperClass },
-        [
-          _c(
-            "a",
-            {
-              class: [
-                "btn-nav",
-                _vm.css.linkClass,
-                _vm.isOnFirstPage ? _vm.css.disabledClass : ""
-              ],
-              on: {
-                click: function($event) {
-                  _vm.loadPage(1)
-                }
-              }
-            },
-            [
-              _vm.css.icons.first != ""
-                ? _c("i", { class: [_vm.css.icons.first] })
-                : _c("span", [_vm._v("«")])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              class: [
-                "btn-nav",
-                _vm.css.linkClass,
-                _vm.isOnFirstPage ? _vm.css.disabledClass : ""
-              ],
-              on: {
-                click: function($event) {
-                  _vm.loadPage("prev")
-                }
-              }
-            },
-            [
-              _vm.css.icons.next != ""
-                ? _c("i", { class: [_vm.css.icons.prev] })
-                : _c("span", [_vm._v(" ‹")])
-            ]
-          ),
-          _vm._v(" "),
-          _vm.notEnoughPages
-            ? [
-                _vm._l(_vm.totalPage, function(n) {
-                  return [
-                    _c("a", {
-                      class: [
-                        _vm.css.pageClass,
-                        _vm.isCurrentPage(n) ? _vm.css.activeClass : ""
-                      ],
-                      domProps: { innerHTML: _vm._s(n) },
-                      on: {
-                        click: function($event) {
-                          _vm.loadPage(n)
-                        }
-                      }
-                    })
-                  ]
-                })
-              ]
-            : [
-                _vm._l(_vm.windowSize, function(n) {
-                  return [
-                    _c("a", {
-                      class: [
-                        _vm.css.pageClass,
-                        _vm.isCurrentPage(_vm.windowStart + n - 1)
-                          ? _vm.css.activeClass
-                          : ""
-                      ],
-                      domProps: { innerHTML: _vm._s(_vm.windowStart + n - 1) },
-                      on: {
-                        click: function($event) {
-                          _vm.loadPage(_vm.windowStart + n - 1)
-                        }
-                      }
-                    })
-                  ]
-                })
-              ],
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              class: [
-                "btn-nav",
-                _vm.css.linkClass,
-                _vm.isOnLastPage ? _vm.css.disabledClass : ""
-              ],
-              on: {
-                click: function($event) {
-                  _vm.loadPage("next")
-                }
-              }
-            },
-            [
-              _vm.css.icons.next != ""
-                ? _c("i", { class: [_vm.css.icons.next] })
-                : _c("span", [_vm._v("› ")])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              class: [
-                "btn-nav",
-                _vm.css.linkClass,
-                _vm.isOnLastPage ? _vm.css.disabledClass : ""
-              ],
-              on: {
-                click: function($event) {
-                  _vm.loadPage(_vm.totalPage)
-                }
-              }
-            },
-            [
-              _vm.css.icons.last != ""
-                ? _c("i", { class: [_vm.css.icons.last] })
-                : _c("span", [_vm._v("»")])
-            ]
-          )
-        ],
-        2
-      )
-    : _vm._e()
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return (_vm.tablePagination && _vm.tablePagination.last_page > 1) ? _c('div', {
+    class: _vm.css.wrapperClass
+  }, [_c('a', {
+    class: ['btn-nav', _vm.css.linkClass, _vm.isOnFirstPage ? _vm.css.disabledClass : ''],
+    on: {
+      "click": function($event) {
+        _vm.loadPage(1)
+      }
+    }
+  }, [(_vm.css.icons.first != '') ? _c('i', {
+    class: [_vm.css.icons.first]
+  }) : _c('span', [_vm._v("«")])]), _vm._v(" "), _c('a', {
+    class: ['btn-nav', _vm.css.linkClass, _vm.isOnFirstPage ? _vm.css.disabledClass : ''],
+    on: {
+      "click": function($event) {
+        _vm.loadPage('prev')
+      }
+    }
+  }, [(_vm.css.icons.next != '') ? _c('i', {
+    class: [_vm.css.icons.prev]
+  }) : _c('span', [_vm._v(" ‹")])]), _vm._v(" "), (_vm.notEnoughPages) ? [_vm._l((_vm.totalPage), function(n) {
+    return [_c('a', {
+      class: [_vm.css.pageClass, _vm.isCurrentPage(n) ? _vm.css.activeClass : ''],
+      domProps: {
+        "innerHTML": _vm._s(n)
+      },
+      on: {
+        "click": function($event) {
+          _vm.loadPage(n)
+        }
+      }
+    })]
+  })] : [_vm._l((_vm.windowSize), function(n) {
+    return [_c('a', {
+      class: [_vm.css.pageClass, _vm.isCurrentPage(_vm.windowStart + n - 1) ? _vm.css.activeClass : ''],
+      domProps: {
+        "innerHTML": _vm._s(_vm.windowStart + n - 1)
+      },
+      on: {
+        "click": function($event) {
+          _vm.loadPage(_vm.windowStart + n - 1)
+        }
+      }
+    })]
+  })], _vm._v(" "), _c('a', {
+    class: ['btn-nav', _vm.css.linkClass, _vm.isOnLastPage ? _vm.css.disabledClass : ''],
+    on: {
+      "click": function($event) {
+        _vm.loadPage('next')
+      }
+    }
+  }, [(_vm.css.icons.next != '') ? _c('i', {
+    class: [_vm.css.icons.next]
+  }) : _c('span', [_vm._v("› ")])]), _vm._v(" "), _c('a', {
+    class: ['btn-nav', _vm.css.linkClass, _vm.isOnLastPage ? _vm.css.disabledClass : ''],
+    on: {
+      "click": function($event) {
+        _vm.loadPage(_vm.totalPage)
+      }
+    }
+  }, [(_vm.css.icons.last != '') ? _c('i', {
+    class: [_vm.css.icons.last]
+  }) : _c('span', [_vm._v("»")])])], 2) : _vm._e()
+},staticRenderFns: []}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-9abda404", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-449e0dac", module.exports)
   }
 }
 
@@ -90016,25 +89567,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(312)
-/* template */
-var __vue_template__ = null
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(312),
+  /* template */
+  null,
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationInfoMixin.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\plugins\\vuetable-2-develop\\VuetablePaginationInfoMixin.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -90044,9 +89589,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-712a5cc5", Component.options)
+    hotAPI.createRecord("data-v-5e2340d7", Component.options)
   } else {
-    hotAPI.reload("data-v-712a5cc5", Component.options)
+    hotAPI.reload("data-v-5e2340d7", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -90114,22 +89659,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", {
-    class: ["vuetable-pagination-info", _vm.css.infoClass],
-    domProps: { innerHTML: _vm._s(_vm.paginationInfo) }
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    class: ['vuetable-pagination-info', _vm.css.infoClass],
+    domProps: {
+      "innerHTML": _vm._s(_vm.paginationInfo)
+    }
   })
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+},staticRenderFns: []}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-36d6cccc", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-8a3fb50c", module.exports)
   }
 }
 
@@ -90144,13 +89686,13 @@ var content = __webpack_require__(315);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("5e0b7b9f", content, false);
+var update = __webpack_require__(4)("4fe6f39a", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7d7ef034\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FilterBar.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7d7ef034\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FilterBar.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4d1e8394\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FilterBar.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4d1e8394\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FilterBar.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -90216,54 +89758,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("label", [
-      _c("span", [_vm._v("Поиск: ")]),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.filterText,
-            expression: "filterText"
-          }
-        ],
-        attrs: {
-          type: "search",
-          placeholder: "Поиск..",
-          "aria-controls": "DataTables_Table_0"
-        },
-        domProps: { value: _vm.filterText },
-        on: {
-          input: [
-            function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.filterText = $event.target.value
-            },
-            function($event) {
-              $event.preventDefault()
-              _vm.searchInput($event)
-            }
-          ]
-        }
-      })
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('label', [_c('span', [_vm._v("Поиск: ")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.filterText),
+      expression: "filterText"
+    }],
+    attrs: {
+      "type": "search",
+      "placeholder": "Поиск..",
+      "aria-controls": "DataTables_Table_0"
+    },
+    domProps: {
+      "value": (_vm.filterText)
+    },
+    on: {
+      "input": [function($event) {
+        if ($event.target.composing) { return; }
+        _vm.filterText = $event.target.value
+      }, function($event) {
+        $event.preventDefault();
+        _vm.searchInput($event)
+      }]
+    }
+  })])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-7d7ef034", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-4d1e8394", module.exports)
   }
 }
 
@@ -90278,13 +89804,13 @@ var content = __webpack_require__(319);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("344ec566", content, false);
+var update = __webpack_require__(4)("f3d43e4e", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-931fbcfe\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowBar.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-931fbcfe\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowBar.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-31559ea2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowBar.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-31559ea2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowBar.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -90344,65 +89870,51 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("label", [
-      _c("span", [_vm._v("По:")]),
-      _vm._v(" "),
-      _c(
-        "select",
-        {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.selected,
-              expression: "selected"
-            }
-          ],
-          staticClass: "form-control",
-          staticStyle: { width: "70px" },
-          attrs: { name: "select" },
-          on: {
-            change: [
-              function($event) {
-                var $$selectedVal = Array.prototype.filter
-                  .call($event.target.options, function(o) {
-                    return o.selected
-                  })
-                  .map(function(o) {
-                    var val = "_value" in o ? o._value : o.value
-                    return val
-                  })
-                _vm.selected = $event.target.multiple
-                  ? $$selectedVal
-                  : $$selectedVal[0]
-              },
-              _vm.changeItem
-            ]
-          }
-        },
-        [
-          _c("option", { attrs: { value: "20" } }, [_vm._v("20")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "50" } }, [_vm._v("50")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "100" } }, [_vm._v("100")])
-        ]
-      )
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('label', [_c('span', [_vm._v("По:")]), _vm._v(" "), _c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.selected),
+      expression: "selected"
+    }],
+    staticClass: "form-control",
+    staticStyle: {
+      "width": "70px"
+    },
+    attrs: {
+      "name": "select"
+    },
+    on: {
+      "change": [function($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
+          return o.selected
+        }).map(function(o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val
+        });
+        _vm.selected = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+      }, _vm.changeItem]
+    }
+  }, [_c('option', {
+    attrs: {
+      "value": "20"
+    }
+  }, [_vm._v("20")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "50"
+    }
+  }, [_vm._v("50")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "100"
+    }
+  }, [_vm._v("100")])])])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-931fbcfe", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-31559ea2", module.exports)
   }
 }
 
@@ -90989,109 +90501,80 @@ webpackContext.id = 323;
 /* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dataTables_wrapper no-footer" }, [
-    _c(
-      "div",
-      { staticClass: "datatable-header" },
-      [
-        _c("filter-bar", {
-          staticClass: "dataTables_filter",
-          on: { "filter:set": _vm.filterSet, "filter:reset": _vm.filterReset }
-        }),
-        _vm._v(" "),
-        _c("show-bar", {
-          staticClass: "dataTables_length",
-          on: { "show:set": _vm.showSet }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "dataTables_length" })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-scroll-wrap" },
-      [
-        _c("vuetable", {
-          ref: "vuetable",
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "dataTables_wrapper no-footer"
+  }, [_c('div', {
+    staticClass: "datatable-header"
+  }, [_c('filter-bar', {
+    staticClass: "dataTables_filter",
+    on: {
+      "filter:set": _vm.filterSet,
+      "filter:reset": _vm.filterReset
+    }
+  }), _vm._v(" "), _c('show-bar', {
+    staticClass: "dataTables_length",
+    on: {
+      "show:set": _vm.showSet
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "dataTables_length"
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-scroll-wrap"
+  }, [_c('vuetable', {
+    ref: "vuetable",
+    attrs: {
+      "api-url": '/api/' + _vm.nameUrl + 's',
+      "fields": _vm.fields,
+      "pagination-path": "",
+      "css": _vm.css.table,
+      "append-params": _vm.moreParams,
+      "per-page": _vm.perPage,
+      "sort-order": _vm.sortOrder,
+      "multi-sort": true,
+      "noDataTemplate": _vm.template.noData
+    },
+    on: {
+      "vuetable:cell-clicked": _vm.onCellClicked,
+      "vuetable:pagination-data": _vm.onPaginationData,
+      "vuetable:loaded": _vm.loadedTable,
+      "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
+      "vuetable:row-dblclicked": _vm.onRowClick
+    },
+    scopedSlots: _vm._u([{
+      key: "row-link",
+      fn: function(props) {
+        return [_c('div', [_c('a', {
           attrs: {
-            "api-url": "/api/" + _vm.nameUrl + "s",
-            fields: _vm.fields,
-            "pagination-path": "",
-            css: _vm.css.table,
-            "append-params": _vm.moreParams,
-            "per-page": _vm.perPage,
-            "sort-order": _vm.sortOrder,
-            "multi-sort": true,
-            noDataTemplate: _vm.template.noData
-          },
-          on: {
-            "vuetable:cell-clicked": _vm.onCellClicked,
-            "vuetable:pagination-data": _vm.onPaginationData,
-            "vuetable:loaded": _vm.loadedTable,
-            "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
-            "vuetable:row-dblclicked": _vm.onRowClick
-          },
-          scopedSlots: _vm._u([
-            {
-              key: "row-link",
-              fn: function(props) {
-                return [
-                  _c("div", [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: _vm.nameUrl + "/" + props.rowData.id + "/edit"
-                        }
-                      },
-                      [_vm._v(_vm._s(props.rowData.full_name))]
-                    )
-                  ])
-                ]
-              }
-            }
-          ])
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-footer" },
-      [
-        _c("vuetable-pagination-info", {
-          ref: "paginationInfo",
-          staticClass: "pagination-info dataTables_info",
-          attrs: {
-            "info-template": _vm.template.paginationInfo,
-            noDataTemplate: _vm.template.noDataPaginate
+            "href": _vm.nameUrl + '/' + props.rowData.id + '/edit'
           }
-        }),
-        _vm._v(" "),
-        _c("vuetable-pagination", {
-          ref: "pagination",
-          attrs: { css: _vm.css.pagination },
-          on: { "vuetable-pagination:change-page": _vm.onChangePage }
-        })
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+        }, [_vm._v(_vm._s(props.rowData.full_name))])])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-footer"
+  }, [_c('vuetable-pagination-info', {
+    ref: "paginationInfo",
+    staticClass: "pagination-info dataTables_info",
+    attrs: {
+      "info-template": _vm.template.paginationInfo,
+      "noDataTemplate": _vm.template.noDataPaginate
+    }
+  }), _vm._v(" "), _c('vuetable-pagination', {
+    ref: "pagination",
+    attrs: {
+      "css": _vm.css.pagination
+    },
+    on: {
+      "vuetable-pagination:change-page": _vm.onChangePage
+    }
+  })], 1)])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-cc045d56", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-b368ccfa", module.exports)
   }
 }
 
@@ -91104,25 +90587,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(326)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(328)
-/* template */
-var __vue_template__ = __webpack_require__(329)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(328),
+  /* template */
+  __webpack_require__(329),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\components\\vuetable\\CourseTypesTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CourseTypesTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CourseTypesTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -91133,9 +90610,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-22f43f35", Component.options)
+    hotAPI.createRecord("data-v-568263c7", Component.options)
   } else {
-    hotAPI.reload("data-v-22f43f35", Component.options)
+    hotAPI.reload("data-v-568263c7", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -91156,13 +90633,13 @@ var content = __webpack_require__(327);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("59cfaba6", content, false);
+var update = __webpack_require__(4)("d3a4cff8", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-22f43f35\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CourseTypesTable.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-22f43f35\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CourseTypesTable.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-568263c7\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CourseTypesTable.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-568263c7\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CourseTypesTable.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -91293,143 +90770,101 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dataTables_wrapper no-footer" }, [
-    _c(
-      "div",
-      { staticClass: "datatable-header" },
-      [
-        _c("filter-bar", {
-          staticClass: "dataTables_filter",
-          on: { "filter:set": _vm.filterSet, "filter:reset": _vm.filterReset }
-        }),
-        _vm._v(" "),
-        _c("show-bar", {
-          staticClass: "dataTables_length",
-          on: { "show:set": _vm.showSet }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "dt-buttons" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-danger",
-              on: {
-                click: function($event) {
-                  _vm.removeCheckedRows(_vm.removeOptions)
-                }
-              }
-            },
-            [_vm._m(1)]
-          )
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-scroll-wrap" },
-      [
-        _c("vuetable", {
-          ref: "vuetable",
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "dataTables_wrapper no-footer"
+  }, [_c('div', {
+    staticClass: "datatable-header"
+  }, [_c('filter-bar', {
+    staticClass: "dataTables_filter",
+    on: {
+      "filter:set": _vm.filterSet,
+      "filter:reset": _vm.filterReset
+    }
+  }), _vm._v(" "), _c('show-bar', {
+    staticClass: "dataTables_length",
+    on: {
+      "show:set": _vm.showSet
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "dt-buttons"
+  }, [_vm._m(0), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-danger",
+    on: {
+      "click": function($event) {
+        _vm.removeCheckedRows(_vm.removeOptions)
+      }
+    }
+  }, [_vm._m(1)])])], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-scroll-wrap"
+  }, [_c('vuetable', {
+    ref: "vuetable",
+    attrs: {
+      "api-url": "/api/course/types",
+      "fields": _vm.fields,
+      "pagination-path": "",
+      "css": _vm.css.table,
+      "append-params": _vm.moreParams,
+      "per-page": _vm.perPage,
+      "sort-order": _vm.sortOrder,
+      "multi-sort": true,
+      "noDataTemplate": _vm.template.noData
+    },
+    on: {
+      "vuetable:cell-clicked": _vm.onCellClicked,
+      "vuetable:pagination-data": _vm.onPaginationData,
+      "vuetable:loaded": _vm.loadedTable,
+      "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
+      "vuetable:row-dblclicked": _vm.onRowClick
+    },
+    scopedSlots: _vm._u([{
+      key: "row-link",
+      fn: function(props) {
+        return [_c('div', [_c('a', {
           attrs: {
-            "api-url": "/api/course/types",
-            fields: _vm.fields,
-            "pagination-path": "",
-            css: _vm.css.table,
-            "append-params": _vm.moreParams,
-            "per-page": _vm.perPage,
-            "sort-order": _vm.sortOrder,
-            "multi-sort": true,
-            noDataTemplate: _vm.template.noData
-          },
-          on: {
-            "vuetable:cell-clicked": _vm.onCellClicked,
-            "vuetable:pagination-data": _vm.onPaginationData,
-            "vuetable:loaded": _vm.loadedTable,
-            "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
-            "vuetable:row-dblclicked": _vm.onRowClick
-          },
-          scopedSlots: _vm._u([
-            {
-              key: "row-link",
-              fn: function(props) {
-                return [
-                  _c("div", [
-                    _c(
-                      "a",
-                      { attrs: { href: "type/" + props.rowData.id + "/edit" } },
-                      [_vm._v(_vm._s(props.rowData.name))]
-                    )
-                  ])
-                ]
-              }
-            }
-          ])
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-footer" },
-      [
-        _c("vuetable-pagination-info", {
-          ref: "paginationInfo",
-          staticClass: "pagination-info dataTables_info",
-          attrs: {
-            "info-template": _vm.template.paginationInfo,
-            noDataTemplate: _vm.template.noDataPaginate
+            "href": 'type/' + props.rowData.id + '/edit'
           }
-        }),
-        _vm._v(" "),
-        _c("vuetable-pagination", {
-          ref: "pagination",
-          attrs: { css: _vm.css.pagination },
-          on: { "vuetable-pagination:change-page": _vm.onChangePage }
-        })
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "type/create" } }, [
-      _c("button", { staticClass: "btn btn-primary" }, [
-        _c("span", [
-          _c("i", { staticClass: "icon-add position-left" }),
-          _vm._v(" Добавить")
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", [
-      _c("i", { staticClass: "icon-trash position-left" }),
-      _vm._v(" Удалить")
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+        }, [_vm._v(_vm._s(props.rowData.name))])])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-footer"
+  }, [_c('vuetable-pagination-info', {
+    ref: "paginationInfo",
+    staticClass: "pagination-info dataTables_info",
+    attrs: {
+      "info-template": _vm.template.paginationInfo,
+      "noDataTemplate": _vm.template.noDataPaginate
+    }
+  }), _vm._v(" "), _c('vuetable-pagination', {
+    ref: "pagination",
+    attrs: {
+      "css": _vm.css.pagination
+    },
+    on: {
+      "vuetable-pagination:change-page": _vm.onChangePage
+    }
+  })], 1)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('a', {
+    attrs: {
+      "href": "type/create"
+    }
+  }, [_c('button', {
+    staticClass: "btn btn-primary"
+  }, [_c('span', [_c('i', {
+    staticClass: "icon-add position-left"
+  }), _vm._v(" Добавить")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', [_c('i', {
+    staticClass: "icon-trash position-left"
+  }), _vm._v(" Удалить")])
+}]}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-22f43f35", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-568263c7", module.exports)
   }
 }
 
@@ -91442,25 +90877,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(331)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(333)
-/* template */
-var __vue_template__ = __webpack_require__(338)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(333),
+  /* template */
+  __webpack_require__(338),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\components\\vuetable\\CourseGroupsTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CourseGroupsTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CourseGroupsTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -91471,9 +90900,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-20a866ac", Component.options)
+    hotAPI.createRecord("data-v-2de23a58", Component.options)
   } else {
-    hotAPI.reload("data-v-20a866ac", Component.options)
+    hotAPI.reload("data-v-2de23a58", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -91494,13 +90923,13 @@ var content = __webpack_require__(332);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("2f50632c", content, false);
+var update = __webpack_require__(4)("e7f50bb6", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-20a866ac\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CourseGroupsTable.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-20a866ac\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CourseGroupsTable.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2de23a58\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CourseGroupsTable.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2de23a58\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CourseGroupsTable.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -91644,13 +91073,13 @@ var content = __webpack_require__(335);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("66c7426e", content, false);
+var update = __webpack_require__(4)("c53d31ac", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-77335d98\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Select2.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-77335d98\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Select2.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7bb0d646\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Select2.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7bb0d646\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Select2.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -91785,24 +91214,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "select",
-    { ref: "select", staticStyle: { width: "170px" } },
-    [_vm._t("default")],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('select', {
+    ref: "select",
+    staticStyle: {
+      "width": "170px"
+    }
+  }, [_vm._t("default")], 2)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-77335d98", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-7bb0d646", module.exports)
   }
 }
 
@@ -91810,145 +91234,101 @@ if (false) {
 /* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dataTables_wrapper no-footer" }, [
-    _c(
-      "div",
-      { staticClass: "datatable-header" },
-      [
-        _c("filter-bar", {
-          staticClass: "dataTables_filter",
-          on: { "filter:set": _vm.filterSet, "filter:reset": _vm.filterReset }
-        }),
-        _vm._v(" "),
-        _c("show-bar", {
-          staticClass: "dataTables_length",
-          on: { "show:set": _vm.showSet }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "dt-buttons" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-danger",
-              on: {
-                click: function($event) {
-                  _vm.removeCheckedRows(_vm.removeOptions)
-                }
-              }
-            },
-            [_vm._m(1)]
-          )
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-scroll-wrap" },
-      [
-        _c("vuetable", {
-          ref: "vuetable",
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "dataTables_wrapper no-footer"
+  }, [_c('div', {
+    staticClass: "datatable-header"
+  }, [_c('filter-bar', {
+    staticClass: "dataTables_filter",
+    on: {
+      "filter:set": _vm.filterSet,
+      "filter:reset": _vm.filterReset
+    }
+  }), _vm._v(" "), _c('show-bar', {
+    staticClass: "dataTables_length",
+    on: {
+      "show:set": _vm.showSet
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "dt-buttons"
+  }, [_vm._m(0), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-danger",
+    on: {
+      "click": function($event) {
+        _vm.removeCheckedRows(_vm.removeOptions)
+      }
+    }
+  }, [_vm._m(1)])])], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-scroll-wrap"
+  }, [_c('vuetable', {
+    ref: "vuetable",
+    attrs: {
+      "api-url": "/api/course/groups",
+      "fields": _vm.fields,
+      "pagination-path": "",
+      "css": _vm.css.table,
+      "append-params": _vm.moreParams,
+      "per-page": _vm.perPage,
+      "sort-order": _vm.sortOrder,
+      "multi-sort": true,
+      "noDataTemplate": _vm.template.noData
+    },
+    on: {
+      "vuetable:cell-clicked": _vm.onCellClicked,
+      "vuetable:pagination-data": _vm.onPaginationData,
+      "vuetable:loaded": _vm.loadedTable,
+      "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
+      "vuetable:row-dblclicked": _vm.onRowClick
+    },
+    scopedSlots: _vm._u([{
+      key: "row-link",
+      fn: function(props) {
+        return [_c('div', [_c('a', {
           attrs: {
-            "api-url": "/api/course/groups",
-            fields: _vm.fields,
-            "pagination-path": "",
-            css: _vm.css.table,
-            "append-params": _vm.moreParams,
-            "per-page": _vm.perPage,
-            "sort-order": _vm.sortOrder,
-            "multi-sort": true,
-            noDataTemplate: _vm.template.noData
-          },
-          on: {
-            "vuetable:cell-clicked": _vm.onCellClicked,
-            "vuetable:pagination-data": _vm.onPaginationData,
-            "vuetable:loaded": _vm.loadedTable,
-            "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
-            "vuetable:row-dblclicked": _vm.onRowClick
-          },
-          scopedSlots: _vm._u([
-            {
-              key: "row-link",
-              fn: function(props) {
-                return [
-                  _c("div", [
-                    _c(
-                      "a",
-                      {
-                        attrs: { href: "group/" + props.rowData.id + "/edit" }
-                      },
-                      [_vm._v(_vm._s(props.rowData.name))]
-                    )
-                  ])
-                ]
-              }
-            }
-          ])
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-footer" },
-      [
-        _c("vuetable-pagination-info", {
-          ref: "paginationInfo",
-          staticClass: "pagination-info dataTables_info",
-          attrs: {
-            "info-template": _vm.template.paginationInfo,
-            noDataTemplate: _vm.template.noDataPaginate
+            "href": 'group/' + props.rowData.id + '/edit'
           }
-        }),
-        _vm._v(" "),
-        _c("vuetable-pagination", {
-          ref: "pagination",
-          attrs: { css: _vm.css.pagination },
-          on: { "vuetable-pagination:change-page": _vm.onChangePage }
-        })
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "group/create" } }, [
-      _c("button", { staticClass: "btn btn-primary" }, [
-        _c("span", [
-          _c("i", { staticClass: "icon-add position-left" }),
-          _vm._v(" Добавить")
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", [
-      _c("i", { staticClass: "icon-trash position-left" }),
-      _vm._v(" Удалить")
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+        }, [_vm._v(_vm._s(props.rowData.name))])])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-footer"
+  }, [_c('vuetable-pagination-info', {
+    ref: "paginationInfo",
+    staticClass: "pagination-info dataTables_info",
+    attrs: {
+      "info-template": _vm.template.paginationInfo,
+      "noDataTemplate": _vm.template.noDataPaginate
+    }
+  }), _vm._v(" "), _c('vuetable-pagination', {
+    ref: "pagination",
+    attrs: {
+      "css": _vm.css.pagination
+    },
+    on: {
+      "vuetable-pagination:change-page": _vm.onChangePage
+    }
+  })], 1)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('a', {
+    attrs: {
+      "href": "group/create"
+    }
+  }, [_c('button', {
+    staticClass: "btn btn-primary"
+  }, [_c('span', [_c('i', {
+    staticClass: "icon-add position-left"
+  }), _vm._v(" Добавить")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', [_c('i', {
+    staticClass: "icon-trash position-left"
+  }), _vm._v(" Удалить")])
+}]}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-20a866ac", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-2de23a58", module.exports)
   }
 }
 
@@ -91961,25 +91341,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(340)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(342)
-/* template */
-var __vue_template__ = __webpack_require__(343)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(342),
+  /* template */
+  __webpack_require__(343),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\components\\vuetable\\PaymentsTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\PaymentsTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] PaymentsTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -91990,9 +91364,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5d196e8c", Component.options)
+    hotAPI.createRecord("data-v-e5d4398c", Component.options)
   } else {
-    hotAPI.reload("data-v-5d196e8c", Component.options)
+    hotAPI.reload("data-v-e5d4398c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -92013,13 +91387,13 @@ var content = __webpack_require__(341);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("7f658ef8", content, false);
+var update = __webpack_require__(4)("6aa9f144", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5d196e8c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PaymentsTable.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5d196e8c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PaymentsTable.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e5d4398c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PaymentsTable.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e5d4398c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PaymentsTable.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -92176,132 +91550,91 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dataTables_wrapper no-footer" }, [
-    _c(
-      "div",
-      { staticClass: "datatable-header" },
-      [
-        _c("filter-bar", {
-          staticClass: "dataTables_filter",
-          on: { "filter:set": _vm.filterSet, "filter:reset": _vm.filterReset }
-        }),
-        _vm._v(" "),
-        _c("show-bar", {
-          staticClass: "dataTables_length",
-          on: { "show:set": _vm.showSet }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "dt-buttons" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-danger",
-              on: {
-                click: function($event) {
-                  _vm.removeCheckedRows(_vm.removeOptions)
-                }
-              }
-            },
-            [_vm._m(0)]
-          )
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-scroll-wrap" },
-      [
-        _c("vuetable", {
-          ref: "vuetable",
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "dataTables_wrapper no-footer"
+  }, [_c('div', {
+    staticClass: "datatable-header"
+  }, [_c('filter-bar', {
+    staticClass: "dataTables_filter",
+    on: {
+      "filter:set": _vm.filterSet,
+      "filter:reset": _vm.filterReset
+    }
+  }), _vm._v(" "), _c('show-bar', {
+    staticClass: "dataTables_length",
+    on: {
+      "show:set": _vm.showSet
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "dt-buttons"
+  }, [_c('button', {
+    staticClass: "btn btn-danger",
+    on: {
+      "click": function($event) {
+        _vm.removeCheckedRows(_vm.removeOptions)
+      }
+    }
+  }, [_vm._m(0)])])], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-scroll-wrap"
+  }, [_c('vuetable', {
+    ref: "vuetable",
+    attrs: {
+      "api-url": '/api/' + _vm.nameUrl + 's',
+      "fields": _vm.fields,
+      "pagination-path": "",
+      "css": _vm.css.table,
+      "append-params": _vm.moreParams,
+      "per-page": _vm.perPage,
+      "sort-order": _vm.sortOrder,
+      "multi-sort": true,
+      "noDataTemplate": _vm.template.noData
+    },
+    on: {
+      "vuetable:cell-clicked": _vm.onCellClicked,
+      "vuetable:pagination-data": _vm.onPaginationData,
+      "vuetable:loaded": _vm.loadedTable,
+      "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
+      "vuetable:row-dblclicked": _vm.onRowClick
+    },
+    scopedSlots: _vm._u([{
+      key: "row-link",
+      fn: function(props) {
+        return [_c('div', [_c('a', {
           attrs: {
-            "api-url": "/api/" + _vm.nameUrl + "s",
-            fields: _vm.fields,
-            "pagination-path": "",
-            css: _vm.css.table,
-            "append-params": _vm.moreParams,
-            "per-page": _vm.perPage,
-            "sort-order": _vm.sortOrder,
-            "multi-sort": true,
-            noDataTemplate: _vm.template.noData
-          },
-          on: {
-            "vuetable:cell-clicked": _vm.onCellClicked,
-            "vuetable:pagination-data": _vm.onPaginationData,
-            "vuetable:loaded": _vm.loadedTable,
-            "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
-            "vuetable:row-dblclicked": _vm.onRowClick
-          },
-          scopedSlots: _vm._u([
-            {
-              key: "row-link",
-              fn: function(props) {
-                return [
-                  _c("div", [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: _vm.nameUrl + "/" + props.rowData.id + "/edit"
-                        }
-                      },
-                      [_vm._v(_vm._s(props.rowData.number_document))]
-                    )
-                  ])
-                ]
-              }
-            }
-          ])
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-footer" },
-      [
-        _c("vuetable-pagination-info", {
-          ref: "paginationInfo",
-          staticClass: "pagination-info dataTables_info",
-          attrs: {
-            "info-template": _vm.template.paginationInfo,
-            noDataTemplate: _vm.template.noDataPaginate
+            "href": _vm.nameUrl + '/' + props.rowData.id + '/edit'
           }
-        }),
-        _vm._v(" "),
-        _c("vuetable-pagination", {
-          ref: "pagination",
-          attrs: { css: _vm.css.pagination },
-          on: { "vuetable-pagination:change-page": _vm.onChangePage }
-        })
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", [
-      _c("i", { staticClass: "icon-trash position-left" }),
-      _vm._v(" Удалить")
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+        }, [_vm._v(_vm._s(props.rowData.number_document))])])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-footer"
+  }, [_c('vuetable-pagination-info', {
+    ref: "paginationInfo",
+    staticClass: "pagination-info dataTables_info",
+    attrs: {
+      "info-template": _vm.template.paginationInfo,
+      "noDataTemplate": _vm.template.noDataPaginate
+    }
+  }), _vm._v(" "), _c('vuetable-pagination', {
+    ref: "pagination",
+    attrs: {
+      "css": _vm.css.pagination
+    },
+    on: {
+      "vuetable-pagination:change-page": _vm.onChangePage
+    }
+  })], 1)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', [_c('i', {
+    staticClass: "icon-trash position-left"
+  }), _vm._v(" Удалить")])
+}]}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-5d196e8c", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-e5d4398c", module.exports)
   }
 }
 
@@ -92314,25 +91647,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(345)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(347)
-/* template */
-var __vue_template__ = __webpack_require__(348)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(347),
+  /* template */
+  __webpack_require__(348),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\components\\vuetable\\PaymentTypesTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\PaymentTypesTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] PaymentTypesTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -92343,9 +91670,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-34b89634", Component.options)
+    hotAPI.createRecord("data-v-23da2294", Component.options)
   } else {
-    hotAPI.reload("data-v-34b89634", Component.options)
+    hotAPI.reload("data-v-23da2294", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -92366,13 +91693,13 @@ var content = __webpack_require__(346);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("2ee0514e", content, false);
+var update = __webpack_require__(4)("103c0732", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-34b89634\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PaymentTypesTable.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-34b89634\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PaymentTypesTable.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-23da2294\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PaymentTypesTable.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-23da2294\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PaymentTypesTable.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -92505,143 +91832,101 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dataTables_wrapper no-footer" }, [
-    _c(
-      "div",
-      { staticClass: "datatable-header" },
-      [
-        _c("filter-bar", {
-          staticClass: "dataTables_filter",
-          on: { "filter:set": _vm.filterSet, "filter:reset": _vm.filterReset }
-        }),
-        _vm._v(" "),
-        _c("show-bar", {
-          staticClass: "dataTables_length",
-          on: { "show:set": _vm.showSet }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "dt-buttons" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-danger",
-              on: {
-                click: function($event) {
-                  _vm.removeCheckedRows(_vm.removeOptions)
-                }
-              }
-            },
-            [_vm._m(1)]
-          )
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-scroll-wrap" },
-      [
-        _c("vuetable", {
-          ref: "vuetable",
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "dataTables_wrapper no-footer"
+  }, [_c('div', {
+    staticClass: "datatable-header"
+  }, [_c('filter-bar', {
+    staticClass: "dataTables_filter",
+    on: {
+      "filter:set": _vm.filterSet,
+      "filter:reset": _vm.filterReset
+    }
+  }), _vm._v(" "), _c('show-bar', {
+    staticClass: "dataTables_length",
+    on: {
+      "show:set": _vm.showSet
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "dt-buttons"
+  }, [_vm._m(0), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-danger",
+    on: {
+      "click": function($event) {
+        _vm.removeCheckedRows(_vm.removeOptions)
+      }
+    }
+  }, [_vm._m(1)])])], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-scroll-wrap"
+  }, [_c('vuetable', {
+    ref: "vuetable",
+    attrs: {
+      "api-url": "/api/payment/types",
+      "fields": _vm.fields,
+      "pagination-path": "",
+      "css": _vm.css.table,
+      "append-params": _vm.moreParams,
+      "per-page": _vm.perPage,
+      "sort-order": _vm.sortOrder,
+      "multi-sort": true,
+      "noDataTemplate": _vm.template.noData
+    },
+    on: {
+      "vuetable:cell-clicked": _vm.onCellClicked,
+      "vuetable:pagination-data": _vm.onPaginationData,
+      "vuetable:loaded": _vm.loadedTable,
+      "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
+      "vuetable:row-dblclicked": _vm.onRowClick
+    },
+    scopedSlots: _vm._u([{
+      key: "row-link",
+      fn: function(props) {
+        return [_c('div', [_c('a', {
           attrs: {
-            "api-url": "/api/payment/types",
-            fields: _vm.fields,
-            "pagination-path": "",
-            css: _vm.css.table,
-            "append-params": _vm.moreParams,
-            "per-page": _vm.perPage,
-            "sort-order": _vm.sortOrder,
-            "multi-sort": true,
-            noDataTemplate: _vm.template.noData
-          },
-          on: {
-            "vuetable:cell-clicked": _vm.onCellClicked,
-            "vuetable:pagination-data": _vm.onPaginationData,
-            "vuetable:loaded": _vm.loadedTable,
-            "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
-            "vuetable:row-dblclicked": _vm.onRowClick
-          },
-          scopedSlots: _vm._u([
-            {
-              key: "row-link",
-              fn: function(props) {
-                return [
-                  _c("div", [
-                    _c(
-                      "a",
-                      { attrs: { href: "type/" + props.rowData.id + "/edit" } },
-                      [_vm._v(_vm._s(props.rowData.name))]
-                    )
-                  ])
-                ]
-              }
-            }
-          ])
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-footer" },
-      [
-        _c("vuetable-pagination-info", {
-          ref: "paginationInfo",
-          staticClass: "pagination-info dataTables_info",
-          attrs: {
-            "info-template": _vm.template.paginationInfo,
-            noDataTemplate: _vm.template.noDataPaginate
+            "href": 'type/' + props.rowData.id + '/edit'
           }
-        }),
-        _vm._v(" "),
-        _c("vuetable-pagination", {
-          ref: "pagination",
-          attrs: { css: _vm.css.pagination },
-          on: { "vuetable-pagination:change-page": _vm.onChangePage }
-        })
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "type/create" } }, [
-      _c("button", { staticClass: "btn btn-primary" }, [
-        _c("span", [
-          _c("i", { staticClass: "icon-add position-left" }),
-          _vm._v(" Добавить")
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", [
-      _c("i", { staticClass: "icon-trash position-left" }),
-      _vm._v(" Удалить")
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+        }, [_vm._v(_vm._s(props.rowData.name))])])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-footer"
+  }, [_c('vuetable-pagination-info', {
+    ref: "paginationInfo",
+    staticClass: "pagination-info dataTables_info",
+    attrs: {
+      "info-template": _vm.template.paginationInfo,
+      "noDataTemplate": _vm.template.noDataPaginate
+    }
+  }), _vm._v(" "), _c('vuetable-pagination', {
+    ref: "pagination",
+    attrs: {
+      "css": _vm.css.pagination
+    },
+    on: {
+      "vuetable-pagination:change-page": _vm.onChangePage
+    }
+  })], 1)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('a', {
+    attrs: {
+      "href": "type/create"
+    }
+  }, [_c('button', {
+    staticClass: "btn btn-primary"
+  }, [_c('span', [_c('i', {
+    staticClass: "icon-add position-left"
+  }), _vm._v(" Добавить")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', [_c('i', {
+    staticClass: "icon-trash position-left"
+  }), _vm._v(" Удалить")])
+}]}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-34b89634", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-23da2294", module.exports)
   }
 }
 
@@ -92654,25 +91939,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(350)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(352)
-/* template */
-var __vue_template__ = __webpack_require__(353)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(352),
+  /* template */
+  __webpack_require__(353),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReservationsTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -92683,9 +91962,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-aed1415c", Component.options)
+    hotAPI.createRecord("data-v-32646600", Component.options)
   } else {
-    hotAPI.reload("data-v-aed1415c", Component.options)
+    hotAPI.reload("data-v-32646600", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -92706,13 +91985,13 @@ var content = __webpack_require__(351);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("30f1522e", content, false);
+var update = __webpack_require__(4)("0fcfb9ec", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-aed1415c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReservationsTable.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-aed1415c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReservationsTable.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-32646600\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReservationsTable.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-32646600\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReservationsTable.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -92967,188 +92246,154 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dataTables_wrapper no-footer" }, [
-    _c(
-      "div",
-      { staticClass: "datatable-header" },
-      [
-        _c("filter-bar", {
-          staticClass: "dataTables_filter",
-          on: { "filter:set": _vm.filterSet, "filter:reset": _vm.filterReset }
-        }),
-        _vm._v(" "),
-        _c("show-bar", {
-          staticClass: "dataTables_length",
-          on: { "show:set": _vm.showSet }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "dt-buttons" }, [
-          _c("a", { attrs: { href: _vm.nameUrl + "/create" } }, [_vm._m(0)]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-danger",
-              on: {
-                click: function($event) {
-                  _vm.removeCheckedRows(_vm.removeOptions)
-                }
-              }
-            },
-            [_vm._m(1)]
-          )
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "col-xs-12",
-            staticStyle: { "margin-bottom": "15px" }
-          },
-          [
-            _c("select2", {
-              attrs: { filters: _vm.filters, "select-name": "user" },
-              on: { "select2:set": _vm.select2Set }
-            }),
-            _vm._v(" "),
-            _c("select2", {
-              attrs: { filters: _vm.filters, "select-name": "course" },
-              on: { "select2:set": _vm.select2Set }
-            }),
-            _vm._v(" "),
-            _c("select2", {
-              attrs: { filters: _vm.filters, "select-name": "paymentType" },
-              on: { "select2:set": _vm.select2Set }
-            }),
-            _vm._v(" "),
-            _c("select2", {
-              attrs: { filters: _vm.filters, "select-name": "courseType" },
-              on: { "select2:set": _vm.select2Set }
-            }),
-            _vm._v(" "),
-            _c("select2", {
-              attrs: { filters: _vm.filters, "select-name": "paymentStatus" },
-              on: { "select2:set": _vm.select2Set }
-            }),
-            _vm._v(" "),
-            _c("select2", {
-              attrs: {
-                filters: _vm.filters,
-                "select-name": "reservationStatus"
-              },
-              on: { "select2:set": _vm.select2Set }
-            })
-          ],
-          1
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-scroll-wrap" },
-      [
-        _c("vuetable", {
-          ref: "vuetable",
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "dataTables_wrapper no-footer"
+  }, [_c('div', {
+    staticClass: "datatable-header"
+  }, [_c('filter-bar', {
+    staticClass: "dataTables_filter",
+    on: {
+      "filter:set": _vm.filterSet,
+      "filter:reset": _vm.filterReset
+    }
+  }), _vm._v(" "), _c('show-bar', {
+    staticClass: "dataTables_length",
+    on: {
+      "show:set": _vm.showSet
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "dt-buttons"
+  }, [_c('a', {
+    attrs: {
+      "href": _vm.nameUrl + '/create'
+    }
+  }, [_vm._m(0)]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-danger",
+    on: {
+      "click": function($event) {
+        _vm.removeCheckedRows(_vm.removeOptions)
+      }
+    }
+  }, [_vm._m(1)])]), _vm._v(" "), _c('div', {
+    staticClass: "col-xs-12",
+    staticStyle: {
+      "margin-bottom": "15px"
+    }
+  }, [_c('select2', {
+    attrs: {
+      "filters": _vm.filters,
+      "select-name": "user"
+    },
+    on: {
+      "select2:set": _vm.select2Set
+    }
+  }), _vm._v(" "), _c('select2', {
+    attrs: {
+      "filters": _vm.filters,
+      "select-name": "course"
+    },
+    on: {
+      "select2:set": _vm.select2Set
+    }
+  }), _vm._v(" "), _c('select2', {
+    attrs: {
+      "filters": _vm.filters,
+      "select-name": "paymentType"
+    },
+    on: {
+      "select2:set": _vm.select2Set
+    }
+  }), _vm._v(" "), _c('select2', {
+    attrs: {
+      "filters": _vm.filters,
+      "select-name": "courseType"
+    },
+    on: {
+      "select2:set": _vm.select2Set
+    }
+  }), _vm._v(" "), _c('select2', {
+    attrs: {
+      "filters": _vm.filters,
+      "select-name": "paymentStatus"
+    },
+    on: {
+      "select2:set": _vm.select2Set
+    }
+  }), _vm._v(" "), _c('select2', {
+    attrs: {
+      "filters": _vm.filters,
+      "select-name": "reservationStatus"
+    },
+    on: {
+      "select2:set": _vm.select2Set
+    }
+  })], 1)], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-scroll-wrap"
+  }, [_c('vuetable', {
+    ref: "vuetable",
+    attrs: {
+      "api-url": '/api/' + _vm.nameUrl + 's',
+      "fields": _vm.fields,
+      "pagination-path": "",
+      "css": _vm.css.table,
+      "append-params": _vm.moreParams,
+      "per-page": _vm.perPage,
+      "sort-order": _vm.sortOrder,
+      "multi-sort": true,
+      "noDataTemplate": _vm.template.noData
+    },
+    on: {
+      "vuetable:cell-clicked": _vm.onCellClicked,
+      "vuetable:pagination-data": _vm.onPaginationData,
+      "vuetable:loaded": _vm.loadedTable,
+      "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
+      "vuetable:row-dblclicked": _vm.onRowClick
+    },
+    scopedSlots: _vm._u([{
+      key: "row-link",
+      fn: function(props) {
+        return [_c('div', [_c('a', {
           attrs: {
-            "api-url": "/api/" + _vm.nameUrl + "s",
-            fields: _vm.fields,
-            "pagination-path": "",
-            css: _vm.css.table,
-            "append-params": _vm.moreParams,
-            "per-page": _vm.perPage,
-            "sort-order": _vm.sortOrder,
-            "multi-sort": true,
-            noDataTemplate: _vm.template.noData
-          },
-          on: {
-            "vuetable:cell-clicked": _vm.onCellClicked,
-            "vuetable:pagination-data": _vm.onPaginationData,
-            "vuetable:loaded": _vm.loadedTable,
-            "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
-            "vuetable:row-dblclicked": _vm.onRowClick
-          },
-          scopedSlots: _vm._u([
-            {
-              key: "row-link",
-              fn: function(props) {
-                return [
-                  _c("div", [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: _vm.nameUrl + "/" + props.rowData.id + "/edit"
-                        }
-                      },
-                      [_vm._v(_vm._s(props.rowData.name))]
-                    )
-                  ])
-                ]
-              }
-            }
-          ])
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-footer" },
-      [
-        _c("vuetable-pagination-info", {
-          ref: "paginationInfo",
-          staticClass: "pagination-info dataTables_info",
-          attrs: {
-            "info-template": _vm.template.paginationInfo,
-            noDataTemplate: _vm.template.noDataPaginate
+            "href": _vm.nameUrl + '/' + props.rowData.id + '/edit'
           }
-        }),
-        _vm._v(" "),
-        _c("vuetable-pagination", {
-          ref: "pagination",
-          attrs: { css: _vm.css.pagination },
-          on: { "vuetable-pagination:change-page": _vm.onChangePage }
-        })
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("button", { staticClass: "btn btn-primary" }, [
-      _c("span", [
-        _c("i", { staticClass: "icon-add position-left" }),
-        _vm._v(" Добавить")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", [
-      _c("i", { staticClass: "icon-trash position-left" }),
-      _vm._v(" Удалить")
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+        }, [_vm._v(_vm._s(props.rowData.name))])])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-footer"
+  }, [_c('vuetable-pagination-info', {
+    ref: "paginationInfo",
+    staticClass: "pagination-info dataTables_info",
+    attrs: {
+      "info-template": _vm.template.paginationInfo,
+      "noDataTemplate": _vm.template.noDataPaginate
+    }
+  }), _vm._v(" "), _c('vuetable-pagination', {
+    ref: "pagination",
+    attrs: {
+      "css": _vm.css.pagination
+    },
+    on: {
+      "vuetable-pagination:change-page": _vm.onChangePage
+    }
+  })], 1)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('button', {
+    staticClass: "btn btn-primary"
+  }, [_c('span', [_c('i', {
+    staticClass: "icon-add position-left"
+  }), _vm._v(" Добавить")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', [_c('i', {
+    staticClass: "icon-trash position-left"
+  }), _vm._v(" Удалить")])
+}]}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-aed1415c", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-32646600", module.exports)
   }
 }
 
@@ -93161,25 +92406,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(355)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(357)
-/* template */
-var __vue_template__ = __webpack_require__(358)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(357),
+  /* template */
+  __webpack_require__(358),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\components\\vuetable\\ReviewTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReviewTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReviewTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -93190,9 +92429,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6b245f81", Component.options)
+    hotAPI.createRecord("data-v-777227af", Component.options)
   } else {
-    hotAPI.reload("data-v-6b245f81", Component.options)
+    hotAPI.reload("data-v-777227af", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -93213,13 +92452,13 @@ var content = __webpack_require__(356);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("89771bd4", content, false);
+var update = __webpack_require__(4)("6b05ac03", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6b245f81\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReviewTable.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6b245f81\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReviewTable.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-777227af\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReviewTable.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-777227af\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReviewTable.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -93237,7 +92476,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -93333,26 +92572,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }, {
                 name: '__slot:row-link',
                 title: 'Пользователь',
-                sortField: 'name',
+                sortField: 'users.full_name',
                 titleClass: 'text-center',
                 dataClass: 'text-center'
             }, {
                 name: 'created_at',
                 title: 'Дата',
-                sortField: 'created_at',
+                sortField: 'reviews.created_at',
                 callback: 'formatDate',
                 titleClass: 'text-center',
                 dataClass: 'text-center'
             }, {
                 name: 'text',
                 title: 'Текст',
-                sortField: 'text',
+                sortField: 'reviews.text',
+                callback: 'truncateText',
                 titleClass: 'text-center',
                 dataClass: 'text-center'
             }, {
                 name: 'status',
                 title: 'Статус',
-                sortField: 'status',
+                sortField: 'reviews.status',
                 callback: 'reviewLabel',
                 titleClass: 'text-center',
                 dataClass: 'text-center'
@@ -93375,145 +92615,101 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dataTables_wrapper no-footer" }, [
-    _c(
-      "div",
-      { staticClass: "datatable-header" },
-      [
-        _c("filter-bar", {
-          staticClass: "dataTables_filter",
-          on: { "filter:set": _vm.filterSet, "filter:reset": _vm.filterReset }
-        }),
-        _vm._v(" "),
-        _c("show-bar", {
-          staticClass: "dataTables_length",
-          on: { "show:set": _vm.showSet }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "dt-buttons" }, [
-          _c("a", { attrs: { href: _vm.nameUrl + "/create" } }, [_vm._m(0)]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-danger",
-              on: {
-                click: function($event) {
-                  _vm.removeCheckedRows(_vm.removeOptions)
-                }
-              }
-            },
-            [_vm._m(1)]
-          )
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-scroll-wrap" },
-      [
-        _c("vuetable", {
-          ref: "vuetable",
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "dataTables_wrapper no-footer"
+  }, [_c('div', {
+    staticClass: "datatable-header"
+  }, [_c('filter-bar', {
+    staticClass: "dataTables_filter",
+    on: {
+      "filter:set": _vm.filterSet,
+      "filter:reset": _vm.filterReset
+    }
+  }), _vm._v(" "), _c('show-bar', {
+    staticClass: "dataTables_length",
+    on: {
+      "show:set": _vm.showSet
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "dt-buttons"
+  }, [_c('a', {
+    attrs: {
+      "href": _vm.nameUrl + '/create'
+    }
+  }, [_vm._m(0)]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-danger",
+    on: {
+      "click": function($event) {
+        _vm.removeCheckedRows(_vm.removeOptions)
+      }
+    }
+  }, [_vm._m(1)])])], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-scroll-wrap"
+  }, [_c('vuetable', {
+    ref: "vuetable",
+    attrs: {
+      "api-url": '/api/' + _vm.nameUrl + 's',
+      "fields": _vm.fields,
+      "pagination-path": "",
+      "css": _vm.css.table,
+      "append-params": _vm.moreParams,
+      "per-page": _vm.perPage,
+      "sort-order": _vm.sortOrder,
+      "multi-sort": true,
+      "noDataTemplate": _vm.template.noData
+    },
+    on: {
+      "vuetable:cell-clicked": _vm.onCellClicked,
+      "vuetable:pagination-data": _vm.onPaginationData,
+      "vuetable:loaded": _vm.loadedTable,
+      "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
+      "vuetable:row-dblclicked": _vm.onRowClick
+    },
+    scopedSlots: _vm._u([{
+      key: "row-link",
+      fn: function(props) {
+        return [_c('div', [_c('a', {
           attrs: {
-            "api-url": "/api/" + _vm.nameUrl + "s",
-            fields: _vm.fields,
-            "pagination-path": "",
-            css: _vm.css.table,
-            "append-params": _vm.moreParams,
-            "per-page": _vm.perPage,
-            "sort-order": _vm.sortOrder,
-            "multi-sort": true,
-            noDataTemplate: _vm.template.noData
-          },
-          on: {
-            "vuetable:cell-clicked": _vm.onCellClicked,
-            "vuetable:pagination-data": _vm.onPaginationData,
-            "vuetable:loaded": _vm.loadedTable,
-            "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
-            "vuetable:row-dblclicked": _vm.onRowClick
-          },
-          scopedSlots: _vm._u([
-            {
-              key: "row-link",
-              fn: function(props) {
-                return [
-                  _c("div", [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: _vm.nameUrl + "/" + props.rowData.id + "/edit"
-                        }
-                      },
-                      [_vm._v(_vm._s(props.rowData.name))]
-                    )
-                  ])
-                ]
-              }
-            }
-          ])
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-footer" },
-      [
-        _c("vuetable-pagination-info", {
-          ref: "paginationInfo",
-          staticClass: "pagination-info dataTables_info",
-          attrs: {
-            "info-template": _vm.template.paginationInfo,
-            noDataTemplate: _vm.template.noDataPaginate
+            "href": _vm.nameUrl + '/' + props.rowData.id + '/edit'
           }
-        }),
-        _vm._v(" "),
-        _c("vuetable-pagination", {
-          ref: "pagination",
-          attrs: { css: _vm.css.pagination },
-          on: { "vuetable-pagination:change-page": _vm.onChangePage }
-        })
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("button", { staticClass: "btn btn-primary" }, [
-      _c("span", [
-        _c("i", { staticClass: "icon-add position-left" }),
-        _vm._v(" Добавить")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", [
-      _c("i", { staticClass: "icon-trash position-left" }),
-      _vm._v(" Удалить")
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+        }, [_vm._v(_vm._s(props.rowData.user.full_name))])])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-footer"
+  }, [_c('vuetable-pagination-info', {
+    ref: "paginationInfo",
+    staticClass: "pagination-info dataTables_info",
+    attrs: {
+      "info-template": _vm.template.paginationInfo,
+      "noDataTemplate": _vm.template.noDataPaginate
+    }
+  }), _vm._v(" "), _c('vuetable-pagination', {
+    ref: "pagination",
+    attrs: {
+      "css": _vm.css.pagination
+    },
+    on: {
+      "vuetable-pagination:change-page": _vm.onChangePage
+    }
+  })], 1)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('button', {
+    staticClass: "btn btn-primary"
+  }, [_c('span', [_c('i', {
+    staticClass: "icon-add position-left"
+  }), _vm._v(" Добавить")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', [_c('i', {
+    staticClass: "icon-trash position-left"
+  }), _vm._v(" Удалить")])
+}]}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-6b245f81", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-777227af", module.exports)
   }
 }
 
@@ -93526,25 +92722,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(360)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(362)
-/* template */
-var __vue_template__ = __webpack_require__(363)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(362),
+  /* template */
+  __webpack_require__(363),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\components\\vuetable\\PagesTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\PagesTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] PagesTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -93555,9 +92745,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-b952ede2", Component.options)
+    hotAPI.createRecord("data-v-d98ff9be", Component.options)
   } else {
-    hotAPI.reload("data-v-b952ede2", Component.options)
+    hotAPI.reload("data-v-d98ff9be", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -93578,13 +92768,13 @@ var content = __webpack_require__(361);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("5e5c5b14", content, false);
+var update = __webpack_require__(4)("85383306", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b952ede2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PagesTable.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b952ede2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PagesTable.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d98ff9be\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PagesTable.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d98ff9be\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PagesTable.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -93724,101 +92914,71 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dataTables_wrapper no-footer" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-scroll-wrap" },
-      [
-        _c("vuetable", {
-          ref: "vuetable",
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "dataTables_wrapper no-footer"
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "datatable-scroll-wrap"
+  }, [_c('vuetable', {
+    ref: "vuetable",
+    attrs: {
+      "api-url": '/api/' + _vm.nameUrl + 's',
+      "fields": _vm.fields,
+      "pagination-path": "",
+      "css": _vm.css.table,
+      "append-params": _vm.moreParams,
+      "per-page": _vm.perPage,
+      "sort-order": _vm.sortOrder,
+      "multi-sort": true,
+      "noDataTemplate": _vm.template.noData
+    },
+    on: {
+      "vuetable:cell-clicked": _vm.onCellClicked,
+      "vuetable:pagination-data": _vm.onPaginationData,
+      "vuetable:loaded": _vm.loadedTable,
+      "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
+      "vuetable:row-dblclicked": _vm.onRowClick
+    },
+    scopedSlots: _vm._u([{
+      key: "row-link",
+      fn: function(props) {
+        return [_c('div', [_c('a', {
           attrs: {
-            "api-url": "/api/" + _vm.nameUrl + "s",
-            fields: _vm.fields,
-            "pagination-path": "",
-            css: _vm.css.table,
-            "append-params": _vm.moreParams,
-            "per-page": _vm.perPage,
-            "sort-order": _vm.sortOrder,
-            "multi-sort": true,
-            noDataTemplate: _vm.template.noData
-          },
-          on: {
-            "vuetable:cell-clicked": _vm.onCellClicked,
-            "vuetable:pagination-data": _vm.onPaginationData,
-            "vuetable:loaded": _vm.loadedTable,
-            "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
-            "vuetable:row-dblclicked": _vm.onRowClick
-          },
-          scopedSlots: _vm._u([
-            {
-              key: "row-link",
-              fn: function(props) {
-                return [
-                  _c("div", [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: _vm.nameUrl + "/" + props.rowData.id + "/edit"
-                        }
-                      },
-                      [_vm._v(_vm._s(props.rowData.title))]
-                    )
-                  ])
-                ]
-              }
-            }
-          ])
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-footer" },
-      [
-        _c("vuetable-pagination-info", {
-          ref: "paginationInfo",
-          staticClass: "pagination-info dataTables_info",
-          attrs: {
-            "info-template": _vm.template.paginationInfo,
-            noDataTemplate: _vm.template.noDataPaginate
+            "href": _vm.nameUrl + '/' + props.rowData.id + '/edit'
           }
-        }),
-        _vm._v(" "),
-        _c("vuetable-pagination", {
-          ref: "pagination",
-          attrs: { css: _vm.css.pagination },
-          on: { "vuetable-pagination:change-page": _vm.onChangePage }
-        })
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "datatable-header" }, [
-      _c("div", { staticClass: "dt-buttons" })
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+        }, [_vm._v(_vm._s(props.rowData.title))])])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-footer"
+  }, [_c('vuetable-pagination-info', {
+    ref: "paginationInfo",
+    staticClass: "pagination-info dataTables_info",
+    attrs: {
+      "info-template": _vm.template.paginationInfo,
+      "noDataTemplate": _vm.template.noDataPaginate
+    }
+  }), _vm._v(" "), _c('vuetable-pagination', {
+    ref: "pagination",
+    attrs: {
+      "css": _vm.css.pagination
+    },
+    on: {
+      "vuetable-pagination:change-page": _vm.onChangePage
+    }
+  })], 1)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "datatable-header"
+  }, [_c('div', {
+    staticClass: "dt-buttons"
+  })])
+}]}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-b952ede2", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-d98ff9be", module.exports)
   }
 }
 
@@ -93831,25 +92991,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(365)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(367)
-/* template */
-var __vue_template__ = __webpack_require__(368)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(367),
+  /* template */
+  __webpack_require__(368),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\components\\vuetable\\CoursesTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CoursesTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CoursesTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -93860,9 +93014,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5c31785b", Component.options)
+    hotAPI.createRecord("data-v-4cc69426", Component.options)
   } else {
-    hotAPI.reload("data-v-5c31785b", Component.options)
+    hotAPI.reload("data-v-4cc69426", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -93883,13 +93037,13 @@ var content = __webpack_require__(366);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("6486e060", content, false);
+var update = __webpack_require__(4)("4ecf1d49", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5c31785b\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CoursesTable.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5c31785b\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CoursesTable.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4cc69426\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CoursesTable.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4cc69426\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CoursesTable.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -94102,175 +93256,138 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dataTables_wrapper no-footer" }, [
-    _c(
-      "div",
-      { staticClass: "datatable-header" },
-      [
-        _c("filter-bar", {
-          staticClass: "dataTables_filter",
-          on: { "filter:set": _vm.filterSet, "filter:reset": _vm.filterReset }
-        }),
-        _vm._v(" "),
-        _c("show-bar", {
-          staticClass: "dataTables_length",
-          on: { "show:set": _vm.showSet }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "dt-buttons" }, [
-          _c("a", { attrs: { href: _vm.nameUrl + "/create" } }, [_vm._m(0)]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-danger",
-              on: {
-                click: function($event) {
-                  _vm.removeCheckedRows(_vm.removeOptions)
-                }
-              }
-            },
-            [_vm._m(1)]
-          )
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "col-xs-12",
-            staticStyle: { "margin-bottom": "15px" }
-          },
-          [
-            _c("select2", {
-              attrs: { filters: _vm.filters, "select-name": "course" },
-              on: { "select2:set": _vm.select2Set }
-            }),
-            _vm._v(" "),
-            _c("select2", {
-              attrs: { filters: _vm.filters, "select-name": "speaker" },
-              on: { "select2:set": _vm.select2Set }
-            }),
-            _vm._v(" "),
-            _c("select2", {
-              attrs: { filters: _vm.filters, "select-name": "courseType" },
-              on: { "select2:set": _vm.select2Set }
-            }),
-            _vm._v(" "),
-            _c("select2", {
-              attrs: { filters: _vm.filters, "select-name": "courseGroup" },
-              on: { "select2:set": _vm.select2Set }
-            })
-          ],
-          1
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-scroll-wrap" },
-      [
-        _c("vuetable", {
-          ref: "vuetable",
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "dataTables_wrapper no-footer"
+  }, [_c('div', {
+    staticClass: "datatable-header"
+  }, [_c('filter-bar', {
+    staticClass: "dataTables_filter",
+    on: {
+      "filter:set": _vm.filterSet,
+      "filter:reset": _vm.filterReset
+    }
+  }), _vm._v(" "), _c('show-bar', {
+    staticClass: "dataTables_length",
+    on: {
+      "show:set": _vm.showSet
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "dt-buttons"
+  }, [_c('a', {
+    attrs: {
+      "href": _vm.nameUrl + '/create'
+    }
+  }, [_vm._m(0)]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-danger",
+    on: {
+      "click": function($event) {
+        _vm.removeCheckedRows(_vm.removeOptions)
+      }
+    }
+  }, [_vm._m(1)])]), _vm._v(" "), _c('div', {
+    staticClass: "col-xs-12",
+    staticStyle: {
+      "margin-bottom": "15px"
+    }
+  }, [_c('select2', {
+    attrs: {
+      "filters": _vm.filters,
+      "select-name": "course"
+    },
+    on: {
+      "select2:set": _vm.select2Set
+    }
+  }), _vm._v(" "), _c('select2', {
+    attrs: {
+      "filters": _vm.filters,
+      "select-name": "speaker"
+    },
+    on: {
+      "select2:set": _vm.select2Set
+    }
+  }), _vm._v(" "), _c('select2', {
+    attrs: {
+      "filters": _vm.filters,
+      "select-name": "courseType"
+    },
+    on: {
+      "select2:set": _vm.select2Set
+    }
+  }), _vm._v(" "), _c('select2', {
+    attrs: {
+      "filters": _vm.filters,
+      "select-name": "courseGroup"
+    },
+    on: {
+      "select2:set": _vm.select2Set
+    }
+  })], 1)], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-scroll-wrap"
+  }, [_c('vuetable', {
+    ref: "vuetable",
+    attrs: {
+      "api-url": '/api/' + _vm.nameUrl + 's',
+      "fields": _vm.fields,
+      "pagination-path": "",
+      "css": _vm.css.table,
+      "append-params": _vm.moreParams,
+      "per-page": _vm.perPage,
+      "sort-order": _vm.sortOrder,
+      "multi-sort": true,
+      "noDataTemplate": _vm.template.noData
+    },
+    on: {
+      "vuetable:cell-clicked": _vm.onCellClicked,
+      "vuetable:pagination-data": _vm.onPaginationData,
+      "vuetable:loaded": _vm.loadedTable,
+      "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
+      "vuetable:row-dblclicked": _vm.onRowClick
+    },
+    scopedSlots: _vm._u([{
+      key: "row-link",
+      fn: function(props) {
+        return [_c('div', [_c('a', {
           attrs: {
-            "api-url": "/api/" + _vm.nameUrl + "s",
-            fields: _vm.fields,
-            "pagination-path": "",
-            css: _vm.css.table,
-            "append-params": _vm.moreParams,
-            "per-page": _vm.perPage,
-            "sort-order": _vm.sortOrder,
-            "multi-sort": true,
-            noDataTemplate: _vm.template.noData
-          },
-          on: {
-            "vuetable:cell-clicked": _vm.onCellClicked,
-            "vuetable:pagination-data": _vm.onPaginationData,
-            "vuetable:loaded": _vm.loadedTable,
-            "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
-            "vuetable:row-dblclicked": _vm.onRowClick
-          },
-          scopedSlots: _vm._u([
-            {
-              key: "row-link",
-              fn: function(props) {
-                return [
-                  _c("div", [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: _vm.nameUrl + "/" + props.rowData.id + "/edit"
-                        }
-                      },
-                      [_vm._v(_vm._s(props.rowData.name))]
-                    )
-                  ])
-                ]
-              }
-            }
-          ])
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-footer" },
-      [
-        _c("vuetable-pagination-info", {
-          ref: "paginationInfo",
-          staticClass: "pagination-info dataTables_info",
-          attrs: {
-            "info-template": _vm.template.paginationInfo,
-            noDataTemplate: _vm.template.noDataPaginate
+            "href": _vm.nameUrl + '/' + props.rowData.id + '/edit'
           }
-        }),
-        _vm._v(" "),
-        _c("vuetable-pagination", {
-          ref: "pagination",
-          attrs: { css: _vm.css.pagination },
-          on: { "vuetable-pagination:change-page": _vm.onChangePage }
-        })
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("button", { staticClass: "btn btn-primary" }, [
-      _c("span", [
-        _c("i", { staticClass: "icon-add position-left" }),
-        _vm._v(" Добавить")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", [
-      _c("i", { staticClass: "icon-trash position-left" }),
-      _vm._v(" Удалить")
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+        }, [_vm._v(_vm._s(props.rowData.name))])])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-footer"
+  }, [_c('vuetable-pagination-info', {
+    ref: "paginationInfo",
+    staticClass: "pagination-info dataTables_info",
+    attrs: {
+      "info-template": _vm.template.paginationInfo,
+      "noDataTemplate": _vm.template.noDataPaginate
+    }
+  }), _vm._v(" "), _c('vuetable-pagination', {
+    ref: "pagination",
+    attrs: {
+      "css": _vm.css.pagination
+    },
+    on: {
+      "vuetable-pagination:change-page": _vm.onChangePage
+    }
+  })], 1)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('button', {
+    staticClass: "btn btn-primary"
+  }, [_c('span', [_c('i', {
+    staticClass: "icon-add position-left"
+  }), _vm._v(" Добавить")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', [_c('i', {
+    staticClass: "icon-trash position-left"
+  }), _vm._v(" Удалить")])
+}]}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-5c31785b", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-4cc69426", module.exports)
   }
 }
 
@@ -94283,25 +93400,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(370)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(372)
-/* template */
-var __vue_template__ = __webpack_require__(373)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(372),
+  /* template */
+  __webpack_require__(373),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTableCourse.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTableCourse.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReservationsTableCourse.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -94312,9 +93423,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-72cea28d", Component.options)
+    hotAPI.createRecord("data-v-a788d48a", Component.options)
   } else {
-    hotAPI.reload("data-v-72cea28d", Component.options)
+    hotAPI.reload("data-v-a788d48a", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -94335,13 +93446,13 @@ var content = __webpack_require__(371);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("4e2e96ac", content, false);
+var update = __webpack_require__(4)("47e5cb81", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-72cea28d\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReservationsTableCourse.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-72cea28d\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReservationsTableCourse.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a788d48a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReservationsTableCourse.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a788d48a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReservationsTableCourse.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -94523,127 +93634,89 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dataTables_wrapper no-footer" }, [
-    _c(
-      "div",
-      { staticClass: "datatable-header" },
-      [
-        _c("filter-bar", {
-          staticClass: "dataTables_filter",
-          on: { "filter:set": _vm.filterSet, "filter:reset": _vm.filterReset }
-        }),
-        _vm._v(" "),
-        _c("show-bar", {
-          staticClass: "dataTables_length",
-          on: { "show:set": _vm.showSet }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "dt-buttons" })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-scroll-wrap" },
-      [
-        _c("vuetable", {
-          ref: "vuetable",
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "dataTables_wrapper no-footer"
+  }, [_c('div', {
+    staticClass: "datatable-header"
+  }, [_c('filter-bar', {
+    staticClass: "dataTables_filter",
+    on: {
+      "filter:set": _vm.filterSet,
+      "filter:reset": _vm.filterReset
+    }
+  }), _vm._v(" "), _c('show-bar', {
+    staticClass: "dataTables_length",
+    on: {
+      "show:set": _vm.showSet
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "dt-buttons"
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-scroll-wrap"
+  }, [_c('vuetable', {
+    ref: "vuetable",
+    attrs: {
+      "api-url": '/api/' + _vm.nameUrl + 's',
+      "fields": _vm.fields,
+      "pagination-path": "",
+      "css": _vm.css.table,
+      "append-params": _vm.moreParams,
+      "per-page": _vm.perPage,
+      "sort-order": _vm.sortOrder,
+      "multi-sort": true,
+      "noDataTemplate": _vm.template.noData
+    },
+    on: {
+      "vuetable:cell-clicked": _vm.onCellClicked,
+      "vuetable:pagination-data": _vm.onPaginationData,
+      "vuetable:loaded": _vm.loadedTable,
+      "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
+      "vuetable:row-dblclicked": _vm.onRowClick
+    },
+    scopedSlots: _vm._u([{
+      key: "row-link-name",
+      fn: function(props) {
+        return [_c('div', [_c('a', {
           attrs: {
-            "api-url": "/api/" + _vm.nameUrl + "s",
-            fields: _vm.fields,
-            "pagination-path": "",
-            css: _vm.css.table,
-            "append-params": _vm.moreParams,
-            "per-page": _vm.perPage,
-            "sort-order": _vm.sortOrder,
-            "multi-sort": true,
-            noDataTemplate: _vm.template.noData
-          },
-          on: {
-            "vuetable:cell-clicked": _vm.onCellClicked,
-            "vuetable:pagination-data": _vm.onPaginationData,
-            "vuetable:loaded": _vm.loadedTable,
-            "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
-            "vuetable:row-dblclicked": _vm.onRowClick
-          },
-          scopedSlots: _vm._u([
-            {
-              key: "row-link-name",
-              fn: function(props) {
-                return [
-                  _c("div", [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: _vm.nameUrl + "/" + props.rowData.id + "/edit"
-                        }
-                      },
-                      [_vm._v(_vm._s(props.rowData.name))]
-                    )
-                  ])
-                ]
-              }
-            },
-            {
-              key: "row-link",
-              fn: function(props) {
-                return [
-                  _c("div", [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: "user" + "/" + props.rowData.user.id + "/edit"
-                        }
-                      },
-                      [_vm._v(_vm._s(props.rowData.user.full_name))]
-                    )
-                  ])
-                ]
-              }
-            }
-          ])
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-footer" },
-      [
-        _c("vuetable-pagination-info", {
-          ref: "paginationInfo",
-          staticClass: "pagination-info dataTables_info",
-          attrs: {
-            "info-template": _vm.template.paginationInfo,
-            noDataTemplate: _vm.template.noDataPaginate
+            "href": _vm.nameUrl + '/' + props.rowData.id + '/edit'
           }
-        }),
-        _vm._v(" "),
-        _c("vuetable-pagination", {
-          ref: "pagination",
-          attrs: { css: _vm.css.pagination },
-          on: { "vuetable-pagination:change-page": _vm.onChangePage }
-        })
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+        }, [_vm._v(_vm._s(props.rowData.name))])])]
+      }
+    }, {
+      key: "row-link",
+      fn: function(props) {
+        return [_c('div', [_c('a', {
+          attrs: {
+            "href": 'user' + '/' + props.rowData.user.id + '/edit'
+          }
+        }, [_vm._v(_vm._s(props.rowData.user.full_name))])])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-footer"
+  }, [_c('vuetable-pagination-info', {
+    ref: "paginationInfo",
+    staticClass: "pagination-info dataTables_info",
+    attrs: {
+      "info-template": _vm.template.paginationInfo,
+      "noDataTemplate": _vm.template.noDataPaginate
+    }
+  }), _vm._v(" "), _c('vuetable-pagination', {
+    ref: "pagination",
+    attrs: {
+      "css": _vm.css.pagination
+    },
+    on: {
+      "vuetable-pagination:change-page": _vm.onChangePage
+    }
+  })], 1)])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-72cea28d", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-a788d48a", module.exports)
   }
 }
 
@@ -94656,25 +93729,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(375)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(377)
-/* template */
-var __vue_template__ = __webpack_require__(378)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(377),
+  /* template */
+  __webpack_require__(378),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\components\\vuetable\\UsersTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\UsersTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] UsersTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -94685,9 +93752,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-521bb74b", Component.options)
+    hotAPI.createRecord("data-v-41fd315d", Component.options)
   } else {
-    hotAPI.reload("data-v-521bb74b", Component.options)
+    hotAPI.reload("data-v-41fd315d", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -94708,13 +93775,13 @@ var content = __webpack_require__(376);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("7e1e3369", content, false);
+var update = __webpack_require__(4)("366c3e5c", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-521bb74b\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./UsersTable.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-521bb74b\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./UsersTable.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-41fd315d\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./UsersTable.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-41fd315d\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./UsersTable.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -94872,132 +93939,91 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dataTables_wrapper no-footer" }, [
-    _c(
-      "div",
-      { staticClass: "datatable-header" },
-      [
-        _c("filter-bar", {
-          staticClass: "dataTables_filter",
-          on: { "filter:set": _vm.filterSet, "filter:reset": _vm.filterReset }
-        }),
-        _vm._v(" "),
-        _c("show-bar", {
-          staticClass: "dataTables_length",
-          on: { "show:set": _vm.showSet }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "dt-buttons" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-danger",
-              on: {
-                click: function($event) {
-                  _vm.removeCheckedRows(_vm.removeOptions)
-                }
-              }
-            },
-            [_vm._m(0)]
-          )
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-scroll-wrap" },
-      [
-        _c("vuetable", {
-          ref: "vuetable",
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "dataTables_wrapper no-footer"
+  }, [_c('div', {
+    staticClass: "datatable-header"
+  }, [_c('filter-bar', {
+    staticClass: "dataTables_filter",
+    on: {
+      "filter:set": _vm.filterSet,
+      "filter:reset": _vm.filterReset
+    }
+  }), _vm._v(" "), _c('show-bar', {
+    staticClass: "dataTables_length",
+    on: {
+      "show:set": _vm.showSet
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "dt-buttons"
+  }, [_c('button', {
+    staticClass: "btn btn-danger",
+    on: {
+      "click": function($event) {
+        _vm.removeCheckedRows(_vm.removeOptions)
+      }
+    }
+  }, [_vm._m(0)])])], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-scroll-wrap"
+  }, [_c('vuetable', {
+    ref: "vuetable",
+    attrs: {
+      "api-url": '/api/' + _vm.nameUrl + 's',
+      "fields": _vm.fields,
+      "pagination-path": "",
+      "css": _vm.css.table,
+      "append-params": _vm.moreParams,
+      "per-page": _vm.perPage,
+      "sort-order": _vm.sortOrder,
+      "multi-sort": true,
+      "noDataTemplate": _vm.template.noData
+    },
+    on: {
+      "vuetable:cell-clicked": _vm.onCellClicked,
+      "vuetable:pagination-data": _vm.onPaginationData,
+      "vuetable:loaded": _vm.loadedTable,
+      "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
+      "vuetable:row-dblclicked": _vm.onRowClick
+    },
+    scopedSlots: _vm._u([{
+      key: "row-link",
+      fn: function(props) {
+        return [_c('div', [_c('a', {
           attrs: {
-            "api-url": "/api/" + _vm.nameUrl + "s",
-            fields: _vm.fields,
-            "pagination-path": "",
-            css: _vm.css.table,
-            "append-params": _vm.moreParams,
-            "per-page": _vm.perPage,
-            "sort-order": _vm.sortOrder,
-            "multi-sort": true,
-            noDataTemplate: _vm.template.noData
-          },
-          on: {
-            "vuetable:cell-clicked": _vm.onCellClicked,
-            "vuetable:pagination-data": _vm.onPaginationData,
-            "vuetable:loaded": _vm.loadedTable,
-            "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
-            "vuetable:row-dblclicked": _vm.onRowClick
-          },
-          scopedSlots: _vm._u([
-            {
-              key: "row-link",
-              fn: function(props) {
-                return [
-                  _c("div", [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: _vm.nameUrl + "/" + props.rowData.id + "/edit"
-                        }
-                      },
-                      [_vm._v(_vm._s(props.rowData.full_name))]
-                    )
-                  ])
-                ]
-              }
-            }
-          ])
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-footer" },
-      [
-        _c("vuetable-pagination-info", {
-          ref: "paginationInfo",
-          staticClass: "pagination-info dataTables_info",
-          attrs: {
-            "info-template": _vm.template.paginationInfo,
-            noDataTemplate: _vm.template.noDataPaginate
+            "href": _vm.nameUrl + '/' + props.rowData.id + '/edit'
           }
-        }),
-        _vm._v(" "),
-        _c("vuetable-pagination", {
-          ref: "pagination",
-          attrs: { css: _vm.css.pagination },
-          on: { "vuetable-pagination:change-page": _vm.onChangePage }
-        })
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", [
-      _c("i", { staticClass: "icon-trash position-left" }),
-      _vm._v(" Удалить")
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+        }, [_vm._v(_vm._s(props.rowData.full_name))])])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-footer"
+  }, [_c('vuetable-pagination-info', {
+    ref: "paginationInfo",
+    staticClass: "pagination-info dataTables_info",
+    attrs: {
+      "info-template": _vm.template.paginationInfo,
+      "noDataTemplate": _vm.template.noDataPaginate
+    }
+  }), _vm._v(" "), _c('vuetable-pagination', {
+    ref: "pagination",
+    attrs: {
+      "css": _vm.css.pagination
+    },
+    on: {
+      "vuetable-pagination:change-page": _vm.onChangePage
+    }
+  })], 1)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', [_c('i', {
+    staticClass: "icon-trash position-left"
+  }), _vm._v(" Удалить")])
+}]}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-521bb74b", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-41fd315d", module.exports)
   }
 }
 
@@ -95010,25 +94036,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(380)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(382)
-/* template */
-var __vue_template__ = __webpack_require__(383)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(382),
+  /* template */
+  __webpack_require__(383),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTableUser.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReservationsTableUser.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReservationsTableUser.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -95039,9 +94059,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-43223686", Component.options)
+    hotAPI.createRecord("data-v-1b3acb6b", Component.options)
   } else {
-    hotAPI.reload("data-v-43223686", Component.options)
+    hotAPI.reload("data-v-1b3acb6b", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -95062,13 +94082,13 @@ var content = __webpack_require__(381);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("4a356f82", content, false);
+var update = __webpack_require__(4)("35a14c0c", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-43223686\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReservationsTableUser.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-43223686\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReservationsTableUser.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b3acb6b\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReservationsTableUser.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b3acb6b\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReservationsTableUser.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -95251,110 +94271,80 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 383 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dataTables_wrapper no-footer" }, [
-    _c(
-      "div",
-      { staticClass: "datatable-header" },
-      [
-        _c("filter-bar", {
-          staticClass: "dataTables_filter",
-          on: { "filter:set": _vm.filterSet, "filter:reset": _vm.filterReset }
-        }),
-        _vm._v(" "),
-        _c("show-bar", {
-          staticClass: "dataTables_length",
-          on: { "show:set": _vm.showSet }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "dt-buttons" })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-scroll-wrap" },
-      [
-        _c("vuetable", {
-          ref: "vuetable",
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "dataTables_wrapper no-footer"
+  }, [_c('div', {
+    staticClass: "datatable-header"
+  }, [_c('filter-bar', {
+    staticClass: "dataTables_filter",
+    on: {
+      "filter:set": _vm.filterSet,
+      "filter:reset": _vm.filterReset
+    }
+  }), _vm._v(" "), _c('show-bar', {
+    staticClass: "dataTables_length",
+    on: {
+      "show:set": _vm.showSet
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "dt-buttons"
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-scroll-wrap"
+  }, [_c('vuetable', {
+    ref: "vuetable",
+    attrs: {
+      "api-url": '/api/' + _vm.nameUrl + 's',
+      "fields": _vm.fields,
+      "pagination-path": "",
+      "css": _vm.css.table,
+      "append-params": _vm.moreParams,
+      "per-page": _vm.perPage,
+      "sort-order": _vm.sortOrder,
+      "multi-sort": true,
+      "noDataTemplate": _vm.template.noData
+    },
+    on: {
+      "vuetable:cell-clicked": _vm.onCellClicked,
+      "vuetable:pagination-data": _vm.onPaginationData,
+      "vuetable:loaded": _vm.loadedTable,
+      "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
+      "vuetable:row-dblclicked": _vm.onRowClick
+    },
+    scopedSlots: _vm._u([{
+      key: "row-link",
+      fn: function(props) {
+        return [_c('div', [_c('a', {
           attrs: {
-            "api-url": "/api/" + _vm.nameUrl + "s",
-            fields: _vm.fields,
-            "pagination-path": "",
-            css: _vm.css.table,
-            "append-params": _vm.moreParams,
-            "per-page": _vm.perPage,
-            "sort-order": _vm.sortOrder,
-            "multi-sort": true,
-            noDataTemplate: _vm.template.noData
-          },
-          on: {
-            "vuetable:cell-clicked": _vm.onCellClicked,
-            "vuetable:pagination-data": _vm.onPaginationData,
-            "vuetable:loaded": _vm.loadedTable,
-            "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
-            "vuetable:row-dblclicked": _vm.onRowClick
-          },
-          scopedSlots: _vm._u([
-            {
-              key: "row-link",
-              fn: function(props) {
-                return [
-                  _c("div", [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href:
-                            "course" + "/" + props.rowData.course.id + "/edit"
-                        }
-                      },
-                      [_vm._v(_vm._s(props.rowData.course.name))]
-                    )
-                  ])
-                ]
-              }
-            }
-          ])
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-footer" },
-      [
-        _c("vuetable-pagination-info", {
-          ref: "paginationInfo",
-          staticClass: "pagination-info dataTables_info",
-          attrs: {
-            "info-template": _vm.template.paginationInfo,
-            noDataTemplate: _vm.template.noDataPaginate
+            "href": 'course' + '/' + props.rowData.course.id + '/edit'
           }
-        }),
-        _vm._v(" "),
-        _c("vuetable-pagination", {
-          ref: "pagination",
-          attrs: { css: _vm.css.pagination },
-          on: { "vuetable-pagination:change-page": _vm.onChangePage }
-        })
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+        }, [_vm._v(_vm._s(props.rowData.course.name))])])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-footer"
+  }, [_c('vuetable-pagination-info', {
+    ref: "paginationInfo",
+    staticClass: "pagination-info dataTables_info",
+    attrs: {
+      "info-template": _vm.template.paginationInfo,
+      "noDataTemplate": _vm.template.noDataPaginate
+    }
+  }), _vm._v(" "), _c('vuetable-pagination', {
+    ref: "pagination",
+    attrs: {
+      "css": _vm.css.pagination
+    },
+    on: {
+      "vuetable-pagination:change-page": _vm.onChangePage
+    }
+  })], 1)])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-43223686", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-1b3acb6b", module.exports)
   }
 }
 
@@ -95367,25 +94357,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(385)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(387)
-/* template */
-var __vue_template__ = __webpack_require__(388)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(387),
+  /* template */
+  __webpack_require__(388),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\components\\vuetable\\ReviewTableUser.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\ReviewTableUser.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ReviewTableUser.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -95396,9 +94380,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-d5db9528", Component.options)
+    hotAPI.createRecord("data-v-907792cc", Component.options)
   } else {
-    hotAPI.reload("data-v-d5db9528", Component.options)
+    hotAPI.reload("data-v-907792cc", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -95419,13 +94403,13 @@ var content = __webpack_require__(386);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("350afcf8", content, false);
+var update = __webpack_require__(4)("bca05b7a", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d5db9528\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReviewTableUser.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d5db9528\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReviewTableUser.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-907792cc\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReviewTableUser.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-907792cc\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ReviewTableUser.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -95443,7 +94427,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -95550,20 +94534,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             {
                 name: 'created_at',
                 title: 'Дата',
-                sortField: 'created_at',
+                sortField: 'reviews.created_at',
                 callback: 'formatDate',
                 titleClass: 'text-center',
                 dataClass: 'text-center'
             }, {
                 name: 'text',
                 title: 'Текст',
-                sortField: 'text',
+                sortField: 'reviews.text',
+                callback: 'truncateText',
                 titleClass: 'text-center',
                 dataClass: 'text-center'
             }, {
                 name: 'status',
                 title: 'Статус',
-                sortField: 'status',
+                sortField: 'reviews.status',
                 callback: 'reviewLabel',
                 titleClass: 'text-center',
                 dataClass: 'text-center'
@@ -95590,109 +94575,80 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dataTables_wrapper no-footer" }, [
-    _c(
-      "div",
-      { staticClass: "datatable-header" },
-      [
-        _c("filter-bar", {
-          staticClass: "dataTables_filter",
-          on: { "filter:set": _vm.filterSet, "filter:reset": _vm.filterReset }
-        }),
-        _vm._v(" "),
-        _c("show-bar", {
-          staticClass: "dataTables_length",
-          on: { "show:set": _vm.showSet }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "dt-buttons" })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-scroll-wrap" },
-      [
-        _c("vuetable", {
-          ref: "vuetable",
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "dataTables_wrapper no-footer"
+  }, [_c('div', {
+    staticClass: "datatable-header"
+  }, [_c('filter-bar', {
+    staticClass: "dataTables_filter",
+    on: {
+      "filter:set": _vm.filterSet,
+      "filter:reset": _vm.filterReset
+    }
+  }), _vm._v(" "), _c('show-bar', {
+    staticClass: "dataTables_length",
+    on: {
+      "show:set": _vm.showSet
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "dt-buttons"
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-scroll-wrap"
+  }, [_c('vuetable', {
+    ref: "vuetable",
+    attrs: {
+      "api-url": '/api/' + _vm.nameUrl + 's',
+      "fields": _vm.fields,
+      "pagination-path": "",
+      "css": _vm.css.table,
+      "append-params": _vm.moreParams,
+      "per-page": _vm.perPage,
+      "sort-order": _vm.sortOrder,
+      "multi-sort": true,
+      "noDataTemplate": _vm.template.noData
+    },
+    on: {
+      "vuetable:cell-clicked": _vm.onCellClicked,
+      "vuetable:pagination-data": _vm.onPaginationData,
+      "vuetable:loaded": _vm.loadedTable,
+      "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
+      "vuetable:row-dblclicked": _vm.onRowClick
+    },
+    scopedSlots: _vm._u([{
+      key: "row-link",
+      fn: function(props) {
+        return [_c('div', [_c('a', {
           attrs: {
-            "api-url": "/api/" + _vm.nameUrl + "s",
-            fields: _vm.fields,
-            "pagination-path": "",
-            css: _vm.css.table,
-            "append-params": _vm.moreParams,
-            "per-page": _vm.perPage,
-            "sort-order": _vm.sortOrder,
-            "multi-sort": true,
-            noDataTemplate: _vm.template.noData
-          },
-          on: {
-            "vuetable:cell-clicked": _vm.onCellClicked,
-            "vuetable:pagination-data": _vm.onPaginationData,
-            "vuetable:loaded": _vm.loadedTable,
-            "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
-            "vuetable:row-dblclicked": _vm.onRowClick
-          },
-          scopedSlots: _vm._u([
-            {
-              key: "row-link",
-              fn: function(props) {
-                return [
-                  _c("div", [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: _vm.nameUrl + "/" + props.rowData.id + "/edit"
-                        }
-                      },
-                      [_vm._v(_vm._s(props.rowData.name))]
-                    )
-                  ])
-                ]
-              }
-            }
-          ])
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-footer" },
-      [
-        _c("vuetable-pagination-info", {
-          ref: "paginationInfo",
-          staticClass: "pagination-info dataTables_info",
-          attrs: {
-            "info-template": _vm.template.paginationInfo,
-            noDataTemplate: _vm.template.noDataPaginate
+            "href": _vm.nameUrl + '/' + props.rowData.id + '/edit'
           }
-        }),
-        _vm._v(" "),
-        _c("vuetable-pagination", {
-          ref: "pagination",
-          attrs: { css: _vm.css.pagination },
-          on: { "vuetable-pagination:change-page": _vm.onChangePage }
-        })
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+        }, [_vm._v(_vm._s(props.rowData.name))])])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-footer"
+  }, [_c('vuetable-pagination-info', {
+    ref: "paginationInfo",
+    staticClass: "pagination-info dataTables_info",
+    attrs: {
+      "info-template": _vm.template.paginationInfo,
+      "noDataTemplate": _vm.template.noDataPaginate
+    }
+  }), _vm._v(" "), _c('vuetable-pagination', {
+    ref: "pagination",
+    attrs: {
+      "css": _vm.css.pagination
+    },
+    on: {
+      "vuetable-pagination:change-page": _vm.onChangePage
+    }
+  })], 1)])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-d5db9528", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-907792cc", module.exports)
   }
 }
 
@@ -95705,25 +94661,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(390)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(392)
-/* template */
-var __vue_template__ = __webpack_require__(393)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(392),
+  /* template */
+  __webpack_require__(393),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\components\\vuetable\\SpeakersTable.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\SpeakersTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] SpeakersTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -95734,9 +94684,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-13233945", Component.options)
+    hotAPI.createRecord("data-v-431fadf3", Component.options)
   } else {
-    hotAPI.reload("data-v-13233945", Component.options)
+    hotAPI.reload("data-v-431fadf3", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -95757,13 +94707,13 @@ var content = __webpack_require__(391);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("7137e0a4", content, false);
+var update = __webpack_require__(4)("1bbf79de", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-13233945\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SpeakersTable.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-13233945\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SpeakersTable.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-431fadf3\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SpeakersTable.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-431fadf3\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SpeakersTable.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -95895,143 +94845,101 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dataTables_wrapper no-footer" }, [
-    _c(
-      "div",
-      { staticClass: "datatable-header" },
-      [
-        _c("filter-bar", {
-          staticClass: "dataTables_filter",
-          on: { "filter:set": _vm.filterSet, "filter:reset": _vm.filterReset }
-        }),
-        _vm._v(" "),
-        _c("show-bar", {
-          staticClass: "dataTables_length",
-          on: { "show:set": _vm.showSet }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "dt-buttons" }, [
-          _c("a", { attrs: { href: _vm.nameUrl + "/create" } }, [_vm._m(0)]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-danger",
-              on: {
-                click: function($event) {
-                  _vm.removeCheckedRows(_vm.removeOptions)
-                }
-              }
-            },
-            [_vm._m(1)]
-          )
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-scroll-wrap" },
-      [
-        _c("vuetable", {
-          ref: "vuetable",
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "dataTables_wrapper no-footer"
+  }, [_c('div', {
+    staticClass: "datatable-header"
+  }, [_c('filter-bar', {
+    staticClass: "dataTables_filter",
+    on: {
+      "filter:set": _vm.filterSet,
+      "filter:reset": _vm.filterReset
+    }
+  }), _vm._v(" "), _c('show-bar', {
+    staticClass: "dataTables_length",
+    on: {
+      "show:set": _vm.showSet
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "dt-buttons"
+  }, [_c('a', {
+    attrs: {
+      "href": _vm.nameUrl + '/create'
+    }
+  }, [_vm._m(0)]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-danger",
+    on: {
+      "click": function($event) {
+        _vm.removeCheckedRows(_vm.removeOptions)
+      }
+    }
+  }, [_vm._m(1)])])], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-scroll-wrap"
+  }, [_c('vuetable', {
+    ref: "vuetable",
+    attrs: {
+      "api-url": '/api/' + _vm.nameUrl + 's',
+      "fields": _vm.fields,
+      "pagination-path": "",
+      "css": _vm.css.table,
+      "append-params": _vm.moreParams,
+      "per-page": _vm.perPage,
+      "sort-order": _vm.sortOrder,
+      "multi-sort": true,
+      "noDataTemplate": _vm.template.noData
+    },
+    on: {
+      "vuetable:cell-clicked": _vm.onCellClicked,
+      "vuetable:pagination-data": _vm.onPaginationData,
+      "vuetable:loaded": _vm.loadedTable,
+      "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
+      "vuetable:row-dblclicked": _vm.onRowClick
+    },
+    scopedSlots: _vm._u([{
+      key: "row-link",
+      fn: function(props) {
+        return [_c('div', [_c('a', {
           attrs: {
-            "api-url": "/api/" + _vm.nameUrl + "s",
-            fields: _vm.fields,
-            "pagination-path": "",
-            css: _vm.css.table,
-            "append-params": _vm.moreParams,
-            "per-page": _vm.perPage,
-            "sort-order": _vm.sortOrder,
-            "multi-sort": true,
-            noDataTemplate: _vm.template.noData
-          },
-          on: {
-            "vuetable:cell-clicked": _vm.onCellClicked,
-            "vuetable:pagination-data": _vm.onPaginationData,
-            "vuetable:loaded": _vm.loadedTable,
-            "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
-            "vuetable:row-dblclicked": _vm.onRowClick
-          },
-          scopedSlots: _vm._u([
-            {
-              key: "row-link",
-              fn: function(props) {
-                return [
-                  _c("div", [
-                    _c(
-                      "a",
-                      {
-                        attrs: { href: "speaker/" + props.rowData.id + "/edit" }
-                      },
-                      [_vm._v(_vm._s(props.rowData.full_name))]
-                    )
-                  ])
-                ]
-              }
-            }
-          ])
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-footer" },
-      [
-        _c("vuetable-pagination-info", {
-          ref: "paginationInfo",
-          staticClass: "pagination-info dataTables_info",
-          attrs: {
-            "info-template": _vm.template.paginationInfo,
-            noDataTemplate: _vm.template.noDataPaginate
+            "href": 'speaker/' + props.rowData.id + '/edit'
           }
-        }),
-        _vm._v(" "),
-        _c("vuetable-pagination", {
-          ref: "pagination",
-          attrs: { css: _vm.css.pagination },
-          on: { "vuetable-pagination:change-page": _vm.onChangePage }
-        })
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("button", { staticClass: "btn btn-primary" }, [
-      _c("span", [
-        _c("i", { staticClass: "icon-add position-left" }),
-        _vm._v(" Добавить")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", [
-      _c("i", { staticClass: "icon-trash position-left" }),
-      _vm._v(" Удалить")
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+        }, [_vm._v(_vm._s(props.rowData.full_name))])])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-footer"
+  }, [_c('vuetable-pagination-info', {
+    ref: "paginationInfo",
+    staticClass: "pagination-info dataTables_info",
+    attrs: {
+      "info-template": _vm.template.paginationInfo,
+      "noDataTemplate": _vm.template.noDataPaginate
+    }
+  }), _vm._v(" "), _c('vuetable-pagination', {
+    ref: "pagination",
+    attrs: {
+      "css": _vm.css.pagination
+    },
+    on: {
+      "vuetable-pagination:change-page": _vm.onChangePage
+    }
+  })], 1)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('button', {
+    staticClass: "btn btn-primary"
+  }, [_c('span', [_c('i', {
+    staticClass: "icon-add position-left"
+  }), _vm._v(" Добавить")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', [_c('i', {
+    staticClass: "icon-trash position-left"
+  }), _vm._v(" Удалить")])
+}]}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-13233945", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-431fadf3", module.exports)
   }
 }
 
@@ -96044,25 +94952,19 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(395)
 }
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(397)
-/* template */
-var __vue_template__ = __webpack_require__(398)
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(397),
+  /* template */
+  __webpack_require__(398),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
 )
-Component.options.__file = "resources\\assets\\js\\admin\\components\\vuetable\\CoursesTableSpeaker.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\obraz\\resources\\assets\\js\\admin\\components\\vuetable\\CoursesTableSpeaker.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CoursesTableSpeaker.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -96073,9 +94975,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-29852858", Component.options)
+    hotAPI.createRecord("data-v-758f2602", Component.options)
   } else {
-    hotAPI.reload("data-v-29852858", Component.options)
+    hotAPI.reload("data-v-758f2602", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -96096,13 +94998,13 @@ var content = __webpack_require__(396);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("1f0e2598", content, false);
+var update = __webpack_require__(4)("4da8d6bd", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-29852858\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CoursesTableSpeaker.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-29852858\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CoursesTableSpeaker.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-758f2602\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CoursesTableSpeaker.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-758f2602\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CoursesTableSpeaker.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -96235,109 +95137,80 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dataTables_wrapper no-footer" }, [
-    _c(
-      "div",
-      { staticClass: "datatable-header" },
-      [
-        _c("filter-bar", {
-          staticClass: "dataTables_filter",
-          on: { "filter:set": _vm.filterSet, "filter:reset": _vm.filterReset }
-        }),
-        _vm._v(" "),
-        _c("show-bar", {
-          staticClass: "dataTables_length",
-          on: { "show:set": _vm.showSet }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "dt-buttons" })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-scroll-wrap" },
-      [
-        _c("vuetable", {
-          ref: "vuetable",
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "dataTables_wrapper no-footer"
+  }, [_c('div', {
+    staticClass: "datatable-header"
+  }, [_c('filter-bar', {
+    staticClass: "dataTables_filter",
+    on: {
+      "filter:set": _vm.filterSet,
+      "filter:reset": _vm.filterReset
+    }
+  }), _vm._v(" "), _c('show-bar', {
+    staticClass: "dataTables_length",
+    on: {
+      "show:set": _vm.showSet
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "dt-buttons"
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-scroll-wrap"
+  }, [_c('vuetable', {
+    ref: "vuetable",
+    attrs: {
+      "api-url": '/api/' + _vm.nameUrl + 's',
+      "fields": _vm.fields,
+      "pagination-path": "",
+      "css": _vm.css.table,
+      "append-params": _vm.moreParams,
+      "per-page": _vm.perPage,
+      "sort-order": _vm.sortOrder,
+      "multi-sort": true,
+      "noDataTemplate": _vm.template.noData
+    },
+    on: {
+      "vuetable:cell-clicked": _vm.onCellClicked,
+      "vuetable:pagination-data": _vm.onPaginationData,
+      "vuetable:loaded": _vm.loadedTable,
+      "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
+      "vuetable:row-dblclicked": _vm.onRowClick
+    },
+    scopedSlots: _vm._u([{
+      key: "row-link",
+      fn: function(props) {
+        return [_c('div', [_c('a', {
           attrs: {
-            "api-url": "/api/" + _vm.nameUrl + "s",
-            fields: _vm.fields,
-            "pagination-path": "",
-            css: _vm.css.table,
-            "append-params": _vm.moreParams,
-            "per-page": _vm.perPage,
-            "sort-order": _vm.sortOrder,
-            "multi-sort": true,
-            noDataTemplate: _vm.template.noData
-          },
-          on: {
-            "vuetable:cell-clicked": _vm.onCellClicked,
-            "vuetable:pagination-data": _vm.onPaginationData,
-            "vuetable:loaded": _vm.loadedTable,
-            "vuetable:checkbox-toggled-all": _vm.updateCheckboxes,
-            "vuetable:row-dblclicked": _vm.onRowClick
-          },
-          scopedSlots: _vm._u([
-            {
-              key: "row-link",
-              fn: function(props) {
-                return [
-                  _c("div", [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: _vm.nameUrl + "/" + props.rowData.id + "/edit"
-                        }
-                      },
-                      [_vm._v(_vm._s(props.rowData.name))]
-                    )
-                  ])
-                ]
-              }
-            }
-          ])
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "datatable-footer" },
-      [
-        _c("vuetable-pagination-info", {
-          ref: "paginationInfo",
-          staticClass: "pagination-info dataTables_info",
-          attrs: {
-            "info-template": _vm.template.paginationInfo,
-            noDataTemplate: _vm.template.noDataPaginate
+            "href": _vm.nameUrl + '/' + props.rowData.id + '/edit'
           }
-        }),
-        _vm._v(" "),
-        _c("vuetable-pagination", {
-          ref: "pagination",
-          attrs: { css: _vm.css.pagination },
-          on: { "vuetable-pagination:change-page": _vm.onChangePage }
-        })
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
+        }, [_vm._v(_vm._s(props.rowData.name))])])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-footer"
+  }, [_c('vuetable-pagination-info', {
+    ref: "paginationInfo",
+    staticClass: "pagination-info dataTables_info",
+    attrs: {
+      "info-template": _vm.template.paginationInfo,
+      "noDataTemplate": _vm.template.noDataPaginate
+    }
+  }), _vm._v(" "), _c('vuetable-pagination', {
+    ref: "pagination",
+    attrs: {
+      "css": _vm.css.pagination
+    },
+    on: {
+      "vuetable-pagination:change-page": _vm.onChangePage
+    }
+  })], 1)])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-29852858", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-758f2602", module.exports)
   }
 }
 

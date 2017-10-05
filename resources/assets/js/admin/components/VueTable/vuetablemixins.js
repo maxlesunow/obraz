@@ -158,6 +158,13 @@ module.exports = {
             } catch (e) {
                 return value
             }
+        },
+        truncateText (value) {
+            try {
+                return _.truncate(value, { 'length': 100 })
+            } catch (e) {
+                return value
+            }
         }
     }
 }
