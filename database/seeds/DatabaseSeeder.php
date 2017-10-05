@@ -29,6 +29,17 @@ class DatabaseSeeder extends Seeder
             'date_expire' => '2017-01-01 00:00',
         ]);
 
+        DB::table('verifications')->insert([
+            'code' => '1111',
+            'wrong_pass' => 0,
+            'date_expire' => '2017-01-01 00:00',
+        ]);
+
+        DB::table('verifications')->insert([
+            'code' => '1111',
+            'wrong_pass' => 0,
+            'date_expire' => '2017-01-01 00:00',
+        ]);
 
         //        Админ
         DB::table('users')->insert([
@@ -44,6 +55,34 @@ class DatabaseSeeder extends Seeder
             'verification_id' => 1,
         ]);
 
+        //        User 1
+        DB::table('users')->insert([
+            'first_name' => 'Пригорнев',
+            'last_name' => 'Иван',
+            'middle_name' => 'Андреевич',
+            'email' => 'v1ar31@gmail.com',
+            'phone' => '79056718961',
+            'password' => bcrypt('123456'),
+            'remember_token' => str_random(10),
+            'role_id' => 2,
+            'is_verification' => true,
+            'verification_id' => 2,
+        ]);
+
+        //        User 2
+        DB::table('users')->insert([
+            'first_name' => 'Лесунов',
+            'last_name' => 'Максим',
+            'middle_name' => 'Егорович',
+            'email' => 'maxlesunow@gmail.com',
+            'phone' => '79205974694',
+            'password' => bcrypt('123456'),
+            'remember_token' => str_random(10),
+            'role_id' => 2,
+            'is_verification' => true,
+            'verification_id' => 3,
+        ]);
+
         //        Верификация
         $this->call(VerificationSeeder::class);
 
@@ -55,8 +94,8 @@ class DatabaseSeeder extends Seeder
         $this->call(SpeakerSeeder::class);
 
         //Показываем 8 первых на главной
-            DB::table('speakers')->where('id', '<', 9)
-                ->update(['show_home' => true]);
+        DB::table('speakers')->where('id', '<', 9)
+            ->update(['show_home' => true]);
 
         //        Группы курсов
         $this->call(CourseGroupSeeder::class);
