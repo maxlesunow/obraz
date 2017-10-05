@@ -74745,7 +74745,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -74800,12 +74800,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             isReview: false,
-            rating: 0
+            rating: 0,
+            text: ''
         };
     },
     methods: {
         reviewSend: function reviewSend() {
-            this.isReview = true;
+            var _this = this;
+
+            axios.post("/reviews", { rating: this.rating, test: this.text }).then(function (res) {
+                _this.isReview = true;
+            }).catch(function (res) {
+                //
+            });
         },
         clearErrors: function clearErrors() {
             // _.each(this.inputs, (value, i) => {
@@ -74856,7 +74863,34 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "rating"
     }
-  })], 1), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    staticClass: "form-label form-label-outside",
+    attrs: {
+      "for": "box-comment-classic-comment-message"
+    }
+  }, [_vm._v("Сообщение:")]), _vm._v(" "), _c('textarea', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.text),
+      expression: "text"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "id": "box-comment-classic-comment-message"
+    },
+    domProps: {
+      "value": (_vm.text)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.text = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
     staticClass: "group-sm text-left offset-top-20"
   }, [_c('button', {
     staticClass: "btn btn-md btn-primary",
@@ -74872,22 +74906,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Оставить отзыв")])])])] : [_c('h6', {
     staticClass: "offset-top-34 text-uppercase text-left text-bold"
   }, [_vm._v(_vm._s(_vm.firstName) + " " + _vm._s(_vm.middleName) + ", ваш голос принят. Дождитесь его проверки")])]], 2)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "form-group"
-  }, [_c('label', {
-    staticClass: "form-label form-label-outside",
-    attrs: {
-      "for": "box-comment-classic-comment-message"
-    }
-  }, [_vm._v("Сообщение:")]), _vm._v(" "), _c('textarea', {
-    staticClass: "form-control",
-    attrs: {
-      "id": "box-comment-classic-comment-message",
-      "data-constraints": "@Required"
-    }
-  })])
-}]}
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
