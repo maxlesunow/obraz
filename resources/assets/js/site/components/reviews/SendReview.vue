@@ -26,7 +26,7 @@
             </form>  
         </template>
         <template v-else> 
-            <h6 class="offset-top-34 text-uppercase text-left text-bold">{{firstName}} {{middleName}}, ваш голос принят. Дождитесь его проверки</h6>
+            <h6 class="offset-top-34 text-uppercase text-left text-bold">{{firstName}} {{middleName}}, отзыв появится на странице после проверки. Спасибо</h6>
         </template>
     </div>
 </template>
@@ -44,7 +44,7 @@ export default {
     }),
     methods: {
         reviewSend() {
-            axios.post("/reviews", { rating: this.rating, test: this.text })
+            axios.post("/reviews", { rating: this.rating, text: this.text })
                 .then((res) => {
                     this.isReview = true
                 })

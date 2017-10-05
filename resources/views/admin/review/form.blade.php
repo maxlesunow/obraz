@@ -6,7 +6,7 @@
 
 @include('admin.partials.form.select', ['id' => 'user', 'name' => 'Пользователь:', 'value' => $user, 'values' => $users])
 
-@include('admin.partials.form.input', ['id' => 'created_at', 'name' => 'Дата:'])
+@include('admin.partials.form.input', ['id' => 'date', 'name' => 'Дата отзыва:'])
 
 @include('admin.partials.form.submit')
 

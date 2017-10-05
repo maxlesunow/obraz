@@ -75377,7 +75377,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         reviewSend: function reviewSend() {
             var _this = this;
 
-            axios.post("/reviews", { rating: this.rating, test: this.text }).then(function (res) {
+            axios.post("/reviews", { rating: this.rating, text: this.text }).then(function (res) {
                 _this.isReview = true;
             }).catch(function (res) {
                 //
@@ -75525,7 +75525,7 @@ var render = function() {
                   _vm._s(_vm.firstName) +
                     " " +
                     _vm._s(_vm.middleName) +
-                    ", ваш голос принят. Дождитесь его проверки"
+                    ", отзыв появится на странице после проверки. Спасибо"
                 )
               ]
             )
