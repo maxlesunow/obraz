@@ -18,6 +18,7 @@
     </script>
 
     <script>
+        console.log("DDDD")
         var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
 
         elems.forEach(function(html) {

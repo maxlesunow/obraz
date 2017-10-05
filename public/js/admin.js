@@ -94523,22 +94523,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 title: '№',
                 titleClass: 'text-center',
                 dataClass: 'text-center'
+            }, {
+                name: '__slot:row-link',
+                title: 'Дата',
+                sortField: 'reviews.created_at',
+                titleClass: 'text-center',
+                dataClass: 'text-center'
             },
             // {
-            //     name: '__slot:row-link',
-            //     title: 'Пользователь',
-            //     sortField: 'name',
+            //     name: 'created_at',
+            //     title: 'Дата',
+            //     sortField: 'reviews.created_at',
+            //     callback: 'formatDate',
             //     titleClass: 'text-center',
             //     dataClass: 'text-center',
             // },
             {
-                name: 'created_at',
-                title: 'Дата',
-                sortField: 'reviews.created_at',
-                callback: 'formatDate',
-                titleClass: 'text-center',
-                dataClass: 'text-center'
-            }, {
                 name: 'text',
                 title: 'Текст',
                 sortField: 'reviews.text',
@@ -94620,9 +94620,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       fn: function(props) {
         return [_c('div', [_c('a', {
           attrs: {
-            "href": _vm.nameUrl + '/' + props.rowData.id + '/edit'
+            "href": '/admin/' + _vm.nameUrl + '/' + props.rowData.id + '/edit'
           }
-        }, [_vm._v(_vm._s(props.rowData.name))])])]
+        }, [_vm._v(_vm._s(props.rowData.created_at))])])]
       }
     }])
   })], 1), _vm._v(" "), _c('div', {

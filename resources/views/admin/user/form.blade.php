@@ -10,7 +10,7 @@
 
 @include('admin.partials.form.input', ['id' => 'email', 'name' => 'E-mail:'])
 
-@include('admin.partials.form.input', ['id' => 'created_at', 'name' => 'Дата регистрации:'])
+@include('admin.partials.form.date', ['id' => 'created_at', 'name' => 'Дата регистрации:'])
 
 @include('admin.partials.form.select', ['id' => 'role', 'name' => 'Тип пользователя:', 'value' => $role, 'values' => $roles])
 
@@ -24,10 +24,15 @@
     </script>
 
     <script>
+        console.log("DDDD")
         var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
 
         elems.forEach(function(html) {
             var switchery = new Switchery(html);
         });
+    </script>
+
+    <script>
+        $('.datepicker').datepicker();
     </script>
 @endsection
