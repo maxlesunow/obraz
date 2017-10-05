@@ -17,7 +17,7 @@
 
                 <div class="form-group">
                     <label class="form-label form-label-outside" for="box-comment-classic-comment-message">Сообщение:</label>
-                    <textarea class="form-control" id="box-comment-classic-comment-message" data-constraints="@Required"></textarea>
+                    <textarea class="form-control" id="box-comment-classic-comment-message" v-model="text"></textarea>
                 </div>
                 <div class="group-sm text-left offset-top-20">
                     <button class="btn btn-md btn-primary" type="button" @click.prevent="reviewSend">Оставить отзыв</button>
@@ -39,11 +39,19 @@ export default {
     components: { StarRating },
     data: () => ({
         isReview: false,
-        rating: 0
+        rating: 0,
+        text: ''
     }),
     methods: {
         reviewSend() {
-            this.isReview = true
+            axios.post("/reviews", { rating: this.rating, test: this.text })
+                .then((res) => {
+                    this.isReview = true
+                })
+                .catch((res) => {
+                    //
+                })
+
         },
         clearErrors() {
             // _.each(this.inputs, (value, i) => {
