@@ -30,7 +30,7 @@ Route::get('/about', 'Site\PageController@about');
 Route::get('/schedule', 'Site\PageController@schedule');
 
 Route::get('/reviews', 'Site\PageController@reviews');
-Route::post('/reviews', 'Site\Reviewontroller@store');
+Route::post('/reviews', 'Site\ReviewController@store');
 
 Route::get('/contact', 'Site\PageController@contact');
 
