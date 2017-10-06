@@ -47,13 +47,13 @@
                                     @if(Auth::user()->role->name == 'admin')
                                         <li><a target="_blank" href="{{ action ('AdminController@index') }}"><span>Админпанель</span></a></li>
                                         <li>
-                                            <a href="{{ route('logout') }}"
+                                            <a href="{{ action ('Auth\LoginController@logout') }}"
                                                onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
                                                 Выйти
                                             </a>
 
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            <form id="logout-form" action="{{ action ('Auth\LoginController@logout') }}" method="POST" style="display: none;">
                                                 {{ csrf_field() }}
                                             </form>
                                         </li>
@@ -64,13 +64,13 @@
                                                 <li><a href="#"><span class="text-middle">Мои курсы</span></a></li>
                                                 <li><a href="#"><span class="text-middle">Мои оплаты</span></a></li>
                                                 <li>
-                                                    <a href="{{ route('logout') }}"
+                                                    <a href="{{ action ('Auth\LoginController@logout') }}"
                                                        onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
                                                         Выйти
                                                     </a>
 
-                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    <form id="logout-form" action="{{ action ('Auth\LoginController@logout') }}" method="POST" style="display: none;">
                                                         {{ csrf_field() }}
                                                     </form>
                                                 </li>

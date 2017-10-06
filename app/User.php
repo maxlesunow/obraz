@@ -26,7 +26,7 @@ class User extends Authenticatable
     protected $with = ['role'];
 
     protected $hidden = [
-        'password', 'remember_token', 'verification', 'verification_id', 'role_id'
+        'password', 'remember_token', 'verification', 'role_id'
     ];
 
     public function role(){
@@ -36,7 +36,7 @@ class User extends Authenticatable
 
     public function verification(){
 
-        return $this->belongsTo('App\Verification');
+        return $this->hasMany('App\Verification');
     }
 
     public function reservations(){
@@ -63,13 +63,5 @@ class User extends Authenticatable
 
         return $this->reviews()->count();
     }
-
-//    public function generatePassword(){
-//
-//        $password = str_random(6);
-//
-//        $this->password = bcrypt($password);
-//        return $password;
-//    }
 
 }

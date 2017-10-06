@@ -18,7 +18,7 @@ class Role
     {
         if (!Auth::check() || $role !== Auth::user()->role->name) 
         {
-            return redirect('/');
+            return redirect('/register');
         }
     
         return $next($request);

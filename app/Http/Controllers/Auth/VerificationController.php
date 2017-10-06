@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Verification;
 use Auth;
 use Carbon\Carbon;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
 
 class VerificationController extends Controller
 {
     public function update($id, Request $request){
-
-//        dd($request);
 
         $user = User::findOrFail($id);
 
@@ -25,11 +25,14 @@ class VerificationController extends Controller
             return response()->json($errors, 422);
         }
 
-        //Добавляем попытку к верифицации
-        $user->verification->wrong_pass++;
-        $user->verification->save();
+        $verification = Verification::where('user_id', $user->id)
+            ->where('type', 'registration')->first();
 
-        if ($user->verification->wrong_pass > 3){
+        //Добавляем попытку к верифицации
+        $verification->wrong_pass++;
+        $verification->save();
+
+        if ($verification->wrong_pass > 3){
 
             $errors = new MessageBag();
 
@@ -39,7 +42,7 @@ class VerificationController extends Controller
             return response()->json($errors, 422);
 
         }
-        elseif($user->verification->code != $request->input('code')) {
+        elseif($verification->code != $request->input('code')) {
 
             $errors = new MessageBag();
 
@@ -48,7 +51,7 @@ class VerificationController extends Controller
 
             return response()->json($errors, 422);
         }
-        elseif ($user->verification->date_expire < Carbon::now()){
+        elseif ($verification->date_expire < Carbon::now()){
 
             $errors = new MessageBag();
 
@@ -59,6 +62,7 @@ class VerificationController extends Controller
 
         }
         else{
+            $verification->delete();
 
             $user->is_verification = true;
             $user->save();
@@ -82,11 +86,13 @@ class VerificationController extends Controller
             return response()->json($errors, 422);
         }
 
-        $verification = $user->verification;
+        $verification = Verification::where('user_id', $user->id)
+            ->where('type', 'registration')->first();
 
-        if(Carbon::now()->diffInSeconds($verification->updated_at) < 60 ){
 
-            $diff = 60 - Carbon::now()->diffInSeconds($verification->updated_at);
+        if(Carbon::now()->diffInSeconds(Carbon::parse($verification->date_send)) < 60 ){
+
+            $diff = 60 - Carbon::now()->diffInSeconds(Carbon::parse($verification->date_send));
 
             $errors = new MessageBag();
 
@@ -96,7 +102,9 @@ class VerificationController extends Controller
             return response()->json($errors, 422);
 
         }
+
         $verification->reGenerateCode();
+        $verification->date_send = Carbon::now();
         $verification->save();
 
         //Добавить отправку кода
