@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Carbon\Carbon;
 use App\Http\Controllers\Controller;
+use App\Notifications\VerificationCode;
 use App\User;
+use App\Verification;
 use Illuminate\Http\Request;
+use Illuminate\Support\MessageBag;
 
 class ResetPasswordController extends Controller
 {
@@ -21,7 +25,41 @@ class ResetPasswordController extends Controller
 
         $user = User::where('phone', $request->phone)->first();
 
-        return 'Код отправлен';
+        $verification = Verification::where('user_id', $user->id)
+            ->where('type', 'reset_password')->first();
+
+        if($verification){
+
+            if(Carbon::now()->diffInSeconds(Carbon::parse($verification->date_send)) < 60 ){
+
+                $diff = 60 - Carbon::now()->diffInSeconds(Carbon::parse($verification->date_send));
+
+                $errors = new MessageBag();
+
+                // add your error messages:
+                $errors->add('code', "Повторная отправка кода возможна через $diff сек");
+
+                return response()->json($errors, 422);
+            }
+
+            $verification->reGenerateCode();
+            $verification->date_send = Carbon::now();
+            $verification->save();
+        }
+        else{
+            $verification = new Verification('reset_password');
+            $verification->user()->associate($user);
+            $verification->date_send = Carbon::now();
+            $verification->save();
+        }
+
+        //Отправляем пользователю код верификации
+        $user->notify(new VerificationCode($verification));
+
+        $data = new MessageBag();
+        $data->add('data', "Код успешно отправлен");
+
+        return response()->json($data, 200);
 
     }
 
