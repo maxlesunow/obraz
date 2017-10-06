@@ -28,40 +28,10 @@ class VerificationController extends Controller
         $verification = Verification::where('user_id', $user->id)
             ->where('type', 'registration')->first();
 
-        //Добавляем попытку к верифицации
-        $verification->wrong_pass++;
-        $verification->save();
+        $check = $verification->checkCode($request->code);
 
-        if ($verification->wrong_pass > 3){
+        if($check === true){
 
-            $errors = new MessageBag();
-
-            // add your error messages:
-            $errors->add('code', 'Слишком много попыток. Попробуйте позже');
-
-            return response()->json($errors, 422);
-
-        }
-        elseif($verification->code != $request->input('code')) {
-
-            $errors = new MessageBag();
-
-            // add your error messages:
-            $errors->add('code', 'СМС код не верный');
-
-            return response()->json($errors, 422);
-        }
-        elseif ($verification->date_expire < Carbon::now()){
-
-            $errors = new MessageBag();
-
-            // add your error messages:
-            $errors->add('code', 'Срок действия кода истек');
-
-            return response()->json($errors, 422);
-
-        }
-        else{
             $verification->delete();
 
             $user->is_verification = true;
@@ -70,6 +40,10 @@ class VerificationController extends Controller
             Auth::guard()->login($user);
 
             return response()->json($user, 200);
+        }
+        else{
+
+            return $check;
         }
     }
 

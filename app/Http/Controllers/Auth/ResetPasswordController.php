@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Notifications\NewPassword;
 use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use App\Notifications\VerificationCode;
+
 use App\User;
 use App\Verification;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class ResetPasswordController extends Controller
 {
@@ -22,6 +27,8 @@ class ResetPasswordController extends Controller
         $validator = Validator::make($request, [
             'phone' => 'required|regex:/(7)[0-9]{10}/',
         ]);
+
+//        $request->phone = '79205974694';
 
         $user = User::where('phone', $request->phone)->first();
 
@@ -63,8 +70,51 @@ class ResetPasswordController extends Controller
 
     }
 
-    public function checkVerificationCode(){
+    public function checkVerificationCode(Request $request){
 
+        $validator = Validator::make($request, [
+            'phone' => 'required|regex:/(7)[0-9]{10}/',
+            'code' => 'required|regex:/[0-9]{4}/',
+        ]);
+
+//        $request->code = '9086';
+//        $request->phone = '79205974694';
+
+        $user = User::where('phone', $request->phone)->first();
+
+        $verification = Verification::where('user_id', $user->id)
+            ->where('type', 'reset_password')->first();
+
+        if($verification){
+
+            $check = $verification->checkCode($request->code);
+
+            if($check === true){
+
+                $password = str_random(6);
+
+                $user->password = $password;
+                $user->save();
+
+                Auth::guard()->login($user);
+
+                //Отправка нового пароля
+                $user->notify(new NewPassword($password));
+
+                return redirect('/');
+            }
+            else{
+
+                return $check;
+            }
+
+        }
+        else{
+            $errors = new MessageBag();
+            $errors->add('code', 'Сначала запросите восстановление пароля');
+
+            return response()->json($errors, 422);
+        }
     }
 
 

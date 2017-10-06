@@ -7,6 +7,9 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
+use NotificationChannels\Telegram\TelegramChannel;
+use NotificationChannels\Telegram\TelegramMessage;
+
 class NewPassword extends Notification
 {
     use Queueable;
@@ -16,9 +19,9 @@ class NewPassword extends Notification
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($password)
     {
-        //
+        $this->password = $password;
     }
 
     /**
@@ -29,7 +32,7 @@ class NewPassword extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return [TelegramChannel::class];
     }
 
     /**
@@ -44,6 +47,20 @@ class NewPassword extends Notification
                     ->line('The introduction to the notification.')
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
+    }
+
+    public function toTelegram($notifiable)
+    {
+        if ($notifiable->phone == '79056718961'){
+            $to = '32745113';
+        }
+        else{
+            $to = '125042038';
+        }
+
+        return TelegramMessage::create()
+            ->to($to) // Optional.
+            ->content("*Здравствуйте!* \nВаш новый пароль: *" .$this->password."*");
     }
 
     /**

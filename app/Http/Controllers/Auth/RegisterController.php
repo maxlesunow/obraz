@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use App\Verification;
 use App\Role;
+use App\Notifications\VerificationCode;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -12,6 +13,7 @@ use Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Auth\Events\Registered;
+
 
 class RegisterController extends Controller
 {
@@ -116,6 +118,8 @@ class RegisterController extends Controller
         $verification->save();
 
         //Отправляем пользователю код верификации
+        $user->notify(new VerificationCode($verification));
+
         $verification->date_send = Carbon::now();
         $verification->save();
 
