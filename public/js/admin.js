@@ -95547,22 +95547,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 title: '№',
                 titleClass: 'text-center',
                 dataClass: 'text-center'
+            }, {
+                name: '__slot:row-link',
+                title: 'Дата',
+                sortField: 'reviews.created_at',
+                titleClass: 'text-center',
+                dataClass: 'text-center'
             },
             // {
-            //     name: '__slot:row-link',
-            //     title: 'Пользователь',
-            //     sortField: 'name',
+            //     name: 'created_at',
+            //     title: 'Дата',
+            //     sortField: 'reviews.created_at',
+            //     callback: 'formatDate',
             //     titleClass: 'text-center',
             //     dataClass: 'text-center',
             // },
             {
-                name: 'created_at',
-                title: 'Дата',
-                sortField: 'reviews.created_at',
-                callback: 'formatDate',
-                titleClass: 'text-center',
-                dataClass: 'text-center'
-            }, {
                 name: 'text',
                 title: 'Текст',
                 sortField: 'reviews.text',
@@ -95680,6 +95680,33 @@ var render = function() {
           ref: "paginationInfo",
           staticClass: "pagination-info dataTables_info",
           attrs: {
+<<<<<<< HEAD
+            "href": '/admin/' + _vm.nameUrl + '/' + props.rowData.id + '/edit'
+          }
+        }, [_vm._v(_vm._s(props.rowData.created_at))])])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "datatable-footer"
+  }, [_c('vuetable-pagination-info', {
+    ref: "paginationInfo",
+    staticClass: "pagination-info dataTables_info",
+    attrs: {
+      "info-template": _vm.template.paginationInfo,
+      "noDataTemplate": _vm.template.noDataPaginate
+    }
+  }), _vm._v(" "), _c('vuetable-pagination', {
+    ref: "pagination",
+    attrs: {
+      "css": _vm.css.pagination
+    },
+    on: {
+      "vuetable-pagination:change-page": _vm.onChangePage
+    }
+  })], 1)])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+=======
             "info-template": _vm.template.paginationInfo,
             noDataTemplate: _vm.template.noDataPaginate
           }
@@ -95698,6 +95725,7 @@ var render = function() {
 var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
+>>>>>>> a3574b0cc1c94042700a0e85b37db571c8fd47c7
 if (false) {
   module.hot.accept()
   if (module.hot.data) {

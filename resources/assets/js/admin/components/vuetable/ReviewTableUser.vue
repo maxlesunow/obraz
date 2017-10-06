@@ -22,7 +22,7 @@
 
                 <template slot="row-link" scope="props">
                     <div>
-                         <a :href="nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.name}}</a>
+                         <a :href="'/admin/' + nameUrl + '/' + props.rowData.id +'/edit'">{{props.rowData.created_at}}</a>
                     </div>
                 </template> 
             
@@ -69,21 +69,21 @@ export default {
                 titleClass: 'text-center',
                 dataClass: 'text-center',
             },
-            // {
-            //     name: '__slot:row-link',
-            //     title: 'Пользователь',
-            //     sortField: 'name',
-            //     titleClass: 'text-center',
-            //     dataClass: 'text-center',
-            // },
             {
-                name: 'created_at',
+                name: '__slot:row-link',
                 title: 'Дата',
                 sortField: 'reviews.created_at',
-                callback: 'formatDate',
                 titleClass: 'text-center',
                 dataClass: 'text-center',
             },
+            // {
+            //     name: 'created_at',
+            //     title: 'Дата',
+            //     sortField: 'reviews.created_at',
+            //     callback: 'formatDate',
+            //     titleClass: 'text-center',
+            //     dataClass: 'text-center',
+            // },
             {
                 name: 'text',
                 title: 'Текст',
