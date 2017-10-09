@@ -30,7 +30,7 @@
                     <div>
                         <div class="range range-xs-center section-15">
                             <div class="cell-xs-8 cell-sm-6 cell-md-4">
-                                <login></login>
+                                <login-register></login-register>
                             </div>
                         </div>
                     </div>

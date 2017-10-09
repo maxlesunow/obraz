@@ -1,6 +1,7 @@
 <template>
     <div>
         <form class="rd-mailform text-left" data-form-output="form-output-global" role="form">
+            <p>Новый пароль поступит на телефон после подтверждения</p>
 
             <template v-for="(input, index) in inputs">
                 <div class="form-group" :class="{'has-error': input.hasErrors, 'offset-top-24': index !== 0 }">
@@ -30,10 +31,9 @@
                 </div>
             </div>
 
-            <a href="" @click.prevent="$emit('update:restoreMode', !restoreMode)">забыли пароль?</a>
             <div class="offset-top-24">
-                <button class="btn btn-primary btn-block" v-if="!smsSend" @click.prevent="loginPost">Войти</button>
-                <button class="btn btn-primary btn-block" v-if="smsVerify" @click.prevent="finishLogin">Завершить регистрацию</button>
+                <button class="btn btn-primary btn-block" v-if="!smsSend" @click.prevent="restorePost">Восстановить</button>
+                <button class="btn btn-primary btn-block" v-if="smsVerify" @click.prevent="finishRestore">Завершить регистрацию</button>
             </div>
         </form>
 
@@ -54,7 +54,6 @@ import Inputmask from 'inputmask'
 import Sms from './../Sms.vue'
 
 export default {
-    props: ['restoreMode'],
     components: { Sms },
     mixins: [formDataMixin],
     directives: { 
@@ -71,8 +70,7 @@ export default {
     data() {
         return {
             inputs: [
-                { data: '', hasErrors: '', errorMessage: null, type: "phone", name: "Телефон", attr: "phone", disabled: false },
-                { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Пароль", attr: "password", disabled: false }
+                { data: '', hasErrors: '', errorMessage: null, type: "phone", name: "Телефон", attr: "phone", disabled: false }
             ],
             // remember: true,
             smsSend: false,
@@ -82,26 +80,22 @@ export default {
         }
     },
     methods: {
-        finishLogin() {
+        finishRestore() {
             // $(this.$refs.vuemodal).modal('hide');
             // this.$emit("login")
             window.location.href = '/'
         },
-        loginPost() {
+        restorePost() {
             this.clearErrors()
-            axios.post('login', this.getFormData())
+            axios.post('restore', this.getFormData())
                 .then((response) => {
                     // console.log("secc", response)
                     this.user = response.data
-                    if (this.user.is_verification) {
-                        this.finishLogin()
-                    } else {
-                        this.smsSend = true
+                    this.smsSend = true
 
-                        _.each(this.inputs, function(el, i) {
-                            el.disabled = true
-                        })
-                    }
+                    _.each(this.inputs, function(el, i) {
+                        el.disabled = true
+                    })
                 })
                 .catch((data) => {
                     // console.log("err", data)
