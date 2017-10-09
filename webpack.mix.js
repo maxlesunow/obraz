@@ -34,6 +34,7 @@ mix
         'resources/assets/styles/admin/components.css',
         'resources/assets/styles/admin/colors.css',
         'node_modules/summernote/dist/summernote.css',
+        'node_modules/flatpickr/dist/flatpickr.min.css',
     ], 'public/css/admin.css')
 
     .copyDirectory('resources/assets/fonts/admin', 'public/css/fonts')

@@ -18,21 +18,25 @@
 
 @section('scripts')
     <script>
-        $('select').select2({
-            // options
-        });
+        $(function() {
+
+            $('select').select2({
+                // options
+            });
+            
+            var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+            
+            elems.forEach(function(html) {
+                var switchery = new Switchery(html);
+            });
+            
+            setTimeout(function() {
+                flatpickr('.datapicker', {
+                    locale: 'ru'
+                })
+
+            }, 0)
+        })
     </script>
 
-    <script>
-        console.log("DDDD")
-        var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
-
-        elems.forEach(function(html) {
-            var switchery = new Switchery(html);
-        });
-    </script>
-
-    <script>
-        $('.datepicker').datepicker();
-    </script>
 @endsection

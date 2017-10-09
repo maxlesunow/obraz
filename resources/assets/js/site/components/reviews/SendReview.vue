@@ -12,7 +12,9 @@
                         <span class="mdi mdi-star-half"></span>
                         <span class="mdi mdi-star-outline"></span>
                     </div> -->
-                    <star-rating v-model="rating"></star-rating>
+                    <star-rating v-model="rating" >
+
+                    </star-rating>
                 </div>
 
                 <div class="form-group">
