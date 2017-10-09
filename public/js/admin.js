@@ -71395,9 +71395,9 @@ try {
     __webpack_require__(295);
     __webpack_require__(296);
 
-    Russian = __webpack_require__(298).ru;
     window.flatpickr = __webpack_require__(299);
-    window.flatpickr.localize(Russian);
+    var flatpickrl10n = __webpack_require__(298);
+    window.flatpickr.localize(flatpickrl10n.ru);
 } catch (e) {}
 
 /**

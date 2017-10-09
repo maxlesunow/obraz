@@ -32,7 +32,12 @@
             
             setTimeout(function() {
                 flatpickr('.datapicker', {
-                    locale: 'ru'
+                    locale: 'ru',
+                    enableTime: true,
+                    time_24hr: true,
+                    altInput: true,
+                    altFormat: 'd.m.Y H:i',
+                    dateFormat: 'Y-m-d H:i'
                 })
 
             }, 0)

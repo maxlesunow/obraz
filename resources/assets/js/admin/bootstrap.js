@@ -17,9 +17,9 @@ try {
     require('jquery.uniform');
     require('summernote');
 
-    Russian = require("flatpickr/dist/l10n/ru.js").ru;
     window.flatpickr = require("flatpickr");
-    window.flatpickr.localize(Russian)
+    var flatpickrl10n = require("flatpickr/dist/l10n/ru.js");
+    window.flatpickr.localize(flatpickrl10n.ru)
 } catch (e) {}
 
 /**
