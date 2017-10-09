@@ -74524,22 +74524,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return _.find(this.inputs, { attr: searchAttr }).data;
         },
         reservationPost: function reservationPost() {
-            this.clearErrors();
-            // axios.post('/reservation', this.getFormData())
-            //     .then((response) => {
-            //         this.addedUser = response.data
-            this.smsSend = true;
+            var _this = this;
 
-            //         _.each(this.inputs, function(el, i) {
-            //             el.disabled = true
-            //         })
-            //     })
-            //     .catch((data) => {
-            //         if (data.response.statusText === 'Unprocessable Entity') {
-            //             var err = data.response && data.response.data && data.response.data.errors
-            //             this.setErrors(err)
-            //         }
-            //     })
+            this.clearErrors();
+            axios.post('/api/site/reservation', this.getFormData()).then(function (response) {
+                // this.addedUser = response.data
+                _this.smsSend = true;
+
+                _.each(_this.inputs, function (el, i) {
+                    el.disabled = true;
+                });
+            }).catch(function (data) {
+                if (data.response.statusText === 'Unprocessable Entity') {
+                    var err = data.response && data.response.data && data.response.data.errors;
+                    _this.setErrors(err);
+                }
+            });
         },
         finishReservation: function finishReservation() {
             // $(this.$refs.vuemodal).modal('hide');

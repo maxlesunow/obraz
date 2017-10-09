@@ -91,21 +91,21 @@ export default {
         },
         reservationPost() {
             this.clearErrors()
-            // axios.post('/reservation', this.getFormData())
-            //     .then((response) => {
-            //         this.addedUser = response.data
+            axios.post('/api/site/reservation', this.getFormData())
+                .then((response) => {
+                    // this.addedUser = response.data
                     this.smsSend = true
 
-            //         _.each(this.inputs, function(el, i) {
-            //             el.disabled = true
-            //         })
-            //     })
-            //     .catch((data) => {
-            //         if (data.response.statusText === 'Unprocessable Entity') {
-            //             var err = data.response && data.response.data && data.response.data.errors
-            //             this.setErrors(err)
-            //         }
-            //     })
+                    _.each(this.inputs, function(el, i) {
+                        el.disabled = true
+                    })
+                })
+                .catch((data) => {
+                    if (data.response.statusText === 'Unprocessable Entity') {
+                        var err = data.response && data.response.data && data.response.data.errors
+                        this.setErrors(err)
+                    }
+                })
         },
         finishReservation() {
             // $(this.$refs.vuemodal).modal('hide');
