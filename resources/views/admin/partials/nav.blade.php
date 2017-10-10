@@ -37,11 +37,11 @@
             </a>
 
             <ul class="dropdown-menu dropdown-menu-right">
-                <li><a href="{{ route('logout') }}"
+                <li><a href="{{ action ('Auth\LoginController@logout') }}"
                        onclick="event.preventDefault();
                        document.getElementById('logout-form').submit();">
                         <i class="icon-switch2"></i> Выйти</a></li>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                <form id="logout-form" action="{{ action ('Auth\LoginController@logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}
                 </form>
             </ul>

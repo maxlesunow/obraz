@@ -60,9 +60,9 @@
                                     @else
                                         <li><a href="#"><span>Личный кабинет</span></a>
                                             <ul class="rd-navbar-dropdown">
-                                                <li><a href="#"><span class="text-middle">Мои данные</span></a></li>
-                                                <li><a href="#"><span class="text-middle">Мои курсы</span></a></li>
-                                                <li><a href="#"><span class="text-middle">Мои оплаты</span></a></li>
+                                                <li><a href="{{ action ('Site\CabinetController@showDetails') }}"><span class="text-middle">Мои данные</span></a></li>
+                                                <li><a href="{{ action ('Site\CabinetController@showReservations') }}"><span class="text-middle">Мои курсы</span></a></li>
+                                                <li><a href="{{ action ('Site\CabinetController@showPayments') }}"><span class="text-middle">Мои оплаты</span></a></li>
                                                 <li>
                                                     <a href="{{ action ('Auth\LoginController@logout') }}"
                                                        onclick="event.preventDefault();

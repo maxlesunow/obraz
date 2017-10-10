@@ -20,9 +20,9 @@ Route::group(['middleware' => 'guest'], function () {
 
     Route::post('/login', 'Auth\LoginController@login');
 
-    Route::get('/reset-password/send-code', 'Auth\ResetPasswordController@sendVerificationCode');
+    Route::post('/reset-password/send-code', 'Auth\ResetPasswordController@sendVerificationCode');
 
-    Route::get('/reset-password/check-code', 'Auth\ResetPasswordController@checkVerificationCode');
+    Route::post('/reset-password/check-code', 'Auth\ResetPasswordController@checkVerificationCode');
 
     Route::post('/verification/{id}', 'Auth\VerificationController@update');
 
@@ -33,8 +33,6 @@ Route::post('/logout', 'Auth\LoginController@logout');
 
 
 // ========== Тест ==========
-Route::get('/test', 'Site\ReservationController@test');
-
 Route::get('/emailtest', 'MailController@sendVerificationCode');
 
 
@@ -56,6 +54,12 @@ Route::get('/speaker/{id}/{slug?}', 'Site\SpeakerController@show');
 
 Route::get('/speakers', 'Site\SpeakerController@showSpeakers');
 
+Route::get('/cabinet/details', 'Site\CabinetController@showDetails');
+
+Route::get('/cabinet/payments', 'Site\CabinetController@showPayments');
+
+Route::get('/cabinet/reservations', 'Site\CabinetController@showReservations');
+
 
 // ========== API сайт ==========
 Route::group(['prefix' => 'api/site'], function () {
@@ -65,6 +69,8 @@ Route::group(['prefix' => 'api/site'], function () {
     Route::get('/course/types', 'Site\CourseController@getTypes');
 
     Route::get('/courses', 'Site\CourseController@getCourses');
+
+    Route::get('/reservation', 'Site\ReservationController@store');
 
 });
 
