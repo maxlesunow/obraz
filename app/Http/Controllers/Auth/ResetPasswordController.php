@@ -24,11 +24,10 @@ class ResetPasswordController extends Controller
 
     public function sendVerificationCode(Request $request){
 
-        $validator = Validator::make($request, [
+
+        $validator = Validator::make($request->all(), [
             'phone' => 'required|regex:/(7)[0-9]{10}/',
         ]);
-
-//        $request->phone = '79205974694';
 
         $user = User::where('phone', $request->phone)->first();
 
@@ -72,13 +71,10 @@ class ResetPasswordController extends Controller
 
     public function checkVerificationCode(Request $request){
 
-        $validator = Validator::make($request, [
+        $validator = Validator::make($request->all(), [
             'phone' => 'required|regex:/(7)[0-9]{10}/',
             'code' => 'required|regex:/[0-9]{4}/',
         ]);
-
-//        $request->code = '9086';
-//        $request->phone = '79205974694';
 
         $user = User::where('phone', $request->phone)->first();
 
