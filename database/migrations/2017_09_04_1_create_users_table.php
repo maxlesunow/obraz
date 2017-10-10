@@ -25,9 +25,6 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->integer('verification_id')->unsigned()->index();
-            $table->foreign('verification_id')->references('id')->on('verifications')->onDelete('cascade');
-            
             $table->integer('role_id')->unsigned()->index();
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
 

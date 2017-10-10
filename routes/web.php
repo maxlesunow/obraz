@@ -11,18 +11,31 @@
 |
 */
 
+// ========== Авторизация ==========
+Route::group(['middleware' => 'guest'], function () {
 
-Auth::routes();
+    Route::get('/register', 'Auth\RegisterController@showRegistrationForm');
 
+    Route::post('/register', 'Auth\RegisterController@register');
+
+    Route::post('/login', 'Auth\LoginController@login');
+
+    Route::get('/reset-password/send-code', 'Auth\ResetPasswordController@sendVerificationCode');
+
+    Route::get('/reset-password/check-code', 'Auth\ResetPasswordController@checkVerificationCode');
+
+    Route::post('/verification/{id}', 'Auth\VerificationController@update');
+
+    Route::post('/verification/send/{id}', 'Auth\VerificationController@sendVerificationCode');
+});
+
+Route::post('/logout', 'Auth\LoginController@logout');
+
+
+// ========== Тест ==========
 Route::get('/test', 'Site\ReservationController@test');
 
-
-Route::get('/whoami', 'WhoamiController@whoami');
-
 Route::get('/emailtest', 'MailController@sendVerificationCode');
-
-Route::post('/verification/{id}', 'VerificationController@update');
-Route::post('/verification/send/{id}', 'VerificationController@sendVerificationCode');
 
 
 // ========== Сайт ==========

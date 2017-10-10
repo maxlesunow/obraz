@@ -11,6 +11,15 @@ class VerificationSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Verification::class, 100)->create();
+        for ($i = 1; $i <= 103; $i++) {
+            DB::table('verifications')->insert([
+                'code' => rand(1000, 9999),
+                'wrong_pass' => rand(1, 2),
+                'date_expire' => \Carbon\Carbon::now()->addMinutes(5),
+                'date_send' => \Carbon\Carbon::now(),
+                'type' => 'registration',
+                'user_id' => $i,
+            ]);
+        }
     }
 }

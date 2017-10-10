@@ -26,6 +26,5 @@ $factory->define(App\User::class, function () {
         'remember_token' => str_random(10),
         'is_verification' => $faker->randomElement($array = array (true,false)),
         'role_id' => 2,
-        'verification_id' => rand(1,100),
     ];
 });

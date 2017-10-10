@@ -23,72 +23,11 @@ class DatabaseSeeder extends Seeder
             'name_ru' => 'Пользователь',
         ]);
 
-        DB::table('verifications')->insert([
-            'code' => '1111',
-            'wrong_pass' => 0,
-            'date_expire' => '2017-01-01 00:00',
-        ]);
-
-        DB::table('verifications')->insert([
-            'code' => '1111',
-            'wrong_pass' => 0,
-            'date_expire' => '2017-01-01 00:00',
-        ]);
-
-        DB::table('verifications')->insert([
-            'code' => '1111',
-            'wrong_pass' => 0,
-            'date_expire' => '2017-01-01 00:00',
-        ]);
-
-        //        Админ
-        DB::table('users')->insert([
-            'first_name' => 'Админов',
-            'last_name' => 'Админ',
-            'middle_name' => 'Админович',
-            'email' => 'admin@admin.admin',
-            'phone' => '71234567890',
-            'password' => bcrypt('123456'),
-            'remember_token' => str_random(10),
-            'role_id' => 1,
-            'is_verification' => true,
-            'verification_id' => 1,
-        ]);
-
-        //        User 1
-        DB::table('users')->insert([
-            'first_name' => 'Пригорнев',
-            'last_name' => 'Иван',
-            'middle_name' => 'Андреевич',
-            'email' => 'v1ar31@gmail.com',
-            'phone' => '79056718961',
-            'password' => bcrypt('123456'),
-            'remember_token' => str_random(10),
-            'role_id' => 2,
-            'is_verification' => true,
-            'verification_id' => 2,
-        ]);
-
-        //        User 2
-        DB::table('users')->insert([
-            'first_name' => 'Лесунов',
-            'last_name' => 'Максим',
-            'middle_name' => 'Егорович',
-            'email' => 'maxlesunow@gmail.com',
-            'phone' => '79205974694',
-            'password' => bcrypt('123456'),
-            'remember_token' => str_random(10),
-            'role_id' => 2,
-            'is_verification' => true,
-            'verification_id' => 3,
-        ]);
+        //        Пользователи
+        $this->call(UserSeeder::class);
 
         //        Верификация
         $this->call(VerificationSeeder::class);
-
-
-        //        Пользователи
-        $this->call(UserSeeder::class);
 
         //        Докладчики
         $this->call(SpeakerSeeder::class);
