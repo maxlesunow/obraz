@@ -37,7 +37,9 @@
             </div>
         </form>
 
-        <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" :user="user"></sms>
+        <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" 
+                :resend-address="`verification/send/${user.id}`"
+                :verify-address="`verification/${user.id}`"></sms>
 
         <div class="text-center" v-if="smsSend && !smsVerify">
             <p class="text-danger">Для активации учетной записи введите код, отправленный Вам в СМС сообщении.</p>
@@ -78,7 +80,7 @@ export default {
             smsSend: false,
             smsVerify: false,
 
-            user: null
+            user: { id: null }
         }
     },
     methods: {

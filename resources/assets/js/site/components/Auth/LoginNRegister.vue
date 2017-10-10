@@ -1,7 +1,7 @@
 <template>
   <div>
       <login v-if="!restoreMode" :restore-mode.sync="restoreMode"></login>
-      <restore v-else></restore>
+      <restore v-else :restore-mode.sync="restoreMode"></restore>
   </div>
 </template>
 

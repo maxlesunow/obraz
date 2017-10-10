@@ -37,7 +37,7 @@ import Inputmask from 'inputmask'
 export default {
     name: "sms",
     mixins: [formDataMixin],
-    props: ['smsSend', 'smsVerify', 'user'],
+    props: ['smsSend', 'smsVerify', 'resendAddress', 'verifyAddress', 'setting'],
     directives: { 
         'code-mask': {
             bind: function(el) {
@@ -58,7 +58,7 @@ export default {
     methods: {
         resendSms() {
             this.clearErrors()
-            axios.post(`verification/send/${this.user.id}`)
+            axios.post(this.resendAddress, this.setting || {})
                 .then((response) => {
                     // 
                 })
@@ -71,7 +71,7 @@ export default {
         },
         verifySms() {
             this.clearErrors()
-            axios.post(`verification/${this.user.id}`, this.getFormData())
+            axios.post(verifyAddress, Object.assign(this.setting || {}, this.getFormData()))
                 .then((response) => {
                     this.smsVerifyOrigin = true
                     this.$emit("update:smsVerify", this.smsVerifyOrigin) // @see https://vuejs.org/v2/guide/components.html#sync-Modifier

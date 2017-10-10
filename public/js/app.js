@@ -72017,6 +72017,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -72048,7 +72050,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             smsSend: false,
             smsVerify: false,
 
-            user: null
+            user: { id: null }
         };
     },
 
@@ -73203,7 +73205,7 @@ var _this = this;
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "sms",
     mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_formData___default.a],
-    props: ['smsSend', 'smsVerify', 'user'],
+    props: ['smsSend', 'smsVerify', 'resendAddress', 'verifyAddress', 'setting'],
     directives: {
         'code-mask': {
             bind: function bind(el) {
@@ -73226,7 +73228,7 @@ var _this = this;
             var _this2 = this;
 
             this.clearErrors();
-            axios.post('verification/send/' + this.user.id).then(function (response) {
+            axios.post(this.resendAddress, this.setting || {}).then(function (response) {
                 // 
             }).catch(function (data) {
                 if (data.response.statusText === 'Unprocessable Entity') {
@@ -73239,7 +73241,7 @@ var _this = this;
             var _this3 = this;
 
             this.clearErrors();
-            axios.post('verification/' + this.user.id, this.getFormData()).then(function (response) {
+            axios.post(verifyAddress, Object.assign(this.setting || {}, this.getFormData())).then(function (response) {
                 _this3.smsVerifyOrigin = true;
                 _this3.$emit("update:smsVerify", _this3.smsVerifyOrigin); // @see https://vuejs.org/v2/guide/components.html#sync-Modifier
             }).catch(function (data) {
@@ -73507,7 +73509,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "sms-send": _vm.smsSend,
       "sms-verify": _vm.smsVerify,
-      "user": _vm.user
+      "resend-address": ("verification/send/" + (_vm.user.id)),
+      "verify-address": ("verification/" + (_vm.user.id))
     },
     on: {
       "update:smsVerify": function($event) {
@@ -73634,6 +73637,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -73642,6 +73653,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['restoreMode'],
     components: { Sms: __WEBPACK_IMPORTED_MODULE_2__Sms_vue___default.a },
     mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_formData___default.a],
     directives: {
@@ -73678,7 +73690,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             this.clearErrors();
-            axios.post('restore', this.getFormData()).then(function (response) {
+            axios.post('/reset-password/send-code', this.getFormData()).then(function (response) {
                 // console.log("secc", response)
                 _this.user = response.data;
                 _this.smsSend = true;
@@ -73822,7 +73834,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "sms-send": _vm.smsSend,
       "sms-verify": _vm.smsVerify,
-      "user": _vm.user
+      "resend-address": '/reset-password/send-code',
+      "verify-address": '/reset-password/check-code',
+      "options": _vm.getFormData()
     },
     on: {
       "update:smsVerify": function($event) {
@@ -73833,7 +73847,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "text-center"
   }, [_c('p', {
     staticClass: "text-danger"
-  }, [_vm._v("Для активации учетной записи введите код, отправленный Вам в СМС сообщении.")])]) : _vm._e()], 1)
+  }, [_vm._v("Для активации учетной записи введите код, отправленный Вам в СМС сообщении.")])]) : _vm._e(), _vm._v(" "), _c('div', {
+    staticClass: "offset-top-24"
+  }, [_c('a', {
+    attrs: {
+      "href": ""
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.$emit('update:restoreMode', !_vm.restoreMode)
+      }
+    }
+  }, [_vm._v("Вернуться к форме входа")])])], 1)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "form-group offset-top-24"
@@ -73863,7 +73889,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.restoreMode = $event
       }
     }
-  }) : _c('restore')], 1)
+  }) : _c('restore', {
+    attrs: {
+      "restore-mode": _vm.restoreMode
+    },
+    on: {
+      "update:restoreMode": function($event) {
+        _vm.restoreMode = $event
+      }
+    }
+  })], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -73957,6 +73992,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -73983,7 +74020,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             inputs: [{ data: '', hasErrors: '', errorMessage: null, type: "text", name: "Фамилия", attr: "last_name", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Имя", attr: "first_name", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Отчество", attr: "middle_name", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "E-mail", attr: "email", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "phone", name: "Телефон", attr: "phone", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Пароль", attr: "password", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Подтверждение пароля", attr: "password_confirmation", disabled: false }],
-            addedUser: null,
+            user: { id: null },
 
             smsVerify: false,
             smsSend: false
@@ -73996,7 +74033,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.clearErrors();
             axios.post('register', this.getFormData()).then(function (response) {
-                _this.addedUser = response.data;
+                _this.user = response.data;
                 _this.smsSend = true;
 
                 _.each(_this.inputs, function (el, i) {
@@ -74124,7 +74161,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "sms-send": _vm.smsSend,
       "sms-verify": _vm.smsVerify,
-      "user": _vm.addedUser
+      "resend-address": ("verification/send/" + (_vm.user.id)),
+      "verify-address": ("verification/" + (_vm.user.id))
     },
     on: {
       "update:smsVerify": function($event) {

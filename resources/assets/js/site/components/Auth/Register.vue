@@ -19,7 +19,9 @@
 
         </form>
 
-        <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" :user="addedUser"></sms>
+        <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" 
+                :resend-address="`verification/send/${user.id}`"
+                :verify-address="`verification/${user.id}`"></sms>
 
         <div class="offset-top-24" v-if="!smsSend">
             <button class="btn btn-primary btn-block" @click.prevent="registerPost">Регистрация</button>
@@ -62,7 +64,7 @@ export default {
                 { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Пароль", attr: "password", disabled: false },
                 { data: '', hasErrors: '', errorMessage: null, type: "password", name: "Подтверждение пароля", attr: "password_confirmation", disabled: false }
             ],
-            addedUser: null,
+            user: { id: null },
 
             smsVerify: false,
             smsSend: false,
@@ -73,7 +75,7 @@ export default {
             this.clearErrors()
             axios.post('register', this.getFormData())
                 .then((response) => {
-                    this.addedUser = response.data
+                    this.user = response.data
                     this.smsSend = true
 
                     _.each(this.inputs, function(el, i) {

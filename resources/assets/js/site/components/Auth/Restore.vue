@@ -35,14 +35,22 @@
                 <button class="btn btn-primary btn-block" v-if="!smsSend" @click.prevent="restorePost">Восстановить</button>
                 <button class="btn btn-primary btn-block" v-if="smsVerify" @click.prevent="finishRestore">Завершить регистрацию</button>
             </div>
+
+
         </form>
 
-        <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" :user="user"></sms>
+        <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" 
+                :resend-address="'/reset-password/send-code'"
+                :verify-address="'/reset-password/check-code'"
+                :options="getFormData()"></sms>
 
         <div class="text-center" v-if="smsSend && !smsVerify">
             <p class="text-danger">Для активации учетной записи введите код, отправленный Вам в СМС сообщении.</p>
         </div>
 
+        <div class="offset-top-24">
+            <a href="" @click.prevent="$emit('update:restoreMode', !restoreMode)">Вернуться к форме входа</a>
+        </div>
     </div>
 </template>
 
@@ -54,6 +62,7 @@ import Inputmask from 'inputmask'
 import Sms from './../Sms.vue'
 
 export default {
+    props: ['restoreMode'],
     components: { Sms },
     mixins: [formDataMixin],
     directives: { 
@@ -87,7 +96,7 @@ export default {
         },
         restorePost() {
             this.clearErrors()
-            axios.post('restore', this.getFormData())
+            axios.post('/reset-password/send-code', this.getFormData())
                 .then((response) => {
                     // console.log("secc", response)
                     this.user = response.data
