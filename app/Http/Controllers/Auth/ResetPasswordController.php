@@ -31,8 +31,19 @@ class ResetPasswordController extends Controller
 
         $user = User::where('phone', $request->phone)->first();
 
-        $verification = Verification::where('user_id', $user->id)
-            ->where('type', 'reset_password')->first();
+        if($user) {
+
+            $verification = Verification::where('user_id', $user->id)
+                ->where('type', 'reset_password')->first();
+        }
+        else{
+            $errors = new MessageBag();
+
+            // add your error messages:
+            $errors->add('phone', "Номер телефона не найден");
+
+            return response()->json($errors, 422);
+        }
 
         if($verification){
 
@@ -43,7 +54,7 @@ class ResetPasswordController extends Controller
                 $errors = new MessageBag();
 
                 // add your error messages:
-                $errors->add('code', "Повторная отправка кода возможна через $diff сек");
+                $errors->add('phone', "Повторная отправка кода возможна через $diff сек");
 
                 return response()->json($errors, 422);
             }
