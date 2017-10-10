@@ -20,9 +20,9 @@ Route::group(['middleware' => 'guest'], function () {
 
     Route::post('/login', 'Auth\LoginController@login');
 
-    Route::get('/reset-password/send-code', 'Auth\ResetPasswordController@sendVerificationCode');
+    Route::post('/reset-password/send-code', 'Auth\ResetPasswordController@sendVerificationCode');
 
-    Route::get('/reset-password/check-code', 'Auth\ResetPasswordController@checkVerificationCode');
+    Route::post('/reset-password/check-code', 'Auth\ResetPasswordController@checkVerificationCode');
 
     Route::post('/verification/{id}', 'Auth\VerificationController@update');
 
