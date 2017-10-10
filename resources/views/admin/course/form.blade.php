@@ -8,9 +8,9 @@
 
 @include('admin.partials.form.input', ['id' => 'address', 'name' => 'Адрес:'])
 
-@include('admin.partials.form.input', ['id' => 'time_start', 'name' => 'Время начала:'])
+@include('admin.partials.form.date', ['id' => 'time_start', 'name' => 'Время начала:'])
 
-@include('admin.partials.form.input', ['id' => 'time_register', 'name' => 'Время регистрации:'])
+@include('admin.partials.form.date', ['id' => 'time_register', 'name' => 'Время регистрации:'])
 
 @include('admin.partials.form.input', ['id' => 'cost', 'name' => 'Стоимость:'])
 
@@ -39,6 +39,18 @@
         elems.forEach(function(html) {
             var switchery = new Switchery(html);
         });
+
+        setTimeout(function() {
+            flatpickr('.datapicker', {
+                locale: 'ru',
+                enableTime: true,
+                time_24hr: true,
+                altInput: true,
+                altFormat: 'd.m.Y H:i',
+                dateFormat: 'Y-m-d H:i'
+            })
+
+        }, 0)
 
     </script>
 @endsection

@@ -16,6 +16,10 @@ try {
     require('select2');
     require('jquery.uniform');
     require('summernote');
+
+    window.flatpickr = require("flatpickr");
+    var flatpickrl10n = require("flatpickr/dist/l10n/ru.js");
+    window.flatpickr.localize(flatpickrl10n.ru)
 } catch (e) {}
 
 /**
