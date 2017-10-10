@@ -54,6 +54,12 @@ Route::get('/speaker/{id}/{slug?}', 'Site\SpeakerController@show');
 
 Route::get('/speakers', 'Site\SpeakerController@showSpeakers');
 
+Route::get('/cabinet/details', 'Site\CabinetController@showDetails');
+
+Route::get('/cabinet/payments', 'Site\CabinetController@showPayments');
+
+Route::get('/cabinet/reservations', 'Site\CabinetController@showReservations');
+
 
 // ========== API сайт ==========
 Route::group(['prefix' => 'api/site'], function () {
