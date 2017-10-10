@@ -33,8 +33,6 @@ Route::post('/logout', 'Auth\LoginController@logout');
 
 
 // ========== Тест ==========
-Route::get('/test', 'Site\ReservationController@test');
-
 Route::get('/emailtest', 'MailController@sendVerificationCode');
 
 
@@ -65,6 +63,8 @@ Route::group(['prefix' => 'api/site'], function () {
     Route::get('/course/types', 'Site\CourseController@getTypes');
 
     Route::get('/courses', 'Site\CourseController@getCourses');
+
+    Route::get('/reservation', 'Site\ReservationController@store');
 
 });
 
