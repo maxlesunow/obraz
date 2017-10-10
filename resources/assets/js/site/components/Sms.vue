@@ -71,7 +71,7 @@ export default {
         },
         verifySms() {
             this.clearErrors()
-            axios.post(verifyAddress, Object.assign(this.setting || {}, this.getFormData()))
+            axios.post(this.verifyAddress, Object.assign(this.setting || {}, this.getFormData()))
                 .then((response) => {
                     this.smsVerifyOrigin = true
                     this.$emit("update:smsVerify", this.smsVerifyOrigin) // @see https://vuejs.org/v2/guide/components.html#sync-Modifier

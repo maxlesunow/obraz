@@ -73241,7 +73241,7 @@ var _this = this;
             var _this3 = this;
 
             this.clearErrors();
-            axios.post(verifyAddress, Object.assign(this.setting || {}, this.getFormData())).then(function (response) {
+            axios.post(this.verifyAddress, Object.assign(this.setting || {}, this.getFormData())).then(function (response) {
                 _this3.smsVerifyOrigin = true;
                 _this3.$emit("update:smsVerify", _this3.smsVerifyOrigin); // @see https://vuejs.org/v2/guide/components.html#sync-Modifier
             }).catch(function (data) {
@@ -73645,6 +73645,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -73701,7 +73702,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).catch(function (data) {
                 // console.log("err", data)
                 if (data.response.statusText === 'Unprocessable Entity') {
-                    var err = data.response && data.response.data && data.response.data.errors;
+                    var err = data.response && data.response.data && data.response.data;
                     _this.setErrors(err);
                 }
             });
@@ -73830,13 +73831,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.finishRestore($event)
       }
     }
-  }, [_vm._v("Завершить регистрацию")]) : _vm._e()])], 2), _vm._v(" "), _c('sms', {
+  }, [_vm._v("Завершить восстановление")]) : _vm._e()])], 2), _vm._v(" "), _c('sms', {
     attrs: {
       "sms-send": _vm.smsSend,
       "sms-verify": _vm.smsVerify,
       "resend-address": '/reset-password/send-code',
       "verify-address": '/reset-password/check-code',
-      "options": _vm.getFormData()
+      "setting": _vm.getFormData()
     },
     on: {
       "update:smsVerify": function($event) {

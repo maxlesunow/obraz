@@ -33,7 +33,7 @@
 
             <div class="offset-top-24">
                 <button class="btn btn-primary btn-block" v-if="!smsSend" @click.prevent="restorePost">Восстановить</button>
-                <button class="btn btn-primary btn-block" v-if="smsVerify" @click.prevent="finishRestore">Завершить регистрацию</button>
+                <button class="btn btn-primary btn-block" v-if="smsVerify" @click.prevent="finishRestore">Завершить восстановление</button>
             </div>
 
 
@@ -42,7 +42,8 @@
         <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" 
                 :resend-address="'/reset-password/send-code'"
                 :verify-address="'/reset-password/check-code'"
-                :options="getFormData()"></sms>
+                :setting="getFormData()">
+        </sms>
 
         <div class="text-center" v-if="smsSend && !smsVerify">
             <p class="text-danger">Для активации учетной записи введите код, отправленный Вам в СМС сообщении.</p>
@@ -109,7 +110,7 @@ export default {
                 .catch((data) => {
                     // console.log("err", data)
                     if (data.response.statusText === 'Unprocessable Entity') {
-                        var err = data.response && data.response.data && data.response.data.errors
+                        var err = data.response && data.response.data && data.response.data
                         this.setErrors(err)    
                     }
                 })
