@@ -108,7 +108,7 @@ export default {
                     })
                 })
                 .catch((data) => {
-                    // console.log("err", data)
+                    console.log("err", data)
                     if (data.response.statusText === 'Unprocessable Entity') {
                         var err = data.response && data.response.data && data.response.data
                         this.setErrors(err)    

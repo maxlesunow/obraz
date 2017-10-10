@@ -43,7 +43,7 @@ class ResetPasswordController extends Controller
                 $errors = new MessageBag();
 
                 // add your error messages:
-                $errors->add('code', "Повторная отправка кода возможна через $diff сек");
+                $errors->add('phone', "Повторная отправка кода возможна через $diff сек");
 
                 return response()->json($errors, 422);
             }
