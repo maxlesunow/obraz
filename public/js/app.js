@@ -35513,6 +35513,8 @@ Vue.component('main-schedule', __webpack_require__(267));
 Vue.component('reservation', __webpack_require__(277));
 Vue.component('send-review', __webpack_require__(280));
 
+Vue.component('cabinet-detatils', __webpack_require__(412));
+
 var app = new Vue({
   el: '#app'
 });
@@ -76194,6 +76196,426 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-3bbb87e4", module.exports)
+  }
+}
+
+/***/ }),
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */,
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */,
+/* 314 */,
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */,
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */,
+/* 330 */,
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */,
+/* 396 */,
+/* 397 */,
+/* 398 */,
+/* 399 */,
+/* 400 */,
+/* 401 */,
+/* 402 */,
+/* 403 */,
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(413)
+/* template */
+var __vue_template__ = __webpack_require__(414)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\site\\components\\cabinet\\Details.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-78d5d5e1", Component.options)
+  } else {
+    hotAPI.reload("data-v-78d5d5e1", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 413 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_formData__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_formData___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__mixins_formData__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_inputmask__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_inputmask___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_inputmask__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mixins: [__WEBPACK_IMPORTED_MODULE_1__mixins_formData___default.a],
+    directives: {
+        'phone-mask': {
+            bind: function bind(el) {
+                new __WEBPACK_IMPORTED_MODULE_2_inputmask___default.a({
+                    mask: "+7 (###) ### ## ##",
+                    autoUnmask: true,
+                    onUnMask: function onUnMask(maskedValue, unmaskedValue) {
+                        return "7" + unmaskedValue;
+                    }
+                }).mask(el);
+            }
+        }
+    },
+    data: function data() {
+        return {
+            inputs: [{ data: '', hasErrors: '', errorMessage: null, type: "text", name: "Фамилия", attr: "last_name", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Имя", attr: "first_name", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Отчество", attr: "middle_name", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "E-mail", attr: "email", disabled: false }]
+        };
+    },
+
+    methods: {
+        detailsPut: function detailsPut() {
+            var _this = this;
+
+            this.clearErrors();
+            axios.post('/api/site/details', this.getFormData()).then(function (response) {
+                // this.addedUser = response.data
+                _this.smsSend = true;
+
+                _.each(_this.inputs, function (el, i) {
+                    el.disabled = true;
+                });
+            }).catch(function (data) {
+                if (data.response.statusText === 'Unprocessable Entity') {
+                    var err = data.response && data.response.data && data.response.data.errors;
+                    _this.setErrors(err);
+                }
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 414 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("h3", [_vm._v("Мои данные")]),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        staticClass: "rd-mailform text-left",
+        attrs: { "data-form-output": "form-output-global", role: "form" }
+      },
+      [
+        _vm._l(_vm.inputs, function(input, index) {
+          return [
+            _c(
+              "div",
+              {
+                staticClass: "form-group",
+                class: {
+                  "has-error": input.hasErrors,
+                  "offset-top-12": index !== 0,
+                  "offset-top-30": index === 0
+                }
+              },
+              [
+                _c(
+                  "label",
+                  {
+                    staticClass: "form-label form-label-outside",
+                    attrs: { for: input.attr }
+                  },
+                  [_vm._v(_vm._s(input.name))]
+                ),
+                _vm._v(" "),
+                input.type === "text"
+                  ? _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: input.data,
+                          expression: "input.data"
+                        }
+                      ],
+                      staticClass: "form-control bg-white",
+                      attrs: {
+                        type: "text",
+                        id: input.attr,
+                        name: input.attr,
+                        required: "",
+                        autofocus: ""
+                      },
+                      domProps: { value: input.data },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          input.data = $event.target.value
+                        }
+                      }
+                    })
+                  : _vm._e(),
+                _vm._v(" "),
+                input.type === "phone"
+                  ? _c("input", {
+                      directives: [
+                        { name: "phone-mask", rawName: "v-phone-mask" },
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: input.data,
+                          expression: "input.data"
+                        }
+                      ],
+                      staticClass: "form-control bg-white",
+                      attrs: {
+                        type: "text",
+                        id: input.attr,
+                        name: input.attr,
+                        required: "",
+                        autofocus: ""
+                      },
+                      domProps: { value: input.data },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          input.data = $event.target.value
+                        }
+                      }
+                    })
+                  : _vm._e(),
+                _vm._v(" "),
+                input.hasErrors
+                  ? _c("span", { staticClass: "form-validation" }, [
+                      _vm._v(_vm._s(input.errorMessage))
+                    ])
+                  : _vm._e()
+              ]
+            )
+          ]
+        })
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "offset-top-20" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary btn btn-block",
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              _vm.detailsPut($event)
+            }
+          }
+        },
+        [_vm._v("Сохранить")]
+      )
+    ]),
+    _vm._v(" "),
+    _vm._m(0)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "offset-top-20" }, [
+      _c("span", [_vm._v("Для смены телефона обратитесь к менеджеру.")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-78d5d5e1", module.exports)
   }
 }
 

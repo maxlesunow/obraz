@@ -14,5 +14,13 @@
 @endsection
 
 @section('content')
-    <h1>Мои данные</h1>
+<section class="section-124">
+    <div class="shell">
+        <div class="range range-xs-center">
+            <div class="cell-xs-8">
+                <cabinet-detatils></cabinet-detatils>
+            </div>
+        </div>
+    </div>
+</section>
 @endsection

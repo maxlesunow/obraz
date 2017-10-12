@@ -30,6 +30,8 @@ Vue.component('main-schedule', require('./components/schedule/MainSchedule.vue')
 Vue.component('reservation', require('./components/course/Reservation.vue'));
 Vue.component('send-review', require('./components/reviews/SendReview.vue'));
 
+Vue.component('cabinet-detatils', require('./components/cabinet/Details.vue'));
+
 const app = new Vue({
     el: '#app'
 });
