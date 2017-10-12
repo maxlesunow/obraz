@@ -110,7 +110,7 @@ export default {
                 .catch((data) => {
                     console.log("err", data)
                     if (data.response.statusText === 'Unprocessable Entity') {
-                        var err = data.response && data.response.data && data.response.data
+                        var err = data.response && data.response.data && data.response.data && data.response.data.errors
                         this.setErrors(err)    
                     }
                 })

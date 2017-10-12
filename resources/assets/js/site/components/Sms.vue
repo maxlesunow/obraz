@@ -64,7 +64,7 @@ export default {
                 })
                 .catch((data) => {
                     if (data.response.statusText === 'Unprocessable Entity') {
-                        var err = data.response && data.response.data
+                        var err = data.response && data.response.data && data.response.data.errors
                         this.setErrors(err)   
                     }
                 })
@@ -78,7 +78,7 @@ export default {
                 })
                 .catch((data) => {
                     if (data.response.statusText === 'Unprocessable Entity') {
-                        var err = data.response && data.response.data
+                        var err = data.response && data.response.data && data.response.data.errors
                         this.setErrors(err)   
                     }
                 })
