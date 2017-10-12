@@ -111,7 +111,7 @@ class ResetPasswordController extends Controller
 
                 $password = str_random(6);
 
-                $user->password = $password;
+                $user->password = bcrypt($password);
                 $user->save();
 
                 Auth::guard()->login($user);
