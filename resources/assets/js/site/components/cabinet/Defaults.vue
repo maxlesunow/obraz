@@ -48,9 +48,6 @@ export default {
                 { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Имя", attr: "first_name"},
                 { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Отчество", attr: "middle_name"},
                 { data: '', hasErrors: '', errorMessage: null, type: "text", name: "E-mail", attr: "email"},
-                // { data: '', hasErrors: '', errorMessage: null, type: "phone", name: "Телефон", attr: "phone"},
-                // { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Способ оплаты", attr: "pay"},
-                // { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Комментарий", attr: "comment"}
             ],
         }
     },
@@ -58,12 +55,14 @@ export default {
         detailsGet() {
             axios.get('/api/site/user')
                 .then((response) => {
-                    console.log('!!', response)
+                    this.inputs.forEach((el) => {
+                        el.data = response.data[el.attr] || ''
+                    })
                 })
         },
         detailsPut() {
             this.clearErrors()
-            axios.post('/api/site/details', this.getFormData())
+            axios.put('/api/site/user', this.getFormData())
                 .then((response) => {
                     // this.addedUser = response.data
                     // this.smsSend = true
