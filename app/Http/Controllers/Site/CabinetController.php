@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Http\Requests\UserRequest;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 
 class CabinetController extends Controller
 {
