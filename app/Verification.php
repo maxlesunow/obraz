@@ -49,28 +49,34 @@ class Verification extends Model
 
         if ($this->wrong_pass > 3){
 
-            $errors = new MessageBag();
-
-            // add your error messages:
-            $errors->add('code', 'Слишком много попыток. Попробуйте позже');
+            $messages = [
+                'errors' => [
+                    'code' => ["Слишком много попыток. Попробуйте позже"]
+                ]
+            ];
+            $errors = new \Illuminate\Support\MessageBag($messages);
 
             return response()->json($errors, 422);
         }
         elseif($this->code != $code) {
 
-            $errors = new MessageBag();
-
-            // add your error messages:
-            $errors->add('code', 'СМС код не верный');
+            $messages = [
+                'errors' => [
+                    'code' => ["СМС код не верный"]
+                ]
+            ];
+            $errors = new \Illuminate\Support\MessageBag($messages);
 
             return response()->json($errors, 422);
         }
         elseif ($this->date_expire < Carbon::now()){
 
-            $errors = new MessageBag();
-
-            // add your error messages:
-            $errors->add('code', 'Срок действия кода истек');
+            $messages = [
+                'errors' => [
+                    'code' => ["Срок действия кода истек"]
+                ]
+            ];
+            $errors = new \Illuminate\Support\MessageBag($messages);
 
             return response()->json($errors, 422);
 

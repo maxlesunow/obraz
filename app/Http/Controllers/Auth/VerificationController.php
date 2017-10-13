@@ -17,10 +17,13 @@ class VerificationController extends Controller
         $user = User::findOrFail($id);
 
         if($user->is_verification){
-            $errors = new MessageBag();
 
-            // add your error messages:
-            $errors->add('code', 'Номер телефона уже подтвержден!');
+            $messages = [
+                'errors' => [
+                    'phone' => ["Номер телефона уже подтвержден"]
+                ]
+            ];
+            $errors = new \Illuminate\Support\MessageBag($messages);
 
             return response()->json($errors, 422);
         }
@@ -52,10 +55,13 @@ class VerificationController extends Controller
         $user = User::findOrFail($id);
 
         if($user->is_verification){
-            $errors = new MessageBag();
 
-            // add your error messages:
-            $errors->add('code', 'Номер телефона уже подтвержден!');
+            $messages = [
+                'errors' => [
+                    'phone' => ["Номер телефона уже подтвержден"]
+                ]
+            ];
+            $errors = new \Illuminate\Support\MessageBag($messages);
 
             return response()->json($errors, 422);
         }
@@ -68,10 +74,12 @@ class VerificationController extends Controller
 
             $diff = 60 - Carbon::now()->diffInSeconds(Carbon::parse($verification->date_send));
 
-            $errors = new MessageBag();
-
-            // add your error messages:
-            $errors->add('code', "Повторная отправка кода возможна через $diff сек");
+            $messages = [
+                'errors' => [
+                    'code' => ["Повторная отправка кода возможна через $diff сек"]
+                ]
+            ];
+            $errors = new \Illuminate\Support\MessageBag($messages);
 
             return response()->json($errors, 422);
 
