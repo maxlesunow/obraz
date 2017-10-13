@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Site;
 
 use Auth;
 use Illuminate\Http\Request;
-use App\Http\Requests\UserRequest;
+use App\Http\Requests\SiteUserRequest;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
@@ -15,7 +15,7 @@ class UserController extends Controller
         return $user;
     }
 
-    public function updateUser(UserRequest $request){
+    public function updateUser(SiteUserRequest $request){
 
         $user = Auth::user();
 
