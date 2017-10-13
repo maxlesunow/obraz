@@ -94,6 +94,8 @@ class ResetPasswordController extends Controller
             'code' => 'required|regex:/[0-9]{4}/',
         ]);
 
+        $validator->validate();
+
         $user = User::where('phone', $request->phone)->first();
 
         if($user) {

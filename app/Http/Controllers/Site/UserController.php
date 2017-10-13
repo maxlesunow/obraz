@@ -6,6 +6,8 @@ use Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\SiteUserRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -30,9 +32,17 @@ class UserController extends Controller
 
     public function updatePassword(Request $request){
 
+        $validator = Validator::make($request->all(), [
+            'password' => 'required|string|min:6',
+            'new_password' => 'required|string|min:6|confirmed'
+        ]);
+
+        $validator->validate();
+
         $user = Auth::user();
 
-        if($user->password == bcrypt($request->password)){
+        if (Hash::check($request->password, $user->password)){
+
             $user->password = $request->new_password;
             $user->save();
         }
@@ -40,7 +50,7 @@ class UserController extends Controller
 
             $messages = [
                 'errors' => [
-                    'password' => ["Не верный пароль"]
+                    'password' => ["Не верный текущий пароль"]
                 ]
             ];
             $errors = new \Illuminate\Support\MessageBag($messages);
