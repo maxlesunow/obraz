@@ -35,6 +35,7 @@
 
 <script>
 import Vue from 'vue'
+import { Notification } from 'element-ui'
 
 import formDataMixin from './../mixins/formData'
 
@@ -64,8 +65,12 @@ export default {
             this.clearErrors()
             axios.put('/api/site/user', this.getFormData())
                 .then((response) => {
-                    // this.addedUser = response.data
-                    // this.smsSend = true
+                    const h = this.$createElement;
+                    Notification({
+                        title: 'Успех',
+                        offset: 100,
+                        message: h('i', { style: 'color: teal' }, 'Данные пользователя обновлены')
+                    });
                 })
                 .catch((data) => {
                     if (data.response.statusText === 'Unprocessable Entity') {

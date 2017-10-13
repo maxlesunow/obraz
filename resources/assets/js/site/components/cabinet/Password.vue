@@ -26,32 +26,20 @@
         </div>
 
         <div class="offset-top-20">
-            <a href="" @click.prevent="$emit('update:passwordMode', !passwordMode)">Вернуться назад</a>
+            <a href="" @click.prevent="$emit('update:passwordMode', !passwordMode)"><i class="mdi mdi-arrow-left text-blue-gray"></i> Вернуться назад</a>
         </div>
     </div>
 </template>
 
 <script>
 import Vue from 'vue'
+import { Notification } from 'element-ui'
 
 import formDataMixin from './../mixins/formData'
-
-import Inputmask from 'inputmask'
 
 export default {
     props: ['passwordMode'],
     mixins: [formDataMixin],
-    directives: {
-        'phone-mask': {
-            bind: function(el) {
-                new Inputmask({
-                    mask: "+7 (###) ### ## ##",
-                    autoUnmask: true,
-                    onUnMask: (maskedValue, unmaskedValue) => "7" + unmaskedValue
-                }).mask(el);
-            }
-        }
-    },
     data() {
         return {
             inputs: [
@@ -64,14 +52,14 @@ export default {
     methods: {
         detailsPut() {
             this.clearErrors()
-            axios.post('/api/site/details', this.getFormData())
+            axios.put('/api/site/user/password', this.getFormData())
                 .then((response) => {
-                    // this.addedUser = response.data
-                    this.smsSend = true
-
-                    _.each(this.inputs, function(el, i) {
-                        el.disabled = true
-                    })
+                    const h = this.$createElement;
+                    Notification({
+                        title: 'Успех',
+                        offset: 100,
+                        message: h('i', { style: 'color: teal' }, 'Пароль пользователя обновлен')
+                    });
                 })
                 .catch((data) => {
                     if (data.response.statusText === 'Unprocessable Entity') {
