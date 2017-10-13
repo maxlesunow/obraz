@@ -76024,7 +76024,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         reviewSend: function reviewSend() {
             var _this = this;
 
-            axios.post("api/site/reviews", { rating: this.rating, text: this.text }).then(function (res) {
+            axios.post("/api/site/reviews", { rating: this.rating, text: this.text }).then(function (res) {
                 _this.isReview = true;
             }).catch(function (res) {
                 //
