@@ -21,7 +21,7 @@ class CabinetController extends Controller
 
     public function showReservations()
     {
-        $reservations = Auth::user()->reservations();
+        $reservations = Auth::user()->reservations;
 
         return view('site.cabinet.reservations', compact('reservations'));
     }
