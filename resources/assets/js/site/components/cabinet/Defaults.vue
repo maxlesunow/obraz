@@ -5,7 +5,7 @@
 
             <template v-for="(input, index) in inputs">
                 <div class="form-group" :class="{'has-error': input.hasErrors, 'offset-top-12': index !== 0, 'offset-top-30': index === 0 }">
-                    <label :for="input.attr" class="form-label form-label-outside">{{input.name}}</label>
+                    <label :for="input.attr" class="form-label form-label-sm form-label-outside">{{input.name}}</label>
 
                     <input v-if="input.type === 'text'" type="text" :id="input.attr" class="form-control bg-white" :name="input.attr" v-model="input.data" required autofocus>
                     <input v-if="input.type === 'phone'" type="text" v-phone-mask :id="input.attr" class="form-control bg-white" :name="input.attr" v-model="input.data" required autofocus>
@@ -20,11 +20,11 @@
         </form>
         
         <div class="offset-top-20">
-            <a href="" @click.prevent="$emit('update:passwordMode', !passwordMode)">Изменить пароль <i class="mdi mdi-arrow-right text-blue-gray"></i></a>
+            <button class="btn btn-primary btn btn-block" @click.prevent="detailsPut">Сохранить</button>
         </div>
 
         <div class="offset-top-20">
-            <button class="btn btn-primary btn btn-block" @click.prevent="detailsPut">Сохранить</button>
+            <a href="" @click.prevent="$emit('update:passwordMode', !passwordMode)">Изменить пароль <i class="mdi mdi-arrow-right text-blue-gray"></i></a>
         </div>
 
         <div class="offset-top-20">
