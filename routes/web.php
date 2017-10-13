@@ -73,9 +73,9 @@ Route::group(['prefix' => 'api/site'], function () {
     Route::get('/reservation', 'Site\ReservationController@store');
 
     Route::get('/user', 'Site\UserController@getUser');
-    Route::path('/user', 'Site\UserController@updateUser');
+    Route::put('/user', 'Site\UserController@updateUser');
 
-    Route::path('/user/password', 'Site\UserController@updatePassword');
+    Route::put('/user/password', 'Site\UserController@updatePassword');
 });
 
 // ========== Онлайн оплата ==========
