@@ -26,8 +26,10 @@ class UserRequest extends FormRequest
         return [
             'first_name' => 'required|string|min:2|max:255',
             'last_name' => 'required|string|min:2|max:255',
+            'middle_name' => 'string|min:2|max:255|nullable',
             'email' => 'string|max:255|email',
-            'phone' => 'required|regex:/(7)[0-9]{10}/'
+            'phone' => 'required|regex:/(7)[0-9]{10}/',
+            'password' => 'string|min:6|confirmed|nullable',
         ];
     }
 }
