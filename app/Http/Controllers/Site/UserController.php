@@ -43,7 +43,7 @@ class UserController extends Controller
 
         if (Hash::check($request->password, $user->password)){
 
-            $user->password = $request->new_password;
+            $user->password = bcrypt($request->new_password);
             $user->save();
         }
         else{
