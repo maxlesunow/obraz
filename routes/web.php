@@ -33,7 +33,7 @@ Route::post('/logout', 'Auth\LoginController@logout');
 
 
 // ========== Тест ==========
-Route::get('/emailtest', 'MailController@sendVerificationCode');
+Route::get('/test', 'Site\ReservationController@test');
 
 
 // ========== Сайт ==========
@@ -44,7 +44,6 @@ Route::get('/about', 'Site\PageController@about');
 Route::get('/schedule', 'Site\PageController@schedule');
 
 Route::get('/reviews', 'Site\PageController@reviews');
-Route::post('/reviews', 'Site\ReviewController@store');
 
 Route::get('/contact', 'Site\PageController@contact');
 
@@ -70,9 +69,12 @@ Route::group(['prefix' => 'api/site'], function () {
 
     Route::get('/courses', 'Site\CourseController@getCourses');
 
-    Route::get('/reservation', 'Site\ReservationController@store');
+    Route::post('/reservation', 'Site\ReservationController@store');
+
+    Route::post('/reviews', 'Site\ReviewController@store');
 
     Route::get('/user', 'Site\UserController@getUser');
+
     Route::put('/user', 'Site\UserController@updateUser');
 
     Route::put('/user/password', 'Site\UserController@updatePassword');
