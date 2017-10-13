@@ -44,7 +44,7 @@ export default {
     }),
     methods: {
         reviewSend() {
-            axios.post("/reviews", { rating: this.rating, text: this.text })
+            axios.post("/api/site/reviews", { rating: this.rating, text: this.text })
                 .then((res) => {
                     this.isReview = true
                 })
