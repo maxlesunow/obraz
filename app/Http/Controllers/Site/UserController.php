@@ -38,6 +38,14 @@ class UserController extends Controller
         }
         else{
 
+            $messages = [
+                'errors' => [
+                    'password' => ["Не верный пароль"]
+                ]
+            ];
+            $errors = new \Illuminate\Support\MessageBag($messages);
+
+            return response()->json($errors, 422);
         }
 
         return $user;
