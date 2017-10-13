@@ -20,7 +20,7 @@
         </form>
         
         <div class="offset-top-20">
-            <a href="" @click.prevent="$emit('update:passwordMode', !passwordMode)">Изменить пароль</a>
+            <a href="" @click.prevent="$emit('update:passwordMode', !passwordMode)">Изменить пароль <i class="mdi mdi-arrow-right text-blue-gray"></i></a>
         </div>
 
         <div class="offset-top-20">
@@ -38,22 +38,22 @@ import Vue from 'vue'
 
 import formDataMixin from './../mixins/formData'
 
-import Inputmask from 'inputmask'
+// import Inputmask from 'inputmask'
 
 export default {
     props: ['passwordMode'],
     mixins: [formDataMixin],
-    directives: {
-        'phone-mask': {
-            bind: function(el) {
-                new Inputmask({
-                    mask: "+7 (###) ### ## ##",
-                    autoUnmask: true,
-                    onUnMask: (maskedValue, unmaskedValue) => "7" + unmaskedValue
-                }).mask(el);
-            }
-        }
-    },
+    // directives: {
+    //     'phone-mask': {
+    //         bind: function(el) {
+    //             new Inputmask({
+    //                 mask: "+7 (###) ### ## ##",
+    //                 autoUnmask: true,
+    //                 onUnMask: (maskedValue, unmaskedValue) => "7" + unmaskedValue
+    //             }).mask(el);
+    //         }
+    //     }
+    // },
     data() {
         return {
             inputs: [
@@ -68,6 +68,12 @@ export default {
         }
     },
     methods: {
+        detailsGet() {
+            axios.get('/api/site/user')
+                .then((response) => {
+                    console.log('!!', response)
+                })
+        },
         detailsPut() {
             this.clearErrors()
             axios.post('/api/site/details', this.getFormData())
@@ -86,6 +92,9 @@ export default {
                     }
                 })
         }
+    },
+    created() {
+        this.detailsGet()
     }
 }
 </script>
