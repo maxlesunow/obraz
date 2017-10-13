@@ -76430,21 +76430,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         detailsGet: function detailsGet() {
+            var _this = this;
+
             axios.get('/api/site/user').then(function (response) {
-                console.log('!!', response);
+                _this.inputs.forEach(function (el) {
+                    el.data = response.data[el.attr] || '';
+                });
             });
         },
         detailsPut: function detailsPut() {
-            var _this = this;
+            var _this2 = this;
 
             this.clearErrors();
-            axios.post('/api/site/details', this.getFormData()).then(function (response) {
+            axios.put('/api/site/user', this.getFormData()).then(function (response) {
                 // this.addedUser = response.data
                 // this.smsSend = true
             }).catch(function (data) {
                 if (data.response.statusText === 'Unprocessable Entity') {
                     var err = data.response && data.response.data && data.response.data.errors;
-                    _this.setErrors(err);
+                    _this2.setErrors(err);
                 }
             });
         }
