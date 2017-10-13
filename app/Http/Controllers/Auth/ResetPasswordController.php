@@ -56,10 +56,12 @@ class ResetPasswordController extends Controller
 
                 $diff = 60 - Carbon::now()->diffInSeconds(Carbon::parse($verification->date_send));
 
-                $errors = new MessageBag();
-
-                // add your error messages:
-                $errors->add('phone', "Повторная отправка кода возможна через $diff сек");
+                $messages = [
+                    'errors' => [
+                        'code' => ["Повторная отправка кода возможна через $diff сек"]
+                    ]
+                ];
+                $errors = new \Illuminate\Support\MessageBag($messages);
 
                 return response()->json($errors, 422);
             }
@@ -100,10 +102,13 @@ class ResetPasswordController extends Controller
                 ->where('type', 'reset_password')->first();
         }
         else{
-            $errors = new MessageBag();
 
-            // add your error messages:
-            $errors->add('phone', "Номер телефона не найден");
+            $messages = [
+                'errors' => [
+                    'phone' => ["Номер телефона не найден"]
+                ]
+            ];
+            $errors = new \Illuminate\Support\MessageBag($messages);
 
             return response()->json($errors, 422);
         }
@@ -133,8 +138,13 @@ class ResetPasswordController extends Controller
 
         }
         else{
-            $errors = new MessageBag();
-            $errors->add('code', 'Сначала запросите восстановление пароля');
+
+            $messages = [
+                'errors' => [
+                    'code' => ["Сначала запросите восстановление пароля"]
+                ]
+            ];
+            $errors = new \Illuminate\Support\MessageBag($messages);
 
             return response()->json($errors, 422);
         }
