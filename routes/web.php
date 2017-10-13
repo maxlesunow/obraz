@@ -55,6 +55,7 @@ Route::get('/speaker/{id}/{slug?}', 'Site\SpeakerController@show');
 Route::get('/speakers', 'Site\SpeakerController@showSpeakers');
 
 Route::get('/cabinet/details', 'Site\CabinetController@showDetails');
+Route::patch('/cabinet/details', 'Site\CabinetController@updateDetails');
 
 Route::get('/cabinet/payments', 'Site\CabinetController@showPayments');
 

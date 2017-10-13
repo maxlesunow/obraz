@@ -29,6 +29,8 @@ class ResetPasswordController extends Controller
             'phone' => 'required|regex:/(7)[0-9]{10}/',
         ]);
 
+        $validator->validate();
+
         $user = User::where('phone', $request->phone)->first();
 
         if($user) {
@@ -37,10 +39,13 @@ class ResetPasswordController extends Controller
                 ->where('type', 'reset_password')->first();
         }
         else{
-            $errors = new MessageBag();
 
-            // add your error messages:
-            $errors->add('phone', "Номер телефона не найден");
+            $messages = [
+                'errors' => [
+                    'phone' => ['Номер телефона не найден']
+                ]
+            ];
+            $errors = new \Illuminate\Support\MessageBag($messages);
 
             return response()->json($errors, 422);
         }
