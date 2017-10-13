@@ -19,7 +19,6 @@
         <div class="content">
             <div class="cell-xs-8">
                 <h3>Мои курсы</h3>
-
                 <table class="table table-custom" data-responsive="true">
                     <tr>
                         <th>Название</th>
@@ -29,6 +28,7 @@
                         <th>Статус оплаты</th>
                         <th>Билет</th>
                     </tr>
+                    @foreach ($reservations as $reservation)
                     <tr>
                         <td>Sergey Gaponov</td>
                         <td>Gap0n</td>
@@ -37,30 +37,7 @@
                         <td>**********</td>
                         <td>**********</td>
                     </tr>
-                    <tr>
-                        <td>Eugene Gusarov</td>
-                        <td>Diversant</td>
-                        <td>*******</td>
-                        <td>stmechanus@gmail.com</td>
-                        <td>**********</td>
-                        <td>**********</td>
-                    </tr>
-                    <tr>
-                        <td>Vladislav Gnatovsky</td>
-                        <td>Mason</td>
-                        <td>*********</td>
-                        <td>vgtsky@gmail.com</td>
-                        <td>**********</td>
-                        <td>**********</td>
-                    </tr>
-                    <tr>
-                        <td>Rafael Shayvolodyan</td>
-                        <td>Raffa</td>
-                        <td>********</td>
-                        <td>mnatis.rafael@gmail.com</td>
-                        <td>**********</td>
-                        <td>**********</td>
-                    </tr>
+                    @endforeach
                 </table>
             </div>
         </div>
