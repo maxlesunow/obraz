@@ -71993,7 +71993,11 @@ var content = __webpack_require__(247);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
+<<<<<<< HEAD
+var update = __webpack_require__(3)("2cb533a4", content, false);
+=======
 var update = __webpack_require__(3)("7e1a2020", content, false);
+>>>>>>> 3970ee40bc3918026e3cd9c3ce458cbc2a1b4d59
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -73268,7 +73272,11 @@ var content = __webpack_require__(256);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
+<<<<<<< HEAD
+var update = __webpack_require__(3)("68192657", content, false);
+=======
 var update = __webpack_require__(3)("26bbda49", content, false);
+>>>>>>> 3970ee40bc3918026e3cd9c3ce458cbc2a1b4d59
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -74710,7 +74718,11 @@ var content = __webpack_require__(269);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
+<<<<<<< HEAD
+var update = __webpack_require__(3)("fdfcc192", content, false);
+=======
 var update = __webpack_require__(3)("f5eb2704", content, false);
+>>>>>>> 3970ee40bc3918026e3cd9c3ce458cbc2a1b4d59
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -75049,7 +75061,11 @@ var content = __webpack_require__(273);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
+<<<<<<< HEAD
+var update = __webpack_require__(3)("71f62e01", content, false);
+=======
 var update = __webpack_require__(3)("95c2175a", content, false);
+>>>>>>> 3970ee40bc3918026e3cd9c3ce458cbc2a1b4d59
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -75934,7 +75950,11 @@ var content = __webpack_require__(282);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
+<<<<<<< HEAD
+var update = __webpack_require__(3)("011662ea", content, false);
+=======
 var update = __webpack_require__(3)("f643ce3a", content, false);
+>>>>>>> 3970ee40bc3918026e3cd9c3ce458cbc2a1b4d59
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -76259,7 +76279,11 @@ var content = __webpack_require__(288);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
+<<<<<<< HEAD
+var update = __webpack_require__(3)("2c152b4e", content, false);
+=======
 var update = __webpack_require__(3)("18c253aa", content, false);
+>>>>>>> 3970ee40bc3918026e3cd9c3ce458cbc2a1b4d59
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -76376,8 +76400,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_formData__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_formData___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__mixins_formData__);
+<<<<<<< HEAD
+=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_inputmask__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_inputmask___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_inputmask__);
+>>>>>>> 3970ee40bc3918026e3cd9c3ce458cbc2a1b4d59
 //
 //
 //
@@ -76418,24 +76445,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-
+// import Inputmask from 'inputmask'
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['passwordMode'],
     mixins: [__WEBPACK_IMPORTED_MODULE_1__mixins_formData___default.a],
-    directives: {
-        'phone-mask': {
-            bind: function bind(el) {
-                new __WEBPACK_IMPORTED_MODULE_2_inputmask___default.a({
-                    mask: "+7 (###) ### ## ##",
-                    autoUnmask: true,
-                    onUnMask: function onUnMask(maskedValue, unmaskedValue) {
-                        return "7" + unmaskedValue;
-                    }
-                }).mask(el);
-            }
-        }
-    },
+    // directives: {
+    //     'phone-mask': {
+    //         bind: function(el) {
+    //             new Inputmask({
+    //                 mask: "+7 (###) ### ## ##",
+    //                 autoUnmask: true,
+    //                 onUnMask: (maskedValue, unmaskedValue) => "7" + unmaskedValue
+    //             }).mask(el);
+    //         }
+    //     }
+    // },
     data: function data() {
         return {
             inputs: [{ data: '', hasErrors: '', errorMessage: null, type: "text", name: "Фамилия", attr: "last_name", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Имя", attr: "first_name", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Отчество", attr: "middle_name", disabled: false }, { data: '', hasErrors: '', errorMessage: null, type: "text", name: "E-mail", attr: "email", disabled: false }]
@@ -76443,6 +76468,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
+        detailsGet: function detailsGet() {
+            axios.get('/api/site/user').then(function (response) {
+                console.log('!!', response);
+            });
+        },
         detailsPut: function detailsPut() {
             var _this = this;
 
@@ -76461,6 +76491,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             });
         }
+    },
+    created: function created() {
+        this.detailsGet();
     }
 });
 
@@ -76590,7 +76623,10 @@ var render = function() {
             }
           }
         },
-        [_vm._v("Изменить пароль")]
+        [
+          _vm._v("Изменить пароль "),
+          _c("i", { staticClass: "mdi mdi-arrow-right text-blue-gray" })
+        ]
       )
     ]),
     _vm._v(" "),
@@ -77002,6 +77038,48 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-2cf16d90", module.exports)
+  }
+}
+
+/***/ }),
+/* 296 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      !_vm.passwordMode
+        ? _c("defaults", {
+            attrs: { "password-mode": _vm.passwordMode },
+            on: {
+              "update:passwordMode": function($event) {
+                _vm.passwordMode = $event
+              }
+            }
+          })
+        : _c("password", {
+            attrs: { "password-mode": _vm.passwordMode },
+            on: {
+              "update:passwordMode": function($event) {
+                _vm.passwordMode = $event
+              }
+            }
+          })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-78d5d5e1", module.exports)
   }
 }
 
