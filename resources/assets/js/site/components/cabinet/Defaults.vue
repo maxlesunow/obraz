@@ -38,32 +38,19 @@ import Vue from 'vue'
 
 import formDataMixin from './../mixins/formData'
 
-// import Inputmask from 'inputmask'
-
 export default {
     props: ['passwordMode'],
     mixins: [formDataMixin],
-    // directives: {
-    //     'phone-mask': {
-    //         bind: function(el) {
-    //             new Inputmask({
-    //                 mask: "+7 (###) ### ## ##",
-    //                 autoUnmask: true,
-    //                 onUnMask: (maskedValue, unmaskedValue) => "7" + unmaskedValue
-    //             }).mask(el);
-    //         }
-    //     }
-    // },
     data() {
         return {
             inputs: [
-                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Фамилия", attr: "last_name", disabled: false },
-                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Имя", attr: "first_name", disabled: false },
-                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Отчество", attr: "middle_name", disabled: false },
-                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "E-mail", attr: "email", disabled: false },
-                // { data: '', hasErrors: '', errorMessage: null, type: "phone", name: "Телефон", attr: "phone", disabled: false },
-                // { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Способ оплаты", attr: "pay", disabled: false },
-                // { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Комментарий", attr: "comment", disabled: false }
+                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Фамилия", attr: "last_name"},
+                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Имя", attr: "first_name"},
+                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Отчество", attr: "middle_name"},
+                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "E-mail", attr: "email"},
+                // { data: '', hasErrors: '', errorMessage: null, type: "phone", name: "Телефон", attr: "phone"},
+                // { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Способ оплаты", attr: "pay"},
+                // { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Комментарий", attr: "comment"}
             ],
         }
     },
@@ -79,11 +66,7 @@ export default {
             axios.post('/api/site/details', this.getFormData())
                 .then((response) => {
                     // this.addedUser = response.data
-                    this.smsSend = true
-
-                    _.each(this.inputs, function(el, i) {
-                        el.disabled = true
-                    })
+                    // this.smsSend = true
                 })
                 .catch((data) => {
                     if (data.response.statusText === 'Unprocessable Entity') {
