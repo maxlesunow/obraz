@@ -30,7 +30,7 @@
                 </div>
             </div>
 
-            <a href="" @click.prevent="$emit('update:restoreMode', !restoreMode)">забыли пароль?</a>
+            <a href="" @click.prevent="$emit('update:restoreMode', !restoreMode)">Забыли пароль?</a>
             <div class="offset-top-24">
                 <button class="btn btn-primary btn-block" v-if="!smsSend" @click.prevent="loginPost">Войти</button>
                 <button class="btn btn-primary btn-block" v-if="smsVerify" @click.prevent="finishLogin">Завершить регистрацию</button>

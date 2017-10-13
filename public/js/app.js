@@ -73729,7 +73729,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("забыли пароль?")]
+            [_vm._v("Забыли пароль?")]
           ),
           _vm._v(" "),
           _c("div", { staticClass: "offset-top-24" }, [
@@ -76499,7 +76499,7 @@ var render = function() {
                 _c(
                   "label",
                   {
-                    staticClass: "form-label form-label-outside",
+                    staticClass: "form-label form-label-sm form-label-outside",
                     attrs: { for: input.attr }
                   },
                   [_vm._v(_vm._s(input.name))]
@@ -76581,6 +76581,22 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "offset-top-20" }, [
       _c(
+        "button",
+        {
+          staticClass: "btn btn-primary btn btn-block",
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              _vm.detailsPut($event)
+            }
+          }
+        },
+        [_vm._v("Сохранить")]
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "offset-top-20" }, [
+      _c(
         "a",
         {
           attrs: { href: "" },
@@ -76595,22 +76611,6 @@ var render = function() {
           _vm._v("Изменить пароль "),
           _c("i", { staticClass: "mdi mdi-arrow-right text-blue-gray" })
         ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "offset-top-20" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-primary btn btn-block",
-          on: {
-            click: function($event) {
-              $event.preventDefault()
-              _vm.detailsPut($event)
-            }
-          }
-        },
-        [_vm._v("Сохранить")]
       )
     ]),
     _vm._v(" "),
@@ -76800,7 +76800,7 @@ var render = function() {
                 _c(
                   "label",
                   {
-                    staticClass: "form-label form-label-outside",
+                    staticClass: "form-label form-label-sm form-label-outside",
                     attrs: { for: input.attr }
                   },
                   [_vm._v(_vm._s(input.name))]
