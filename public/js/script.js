@@ -70,7 +70,7 @@ var userAgent = navigator.userAgent.toLowerCase(),
 		tilter: $(".tilter"),
 		copyrightYear: $(".copyright-year"),
 		videBG: $('.bg-vide'),
-		rdInputLabel: $(".form-label"),
+		// rdInputLabel: $(".form-label"),
 		regula: $("[data-constraints]"),
 		rdMailForm: $(".rd-mailform"),
 		mailchimp: $('.mailchimp-mailform'),
@@ -1137,9 +1137,9 @@ $document.ready(function () {
 	 * RD Input Label
 	 * @description Enables RD Input Label Plugin
 	 */
-	if (plugins.rdInputLabel.length) {
-		plugins.rdInputLabel.RDInputLabel();
-	}
+	// if (plugins.rdInputLabel.length) {
+	// 	plugins.rdInputLabel.RDInputLabel();
+	// }
 
 	/**
 	 * Stepper

@@ -28396,20 +28396,20 @@ textarea.form-control {
 }
 
 .form-label {
-	position: absolute;
+	/* position: absolute; */
 	top: 25px;
 	left: 16px;
 	font-size: 13px;
 	color: #212121;
 	pointer-events: none;
 	z-index: 9;
-	transition: .3s;
+	/* transition: .3s;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	-webkit-transform-origin: 0 0;
 	-moz-transform-origin: 0 0;
 	-ms-transform-origin: 0 0;
-	transform-origin: 0 0;
+	transform-origin: 0 0; */
 }
 
 .form-label.focus {
