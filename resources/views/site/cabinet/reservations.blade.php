@@ -14,7 +14,7 @@
 @endsection
 
 @section('content')
-<section class="section-124">
+<section class="section-66">
     <div class="shell">
         <div class="content">
             <div class="cell-xs-8">
@@ -30,12 +30,20 @@
                     </tr>
                     @foreach ($reservations as $reservation)
                     <tr>
-                        <td>Sergey Gaponov</td>
-                        <td>Gap0n</td>
-                        <td>**********</td>
-                        <td>haponov.serhii@gmail.com</td>
-                        <td>**********</td>
-                        <td>**********</td>
+                        <td>{{ $reservation->course->name }}</td>
+                        <td>{{ Carbon\Carbon::parse($reservation->course->time_start)->formatLocalized('%d.%m.%Y %H:%M')}}</td>
+                        <td>{{ $reservation->cost }}</td>
+                        <td>{{ $reservation->payment_type->name }}</td>
+                        @if($reservation->payment_status)
+                            <td>Оплачено</td>
+                        @else
+                            <td>Не оплачено</td>
+                        @endif
+                        @if($reservation->status)
+                            <td>Ссылка на билет</td>
+                        @else
+                            <td>Ожидает подтверждения</td>
+                        @endif
                     </tr>
                     @endforeach
                 </table>
