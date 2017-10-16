@@ -47,6 +47,7 @@ import Inputmask from 'inputmask'
 import Sms from './../Sms.vue'
 
 export default {
+    props: ['guest'],
     components: { Sms },
     mixins: [formDataMixin],
     directives: {
@@ -63,13 +64,7 @@ export default {
     data() {
         return {
             inputs: [
-                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Фамилия", attr: "last_name", disabled: false },
-                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Имя", attr: "first_name", disabled: false },
-                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Отчество", attr: "middle_name", disabled: false },
-                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "E-mail", attr: "email", disabled: false },
-                { data: '', hasErrors: '', errorMessage: null, type: "phone", name: "Телефон", attr: "phone", disabled: false },
-                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Способ оплаты", attr: "pay", disabled: false },
-                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Комментарий", attr: "comment", disabled: false }
+                //
             ],
             addedUser: null,
 
@@ -111,6 +106,24 @@ export default {
             // $(this.$refs.vuemodal).modal('hide');
             // this.$emit("login")
             window.location.href = '/'
+        }
+    },
+    created() {
+        if (this.guest) {
+            this.inputs = [
+                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Фамилия", attr: "last_name", disabled: false },
+                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Имя", attr: "first_name", disabled: false },
+                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Отчество", attr: "middle_name", disabled: false },
+                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "E-mail", attr: "email", disabled: false },
+                { data: '', hasErrors: '', errorMessage: null, type: "phone", name: "Телефон", attr: "phone", disabled: false },
+                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Способ оплаты", attr: "pay", disabled: false },
+                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Комментарий", attr: "comment", disabled: false }
+            ]
+        } else {
+            this.inputs = [
+                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Способ оплаты", attr: "pay", disabled: false },
+                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Комментарий", attr: "comment", disabled: false }
+            ]
         }
     }
 }
