@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Verification;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use App\Notifications\VerificationCode;
 
 class LoginController extends Controller
 {
@@ -62,6 +65,33 @@ class LoginController extends Controller
         if($user){
 
             if ($user->is_verification == false) {
+
+                $verification = Verification::where('user_id', $user->id)
+                    ->where('type', 'registration')->first();
+
+                if ($verification) {
+
+                    $verification->reGenerateCode();
+                    $verification->date_send = Carbon::now();
+
+                    $verification->save();
+
+                    //Отправляем пользователю код верификации
+                    $user->notify(new VerificationCode($verification));
+                }
+                else {
+
+                    //Создаем верификацию
+                    $verification = new Verification('registration');
+                    $verification->user()->associate($user);
+                    $verification->save();
+
+                    //Отправляем пользователю код верификации
+                    $user->notify(new VerificationCode($verification));
+
+                    $verification->date_send = Carbon::now();
+                    $verification->save();
+                }
 
                 return response()->json($user);
             }
