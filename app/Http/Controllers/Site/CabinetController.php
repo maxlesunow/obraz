@@ -16,7 +16,9 @@ class CabinetController extends Controller
 
     public function showPayments()
     {
-        return view('site.cabinet.payments');
+        $payments = Auth::user()->payments;
+        
+        return view('site.cabinet.payments', compact('payments'));
     }
 
     public function showReservations()

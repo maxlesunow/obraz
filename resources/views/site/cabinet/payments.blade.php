@@ -29,6 +29,7 @@
                         <th>Статус оплаты</th>
                         <th>Билет</th>
                     </tr>
+                    @foreach ($payments as $payment)
                     <tr>
                         <td>Sergey Gaponov</td>
                         <td>Gap0n</td>
@@ -37,30 +38,7 @@
                         <td>**********</td>
                         <td>**********</td>
                     </tr>
-                    <tr>
-                        <td>Eugene Gusarov</td>
-                        <td>Diversant</td>
-                        <td>*******</td>
-                        <td>stmechanus@gmail.com</td>
-                        <td>**********</td>
-                        <td>**********</td>
-                    </tr>
-                    <tr>
-                        <td>Vladislav Gnatovsky</td>
-                        <td>Mason</td>
-                        <td>*********</td>
-                        <td>vgtsky@gmail.com</td>
-                        <td>**********</td>
-                        <td>**********</td>
-                    </tr>
-                    <tr>
-                        <td>Rafael Shayvolodyan</td>
-                        <td>Raffa</td>
-                        <td>********</td>
-                        <td>mnatis.rafael@gmail.com</td>
-                        <td>**********</td>
-                        <td>**********</td>
-                    </tr>
+                    @endforeach
                 </table>
             </div>
         </div>
