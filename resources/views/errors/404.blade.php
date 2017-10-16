@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html class="wide wow-animation scrollTo smoothscroll" lang="en">
+<html class="wide wow-animation scrollTo smoothscroll" lang="ru">
 <head>
     <!-- Site Title-->
-    <title>404 Page</title>
+    <title>Страница не найдена</title>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
