@@ -69,6 +69,7 @@ Route::group(['prefix' => 'api/site'], function () {
 
     Route::get('/courses', 'Site\CourseController@getCourses');
 
+    Route::get('/payment/types', 'Site\ReservationController@getPaymentTypes');
     Route::post('/reservation', 'Site\ReservationController@store');
 
     Route::post('/reviews', 'Site\ReviewController@store');

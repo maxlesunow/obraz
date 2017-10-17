@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Requests\SiteReservationRequest;
+use App\PaymentType;
 use App\Reservation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -13,18 +14,14 @@ class ReservationController extends Controller
     public function store(SiteReservationRequest $request)
     {
 
-        return response()->json("OK", 200);
+        return response()->json("пока не работает", 200);
     }
 
-    public function test()
+    public function getPaymentTypes()
     {
 
-        $user = Auth::user();
+        $payment_types = PaymentType::select('id', 'name', 'is_online')->get();
 
-        $password = str_random(6);
-
-        $user->password = bcrypt($password);
-
-        return $password;
+        return response()->json($payment_types, 200);
     }
 }

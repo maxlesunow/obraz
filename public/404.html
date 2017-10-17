@@ -9,17 +9,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="keywords" content="intense web design multipurpose template html">
     <meta name="date" content="Dec 26">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7CLato:300,300italic,400,700,900%7CYesteryear">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="/css/app.css">
     <!--[if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;">
         <a href="http://windows.microsoft.com/en-US/internet-explorer/">
-            <img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.">
+            <img src="/images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.">
         </a>
     </div>
-    <script src="js/html5shiv.min.js"></script>
+    <script src="/js/html5shiv.min.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -43,10 +43,10 @@
                                 <div class="text-extra-big text-light">404</div>
                                 <p class="offset-top-50">Возможно, запрашиваемая Вами страница была перенесена или удалена. Также возможно, Вы допустили небольшую опечатку при вводе адреса – такое случается даже с нами, поэтому еще раз внимательно проверьте</p>
                                 <div class="group offset-top-30">
-                                    <a class="btn btn-icon btn-icon-left btn-primary" href="index.html">
+                                    <a class="btn btn-icon btn-icon-left btn-primary" href="/">
                                         <span class="icon mdi mdi-arrow-left"></span>Перейти на главную
                                     </a>
-                                    <a class="btn btn-icon btn-icon-left btn-default" href="contact-us.html">
+                                    <a class="btn btn-icon btn-icon-left btn-default" href="/contact">
                                         <span class="/contact"></span>Контакты
                                     </a>
                                 </div>
@@ -62,6 +62,6 @@
     </main>
 </div>
 <!-- JavaScript-->
-<script src="js/core.min.js"></script>
+<script src="/js/core.min.js"></script>
 </body>
 </html>
