@@ -75611,6 +75611,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -75728,158 +75729,149 @@ var render = function() {
           ]),
           _vm._v(" "),
           _vm._l(_vm.inputs, function(input, index) {
-            return !_vm.smsSend
-              ? [
+            return [
+              _c(
+                "div",
+                {
+                  staticClass: "form-group",
+                  class: {
+                    "has-error": input.hasErrors,
+                    "offset-top-12": index !== 0,
+                    "offset-top-30": index === 0
+                  }
+                },
+                [
                   _c(
-                    "div",
+                    "label",
                     {
-                      staticClass: "form-group",
-                      class: {
-                        "has-error": input.hasErrors,
-                        "offset-top-12": index !== 0,
-                        "offset-top-30": index === 0
-                      }
+                      staticClass:
+                        "form-label form-label-sm form-label-outside",
+                      attrs: { for: input.attr }
                     },
-                    [
-                      _c(
-                        "label",
-                        {
-                          staticClass:
-                            "form-label form-label-sm form-label-outside",
-                          attrs: { for: input.attr }
+                    [_vm._v(_vm._s(input.name))]
+                  ),
+                  _vm._v(" "),
+                  input.type === "text"
+                    ? _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: input.data,
+                            expression: "input.data"
+                          }
+                        ],
+                        staticClass:
+                          "form-control input-sm form-control-impressed",
+                        attrs: {
+                          type: "text",
+                          id: input.attr,
+                          name: input.attr,
+                          disabled: input.disabled,
+                          required: "",
+                          autofocus: ""
                         },
-                        [_vm._v(_vm._s(input.name))]
-                      ),
-                      _vm._v(" "),
-                      input.type === "text"
-                        ? _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: input.data,
-                                expression: "input.data"
-                              }
-                            ],
-                            staticClass:
-                              "form-control input-sm form-control-impressed",
-                            attrs: {
-                              type: "text",
-                              id: input.attr,
-                              name: input.attr,
-                              required: "",
-                              autofocus: ""
-                            },
-                            domProps: { value: input.data },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                input.data = $event.target.value
-                              }
+                        domProps: { value: input.data },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
                             }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      input.type === "phone"
-                        ? _c("input", {
-                            directives: [
-                              { name: "phone-mask", rawName: "v-phone-mask" },
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: input.data,
-                                expression: "input.data"
-                              }
-                            ],
-                            staticClass:
-                              "form-control input-sm form-control-impressed",
-                            attrs: {
-                              type: "text",
-                              id: input.attr,
-                              name: input.attr,
-                              required: "",
-                              autofocus: ""
-                            },
-                            domProps: { value: input.data },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                input.data = $event.target.value
-                              }
+                            input.data = $event.target.value
+                          }
+                        }
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  input.type === "phone"
+                    ? _c("input", {
+                        directives: [
+                          { name: "phone-mask", rawName: "v-phone-mask" },
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: input.data,
+                            expression: "input.data"
+                          }
+                        ],
+                        staticClass:
+                          "form-control input-sm form-control-impressed",
+                        attrs: {
+                          type: "text",
+                          id: input.attr,
+                          name: input.attr,
+                          disabled: input.disabled,
+                          required: "",
+                          autofocus: ""
+                        },
+                        domProps: { value: input.data },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
                             }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      input.type === "payment"
-                        ? _c(
-                            "select",
+                            input.data = $event.target.value
+                          }
+                        }
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  input.type === "payment"
+                    ? _c(
+                        "select",
+                        {
+                          directives: [
                             {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: input.data,
-                                  expression: "input.data"
-                                }
-                              ],
-                              staticClass:
-                                "form-control input-sm form-control-impressed basic-select",
-                              attrs: { id: input.attr },
-                              on: {
-                                change: function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  input.data = $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                }
-                              }
-                            },
-                            _vm._l(_vm.payments, function(option) {
-                              return _c(
-                                "option",
-                                { domProps: { value: option.id } },
-                                [
-                                  _vm._v(
-                                    "\n                        " +
-                                      _vm._s(option.name) +
-                                      "\n                    "
-                                  )
-                                ]
+                              name: "model",
+                              rawName: "v-model",
+                              value: input.data,
+                              expression: "input.data"
+                            }
+                          ],
+                          staticClass:
+                            "form-control input-sm form-control-impressed basic-select",
+                          attrs: { id: input.attr, disabled: input.disabled },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              input.data = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
+                        },
+                        _vm._l(_vm.payments, function(option) {
+                          return _c(
+                            "option",
+                            { domProps: { value: option.id } },
+                            [
+                              _vm._v(
+                                "\n                        " +
+                                  _vm._s(option.name) +
+                                  "\n                    "
                               )
-                            })
+                            ]
                           )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      input.hasErrors
-                        ? _c("span", { staticClass: "form-validation" }, [
-                            _vm._v(_vm._s(input.errorMessage))
-                          ])
-                        : _vm._e()
-                    ]
-                  )
+                        })
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  input.hasErrors
+                    ? _c("span", { staticClass: "form-validation" }, [
+                        _vm._v(_vm._s(input.errorMessage))
+                      ])
+                    : _vm._e()
                 ]
-              : _vm._e()
-          }),
-          _vm._v(" "),
-          _vm.smsSend
-            ? [
-                _c("span", [_vm._v(_vm._s(_vm.reservetionInfo.fullName))]),
-                _vm._v(" "),
-                _c("span", [_vm._v(_vm._s(_vm.reservetionInfo.payType))])
-              ]
-            : _vm._e()
+              )
+            ]
+          })
         ],
         2
       ),
@@ -75897,41 +75889,61 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      !_vm.smsSend
-        ? _c("div", { staticClass: "offset-top-20" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary btn btn-block",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.reservationPost($event)
-                  }
-                }
-              },
-              [_vm._v("Записаться на курс")]
-            )
+      _vm.guest
+        ? _c("div", [
+            !_vm.smsSend
+              ? _c("div", { staticClass: "offset-top-20" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary btn btn-block",
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.reservationPost($event)
+                        }
+                      }
+                    },
+                    [_vm._v("Записаться на курс")]
+                  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.smsVerify
+              ? _c("div", { staticClass: "offset-top-20" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-default btn-block",
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.finishReservation($event)
+                        }
+                      }
+                    },
+                    [_vm._v("Завершить запись")]
+                  )
+                ])
+              : _vm._e()
           ])
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.smsVerify
-        ? _c("div", { staticClass: "offset-top-20" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-default btn-block",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.finishReservation($event)
+        : _c("div", [
+            _c("div", { staticClass: "offset-top-20" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary btn btn-block",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.reservationPost($event)
+                    }
                   }
-                }
-              },
-              [_vm._v("Завершить запись")]
-            )
+                },
+                [_vm._v("Записаться на курс")]
+              )
+            ])
           ])
-        : _vm._e()
     ],
     1
   )
