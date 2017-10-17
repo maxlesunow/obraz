@@ -49,6 +49,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Review');
     }
 
+    public function payments()
+    {
+        return $this->hasManyThrough('App\Payment', 'App\Reservation');
+    }
+
     public function getFullNameAttribute(){
 
         return join(' ', array($this->last_name, $this->first_name, $this->middle_name));

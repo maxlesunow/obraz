@@ -14,7 +14,7 @@
 @endsection
 
 @section('content')
-<section class="section-124">
+<section class="section-66">
     <div class="shell">
         <div class="content">
             <div class="cell-xs-8">
@@ -22,21 +22,25 @@
 
                 <table class="table table-custom" data-responsive="true">
                     <tr>
-                        <th>Название</th>
-                        <th>Время начала</th>
-                        <th>Стоимость</th>
+                        <th>Номер документа</th>
+                        <th>Сумма платежа</th>
+                        <th>Дата оплаты</th>
                         <th>Способ оплаты</th>
+                        <th>Заявка</th>
                         <th>Статус оплаты</th>
-                        <th>Билет</th>
                     </tr>
                     @foreach ($payments as $payment)
                     <tr>
-                        <td>Sergey Gaponov</td>
-                        <td>Gap0n</td>
-                        <td>**********</td>
+                        <td>{{ $payment->number_document }}</td>
+                        <td>{{ $payment->total }}</td>
                         <td>haponov.serhii@gmail.com</td>
-                        <td>**********</td>
-                        <td>**********</td>
+                        <td>{{ $payment->reservation->payment_type->name}}</td>
+                        <td>{{ $payment->reservation->name}}</td>
+                        @if($payment->reservation->status)
+                            <td>Подтверждено</td>
+                        @else
+                            <td>Не подтверждено</td>
+                        @endif
                     </tr>
                     @endforeach
                 </table>
