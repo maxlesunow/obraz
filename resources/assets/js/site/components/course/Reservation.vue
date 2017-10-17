@@ -11,6 +11,11 @@
                     <input v-if="input.type === 'text'" type="text" :id="input.attr" class="form-control input-sm form-control-impressed" :name="input.attr" v-model="input.data" required autofocus>
                     <input v-if="input.type === 'phone'" type="text" v-phone-mask :id="input.attr" class="form-control input-sm form-control-impressed" :name="input.attr" v-model="input.data" required autofocus>
 
+                    <select v-if="input.type === 'payment'" v-model="input.data" :id="input.attr" class="form-control input-sm form-control-impressed basic-select" >
+                        <option v-for="option in payments" v-bind:value="option.id">
+                            {{ option.name }}
+                        </option>
+                    </select>
                     <!-- <span v-if="input.hasErrors" class="help-block">
                             {{input.errorMessage}}
                         </span> -->
@@ -47,7 +52,7 @@ import Inputmask from 'inputmask'
 import Sms from './../Sms.vue'
 
 export default {
-    props: ['guest'],
+    props: ['guest', 'courseId'],
     components: { Sms },
     mixins: [formDataMixin],
     directives: {
@@ -66,6 +71,7 @@ export default {
             inputs: [
                 //
             ],
+            payments: [],
             addedUser: null,
 
             smsVerify: false,
@@ -86,14 +92,16 @@ export default {
         },
         reservationPost() {
             this.clearErrors()
-            axios.post('/api/site/reservation', this.getFormData())
+            axios.post(`/api/site/reservation/${this.courseId}`, this.getFormData())
                 .then((response) => {
                     // this.addedUser = response.data
-                    this.smsSend = true
+                    if (this.guest) {
+                        this.smsSend = true
 
-                    _.each(this.inputs, function(el, i) {
-                        el.disabled = true
-                    })
+                        _.each(this.inputs, function(el, i) {
+                            el.disabled = true
+                        })
+                    }
                 })
                 .catch((data) => {
                     if (data.response.statusText === 'Unprocessable Entity') {
@@ -109,6 +117,11 @@ export default {
         }
     },
     created() {
+        axios.get('/api/site/payment/types')
+            .then((res) => {
+                this.payments = res.data
+            })
+
         if (this.guest) {
             this.inputs = [
                 { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Фамилия", attr: "last_name", disabled: false },
@@ -116,12 +129,12 @@ export default {
                 { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Отчество", attr: "middle_name", disabled: false },
                 { data: '', hasErrors: '', errorMessage: null, type: "text", name: "E-mail", attr: "email", disabled: false },
                 { data: '', hasErrors: '', errorMessage: null, type: "phone", name: "Телефон", attr: "phone", disabled: false },
-                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Способ оплаты", attr: "pay", disabled: false },
+                { data: '', hasErrors: '', errorMessage: null, type: "payment", name: "Способ оплаты", attr: "payment_type_id", disabled: false },
                 { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Комментарий", attr: "comment", disabled: false }
             ]
         } else {
             this.inputs = [
-                { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Способ оплаты", attr: "pay", disabled: false },
+                { data: '', hasErrors: '', errorMessage: null, type: "payment", name: "Способ оплаты", attr: "payment_type_id", disabled: false },
                 { data: '', hasErrors: '', errorMessage: null, type: "text", name: "Комментарий", attr: "comment", disabled: false }
             ]
         }
