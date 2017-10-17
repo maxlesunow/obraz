@@ -110,7 +110,11 @@
 
                                           <div class="cell-xs-10 cell-sm-8 cell-md-5 cell-lg-4">
                                                  <div class="section-bottom-66 section-md-bottom-41">
-                                                        <reservation></reservation>
+                                                    @guest
+                                                        <reservation :guest="true"></reservation>
+                                                    @else
+                                                        <reservation :guest="false"></reservation>    
+                                                    @endguest
                                                  </div>
                                           </div>
                                    </div>
