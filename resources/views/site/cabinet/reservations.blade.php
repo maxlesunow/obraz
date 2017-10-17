@@ -32,17 +32,17 @@
                     <tr>
                         <td>{{ $reservation->course->name }}</td>
                         <td>{{ Carbon\Carbon::parse($reservation->course->time_start)->formatLocalized('%d.%m.%Y %H:%M')}}</td>
-                        <td>{{ $reservation->cost }}</td>
+                        <td>{{number_format($reservation->cost, 2, '.', ' ')}} ₽</td>
                         <td>{{ $reservation->payment_type->name }}</td>
                         @if($reservation->payment_status)
-                            <td>Оплачено</td>
+                            <td><span class="label label-success">Оплачено</span></td>
                         @else
-                            <td>Не оплачено</td>
+                            <td><span class="label label-danger">Не оплачено</span></td>
                         @endif
                         @if($reservation->status)
-                            <td>Ссылка на билет</td>
+                            <td><span class="label label-primary">Ссылка на билет</span></td>
                         @else
-                            <td>Ожидает подтверждения</td>
+                            <td><span class="label label-info">Ожидает подтверждения</span></td>
                         @endif
                     </tr>
                     @endforeach
