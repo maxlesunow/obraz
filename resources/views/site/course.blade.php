@@ -111,9 +111,9 @@
                                           <div class="cell-xs-10 cell-sm-8 cell-md-5 cell-lg-4">
                                                  <div class="section-bottom-66 section-md-bottom-41">
                                                     @guest
-                                                        <reservation :guest="true"></reservation>
+                                                        <reservation :guest="true" course-id="{{$course->id}}"></reservation>
                                                     @else
-                                                        <reservation :guest="false"></reservation>    
+                                                        <reservation :guest="false" course-id="{{$course->id}}"></reservation>    
                                                     @endguest
                                                  </div>
                                           </div>
