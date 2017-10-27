@@ -16,12 +16,16 @@ class Reservation extends Model
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
-        'cost', 'status', 'payment_status'
+        'cost', 'status', 'payment_status', 'comment'
     ];
 
     protected $appends = ['name'];
 
     protected $with = ['course', 'user', 'payment_type'];
+
+    protected $hidden = [
+       'verification', 'verification_id',
+    ];
 
     public function course(){
 
@@ -41,6 +45,11 @@ class Reservation extends Model
     public function payments(){
 
         return $this->hasMany('App\Payment');
+    }
+
+    public function verification(){
+
+        return $this->belongsTo('App\Verification');
     }
 
     public function getNameAttribute(){

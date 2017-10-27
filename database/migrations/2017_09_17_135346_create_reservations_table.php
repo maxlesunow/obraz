@@ -18,6 +18,8 @@ class CreateReservationsTable extends Migration
             $table->float('cost');
             $table->boolean('status')->default(false);
             $table->boolean('payment_status')->default(false);
+            $table->boolean('is_verification')->default(false);
+            $table->string('comment')->nullable();
 
             $table->softDeletes();
 
@@ -31,6 +33,10 @@ class CreateReservationsTable extends Migration
 
             $table->integer('payment_type_id')->unsigned()->index();
             $table->foreign('payment_type_id')->references('id')->on('payment_types')->onDelete('cascade');
+
+            $table->integer('verification_id')->unsigned()->nullable();
+            $table->foreign('verification_id')->references('id')->on('verifications')->onDelete('set null');
+
         });
     }
 
