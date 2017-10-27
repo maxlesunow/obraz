@@ -4,14 +4,14 @@
         <form class="well-lg bg-white shadow-drop-md text-left" data-form-output="form-output-global" role="form">
             <p>Заполните форму и получите билет на курс прямо сейчас!</p>
 
-            <template v-if="!smsSend" v-for="(input, index) in inputs">
+            <template v-for="(input, index) in inputs">
                 <div class="form-group" :class="{'has-error': input.hasErrors, 'offset-top-12': index !== 0, 'offset-top-30': index === 0 }">
                     <label :for="input.attr" class="form-label form-label-sm form-label-outside">{{input.name}}</label>
 
-                    <input v-if="input.type === 'text'" type="text" :id="input.attr" class="form-control input-sm form-control-impressed" :name="input.attr" v-model="input.data" required autofocus>
-                    <input v-if="input.type === 'phone'" type="text" v-phone-mask :id="input.attr" class="form-control input-sm form-control-impressed" :name="input.attr" v-model="input.data" required autofocus>
+                    <input v-if="input.type === 'text'" type="text" :id="input.attr" class="form-control input-sm form-control-impressed" :name="input.attr" v-model="input.data" :disabled="input.disabled" required autofocus>
+                    <input v-if="input.type === 'phone'" type="text" v-phone-mask :id="input.attr" class="form-control input-sm form-control-impressed" :name="input.attr" v-model="input.data" :disabled="input.disabled" required autofocus>
 
-                    <select v-if="input.type === 'payment'" v-model="input.data" :id="input.attr" class="form-control input-sm form-control-impressed basic-select" >
+                    <select v-if="input.type === 'payment'" v-model="input.data" :id="input.attr" class="form-control input-sm form-control-impressed basic-select" :disabled="input.disabled" >
                         <option v-for="option in payments" v-bind:value="option.id">
                             {{ option.name }}
                         </option>
@@ -23,21 +23,22 @@
                 </div>
             </template>
 
-            <template v-if="smsSend">
-                <span>{{ reservetionInfo.fullName }}</span>
-                <span>{{ reservetionInfo.payType }}</span>
-
-            </template>
-
         </form>
 
         <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" :user="addedUser"></sms>
-
-        <div class="offset-top-20" v-if="!smsSend">
-            <button class="btn btn-primary btn btn-block" @click.prevent="reservationPost">Записаться на курс</button>
+        
+        <div v-if="guest">
+            <div class="offset-top-20" v-if="!smsSend">
+                <button class="btn btn-primary btn btn-block" @click.prevent="reservationPost">Записаться на курс</button>
+            </div>
+            <div class="offset-top-20" v-if="smsVerify">
+                <button class="btn btn-default btn-block" @click.prevent="finishReservation">Завершить запись</button>
+            </div>
         </div>
-        <div class="offset-top-20" v-if="smsVerify">
-            <button class="btn btn-default btn-block" @click.prevent="finishReservation">Завершить запись</button>
+        <div v-else>
+            <div class="offset-top-20">
+                <button class="btn btn-primary btn btn-block" @click.prevent="reservationPost">Записаться на курс</button>
+            </div>
         </div>
     </div>
 </template>

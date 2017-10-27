@@ -32,14 +32,14 @@
                     @foreach ($payments as $payment)
                     <tr>
                         <td>{{ $payment->number_document }}</td>
-                        <td>{{ $payment->total }}</td>
+                        <td>{{number_format($payment->total, 2, '.', ' ')}} ₽</td>
                         <td>haponov.serhii@gmail.com</td>
                         <td>{{ $payment->reservation->payment_type->name}}</td>
                         <td>{{ $payment->reservation->name}}</td>
                         @if($payment->reservation->status)
-                            <td>Подтверждено</td>
+                            <td><span class="label label-success">Подтверждено</span></td>
                         @else
-                            <td>Не подтверждено</td>
+                            <td><span class="label label-danger">Не подтверждено</span></td>
                         @endif
                     </tr>
                     @endforeach
