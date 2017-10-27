@@ -11,6 +11,7 @@ use App\Role;
 
 use App\Http\Requests\SiteReservationRequest;
 
+use App\Notifications\NewPassword;
 use App\Notifications\VerificationCode;
 
 use Carbon\Carbon;
@@ -140,6 +141,12 @@ class ReservationController extends Controller
     public function checkVerificationCode($id, Request $request)
     {
 
+        $validator = Validator::make($request->all(), [
+            'code' => 'required|regex:/[0-9]{4}/',
+        ]);
+
+        $validator->validate();
+
         $reservation = Reservation::findorfail($id);
 
         if($reservation->is_verification == true){
@@ -153,31 +160,52 @@ class ReservationController extends Controller
             return response()->json($errors, 422);
         }
         else{
-            if($verification = $reservation->verification){
-                if($reservation->type == 'reservation'){
+            $verification = $reservation->verification;
+            if($verification){
+                if($verification->type == 'reservation'){
 
                     $check = $verification->checkCode($request->code);
 
                     if($check === true){
 
-                        $password = str_random(6);
+                       $verification->is_verifiaction = true;
+                       $verification->save();
 
-                        $user->save();
-
-                        Auth::guard()->login($user);
-
-                        //Отправка нового пароля
-                        $user->notify(new NewPassword($password));
-
-                        return redirect('/');
+                        return response()->json($reservation, 200);
                     }
                     else{
 
                         return $check;
                     }
                 }
-                elseif ($reservation->type == 'registration_and_reservation'){
+                elseif ($verification->type == 'registration_and_reservation'){
 
+                    $check = $verification->checkCode($request->code);
+
+                    if($check === true){
+
+                        //Создаем пароль
+                        $user = $verification->user;
+                        $password = str_random(6);
+                        $user->password = bcrypt($password);
+
+                        $user->is_verification = true;
+                        $user->save();
+
+                        $reservation->is_verification = true;
+                        $reservation->save();
+
+                        Auth::guard()->login($user);
+
+                        //Отправка нового пароля
+                        $user->notify(new NewPassword($password));
+
+                        return response()->json($reservation, 200);
+                    }
+                    else{
+
+                        return $check;
+                    }
                 }
                 else{
                     $messages = [
@@ -190,10 +218,21 @@ class ReservationController extends Controller
                     return response()->json($errors, 422);
                 }
             }
+            else{
+                $messages = [
+                    'errors' => [
+                        'code' => ['Непредвиденная ошибка. Попробуйте позже']
+                    ]
+                ];
+                $errors = new \Illuminate\Support\MessageBag($messages);
+
+                return response()->json($errors, 422);
+            }
         }
 
 
-        return response()->json($payment_types, 200);
+
+        return response()->json($reservation, 200);
     }
 
     public function getPaymentTypes()

@@ -16,7 +16,7 @@ class Reservation extends Model
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
-        'cost', 'status', 'payment_status', 'comment'
+        'cost', 'status', 'payment_status', 'comment', 'is_verification'
     ];
 
     protected $appends = ['name'];
