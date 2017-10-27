@@ -235,6 +235,53 @@ class ReservationController extends Controller
         return response()->json($reservation, 200);
     }
 
+    public function sendVerificationCode($id)
+    {
+        $reservation = Reservation::findOrFail($id);
+
+        if($reservation->is_verification){
+
+            $messages = [
+                'errors' => [
+                    'code' => ["Заявка уже подтверждена"]
+                ]
+            ];
+            $errors = new \Illuminate\Support\MessageBag($messages);
+
+            return response()->json($errors, 422);
+        }
+
+        $verification = $reservation->verification;
+
+
+        if(Carbon::now()->diffInSeconds(Carbon::parse($verification->date_send)) < 60 ){
+
+            $diff = 60 - Carbon::now()->diffInSeconds(Carbon::parse($verification->date_send));
+
+            $messages = [
+                'errors' => [
+                    'code' => ["Повторная отправка кода возможна через $diff сек"]
+                ]
+            ];
+            $errors = new \Illuminate\Support\MessageBag($messages);
+
+            return response()->json($errors, 422);
+
+        }
+
+        $verification->reGenerateCode();
+        $verification->date_send = Carbon::now();
+        $verification->save();
+
+        //Добавить отправку кода
+        $verification->save();
+
+        //Отправляем пользователю код верификации
+        $reservation->user->notify(new VerificationCode($verification));
+
+        return response()->json($reservation, 200);
+    }
+
     public function getPaymentTypes()
     {
 
