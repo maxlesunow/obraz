@@ -25,7 +25,9 @@
 
         </form>
 
-        <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" :user="addedUser"></sms>
+        <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" :user="addedUser"
+            :resend-address="`reservation/verification/send/${courseId}`"
+            :verify-address="`reservation/verification/${courseId}`"></sms>
         
         <div v-if="guest">
             <div class="offset-top-20" v-if="!smsSend">
