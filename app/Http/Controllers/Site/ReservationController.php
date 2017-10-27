@@ -168,8 +168,8 @@ class ReservationController extends Controller
 
                     if($check === true){
 
-                       $verification->is_verifiaction = true;
-                       $verification->save();
+                        $reservation->is_verification = true;
+                        $reservation->save();
 
                         return response()->json($reservation, 200);
                     }
