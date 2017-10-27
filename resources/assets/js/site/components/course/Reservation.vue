@@ -26,8 +26,8 @@
         </form>
 
         <sms :sms-send="smsSend" :sms-verify.sync="smsVerify" :user="addedUser"
-            :resend-address="`reservation/verification/send/${courseId}`"
-            :verify-address="`reservation/verification/${courseId}`"></sms>
+            :resend-address="`/api/site/reservation/verification/send/${reservation.id}`"
+            :verify-address="`/api/site/reservation/verification/${reservation.id}`"></sms>
         
         <div v-if="guest">
             <div class="offset-top-20" v-if="!smsSend">
@@ -71,6 +71,7 @@ export default {
     },
     data() {
         return {
+            reservation: '',
             inputs: [
                 //
             ],
@@ -97,6 +98,7 @@ export default {
             this.clearErrors()
             axios.post(`/api/site/reservation/${this.courseId}`, this.getFormData())
                 .then((response) => {
+                    this.reservation = response.data
                     // this.addedUser = response.data
                     if (this.guest) {
                         this.smsSend = true

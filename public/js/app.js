@@ -73295,7 +73295,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -73391,7 +73391,8 @@ var _this = this;
                 _this3.smsVerifyOrigin = true;
                 _this3.$emit("update:smsVerify", _this3.smsVerifyOrigin); // @see https://vuejs.org/v2/guide/components.html#sync-Modifier
             }).catch(function (data) {
-                if (data.response.statusText === 'Unprocessable Entity') {
+                console.log(data);
+                if (data.response && data.response.statusText === 'Unprocessable Entity') {
                     var err = data.response && data.response.data && data.response.data.errors;
                     _this3.setErrors(err);
                 }
@@ -75612,6 +75613,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -75640,6 +75643,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
+            reservation: '',
             inputs: [
                 //
             ],
@@ -75668,6 +75672,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.clearErrors();
             axios.post('/api/site/reservation/' + this.courseId, this.getFormData()).then(function (response) {
+                _this.reservation = response.data;
                 // this.addedUser = response.data
                 if (_this.guest) {
                     _this.smsSend = true;
@@ -75880,7 +75885,11 @@ var render = function() {
         attrs: {
           "sms-send": _vm.smsSend,
           "sms-verify": _vm.smsVerify,
-          user: _vm.addedUser
+          user: _vm.addedUser,
+          "resend-address":
+            "/api/site/reservation/verification/send/" + _vm.reservation.id,
+          "verify-address":
+            "/api/site/reservation/verification/" + _vm.reservation.id
         },
         on: {
           "update:smsVerify": function($event) {

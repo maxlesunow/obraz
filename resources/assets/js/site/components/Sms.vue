@@ -77,7 +77,8 @@ export default {
                     this.$emit("update:smsVerify", this.smsVerifyOrigin) // @see https://vuejs.org/v2/guide/components.html#sync-Modifier
                 })
                 .catch((data) => {
-                    if (data.response.statusText === 'Unprocessable Entity') {
+                    console.log(data)
+                    if (data.response && data.response.statusText === 'Unprocessable Entity') {
                         var err = data.response && data.response.data && data.response.data.errors
                         this.setErrors(err)   
                     }
