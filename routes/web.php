@@ -82,6 +82,8 @@ Route::group(['prefix' => 'api/site'], function () {
 
     Route::post('/reservation/verification/{id}', 'Site\ReservationController@checkVerificationCode');
     Route::post('/reservation/verification/send/{id}', 'Site\ReservationController@sendVerificationCode');
+
+    Route::get('/ticket/{id}', 'Site\TicketController@getTicket');
 });
 
 // ========== Онлайн оплата ==========
