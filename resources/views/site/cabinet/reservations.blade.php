@@ -21,6 +21,7 @@
                 <h3>Мои курсы</h3>
                 <table class="table table-custom" data-responsive="true">
                     <tr>
+                        <th>Номер билета</th>
                         <th>Название</th>
                         <th>Время начала</th>
                         <th>Стоимость</th>
@@ -30,6 +31,7 @@
                     </tr>
                     @foreach ($reservations as $reservation)
                     <tr>
+                        <td>{{ $reservation->id }}</td>
                         <td>{{ $reservation->course->name }}</td>
                         <td>{{ Carbon\Carbon::parse($reservation->course->time_start)->formatLocalized('%d.%m.%Y %H:%M')}}</td>
                         <td>{{number_format($reservation->cost, 2, '.', ' ')}} ₽</td>
@@ -39,8 +41,8 @@
                         @else
                             <td><span class="label label-danger">Не оплачено</span></td>
                         @endif
-                        @if($reservation->status)
-                            <td><span class="label label-primary">Ссылка на билет</span></td>
+                        @if($reservation->status == true)
+                            <td><span class="label label-primary"><a href="{{ action ('Site\TicketController@getTicket', $reservation->id) }}" target="blank">Получить билет</a></span></td>
                         @else
                             <td><span class="label label-info">Ожидает подтверждения</span></td>
                         @endif

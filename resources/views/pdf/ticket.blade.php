@@ -47,11 +47,11 @@
                 <div class="">Лектор: {{$speaker->full_name}}</div>
             @endforeach
 
-            <div class="" style="margin-top: 20px">Дата регистрации: {{ Carbon\Carbon::parse($reservation->course->time_register)->formatLocalized('%d %B %Y %H:%M')}}</div>
+            <div class="" style="margin-top: 10px">Дата регистрации: {{ Carbon\Carbon::parse($reservation->course->time_register)->formatLocalized('%d %B %Y %H:%M')}}</div>
             <div class="">Дата проведения: {{ Carbon\Carbon::parse($reservation->course->time_start)->formatLocalized('%d %B %Y %H:%M')}}</div>
             <div class="">Место проведения: {{$reservation->course->address}}</div>
 
-            @if($reservation->status == True)
+            @if($reservation->payment_status == True)
                 <div>Статус: <b>ОПЛАЧЕНО</b></div>
             @else
                 <div>Статус: <b>НЕ ОПЛАЧЕНО</b></div>
