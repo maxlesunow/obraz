@@ -18,7 +18,9 @@
                         </div>
                     </template>
 
-                    <span class="offset-top-24" @click.prevent="resendSms"><a href><ins>Отправить еще раз</ins></a></span>
+                    <span class="offset-top-34" @click.prevent="resendSms"><a href><ins>Отправить еще раз</ins></a></span>
+                    <span class="offset-top-24 text-center">На ваш телефон отправлен код подтверждения.</span>
+                    
                     <button class="btn btn-primary btn-block offset-top-24" @click.prevent="verifySms">Подтвердить</button>
                 </form>
             </div>
