@@ -18,8 +18,7 @@
                         </div>
                     </template>
 
-                    <span class="offset-top-34" @click.prevent="resendSms"><a href><ins>Отправить еще раз</ins></a></span>
-                    <span class="offset-top-24 text-center">На ваш телефон отправлен код подтверждения.</span>
+                    <div class="offset-top-34"><a href @click.prevent="resendSms"><ins>Отправить еще раз</ins></a></div>
                     
                     <button class="btn btn-primary btn-block offset-top-24" @click.prevent="verifySms">Подтвердить</button>
                 </form>
@@ -33,7 +32,7 @@
 
 <script>
 import formDataMixin from './mixins/formData'
-
+import { Notification } from 'element-ui'
 import Inputmask from 'inputmask'
 
 export default {
@@ -51,6 +50,18 @@ export default {
             } 
         }
     },
+    watch: {
+        smsSend () {
+            if (this.smsSend) {
+                const h = this.$createElement;
+                Notification({
+                    title: 'Успех',
+                    offset: 100,
+                    message: h('i', { style: 'color: teal' }, 'Отправлен код подтверждения')
+                });
+            }
+        }
+    },
     data: () => ({
         inputs: [
             { data: '', hasErrors: '', errorMessage: null, type: "code", name: "Код", attr: "code" },
@@ -62,7 +73,12 @@ export default {
             this.clearErrors()
             axios.post(this.resendAddress, this.setting || {})
                 .then((response) => {
-                    // 
+                    const h = this.$createElement;
+                    Notification({
+                        title: 'Успех',
+                        offset: 100,
+                        message: h('i', { style: 'color: teal' }, 'Отправлен код подтверждения')
+                    });
                 })
                 .catch((data) => {
                     if (data.response.statusText === 'Unprocessable Entity') {
